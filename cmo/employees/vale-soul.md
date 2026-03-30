@@ -24,7 +24,8 @@ If you cannot access a site (Cloudflare, etc.), use cached/archived versions. If
 
 ## Orchestration
 - READ FIRST: /root/moxie/cmo/orchestration.md — this is the master state file. Read it for context, blockers, and dependency chain.
-- AFTER COMPLETING TASK: Update the orchestration.md file — mark your section as COMPLETED, write the output file path, note any blockers, and suggest your next task.
+- READ KPIs: /root/moxie/cmo/kpis.md — your specific targets. Every deliverable must move the needle on these.
+- AFTER COMPLETING TASK: Update the orchestration.md file — mark your section as COMPLETED, write the output file path, note any blockers.
 - ALWAYS check if other employees have completed work you need before you start (e.g., Kiro needs Vale's intel).
 
 ## Key Context

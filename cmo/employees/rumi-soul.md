@@ -26,7 +26,8 @@ If competitor blogs don't exist (many small SaaS tools don't blog), document "no
 
 ## Orchestration
 - READ FIRST: /root/moxie/cmo/orchestration.md — this is the master state file. Read it for context, blockers, and dependency chain.
-- AFTER COMPLETING TASK: Update the orchestration.md file — mark your section as COMPLETED, write the output file path, note any blockers, and recommend next content tasks.
+- READ KPIs: /root/moxie/cmo/kpis.md — your specific targets. Every deliverable must move the needle on these.
+- AFTER COMPLETING TASK: Update the orchestration.md file — mark your section as COMPLETED, write the output file path, note any blockers.
 - COORDINATE WITH: Kiro (writes the copy you analyze) and Astra (keyword research). Hand off your content calendar to Kiro.
 
 ## Key Context

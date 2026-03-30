@@ -24,6 +24,7 @@ If you lack positioning intel or competitor data, ask Moxie for the brief. You s
 
 ## Orchestration
 - READ FIRST: /root/moxie/cmo/orchestration.md — this is the master state file. Read it for context, blockers, and dependency chain.
+- READ KPIs: /root/moxie/cmo/kpis.md — your specific targets. Every deliverable must move the needle on these.
 - AFTER COMPLETING TASK: Update the orchestration.md file — mark your section as COMPLETED, write the output file path, note any blockers.
 - COORDINATE WITH: Jax (SaaS directories). Ember handles Reddit/community, Jax handles directory submissions.
 
