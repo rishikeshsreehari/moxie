@@ -1,15 +1,35 @@
 # FormBeep Competitors
 
-Status: queued for deeper analysis
-Last updated: 2026-03-30
+Status: in-progress
+Last updated: 2026-03-31
 
-## To analyze
-1. Beepmate
-   - URL: https://beepmate.io
-   - Edge to investigate: WordPress distribution/community presence
-   - Reddit: https://www.reddit.com/user/adambengur/
+## Direct / WhatsApp-specific
+- Beepmate — https://beepmate.io
+  - Likely wedge: WordPress distribution
+- Web2Phone — https://web2phone.co.uk
+  - Likely wedge: simple form-to-WhatsApp promise
+- WANotifier (WordPress WhatsApp integrations) — https://wanotifier.com/
+  - Wedge: deep WordPress integration pages + CF7/WPForms specific guides
 
-2. Web2Phone
-   - URL: https://web2phone.co.uk
-   - Signal to investigate: reportedly 75 free signups, 0 paid
-   - Reddit: https://www.reddit.com/user/ConferenceOnly1415/
+## Form backend competitors (form → email/webhook/integrations)
+- Web3Forms — Slack notifications content + form backend
+- Formspree — classic form backend; often used as "just handle submissions"
+- Getform — form backend + webhooks/integrations
+- Basin — form backend
+
+## Automation substitutes ("why pay FormBeep")
+- Zapier
+- Make
+- n8n
+- Albato
+- Relay.app
+
+## Keyword/SEO observation
+Search intent clusters that matter most:
+- platform + outcome ("webflow whatsapp form", "wordpress contact form whatsapp", "webflow webhook whatsapp")
+- comparison/alternatives ("vs Zapier", "without Zapier", "zapier alternative webhooks")
+
+## Next research steps
+- Capture each competitor’s pricing, setup steps, and primary CTA.
+- Identify 3 keywords each competitor obviously targets.
+- Produce a one-page positioning gap: where FormBeep is uniquely faster/simpler + more reliable (logs/retries).
