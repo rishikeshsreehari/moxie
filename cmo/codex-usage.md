@@ -7,10 +7,10 @@ Status: active
 Track manual Codex usage snapshots so Moxie can estimate burn rate, avoid running out of usage, and adjust work intensity.
 
 ## Latest snapshot
-- Timestamp (GST): 2026-03-30 18:45
-- 5-hour remaining: 33%
-- 5-hour reset: 10:26 PM
-- Weekly remaining: 80%
+- Timestamp (GST): 2026-03-31 01:26
+- 5-hour remaining: 5%
+- 5-hour reset: 3:26 AM
+- Weekly remaining: 42%
 - Weekly reset: Apr 6, 2026 5:26 PM
 - Code review remaining: 100%
 - Credits remaining: 0
