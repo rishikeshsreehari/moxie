@@ -9,7 +9,7 @@ Last updated: 2026-03-30
 - Storage: machine git credentials (not committed to repo).
 
 ## Analytics
-- Umami credentials stored in root .env
+- Umami API key: stored in /opt/data/.env as UMAMI_API_KEY (shared across products)
 - Search Console service account stored in root secrets/
 
 ## Founder-updated business metrics

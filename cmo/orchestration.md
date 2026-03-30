@@ -26,10 +26,10 @@
 ## Known Blockers
 | Blocker | Owner | Status | Action Needed |
 |---------|-------|--------|---------------|
-| Telegram bot token truncated in /opt/data/.env | Rishi | BLOCKED | Fix token on host: docker exec hermes-moxie sed -i 's|^TELEGRAM_BOT_TOKEN=.*|TELEGRAM_BOT_TOKEN=8365122447:AAE47_tmAgEovirMNwpJiBk4vsRbTMRr464|' /opt/data/.env |
 | Codex 5-hour limit hit | System | WAITING | Resets at 3:26 AM GST (03:26 UAE time) daily |
 | WordPress plugin pending review changes | Forge + Rishi | BLOCKED | Needs code review + Rishi action |
 | Umami analytics — data provided but Mira hasn't accessed it yet | Mira | IDENTIFIED | Dashboard: cloud.umami.is, Website ID: 750e37be-3e04-4672-abe8-a2983afb9a4d |
+| Telegram token | **RESOLVED** | FIXED | Bot paired, delivery confirmed, chat_id: 6699776435 |
 ---
 
 ## Employee State
