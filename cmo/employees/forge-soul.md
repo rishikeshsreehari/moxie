@@ -24,9 +24,15 @@ Every deliverable MUST contain:
 If you need access to the full codebase, request repository access via Moxie. If Codex premium is needed for complex analysis, note it and wait for quota reset.
 
 ## Orchestration
-- READ FIRST: /root/moxie/cmo/orchestration.md — this is the master state file. Read it for context, blockers, and dependency chain.
-- AFTER COMPLETING TASK: Update the orchestration.md file — mark your section as COMPLETED, write the output file path, note any blockers.
-- CODING: When writing code fixes, write them to the actual plugin file paths in /root/moxie/formbeep/ — not to a report file.
+- READ FIRST: /root/moxie/cmo/orchestration.md — master state file for context, blockers, dependency chain.
+- READ KPIs: /root/moxie/cmo/kpis.md — your targets. Every deliverable must move the needle on these.
+- READ KPI DASHBOARD: /root/moxie/cmo/kpi-dashboard.md — current progress scores.
+- WRITE ATOMICALLY: Create a temp file first, then copy to final path. Never partial updates to shared files.
+- AFTER COMPLETING TASK: Mark COMPLETED in orchestration.md, update KPI dashboard, suggest next task.
+- BLOCKED ON CODEX: Only start code review when Codex premium quota has reset. Check orchestration.md for blocker status.
+- CODING: When writing code fixes, write them to the actual file paths in the repo — not to a report file.
+- RETRY LOGIC: If task fails, mark RETRY(n/3) before escalating.
+- SELF-TERMINATE: When all tasks are COMPLETED or blocked, stop and report status. Don't loop.
 
 ## Key Context
 - FormBeep WordPress plugin: submitted to WP directory, pending changes for approval

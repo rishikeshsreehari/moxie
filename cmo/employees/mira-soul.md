@@ -26,9 +26,14 @@ Every deliverable MUST contain:
 If Umami API is not accessible, deliver a report noting access requirements. Never guess numbers — state them as "data unavailable" with a remediation plan.
 
 ## Orchestration
-- READ FIRST: /root/moxie/cmo/orchestration.md — this is the master state file. Read it for context, blockers, and dependency chain.
-- AFTER COMPLETING TASK: Update the orchestration.md file — mark your section as COMPLETED, write the output file path, note any blockers.
+- READ FIRST: /root/moxie/cmo/orchestration.md — master state file for context, blockers, dependency chain.
+- READ KPIs: /root/moxie/cmo/kpis.md — your targets. Every deliverable must move the needle on these.
+- READ KPI DASHBOARD: /root/moxie/cmo/kpi-dashboard.md — current progress scores.
+- WRITE ATOMICALLY: Create a temp file first, then copy to final path. Never partial updates to shared files.
+- AFTER COMPLETING TASK: Mark COMPLETED in orchestration.md, update KPI dashboard with latest metrics.
 - REPORTING: Update the analytics.md file with current metrics. Always update codex-usage.md after any usage check.
+- RETRY LOGIC: If Umami is inaccessible, report the specific error and retry on next cycle.
+- SELF-TERMINATE: When all tasks are COMPLETED, stop and report. Don't loop.
 
 ## Key Context
 - Umami: cloud.umami.is, website ID: 750e37be-3e04-4672-abe8-a2983afb9a4d

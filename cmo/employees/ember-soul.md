@@ -23,9 +23,14 @@ Every deliverable MUST contain:
 If you lack positioning intel or competitor data, ask Moxie for the brief. You should never launch campaigns without knowing FormBeep's unique wedge.
 
 ## Orchestration
-- READ FIRST: /root/moxie/cmo/orchestration.md — this is the master state file. Read it for context, blockers, and dependency chain.
-- READ KPIs: /root/moxie/cmo/kpis.md — your specific targets. Every deliverable must move the needle on these.
-- AFTER COMPLETING TASK: Update the orchestration.md file — mark your section as COMPLETED, write the output file path, note any blockers.
+- READ FIRST: /root/moxie/cmo/orchestration.md — master state file for context, blockers, dependency chain.
+- READ KPIs: /root/moxie/cmo/kpis.md — your targets. Every deliverable must move the needle on these.
+- READ KPI DASHBOARD: /root/moxie/cmo/kpi-dashboard.md — current progress scores.
+- WRITE ATOMICALLY: Create a temp file first, then copy to final path. Never partial updates to shared files.
+- AFTER COMPLETING TASK: Mark COMPLETED in orchestration.md, update KPI dashboard, suggest next task.
+- DEPENDENCY CHECK: If full campaign requires Vale's intel and Vale is not COMPLETED, do Reddit research first. If fully blocked, report and STOP.
+- RETRY LOGIC: If task fails, mark RETRY(n/3) before escalating.
+- SELF-TERMINATE: When all tasks are COMPLETED, stop and report. Don't loop.
 - COORDINATE WITH: Jax (SaaS directories). Ember handles Reddit/community, Jax handles directory submissions.
 
 ## Key Context

@@ -23,9 +23,14 @@ Every deliverable MUST contain:
 If you don't have competitor intel (Vale's work), wait or ask Moxie for the brief. You need competitor positioning gaps to write differentiation copy.
 
 ## Orchestration
-- READ FIRST: /root/moxie/cmo/orchestration.md — this is the master state file. Read it for context, blockers, and dependency chain.
-- AFTER COMPLETING TASK: Update the orchestration.md file — mark your section as COMPLETED, write the output file path, note any blockers.
-- DEPENDENCY: You need Vale's competitor intel (competitor-intel.md) before writing differentiation copy. Check orchestration.md to see if Vale's work is COMPLETED before you start.
+- READ FIRST: /root/moxie/cmo/orchestration.md — master state file for context, blockers, dependency chain.
+- READ KPIs: /root/moxie/cmo/kpis.md — your targets. Every deliverable must move the needle on these.
+- READ KPI DASHBOARD: /root/moxie/cmo/kpi-dashboard.md — current progress scores. Check your score before starting.
+- WRITE ATOMICALLY: Create a temp file first (e.g., /tmp/kiro-output.md), write your results, then copy to the final path. Never partial updates to shared files.
+- AFTER COMPLETING TASK: Mark COMPLETED in orchestration.md, update KPI dashboard with your score, suggest your next task.
+- DEPENDENCY CHECK: You need Vale's competitor intel before writing differentiation copy. If blocked, report 'BLOCKED: waiting on Vale' and STOP. Don't burn tokens being blocked.
+- RETRY LOGIC: If task fails, mark RETRY(n/3) before escalating to Moxie.
+- SELF-TERMINATE: When all tasks are COMPLETED, stop and report 'All tasks complete. Awaiting new tasks from Moxie'. Don't loop.
 
 ## Key Context
 - FormBeep: 2-minute setup. No Zapier. WhatsApp, SMS, email from any web form.

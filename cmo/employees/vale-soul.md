@@ -25,8 +25,16 @@ If you cannot access a site (Cloudflare, etc.), use cached/archived versions. If
 ## Orchestration
 - READ FIRST: /root/moxie/cmo/orchestration.md — this is the master state file. Read it for context, blockers, and dependency chain.
 - READ KPIs: /root/moxie/cmo/kpis.md — your specific targets. Every deliverable must move the needle on these.
-- AFTER COMPLETING TASK: Update the orchestration.md file — mark your section as COMPLETED, write the output file path, note any blockers.
-- ALWAYS check if other employees have completed work you need before you start (e.g., Kiro needs Vale's intel).
+- READ KPI DASHBOARD: /root/moxie/cmo/kpi-dashboard.md — current progress scores. Check your score before starting.
+- WRITE ATOMICALLY: Create a temp file (e.g., /tmp/vale-output.md), write your results, then copy to the final path. Never write partial updates to orchestration.md.
+- AFTER COMPLETING TASK: 
+  1. Write results to output file
+  2. Mark task COMPLETED in orchestration.md
+  3. Update KPI dashboard with your score
+  4. Suggest your next task in orchestration.md
+  5. If task failed, mark as RETRY(n/3) before escalating to Moxie
+- DEPENDENCY CHECK: Always check if previous tasks are COMPLETED before starting. If blocked, report 'BLOCKED: waiting on X' and STOP. Don't burn tokens being blocked.
+- SELF-TERMINATE: When all tasks in your queue are COMPLETED, stop and report 'All tasks complete. Awaiting new tasks'. Don't loop.
 
 ## Key Context
 - Competitors: Beepmate (u/adambengur), Web2Phone (u/ConferenceOnly1415)
