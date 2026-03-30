@@ -1,47 +1,18 @@
-# FormBeep Monitoring Cron Plan
+# FormBeep — Cron Plan (Moxie automation)
 
-Last updated: 2026-03-30
-Status: draft
+## Daily
+- Pull Umami top events/pages (if API access is configured) OR validate script presence + event wiring in code.
+- Check for new plugin/integration issues (WordPress/Framer/Webflow folders for TODOs).
 
-## Goal
-Run recurring evaluations of traffic and Google search performance so Moxie can track momentum and spot channel changes early.
+## Weekly
+- SEO review (due if `docs/SEO-STRATEGY.md` next-review date is past):
+  - add 2 net-new pages
+  - refresh internal links
+  - add FAQ schema to troubleshooting
 
-## Intended monitoring
-### Daily traffic check
-Inputs
-- Umami traffic metrics
-- top pages
-- source breakdown
-- sign-up intent events if available
+## Monthly
+- Update ICP + objections list
+- Publish 1 major “hub” page (e.g., /whatsapp-form-notifications)
 
-Outputs
-- daily traffic summary
-- changes vs previous period
-- anomalies/opportunities
-
-### Twice-weekly search check
-Inputs
-- Google Search Console clicks
-- impressions
-- CTR
-- average position
-- top queries/pages/countries
-
-Outputs
-- emerging queries
-- falling pages
-- opportunities to publish or refresh pages
-
-### Weekly growth report
-Inputs
-- Umami + Search Console + notable product changes
-
-Outputs
-- KPI scorecard
-- traffic trend
-- acquisition insights
-- next-week priorities
-
-## Current status
-- Daily founder check-in for free/paid counts is scheduled every 24 hours via cron job `formbeep-daily-user-count-checkin`.
-- Traffic/search monitoring crons should be added next now that Umami and GSC are validated.
+## Compatibility
+- This folder is symlinked to `/root/moxie/products/formbeep`.

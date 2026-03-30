@@ -1,38 +1,17 @@
-# Recurring Crons
+# Recurring Crons (Moxie → FormBeep)
 
-Last updated: 2026-03-30
-Status: active
+## Daily (15 min)
+- Check signup + activation funnel events (Umami events + app-side metrics if available).
+- Review support inbox / failed webhook logs if wired.
 
-## Scheduled jobs
+## Weekly (60–90 min)
+- SEO review: indexing, top pages, CTR, internal linking gaps.
+- Publish 1–2 pages targeting high-intent keywords (integration + competitor compare).
+- Partnership/outreach batch: 20 targets (agencies, directories, plugin roundups).
 
-1. formbeep-hourly-heartbeat
-- Schedule: every hour
-- Purpose: Moxie wakes up, checks priorities/status/signals, sees if subagents need help, and reports anything important to Rishi
+## Monthly
+- Update ICP and positioning based on who converted.
+- Update pricing/plan narrative page and objections.
 
-2. formbeep-daily-user-count-checkin
-- Schedule: every 24 hours
-- Purpose: ask Rishi for latest free-user and paid-user counts until Cloudflare access is connected
-
-3. formbeep-daily-traffic-check
-- Schedule: daily at 10:00 UTC
-- Purpose: pull Umami traffic, top pages, and signup-event movement for the last 24h vs previous 24h
-
-4. formbeep-search-check
-- Schedule: Mondays and Thursdays at 10:00 UTC
-- Purpose: pull Google Search Console search trends for the last 7d vs previous 7d
-
-5. formbeep-weekly-growth-review
-- Schedule: Mondays at 11:00 UTC
-- Purpose: produce a weekly KPI and growth review with priorities
-
-## One-shot background work queued
-1. formbeep-background-opportunity-scan
-- Schedule: once in 30 minutes
-- Purpose: deep web research to find high-leverage growth opportunities
-
-2. formbeep-background-competitor-and-copy-review
-- Schedule: once in 45 minutes
-- Purpose: analyze competitors plus FormBeep repo/site copy and report recommendations
-
-## Operating note
-Heavy research belongs in one-shot or periodic background jobs, not in live chat. The hourly heartbeat is for orchestration, prioritization, and escalation — not deep competitor analysis every hour.
+## Notes
+- Canonical workspace: `/root/moxie/formbeep/`.

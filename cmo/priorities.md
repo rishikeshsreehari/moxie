@@ -1,9 +1,17 @@
-# CMO Priorities
+# CMO Priorities (FormBeep)
 
-Last updated: 2026-03-30
+## 30-day outcomes (north star)
+- **10 paid customers**
+- **$100 MRR**
+- More English-speaking traffic and trials from ICP segments likely to pay.
 
-1. Review outputs from the queued opportunity scan and competitor/copy review
-2. Turn those findings into a concrete 30-day execution plan for FormBeep
-3. Identify top acquisition wedges for agencies and lead-heavy SMBs
-4. Improve positioning, trust, and integration-led acquisition assets
-5. Monitor hourly for anything urgent, blocked, or high-priority
+## Order of operations
+1. **Distribution > features**: ship marketplace + directory distribution assets first.
+2. **Activation**: shorten time-to-first-WhatsApp alert; reduce setup friction.
+3. **SEO moat**: platform-specific “whatsapp form integration” guides + comparison pages.
+4. **Partnerships**: agencies/freelancers + form builders.
+
+## This week’s focus
+- WordPress plugin: unblock listing/publishing (address reviewer feedback if any).
+- Comparison pages: publish 2 (Zapier, Make) and link from docs + landing.
+- Setup CTA: ensure every high-intent page has a single primary CTA to signup.
