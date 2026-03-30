@@ -1,17 +1,39 @@
-# Recurring Crons (Moxie → FormBeep)
+# Recurring Crons (Moxie Ops)
 
-## Daily (15 min)
-- Check signup + activation funnel events (Umami events + app-side metrics if available).
-- Review support inbox / failed webhook logs if wired.
+This file is the source of truth for what should be automated + where results should be delivered.
 
-## Weekly (60–90 min)
-- SEO review: indexing, top pages, CTR, internal linking gaps.
-- Publish 1–2 pages targeting high-intent keywords (integration + competitor compare).
-- Partnership/outreach batch: 20 targets (agencies, directories, plugin roundups).
+Delivery target:
+- Telegram DM: 6699776435
 
-## Monthly
-- Update ICP and positioning based on who converted.
-- Update pricing/plan narrative page and objections.
+## Heartbeat (2x/day)
+- Summary of: traffic delta, signups/paid delta, blockers, next 1–3 actions.
 
-## Notes
-- Canonical workspace: `/root/moxie/formbeep/`.
+## FormBeep
+
+### Daily traffic check (09:00 local)
+- Pull last 24h visitors/pageviews + top pages.
+- Compare to previous 24h.
+- Flag anomalies.
+
+### Daily search/SEO check (11:00 local)
+- Track a small set of money keywords:
+  - webflow whatsapp form
+  - wordpress whatsapp form
+  - framer whatsapp form
+  - contact form to whatsapp
+  - form submission webhook
+- Note new pages to create.
+
+### Weekly growth review (Sun)
+- What shipped
+- What converted
+- Biggest bottleneck
+- Next week’s bet
+
+## Implementation notes
+- Cron runner must be able to read:
+  - /root/moxie/cmo/*
+  - /root/moxie/products/formbeep/*
+- In this environment, HQ repo lives at /root/moxie_hq.
+  - Ensure /root/moxie/cmo -> /root/moxie_hq/cmo
+  - Ensure /root/moxie/products -> /root/moxie_hq/products
