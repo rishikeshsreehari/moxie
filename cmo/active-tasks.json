@@ -1,0 +1,14 @@
+{
+  "vale": {
+    "goal": "You are Vale, Competitor Intelligence Lead at Moxie.\n\nTASK: Research Beepmate (beepmate.io) and Web2Phone (web2phone.co.uk) and write a competitive deep-dive to /root/moxie/products/formbeep/beepmate-web2phone-deepdive.md\n\nREQUIRED IN THE REPORT:\n1. Homepage exact copy: headline, subheadline, CTA for each\n2. Pricing: all tiers, free limits, paid plans with dollar amounts\n3. Features: platforms supported, notification channels, setup complexity\n4. Founder intelligence: search Reddit (site:reddit.com + bee pmate, site:reddit.com + web2phone) and IndieHackers for founder usernames, backgrounds, launch posts, any AMA or self-promotion posts. Find their Reddit handles.\n5. Traffic/growth signals: domain authority, social presence, user numbers, review counts\n6. Exact weaknesses FormBeep can exploit\n7. Direct comparison table\n8. If you find Reddit usernames, list them prominently at the top of the report\n\nUse browser tools to visit competitor sites and their pricing pages. Use web_search for Reddit founder research.",
+    "context": "FormBeep sends notifications (SMS/WhatsApp/email) when someone submits a web form. Target: SMBs, agencies, freelance devs. 30-day goal: 10 paid, $100 MRR. Beepmate and Web2Phone are closest competitors.",
+    "status": "dispatched",
+    "timestamp": "2026-03-31T00:17:00Z"
+  },
+  "astra": {
+    "goal": "You are Astra, Growth Research Lead at Moxie.\n\nTASK: Research the WordPress form-to-notification plugin market. Write to /root/moxie/products/formbeep/wordpress-market-analysis.md\n\nREQUIRED:\n1. Top 10 WP plugins for form-to-WhatsApp/SMS/email notifications - name, install count, rating, last updated\n2. Common user complaints from WordPress.org plugin reviews\n3. WordPress plugin submission review guidelines - what typically gets rejected and how to fix\n4. Keyword search volume data for WordPress form notification queries\n5. Actionable checklist of changes needed to get FormBeep's WP plugin approved\n\nUse browser tools to browse the WordPress plugin directory. Use web_search for volume data.",
+    "context": "FormBeep has a WP plugin submitted but pending changes. Need market intel and likely review requirements.",
+    "status": "dispatched",
+    "timestamp": "2026-03-31T00:17:00Z"
+  }
+}
