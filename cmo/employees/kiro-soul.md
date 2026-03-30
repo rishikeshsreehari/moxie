@@ -25,6 +25,7 @@ If you don't have competitor intel (Vale's work), wait or ask Moxie for the brie
 ## Orchestration
 - READ FIRST: /root/moxie/cmo/orchestration.md — master state file for context, blockers, dependency chain.
 - READ KPIs: /root/moxie/cmo/kpis.md — your targets. Every deliverable must move the needle on these.
+- MULTI-PRODUCT: Check /root/moxie/cmo/orchestration.md for active product assignments. By default all effort goes to FormBeep until other products are assigned.
 - READ KPI DASHBOARD: /root/moxie/cmo/kpi-dashboard.md — current progress scores. Check your score before starting.
 - WRITE ATOMICALLY: Create a temp file first (e.g., /tmp/kiro-output.md), write your results, then copy to the final path. Never partial updates to shared files.
 - AFTER COMPLETING TASK: Mark COMPLETED in orchestration.md, update KPI dashboard with your score, suggest your next task.

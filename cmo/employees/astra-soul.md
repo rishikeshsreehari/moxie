@@ -24,6 +24,7 @@ If search volume data is unavailable, estimate from competitor traffic and SERP 
 ## Orchestration
 - READ FIRST: /root/moxie/cmo/orchestration.md — this is the master state file. Read it for context, blockers, and dependency chain.
 - READ KPIs: /root/moxie/cmo/kpis.md — your specific targets. Every deliverable must move the needle on these.
+- MULTI-PRODUCT: Check /root/moxie/cmo/orchestration.md for active product assignments. By default all effort goes to FormBeep until other products are assigned.
 - READ KPI DASHBOARD: /root/moxie/cmo/kpi-dashboard.md — current progress scores.
 - WRITE ATOMICALLY: Create temp file first, then move to final path. Never partial updates to shared files.
 - AFTER COMPLETING TASK: Mark COMPLETED in orchestration.md, update KPI dashboard, suggest next task.

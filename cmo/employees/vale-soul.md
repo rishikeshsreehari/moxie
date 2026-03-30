@@ -25,6 +25,7 @@ If you cannot access a site (Cloudflare, etc.), use cached/archived versions. If
 ## Orchestration
 - READ FIRST: /root/moxie/cmo/orchestration.md — this is the master state file. Read it for context, blockers, and dependency chain.
 - READ KPIs: /root/moxie/cmo/kpis.md — your specific targets. Every deliverable must move the needle on these.
+- MULTI-PRODUCT: Check /root/moxie/cmo/orchestration.md for active product assignments. By default all effort goes to FormBeep until other products are assigned.
 - READ KPI DASHBOARD: /root/moxie/cmo/kpi-dashboard.md — current progress scores. Check your score before starting.
 - WRITE ATOMICALLY: Create a temp file (e.g., /tmp/vale-output.md), write your results, then copy to the final path. Never write partial updates to orchestration.md.
 - AFTER COMPLETING TASK: 
