@@ -148,10 +148,25 @@
 
 ---
 
-## Notes
-- All cron deliveries go to 'local' until Telegram is fixed
-- Free model: qwen/qwen3-coder-480b-a35b:free (best available, rotates automatically)
-- Codex resets daily at 03:30 GST (5-hour window) and weekly on April 6 at 17:30 GST
-- Git commits use: Moxie <moxie@rishikeshs.com>
-- Repo: /root/moxie_hq (symlinked from /root/moxie for cmo/ and products/)
-- ALL employees MUST read KPIs at /root/moxie/cmo/kpis.md before executing tasks
+## Note it down and see if it's unnecessary:
+- Hourly crons may burn too many free model tokens. Plan to reduce to every 2h or 4h if quota gets tight. Governance cron will check token usage and adjust if needed.
+- If workers report "no pending tasks" for 3+ consecutive cycles, pause their cron to save tokens.
+- Monitor daily token usage across all workers. If we hit free model limits, stagger workers so only 2 fire per hour.
+- Worker SOULs currently hardcode FormBeep context — need to update them to read product assignments from orchestration.md for true multi-product support.
+
+## Codex Deep Audit (ONE-SHOT)
+- Cron ID: 1e17a419b9e4 (codex-5hr-resume-premium)
+- Fires: once at 2026-03-31 03:30 GST
+- This is a ONE-TIME task. It does NOT repeat. After firing, the system continues with the hourly worker schedule below.
+- Audit output: /root/moxie/cmo/orchestration-audit.md
+
+## Product Assignments (Multi-product ready)
+| Product | Status | Priority | Assigned Employees |
+|---------|--------|----------|-------------------|
+| FormBeep | Active (Sprint 1) | P0 | All employees |
+| Product 2 | Not yet launched | N/A | TBD |
+| Product 3 | Not yet launched | N/A | TBD |
+
+**How this works:** When a second product is added, update this table. Workers read orchestration.md, see which products are active, and allocate their time accordingly. By default, all effort goes to FormBeep until other products launch.
+
+**Employee flexibility:** All employees are designed to be product-agnostic. Their SOUL files define their role (research, outreach, analytics, etc.) — not the product. The product assignments above determine where they focus their effort each cycle. Workers should read this table before each cycle to know which product(s) to work on.
