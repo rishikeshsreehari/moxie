@@ -150,3 +150,4 @@
 - Codex resets daily at 03:30 GST (5-hour window) and weekly on April 6 at 17:30 GST
 - Git commits use: Moxie <moxie@rishikeshs.com>
 - Repo: /root/moxie_hq (symlinked from /root/moxie for cmo/ and products/)
+- ALL employees MUST read KPIs at /root/moxie/cmo/kpis.md before executing tasks
