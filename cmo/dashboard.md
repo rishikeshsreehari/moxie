@@ -1,8 +1,11 @@
 # CMO Dashboard
 
-Status: initializing
+Status: active
+Last updated: 2026-03-30
 
 Active products:
-- product-1: pending details
-- product-2: pending details
-- product-3: pending details
+- FormBeep: onboarding in progress
+
+Operating notes:
+- Maintain a resources inventory for each product with last status checks.
+- Inspect public assets/docs/repos before asking the founder for facts already available.
