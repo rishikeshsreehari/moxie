@@ -1,10 +1,16 @@
 # Moxie CMO Orchestration State — FormBeep
-# Last updated: 2026-03-31T00:32:00Z
+# Last updated: 2026-03-31T00:48:00Z
 # 
 # HOW THIS WORKS:
 # Every cron job reads this file for context. When done, it updates relevant sections.
 # Moxie (CMO) reviews this file and decides next actions.
 # No manual prompt updates needed — agents read state from here.
+# 
+# SYSTEM IMPROVEMENTS (v2):
+# - Atomic state updates: workers write to tmp files first, then rename
+# - Retry logic: failed tasks get marked RETRY(1/3) before escalation
+# - Task prioritization: P0 (blockers), P1 (revenue), P2 (growth), P3 (ops)
+# - KPI tracking: every task completion updates KPI progress metrics
 
 ---
 
@@ -21,11 +27,9 @@
 | Blocker | Owner | Status | Action Needed |
 |---------|-------|--------|---------------|
 | Telegram bot token truncated in /opt/data/.env | Rishi | BLOCKED | Fix token on host: docker exec hermes-moxie sed -i 's|^TELEGRAM_BOT_TOKEN=.*|TELEGRAM_BOT_TOKEN=8365122447:AAE47_tmAgEovirMNwpJiBk4vsRbTMRr464|' /opt/data/.env |
-| GitHub write PAT broken (403 on push) | Rishi | BLOCKED | Update MOXIE_GITHUB_WRITE_PAT in /opt/data/.env with write-access PAT |
-| Codex 5-hour limit hit | System | WAITING | Resets at 3:26 AM GST (03:30 UAE time) daily |
+| Codex 5-hour limit hit | System | WAITING | Resets at 3:26 AM GST (03:26 UAE time) daily |
 | WordPress plugin pending review changes | Forge + Rishi | BLOCKED | Needs code review + Rishi action |
-| Umami analytics — no one reviewing data | Mira | IDENTIFIED | Needs dashboard access/API key |
-
+| Umami analytics — data provided but Mira hasn't accessed it yet | Mira | IDENTIFIED | Dashboard: cloud.umami.is, Website ID: 750e37be-3e04-4672-abe8-a2983afb9a4d |
 ---
 
 ## Employee State

@@ -12,6 +12,7 @@
 | Blocker resolution time | < 2h to flag, < 24h Rishi response | Unblocking is my job |
 | Dispatch latency | < 4h from task completion to next dispatch | No idle time |
 | GitHub commits/day | 1-2 meaningful commits per day | Work must be versioned |
+**Live KPI dashboard:** /root/moxie/cmo/kpi-dashboard.md (updated every 4h, all worker scores tracked here)
 
 ---
 
