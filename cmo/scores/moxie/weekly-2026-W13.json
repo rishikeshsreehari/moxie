@@ -1,0 +1,21 @@
+{
+  "period": "2026-03-30 to 2026-03-31",
+  "scored_at": "2026-03-31T22:50:44.824976",
+  "metrics": {
+    "tasks_completed": 16,
+    "blockers_resolved": 1,
+    "open_issues": 8
+  },
+  "scores": {
+    "throughput": 5,
+    "outcome_progress": 3,
+    "signal_quality": 3,
+    "token_efficiency": 4,
+    "reliability": 4,
+    "modularity": 4
+  },
+  "overall": 3.8,
+  "alerts": [
+    "8 open issues \u2014 Rishi attention needed"
+  ]
+}

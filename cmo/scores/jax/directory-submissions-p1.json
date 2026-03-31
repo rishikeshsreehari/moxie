@@ -1,0 +1,18 @@
+{
+  "employee": "jax",
+  "task_id": "directory-submissions-p1",
+  "output_file": "/root/moxie/products/formbeep/directory-submissions-p1.md",
+  "scored_at": "2026-03-31T22:49:48.218993",
+  "auto_fail": false,
+  "dimensions": {
+    "output_completeness": 5,
+    "business_impact": 3,
+    "accuracy_evidence": 5,
+    "speed_cycle": 3,
+    "autonomy": 3,
+    "reusability": 5,
+    "communication": 1
+  },
+  "overall_score": 3.6,
+  "improvement_focus": "Communication Quality"
+}

@@ -67,9 +67,10 @@
 ### Kiro — Conversion Copy Lead
 - SOUL: /root/moxie/cmo/employees/kiro-soul.md
 - Output dir: /root/moxie/products/formbeep/copy/
-- Status: IN_PROGRESS
-- Current task: Draft platform "money pages" (WordPress form→WhatsApp, Webflow form→WhatsApp, Framer form notifications) + comparison page (FormBeep vs Web2Phone)
-- Last output: /root/moxie/products/formbeep/copy/blog-posts-v1.md
+- Status: COMPLETED
+- Current task: Draft platform "money pages" (WordPress form→WhatsApp, Webflow form→WhatsApp, Framer form notifications) + comparison page (FormBeep vs Web2Phone) — **COMPLETED** (2026-03-31)
+- Last output: /root/moxie/products/formbeep/copy/money-pages-v1.md
+- Next task after completion: Await Rishi review + deploy to site; begin next copy assignment from content calendar
 - Blockers: None
 
 ### Ember — Outreach & Distribution Lead
@@ -215,11 +216,46 @@
 
 ---
 
-## Note it down and see if it's unnecessary:
-- Hourly crons may burn too many free model tokens. Plan to reduce to every 2h or 4h if quota gets tight. Governance cron will check token usage and adjust if needed.
-- If workers report "no pending tasks" for 3+ consecutive cycles, pause their cron to save tokens.
-- Monitor daily token usage across all workers. If we hit free model limits, stagger workers so only 2 fire per hour.
-- Worker SOULs are company-framed and must read product assignments from orchestration.md before each cycle.
+## Rubric & Scoring System (NEW — Auto-wired)
+**Every completed task is automatically scored against the Employee Rubric.**
+
+### How it works:
+1. Task completes → Employee updates orchestration.md
+2. `task-scorer.py` auto-runs: scores 7 dimensions (1-5), weighted overall
+3. Scorecard saved to: `/root/moxie_hq/cmo/scores/{employee}/{task_id}.md`
+4. SOUL.md auto-updated with: Recent Scores table + Current Improvement Focus
+5. "Dreaming" reflection triggered: employee reflects on what worked/didn't
+
+### Scoring Dimensions (weights):
+- Output completeness: 20%
+- Business impact: 25% (30% for Copy/Distribution/Paid)
+- Accuracy & evidence: 15% (25% for Analytics)
+- Speed/cycle time: 10%
+- Autonomy & unblockability: 10% (15% for Distribution)
+- Reusability/systemization: 10%
+- Communication quality: 10%
+
+### Auto Pass/Fail Gates:
+- FAIL: No output file written
+- FAIL: Claims "working" without verification
+- FAIL: Violates scope (pushes to product repo)
+
+### CMO Self-Scoring:
+- Weekly self-assessment against CMO Orchestration Rubric
+- Saved to: `/root/moxie_hq/cmo/scores/moxie/weekly-{date}.md`
+- Dimensions: Throughput, Outcome progress, Signal quality, Token efficiency, Reliability, Modularity
+
+### Tools:
+- `python3 /root/moxie_hq/cmo/tools/task-scorer.py <employee> <task_id> <output_file>`
+- `python3 /root/moxie_hq/cmo/tools/token-optimizer.py [--apply]`
+- `python3 /root/moxie_hq/cmo/tools/cmo-self-score.py`
+
+## Token Optimization Rules
+- Hourly crons: **All workers currently scheduled** — monitor for idle
+- Auto-pause threshold: 6+ hours idle (no tasks completed)
+- Governance cron checks usage daily; pauses idle workers automatically
+- If free model quota tight: stagger to 2 workers per hour max
+- Worker SOULs are company-framed and must read product assignments from orchestration.md before each cycle
 
 ## Codex Deep Audit (ONE-SHOT)
 - Previous one-shot job `codex-5hr-resume-premium` (Cron ID: 1e17a419b9e4) is **no longer present** in the live cron registry (treat as completed/retired).

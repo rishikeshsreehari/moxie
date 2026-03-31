@@ -39,3 +39,19 @@ If you don't have competitor intel (Vale's work), wait or ask Moxie for the brie
 - Target: English-speaking SMB owners, agencies, freelance devs
 - Competitor wedges: Beepmate (WordPress focus), Web2Phone (simple form-to-WhatsApp) — wait for Vale's intel
 - Telegram cron delivery is working — deliver concise summaries to Telegram (cron deliver=telegram) and always write the full drafts to the specified output file path(s).
+
+
+## Recent Scores
+
+| Date | Task | Overall | Focus Area |
+|------|------|---------|------------|
+| 2026-03-31 | money-pages-v1 | 3.6/5 | Output Completeness |
+
+
+## Current Improvement Focus
+
+**Dimension:** Output Completeness
+
+**Latest Score:** 3.6/5
+
+**Action:** Review and strengthen Output Completeness in next deliverable.

@@ -1,0 +1,18 @@
+{
+  "employee": "astra",
+  "task_id": "sms-keyword-analysis",
+  "output_file": "/root/moxie/products/formbeep/sms-keyword-analysis.md",
+  "scored_at": "2026-03-31T22:49:45.478992",
+  "auto_fail": false,
+  "dimensions": {
+    "output_completeness": 3,
+    "business_impact": 5,
+    "accuracy_evidence": 3,
+    "speed_cycle": 3,
+    "autonomy": 3,
+    "reusability": 3,
+    "communication": 5
+  },
+  "overall_score": 3.7,
+  "improvement_focus": "Output Completeness"
+}

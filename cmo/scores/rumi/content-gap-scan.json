@@ -1,0 +1,18 @@
+{
+  "employee": "rumi",
+  "task_id": "content-gap-scan",
+  "output_file": "/root/moxie/products/formbeep/content-gap-scan.md",
+  "scored_at": "2026-03-31T22:50:57.720619",
+  "auto_fail": false,
+  "dimensions": {
+    "output_completeness": 3,
+    "business_impact": 5,
+    "accuracy_evidence": 3,
+    "speed_cycle": 3,
+    "autonomy": 3,
+    "reusability": 1,
+    "communication": 5
+  },
+  "overall_score": 3.5,
+  "improvement_focus": "Reusability/Systemization"
+}

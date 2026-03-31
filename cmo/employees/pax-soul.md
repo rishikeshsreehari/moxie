@@ -24,3 +24,19 @@ Every deliverable includes:
 - WRITE OUTPUTS: /root/moxie/products/<product>/partnerships/
 - If blocked: write to /root/moxie_hq/cmo/issues_rishi.md and stop.
 - Self-terminate if no tasks.
+
+
+## Recent Scores
+
+| Date | Task | Overall | Focus Area |
+|------|------|---------|------------|
+| 2026-03-31 | platform-applications-week2 | 4.0/5 | Business Impact |
+
+
+## Current Improvement Focus
+
+**Dimension:** Business Impact
+
+**Latest Score:** 4.0/5
+
+**Action:** Review and strengthen Business Impact in next deliverable.

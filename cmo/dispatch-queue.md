@@ -30,20 +30,31 @@
     30|12. [COMPLETED] Jax | (FormBeep) Begin P1 directory submissions (ProductHunt, AlternativeTo, BetaList) — full submission pack ready; actual submissions await credentials | Jax directory list COMPLETED + Rishi credentials/approval (see issues_rishi.md) | /root/moxie/products/formbeep/directory-submissions-p1.md
     31|13. [COMPLETED] Vale | (FormBeep) Monthly competitor monitoring + founder Reddit signal scan (Beepmate u/adambengur, Web2Phone u/ConferenceOnly1415): which subs + what angles worked | Initial intel COMPLETED | /root/moxie/products/formbeep/competitor-monitoring.md
     32|14. [COMPLETED] Rumi | (FormBeep) Bi-weekly content gap scan + trending topic check | Previous content COMPLETED | /root/moxie/products/formbeep/content-gap-scan.md
-    33|15. [IN_PROGRESS] Kiro | (FormBeep) Draft platform "money pages" (WordPress form→WhatsApp, Webflow form→WhatsApp, Framer form notifications) + 1 comparison page (FormBeep vs Web2Phone) | Astra keyword set COMPLETED + Kiro landing copy COMPLETED | /root/moxie/products/formbeep/copy/money-pages-v1.md
+    33|15. [COMPLETED] Kiro | (FormBeep) Draft platform "money pages" (WordPress form→WhatsApp, Webflow form→WhatsApp, Framer form notifications) + 1 comparison page (FormBeep vs Web2Phone) | Astra keyword set COMPLETED + Kiro landing copy COMPLETED | /root/moxie/products/formbeep/copy/money-pages-v1.md
     34|16. [COMPLETED] Pax | (FormBeep) P0 platform partner program outreach (Webflow, Framer, Glide, Softr, Bubble) + application copy + Bubble plugin spec | Pax targets COMPLETED | /root/moxie/products/formbeep/partnerships/platform-partner-outreach.md
 17. [COMPLETED] Pax | (FormBeep) Week 1 platform applications execution — prepared application packages for Webflow Apps, Framer Marketplace, Glide Integrations (copy, metadata, submission steps) | Pax P0 outreach COMPLETED | /root/moxie/products/formbeep/partnerships/platform-applications-week1.md
 18. [COMPLETED] Pax | (FormBeep) Week 2 submissions: Softr integration + follow up on Week 1 application reviews + assign Bubble plugin build task to Forge | Week 1 execution COMPLETED | /root/moxie/products/formbeep/partnerships/platform-applications-week2.md
     35|
     36|---
     37|
-    38|## Dispatch Rules
-    39|- Priority 1-6: Currently dispatched. Wait for completion.
-    40|- After any IN_PROGRESS task completes → check dependency chain → promote first QUEUED task with satisfied dependencies to IN_PROGRESS
-    41|- Kiro cannot start until Vale's intel is COMPLETED (needs competitor positioning gaps)
-    42|- Forge premium tasks: only run when Codex premium window is available (see orchestration.md blocker table); currently RESOLVED per orchestration.md
-    43|- Jax directory submissions cannot start until directory list COMPLETED and Rishi provides account credentials
-    44|- Ember campaign: NOW UNBLOCKED — Reddit strategy + campaign plan both COMPLETED, Vale intel COMPLETED
+## Dispatch Rules
+- Priority 1-6: Currently dispatched. Wait for completion.
+- After any IN_PROGRESS task completes → check dependency chain → promote first QUEUED task with satisfied dependencies to IN_PROGRESS
+- Kiro cannot start until Vale's intel is COMPLETED (needs competitor positioning gaps)
+- Forge premium tasks: only run when Codex premium window is available (see orchestration.md blocker table); currently RESOLVED per orchestration.md
+- Jax directory submissions cannot start until directory list COMPLETED and Rishi provides account credentials
+- Ember campaign: NOW UNBLOCKED — Reddit strategy + campaign plan both COMPLETED, Vale intel COMPLETED
+
+## Task Completion Protocol (Rubric Wired)
+When marking a task COMPLETED, the employee MUST:
+1. Write deliverable to specified output file
+2. Update orchestration.md status to COMPLETED
+3. **Auto-trigger scoring:** System runs `task-scorer.py <employee> <task_id> <output_file>`
+4. Review scorecard at `/root/moxie_hq/cmo/scores/{employee}/{task_id}.md`
+5. Complete "Dreaming" reflection: What worked? What would I change? Update SOUL.md Learnings
+6. Suggest next task based on score improvement focus
+
+**Scoring is automatic.** All deliverables graded on 7 dimensions (1-5). Scores appear in SOUL.md under ## Recent Scores.
     45|
     46|## Recurring Task Schedule
     47|| Employee | Frequency | Task |

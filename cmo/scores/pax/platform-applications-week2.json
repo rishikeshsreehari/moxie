@@ -1,0 +1,18 @@
+{
+  "employee": "pax",
+  "task_id": "platform-applications-week2",
+  "output_file": "/root/moxie/products/formbeep/partnerships/platform-applications-week2.md",
+  "scored_at": "2026-03-31T22:50:56.359603",
+  "auto_fail": false,
+  "dimensions": {
+    "output_completeness": 5,
+    "business_impact": 3,
+    "accuracy_evidence": 5,
+    "speed_cycle": 3,
+    "autonomy": 3,
+    "reusability": 5,
+    "communication": 5
+  },
+  "overall_score": 4.0,
+  "improvement_focus": "Business Impact"
+}
