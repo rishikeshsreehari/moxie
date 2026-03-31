@@ -4,9 +4,9 @@
 
 ## Open
 
-- [ ] (2026-03-31) Dispatch queue contains tasks for Luna/Pax/Orion but no corresponding worker SOUL/cron/config found under /root/moxie; cannot promote those tasks until workers are created or tasks are reassigned. Also Orion output path points to /root/moxie_hq/... which isn’t present in this workspace — Owner: Rishi + Moxie
 - [ ] (2026-03-31) WordPress plugin resubmission (WP team feedback) — Status: IN_PROGRESS (Rishi) — Owner: Rishi
 - [ ] (2026-03-31) Scope rule: do not push to product dev repos (e.g., formbeep.git). Moxie pushes only to HQ repo; product repos are read-only for suggestions — Owner: Moxie
+- [ ] (2026-03-31) Reddit founder-profile scan for Beepmate/Web2Phone is blocked by Reddit network policy from this environment. To analyze their post history/subreddits/angles we need either: (a) a Reddit dev app token + user-agent, or (b) a logged-in session/cookies. — Owner: Rishi + Vale
 - [ ] (2026-03-31) WordPress plugin resubmission pending — review/approve Forge’s changes when ready — Owner: Rishi + Forge
 - [ ] (2026-03-31) Directory submissions: preferred inbox confirmed as hello@formbeep.com; still need any existing directory accounts/verification access — Owner: Rishi + Jax
 - [ ] (2026-03-31) Approve Rumi’s content calendar so Kiro can finalize/write the 2 blog posts — Owner: Rishi + Kiro
@@ -16,4 +16,5 @@
 
 ## Resolved
 
+- [x] (2026-03-31) Dispatch queue contained Luna/Pax/Orion path drift (/root/moxie vs /root/moxie_hq) + Orion output path mismatch; fixed SOUL references + standardized Orion output path — Owner: Rishi + Moxie
 - [x] (YYYY-MM-DD) <issue> — resolved notes

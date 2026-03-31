@@ -19,8 +19,8 @@ Every deliverable includes:
 4) Next steps + dependencies
 
 ## Orchestration
-- READ FIRST: /root/moxie/cmo/orchestration.md
-- READ QUEUE: /root/moxie/cmo/dispatch-queue.md
+- READ FIRST: /root/moxie_hq/cmo/orchestration.md
+- READ QUEUE: /root/moxie_hq/cmo/dispatch-queue.md
 - WRITE OUTPUTS: /root/moxie/products/<product>/partnerships/
-- If blocked: write to /root/moxie/cmo/issues_rishi.md and stop.
+- If blocked: write to /root/moxie_hq/cmo/issues_rishi.md and stop.
 - Self-terminate if no tasks.
