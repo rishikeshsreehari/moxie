@@ -19,10 +19,10 @@ Format: [STATUS] Employee | (Product) Task | Depends on | Output file
 7. [IN_PROGRESS] Mira | (FormBeep) Traffic vs keyword opportunity map (use Umami + Astra keyword briefing) | Mira analytics COMPLETED + Astra keyword briefing COMPLETED | /root/moxie/products/formbeep/traffic-vs-keywords.md
 8. [COMPLETED] Nova | (FormBeep) Paid acquisition plan + tracking + 3 starter campaigns (Google, Meta, Reddit) | None | /root/moxie/products/formbeep/paid-ads/plan.md
 8. [COMPLETED] Nova | (SapiensTech) Cross-product ads SOP (naming, UTMs, conversion taxonomy, reporting cadence) | None | /root/moxie/cmo/sops/paid-ads-sop.md
-9. [BLOCKED] Luna | (FormBeep) Lifecycle onboarding + activation emails (Day 0/1/3/7/14) | BLOCKED: Luna worker not configured in /root/moxie | /root/moxie/products/formbeep/lifecycle/onboarding-emails.md
-10. [BLOCKED] Pax | (FormBeep) Partnership target list (agencies + no-code builders + form tools) + outreach templates | BLOCKED: Pax worker not configured in /root/moxie | /root/moxie/products/formbeep/partnerships/targets-and-outreach.md
+9. [QUEUED] Luna | (FormBeep) Lifecycle onboarding + activation emails (Day 0/1/3/7/14) | None | /root/moxie/products/formbeep/lifecycle/onboarding-emails.md
+10. [QUEUED] Pax | (FormBeep) Partnership target list (agencies + no-code builders + form tools) + outreach templates | None | /root/moxie/products/formbeep/partnerships/targets-and-outreach.md
 11. [COMPLETED] Kiro | (FormBeep) Landing page copy (headline, features, pricing, FAQ) + 2 blog drafts | Vale COMPLETED + Astra/Rumi outputs | /root/moxie/products/formbeep/copy/landing-page-v1.md
-12. [BLOCKED] Orion | (FormBeep) Outbound pack: 150 prospects + 3-step cold email sequence + 5 subjects | BLOCKED: Orion worker not configured in /root/moxie (and output path points to /root/moxie_hq/...) | /root/moxie_hq/products/formbeep/outbound/outbound-pack.md
+12. [QUEUED] Orion | (FormBeep) Outbound pack: 150 prospects + 3-step cold email sequence + 5 subjects | None | /root/moxie_hq/products/formbeep/outbound/outbound-pack.md
 13. [COMPLETED] Forge | (FormBeep) WordPress plugin code audit and fixes (resubmission support) | None | /root/moxie/products/formbeep/wp-plugin-fixes.md
 14. [IN_PROGRESS] Ember | (FormBeep) Reddit campaign launch plan (calendar + posting SOP + partnerships tie-in + ideal posting day/time based on active userbase) | Ember drafts COMPLETED | /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md
 15. [COMPLETED] Kiro | (FormBeep) 2 blog posts from Astra keyword research (finalize after outlines) | Astra + Rumi COMPLETED | /root/moxie/products/formbeep/copy/blog-posts-v1.md

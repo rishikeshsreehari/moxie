@@ -1,5 +1,5 @@
 # Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-# Last updated: 2026-03-31T03:37:37Z
+# Last updated: 2026-03-31T07:04:49Z
 # 
 # HOW THIS WORKS:
 # Every cron job reads this file for context. When done, it updates relevant sections.
@@ -35,7 +35,7 @@
 | Codex 5-hour limit hit | System | RESOLVED | Premium window available now (reset completed) |
 | WordPress plugin pending review changes | Forge + Rishi | BLOCKED | Forge audit complete; Rishi to apply suggested changes + resubmit (see /root/moxie/products/formbeep/wp-plugin-fixes.md) |
 | Umami analytics access | Mira | RESOLVED | Data pulled; see /root/moxie/products/formbeep/analytics-report.md |
-| Dispatch queue tasks assigned to Luna/Pax/Orion but workers not configured | Moxie + Rishi | BLOCKED | Create worker SOULs/crons or reassign tasks to existing employees; fix Orion output path (/root/moxie_hq/...) |
+| Luna/Pax/Orion workers were misconfigured / failing (provider-model mismatch) and tasks were incorrectly marked “worker not configured” | Moxie | IN_PROGRESS | Fixed cron providers to OpenRouter where needed; unblocked queue rows from BLOCKED→QUEUED; verify next run produces outputs and governance promotes safely |
 | Telegram token | **RESOLVED** | FIXED | Bot paired, delivery confirmed, chat_id: 6699776435 |
 ---
 
