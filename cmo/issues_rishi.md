@@ -4,6 +4,7 @@
 
 ## Open
 
+- [ ] (2026-03-31) OpenCode Go key provided; configured OPENCODE_GO_API_KEY + fallback chain, but requested “weekly limit reset cron” cannot be scheduled under current governance rule (“never schedule another cron job”). If you want the reset reminder automated, approve an exception + tell me the exact reset time + timezone. — Owner: Rishi + Moxie
 - [ ] (2026-03-31) WordPress plugin resubmission (WP team feedback) — Status: IN_PROGRESS (Rishi) — Owner: Rishi
 - [ ] (2026-03-31) Scope rule: do not push to product dev repos (e.g., formbeep.git). Moxie pushes only to HQ repo; product repos are read-only for suggestions — Owner: Moxie
 - [ ] (2026-03-31) Reddit founder-profile scan for Beepmate/Web2Phone is blocked by Reddit network policy from this environment. To analyze their post history/subreddits/angles we need either: (a) a Reddit dev app token + user-agent, or (b) a logged-in session/cookies. — Owner: Rishi + Vale

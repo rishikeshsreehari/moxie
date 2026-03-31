@@ -1,5 +1,5 @@
 # Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-# Last updated: 2026-03-31T08:00:00Z
+# Last updated: 2026-03-31T08:09:30Z
 # 
 # HOW THIS WORKS:
 # Every cron job reads this file for context. When done, it updates relevant sections.
@@ -34,6 +34,7 @@
 |---------|-------|--------|---------------|
 | Codex 5-hour limit hit | System | RESOLVED | Premium window available now (reset completed) |
 | WordPress plugin pending review changes | Forge + Rishi | BLOCKED | Forge audit complete; Rishi to apply suggested changes + resubmit (see /root/moxie/products/formbeep/wp-plugin-fixes.md) |
+| Directory submissions (P1) require founder credentials/verification | Jax + Rishi | BLOCKED | Provide any existing directory accounts / inbox verification access for hello@formbeep.com (see issues_rishi.md) |
 | Umami analytics access | Mira | RESOLVED | Data pulled; see /root/moxie/products/formbeep/analytics-report.md |
 | Luna/Pax/Orion workers were misconfigured / failing (provider-model mismatch) and tasks were incorrectly marked "worker not configured" | Moxie | RESOLVED | Fixed cron providers to OpenRouter where needed; all workers producing outputs; Pax first task COMPLETED |
 | Telegram token | **RESOLVED** | FIXED | Bot paired, delivery confirmed, chat_id: 6699776435 |
@@ -50,9 +51,9 @@
 - Next task after completion: Quarterly competitor positioning refresh (pricing page screenshots + feature diff + "what changed")
 - Blockers: Reddit founder profile analysis blocked (requires login/dev token — logged in issues_rishi.md)
 - Competitor founder intel:
-  - Beepmate: u/adambengur
-  - Web2Phone: u/ConferenceOnly1415
-  - Other competitors tracked: WPForms, Formspree, Getform, Basin, WANotifier, Zapier, Make, n8n
+- Beepmate: u/adambengur
+- Web2Phone: u/ConferenceOnly1415
+- Other competitors tracked: WPForms, Formspree, Getform, Basin, WANotifier, Zapier, Make, n8n
 ### Astra — Growth Research Lead
 - SOUL: /root/moxie/cmo/employees/astra-soul.md
 - Output dir: /root/moxie/products/formbeep/
@@ -112,11 +113,11 @@
 ### Jax — SaaS Growth Operations Lead
 - SOUL: /root/moxie/cmo/employees/jax-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: COMPLETED
-- Current task: 40+ SaaS directory master list — **COMPLETED**
+- Status: BLOCKED
+- Current task: Begin P1 directory submissions (ProductHunt, AlternativeTo, BetaList) — **BLOCKED**
 - Last output: /root/moxie/products/formbeep/directory-submissions.md
 - Next task after completion: Prepare P1 directory submission assets (logos, banners, screenshots, copy) from the GitHub repo, then begin submissions (ProductHunt, AlternativeTo, BetaList, SaaSHub)
-- Blockers: None
+- Blockers: Needs founder credentials / email verification / any existing directory accounts (see issues_rishi.md)
 - If directory submissions need founder credentials/email verification: note in this file and flag for Rishi
 
 ### Rumi — Blog & Content Analyst
