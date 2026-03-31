@@ -59,11 +59,10 @@
     59|- SOUL: /root/moxie/cmo/employees/astra-soul.md
     60|- Output dir: /root/moxie/products/formbeep/
     61|- Status: IN_PROGRESS
-    62|- Current task: Tally Forms growth teardown (channels, SEO/templates, PLG loops, distribution) + what we can copy for FormBeep
-    63|- Inputs: /root/moxie/products/formbeep/keyword-briefing.md + /root/moxie/products/formbeep/analytics-report.md
-    64|- Output: /root/moxie/products/formbeep/tally-growth-teardown.md
-    65|- Next task after completion: Keyword v2 expansion (top-50 prioritized with intent/difficulty)
-    66|- Blockers: None
+- Current task: SMS demand + keyword analysis — **COMPLETED** (2026-03-31)
+- Last output: /root/moxie/products/formbeep/sms-keyword-analysis.md
+- Next task after completion: All Astra sprint tasks COMPLETED — awaiting new assignments
+- Blockers: None
     67|
     68|### Kiro — Conversion Copy Lead
     69|- SOUL: /root/moxie/cmo/employees/kiro-soul.md

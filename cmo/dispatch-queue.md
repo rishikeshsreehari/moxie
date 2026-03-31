@@ -10,8 +10,8 @@
     10|
     11|1. [COMPLETED] Vale | (FormBeep) Beepmate + Web2Phone deep-dive + founder Reddit analysis | None | /root/moxie/products/formbeep/beepmate-web2phone-deepdive.md
     12|2. [COMPLETED] Astra | (FormBeep) SEO: WP plugin market analysis + 30 keywords mapped to pages (7d) | None | /root/moxie/products/formbeep/wordpress-market-analysis.md
-    13|2b. [IN_PROGRESS] Astra | (FormBeep) Tally Forms growth teardown (how they got big: channels, SEO/templates, PLG loops, distribution) + what we can copy for FormBeep | None | /root/moxie/products/formbeep/tally-growth-teardown.md
-    14|2c. [QUEUED] Astra | (FormBeep) SMS demand + keyword analysis (is there search intent? which platforms/modifiers? landing pages to build) | None | /root/moxie/products/formbeep/sms-keyword-analysis.md
+    13|2b. [COMPLETED] Astra | (FormBeep) Tally Forms growth teardown (how they got big: channels, SEO/templates, PLG loops, distribution) + what we can copy for FormBeep | None | /root/moxie/products/formbeep/tally-growth-teardown.md
+    14|2c. [COMPLETED] Astra | (FormBeep) SMS demand + keyword analysis (is there search intent? which platforms/modifiers? landing pages to build) | None | /root/moxie/products/formbeep/sms-keyword-analysis.md
     15|3. [COMPLETED] Ember | (FormBeep) Reddit: 6 post drafts + 20 comments plan + 2 posts to publish (7d sprint) | None | /root/moxie/products/formbeep/reddit-strategy.md
     16|4. [COMPLETED] Jax | (FormBeep) Directories: 40+ master list + submit to 10 (stretch 20) in 7d | None | /root/moxie/products/formbeep/directory-submissions.md
     17|5. [COMPLETED] Rumi | (FormBeep) Content: competitor blog analysis + 30-day calendar + 4 post outlines (7d) | None | /root/moxie/products/formbeep/content-calendar.md
