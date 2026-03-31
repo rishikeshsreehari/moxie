@@ -1,11 +1,11 @@
-# Moxie Team -- FormBeep Growth Org Chart
+# Moxie Team -- Sapiens Technology LLC Growth Org Chart
 
 Last updated: 2026-03-31
 
 ## Leadership
 | Name | Role | Reports To |
 |------|------|------------|
-| Moxie | CMO (orchestrator, strategy, Rishi comms) | Rishi |
+| Moxie | CMO / growth lead (orchestrator, strategy, Rishi comms) | Rishi |
 
 ## Active Team
 

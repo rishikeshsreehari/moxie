@@ -1,5 +1,5 @@
 # Moxie CMO — KPI Progress Dashboard
-# Last updated: 2026-03-31T00:50:00Z
+# Last updated: 2026-03-30T23:36:57Z
 # Automated updates via governance cron every 4h
 # Workers update their own KPI sections when completing tasks
 
@@ -11,7 +11,7 @@
 ## Funnel Metrics (Live Tracking)
 | Stage | Target/30d | Current | Progress | Source |
 |-------|-----------|---------|----------|--------|
-| Visitors | 3,800+ | TBD — Mira testing Umami | 0% | Umami dashboard |
+| Visitors | 3,800+ | 667 (last 30d, Umami) | 17.6% | Umami API snapshot |
 | Signups | 130+ | 0 | 0% | FormBeep app |
 | WhatsApp Connected | 100+ | 0 | 0% | FormBeep app |
 | First Submission | 80+ | 0 | 0% | FormBeep app |
@@ -67,8 +67,8 @@
 ### Mira — Analytics & Reporting Lead
 | KPI | Target | Status | Score |
 |-----|--------|--------|-------|
-| Umami data coverage | Sessions/pages/sources daily | TESTING ACCESS | In progress |
-| Report accuracy | 0 guessed numbers | N/A | No reports yet |
+| Umami data coverage | Sessions/pages/sources daily | COMPLETE | analytics-report.md + umami-full-data.json |
+| Report accuracy | 0 guessed numbers | GREEN | 1 report delivered (2026-03-30) |
 | Weekly KPI report | Mon 11:00 UTC | SCHEDULED | Next: 2026-04-06 |
 | Funnel drop-off identified | Specific step in 7 days | BLOCKED (Umami access) | 0/1 |
 | Blog performance tracking | Posts tracked within 48h | NO BLOG POSTS YET | N/A |
@@ -104,7 +104,7 @@
 ## Risk Heat Map
 | Risk | Owner | Impact | Probability | Score | Mitigation |
 |------|-------|--------|-------------|-------|------------|
-| Telegram delivery failing | Rishi | HIGH | 100% | CRITICAL | Rishi action: fix token in /opt/data/.env |
+| Telegram delivery failing | System | HIGH | 20% | MEDIUM | Monitor; reconcile conflicting state; verify next 3 deliveries |
 | WP plugin blocked | Forge + Rishi | HIGH | 80% | HIGH | Rishi code review + Codex reset 03:26 GST |
 | Umami data inaccessible | Mira | MEDIUM | 50% | MEDIUM | Fallback: manual weekly data entry |
 | Workers stuck in loops | System | HIGH | 30% | MEDIUM | Self-termination after task complete |

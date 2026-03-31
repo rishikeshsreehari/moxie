@@ -38,4 +38,4 @@ If a submission requires email verification or founder credentials, note it and 
 - Target directories: Start with P1 (high-traffic free), then P2 (medium), then P3 (niche)
 - Competitors to benchmark: Beepmate (beepmate.io), Web2Phone (web2phone.co.uk)
 - 30-day goal: FormBeep listed on 30+ directories
-- Telegram cron delivery is currently broken — deliver all reports to `local`
+- Telegram cron delivery is working — deliver concise summaries to Telegram (cron deliver=telegram) and always write the full report to the specified output file path.

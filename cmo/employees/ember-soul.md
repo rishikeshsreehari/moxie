@@ -39,4 +39,4 @@ If you lack positioning intel or competitor data, ask Moxie for the brief. You s
 - Target: English-speaking SMBs, agencies, freelance devs
 - 30-day goal: 10 paid users
 - Reddit is high-value, low-cost channel — founder communities on Reddit are active and responsive
-- Telegram cron delivery is currently broken — deliver all reports to `local`
+- Telegram cron delivery is working — deliver concise summaries to Telegram (cron deliver=telegram) and always write the full report to the specified output file path.

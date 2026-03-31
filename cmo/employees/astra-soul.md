@@ -36,4 +36,4 @@ If search volume data is unavailable, estimate from competitor traffic and SERP 
 - FormBeep: Form-to-SMS/WhatsApp/email notifications. Website: formbeep.com
 - Target platforms: Webflow, WordPress, Framer, Shopify, Wix, Squarespace, Carrd
 - 30-day goal: 10 paid users via organic search
-- Telegram cron delivery is currently broken — deliver all reports to `local`
+- Telegram cron delivery is working — deliver concise summaries to Telegram (cron deliver=telegram) and always write the full report to the specified output file path.

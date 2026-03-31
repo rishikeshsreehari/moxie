@@ -6,17 +6,21 @@
 ---
 
 ## Queue (ordered by priority)
-Format: [STATUS] Employee | Task | Depends on | Output file
+Format: [STATUS] Employee | (Product) Task | Depends on | Output file
 
-1. [IN_PROGRESS] Vale | Beepmate + Web2Phone deep-dive + founder Reddit analysis | None | /root/moxie/products/formbeep/beepmate-web2phone-deepdive.md
-2. [IN_PROGRESS] Astra | WordPress form-notification plugin market analysis | None | /root/moxie/products/formbeep/wordpress-market-analysis.md
-3. [IN_PROGRESS] Ember | Reddit landscape research + 3 post drafts | None | /root/moxie/products/formbeep/reddit-strategy.md
-4. [IN_PROGRESS] Jax | 40+ SaaS directory master list | None | /root/moxie/products/formbeep/directory-submissions.md
-5. [IN_PROGRESS] Rumi | Competitor blog analysis + 30-day content calendar | None | /root/moxie/products/formbeep/content-calendar.md
-6. [IN_PROGRESS] Mira | Umami traffic audit + funnel analysis | None | /root/moxie/products/formbeep/analytics-report.md
-7. [QUEUED] Kiro | Landing page copy (headline, features, pricing, FAQ) | Vale COMPLETED | /root/moxie/products/formbeep/copy/landing-page-v1.md
-8. [QUEUED] Kiro | 2 blog posts from Astra keyword research | Astra + Rumi COMPLETED | /root/moxie/products/formbeep/copy/
-9. [QUEUED] Ember | Full Reddit campaign launch + partnership outreach | Vale COMPLETED | /root/moxie/products/formbeep/outreach/
+1. [RETRY(1/3)] Vale | Beepmate + Web2Phone deep-dive + founder Reddit analysis | None | /root/moxie/products/formbeep/beepmate-web2phone-deepdive.md
+2. [RETRY(1/3)] Astra | WordPress form-notification plugin market analysis | None | /root/moxie/products/formbeep/wordpress-market-analysis.md
+3. [RETRY(1/3)] Ember | Reddit landscape research + 3 post drafts | None | /root/moxie/products/formbeep/reddit-strategy.md
+4. [RETRY(1/3)] Jax | 40+ SaaS directory master list | None | /root/moxie/products/formbeep/directory-submissions.md
+5. [RETRY(1/3)] Rumi | Competitor blog analysis + 30-day content calendar | None | /root/moxie/products/formbeep/content-calendar.md
+6. [IN_PROGRESS] Mira | (FormBeep) Umami traffic audit + funnel analysis | None | /root/moxie/products/formbeep/analytics-report.md
+7. [QUEUED] Nova | (FormBeep) Paid acquisition plan + tracking + 3 starter campaigns (Google, Meta, Reddit) | None | /root/moxie/products/formbeep/paid-ads/plan.md
+8. [QUEUED] Nova | (SapiensTech) Cross-product ads SOP (naming, UTMs, conversion taxonomy, reporting cadence) | None | /root/moxie/cmo/sops/paid-ads-sop.md
+9. [QUEUED] Luna | (FormBeep) Lifecycle onboarding + activation emails (Day 0/1/3/7/14) | None | /root/moxie/products/formbeep/lifecycle/onboarding-emails.md
+10. [QUEUED] Pax | (FormBeep) Partnership target list (agencies + no-code builders + form tools) + outreach templates | None | /root/moxie/products/formbeep/partnerships/targets-and-outreach.md
+11. [QUEUED] Kiro | (FormBeep) Landing page copy (headline, features, pricing, FAQ) | Vale COMPLETED | /root/moxie/products/formbeep/copy/landing-page-v1.md
+10. [QUEUED] Kiro | (FormBeep) 2 blog posts from Astra keyword research | Astra + Rumi COMPLETED | /root/moxie/products/formbeep/copy/
+11. [QUEUED] Ember | (FormBeep) Full Reddit campaign launch + partnership outreach | Vale COMPLETED | /root/moxie/products/formbeep/outreach/
 10. [QUEUED] Forge | WordPress plugin code audit and fixes | Codex premium available | /root/moxie/products/formbeep/wp-plugin-fixes.md
 11. [QUEUED] Forge | Technical SEO audit (page speed, structured data, meta tags) | None | /root/moxie/products/formbeep/technical-seo-audit.md
 12. [QUEUED] Jax | Begin P1 directory submissions (ProductHunt, AlternativeTo, BetaList) | Jax directory list COMPLETED + Rishi approves | /root/moxie/products/formbeep/directory-submissions.md

@@ -41,4 +41,4 @@ If you cannot access a site (Cloudflare, etc.), use cached/archived versions. If
 - Competitors: Beepmate (u/adambengur), Web2Phone (u/ConferenceOnly1415)
 - FormBeep: Form-to-SMS/WhatsApp/email notifications. Target: SMBs, agencies, freelance devs.
 - 30-day goal: 10 paid users, $100 MRR
-- Telegram cron delivery is currently broken — deliver all reports to `local`
+- Telegram cron delivery is working — deliver concise summaries to Telegram (cron deliver=telegram) and always write the full report to the specified output file path.

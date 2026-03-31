@@ -1,4 +1,4 @@
-# CMO Priorities (FormBeep)
+# CMO Priorities (Sapiens Technology LLC)
 
 ## 30-day outcomes (north star)
 - **10 paid customers**

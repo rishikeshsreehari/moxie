@@ -41,4 +41,4 @@ If competitor blogs don't exist (many small SaaS tools don't blog), document "no
 - Keyword seed: /root/moxie/products/formbeep/seo-keywords.md
 - Target: SMBs, agencies, freelance devs who use Webflow, WordPress, Framer, Shopify
 - 30-day goal: 10 paid users via organic search and content marketing
-- Telegram cron delivery is currently broken — deliver all reports to `local`
+- Telegram cron delivery is working — deliver concise summaries to Telegram (cron deliver=telegram) and always write the full report to the specified output file path.

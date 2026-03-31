@@ -1,5 +1,5 @@
-# Moxie CMO Orchestration State — FormBeep
-# Last updated: 2026-03-31T00:48:00Z
+# Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
+# Last updated: 2026-03-30T23:45:13Z
 # 
 # HOW THIS WORKS:
 # Every cron job reads this file for context. When done, it updates relevant sections.
@@ -11,10 +11,16 @@
 # - Retry logic: failed tasks get marked RETRY(1/3) before escalation
 # - Task prioritization: P0 (blockers), P1 (revenue), P2 (growth), P3 (ops)
 # - KPI tracking: every task completion updates KPI progress metrics
+# - Cron collision mitigation: workers staggered across the hour (no longer all at :05)
+# - Model stability: worker crons pinned to Codex-compatible models (avoid max_retries_exhausted from provider/model mismatch)
 
 ---
 
 ## Mission
+- Company: Sapiens Technology LLC (SapiensTech)
+- Goal: grow a portfolio of indie products to consistent revenue via repeatable acquisition + conversion systems
+
+## Active Product (current sprint)
 - Product: FormBeep — form-to-SMS/WhatsApp/email notifications
 - Target: English-speaking SMBs, agencies, freelance devs
 - 30-day goals: 10 paid users, $100 MRR, more organic traffic
@@ -26,9 +32,9 @@
 ## Known Blockers
 | Blocker | Owner | Status | Action Needed |
 |---------|-------|--------|---------------|
-| Codex 5-hour limit hit | System | WAITING | Resets at 3:26 AM GST (03:26 UAE time) daily |
+| Codex 5-hour limit hit | System | RESOLVED | Premium window available now (reset completed) |
 | WordPress plugin pending review changes | Forge + Rishi | BLOCKED | Needs code review + Rishi action |
-| Umami analytics — data provided but Mira hasn't accessed it yet | Mira | IDENTIFIED | Dashboard: cloud.umami.is, Website ID: 750e37be-3e04-4672-abe8-a2983afb9a4d |
+| Umami analytics access | Mira | RESOLVED | Data pulled; see /root/moxie/products/formbeep/analytics-report.md |
 | Telegram token | **RESOLVED** | FIXED | Bot paired, delivery confirmed, chat_id: 6699776435 |
 ---
 
@@ -37,9 +43,9 @@
 ### Vale — Competitor Intelligence Lead
 - SOUL: /root/moxie/cmo/employees/vale-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: RUNNING
+- Status: RETRY(1/3) (no deliverable file found)
 - Current task: Beepmate + Web2Phone deep-dive
-- Last output: None yet
+- Last output: **MISSING expected file** (/root/moxie/products/formbeep/beepmate-web2phone-deepdive.md) → RETRY(1/3)
 - Next task after completion: Monthly competitor monitoring cron (pricing changes, new features, blog posts)
 - Blockers: None
 - Competitor founder intel:
@@ -50,10 +56,10 @@
 ### Astra — Growth Research Lead
 - SOUL: /root/moxie/cmo/employees/astra-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: RUNNING
+- Status: RETRY(1/3) (no deliverable file found)
 - Current task: WordPress form-notification plugin market analysis
 - Seed keyword file: /root/moxie/products/formbeep/seo-keywords.md
-- Last output: None yet
+- Last output: **MISSING expected file** (/root/moxie/products/formbeep/wordpress-market-analysis.md) → RETRY(1/3)
 - Next task after completion: Keyword v2 expansion (top-50 prioritized with intent/difficulty)
 - Blockers: None
 
@@ -68,27 +74,27 @@
 ### Ember — Outreach & Distribution Lead
 - SOUL: /root/moxie/cmo/employees/ember-soul.md
 - Output dir: /root/moxie/products/formbeep/outreach/
-- Status: RUNNING
-- Current task: Reddit landscape research + 3 post drafts
+- Status: RETRY(1/3) (expected output missing)
+- Current task: Reddit landscape research + 3 post drafts (expected output missing: /root/moxie/products/formbeep/reddit-strategy.md)
 - Next task after completion: Community posting schedule, partnership outreach list
 - Blockers: Partial (can start Reddit work, full campaign needs Vale's intel)
 
 ### Forge — Product/Codebase Inspector
 - SOUL: /root/moxie/cmo/employees/forge-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: BLOCKED
+- Status: READY (Codex premium available)
 - Current task: WordPress plugin code review for directory resubmission
 - WP plugin location: TBD (needs discovery in /root/moxie/formbeep/)
 - Next task: Technical SEO audit, integration health checks
-- Blockers: Codex premium quota (needs 3:26 AM GST reset)
+- Blockers: Rishi review still required; Codex blocker cleared
 
 ### Mira — Analytics & Reporting Lead
 - SOUL: /root/moxie/cmo/employees/mira-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: RUNNING
-- Current task: Umami traffic audit + funnel analysis
+- Status: COMPLETED
+- Current task: Umami traffic audit + funnel analysis — **COMPLETED**
 - Umami: cloud.umami.is, website ID: 750e37be-3e04-4672-abe8-a2983afb9a4d
-- Analytics file: /root/moxie/products/formbeep/analytics.md
+- Analytics report: /root/moxie/products/formbeep/analytics-report.md
 - Next task after completion: Set up weekly automated KPI report cron
 - Blockers: Umami may require login for API access
 - Codex tracking: /root/moxie/cmo/codex-usage.md + /root/moxie/cmo/codex-usage-tracker.csv
@@ -96,8 +102,8 @@
 ### Jax — SaaS Growth Operations Lead
 - SOUL: /root/moxie/cmo/employees/jax-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: RUNNING
-- Current task: 40+ SaaS directory master list
+- Status: RETRY(1/3) (expected output missing)
+- Current task: 40+ SaaS directory master list (expected output missing: /root/moxie/products/formbeep/directory-submissions.md)
 - Next task after completion: Begin P1 directory submissions (ProductHunt, AlternativeTo, BetaList, SaaSHub)
 - Blockers: None
 - If directory submissions need founder credentials/email verification: note in this file and flag for Rishi
@@ -105,8 +111,8 @@
 ### Rumi — Blog & Content Analyst
 - SOUL: /root/moxie/cmo/employees/rumi-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: RUNNING
-- Current task: Competitor blog analysis + 30-day content calendar
+- Status: RETRY(1/3) (expected output missing)
+- Current task: Competitor blog analysis + 30-day content calendar (expected output missing: /root/moxie/products/formbeep/content-calendar.md)
 - Keyword seed: /root/moxie/products/formbeep/seo-keywords.md
 - Next task after completion: Weekly content gap scan (what new topics emerged, what's trending)
 - Blockers: None
@@ -135,12 +141,13 @@
 ## Completed Deliverables
 | Date | Employee | File | Status |
 |------|----------|------|--------|
-| 2026-03-31 | Vale/Astra/Rumi/Ember/Mira/Jax | Pending — crons in progress | IN_PROGRESS |
+| 2026-03-31 | Mira | /root/moxie/products/formbeep/analytics-report.md | COMPLETED |
+| 2026-03-31 | Vale/Astra/Rumi/Ember/Jax/Rumi | Expected outputs missing | RETRY(1/3) |
 
 ---
 
 ## Rishi Action Items (Requires Human)
-1. Fix Telegram bot token: Run `docker exec hermes-moxie sed -i 's|^TELEGRAM_BOT_TOKEN=.*|TELEGRAM_BOT_TOKEN=8365122447:AAE47_tmAgEovirMNwpJiBk4vsRbTMRr464|' /opt/data/.env` then restart gateway
+1. Fix Telegram bot token: Run `docker exec hermes-moxie sed -i 's|^TELEGRAM_BOT_TOKEN=.*|TEL...64|' /opt/data/.env` then restart gateway
 2. Update GitHub write PAT in /opt/data/.env (MOXIE_GITHUB_WRITE_PAT needs write access to rishikeshsreehari/moxie)
 3. Review WordPress plugin code changes from Forge when ready
 4. Approve content calendar from Rumi before Kiro starts writing
@@ -152,7 +159,7 @@
 - Hourly crons may burn too many free model tokens. Plan to reduce to every 2h or 4h if quota gets tight. Governance cron will check token usage and adjust if needed.
 - If workers report "no pending tasks" for 3+ consecutive cycles, pause their cron to save tokens.
 - Monitor daily token usage across all workers. If we hit free model limits, stagger workers so only 2 fire per hour.
-- Worker SOULs currently hardcode FormBeep context — need to update them to read product assignments from orchestration.md for true multi-product support.
+- Worker SOULs are company-framed and must read product assignments from orchestration.md before each cycle.
 
 ## Codex Deep Audit (ONE-SHOT)
 - Cron ID: 1e17a419b9e4 (codex-5hr-resume-premium)
@@ -167,6 +174,6 @@
 | Product 2 | Not yet launched | N/A | TBD |
 | Product 3 | Not yet launched | N/A | TBD |
 
-**How this works:** When a second product is added, update this table. Workers read orchestration.md, see which products are active, and allocate their time accordingly. By default, all effort goes to FormBeep until other products launch.
+**How this works:** When a second product is added, update this table. Workers read orchestration.md, see which products are active, and allocate their time accordingly. By default, all effort goes to the currently active product(s); FormBeep is just the current sprint.
 
 **Employee flexibility:** All employees are designed to be product-agnostic. Their SOUL files define their role (research, outreach, analytics, etc.) — not the product. The product assignments above determine where they focus their effort each cycle. Workers should read this table before each cycle to know which product(s) to work on.

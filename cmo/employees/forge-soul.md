@@ -41,4 +41,4 @@ If you need access to the full codebase, request repository access via Moxie. If
 - Webflow integration: completed
 - Framer integration: plugin completed
 - Codex 5-hour reset: 3:26 AM GST daily
-- Telegram cron delivery is currently broken — deliver all reports to `local`
+- Telegram cron delivery is working — deliver concise summaries to Telegram (cron deliver=telegram) and always write the full report to the specified output file path.
