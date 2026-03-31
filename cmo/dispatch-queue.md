@@ -16,13 +16,13 @@
     16|4. [COMPLETED] Jax | (FormBeep) Directories: 40+ master list + submit to 10 (stretch 20) in 7d | None | /root/moxie/products/formbeep/directory-submissions.md
     17|5. [COMPLETED] Rumi | (FormBeep) Content: competitor blog analysis + 30-day calendar + 4 post outlines (7d) | None | /root/moxie/products/formbeep/content-calendar.md
     18|6. [COMPLETED] Mira | (FormBeep) Umami traffic audit + funnel analysis | None | /root/moxie/products/formbeep/analytics-report.md
-    19|7. [IN_PROGRESS] Mira | (FormBeep) Traffic vs keyword opportunity map (use Umami + Astra keyword briefing) | Mira analytics COMPLETED + Astra keyword briefing COMPLETED | /root/moxie/products/formbeep/traffic-vs-keywords.md
+    19|7. [COMPLETED] Mira | (FormBeep) Traffic vs keyword opportunity map (use Umami + Astra keyword briefing) | Mira analytics COMPLETED + Astra keyword briefing COMPLETED | /root/moxie/products/formbeep/traffic-vs-keywords.md
     20|8. [COMPLETED] Nova | (FormBeep) Paid acquisition plan + tracking + 3 starter campaigns (Google, Meta, Reddit) | None | /root/moxie/products/formbeep/paid-ads/plan.md
     21|8. [COMPLETED] Nova | (SapiensTech) Cross-product ads SOP (naming, UTMs, conversion taxonomy, reporting cadence) | None | /root/moxie/cmo/sops/paid-ads-sop.md
     22|9. [COMPLETED] Luna | (FormBeep) Lifecycle onboarding + activation emails (Day 0/1/3/7/14) | None | /root/moxie/products/formbeep/lifecycle/onboarding-emails.md
-    23|10. [QUEUED] Pax | (FormBeep) Partnership target list (agencies + no-code builders + form tools) + outreach templates | None | /root/moxie/products/formbeep/partnerships/targets-and-outreach.md
+    23|10. [COMPLETED] Pax | (FormBeep) Partnership target list (agencies + no-code builders + form tools) + outreach templates | None | /root/moxie/products/formbeep/partnerships/targets-and-outreach.md
     24|11. [COMPLETED] Kiro | (FormBeep) Landing page copy (headline, features, pricing, FAQ) + 2 blog drafts | Vale COMPLETED + Astra/Rumi outputs | /root/moxie/products/formbeep/copy/landing-page-v1.md
-    25|12. [QUEUED] Orion | (FormBeep) Outbound pack: 150 prospects + 3-step cold email sequence + 5 subjects | None | /root/moxie/products/formbeep/outbound/outbound-pack.md
+    25|12. [COMPLETED] Orion | (FormBeep) Outbound pack: 150 prospects + 3-step cold email sequence + 5 subjects | None | /root/moxie/products/formbeep/outbound/outbound-pack.md
     26|13. [COMPLETED] Forge | (FormBeep) WordPress plugin code audit and fixes (resubmission support) | None | /root/moxie/products/formbeep/wp-plugin-fixes.md
     27|14. [COMPLETED] Ember | (FormBeep) Reddit campaign launch plan (calendar + posting SOP + partnerships tie-in + ideal posting day/time based on active userbase) | Ember drafts COMPLETED | /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md
     28|15. [COMPLETED] Kiro | (FormBeep) 2 blog posts from Astra keyword research (finalize after outlines) | Astra + Rumi COMPLETED | /root/moxie/products/formbeep/copy/blog-posts-v1.md

@@ -10,6 +10,7 @@
 - [ ] (2026-03-31) WordPress plugin resubmission pending — review/approve Forge’s changes when ready — Owner: Rishi + Forge
 - [ ] (2026-03-31) Directory submissions: preferred inbox confirmed as hello@formbeep.com; still need any existing directory accounts/verification access — Owner: Rishi + Jax
 - [ ] (2026-03-31) Approve Rumi’s content calendar so Kiro can finalize/write the 2 blog posts — Owner: Rishi + Kiro
+- [ ] (2026-03-31) Google Search Console cron is blocked: missing service account JSON at /root/moxie/secrets/formbeep-search-console.json (either provide the file there or tell us the correct mounted path) — Owner: Rishi
 
 (Template)
 - [ ] (YYYY-MM-DD) <issue> — <what you need from Rishi> — Owner: <employee>
