@@ -21,6 +21,11 @@ Rule: Moxie updates this file; when items are added/updated, they appear in the 
 - Owner: Rishi
 - Next: decide which inbox to use for directory signups + share any existing directory accounts.
 
+4) Approve content calendar (Rumi) → unlock Kiro blog writing
+- Status: BLOCKED
+- Owner: Rishi
+- Next: reply “approved” or mark changes needed so Kiro can proceed.
+
 ## Completed
 
 (none yet)

@@ -1,0 +1,118 @@
+{
+  "action_items": [],
+  "analytics_lines": [
+    "- Pageviews: 103 vs 216 (-52.3%)",
+    "- Visitors: 76 vs 154 (-50.6%)",
+    "- Visits: 77 vs 170 (-54.7%)",
+    "## Top referrers",
+    "- reddit.com: 7",
+    "- chatgpt.com: 5",
+    "- google.com: 2",
+    "- Signup - Hero: 2",
+    "- Signup - Pricing: 1",
+    "- Signup - Header: 1"
+  ],
+  "blocked": [
+    {
+      "depends": "BLOCKED: Luna worker not configured in /root/moxie",
+      "employee": "Luna",
+      "id": "9.",
+      "output": "/root/moxie/products/formbeep/lifecycle/onboarding-emails.md",
+      "product": "FormBeep",
+      "raw": "9. [BLOCKED] Luna | (FormBeep) Lifecycle onboarding + activation emails (Day 0/1/3/7/14) | BLOCKED: Luna worker not configured in /root/moxie | /root/moxie/products/formbeep/lifecycle/onboarding-emails.md",
+      "status": "BLOCKED",
+      "task": "Lifecycle onboarding + activation emails (Day 0/1/3/7/14)"
+    },
+    {
+      "depends": "BLOCKED: Pax worker not configured in /root/moxie",
+      "employee": "Pax",
+      "id": "10.",
+      "output": "/root/moxie/products/formbeep/partnerships/targets-and-outreach.md",
+      "product": "FormBeep",
+      "raw": "10. [BLOCKED] Pax | (FormBeep) Partnership target list (agencies + no-code builders + form tools) + outreach templates | BLOCKED: Pax worker not configured in /root/moxie | /root/moxie/products/formbeep/partnerships/targets-and-outreach.md",
+      "status": "BLOCKED",
+      "task": "Partnership target list (agencies + no-code builders + form tools) + outreach templates"
+    },
+    {
+      "depends": "BLOCKED: Orion worker not configured in /root/moxie (and output path points to /root/moxie_hq/...)",
+      "employee": "Orion",
+      "id": "12.",
+      "output": "/root/moxie_hq/products/formbeep/outbound/outbound-pack.md",
+      "product": "FormBeep",
+      "raw": "12. [BLOCKED] Orion | (FormBeep) Outbound pack: 150 prospects + 3-step cold email sequence + 5 subjects | BLOCKED: Orion worker not configured in /root/moxie (and output path points to /root/moxie_hq/...) | /root/moxie_hq/products/formbeep/outbound/outbound-pack.md",
+      "status": "BLOCKED",
+      "task": "Outbound pack: 150 prospects + 3-step cold email sequence + 5 subjects"
+    }
+  ],
+  "counts": {
+    "BLOCKED": 3,
+    "COMPLETED": 12,
+    "IN_PROGRESS": 4,
+    "QUEUED": 1,
+    "RETRY": 0
+  },
+  "in_progress": [
+    {
+      "depends": "None",
+      "employee": "Astra",
+      "id": "2b.",
+      "output": "/root/moxie/products/formbeep/tally-growth-teardown.md",
+      "product": "FormBeep",
+      "raw": "2b. [IN_PROGRESS] Astra | (FormBeep) Tally Forms growth teardown (how they got big: channels, SEO/templates, PLG loops, distribution) + what we can copy for FormBeep | None | /root/moxie/products/formbeep/tally-growth-teardown.md",
+      "status": "IN_PROGRESS",
+      "task": "Tally Forms growth teardown (how they got big: channels, SEO/templates, PLG loops, distribution) + what we can copy for FormBeep"
+    },
+    {
+      "depends": "Mira analytics COMPLETED + Astra keyword briefing COMPLETED",
+      "employee": "Mira",
+      "id": "7.",
+      "output": "/root/moxie/products/formbeep/traffic-vs-keywords.md",
+      "product": "FormBeep",
+      "raw": "7. [IN_PROGRESS] Mira | (FormBeep) Traffic vs keyword opportunity map (use Umami + Astra keyword briefing) | Mira analytics COMPLETED + Astra keyword briefing COMPLETED | /root/moxie/products/formbeep/traffic-vs-keywords.md",
+      "status": "IN_PROGRESS",
+      "task": "Traffic vs keyword opportunity map (use Umami + Astra keyword briefing)"
+    },
+    {
+      "depends": "Ember drafts COMPLETED",
+      "employee": "Ember",
+      "id": "14.",
+      "output": "/root/moxie/products/formbeep/outreach/reddit-campaign-plan.md",
+      "product": "FormBeep",
+      "raw": "14. [IN_PROGRESS] Ember | (FormBeep) Reddit campaign launch plan (calendar + posting SOP + partnerships tie-in + ideal posting day/time based on active userbase) | Ember drafts COMPLETED | /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md",
+      "status": "IN_PROGRESS",
+      "task": "Reddit campaign launch plan (calendar + posting SOP + partnerships tie-in + ideal posting day/time based on active userbase)"
+    },
+    {
+      "depends": "Initial intel COMPLETED",
+      "employee": "Vale",
+      "id": "13.",
+      "output": "/root/moxie/products/formbeep/competitor-monitoring.md",
+      "product": "FormBeep",
+      "raw": "13. [IN_PROGRESS] Vale | (FormBeep) Monthly competitor monitoring (pricing changes, new features) | Initial intel COMPLETED | /root/moxie/products/formbeep/competitor-monitoring.md",
+      "status": "IN_PROGRESS",
+      "task": "Monthly competitor monitoring (pricing changes, new features)"
+    }
+  ],
+  "issues_open": [
+    "[ ] (2026-03-31) Dispatch queue contains tasks for Luna/Pax/Orion but no corresponding worker SOUL/cron/config found under /root/moxie; cannot promote those tasks until workers are created or tasks are reassigned. Also Orion output path points to /root/moxie_hq/... which isn\u2019t present in this workspace \u2014 Owner: Rishi + Moxie",
+    "[ ] (2026-03-31) WordPress plugin resubmission (WP team feedback) \u2014 Status: IN_PROGRESS (Rishi) \u2014 Owner: Rishi",
+    "[ ] (2026-03-31) Scope rule: do not push to product dev repos (e.g., formbeep.git). Moxie pushes only to HQ repo; product repos are read-only for suggestions \u2014 Owner: Moxie",
+    "[ ] (2026-03-31) WordPress plugin resubmission pending \u2014 review/approve Forge\u2019s changes when ready \u2014 Owner: Rishi + Forge",
+    "[ ] (2026-03-31) Directory submissions may require accounts/verification emails \u2014 provide Jax with preferred email inbox + any existing directory accounts \u2014 Owner: Rishi + Jax",
+    "[ ] (2026-03-31) Approve Rumi\u2019s content calendar so Kiro can finalize/write the 2 blog posts \u2014 Owner: Rishi + Kiro",
+    "[ ] (YYYY-MM-DD) <issue> \u2014 <what you need from Rishi> \u2014 Owner: <employee>"
+  ],
+  "missing_files": [],
+  "queued": [
+    {
+      "depends": "None",
+      "employee": "Astra",
+      "id": "2c.",
+      "output": "/root/moxie/products/formbeep/sms-keyword-analysis.md",
+      "product": "FormBeep",
+      "raw": "2c. [QUEUED] Astra | (FormBeep) SMS demand + keyword analysis (is there search intent? which platforms/modifiers? landing pages to build) | None | /root/moxie/products/formbeep/sms-keyword-analysis.md",
+      "status": "QUEUED",
+      "task": "SMS demand + keyword analysis (is there search intent? which platforms/modifiers? landing pages to build)"
+    }
+  ]
+}

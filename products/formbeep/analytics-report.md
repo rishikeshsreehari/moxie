@@ -1,14 +1,14 @@
 # FormBeep Analytics Report
-Generated: 2026-03-30 23:50 UTC
+Generated: 2026-03-31 00:47 UTC
 
 ## Executive summary
-- Pageviews: 102 vs 216 (-52.8%)
-- Visitors: 75 vs 154 (-51.3%)
-- Visits: 76 vs 170 (-55.3%)
-- Bounce rate proxy: 67/76 visits
+- Pageviews: 103 vs 216 (-52.3%)
+- Visitors: 76 vs 154 (-50.6%)
+- Visits: 77 vs 170 (-54.7%)
+- Bounce rate proxy: 68/77 visits
 
 ## Top pages
-- /: 44
+- /: 45
 - /whatsapp-api-pricing/: 15
 - /blog/: 6
 - /integrations/framer/: 4
@@ -36,10 +36,10 @@ Generated: 2026-03-30 23:50 UTC
 - FR: 3
 - AR: 3
 - DE: 3
+- CN: 3
 - CO: 3
-- CN: 2
-- TR: 2
 - VN: 2
+- ZA: 2
 
 ## Events
 - Login Click: 3

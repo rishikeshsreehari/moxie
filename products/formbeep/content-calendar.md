@@ -166,7 +166,43 @@ Format:
 
 ---
 
-## 4) Four post outlines to write first
+## 4) Founder X / build-in-public calendar
+
+Goal: keep your personal X active with interesting, credible, indiehacker-style posts that support FormBeep without sounding like ads.
+
+Cadence:
+- 3 posts per week on X
+- 1 build-in-public thread per week
+- 1 short progress update every other day when there is something real to share
+
+Themes:
+- shipping progress
+- user insights
+- lessons from analytics
+- product decisions and tradeoffs
+- small wins, setbacks, and what changed
+
+Example post formats:
+- "Built X this week, learned Y, changed Z"
+- "I thought users wanted A, but the data says B"
+- "One thing that surprised me about building FormBeep..."
+- "Indie builder note: we just added ___ because customers kept asking for it"
+- "What I’d do differently if I were launching a micro-SaaS today"
+
+Sample X post ideas:
+1. "We shipped a small analytics fix today and learned our traffic is coming more from Reddit + ChatGPT than Google. That changed what I’m prioritizing next."
+2. "The weird part about building a form-notification product: most people don’t want more features, they want fewer missed leads."
+3. "Tiny indie SaaS lesson: a pricing page can get traffic and still underconvert if the CTA and offer aren’t sharp enough."
+4. "I’m testing a build-in-public content loop: blog post → Reddit discussion → X thread → site update. Let’s see what compounds."
+5. "Current goal: 5 free users by next week. The play is not more noise; it’s tighter conversion + better distribution."
+
+Suggested weekly rhythm:
+- Mon: progress update / build-in-public note
+- Wed: insight from analytics or customer/problem discovery
+- Fri: shipping recap + what’s next
+- Weekend: optional thread or deeper reflection
+
+## 5) Four post outlines to write first
 
 ### Outline 1: Why Form Submissions Get Buried in Email
 **Goal:** top-of-funnel pain post

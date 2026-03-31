@@ -1,9 +1,9 @@
 {
   "stats_7d": {
-    "pageviews": 102,
-    "visitors": 75,
-    "visits": 76,
-    "bounces": 67,
+    "pageviews": 103,
+    "visitors": 76,
+    "visits": 77,
+    "bounces": 68,
     "totaltime": 528,
     "comparison": {
       "pageviews": 118,
@@ -14,10 +14,10 @@
     }
   },
   "stats_30d": {
-    "pageviews": 878,
-    "visitors": 667,
-    "visits": 728,
-    "bounces": 652,
+    "pageviews": 879,
+    "visitors": 668,
+    "visits": 729,
+    "bounces": 653,
     "totaltime": 14973,
     "comparison": {
       "pageviews": 631,
@@ -34,10 +34,10 @@
     "bounces": 152,
     "totaltime": 2421,
     "comparison": {
-      "pageviews": 398,
-      "visitors": 318,
-      "visits": 343,
-      "bounces": 305,
+      "pageviews": 397,
+      "visitors": 317,
+      "visits": 342,
+      "bounces": 304,
       "totaltime": 6892
     }
   },
@@ -70,6 +70,10 @@
       {
         "x": "2026-03-30T00:00:00Z",
         "y": 17
+      },
+      {
+        "x": "2026-03-31T00:00:00Z",
+        "y": 1
       }
     ],
     "sessions": [
@@ -100,6 +104,10 @@
       {
         "x": "2026-03-30T00:00:00Z",
         "y": 15
+      },
+      {
+        "x": "2026-03-31T00:00:00Z",
+        "y": 1
       }
     ]
   },
@@ -308,6 +316,10 @@
       {
         "x": "2026-03-30T23:00:00Z",
         "y": 1
+      },
+      {
+        "x": "2026-03-31T00:00:00Z",
+        "y": 1
       }
     ],
     "sessions": [
@@ -514,13 +526,17 @@
       {
         "x": "2026-03-30T23:00:00Z",
         "y": 1
+      },
+      {
+        "x": "2026-03-31T00:00:00Z",
+        "y": 1
       }
     ]
   },
   "metrics_url": [
     {
       "x": "/",
-      "y": 44
+      "y": 45
     },
     {
       "x": "/whatsapp-api-pricing/",
@@ -619,19 +635,19 @@
       "y": 3
     },
     {
+      "x": "CN",
+      "y": 3
+    },
+    {
       "x": "CO",
       "y": 3
     },
     {
-      "x": "CN",
-      "y": 2
-    },
-    {
-      "x": "TR",
-      "y": 2
-    },
-    {
       "x": "VN",
+      "y": 2
+    },
+    {
+      "x": "ZA",
       "y": 2
     }
   ],
@@ -657,14 +673,24 @@
       "country": "IN"
     },
     {
-      "x": "IN-TG",
+      "x": "US-IA",
+      "y": 2,
+      "country": "US"
+    },
+    {
+      "x": "CO-DC",
+      "y": 2,
+      "country": "CO"
+    },
+    {
+      "x": "IN-GJ",
       "y": 2,
       "country": "IN"
     },
     {
-      "x": "US-IA",
+      "x": "IN-TG",
       "y": 2,
-      "country": "US"
+      "country": "IN"
     },
     {
       "x": "US-TX",
@@ -675,16 +701,6 @@
       "x": "CN-BJ",
       "y": 2,
       "country": "CN"
-    },
-    {
-      "x": "IN-GJ",
-      "y": 2,
-      "country": "IN"
-    },
-    {
-      "x": "CO-DC",
-      "y": 2,
-      "country": "CO"
     }
   ],
   "metrics_city": [
@@ -746,7 +762,7 @@
     },
     {
       "x": "ios",
-      "y": 6
+      "y": 7
     },
     {
       "x": "edge-chromium",
@@ -776,7 +792,7 @@
     },
     {
       "x": "iOS",
-      "y": 9
+      "y": 10
     },
     {
       "x": "Android OS",
@@ -790,7 +806,7 @@
     },
     {
       "x": "mobile",
-      "y": 17
+      "y": 18
     },
     {
       "x": "desktop",
@@ -841,11 +857,11 @@
       "y": 2
     },
     {
-      "x": "fr",
-      "y": 1
+      "x": "zh",
+      "y": 2
     },
     {
-      "x": "zh",
+      "x": "fr",
       "y": 1
     },
     {
@@ -864,7 +880,7 @@
   "metrics_title": [
     {
       "x": "FormBeep \u2014 Form Submissions on WhatsApp",
-      "y": 46
+      "y": 47
     },
     {
       "x": "WhatsApp Business API Pricing (2026) \u2014 Rates by Country | FormBeep",
