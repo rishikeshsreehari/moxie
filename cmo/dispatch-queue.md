@@ -30,6 +30,7 @@ Format: [STATUS] Employee | (Product) Task | Depends on | Output file
 12. [BLOCKED] Jax | (FormBeep) Begin P1 directory submissions (ProductHunt, AlternativeTo, BetaList) | Jax directory list COMPLETED + Rishi credentials/approval (see issues_rishi.md) | /root/moxie/products/formbeep/directory-submissions-p1.md
 13. [COMPLETED] Vale | (FormBeep) Monthly competitor monitoring + founder Reddit signal scan (Beepmate u/adambengur, Web2Phone u/ConferenceOnly1415): which subs + what angles worked | Initial intel COMPLETED | /root/moxie/products/formbeep/competitor-monitoring.md
 14. [COMPLETED] Rumi | (FormBeep) Bi-weekly content gap scan + trending topic check | Previous content COMPLETED | /root/moxie/products/formbeep/content-gap-scan.md
+15. [QUEUED] Kiro | (FormBeep) Draft platform “money pages” (WordPress form→WhatsApp, Webflow form→WhatsApp, Framer form notifications) + 1 comparison page (FormBeep vs Web2Phone) | Astra keyword set COMPLETED + Kiro landing copy COMPLETED | /root/moxie/products/formbeep/copy/money-pages-v1.md
 
 ---
 
