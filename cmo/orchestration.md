@@ -1,5 +1,5 @@
 # Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-# Last updated: 2026-03-31T09:22:00Z
+# Last updated: 2026-03-31T13:00:00Z
 # 
 # HOW THIS WORKS:
 # Every cron job reads this file for context. When done, it updates relevant sections.
@@ -33,7 +33,7 @@
 | Blocker | Owner | Status | Action Needed |
 |---------|-------|--------|---------------|
 | Codex 5-hour limit hit | System | RESOLVED | Premium window available now (reset completed) |
-| WordPress plugin pending review changes | Forge + Rishi | BLOCKED | Forge audit complete; Rishi to apply suggested changes + resubmit (see /root/moxie/products/formbeep/wp-plugin-fixes.md) |
+| WordPress plugin resubmission (WP.org) | Rishi | BLOCKED (Founder-owned) | Do not touch/iterate in automation. Rishi will implement + resubmit. After approval, execute post-approval launch plan. |
 | Directory submissions (P1) require founder credentials/verification | Jax + Rishi | BLOCKED | Provide any existing directory accounts / inbox verification access for hello@formbeep.com (see issues_rishi.md) |
 | Umami analytics access | Mira | RESOLVED | Data pulled; see /root/moxie/products/formbeep/analytics-report.md |
 | Luna/Pax/Orion workers were misconfigured / failing (provider-model mismatch) and tasks were incorrectly marked "worker not configured" | Moxie | RESOLVED | Fixed cron providers to OpenRouter where needed; all workers producing outputs; Pax first task COMPLETED |
@@ -60,26 +60,25 @@
 - Status: COMPLETED
 - Current task: SMS demand + keyword analysis — **COMPLETED** (2026-03-31)
 - Last output: /root/moxie/products/formbeep/sms-keyword-analysis.md
-- Next task after completion: All Astra sprint tasks COMPLETED — awaiting new assignments
+- Next task after completion: All Astra sprint tasks COMPLETED — **IDLE** awaiting new assignments
 - Blockers: None
 
 ### Kiro — Conversion Copy Lead
 - SOUL: /root/moxie/cmo/employees/kiro-soul.md
 - Output dir: /root/moxie/products/formbeep/copy/
-- Status: COMPLETED
-- Current task: 2 blog posts from Astra's keyword list — **COMPLETED**
+- Status: IN_PROGRESS
+- Current task: Draft platform "money pages" (WordPress form→WhatsApp, Webflow form→WhatsApp, Framer form notifications) + comparison page (FormBeep vs Web2Phone)
 - Last output: /root/moxie/products/formbeep/copy/blog-posts-v1.md
-- Next task after completion: Draft 2–3 platform “money pages” (WordPress form → WhatsApp, Webflow form → WhatsApp, Framer form notifications) and one comparison page (FormBeep vs Web2Phone)
 - Blockers: None
 
 ### Ember — Outreach & Distribution Lead
 - SOUL: /root/moxie/cmo/employees/ember-soul.md
 - Output dir: /root/moxie/products/formbeep/outreach/
-- Status: COMPLETED
-- Current task: Reddit campaign launch plan (calendar + posting SOP + partnerships tie-in + ideal posting day/time based on active userbase) — **COMPLETED**
+- Status: BLOCKED (awaiting Reddit account credentials)
+- Current task: Week 1 Reddit posting execution — packs ready (2 full posts + 15 comment seeds + tracking sheet) — output: /root/moxie/products/formbeep/outreach/reddit-week1-execution-pack.md
 - Last output: /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md
-- Next task after completion: Begin Week 1 posting (Post A on Tue 14:00 UTC r/smallbusiness/Entrepreneur, Post B on Wed 14:00 UTC r/WordPress) + daily comment seeding. Ember should also check for any new Ember assignments in dispatch-queue.
-- Blockers: None
+- Next task after completion: Publish Week 1 Reddit posts (Post A r/smallbusiness, Post B r/WordPress) + 15 comment seeds across 3 days once account access is provided
+- Blockers: Needs Reddit account credentials (u/adambengur or dedicated FormBeep Reddit account) to publish posts and comments — see issues_rishi.md
 
 ### Forge — Product/Codebase Inspector
 - SOUL: /root/moxie/cmo/employees/forge-soul.md
@@ -113,12 +112,11 @@
 ### Jax — SaaS Growth Operations Lead
 - SOUL: /root/moxie/cmo/employees/jax-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: BLOCKED
-- Current task: Begin P1 directory submissions (ProductHunt, AlternativeTo, BetaList) — **BLOCKED**
-- Last output: /root/moxie/products/formbeep/directory-submissions.md
-- Next task after completion: Prepare P1 directory submission assets (logos, banners, screenshots, copy) from the GitHub repo, then begin submissions (ProductHunt, AlternativeTo, BetaList, SaaSHub)
-- Blockers: Needs founder credentials / email verification / any existing directory accounts (see issues_rishi.md)
-- If directory submissions need founder credentials/email verification: note in this file and flag for Rishi
+- Status: COMPLETED (pack delivered; execution awaits credentials)
+- Current task: P1 directory submission pack — **DELIVERED** (2026-03-31)
+- Last output: /root/moxie/products/formbeep/directory-submissions-p1.md
+- Next task after completion: Execute P1 submissions once Rishi provides email/account access (ProductHunt, AlternativeTo, BetaList, SaaSHub, G2, Capterra, Uneed, StartupBase, GetApp)
+- Blockers: Actual submission execution requires hello@formbeep.com email verification or existing directory account credentials (see issues_rishi.md). Submit pack is fully prepared and copy-paste ready.
 
 ### Rumi — Blog & Content Analyst
 - SOUL: /root/moxie/cmo/employees/rumi-soul.md
@@ -134,10 +132,10 @@
 - SOUL: /root/moxie/cmo/employees/pax-soul.md
 - Output dir: /root/moxie/products/formbeep/partnerships/
 - Status: COMPLETED
-- Current task: Partnership target list (agencies + no-code builders + form tools) + 3 outreach templates — **COMPLETED** (2026-03-31)
-- Last output: /root/moxie/products/formbeep/partnerships/targets-and-outreach.md
-- Next task after completion: Begin P0 outreach (spread over 2 weeks), apply to platform partner programs (Webflow, Framer, Glide, Softr), build Bubble plugin
-- Blockers: None
+- Current task: Week 2 submissions (Softr + follow-ups + Bubble spec) — **COMPLETED**
+- Last output: /root/moxie/products/formbeep/partnerships/platform-applications-week2.md
+- Next task after completion: Week 3 — Carrd/Typedream integrations (P1) + execute agency outreach to top 15 targets + publish formbeep.com/integrations reciprocal directory
+- Blockers: Portal credentials (Webflow/Framer/Glide/Softr) — need hello@formbeep.com access
 
 ---
 
@@ -168,7 +166,7 @@
 | 401e59cc06f5 | forge-worker | 37 * * * * | local | 2026-03-31T09:37:00+00:00 | scheduled | — |
 | 4bdcef11fcc7 | jax-worker | 22 * * * * | local | 2026-03-31T09:22:00+00:00 | scheduled | — |
 | affd389a7783 | rumi-worker | 27 * * * * | local | 2026-03-31T09:27:00+00:00 | scheduled | — |
-| 415e88f05397 | wp-plugin-rishi-reminder | every 240m | telegram:6699776435 | 2026-03-31T10:49:47.952239+00:00 | scheduled | — |
+| 415e88f0 | wp-plugin-rishi-reminder | every 240m | telegram:6699776435 | 2026-03-31T10:49:47.952239+00:00 | paused | — |
 | af7f3c07b24b | moxie-daily-self-improvement | 0 20 * * * | telegram:6699776435 | 2026-03-31T20:00:00+00:00 | scheduled | — |
 | 904c65910bfe | moxie-forward-reports-to-telegram | every 30m | origin | 2026-03-30T23:45:50.831983+00:00 | paused | — |
 | 91520aa6ca57 | nova-worker | 47 * * * * | local | 2026-03-31T09:47:00+00:00 | scheduled | — |
@@ -195,19 +193,21 @@
 | 2026-03-31 | Ember | /root/moxie/products/formbeep/reddit-strategy.md | COMPLETED |
 | 2026-03-31 | Ember | /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md | COMPLETED |
 | 2026-03-31 | Jax | /root/moxie/products/formbeep/directory-submissions.md | COMPLETED |
+| 2026-03-31 | Jax | /root/moxie/products/formbeep/directory-submissions-p1.md | COMPLETED (P1 submission pack ready; execution awaits credentials) |
 | 2026-03-31 | Rumi | /root/moxie/products/formbeep/content-calendar.md | COMPLETED |
 | 2026-03-31 | Kiro | /root/moxie/products/formbeep/copy/landing-page-v1.md | COMPLETED |
 | 2026-03-31 | Kiro | /root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md | COMPLETED |
 | 2026-03-31 | Kiro | /root/moxie/products/formbeep/copy/blog-post-formbeep-vs-zapier.md | COMPLETED |
 | 2026-03-31 | Kiro | /root/moxie/products/formbeep/copy/blog-posts-v1.md | COMPLETED |
 | 2026-03-31 | Luna | /root/moxie/products/formbeep/lifecycle/onboarding-emails.md | COMPLETED |
-| 2026-03-31 | Pax | /root/moxie/products/formbeep/partnerships/targets-and-outreach.md | COMPLETED |
+| 2026-03-31 | Pax | /root/moxie/products/formbeep/partnerships/targets-and-outreach.md | COMPLETED
+| 2026-03-31 | Pax | /root/moxie/products/formbeep/partnerships/platform-partner-outreach.md | COMPLETED
 
 ---
 
 ## Rishi Action Items (Requires Human)
-1. WordPress plugin resubmission — apply Forge’s fix list and resubmit (see /root/moxie/products/formbeep/wp-plugin-fixes.md)
-2. Review/approve Forge’s WP plugin patch notes/package when ready
+1. WordPress plugin resubmission (founder-owned) — implement fixes + resubmit when you’re ready (see /root/moxie/products/formbeep/wp-plugin-fixes.md)
+2. After approval: execute post-approval WP launch plan (I’ll keep it ready on disk)
 3. Directory submissions — inbox confirmed as hello@formbeep.com; share any existing directory accounts (for Jax)
 4. Review/approve Kiro’s 2 blog drafts for publishing: /root/moxie/products/formbeep/copy/blog-posts-v1.md
 5. (Ops) If HQ pushes are needed: confirm MOXIE_GITHUB_WRITE_PAT in /opt/data/.env has write access to rishikeshsreehari/moxie
