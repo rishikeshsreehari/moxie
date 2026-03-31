@@ -24,11 +24,12 @@
     24|11. [COMPLETED] Kiro | (FormBeep) Landing page copy (headline, features, pricing, FAQ) + 2 blog drafts | Vale COMPLETED + Astra/Rumi outputs | /root/moxie/products/formbeep/copy/landing-page-v1.md
     25|12. [QUEUED] Orion | (FormBeep) Outbound pack: 150 prospects + 3-step cold email sequence + 5 subjects | None | /root/moxie/products/formbeep/outbound/outbound-pack.md
     26|13. [COMPLETED] Forge | (FormBeep) WordPress plugin code audit and fixes (resubmission support) | None | /root/moxie/products/formbeep/wp-plugin-fixes.md
-    27|14. [IN_PROGRESS] Ember | (FormBeep) Reddit campaign launch plan (calendar + posting SOP + partnerships tie-in + ideal posting day/time based on active userbase) | Ember drafts COMPLETED | /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md
+    27|14. [COMPLETED] Ember | (FormBeep) Reddit campaign launch plan (calendar + posting SOP + partnerships tie-in + ideal posting day/time based on active userbase) | Ember drafts COMPLETED | /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md
     28|15. [COMPLETED] Kiro | (FormBeep) 2 blog posts from Astra keyword research (finalize after outlines) | Astra + Rumi COMPLETED | /root/moxie/products/formbeep/copy/blog-posts-v1.md
     29|16. [COMPLETED] Forge | (FormBeep) Technical SEO audit (page speed, structured data, meta tags) | None | /root/moxie/products/formbeep/technical-seo-audit.md
     30|12. [QUEUED] Jax | Begin P1 directory submissions (ProductHunt, AlternativeTo, BetaList) | Jax directory list COMPLETED + Rishi approves | /root/moxie/products/formbeep/directory-submissions-p1.md
-13. [IN_PROGRESS] Vale | (FormBeep) Monthly competitor monitoring + founder Reddit signal scan (Beepmate u/adambengur, Web2Phone u/ConferenceOnly1415): which subs + what angles worked | Initial intel COMPLETED | /root/moxie/products/formbeep/competitor-monitoring.md
+13. [COMPLETED] Vale | (FormBeep) Monthly competitor monitoring + founder Reddit signal scan (Beepmate u/adambengur, Web2Phone u/ConferenceOnly1415): which subs + what angles worked | Initial intel COMPLETED | /root/moxie/products/formbeep/competitor-monitoring.md
+14. [COMPLETED] Rumi | (FormBeep) Bi-weekly content gap scan + trending topic check | Previous content COMPLETED | /root/moxie/products/formbeep/content-gap-scan.md
     32|
     33|---
     34|
@@ -38,7 +39,7 @@
     38|- Kiro cannot start until Vale's intel is COMPLETED (needs competitor positioning gaps)
     39|- Forge premium tasks: only run when Codex premium window is available (see orchestration.md blocker table); currently RESOLVED per orchestration.md
     40|- Jax directory submissions cannot start until directory list COMPLETED and Rishi provides account credentials
-    41|- Ember full campaign cannot start without Vale's competitor intel (needs positioning wedge)
+    41|- Ember campaign: NOW UNBLOCKED — Reddit strategy + campaign plan both COMPLETED, Vale intel COMPLETED
     42|
     43|## Recurring Task Schedule
     44|| Employee | Frequency | Task |

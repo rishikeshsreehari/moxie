@@ -1,5 +1,5 @@
      1|# Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-     2|# Last updated: 2026-03-31T07:12:00Z
+     2|# Last updated: 2026-03-31T07:40:00Z
      3|# 
      4|# HOW THIS WORKS:
      5|# Every cron job reads this file for context. When done, it updates relevant sections.
@@ -41,20 +41,18 @@
     41|
     42|## Employee State
     43|
-    44|### Vale — Competitor Intelligence Lead
-    45|- SOUL: /root/moxie/cmo/employees/vale-soul.md
-    46|- Output dir: /root/moxie/products/formbeep/
-    47|- Status: IN_PROGRESS
-    48|- Current task: Monthly competitor monitoring (pricing changes, new features, blog posts) + founder Reddit signal scan (which subs + what angles worked) — **IN_PROGRESS**
-    49|- Last output: /root/moxie/products/formbeep/beepmate-web2phone-deepdive.md
-    50|- Output (this task): /root/moxie/products/formbeep/competitor-monitoring.md
-    51|- Next task after completion: Quarterly competitor positioning refresh (pricing page screenshots + feature diff + “what changed”) 
-    52|- Blockers: Reddit founder profile analysis may be blocked by Reddit network policy in this environment; attempt via public endpoints; if blocked, require login/dev token
-    53|- Competitor founder intel:
-    54|  - Beepmate: u/adambengur
-    55|  - Web2Phone: u/ConferenceOnly1415
-    56|  - Other competitors tracked: WPForms, Formspree, Getform, Basin, WANotifier, Zapier, Make, n8n
-    57|
+### Vale — Competitor Intelligence Lead
+- SOUL: /root/moxie/cmo/employees/vale-soul.md
+- Output dir: /root/moxie/products/formbeep/
+- Status: COMPLETED
+- Current task: Monthly competitor monitoring — **COMPLETED** (2026-03-31)
+- Last output: /root/moxie/products/formbeep/competitor-monitoring.md
+- Next task after completion: Quarterly competitor positioning refresh (pricing page screenshots + feature diff + "what changed")
+- Blockers: Reddit founder profile analysis blocked (requires login/dev token — logged in issues_rishi.md)
+- Competitor founder intel:
+  - Beepmate: u/adambengur
+  - Web2Phone: u/ConferenceOnly1415
+  - Other competitors tracked: WPForms, Formspree, Getform, Basin, WANotifier, Zapier, Make, n8n
     58|### Astra — Growth Research Lead
     59|- SOUL: /root/moxie/cmo/employees/astra-soul.md
     60|- Output dir: /root/moxie/products/formbeep/
@@ -73,13 +71,14 @@
     74|- Next task after completion: Draft 2–3 platform “money pages” (WordPress form → WhatsApp, Webflow form → WhatsApp, Framer form notifications) and one comparison page (FormBeep vs Web2Phone)
     75|- Blockers: None
     76|
-    77|### Ember — Outreach & Distribution Lead
-    78|- SOUL: /root/moxie/cmo/employees/ember-soul.md
-    79|- Output dir: /root/moxie/products/formbeep/outreach/
-    80|- Status: IN_PROGRESS
-    81|- Current task: Reddit campaign launch plan (calendar + posting SOP + partnerships tie-in + ideal posting day/time based on active userbase)
-    82|- Next task after completion: Community posting schedule, partnership outreach list
-    83|- Blockers: None
+### Ember — Outreach & Distribution Lead
+- SOUL: /root/moxie/cmo/employees/ember-soul.md
+- Output dir: /root/moxie/products/formbeep/outreach/
+- Status: COMPLETED
+- Current task: Reddit campaign launch plan (calendar + posting SOP + partnerships tie-in + ideal posting day/time based on active userbase) — **COMPLETED**
+- Last output: /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md
+- Next task after completion: Begin Week 1 posting (Post A on Tue 14:00 UTC r/smallbusiness/Entrepreneur, Post B on Wed 14:00 UTC r/WordPress) + daily comment seeding. Ember should also check for any new Ember assignments in dispatch-queue.
+- Blockers: None
     84|
     85|### Forge — Product/Codebase Inspector
     86|- SOUL: /root/moxie/cmo/employees/forge-soul.md
@@ -120,16 +119,17 @@
    121|- Blockers: None
    122|- If directory submissions need founder credentials/email verification: note in this file and flag for Rishi
    123|
-   124|### Rumi — Blog & Content Analyst
-   125|- SOUL: /root/moxie/cmo/employees/rumi-soul.md
-   126|- Output dir: /root/moxie/products/formbeep/
-   127|- Status: COMPLETED
-   128|- Current task: Competitor blog analysis + 30-day content calendar — **COMPLETED**
-   129|- Keyword seed: /root/moxie/products/formbeep/seo-keywords.md
-   130|- Next task after completion: Weekly content gap scan (what new topics emerged, what's trending)
-   131|- Blockers: None
-   132|
-   133|---
+### Rumi — Blog & Content Analyst
+- SOUL: /root/moxie/cmo/employees/rumi-soul.md
+- Output dir: /root/moxie/products/formbeep/
+- Status: COMPLETED
+- Current task: Bi-weekly content gap scan + trending topic check — **COMPLETED** (2026-03-31)
+- Last output: /root/moxie/products/formbeep/content-gap-scan.md
+- Keyword seed: /root/moxie/products/formbeep/seo-keywords.md
+- Next task after completion: Next bi-weekly scan (2026-04-10). Priority backlog: 4 P0/P1 topics flagged for Kiro drafts.
+- Blockers: None
+
+---
    134|
    135|## Active Crons (System-managed, DO NOT EDIT manually)
    136|| Cron ID | Name | Schedule | Employee | Last Run | Status |
@@ -140,13 +140,14 @@
    141|| 753d42f32fbb | formbeep-weekly-growth-review | 0 11 * * 1 | Moxie/Mira | Not yet fired | SCHED |
    142|| 1e17a419b9e4 | codex-5hr-resume-premium | 03:30 GST daily | Moxie | Pending | SCHED |
    143|| ca6591a837b7 | codex-weekly-resume-premium | 2026-04-06 17:30 GST | Moxie | Pending | SCHED |
-   144|| f63bfbc548a6 | vale-competitor-deepdive | one-shot | Vale | Running | ACTIVE |
-   145|| c35598f90ddf | astra-wordpress-market | one-shot | Astra | Running | ACTIVE |
-   146|| 98f011592fdc | jax-saas-directory-list | one-shot | Jax | Pending | SCHED |
-   147|| a230996e123a | rumi-content-analysis | one-shot | Rumi | Pending | SCHED |
-   148|| e3d998d1f127 | mira-umami-audit | one-shot | Mira | Pending | SCHED |
-   149|| 069296011969 | ember-reddit-research | one-shot | Ember | Pending | SCHED |
-   150|| 97eacc1cb3fa | codex-online-check | every 30m x12 | Moxie | Pending | SCHED |
+   144|| 1c008e06fe40 | moxie-orchestration-reconciler | every 60m at :13 | Moxie | Pending | SCHED |
+   145|| f63bfbc548a6 | vale-competitor-deepdive | one-shot | Vale | Running | ACTIVE |
+   146|| c35598f90ddf | astra-wordpress-market | one-shot | Astra | Running | ACTIVE |
+   147|| 98f011592fdc | jax-saas-directory-list | one-shot | Jax | Pending | SCHED |
+   148|| a230996e123a | rumi-content-analysis | one-shot | Rumi | Pending | SCHED |
+   149|| e3d998d1f127 | mira-umami-audit | one-shot | Mira | Pending | SCHED |
+   150|| 069296011969 | ember-reddit-research | one-shot | Ember | Pending | SCHED |
+   151|| 97eacc1cb3fa | codex-online-check | every 30m x12 | Moxie | Pending | SCHED |
    151|
    152|---
    153|
@@ -158,6 +159,7 @@
 | 2026-03-31 | Vale | /root/moxie/products/formbeep/competitor-monitoring.md | COMPLETED |
    159|| 2026-03-31 | Astra | /root/moxie/products/formbeep/wordpress-market-analysis.md | COMPLETED |
    160|| 2026-03-31 | Ember | /root/moxie/products/formbeep/reddit-strategy.md | COMPLETED |
+| 2026-03-31 | Ember | /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md | COMPLETED |
    161|| 2026-03-31 | Jax | /root/moxie/products/formbeep/directory-submissions.md | COMPLETED |
    162|| 2026-03-31 | Rumi | /root/moxie/products/formbeep/content-calendar.md | COMPLETED |
    163|| 2026-03-31 | Kiro | /root/moxie/products/formbeep/copy/landing-page-v1.md | COMPLETED |
