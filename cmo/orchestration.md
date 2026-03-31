@@ -1,5 +1,5 @@
 # Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-# Last updated: 2026-03-30T23:45:13Z
+# Last updated: 2026-03-31T00:02:59Z
 # 
 # HOW THIS WORKS:
 # Every cron job reads this file for context. When done, it updates relevant sections.
@@ -98,6 +98,14 @@
 - Next task after completion: Set up weekly automated KPI report cron
 - Blockers: Umami may require login for API access
 - Codex tracking: /root/moxie/cmo/codex-usage.md + /root/moxie/cmo/codex-usage-tracker.csv
+
+### Nova — Paid Acquisition Lead
+- SOUL: /root/moxie/cmo/employees/nova-soul.md
+- Output dir: /root/moxie/products/formbeep/
+- Status: IN_PROGRESS
+- Current task: FormBeep paid acquisition plan + tracking + 3 starter campaigns (Google, Meta, Reddit)
+- Next task after completion: Cross-product ads SOP (naming, UTMs, conversion taxonomy, reporting cadence)
+- Blockers: None
 
 ### Jax — SaaS Growth Operations Lead
 - SOUL: /root/moxie/cmo/employees/jax-soul.md

@@ -13,8 +13,8 @@ Format: [STATUS] Employee | (Product) Task | Depends on | Output file
 3. [RETRY(1/3)] Ember | Reddit landscape research + 3 post drafts | None | /root/moxie/products/formbeep/reddit-strategy.md
 4. [RETRY(1/3)] Jax | 40+ SaaS directory master list | None | /root/moxie/products/formbeep/directory-submissions.md
 5. [RETRY(1/3)] Rumi | Competitor blog analysis + 30-day content calendar | None | /root/moxie/products/formbeep/content-calendar.md
-6. [IN_PROGRESS] Mira | (FormBeep) Umami traffic audit + funnel analysis | None | /root/moxie/products/formbeep/analytics-report.md
-7. [QUEUED] Nova | (FormBeep) Paid acquisition plan + tracking + 3 starter campaigns (Google, Meta, Reddit) | None | /root/moxie/products/formbeep/paid-ads/plan.md
+6. [COMPLETED] Mira | (FormBeep) Umami traffic audit + funnel analysis | None | /root/moxie/products/formbeep/analytics-report.md
+7. [IN_PROGRESS] Nova | (FormBeep) Paid acquisition plan + tracking + 3 starter campaigns (Google, Meta, Reddit) | None | /root/moxie/products/formbeep/paid-ads/plan.md
 8. [QUEUED] Nova | (SapiensTech) Cross-product ads SOP (naming, UTMs, conversion taxonomy, reporting cadence) | None | /root/moxie/cmo/sops/paid-ads-sop.md
 9. [QUEUED] Luna | (FormBeep) Lifecycle onboarding + activation emails (Day 0/1/3/7/14) | None | /root/moxie/products/formbeep/lifecycle/onboarding-emails.md
 10. [QUEUED] Pax | (FormBeep) Partnership target list (agencies + no-code builders + form tools) + outreach templates | None | /root/moxie/products/formbeep/partnerships/targets-and-outreach.md
