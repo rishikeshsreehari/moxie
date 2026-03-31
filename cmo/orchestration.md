@@ -1,5 +1,5 @@
 # Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-# Last updated: 2026-03-31T09:09:00Z
+# Last updated: 2026-03-31T09:15:33Z
 # 
 # HOW THIS WORKS:
 # Every cron job reads this file for context. When done, it updates relevant sections.
@@ -147,36 +147,39 @@
 
 | Cron ID | Name | Schedule | Deliver | Next run (UTC) | State | Last status |
 |---|---|---|---|---|---|---|
-| 7067633e99b9 | astra-worker | 17 * * * * | local | 2026-03-31 08:17:00Z | scheduled | ok |
-| 52af5ec91c81 | codex-dashboard-update-checkin | every 720m | telegram:6699776435 | 2026-03-31 14:37:27.851179Z | scheduled | ok |
-| ca6591a837b7 | codex-weekly-resume-premium | once at 2026-04-06 17:30 | local | 2026-04-06 17:30:00+04:00 | scheduled | — |
-| c342e1741731 | opencode-go-weekly-limit-reset-reminder | 26 13 * * 1 | telegram:6699776435 | 2026-04-06 13:26:00Z | scheduled | — |
-| eb803b7d69a3 | ember-worker | 32 * * * * | local | 2026-03-31 08:32:00Z | scheduled | ok |
-| 401e59cc06f5 | forge-worker | 37 * * * * | local | 2026-03-31 08:37:00Z | scheduled | ok |
-| aba07be535ec | formbeep-daily-traffic-check | 0 10 * * * | local | 2026-03-31 10:00:00Z | scheduled | — |
-| 6effbb323126 | formbeep-daily-user-count-checkin | every 1440m | telegram:6699776435 | 2026-03-31 14:05:28.074031Z | scheduled | — |
-| ae770f4f9ff8 | formbeep-hourly-heartbeat | 6 * * * * | telegram:6699776435 | 2026-03-31 08:06:00Z | scheduled | ok |
-| 513b777e84ea | formbeep-search-check | 0 10 * * 1,4 | local | 2026-04-02 10:00:00Z | scheduled | — |
-| 753d42f32fbb | formbeep-weekly-growth-review | 0 11 * * 1 | local | 2026-04-06 11:00:00Z | scheduled | — |
-| b0e9c5135620 | iris-weekly-formbeep-repo-copy-audit | 30 9 * * 1 | local | 2026-04-06 09:30:00Z | scheduled | — |
-| 5b9c6eb70662 | issues-rishi-watch | every 240m | telegram:6699776435 | 2026-03-31 07:59:37.636307Z | scheduled | ok |
-| 4bdcef11fcc7 | jax-worker | 22 * * * * | local | 2026-03-31 08:22:00Z | scheduled | ok |
-| 3171d2c2d4b2 | kiro-worker | 42 * * * * | local | 2026-03-31 08:42:00Z | scheduled | ok |
-| 3e93c4f54be5 | luna-worker | 52 * * * * | local | 2026-03-31 07:52:00Z | scheduled | ok |
-| 647387aeef66 | mira-daily-kpi | 0 10 * * * | local | 2026-03-31 10:00:00Z | scheduled | ok |
-| 2553a6832a11 | moxie-daily-governance | 0 * * * * | telegram:6699776435 | 2026-03-31 08:00:00Z | scheduled | ok |
-| af7f3c07b24b | moxie-daily-self-improvement | 0 20 * * * | telegram | 2026-03-31 20:00:00Z | scheduled | — |
-| 868bd30fe7c1 | moxie-hq-autocommit-push | every 30m | local | 2026-03-31 08:15:47.101299Z | scheduled | ok |
-| b0492991a3cd | moxie-memory-skill-audit | every 720m | local | 2026-03-31 19:14:06.559706Z | scheduled | — |
-| 1c008e06fe40 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-03-31 08:13:00Z | scheduled | — |
-| 91520aa6ca57 | nova-worker | 47 * * * * | local | 2026-03-31 07:47:00Z | scheduled | ok |
-| 0ed491f66432 | orion-worker | 2 * * * * | local | 2026-03-31 08:02:00Z | scheduled | ok |
-| cf1a8f9eec33 | pax-worker | 57 * * * * | local | 2026-03-31 07:57:00Z | scheduled | ok |
-| affd389a7783 | rumi-worker | 27 * * * * | local | 2026-03-31 08:27:00Z | scheduled | ok |
-| a468835d1396 | vale-monthly-competitor-scan | 0 10 1 * * | local | 2026-04-01 10:00:00Z | scheduled | — |
-| 8bcfe505aba3 | vale-worker | 12 * * * * | local | 2026-03-31 08:12:00Z | scheduled | ok |
-| 0526cbc1e1b5 | weekly-free-models-reminder | 0 17 * * 2 | telegram:6699776435 | 2026-03-31 17:00:00Z | scheduled | — |
-| 415e88f05397 | wp-plugin-rishi-reminder | every 240m | telegram:6699776435 | 2026-03-31 10:49:47.952239Z | scheduled | ok |
+| 6effbb323126 | formbeep-daily-user-count-checkin | every 1440m | telegram:6699776435 | 2026-03-31T14:05:28.074031+00:00 | scheduled | — |
+| aba07be535ec | formbeep-daily-traffic-check | 0 10 * * * | local | 2026-03-31T10:00:00+00:00 | scheduled | — |
+| 513b777e84ea | formbeep-search-check | 0 10 * * 1,4 | local | 2026-04-02T10:00:00+00:00 | scheduled | — |
+| 753d42f32fbb | formbeep-weekly-growth-review | 0 11 * * 1 | local | 2026-04-06T11:00:00+00:00 | scheduled | — |
+| ae770f4f9ff8 | formbeep-hourly-heartbeat | 6 * * * * | telegram:6699776435 | 2026-03-31T10:06:00+00:00 | scheduled | — |
+| 52af5ec91c81 | codex-dashboard-update-checkin | every 720m | telegram:6699776435 | 2026-03-31T14:37:27.851179+00:00 | scheduled | — |
+| b0492991a3cd | moxie-memory-skill-audit | every 720m | local | 2026-03-31T19:14:06.559706+00:00 | scheduled | — |
+| ca6591a837b7 | codex-weekly-resume-premium | once at 2026-04-06 17:30 | local | 2026-04-06T17:30:00+04:00 | scheduled | — |
+| 0526cbc1e1b5 | weekly-free-models-reminder | 0 17 * * 2 | telegram:6699776435 | 2026-03-31T17:00:00+00:00 | scheduled | — |
+| 97eacc1cb3fa | codex-online-check | once in 30m | telegram | None | completed | — |
+| 6b5fe0d2220c | cmo-dispatch-orchestrator | every 240m | telegram | 2026-03-31T02:36:54.038656+00:00 | paused | — |
+| 647387aeef66 | mira-daily-kpi | 0 10 * * * | local | 2026-03-31T10:00:00+00:00 | scheduled | — |
+| a468835d1396 | vale-monthly-competitor-scan | 0 10 1 * * | local | 2026-04-01T10:00:00+00:00 | scheduled | — |
+| 2553a6832a11 | moxie-daily-governance | 0 * * * * | telegram:6699776435 | 2026-03-31T10:00:00+00:00 | scheduled | — |
+| 8bcfe505aba3 | vale-worker | 12 * * * * | local | 2026-03-31T10:12:00+00:00 | scheduled | — |
+| 7067633e99b9 | astra-worker | 17 * * * * | local | 2026-03-31T09:17:00+00:00 | scheduled | — |
+| 3171d2c2d4b2 | kiro-worker | 42 * * * * | local | 2026-03-31T09:42:00+00:00 | scheduled | — |
+| eb803b7d69a3 | ember-worker | 32 * * * * | local | 2026-03-31T09:32:00+00:00 | scheduled | — |
+| 401e59cc06f5 | forge-worker | 37 * * * * | local | 2026-03-31T09:37:00+00:00 | scheduled | — |
+| 4bdcef11fcc7 | jax-worker | 22 * * * * | local | 2026-03-31T09:22:00+00:00 | scheduled | — |
+| affd389a7783 | rumi-worker | 27 * * * * | local | 2026-03-31T09:27:00+00:00 | scheduled | — |
+| 415e88f05397 | wp-plugin-rishi-reminder | every 240m | telegram:6699776435 | 2026-03-31T10:49:47.952239+00:00 | scheduled | — |
+| af7f3c07b24b | moxie-daily-self-improvement | 0 20 * * * | telegram:6699776435 | 2026-03-31T20:00:00+00:00 | scheduled | — |
+| 904c65910bfe | moxie-forward-reports-to-telegram | every 30m | origin | 2026-03-30T23:45:50.831983+00:00 | paused | — |
+| 91520aa6ca57 | nova-worker | 47 * * * * | local | 2026-03-31T09:47:00+00:00 | scheduled | — |
+| 5b9c6eb70662 | issues-rishi-watch | every 240m | telegram:6699776435 | 2026-03-31T12:11:23.082384+00:00 | scheduled | — |
+| 3e93c4f54be5 | luna-worker | 52 * * * * | local | 2026-03-31T09:52:00+00:00 | scheduled | — |
+| cf1a8f9eec33 | pax-worker | 57 * * * * | local | 2026-03-31T09:57:00+00:00 | scheduled | — |
+| b0e9c5135620 | iris-weekly-formbeep-repo-copy-audit | 30 9 * * 1 | local | 2026-04-06T09:30:00+00:00 | scheduled | — |
+| 0ed491f66432 | orion-worker | 2 * * * * | local | 2026-03-31T10:02:00+00:00 | scheduled | — |
+| 868bd30fe7c1 | moxie-hq-autocommit-push | every 30m | local | 2026-03-31T09:20:07.509631+00:00 | scheduled | — |
+| 1c008e06fe40 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-03-31T10:13:00+00:00 | scheduled | — |
+| c342e1741731 | opencode-go-weekly-limit-reset-reminder | 26 13 * * 1 | telegram:6699776435 | 2026-04-06T13:26:00+00:00 | scheduled | — |
 
 ---
 
@@ -218,10 +221,9 @@
 - Worker SOULs are company-framed and must read product assignments from orchestration.md before each cycle.
 
 ## Codex Deep Audit (ONE-SHOT)
-- Cron ID: 1e17a419b9e4 (codex-5hr-resume-premium)
-- Fires: once at 2026-03-31 03:30 GST
-- This is a ONE-TIME task. It does NOT repeat. After firing, the system continues with the hourly worker schedule below.
-- Audit output: /root/moxie/cmo/orchestration-audit.md
+- Previous one-shot job `codex-5hr-resume-premium` (Cron ID: 1e17a419b9e4) is **no longer present** in the live cron registry (treat as completed/retired).
+- Current premium “resume” job in the live registry: `codex-weekly-resume-premium` (Cron ID: ca6591a837b7) — schedule: once at 2026-04-06 17:30 (GST, +04:00)
+- Expected audit output path (if/when run): /root/moxie/cmo/orchestration-audit.md
 
 ## Product Assignments (Multi-product ready)
 | Product | Status | Priority | Assigned Employees |
