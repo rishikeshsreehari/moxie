@@ -150,6 +150,7 @@
 | 7067633e99b9 | astra-worker | 17 * * * * | local | 2026-03-31 08:17:00Z | scheduled | ok |
 | 52af5ec91c81 | codex-dashboard-update-checkin | every 720m | telegram:6699776435 | 2026-03-31 14:37:27.851179Z | scheduled | ok |
 | ca6591a837b7 | codex-weekly-resume-premium | once at 2026-04-06 17:30 | local | 2026-04-06 17:30:00+04:00 | scheduled | — |
+| c342e1741731 | opencode-go-weekly-limit-reset-reminder | 26 13 * * 1 | telegram:6699776435 | 2026-04-06 13:26:00Z | scheduled | — |
 | eb803b7d69a3 | ember-worker | 32 * * * * | local | 2026-03-31 08:32:00Z | scheduled | ok |
 | 401e59cc06f5 | forge-worker | 37 * * * * | local | 2026-03-31 08:37:00Z | scheduled | ok |
 | aba07be535ec | formbeep-daily-traffic-check | 0 10 * * * | local | 2026-03-31 10:00:00Z | scheduled | — |
