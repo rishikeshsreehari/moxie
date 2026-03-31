@@ -1,5 +1,5 @@
 # Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-# Last updated: 2026-03-31T00:17:40Z
+# Last updated: 2026-03-31T00:33:41Z
 # 
 # HOW THIS WORKS:
 # Every cron job reads this file for context. When done, it updates relevant sections.
@@ -33,7 +33,7 @@
 | Blocker | Owner | Status | Action Needed |
 |---------|-------|--------|---------------|
 | Codex 5-hour limit hit | System | RESOLVED | Premium window available now (reset completed) |
-| WordPress plugin pending review changes | Forge + Rishi | BLOCKED | Needs code review + Rishi action |
+| WordPress plugin pending review changes | Forge + Rishi | BLOCKED | Forge audit complete; Rishi to apply suggested changes + resubmit (see /root/moxie/products/formbeep/wp-plugin-fixes.md) |
 | Umami analytics access | Mira | RESOLVED | Data pulled; see /root/moxie/products/formbeep/analytics-report.md |
 | Telegram token | **RESOLVED** | FIXED | Bot paired, delivery confirmed, chat_id: 6699776435 |
 ---
@@ -56,36 +56,39 @@
 ### Astra — Growth Research Lead
 - SOUL: /root/moxie/cmo/employees/astra-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: RETRY(1/3) (no deliverable file found)
-- Current task: WordPress form-notification plugin market analysis
+- Status: COMPLETED
+- Current task: WordPress form-notification plugin market analysis — **COMPLETED**
 - Seed keyword file: /root/moxie/products/formbeep/seo-keywords.md
-- Last output: **MISSING expected file** (/root/moxie/products/formbeep/wordpress-market-analysis.md) → RETRY(1/3)
+- Last output: /root/moxie/products/formbeep/wordpress-market-analysis.md
 - Next task after completion: Keyword v2 expansion (top-50 prioritized with intent/difficulty)
 - Blockers: None
 
 ### Kiro — Conversion Copy Lead
-- SOUL: /root/moxie/cmo/employees/kiro-soul.md
-- Output dir: /root/moxie/products/formbeep/copy/
-- Status: READY (dependency satisfied: Vale intel completed)
-- Next task: Landing page copy (headline, features, pricing, FAQ), 2 blog posts from Astra's keyword list
-- Blockers: None
+|- SOUL: /root/moxie/cmo/employees/kiro-soul.md
+|- Output dir: /root/moxie/products/formbeep/copy/
+|- Status: IN_PROGRESS (dependency satisfied: Vale/Astra/Rumi completed)
+|- Current task: 2 blog posts from Astra's keyword list — promoted after landing page completion
+|- Last output: /root/moxie/products/formbeep/copy/landing-page-v1.md
+|- Next task after completion: finalize blog draft briefs and publish-ready outlines
+|- Blockers: None
 
 ### Ember — Outreach & Distribution Lead
 - SOUL: /root/moxie/cmo/employees/ember-soul.md
 - Output dir: /root/moxie/products/formbeep/outreach/
-- Status: RETRY(1/3) (expected output missing)
-- Current task: Reddit landscape research + 3 post drafts (expected output missing: /root/moxie/products/formbeep/reddit-strategy.md)
+- Status: IN_PROGRESS
+- Current task: Reddit campaign launch plan (calendar + posting SOP + partnerships tie-in)
 - Next task after completion: Community posting schedule, partnership outreach list
-- Blockers: Partial (can start Reddit work, full campaign needs Vale's intel)
+- Blockers: None
 
 ### Forge — Product/Codebase Inspector
 - SOUL: /root/moxie/cmo/employees/forge-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: READY (Codex premium available)
-- Current task: WordPress plugin code review for directory resubmission
-- WP plugin location: TBD (needs discovery in /root/moxie/formbeep/)
+- Status: COMPLETED
+- Current task: WordPress plugin code audit + resubmission fix list — **COMPLETED**
+- WP plugin location: /root/moxie/formbeep/integrations/wordpress/formbeep/
+- Last output: /root/moxie/products/formbeep/wp-plugin-fixes.md
 - Next task: Technical SEO audit, integration health checks
-- Blockers: Rishi review still required; Codex blocker cleared
+- Blockers: Awaiting Rishi to implement/apply suggested changes + resubmit on WP.org
 
 ### Mira — Analytics & Reporting Lead
 - SOUL: /root/moxie/cmo/employees/mira-soul.md
@@ -109,8 +112,9 @@
 ### Jax — SaaS Growth Operations Lead
 - SOUL: /root/moxie/cmo/employees/jax-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: RETRY(1/3) (expected output missing)
-- Current task: 40+ SaaS directory master list (expected output missing: /root/moxie/products/formbeep/directory-submissions.md)
+- Status: COMPLETED
+- Current task: 40+ SaaS directory master list — **COMPLETED**
+- Last output: /root/moxie/products/formbeep/directory-submissions.md
 - Next task after completion: Begin P1 directory submissions (ProductHunt, AlternativeTo, BetaList, SaaSHub)
 - Blockers: None
 - If directory submissions need founder credentials/email verification: note in this file and flag for Rishi
@@ -118,8 +122,8 @@
 ### Rumi — Blog & Content Analyst
 - SOUL: /root/moxie/cmo/employees/rumi-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: RETRY(1/3) (expected output missing)
-- Current task: Competitor blog analysis + 30-day content calendar (expected output missing: /root/moxie/products/formbeep/content-calendar.md)
+- Status: COMPLETED
+- Current task: Competitor blog analysis + 30-day content calendar — **COMPLETED**
 - Keyword seed: /root/moxie/products/formbeep/seo-keywords.md
 - Next task after completion: Weekly content gap scan (what new topics emerged, what's trending)
 - Blockers: None
@@ -150,7 +154,10 @@
 |------|----------|------|--------|
 | 2026-03-31 | Mira | /root/moxie/products/formbeep/analytics-report.md | COMPLETED |
 | 2026-03-31 | Vale | /root/moxie/products/formbeep/beepmate-web2phone-deepdive.md | COMPLETED |
-| 2026-03-31 | Astra/Ember/Jax/Rumi | Expected outputs missing | RETRY(1/3) |
+|| 2026-03-31 | Astra | /root/moxie/products/formbeep/wordpress-market-analysis.md | COMPLETED |
+| 2026-03-31 | Ember | /root/moxie/products/formbeep/reddit-strategy.md | COMPLETED |
+|| 2026-03-31 | Jax | /root/moxie/products/formbeep/directory-submissions.md | COMPLETED |
+|| 2026-03-31 | Rumi | /root/moxie/products/formbeep/content-calendar.md | COMPLETED |
 
 ---
 
