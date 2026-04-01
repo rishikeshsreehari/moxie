@@ -4,12 +4,14 @@
     "pageviews_7d": 103,
     "visitors_7d": 76,
     "signups_7d": 4,
-    "paid_7d": 0
+    "paid_7d": 0,
+    "mrr_usd": 0,
+    "revenue_total_usd": 0
   },
   "products": [
     {
       "name": "FormBeep",
-      "status": "active",
+      "status": "ACTIVE",
       "pageviews_7d": 103,
       "signups_7d": 4
     }
@@ -19,66 +21,107 @@
       "pending": 0,
       "in_progress": 0
     },
-    "blockers": {
-      "count": 6
-    },
     "cron": {
-      "active_jobs": 19,
-      "note": "local-only outputs"
+      "active_jobs": 19
+    },
+    "blockers": {
+      "count": 6,
+      "needs_rishi": [
+        "WP plugin resubmission",
+        "Directory inbox access / existing directory accounts",
+        "Marketplace portal access (Webflow / Framer / Glide)",
+        "Reddit account credentials",
+        "Review + publish blog drafts",
+        "Approve SEO fixes implementation"
+      ]
     }
+  },
+  "running": {
+    "count": 3,
+    "tasks": [
+      {
+        "role": "Competitor Intel",
+        "status": "DONE",
+        "text": "Assessing competitor data: 3 insights extracted"
+      },
+      {
+        "role": "Growth Research",
+        "status": "IN_PROGRESS",
+        "text": "US SERP demand probe + keyword roadmap"
+      },
+      {
+        "role": "Directories",
+        "status": "WAITING",
+        "text": "Waiting on founder: execute 2 directory submissions (today pick)"
+      }
+    ],
+    "highlights": [
+      "Reddit competitor analysis: done",
+      "US SERP analysis: in progress",
+      "Directory submissions: waiting on founder",
+      "Marketplace applications: ready (pending portal access)"
+    ]
   },
   "team": [
     {
-      "role": "Moxie (Autonomous CMO)",
+      "role": "Moxie",
       "status": "ACTIVE",
-      "focus": "Orchestration + decisions"
+      "working_on": "Orchestration + growth decisions"
     },
     {
-      "role": "Growth Research",
+      "role": "Astra (Growth Research)",
       "status": "IN_PROGRESS",
-      "focus": "Demand probes + keyword roadmap"
+      "working_on": "SERP demand probe + keyword roadmap"
     },
     {
-      "role": "Outreach",
+      "role": "Vale (Competitor Intel)",
+      "status": "DONE",
+      "working_on": "Monthly scan complete (3 insights)"
+    },
+    {
+      "role": "Ember (Outreach)",
       "status": "BLOCKED",
-      "focus": "Needs social credentials"
+      "working_on": "Reddit execution (needs credentials)"
     },
     {
-      "role": "Distribution Ops",
+      "role": "Jax (Distribution Ops)",
       "status": "BLOCKED",
-      "focus": "Needs inbox / directory access"
+      "working_on": "Directory submissions (needs inbox/accounts)"
     },
     {
-      "role": "Conversion Copy",
-      "status": "IDLE",
-      "focus": "Drafts ready"
-    },
-    {
-      "role": "Analytics",
+      "role": "Pax (Partnerships)",
       "status": "BLOCKED",
-      "focus": "API access restricted"
+      "working_on": "Marketplace submissions (needs portal access)"
     },
     {
-      "role": "Partnerships",
-      "status": "BLOCKED",
-      "focus": "Portal access pending"
+      "role": "Forge (SEO)",
+      "status": "WAITING",
+      "working_on": "SEO fixes ready; awaiting approval to implement"
     },
     {
-      "role": "Outbound",
-      "status": "IDLE",
-      "focus": "Pack ready"
-    },
-    {
-      "role": "Competitor Intel",
-      "status": "IDLE",
-      "focus": "Monthly scan done"
+      "role": "Kiro (Copy)",
+      "status": "WAITING",
+      "working_on": "Blog drafts ready; awaiting review/publish"
     }
   ],
+  "github": {
+    "recent": [
+      {
+        "hash": "acb9687",
+        "when": "2026-04-01",
+        "subject": "Add public retro HQ dashboard (7.css)"
+      },
+      {
+        "hash": "574703c",
+        "when": "2026-04-01",
+        "subject": "Framework: replication rules + checklists"
+      }
+    ]
+  },
   "console": [
-    "[OK] Snapshot loaded (sanitized)",
-    "[INFO] KPI window shows 7D aggregates only",
-    "[INFO] Employee panel shows roles only (no names required)",
-    "[WARN] Some execution is blocked on credentials",
-    "[NOTE] No emails, tokens, IDs, referrers, or customer data are ever included"
+    "[BOOT] Moxie HQ online",
+    "[SYNC] reading orchestration state",
+    "[RUN ] workers scheduled",
+    "[NOTE] some execution requires founder actions"
   ]
 }
