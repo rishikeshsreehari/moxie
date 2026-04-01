@@ -62,3 +62,15 @@ Last updated: 2026-04-01
   - /root/moxie/products/formbeep/directory-submissions-tracker.md
   - /root/moxie/products/formbeep/distribution/directory-submissions-log.md
 - Next action: keep logging every submission/approval to avoid duplicates
+
+8) [DECISION] Approve 1 DataForSEO test query (SERP) for US SMS demand
+- Owner: Rishi
+- Budget note: ~$0.50 left; spend should be minimal.
+- Policy: Astra must ask approval before running any paid query.
+- Reference: /root/moxie_hq/cmo/resources/credentials/dataforseo.md
+
+- Owner: Rishi (execute), Jax (ops)
+- Files:
+  - /root/moxie/products/formbeep/directory-submissions-tracker.md
+  - /root/moxie/products/formbeep/distribution/directory-submissions-log.md
+- Next action: keep logging every submission/approval to avoid duplicates
