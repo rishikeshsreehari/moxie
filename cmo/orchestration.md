@@ -126,11 +126,11 @@
 ### Jax — SaaS Growth Operations Lead
 - SOUL: /root/moxie/cmo/employees/jax-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: COMPLETED (pack delivered; execution awaits credentials)
-- Current task: P1 directory submission pack — **DELIVERED** (2026-03-31)
-- Last output: /root/moxie/products/formbeep/directory-submissions-p1.md
-- Next task after completion: Execute P1 submissions once Rishi provides email/account access (ProductHunt, AlternativeTo, BetaList, SaaSHub, G2, Capterra, Uneed, StartupBase, GetApp)
-- Blockers: Actual submission execution requires hello@formbeep.com email verification or existing directory account credentials (see issues_rishi.md). Submit pack is fully prepared and copy-paste ready.
+- Status: COMPLETED
+- Current task: Daily directory 2-pick + maintenance — **COMPLETED** (2026-04-02)
+- Last output: /root/moxie/products/formbeep/distribution/directory-submissions-log.md & /root/moxie/products/formbeep/directory-submissions-today-pick.md
+- Next task after completion: Await approval/results from SaaSHub and Uneed to update tracker.
+- Blockers: Execution still requires Rishi to submit via the "today-pick" bundles. No new credentials needed for these two picks (form-based).
 
 ### Rumi — Blog & Content Analyst
 - SOUL: /root/moxie/cmo/employees/rumi-soul.md

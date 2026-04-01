@@ -1,5 +1,6 @@
 # issues_rishi.md (Human-needed blockers)
 # Purpose: capture anything that requires Rishi (human) input/credentials/approval.
+# Companion file: /root/moxie_hq/cmo/rishi_review.md (all founder attention items, incl. reviews + manual execution)
 # This file is monitored. If new items appear, Moxie will notify on Telegram.
 
 ## Open
