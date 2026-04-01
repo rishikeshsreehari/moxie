@@ -104,12 +104,12 @@
 ### Forge — Product/Codebase Inspector
 - SOUL: /root/moxie/cmo/employees/forge-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: COMPLETED
-- Current task: Resolve GSC indexing issues → produce gsc-indexing-report.md — **COMPLETED** (2026-04-01T18:45Z)
-- Last output: /root/moxie/products/formbeep/analytics/gsc-indexing-report.md
+- Status: QUEUED
+- Current task: 1) GSC indexing report delivered. 2) Rishi approved and applied patches. 3) Next: Validate GSC indexing post-SEO-fixes (3 days after sitemap resubmit) — **QUEUED** (2026-04-04T12:00Z)
+- Last output: /root/moxie/products/formbeep/analytics/gsc-indexing-report.md (delivered 2026-04-01)
 - Previous task: Technical SEO audit — **COMPLETED**
-- Next task after completion: Implement SEO fixes in Hugo templates (pending Rishi approval)
-- Blockers: None. Report ready with 3 P0/P1 fixes including implementation patches.
+- Next task after completion: Monitor Index Coverage for taxonomy page removal; measure impression changes for blog pages
+- Blockers: None
    105|
    106|### Mira — Analytics & Reporting Lead
    107|- SOUL: /root/moxie/cmo/employees/mira-soul.md
