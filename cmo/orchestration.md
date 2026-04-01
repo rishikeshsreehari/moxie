@@ -79,16 +79,16 @@
 - Next task after completion: Await Rishi review + deploy to site; begin next copy assignment from content calendar
 - Blockers: None
 
-**Ember — Outreach & Distribution Lead**
+### Ember — Outreach & Distribution Lead
 - SOUL: /root/moxie/cmo/employees/ember-soul.md
 - Output dir: /root/moxie/products/formbeep/outreach/
-- Status: IN_PROGRESS
-- Current task: Draft subreddit-specific post/comment scripts + reply macros based on Vale playbook — **IN_PROGRESS** (2026-04-01)
-- Target output: /root/moxie/products/formbeep/outreach/reddit-post-comment-scripts.md
-- Previous output: /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md (2026-03-31)
-- Completed deliverables: reddit-strategy.md (6 post drafts + 20 comment plan), reddit-campaign-plan.md (calendar + SOP + posting times)
-- Next task after completion: Publish Week 1 Reddit posts + 15 comment seeds — **BLOCKED** on Reddit account credentials
-- Blockers: Script drafting is proceeding; execution will be BLOCKED on Reddit account credentials (see issues_rishi.md)
+- Status: COMPLETED (execution blocked on creds)
+- Current task: Manual Reddit posting plan (Non-US/GST focus) + subreddit rules checklist + posting windows + verification steps — **COMPLETED** (2026-04-01T17:32Z)
+- Last output: /root/moxie/products/formbeep/outreach/reddit-manual-posting-plan-gst-nonus-v1.md
+- Previous outputs: /root/moxie/products/formbeep/outreach/reddit-post-comment-scripts.md (2026-04-01), reddit-campaign-plan.md (2026-03-31), reddit-strategy.md (2026-03-31)
+- Completed deliverables: reddit-strategy.md, reddit-campaign-plan.md, reddit-post-comment-scripts.md, manual-posting-plan-gst-nonus-v1.md
+- Next task after completion: Execute Week 1 posting — **BLOCKED** on Reddit account credentials (see issues_rishi.md)
+- Blockers: Reddit account credentials required for all posting execution (see issues_rishi.md)
 
 ### Forge — Product/Codebase Inspector
 - SOUL: /root/moxie/cmo/employees/forge-soul.md
@@ -235,6 +235,8 @@ Last verified: 2026-04-01T17:30:00Z
 | 2026-03-31 | Astra | /root/moxie/products/formbeep/wordpress-market-analysis.md | COMPLETED |
 | 2026-03-31 | Ember | /root/moxie/products/formbeep/reddit-strategy.md | COMPLETED |
 | 2026-03-31 | Ember | /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md | COMPLETED |
+| 2026-04-01 | Ember | /root/moxie/products/formbeep/outreach/reddit-post-comment-scripts.md | COMPLETED |
+| 2026-04-01 | Ember | /root/moxie/products/formbeep/outreach/reddit-manual-posting-plan-gst-nonus-v1.md | COMPLETED |
 | 2026-03-31 | Jax | /root/moxie/products/formbeep/directory-submissions.md | COMPLETED |
 | 2026-03-31 | Jax | /root/moxie/products/formbeep/directory-submissions-p1.md | COMPLETED (P1 submission pack ready; execution awaits credentials) |
 | 2026-03-31 | Rumi | /root/moxie/products/formbeep/content-calendar.md | COMPLETED |

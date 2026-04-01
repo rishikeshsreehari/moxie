@@ -9,8 +9,9 @@
 Format: [STATUS] Employee | (Product) Task | Depends on | Output file
 
 0. [COMPLETED] Vale | (FormBeep) Analyze newly-pushed Reddit intel artifact → produce actionable FormBeep positioning + subreddit playbook | Source: /root/moxie_hq/scripts/reddit-intel/reddit_intel_brief_browser.md | /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md ✅
-0b. [IN_PROGRESS] Ember | (FormBeep) Draft subreddit-specific post/comment scripts + reply macros based on Vale playbook | Depends: Vale playbook COMPLETED (execution still needs Reddit creds) | /root/moxie/products/formbeep/outreach/reddit-post-comment-scripts.md
-0c. [QUEUED] Kiro | (FormBeep) Revise 2 blog posts to match existing FormBeep blog style + repo format: maintain active list of existing posts, add internal/external hyperlinks, add image placeholders, reduce salesiness, align tone with https://formbeep.com/blog/why-formbeep/; set dates April 1 & April 2 for publishing | Depends: None | /root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md + /root/moxie/products/formbeep/copy/blog-post-formbeep-vs-zapier.md
+0b. [COMPLETED] Ember | (FormBeep) Produce manual Reddit posting plan (Non‑US focus) + subreddit/rules checklist + GST posting windows + “have we posted already?” verification steps; may request Rishi to run local Reddit scan script and provide artifact | Depends: Vale playbook COMPLETED | /root/moxie/products/formbeep/outreach/reddit-manual-posting-plan-gst-nonus-v1.md ✅
+0c. [IN_PROGRESS] Kiro | (FormBeep) Revise 2 blog posts to match existing FormBeep blog style + repo format: maintain active list of existing posts, add internal/external hyperlinks, add image placeholders, reduce salesiness, align tone with https://formbeep.com/blog/why-formbeep/; set dates April 1 & April 2 for publishing | Depends: None | /root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md + /root/moxie/products/formbeep/copy/blog-post-formbeep-vs-zapier.md
+0d. [QUEUED] Jax | (FormBeep) Create a manual directory submission tracker + per-directory checklist so Rishi can execute one-by-one. Must link to the existing submission pack and leave fields for live listing URLs + evidence. | Depends: None | /root/moxie/products/formbeep/directory-submissions-tracker.md
     13|
     14|1. [COMPLETED] Vale | (FormBeep) Beepmate + Web2Phone deep-dive + founder Reddit analysis | None | /root/moxie/products/formbeep/beepmate-web2phone-deepdive.md
     15|2. [COMPLETED] Astra | (FormBeep) SEO: WP plugin market analysis + 30 keywords mapped to pages (7d) | None | /root/moxie/products/formbeep/wordpress-market-analysis.md
@@ -72,7 +73,7 @@ Format: [STATUS] Employee | (Product) Task | Depends on | Output file
 ## Vale Status (Current Session)
 - Status: **COMPLETED** — Reddit intel analysis → positioning + subreddit playbook ✅
 - Output delivered: /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md
-- Follow-on (Ember): **IN_PROGRESS** — drafting post/comment scripts based on Vale playbook (execution still blocked on Reddit creds)
+- Follow-on (Ember): **COMPLETED** — GST posting plan + comment scripts delivered (execution still blocked on Reddit creds)
 - Next recurring: Monthly scan 2026-05-01 (cron: vale-monthly-competitor-scan)
 
 ## Kiro Status (Current Session)
