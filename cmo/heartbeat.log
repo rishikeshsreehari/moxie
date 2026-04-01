@@ -1,24 +1,42 @@
 # Moxie Heartbeat Log
-# Last updated: 2026-04-01T17:30:00Z
+# Last updated: 2026-04-01T18:06:00Z
 
 ## System Status
 - Status: OPERATIONAL
-- Active Worker: Ember (IN_PROGRESS)
-- Idle: Vale, Astra, Kiro, Jax, Rumi, Nova, Luna, Pax, Orion, Forge, Mira, Iris
+- Active Worker: Forge (IN_PROGRESS)
+- Idle: Vale, Astra, Kiro, Ember, Jax, Rumi, Nova, Luna, Pax, Orion, Mira, Iris
 
 ## Current Task in Progress
-- Employee: Ember
-- Task: Draft subreddit-specific post/comment scripts + reply macros based on Vale playbook
-- Input: /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md (Vale COMPLETED)
-- Target: /root/moxie/products/formbeep/outreach/reddit-post-comment-scripts.md
-- Status: IN_PROGRESS (placeholder created, drafting in progress)
+- Employee: Forge
+- Task: Resolve GSC indexing issues → produce gsc-indexing-report.md
+- Input: Technical SEO audit from /root/moxie/products/formbeep/technical-seo-audit.md
+- Target: /root/moxie/products/formbeep/analytics/gsc-indexing-report.md
+- Status: IN_PROGRESS (started 2026-04-01T18:00Z)
+- Note: No output file yet (task just started)
+
+## Dispatch Queue Status
+| Priority | Employee | Task | Status |
+|----------|----------|------|--------|
+| P0 | Forge | GSC indexing issues | IN_PROGRESS |
+| P1 | Kiro | Blog draft approval | PENDING |
+| P1 | Ember | Reddit tracker maintenance | PENDING |
+| P1 | Jax | Directory submission tracking | PENDING |
+| P1 | Jax | Directory day-plan (2 picks) | PENDING |
+
+## Completed Today (2026-04-01)
+- Vale: Reddit intel positioning + subreddit playbook (COMPLETED)
+- Ember: Reddit post/comment scripts (COMPLETED)
+- Ember: Manual posting plan GST/Non-US v1 (COMPLETED)
+- Pax: Platform applications Week 3 (COMPLETED)
 
 ## Blockers (Unchanged)
 - WordPress plugin resubmission: BLOCKED (Rishi-owned)
-- Directory submissions: BLOCKED (awaiting credentials)
-- Reddit execution: BLOCKED (awaiting credentials) — note: Ember script drafting proceeding; only execution blocked
+- Directory submissions: BLOCKED (awaiting hello@formbeep.com credentials/access)
+- Reddit execution: BLOCKED (awaiting Reddit credentials)
+- Platform marketplace portals: BLOCKED (awaiting credentials)
+- Umami Cloud API: PARTIALLY RESOLVED (data pulled once; ongoing access may need API key rotation)
 
 ## Next Actions
-1. Ember continues drafting subreddit scripts
-2. No new dispatch needed this cycle
-3. System awaiting human input on blockers (see issues_rishi.md)
+1. Forge continues GSC indexing analysis
+2. Other P1 tasks queued in dispatch await pick-up on next worker cycles
+3. System stable; no intervention needed

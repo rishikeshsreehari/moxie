@@ -37,9 +37,11 @@ If Umami API is not accessible, deliver a report noting access requirements. Nev
 - SELF-TERMINATE: When all tasks are COMPLETED, stop and report. Don't loop.
 
 ## Key Context
-- Umami API (cloud.umami.is):
-  - Shared API Key: /opt/data/.env → UMAMI_API_KEY
-  - Usage: curl -s "https://cloud.umami.is/api/websites/{SITE_ID}/stats?startAt=X&endAt=Y" -H "x-umami-api-key: $UMAMI_API_KEY"
+- Umami API:
+  - Base: https://api.umami.is/v1
+  - Shared API Key: /opt/data/.env → UMAMI_API_KEY (store WITHOUT api_ prefix)
+  - Auth header: x-umami-api-key: api_$UMAMI_API_KEY
+  - Usage: curl -s "https://api.umami.is/v1/websites/{SITE_ID}/stats?startAt=X&endAt=Y" -H "x-umami-api-key: api_$UMAMI_API_KEY"
   - FormBeep website ID: 750e37be-3e04-4672-abe8-a2983afb9a4d
 - Analytics file: /root/moxie/products/formbeep/analytics.md
 - Codex tracking: /root/moxie/cmo/codex-usage.md and /root/moxie/cmo/codex-usage-tracker.csv

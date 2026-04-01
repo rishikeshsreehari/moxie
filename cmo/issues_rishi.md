@@ -1,9 +1,10 @@
 # issues_rishi.md (Human-needed blockers)
-# Purpose: captureanything that requires Rishi (human) input/credentials/approval.
+# Purpose: capture anything that requires Rishi (human) input/credentials/approval.
 # This file is monitored. If new items appear, Moxie will notify on Telegram.
 
-##Open
-- [ ] (2026-03-31) Reddit founder-profile scan + subreddit intel: (1) this environment is **HTTP 403 Blocked** to reddit.com, and (2) Reddit’s current Data API policy states **approval is required** before accessing Reddit data via API; commercial use requires explicit permission/contract. So we should NOT automate scans unless/until approved + reachable network. Next action: decide whether to apply for approved Data API access or do manual intel only. — Owner: Rishi + Vale
+## Open
+
+- [ ] (2026-03-31) Reddit founder-profile scan + subreddit intel: (1) this environment is **HTTP 403 Blocked** to reddit.com, and (2) Reddit's current Data API policy states **approval is required** before accessing Reddit data via API; commercial use requires explicit permission/contract. So we should NOT automate scans unless/until approved + reachable network. Next action: decide whether to apply for approved Data API access or do manual intel only. — Owner: Rishi + Vale
 
 - [ ] (2026-03-31) WordPress plugin resubmission (WP team feedback) — Founder-owned blocker. Moxie/Forge will not touch WP plugin changes; Rishi will handle and we'll plan post-approval launch later. — Owner: Rishi
 
@@ -13,15 +14,15 @@
 
 - [ ] (2026-03-31) Directory submissions: preferred inbox confirmed as hello@formbeep.com; still need any existing directory accounts/verification access — Owner: Rishi + Jax
 
-- [ ] (2026-04-01) Platform marketplace portal access: Pax Week 1 application packages (Webflow Apps, Framer Marketplace, Glide Plugins) are100% ready with all copy, metadata, and submission steps — need hello@formbeep.com login credentials or existing developer account access to actually submit the applications — Owner: Rishi + Pax
+- [ ] (2026-04-01) Platform marketplace portal access: Pax Week 1 application packages (Webflow Apps, Framer Marketplace, Glide Plugins) are 100% ready with all copy, metadata, and submission steps — need hello@formbeep.com login credentials or existing developer account access to actually submit the applications — Owner: Rishi + Pax
 
 - [ ] (2026-04-01) Analytics blocker: Umami Cloud API calls from this environment fail (HTTP 401 Unauthorized using x-umami-api-key). Need: confirm/rotate Umami Cloud API key + permissions, or provide an alternate export method so we can compute last-30d landing→CTA click funnel. — Owner: Rishi + Moxie
 
-##Resolved
+## Resolved
 
 - [x] (2026-04-01) HQ autopush initially failed due to non-fast-forward (remote ahead). Autopush now auto-rebases (`git pull --rebase origin main`) and retries push under lock; state reconciled and pushed.
 
 - [x] (2026-03-31) OpenCode Go weekly-reset reminder cron: scheduled (UTC) — Owner: Rishi + Moxie
 - [x] (2026-03-31) Google Search Console cron — Rishi confirmed it was configured earlier. Verifying access + re-enabling scheduled scans. — Owner: Moxie
-- [x] (2026-03-31) Approve Rumi's content calendar so Kiro can finalize/write the2 blog posts — RESOLVED: Kiro blog posts COMPLETED, files delivered to /root/moxie/products/formbeep/copy/blog-posts-v1.md
+- [x] (2026-03-31) Approve Rumi's content calendar so Kiro can finalize/write the 2 blog posts — RESOLVED: Kiro blog posts COMPLETED, files delivered to /root/moxie/products/formbeep/copy/blog-posts-v1.md
 - [x] (2026-03-31) Dispatch queue contained Luna/Pax/Orion path drift (/root/moxie vs /root/moxie_hq) + Orion output path mismatch; fixed SOUL references + standardized Orion output path — Owner: Rishi + Moxie

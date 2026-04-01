@@ -1,0 +1,615 @@
+{
+  "window_utc": {
+    "start": "2026-03-02T18:14:30.309000Z",
+    "end": "2026-04-01T18:14:30.309000Z"
+  },
+  "data": {
+    "stats": {
+      "pageviews": 866,
+      "visitors": 659,
+      "visits": 719,
+      "bounces": 644,
+      "totaltime": 13126,
+      "comparison": {
+        "pageviews": 667,
+        "visitors": 232,
+        "visits": 278,
+        "bounces": 220,
+        "totaltime": 35032
+      }
+    },
+    "metrics_url": [
+      {
+        "x": "/",
+        "y": 475
+      },
+      {
+        "x": "/whatsapp-api-pricing/",
+        "y": 56
+      },
+      {
+        "x": "/blog/building-formbeep-weekend/",
+        "y": 42
+      },
+      {
+        "x": "/blog/webflow-whatsapp-notifications/",
+        "y": 30
+      },
+      {
+        "x": "/integrations/framer/",
+        "y": 22
+      },
+      {
+        "x": "/blog/",
+        "y": 19
+      },
+      {
+        "x": "/tools/whatsapp-link-generator/",
+        "y": 12
+      },
+      {
+        "x": "/blog/framer-whatsapp-notifications/",
+        "y": 12
+      },
+      {
+        "x": "/blog/why-you-are-missing-leads/",
+        "y": 10
+      },
+      {
+        "x": "/#pricing",
+        "y": 10
+      },
+      {
+        "x": "/privacy/",
+        "y": 7
+      },
+      {
+        "x": "/terms/",
+        "y": 6
+      },
+      {
+        "x": "/blog/why-formbeep/",
+        "y": 6
+      },
+      {
+        "x": "/tools/whatsapp-message-formatter/",
+        "y": 5
+      },
+      {
+        "x": "/integrations/webflow/",
+        "y": 4
+      },
+      {
+        "x": "/integrations/",
+        "y": 4
+      },
+      {
+        "x": "/blog/whatsapp-form-notifications/",
+        "y": 4
+      },
+      {
+        "x": "/tools/",
+        "y": 4
+      },
+      {
+        "x": "/blog/whatsapp-leads-private-number/",
+        "y": 3
+      },
+      {
+        "x": "/pricing",
+        "y": 2
+      },
+      {
+        "x": "/blog/whatsapp-business-api-explained/",
+        "y": 2
+      },
+      {
+        "x": "/blog/framer-whatsapp-without-zapier/",
+        "y": 2
+      },
+      {
+        "x": "/pricing/",
+        "y": 2
+      },
+      {
+        "x": "/tools/whatsapp-api-pricing",
+        "y": 2
+      },
+      {
+        "x": "/whatsapp-business-api-pricing-2026",
+        "y": 2
+      },
+      {
+        "x": "/#how-it-works",
+        "y": 2
+      },
+      {
+        "x": "/tools/whatsapp-contact-form-generator/",
+        "y": 1
+      },
+      {
+        "x": "/tags/",
+        "y": 1
+      },
+      {
+        "x": "/tools/whatsapp-chat-button-generator/",
+        "y": 1
+      },
+      {
+        "x": "/categories/",
+        "y": 1
+      },
+      {
+        "x": "/tools/whatsapp-business-bio-generator/",
+        "y": 1
+      }
+    ],
+    "metrics_event": [
+      {
+        "x": "Docs Click",
+        "y": 26
+      },
+      {
+        "x": "Signup - Hero",
+        "y": 14
+      },
+      {
+        "x": "Login Click",
+        "y": 13
+      },
+      {
+        "x": "Signup - Header",
+        "y": 11
+      },
+      {
+        "x": "Signup - Pricing",
+        "y": 3
+      },
+      {
+        "x": "WAP Pricing CTA - Try Free",
+        "y": 1
+      },
+      {
+        "x": "Signup - Final CTA",
+        "y": 1
+      }
+    ],
+    "events": {
+      "data": [
+        {
+          "id": "f6f6ee03-8ef8-4c69-9cd2-93af333a3515",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "11e07099-bce3-5e5f-8546-9bf37a01067c",
+          "createdAt": "2026-04-01T17:57:55Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/#how-it-works",
+          "urlQuery": "",
+          "referrerPath": "",
+          "referrerQuery": "",
+          "referrerDomain": "",
+          "country": "GB",
+          "city": "Southampton",
+          "device": "laptop",
+          "os": "Windows 10",
+          "browser": "chrome",
+          "pageTitle": "FormBeep \u2014 Form Submissions on WhatsApp",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "abaf849c-8d3e-4368-813d-eabab02125bc",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "ee582919-e93c-53b8-b0ad-aca26cf1339b",
+          "createdAt": "2026-04-01T16:59:30Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/whatsapp-api-pricing/",
+          "urlQuery": "",
+          "referrerPath": "",
+          "referrerQuery": "",
+          "referrerDomain": "",
+          "country": "JM",
+          "city": "Kingston",
+          "device": "mobile",
+          "os": "Android OS",
+          "browser": "chrome",
+          "pageTitle": "WhatsApp Business API Pricing (2026) \u2014 Rates by Country | FormBeep",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "c275f2a0-a813-47ea-b4ac-b27bbfed68a8",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "6781052f-8fd1-584b-a50f-133517c46d44",
+          "createdAt": "2026-04-01T16:48:00Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/whatsapp-api-pricing/",
+          "urlQuery": "",
+          "referrerPath": "",
+          "referrerQuery": "",
+          "referrerDomain": "",
+          "country": "CR",
+          "city": "Heredia",
+          "device": "mobile",
+          "os": "iOS",
+          "browser": "crios",
+          "pageTitle": "Precios de la API de WhatsApp Business (2026): tarifas por pa\u00eds | FormBeep",
+          "eventType": 2,
+          "eventName": "Docs Click",
+          "hasData": 0
+        },
+        {
+          "id": "4e808661-bb57-474b-b5ae-c0cfc1ed8bb6",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "6781052f-8fd1-584b-a50f-133517c46d44",
+          "createdAt": "2026-04-01T16:47:11Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/whatsapp-api-pricing/",
+          "urlQuery": "",
+          "referrerPath": "",
+          "referrerQuery": "",
+          "referrerDomain": "",
+          "country": "CR",
+          "city": "Heredia",
+          "device": "mobile",
+          "os": "iOS",
+          "browser": "crios",
+          "pageTitle": "Precios de la API de WhatsApp Business (2026): tarifas por pa\u00eds | FormBeep",
+          "eventType": 2,
+          "eventName": "WAP Pricing CTA - Try Free",
+          "hasData": 0
+        },
+        {
+          "id": "1714eb93-dd5a-40f0-ad69-698c8e86597c",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "6781052f-8fd1-584b-a50f-133517c46d44",
+          "createdAt": "2026-04-01T16:46:00Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/whatsapp-api-pricing/",
+          "urlQuery": "",
+          "referrerPath": "",
+          "referrerQuery": "",
+          "referrerDomain": "",
+          "country": "CR",
+          "city": "Heredia",
+          "device": "mobile",
+          "os": "iOS",
+          "browser": "crios",
+          "pageTitle": "WhatsApp Business API Pricing (2026) \u2014 Rates by Country | FormBeep",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "13b04095-e41d-4908-a317-3725415795cd",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "6781052f-8fd1-584b-a50f-133517c46d44",
+          "createdAt": "2026-04-01T16:43:13Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/#pricing",
+          "urlQuery": "",
+          "referrerPath": "",
+          "referrerQuery": "",
+          "referrerDomain": "",
+          "country": "CR",
+          "city": "Heredia",
+          "device": "mobile",
+          "os": "iOS",
+          "browser": "crios",
+          "pageTitle": "FormBeep \u2014 Form Submissions on WhatsApp",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "68426dee-8e92-4ca3-8db1-468b76e0cead",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "fc94322f-e703-55e4-8f3b-a36a93af7745",
+          "createdAt": "2026-04-01T16:28:50Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/whatsapp-api-pricing/",
+          "urlQuery": "utm_source",
+          "referrerPath": "",
+          "referrerQuery": "",
+          "referrerDomain": "",
+          "country": "CR",
+          "city": "San Rafael",
+          "device": "mobile",
+          "os": "iOS",
+          "browser": "crios",
+          "pageTitle": "WhatsApp Business API Pricing (2026) \u2014 Rates by Country | FormBeep",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "b89c03d3-cf26-4e10-be74-7ef90034ef27",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "fc94322f-e703-55e4-8f3b-a36a93af7745",
+          "createdAt": "2026-04-01T16:15:10Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/whatsapp-api-pricing/",
+          "urlQuery": "utm_source",
+          "referrerPath": "",
+          "referrerQuery": "",
+          "referrerDomain": "",
+          "country": "CR",
+          "city": "San Rafael",
+          "device": "mobile",
+          "os": "iOS",
+          "browser": "crios",
+          "pageTitle": "WhatsApp Business API Pricing (2026) \u2014 Rates by Country | FormBeep",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "9a2b229d-9fad-4cbc-b4fb-1f0d74e1db2f",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "4758489c-ac00-5ba3-84e6-f0e0c7c04b61",
+          "createdAt": "2026-04-01T16:14:52Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/whatsapp-api-pricing/",
+          "urlQuery": "utm_source",
+          "referrerPath": "",
+          "referrerQuery": "",
+          "referrerDomain": "",
+          "country": "CR",
+          "city": "San Francisco de Dos R\u00edos",
+          "device": "laptop",
+          "os": "Windows 10",
+          "browser": "chrome",
+          "pageTitle": "WhatsApp Business API Pricing (2026) \u2014 Rates by Country | FormBeep",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "7bbe77ac-906c-480f-9af8-1f98da5c33ab",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "0d2f4e81-709b-571f-871f-77d82fb2ee0a",
+          "createdAt": "2026-04-01T14:40:24Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/tools/whatsapp-business-bio-generator/",
+          "urlQuery": "",
+          "referrerPath": "",
+          "referrerQuery": "",
+          "referrerDomain": "",
+          "country": "PK",
+          "city": "Islamabad",
+          "device": "mobile",
+          "os": "Android OS",
+          "browser": "chrome",
+          "pageTitle": "WhatsApp Business Bio Generator \u2014 FormBeep",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "c568a608-54ee-4f6c-8843-631a906cee0f",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "f19e9961-bd26-5a5a-807a-33475d5c9583",
+          "createdAt": "2026-04-01T14:37:50Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/tools/whatsapp-message-formatter/",
+          "urlQuery": "utm_source=chatgpt.com",
+          "referrerPath": "/",
+          "referrerQuery": "",
+          "referrerDomain": "chatgpt.com",
+          "country": "CO",
+          "city": "Medell\u00edn",
+          "device": "desktop",
+          "os": "Windows 10",
+          "browser": "chrome",
+          "pageTitle": "WhatsApp Message Formatter \u2014 FormBeep",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "6700d151-4fa8-4748-957b-c965ab9329e6",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "79aa44a3-c691-50c7-bdfc-64790126e0be",
+          "createdAt": "2026-04-01T13:07:29Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/whatsapp-api-pricing/",
+          "urlQuery": "",
+          "referrerPath": "",
+          "referrerQuery": "",
+          "referrerDomain": "",
+          "country": "IN",
+          "city": "Bengaluru",
+          "device": "desktop",
+          "os": "Mac OS",
+          "browser": "chrome",
+          "pageTitle": "WhatsApp Business API Pricing (2026) \u2014 Rates by Country | FormBeep",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "89a5c218-9905-4d0d-9742-3d53044a1510",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "7501bbad-0950-5399-b53b-1ed54bcb2107",
+          "createdAt": "2026-04-01T08:28:05Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/",
+          "urlQuery": "",
+          "referrerPath": "/",
+          "referrerQuery": "",
+          "referrerDomain": "com.reddit.frontpage",
+          "country": "GB",
+          "city": "London",
+          "device": "mobile",
+          "os": "Android OS",
+          "browser": "chrome",
+          "pageTitle": "FormBeep \u2014 Form Submissions on WhatsApp",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "128af429-d647-4d03-b052-e973f9040546",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "7c528f31-1951-58ed-8aee-c520523db968",
+          "createdAt": "2026-04-01T05:42:16Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/whatsapp-business-api-pricing-2026",
+          "urlQuery": "",
+          "referrerPath": "",
+          "referrerQuery": "",
+          "referrerDomain": "",
+          "country": "US",
+          "city": "Council Bluffs",
+          "device": "laptop",
+          "os": "Mac OS",
+          "browser": "chrome",
+          "pageTitle": "FormBeep \u2014 Form Submissions on WhatsApp",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "377b6834-db03-49c2-8448-d2489a913d5c",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "1568fc96-e79b-566c-a963-e4466eb06df6",
+          "createdAt": "2026-04-01T05:42:10Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/whatsapp-business-api-pricing-2026",
+          "urlQuery": "",
+          "referrerPath": "",
+          "referrerQuery": "",
+          "referrerDomain": "",
+          "country": "US",
+          "city": "North Charleston",
+          "device": "laptop",
+          "os": "Mac OS",
+          "browser": "chrome",
+          "pageTitle": "FormBeep \u2014 Form Submissions on WhatsApp",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "c41b0870-b0e6-4a1e-bc83-fe6a470dd139",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "0c335545-84c3-57e1-9856-255b7fa7d2c2",
+          "createdAt": "2026-04-01T02:53:31Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/",
+          "urlQuery": "",
+          "referrerPath": "",
+          "referrerQuery": "",
+          "referrerDomain": "",
+          "country": "IN",
+          "city": "Hyderabad",
+          "device": "mobile",
+          "os": "iOS",
+          "browser": "ios",
+          "pageTitle": "FormBeep \u2014 Form Submissions on WhatsApp",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "80117f80-195d-417a-82b1-fa1b1d73413e",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "72a77c4d-d812-5f97-a241-349c32d49872",
+          "createdAt": "2026-04-01T01:39:23Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/whatsapp-api-pricing/",
+          "urlQuery": "",
+          "referrerPath": "",
+          "referrerQuery": "",
+          "referrerDomain": "",
+          "country": "BR",
+          "city": "Teresina",
+          "device": "laptop",
+          "os": "Mac OS",
+          "browser": "chrome",
+          "pageTitle": "WhatsApp Business API Pricing (2026) \u2014 Rates by Country | FormBeep",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "3354dad5-12c7-4936-923c-b955673bec9e",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "490c0647-aca5-5a23-93a1-b0b475347efa",
+          "createdAt": "2026-03-31T20:00:56Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/",
+          "urlQuery": "",
+          "referrerPath": "/",
+          "referrerQuery": "",
+          "referrerDomain": "reddit.com",
+          "country": "US",
+          "city": "Philadelphia",
+          "device": "laptop",
+          "os": "Mac OS",
+          "browser": "chrome",
+          "pageTitle": "FormBeep \u2014 Form Submissions on WhatsApp",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "46f59f92-507a-4bd8-a1a9-1f60a55a74ca",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "047ef6ee-8557-504b-a6ad-9771a6e828a0",
+          "createdAt": "2026-03-31T19:35:48Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/",
+          "urlQuery": "",
+          "referrerPath": "/",
+          "referrerQuery": "",
+          "referrerDomain": "reddit.com",
+          "country": "BR",
+          "city": "S\u00e3o Paulo",
+          "device": "laptop",
+          "os": "Windows 10",
+          "browser": "chrome",
+          "pageTitle": "FormBeep \u2014 Form Submissions on WhatsApp",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        },
+        {
+          "id": "2ed335af-8b69-4b4d-926c-f4db8ebed16b",
+          "websiteId": "750e37be-3e04-4672-abe8-a2983afb9a4d",
+          "sessionId": "8dc6a306-33e0-5dc6-ad9d-1dec67b284dc",
+          "createdAt": "2026-03-31T15:04:06Z",
+          "hostname": "formbeep.com",
+          "urlPath": "/tools/whatsapp-message-formatter/",
+          "urlQuery": "utm_source=chatgpt.com",
+          "referrerPath": "/",
+          "referrerQuery": "",
+          "referrerDomain": "chatgpt.com",
+          "country": "PK",
+          "city": "Lahore",
+          "device": "laptop",
+          "os": "Windows 10",
+          "browser": "chrome",
+          "pageTitle": "WhatsApp Message Formatter \u2014 FormBeep",
+          "eventType": 1,
+          "eventName": "",
+          "hasData": 0
+        }
+      ],
+      "count": 937,
+      "page": 1,
+      "pageSize": 20
+    }
+  },
+  "errors": {},
+  "event_names": [
+    "Docs Click",
+    "Signup - Hero",
+    "Login Click",
+    "Signup - Header",
+    "Signup - Pricing",
+    "WAP Pricing CTA - Try Free",
+    "Signup - Final CTA"
+  ]
+}
