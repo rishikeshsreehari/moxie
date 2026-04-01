@@ -3,265 +3,200 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Moxie HQ • SapiensTech</title>
+  <title>Moxie HQ • Live Agent Ops</title>
 
   <!-- 7.css (scoped) -->
   <link rel="stylesheet" href="https://unpkg.com/7.css/dist/7.scoped.css" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="win7">
-    <header class="topbar">
-      <div class="brand">
-        <div class="brand-title">Moxie HQ</div>
-        <div class="brand-sub">Sapiens Technology LLC • Live portfolio operations</div>
-      </div>
-
-      <div class="topbar-right">
-        <div class="pill live">
-          <span class="dot" aria-hidden="true"></span>
-          <span class="live-text">LIVE</span>
-          <span class="sep">|</span>
-          <span id="liveClock">—</span>
+  <div class="win7 page">
+    <section class="window main" role="region" aria-label="Moxie HQ">
+      <div class="title-bar">
+        <div class="title-bar-text">
+          MOXIE HQ — Live Agent Operations
+          <span class="title-sub">(Sapiens Technology LLC)</span>
         </div>
-        <div class="pill" title="Snapshot time">
-          <span class="mono" id="generatedAt">Loading…</span>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" disabled></button>
+          <button aria-label="Maximize" disabled></button>
+          <button aria-label="Close" disabled></button>
         </div>
       </div>
-    </header>
 
-    <main class="grid">
-      <!-- METRICS -->
-      <section class="window metrics" role="region" aria-label="Metrics">
-        <div class="title-bar">
-          <div class="title-bar-text">Dashboard</div>
-          <div class="title-bar-controls">
-            <button aria-label="Minimize" disabled></button>
-            <button aria-label="Maximize" disabled></button>
-            <button aria-label="Close" disabled></button>
+      <div class="window-body">
+        <div class="topline">
+          <div class="live-badge">
+            <span class="live-dot" aria-hidden="true"></span>
+            <span class="live-text">LIVE</span>
           </div>
+          <div class="mono" id="liveClock">—</div>
+          <div class="mono dim" id="generatedAt">Loading snapshot…</div>
+          <div class="mono dim right">Moxie (a Hermes agent built by Rishi)</div>
         </div>
-        <div class="window-body">
-          <div class="kpi-grid">
-            <div class="kpi-box">
-              <div class="kpi-label">Traffic (7D)</div>
-              <div class="kpi-value" id="kpiPv">—</div>
-              <div class="kpi-foot">pageviews</div>
+
+        <div class="hud">
+          <!-- METRICS -->
+          <div class="panel metrics" aria-label="Metrics">
+            <div class="panel-title">METRICS</div>
+            <div class="kpis">
+              <div class="kpi">
+                <div class="k">TRAFFIC (7D)</div>
+                <div class="v" id="kpiPv">—</div>
+                <div class="s">pageviews</div>
+              </div>
+              <div class="kpi">
+                <div class="k">VISITORS (7D)</div>
+                <div class="v" id="kpiVisitors">—</div>
+                <div class="s">unique</div>
+              </div>
+              <div class="kpi">
+                <div class="k">SIGNUPS (7D)</div>
+                <div class="v" id="kpiSignups">—</div>
+                <div class="s">starts / clicks</div>
+              </div>
+              <div class="kpi">
+                <div class="k">PAID (7D)</div>
+                <div class="v" id="kpiPaid">—</div>
+                <div class="s">new customers</div>
+              </div>
+              <div class="kpi">
+                <div class="k">MRR</div>
+                <div class="v">$<span id="kpiMrr">—</span></div>
+                <div class="s">monthly recurring</div>
+              </div>
+              <div class="kpi">
+                <div class="k">REVENUE</div>
+                <div class="v">$<span id="kpiRevenueTotal">—</span></div>
+                <div class="s">lifetime</div>
+              </div>
             </div>
-            <div class="kpi-box">
-              <div class="kpi-label">Visitors (7D)</div>
-              <div class="kpi-value" id="kpiVisitors">—</div>
-              <div class="kpi-foot">unique</div>
-            </div>
-            <div class="kpi-box">
-              <div class="kpi-label">Signups (7D)</div>
-              <div class="kpi-value" id="kpiSignups">—</div>
-              <div class="kpi-foot">clicks / starts</div>
-            </div>
-            <div class="kpi-box">
-              <div class="kpi-label">Paid (7D)</div>
-              <div class="kpi-value" id="kpiPaid">—</div>
-              <div class="kpi-foot">new customers</div>
-            </div>
-          </div>
 
-          <hr class="sep" />
-
-          <div class="kpi-grid kpi-grid-2">
-            <div class="kpi-box">
-              <div class="kpi-label">MRR</div>
-              <div class="kpi-value">$<span id="kpiMrr">—</span></div>
-              <div class="kpi-foot">monthly recurring</div>
-            </div>
-            <div class="kpi-box">
-              <div class="kpi-label">Revenue Total</div>
-              <div class="kpi-value">$<span id="kpiRevenueTotal">—</span></div>
-              <div class="kpi-foot">lifetime</div>
-            </div>
-          </div>
-
-          <hr class="sep" />
-
-          <div class="facts">
-            <div><strong>Active product:</strong> <span id="activeProduct">—</span></div>
-            <div><strong>Queue:</strong> <span id="queueState">—</span></div>
-            <div><strong>Running tasks:</strong> <span id="runningCount">—</span></div>
-            <div><strong>Blockers:</strong> <span id="blockerCount">—</span></div>
-          </div>
-
-          <div class="micro">Tip: the network map animates faster when work is IN_PROGRESS.</div>
-        </div>
-      </section>
-
-      <!-- DIAGRAM -->
-      <section class="window diagram" role="region" aria-label="Moxie Network Map">
-        <div class="title-bar">
-          <div class="title-bar-text">Moxie Network Map</div>
-          <div class="title-bar-controls">
-            <button aria-label="Minimize" disabled></button>
-            <button aria-label="Maximize" disabled></button>
-            <button aria-label="Close" disabled></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <div class="diagram-wrap scanlines">
-            <svg id="orgSvg" viewBox="0 0 900 620" role="img" aria-label="Moxie network map">
-              <defs>
-                <filter id="paper" x="-20%" y="-20%" width="140%" height="140%">
-                  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="noise" />
-                  <feColorMatrix type="saturate" values="0" />
-                  <feComponentTransfer>
-                    <feFuncA type="table" tableValues="0 0.06" />
-                  </feComponentTransfer>
-                  <feBlend in="SourceGraphic" in2="noise" mode="multiply" />
-                </filter>
-              </defs>
-
-              <g id="edges" fill="none"></g>
-              <g id="nodes" filter="url(#paper)"></g>
-
-              <g transform="translate(20, 575)">
-                <rect x="0" y="0" width="860" height="30" fill="#fff" stroke="#111" stroke-width="2" />
-                <text x="12" y="20" class="svg-legend">ACTIVE • IN_PROGRESS • BLOCKED • IDLE</text>
-              </g>
-            </svg>
-          </div>
-
-          <div class="micro center">Center is Moxie. Branches are roles. Lower nodes are active products.</div>
-        </div>
-      </section>
-
-      <!-- OPS -->
-      <section class="window ops" role="region" aria-label="Ops">
-        <div class="title-bar">
-          <div class="title-bar-text">Now Running</div>
-          <div class="title-bar-controls">
-            <button aria-label="Minimize" disabled></button>
-            <button aria-label="Maximize" disabled></button>
-            <button aria-label="Close" disabled></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <div class="console-box">
-            <pre id="consoleText">Booting…</pre>
-          </div>
-
-          <div class="mini-split">
-            <div>
-              <div class="subhead">Tasks</div>
-              <ul class="mono-list" id="opsTasks">
-                <li>Loading…</li>
-              </ul>
-            </div>
-            <div>
-              <div class="subhead">Highlights</div>
-              <ul class="mono-list" id="highlights">
-                <li>Loading…</li>
-              </ul>
+            <div class="mini">
+              <div><span class="dim">ACTIVE PRODUCT</span> <span id="activeProduct">—</span></div>
+              <div><span class="dim">RUNNING TASKS</span> <span id="runningCount">—</span></div>
+              <div><span class="dim">QUEUE</span> <span id="queueState">—</span></div>
+              <div><span class="dim">NEEDS RISHI</span> <span id="blockerCount">—</span></div>
+              <div><span class="dim">CRONS</span> <span id="cronCount">—</span></div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- TEAM -->
-      <section class="window team" role="region" aria-label="Team">
-        <div class="title-bar">
-          <div class="title-bar-text">Employees</div>
-          <div class="title-bar-controls">
-            <button aria-label="Minimize" disabled></button>
-            <button aria-label="Maximize" disabled></button>
-            <button aria-label="Close" disabled></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <div class="table-wrap scroll">
-            <table class="listview" aria-label="Employees and tasks">
-              <thead>
-                <tr>
-                  <th>Role</th>
-                  <th>Status</th>
-                  <th>Working on</th>
-                </tr>
-              </thead>
-              <tbody id="teamRows">
-                <tr><td colspan="3">Loading…</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+          <!-- MAP -->
+          <div class="panel map" aria-label="Network Map">
+            <div class="panel-title">NETWORK MAP</div>
+            <div class="scada">
+              <svg id="orgSvg" viewBox="0 0 1100 700" role="img" aria-label="Moxie network map">
+                <defs>
+                  <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+                    <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#111" stroke-width="1" opacity="0.10" />
+                    <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#111" stroke-width="1" opacity="0.08" transform="translate(14 14)" />
+                  </pattern>
 
-      <!-- BLOCKERS -->
-      <section class="window blockers" role="region" aria-label="Blockers">
-        <div class="title-bar">
-          <div class="title-bar-text">Needs Rishi</div>
-          <div class="title-bar-controls">
-            <button aria-label="Minimize" disabled></button>
-            <button aria-label="Maximize" disabled></button>
-            <button aria-label="Close" disabled></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <div class="subhead">Action items</div>
-          <ul class="mono-list" id="blockersList">
-            <li>Loading…</li>
-          </ul>
-        </div>
-      </section>
+                  <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                    <stop offset="0.45" stop-color="#fff" stop-opacity="0.0" />
+                    <stop offset="0.50" stop-color="#111" stop-opacity="0.06" />
+                    <stop offset="0.55" stop-color="#fff" stop-opacity="0.0" />
+                    <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                  </linearGradient>
 
-      <!-- PRODUCTS -->
-      <section class="window products" role="region" aria-label="Products">
-        <div class="title-bar">
-          <div class="title-bar-text">Products</div>
-          <div class="title-bar-controls">
-            <button aria-label="Minimize" disabled></button>
-            <button aria-label="Maximize" disabled></button>
-            <button aria-label="Close" disabled></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <div class="table-wrap">
-            <table class="listview" aria-label="Products table">
-              <thead>
-                <tr>
-                  <th>Product</th>
-                  <th>Status</th>
-                  <th>7D PV</th>
-                  <th>7D Signups</th>
-                </tr>
-              </thead>
-              <tbody id="productRows">
-                <tr><td colspan="4">Loading…</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+                  <filter id="noise" x="-20%" y="-20%" width="140%" height="140%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n" />
+                    <feColorMatrix type="saturate" values="0" />
+                    <feComponentTransfer>
+                      <feFuncA type="table" tableValues="0 0.06" />
+                    </feComponentTransfer>
+                    <feBlend in="SourceGraphic" in2="n" mode="multiply" />
+                  </filter>
+                </defs>
 
-      <!-- GITHUB -->
-      <section class="window github" role="region" aria-label="GitHub Activity">
-        <div class="title-bar">
-          <div class="title-bar-text">GitHub Activity</div>
-          <div class="title-bar-controls">
-            <button aria-label="Minimize" disabled></button>
-            <button aria-label="Maximize" disabled></button>
-            <button aria-label="Close" disabled></button>
+                <rect x="0" y="0" width="1100" height="700" fill="url(#grid)" />
+
+                <g id="edges" fill="none"></g>
+                <g id="nodes" filter="url(#noise)"></g>
+
+                <!-- sweep overlay -->
+                <rect id="sweepRect" x="-550" y="0" width="550" height="700" fill="url(#sweep)" opacity="0.7" />
+              </svg>
+            </div>
+
+            <div class="ticker mono" id="ticker">
+              initializing…
+            </div>
           </div>
-        </div>
-        <div class="window-body">
-          <div class="subhead">Recent commits</div>
-          <ul class="mono-list" id="githubList">
-            <li>Loading…</li>
-          </ul>
-        </div>
-      </section>
 
-    </main>
+          <!-- RIGHT: ACTIVITY -->
+          <div class="panel activity" aria-label="Activity">
+            <div class="panel-title">ACTIVITY</div>
 
-    <footer class="footer">
-      <div class="footer-left">Moxie (a Hermes agent built by Rishi)</div>
-      <div class="footer-right mono" id="footerPulse">—</div>
-    </footer>
+            <div class="split">
+              <div>
+                <div class="sub">NOW RUNNING</div>
+                <ul class="list mono" id="opsTasks"><li>Loading…</li></ul>
+              </div>
+              <div>
+                <div class="sub">HIGHLIGHTS</div>
+                <ul class="list mono" id="highlights"><li>Loading…</li></ul>
+              </div>
+            </div>
+
+            <div class="sub">CONSOLE</div>
+            <div class="console"><pre id="consoleText">Booting…</pre></div>
+          </div>
+
+          <!-- BOTTOM: TEAM -->
+          <div class="panel team" aria-label="Team">
+            <div class="panel-title">TEAM</div>
+            <div class="table scroll">
+              <table class="listview" aria-label="Employees and tasks">
+                <thead>
+                  <tr>
+                    <th>Employee</th>
+                    <th>Status</th>
+                    <th>Working on</th>
+                  </tr>
+                </thead>
+                <tbody id="teamRows">
+                  <tr><td colspan="3">Loading…</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- BOTTOM: NEEDS RISHI -->
+          <div class="panel blockers" aria-label="Needs Rishi">
+            <div class="panel-title">NEEDS RISHI</div>
+            <ul class="list mono" id="blockersList"><li>Loading…</li></ul>
+          </div>
+
+          <!-- BOTTOM: PRODUCTS + GITHUB -->
+          <div class="panel products" aria-label="Products">
+            <div class="panel-title">PRODUCTS</div>
+            <div class="table">
+              <table class="listview" aria-label="Products table">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Status</th>
+                    <th>7D PV</th>
+                    <th>7D Signups</th>
+                  </tr>
+                </thead>
+                <tbody id="productRows">
+                  <tr><td colspan="4">Loading…</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="panel github" aria-label="GitHub">
+            <div class="panel-title">GITHUB</div>
+            <ul class="list mono" id="githubList"><li>Loading…</li></ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
   </div>
 
   <script src="./app.js"></script>
