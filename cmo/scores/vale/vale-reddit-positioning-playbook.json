@@ -1,0 +1,18 @@
+{
+  "employee": "vale",
+  "task_id": "vale-reddit-positioning-playbook",
+  "output_file": "/root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md",
+  "scored_at": "2026-04-01T17:13:44.305492",
+  "auto_fail": false,
+  "dimensions": {
+    "output_completeness": 3,
+    "business_impact": 5,
+    "accuracy_evidence": 5,
+    "speed_cycle": 3,
+    "autonomy": 3,
+    "reusability": 3,
+    "communication": 5
+  },
+  "overall_score": 4.0,
+  "improvement_focus": "Output Completeness"
+}

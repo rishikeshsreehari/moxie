@@ -53,13 +53,11 @@
 ### Vale — Competitor Intelligence Lead
 - SOUL: /root/moxie/cmo/employees/vale-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: IN_PROGRESS
-- Current task: (FormBeep) Reddit intel analysis → positioning + subreddit playbook — **IN_PROGRESS** (started 2026-04-01)
-- Last output: /root/moxie/products/formbeep/competitor-monitoring.md
+- Status: COMPLETED
+- Current task: (FormBeep) Reddit intel analysis → positioning + subreddit playbook — **COMPLETED** (2026-04-01T16:30Z)
+- Last output: /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md
 - Source intel artifact: /root/moxie_hq/scripts/reddit-intel/reddit_intel_brief_browser.md (generated 2026-04-01)
-- Target output: /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md
-- Follow-on output (Ember): /root/moxie/products/formbeep/outreach/reddit-post-comment-scripts.md
-- Blockers: None for analysis (uses local artifact). Note: Reddit execution still needs credentials (see issues_rishi.md)
+- Blockers: None for analysis. Note: Reddit execution still needs credentials (see issues_rishi.md)
 - Founder activity (from new intel): Beepmate u/adambengur (2 posts, 25 comments) and Web2Phone u/ConferenceOnly1415 (25 posts, 25 comments)
 - Key April findings: WPForms native WA (Mar 5), Getform WA live + SMS Q2 roadmap, WANotifier commerce integrations, 4 new direct competitors detected (FormToWA, SendForm.io, PingForms, NotifyStack)
 - Other competitors tracked: WPForms, Formspree, Getform, Basin, WANotifier, Zapier, Make, n8n, FormToWA, SendForm.io, PingForms, NotifyStack
@@ -81,14 +79,16 @@
 - Next task after completion: Await Rishi review + deploy to site; begin next copy assignment from content calendar
 - Blockers: None
 
-### Ember — Outreach & Distribution Lead
+**Ember — Outreach & Distribution Lead**
 - SOUL: /root/moxie/cmo/employees/ember-soul.md
 - Output dir: /root/moxie/products/formbeep/outreach/
-- Status: IDLE (all tasks COMPLETED; execution BLOCKED on credentials)
-- Last output: /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md (2026-03-31)
+- Status: IN_PROGRESS
+- Current task: Draft subreddit-specific post/comment scripts + reply macros based on Vale playbook — **IN_PROGRESS** (2026-04-01)
+- Target output: /root/moxie/products/formbeep/outreach/reddit-post-comment-scripts.md
+- Previous output: /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md (2026-03-31)
 - Completed deliverables: reddit-strategy.md (6 post drafts + 20 comment plan), reddit-campaign-plan.md (calendar + SOP + posting times)
 - Next task after completion: Publish Week 1 Reddit posts + 15 comment seeds — **BLOCKED** on Reddit account credentials
-- Blockers: Needs Reddit account credentials (u/adambengur or dedicated FormBeep Reddit account) — logged in issues_rishi.md since 2026-03-31. No new queue items dispatched.
+- Blockers: Script drafting is proceeding; execution will be BLOCKED on Reddit account credentials (see issues_rishi.md)
 
 ### Forge — Product/Codebase Inspector
 - SOUL: /root/moxie/cmo/employees/forge-soul.md
@@ -180,39 +180,40 @@
 
 **Editing rule:** do not edit jobs via this table. Update jobs using `hermes cron edit <cron_id> ...` and then reconcile this table to match.
 
-Last verified: 2026-04-01T15:15:00Z
+Last verified: 2026-04-01T17:30:00Z
 
-| Cron ID | Name | Schedule | Deliver | Next run (UTC) | Repeats | State |
+|| Cron ID | Name | Schedule | Deliver | Next run (UTC) | Repeats | State |
 |---|---|---|---|---|---|---|
 | 6effbb32 | formbeep-daily-user-count-checkin | every 1440m | local | 2026-04-02T14:06:30+00:00 | ∞ | active |
 | aba07be5 | formbeep-daily-traffic-check | 0 10 * * * | local | 2026-04-02T10:00:00+00:00 | ∞ | active |
 | 513b777e | formbeep-search-check | 0 10 * * 1,4 | local | 2026-04-02T10:00:00+00:00 | ∞ | active |
 | 753d42f3 | formbeep-weekly-growth-review | 0 11 * * 1 | local | 2026-04-06T11:00:00+00:00 | ∞ | active |
-| ae770f4f | formbeep-hourly-heartbeat | 6 * * * * | local | 2026-04-01T16:06:00+00:00 | ∞ | active |
+| ae770f4f | formbeep-hourly-heartbeat | 6 * * * * | local | 2026-04-01T18:06:00+00:00 | ∞ | active |
 | 52af5ec9 | codex-dashboard-update-checkin | every 720m | local | 2026-04-02T02:38:58+00:00 | ∞ | active |
 | b0492991 | moxie-memory-skill-audit | every 720m | local | 2026-04-01T19:19:07+00:00 | ∞ | active |
 | ca6591a8 | codex-weekly-resume-premium | once at 2026-04-06 17:30 | local | 2026-04-06T17:30:00+04:00 | 0/1 | active |
 | 0526cbc1 | weekly-free-models-reminder | 0 17 * * 2 | local | 2026-04-07T17:00:00+00:00 | ∞ | active |
 | 647387ae | mira-daily-kpi | 0 10 * * * | local | 2026-04-02T10:00:00+00:00 | 9/100 | active |
 | a468835d | vale-monthly-competitor-scan | 0 10 1 * * | local | 2026-05-01T10:00:00+00:00 | 1/100 | active |
-| 2553a683 | moxie-daily-governance | 0 * * * * | local | 2026-04-01T16:00:00+00:00 | 40/100 | active |
-| 8bcfe505 | vale-worker | 12 * * * * | local | 2026-04-01T16:12:00+00:00 | 42/100 | active |
-| 7067633e | astra-worker | 17 * * * * | local | 2026-04-01T15:17:00+00:00 | 41/100 | active |
-| 3171d2c2 | kiro-worker | 42 * * * * | local | 2026-04-01T15:42:00+00:00 | 40/100 | active |
-| eb803b7d | ember-worker | 32 * * * * | local | 2026-04-01T15:32:00+00:00 | 40/100 | active |
-| 401e59cc | forge-worker | 37 * * * * | local | 2026-04-01T15:37:00+00:00 | 41/100 | active |
-| 4bdcef11 | jax-worker | 22 * * * * | local | 2026-04-01T15:22:00+00:00 | 40/100 | active |
-| affd389a | rumi-worker | 27 * * * * | local | 2026-04-01T15:27:00+00:00 | 40/100 | active |
+| 2553a683 | moxie-daily-governance | 0 * * * * | local | 2026-04-01T18:00:00+00:00 | 42/100 | active |
+| 8bcfe505 | vale-worker | 12 * * * * | local | 2026-04-01T18:12:00+00:00 | 44/100 | active |
+| 7067633e | astra-worker | 17 * * * * | local | 2026-04-01T17:17:00+00:00 | 43/100 | active |
+| 3171d2c2 | kiro-worker | 42 * * * * | local | 2026-04-01T17:42:00+00:00 | 42/100 | active |
+| eb803b7d | ember-worker | 32 * * * * | local | 2026-04-01T17:32:00+00:00 | 42/100 | active |
+| 401e59cc | forge-worker | 37 * * * * | local | 2026-04-01T17:37:00+00:00 | 43/100 | active |
+| 4bdcef11 | jax-worker | 22 * * * * | local | 2026-04-01T17:22:00+00:00 | 42/100 | active |
+| affd389a | rumi-worker | 27 * * * * | local | 2026-04-01T17:27:00+00:00 | 42/100 | active |
 | af7f3c07 | moxie-daily-self-improvement | 0 20 * * * | local | 2026-04-01T20:00:00+00:00 | 1/100 | active |
-| 91520aa6 | nova-worker | 47 * * * * | local | 2026-04-01T15:47:00+00:00 | 39/100 | active |
-| 5b9c6eb7 | issues-rishi-watch | every 240m | local | 2026-04-01T16:26:10+00:00 | 10/200 | active |
-| 3e93c4f5 | luna-worker | 52 * * * * | local | 2026-04-01T15:52:00+00:00 | 41/100 | active |
-| cf1a8f9e | pax-worker | 57 * * * * | local | 2026-04-01T15:57:00+00:00 | 39/100 | active |
+| 91520aa6 | nova-worker | 47 * * * * | local | 2026-04-01T17:47:00+00:00 | 41/100 | active |
+| 5b9c6eb7 | issues-rishi-watch | every 240m | local | 2026-04-01T20:26:10+00:00 | 11/200 | active |
+| 3e93c4f5 | luna-worker | 52 * * * * | local | 2026-04-01T17:52:00+00:00 | 43/100 | active |
+| cf1a8f9e | pax-worker | 57 * * * * | local | 2026-04-01T17:57:00+00:00 | 41/100 | active |
 | b0e9c513 | iris-weekly-formbeep-repo-copy-audit | 30 9 * * 1 | local | 2026-04-06T09:30:00+00:00 | 0/200 | active |
-| 0ed491f6 | orion-worker | 2 * * * * | local | 2026-04-01T16:02:00+00:00 | 41/200 | active |
-| 868bd30f | moxie-hq-autocommit-push | every 30m | local | 2026-04-01T15:28:49+00:00 | ∞ | active |
-| 1c008e06 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-04-01T16:13:00+00:00 | 31/100 | active |
+| 0ed491f6 | orion-worker | 2 * * * * | local | 2026-04-01T18:02:00+00:00 | 43/200 | active |
+| 868bd30f | moxie-hq-autocommit-push | every 30m | local | 2026-04-01T17:34:56+00:00 | ∞ | active |
+| 1c008e06 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-04-01T18:13:00+00:00 | 33/100 | active |
 | c342e174 | opencode-go-weekly-limit-reset-reminder | 26 13 * * 1 | local | 2026-04-06T13:26:00+00:00 | ∞ | active |
+| 7af300e6 | cmo-delegation-queue-runner | */15 * * * * | local | 2026-04-01T17:15:00+00:00 | ∞ | active |
 
 **Retired/Removed jobs** (no longer in live registry):
 - `97eacc1cb3fa` codex-online-check — one-shot job, completed

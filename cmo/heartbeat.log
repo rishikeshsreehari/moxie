@@ -1,48 +1,24 @@
-## Moxie System Heartbeat Log
+# Moxie Heartbeat Log
+# Last updated: 2026-04-01T17:30:00Z
 
----
+## System Status
+- Status: OPERATIONAL
+- Active Worker: Ember (IN_PROGRESS)
+- Idle: Vale, Astra, Kiro, Jax, Rumi, Nova, Luna, Pax, Orion, Forge, Mira, Iris
 
-### [2026-04-01 15:07:35 UTC] Heartbeat Check
+## Current Task in Progress
+- Employee: Ember
+- Task: Draft subreddit-specific post/comment scripts + reply macros based on Vale playbook
+- Input: /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md (Vale COMPLETED)
+- Target: /root/moxie/products/formbeep/outreach/reddit-post-comment-scripts.md
+- Status: IN_PROGRESS (placeholder created, drafting in progress)
 
-**Status:** HEALTHY (idle state)
+## Blockers (Unchanged)
+- WordPress plugin resubmission: BLOCKED (Rishi-owned)
+- Directory submissions: BLOCKED (awaiting credentials)
+- Reddit execution: BLOCKED (awaiting credentials) — note: Ember script drafting proceeding; only execution blocked
 
-**Employee Summary:**
-| Employee | Status | Current State |
-|----------|--------|---------------|
-| Vale | COMPLETED | IDLE — next scan 2026-05-01 |
-| Astra | COMPLETED | IDLE — awaiting new assignments |
-| Kiro | COMPLETED | IDLE — awaiting Rishi review + next assignment |
-| Ember | IDLE | BLOCKED — needs Reddit credentials |
-| Forge | COMPLETED | IDLE — SEO fixes await approval |
-| Mira | COMPLETED | IDLE — awaiting new analytics tasks |
-| Nova | COMPLETED | IDLE — campaign naming/UTMs pending dispatch |
-| Jax | COMPLETED | BLOCKED — needs hello@formbeep.com access |
-| Rumi | COMPLETED | IDLE — next scan 2026-04-10 |
-| Pax | COMPLETED | BLOCKED — portal credentials + verified contacts |
-| Luna | COMPLETED | IDLE — no queued tasks |
-| Orion | COMPLETED | IDLE — needs sending infrastructure |
-| Iris | IDLE | Weekly copy audit — first run 2026-04-06 |
-
-**Dispatch Queue Status:**
-- 0 IN_PROGRESS
-- 0 QUEUED
-- 0 BLOCKED
-- 38 COMPLETED tasks
-
-**Active Blockers (require Rishi action):**
-1. Reddit account credentials → Ember cannot execute Reddit campaign
-2. hello@formbeep.com access → Jax cannot execute P1 directory submissions
-3. Portal credentials (Webflow/Framer/Glide/Softr) → Pax cannot follow up on platform applications
-4. Sending infrastructure → Orion cannot execute cold outreach
-
-**System Notes:**
-- All workers operational (35+ cron jobs active)
-- Telegram delivery confirmed (chat_id: 6699776435)
-- Next scheduled tasks: Iris weekly audit (2026-04-06), Vale monthly scan (2026-05-01)
-- No new tasks to dispatch — queue is empty
-
-**Action Required:** None during this heartbeat. System in standby awaiting:
-1. Rishi action items (credentials/access)
-2. New tasks from dispatch queue
-
----
+## Next Actions
+1. Ember continues drafting subreddit scripts
+2. No new dispatch needed this cycle
+3. System awaiting human input on blockers (see issues_rishi.md)

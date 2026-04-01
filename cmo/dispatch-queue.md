@@ -5,11 +5,14 @@
      5|
      6|---
      7|
-     8|## Queue (ordered by priority)
-     9|Format: [STATUS] Employee | (Product) Task | Depends on | Output file
-    10|
-    11|0. [IN_PROGRESS] Vale | (FormBeep) Analyze newly-pushed Reddit intel artifact → produce actionable FormBeep positioning + subreddit playbook | Source: /root/moxie_hq/scripts/reddit-intel/reddit_intel_brief_browser.md | /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md
-    12|0b. [QUEUED] Ember | (FormBeep) Draft subreddit-specific post/comment scripts + reply macros based on Vale playbook | Depends: Vale playbook COMPLETED (execution still needs Reddit creds) | /root/moxie/products/formbeep/outreach/reddit-post-comment-scripts.md
+## Queue (ordered by priority)
+Format: [STATUS] Employee | (Product) Task | Depends on | Output file
+
+0. [QUEUED] Vale | (FormBeep) Review latest Reddit intel artifact and produce concise positioning + subreddit playbook. Include: target subs, angle hypotheses, do/don't list, and 10 post/comment hooks. [DELEGATION:dq-20260401-1600-reddit-playbook] | None | /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md
+1. [QUEUED] Jax | (FormBeep) Execute P1 directory submissions using the prepared pack. Capture confirmation URLs/screenshots in the output doc. [DELEGATION:dq-20260401-1610-directory-exec] | Depends: founder provides credentials (see issues_rishi.md) | /root/moxie/products/formbeep/directory-submissions-execution-log.md
+2. [QUEUED] Nova | (SapiensTech) Create a generic paid-ads campaign naming + UTM template (copy/paste) suitable for any new product onboarding. [DELEGATION:dq-20260401-1620-ads-template] | None | /root/moxie/cmo/templates/paid-ads-utm-template.md
+0. [COMPLETED] Vale | (FormBeep) Analyze newly-pushed Reddit intel artifact → produce actionable FormBeep positioning + subreddit playbook | Source: /root/moxie_hq/scripts/reddit-intel/reddit_intel_brief_browser.md | /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md ✅
+0b. [IN_PROGRESS] Ember | (FormBeep) Draft subreddit-specific post/comment scripts + reply macros based on Vale playbook | Depends: Vale playbook COMPLETED (execution still needs Reddit creds) | /root/moxie/products/formbeep/outreach/reddit-post-comment-scripts.md
     13|
     14|1. [COMPLETED] Vale | (FormBeep) Beepmate + Web2Phone deep-dive + founder Reddit analysis | None | /root/moxie/products/formbeep/beepmate-web2phone-deepdive.md
     15|2. [COMPLETED] Astra | (FormBeep) SEO: WP plugin market analysis + 30 keywords mapped to pages (7d) | None | /root/moxie/products/formbeep/wordpress-market-analysis.md
@@ -68,12 +71,11 @@
     68|| Astra | Bi-weekly Wednesday | Keyword ranking check + new keyword ideas |
     69|| Rumi | Bi-weekly Friday | Content gap scan + trending topic check |
     70|
-    71|## Vale Status (Current Session)
-    72|- Status: **IN_PROGRESS** — Reddit intel analysis → positioning + subreddit playbook
-    73|- Source intel artifact: /root/moxie_hq/scripts/reddit-intel/reddit_intel_brief_browser.md
-    74|- Target output: /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md
-    75|- Follow-on (Ember): /root/moxie/products/formbeep/outreach/reddit-post-comment-scripts.md
-    76|- Next recurring: Monthly scan 2026-05-01 (cron: vale-monthly-competitor-scan)
+## Vale Status (Current Session)
+- Status: **COMPLETED** — Reddit intel analysis → positioning + subreddit playbook ✅
+- Output delivered: /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md
+- Follow-on (Ember): IN_PROGRESS — drafting post/comment scripts based on Vale playbook
+- Next recurring: Monthly scan 2026-05-01 (cron: vale-monthly-competitor-scan)
     77|
     78|## Astra Status (Current Session)
     79|- All 3 sprint tasks COMPLETED as of 2026-03-31 (WP market analysis, Tally teardown, SMS keyword analysis)

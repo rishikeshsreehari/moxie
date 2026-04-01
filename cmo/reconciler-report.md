@@ -1,52 +1,65 @@
-# Reconciliation Report — 2026-04-01T15:15:00Z
+# Reconciliation Report — 2026-04-01T17:30:00Z
 
-## Synced
+## Drift Fixed
 
-**Cron registry drift corrected:**
-- Updated Last verified timestamp from 2026-04-01T13:15:00Z → 2026-04-01T15:15:00Z
-- 27 jobs verified against live registry
+### 1. Active Crons Table (orchestration.md)
+- Added missing job: `7af300e6 cmo-delegation-queue-runner` (every 15 min) — was live but undocumented
+- Updated Last verified timestamp: 2026-04-01T15:15:00Z → 2026-04-01T17:30:00Z
+- Updated repeat counts for 15 worker/governance jobs (+2 runs each):
+  - moxie-daily-governance: 40 → 42
+  - vale-worker: 42 → 44
+  - astra-worker: 41 → 43
+  - kiro-worker: 40 → 42
+  - ember-worker: 40 → 42
+  - forge-worker: 41 → 43
+  - jax-worker: 40 → 42
+  - rumi-worker: 40 → 42
+  - nova-worker: 39 → 41
+  - luna-worker: 41 → 43
+  - pax-worker: 39 → 41
+  - orion-worker: 41 → 43
+  - moxie-orchestration-reconciler: 31 → 33
+  - issues-rishi-watch: 10 → 11
+- Updated next-run times for all 29 jobs (advanced ~2 hours per hourly schedule)
 
-**Jobs with stale next-run times (now corrected):**
-- formbeep-daily-user-count-checkin: next run advanced (daily job ran)
-- formbeep-hourly-heartbeat: 14:06 → 16:06 UTC
-- codex-dashboard-update-checkin: next run advanced (720m cycle)
-- All 14 worker crons: next-run times advanced by ~2 hours
-- moxie-hq-autocommit-push: next run advanced (30m cycle)
-- moxie-orchestration-reconciler: next run advanced
+### 2. Employee State (orchestration.md)
+- Ember status: IDLE → IN_PROGRESS
+- Added current task: Draft subreddit-specific post/comment scripts + reply macros based on Vale playbook
+- Added target output: /root/moxie/products/formbeep/outreach/reddit-post-comment-scripts.md
+- Clarified blocker: Script drafting proceeding; execution blocked on credentials
 
-**Jobs with stale repeat counts (now corrected):**
-- moxie-daily-governance: 38 → 40 runs
-- vale-worker: 40 → 42 runs
-- astra-worker: 39 → 41 runs
-- kiro-worker: 38 → 40 runs
-- ember-worker: 38 → 40 runs
-- forge-worker: 39 → 41 runs
-- jax-worker: 38 → 40 runs
-- rumi-worker: 38 → 40 runs
-- nova-worker: 37 → 39 runs
-- luna-worker: 39 → 41 runs
-- pax-worker: 37 → 39 runs
-- orion-worker: 39 → 41 runs
-- moxie-orchestration-reconciler: 29 → 31 runs
+### 3. Heartbeat Log
+- Updated active worker from Vale → Ember (Vale completed his task)
+- Removed Ember from blocked list (task is IN_PROGRESS, only execution blocked)
 
-## Status: All Systems Normal
+### 4. Dispatch Queue Status
+- Ember task (#0b) correctly shows IN_PROGRESS
+- Vale task (#0) correctly shows COMPLETED
+- Output file verified: reddit-intel-positioning-subreddit-playbook.md exists (13288 bytes)
 
-- All 29 cron jobs active and synced
-- No stale, paused, or missing jobs detected
-- No duplicate job names
-- All scheduled runs within expected windows
-- Retired jobs section unchanged (4 historical entries)
+## Summary
 
-## Dispatch Queue Status
+| Item | Before | After |
+|------|--------|-------|
+| Cron jobs documented | 30 (1 missing) | 31 (all live jobs) |
+| Ember status | IDLE/BLOCKED | IN_PROGRESS |
+| Vale output | Referenced | Verified exists |
+| Repeat counts | Stale (~2 runs behind) | Synced to live registry |
+| Next-run times | ~2 hours stale | Current |
 
-All tasks COMPLETED. No IN_PROGRESS or QUEUED items requiring action. Workers operating correctly.
+## Open Issues (No Change)
 
-## Open Issues
+Blockers remain as documented in issues_rishi.md:
+1. WordPress plugin resubmission — Rishi-owned
+2. Directory submissions — awaiting credentials
+3. Reddit execution — awaiting credentials
+4. Platform marketplace portal access — awaiting credentials
+5. Umami Cloud API access — blocker being investigated
 
-None from reconciliation perspective. Existing blockers remain:
-- WordPress plugin awaiting Rishi resubmission
-- Directory submissions awaiting credentials
-- Reddit campaign awaiting credentials
+## System Status
 
----
-*Autonomously reconciled by Moxie orchestration cron*
+- All31 cron jobs active and synced
+- 1 worker IN_PROGRESS (Ember)
+- 11 workers IDLE
+- No stale/paused/missing jobs
+- No new crons scheduled (safety rule honored)
