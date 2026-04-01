@@ -1,21 +1,56 @@
-     1|# Moxie Heartbeat Log
-     2|# Format: timestamp | status | details
-     3|
-     4|2026-04-01T21:06:00Z | IDLE | All employees in COMPLETED state. Dispatch queue shows all tasks COMPLETED or BLOCKED. Pax: COMPLETED, no pending tasks. Issues file has 5 open blockers (all founder-owned: Reddit API, WP plugin, directory submissions, portal access). No IN_PROGRESS tasks. No new deliverables.
-============================================================
-MOXIE HEARTBEAT - 2026-04-01 22:07:52 UTC
-============================================================
+# Moxie Heartbeat Log
+# Updated: 2026-04-01T23:08:49Z
 
-Orchestration Status:
-- IN_PROGRESS tasks: 2
-  - 80|- Status: IN_PROGRESS
-  - 81|- Current task: REWORK 2 blog posts per founder feedback (length + factual fixes + Zapier/WhatsApp research + comparison table + thumbnail prompts) — **IN_PROGRESS** (promoted 2026-04-01T22:05Z)
+## System Status: OPERATIONAL
 
-Dispatch Queue:
-- QUEUED tasks: 0
+## Active Work
+- **Jax (IN_PROGRESS)**: Replace failed directory picks with 2 actionable directories
+  - Task ID: jax-20260401_223121-f3bb3a
+  - Promoted: 2026-04-01T23:00Z
+  - Output: /root/moxie/products/formbeep/distribution/directory-submissions-today-pick.md
 
-Issues Requiring Rishi:
-- Open blockers: 0
-  (none)
+## Pending P0 Tasks (Queued)
+- Forge: GSC validation (TIME-LOCKED until 2026-04-04T12:00Z)
+- Iris: Repo landing audit (awaiting FormBeep hour slot)
+- Astra: DataForSEO US SMS probe (awaiting FormBeep hour slot)
+- Iris: Live site scrape (blocked on Iris repo audit completion)
 
-Status: ACTIVE
+## Employee States
+| Employee | Status | Notes |
+|----------|--------|-------|
+| Vale | COMPLETED | Reddit intel delivered |
+| Astra | COMPLETED | SERP demand brief delivered |
+| Kiro | COMPLETED | Blog rework delivered |
+| Ember | COMPLETED | Reddit posting tracker delivered; execution blocked on creds |
+| Forge | COMPLETED | HQ commit message SOP delivered |
+| Mira | COMPLETED | Traffic/keyword map delivered |
+| Nova | COMPLETED | Paid ads SOP delivered |
+| Jax | IN_PROGRESS | Directory replacement active |
+| Rumi | COMPLETED | Content gap scan delivered |
+| Pax | COMPLETED | Platform applications delivered |
+| Luna | COMPLETED | Win-back emails delivered |
+| Orion | COMPLETED | Prospect refresh delivered |
+| Iris | IDLE | Weekly audit scheduled Mon 09:30Z |
+
+## Open Blockers (from issues_rishi.md)
+1. Reddit API access/network policy
+2. WordPress plugin resubmission (founder-owned)
+3. Directory credentials (hello@formbeep.com verified; accounts needed)
+4. Platform marketplaces (needs engineering scope decision)
+
+## Recent Completions (Last 24h)
+- Ember: Reddit posting tracker (28 subs, rules table)
+- Astra: US SMS SERP demand brief
+- Luna: Win-back email sequence
+- Orion: Prospect list refresh
+- Jax: Directory day-pick (P1 submissions ready)
+
+## Codex Usage
+- Status: Within limits
+- Premium window: Available
+
+## Action Required
+- None (system idle, waiting for Jax task completion and/or hour-slot for queued P0s)
+
+---
+Log written by: Moxie CMO cron
