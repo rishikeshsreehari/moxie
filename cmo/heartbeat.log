@@ -1,42 +1,29 @@
-# Moxie Heartbeat Log
-# Last updated: 2026-04-01T18:06:00Z
+=== MOXIE HEARTBEAT ===
+Time: 2026-04-01T19:06:55Z
+Status: IDLE — No actionable tasks for this cycle
 
-## System Status
-- Status: OPERATIONAL
-- Active Worker: Forge (IN_PROGRESS)
-- Idle: Vale, Astra, Kiro, Ember, Jax, Rumi, Nova, Luna, Pax, Orion, Mira, Iris
+IN_PROGRESS TASKS (2):
+1. Jax — Directory submission tracking (P1)
+   Output: /root/moxie/products/formbeep/distribution/directory-submissions-log.md
+   
+2. Astra — SERP demand probe + keyword roadmap (P1)
+   Output: /root/moxie/products/formbeep/seo/us-sms-serp-demand-brief.md
+   Note: Blocked on Rishi approval for paid DataForSEO API calls
 
-## Current Task in Progress
-- Employee: Forge
-- Task: Resolve GSC indexing issues → produce gsc-indexing-report.md
-- Input: Technical SEO audit from /root/moxie/products/formbeep/technical-seo-audit.md
-- Target: /root/moxie/products/formbeep/analytics/gsc-indexing-report.md
-- Status: IN_PROGRESS (started 2026-04-01T18:00Z)
-- Note: No output file yet (task just started)
+EMPLOYEE STATES:
+- IN_PROGRESS: Jax, Astra
+- COMPLETED/IDLE: Vale, Forge, Kiro, Ember, Mira, Nova, Luna, Orion, Pax, Rumi
+- IDLE (scheduled): Iris (weekly Monday 09:30 UTC)
 
-## Dispatch Queue Status
-| Priority | Employee | Task | Status |
-|----------|----------|------|--------|
-| P0 | Forge | GSC indexing issues | IN_PROGRESS |
-| P1 | Kiro | Blog draft approval | PENDING |
-| P1 | Ember | Reddit tracker maintenance | PENDING |
-| P1 | Jax | Directory submission tracking | PENDING |
-| P1 | Jax | Directory day-plan (2 picks) | PENDING |
+QUEUED TASKS AWAITING PROMOTION:
+- Kiro: Approve blog drafts (P1) — founder action needed
+- Jax: Directory day-plan pick (P1)
 
-## Completed Today (2026-04-01)
-- Vale: Reddit intel positioning + subreddit playbook (COMPLETED)
-- Ember: Reddit post/comment scripts (COMPLETED)
-- Ember: Manual posting plan GST/Non-US v1 (COMPLETED)
-- Pax: Platform applications Week 3 (COMPLETED)
+BLOCKERS:
+1. WordPress plugin resubmission — founder-owned
+2. Reddit account credentials — needed for Ember execution
+3. Directory credentials — Jax needs hello@formbeep.com inbox access
 
-## Blockers (Unchanged)
-- WordPress plugin resubmission: BLOCKED (Rishi-owned)
-- Directory submissions: BLOCKED (awaiting hello@formbeep.com credentials/access)
-- Reddit execution: BLOCKED (awaiting Reddit credentials)
-- Platform marketplace portals: BLOCKED (awaiting credentials)
-- Umami Cloud API: PARTIALLY RESOLVED (data pulled once; ongoing access may need API key rotation)
+SYSTEM HEALTH: All 22 cron jobs active, no failures detected
 
-## Next Actions
-1. Forge continues GSC indexing analysis
-2. Other P1 tasks queued in dispatch await pick-up on next worker cycles
-3. System stable; no intervention needed
+---
