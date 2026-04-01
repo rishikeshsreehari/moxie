@@ -125,14 +125,14 @@
    123|- Next task after completion: Formalize campaign naming + UTM taxonomy in configs/templates + ship first tracked campaign for FormBeep (Google Search BOF)
    124|- Blockers: None
    125|
-   126|### Jax — SaaS Growth Operations Lead
-   127|- SOUL: /root/moxie/cmo/employees/jax-soul.md
-   128|- Output dir: /root/moxie/products/formbeep/
-   129|- Status: COMPLETED
-   130|- Current task: Daily directory 2-pick + maintenance — **COMPLETED** (2026-04-02)
-   131|- Last output: /root/moxie/products/formbeep/distribution/directory-submissions-log.md & /root/moxie/products/formbeep/directory-submissions-today-pick.md
-   132|- Next task after completion: Await approval/results from SaaSHub and Uneed to update tracker.
-   133|- Blockers: Execution still requires Rishi to submit via the "today-pick" bundles. No new credentials needed for these two picks (form-based).
+### Jax — SaaS Growth Operations Lead
+- SOUL: /root/moxie/cmo/employees/jax-soul.md
+- Output dir: /root/moxie/products/formbeep/
+- Status: COMPLETED
+- Current task: Daily directory 2-pick + maintenance — **COMPLETED** (2026-04-03)
+- Last output: /root/moxie/products/formbeep/distribution/directory-submissions-log.md & /root/moxie/products/formbeep/distribution/directory-submissions-today-pick.md
+- Next task after completion: Pick #1: BetaList (DR 66), Pick #2: AlternativeTo (DR 91). Awaiting Rishi execution. 4 directories remain (PH deferred, Capterra/G2/GetApp/AppSumo).
+- Blockers: Execution still requires Rishi to submit via the "today-pick" bundles. No new credentials needed for these two picks (form-based).
    134|
    135|### Rumi — Blog & Content Analyst
    136|- SOUL: /root/moxie/cmo/employees/rumi-soul.md

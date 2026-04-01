@@ -1,0 +1,91 @@
+# FormBeep — Today's 2 Directory Picks (2026-04-03)
+
+Owner: Jax | Execution: Rishi (~15 min)
+SOP reference: /root/moxie_hq/cmo/resources/distribution/Distribution-Block-SOP.md
+
+---
+
+## Standard asset (copy once, reuse below)
+
+| Field | Value |
+|-------|-------|
+| Product name | FormBeep |
+| Website | https://formbeep.com/?utm_source=betalist&utm_medium=directory&utm_campaign=p1_submissions |
+| Support email | hello@formbeep.com |
+| One-liner | Instant form alerts on WhatsApp, email, and SMS — no Zapier required. |
+| Short description (150 chars) | Get website form submissions delivered to WhatsApp, email, or SMS instantly. Works with Webflow, WordPress, Framer, and custom sites. |
+| Long description (500 chars) | FormBeep connects your website forms to the notification channels your team actually reads. Instead of leads sitting in buried email inboxes, you get instant alerts on WhatsApp, SMS, or email. No complex Zapier workflows, no heavy automation stack, no maintenance. Paste a snippet, connect your site builder, and every form submission triggers a notification in seconds. Built for agencies, SMBs, and freelance developers who respond fast and don't want missed leads to cost revenue. |
+| Tags | WhatsApp, form notifications, lead alerts, Webflow, WordPress, Framer, SMS, email alerts, no-code, Zapier alternative |
+| Primary category | Lead Generation / Form Notifications |
+| Company | Sapiens Technology LLC |
+| Founded | 2025 |
+
+---
+
+## Pick #1 — BetaList (betalist.com/submit)
+
+**Why this pick:** DR 66, startup/early-adopter audience, free listing, good for initial visibility and inbound links.
+
+**Field bundle (copy/paste ready):**
+
+| Form field | Value to paste |
+|------------|---------------|
+| Product name | FormBeep |
+| Tagline / Headline | Instant form alerts on WhatsApp, email, and SMS — no Zapier |
+| Description (long) | Get website form submissions delivered to WhatsApp, email, or SMS instantly. Works with Webflow, WordPress, Framer, and custom sites. Never miss a lead again. |
+| Website URL | https://formbeep.com/?utm_source=betalist&utm_medium=directory&utm_campaign=p1_submissions |
+| Email | hello@formbeep.com |
+| Category | Marketing / Developer Tools |
+| Status | Live |
+| Company name | Sapiens Technology LLC |
+| Twitter/X | (leave blank if no dedicated X account) |
+
+**Steps:**
+1. Go to betalist.com/submit
+2. Create account or log in (use hello@formbeep.com)
+3. Fill in form using values above
+4. Submit
+5. Screenshot confirmation
+6. Log result in directory-submissions-log.md
+
+**UTM:** `https://formbeep.com/?utm_source=betalist&utm_medium=directory&utm_campaign=p1_submissions`
+
+---
+
+## Pick #2 — AlternativeTo (alternativeto.net)
+
+**Why this pick:** DR 91 (highest authority), massive organic reach. Marking FormBeep as alternative to established players drives qualified comparison traffic.
+
+**Field bundle (copy/paste ready):**
+
+| Form field | Value to paste |
+|------------|---------------|
+| Product name | FormBeep |
+| Tagline / Headline | Form-to-WhatsApp alerts without the Zapier bloat |
+| Short description | Instant form alerts on WhatsApp, email, and SMS — no Zapier required. |
+| Website URL | https://formbeep.com/?utm_source=alternativeto&utm_medium=directory&utm_campaign=p1_submissions |
+| Category | Business & Productivity / Communication |
+| Mark as alternative to | Zapier, Make (Integromat), Formspree, Basin, WANotifier, WPForms |
+
+**Description (for listing):**
+"FormBeep is a form notification tool that sends website form submissions directly to WhatsApp, email, or SMS. Unlike Zapier or Make, it does one thing well: instant lead alerts without workflow complexity. Built for agencies, SMBs, and freelance developers. Integrates with Webflow, WordPress, Framer, and custom sites. Simple setup, reliable delivery, no automation stack required."
+
+**Steps:**
+1. Go to alternativeto.net
+2. Create account (use hello@formbeep.com)
+3. Navigate to add product / suggest new software
+4. Fill in form using values above
+5. When prompted to mark alternatives, select: Zapier, Make, Formspree, Basin, WANotifier
+6. Submit
+7. Screenshot confirmation
+8. Log result in directory-submissions-log.md
+
+**UTM:** `https://formbeep.com/?utm_source=alternativeto&utm_medium=directory&utm_campaign=p1_submissions`
+
+---
+
+## After submission
+
+- Update /root/moxie/products/formbeep/distribution/directory-submissions-log.md with status
+- Save screenshot of each confirmation page
+- Tomorrow Jax will generate next 2 picks from remaining queue
