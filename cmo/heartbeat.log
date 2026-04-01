@@ -1,58 +1,45 @@
 # Moxie CMO Heartbeat Log
-# Last updated: 2026-04-01T09:07:00Z
+## 2026-04-01T10:12:00Z
 
-## System Status: IDLE
+### System Status: IDLE
 
-### Queue Status
-- Total tasks in queue: 19
-- COMPLETED: 19 (100%)
-- IN_PROGRESS: 0
-- QUEUED: 0
-- BLOCKED: 0 (credentials blocking execution, not queue status)
-
-### Employee Status Summary
+### Employee Summary
 | Employee | Status | Notes |
 |----------|--------|-------|
-| Vale | COMPLETED | Next: Monthly scan started 10:00 UTC (in progress) |
-| Astra | IDLE | All sprint tasks done |
-| Kiro | COMPLETED | Money pages + blogs delivered |
-| Ember | BLOCKED | Awaiting Reddit credentials |
-| Forge | COMPLETED | SEO audit + WP fixes delivered |
-| Mira | COMPLETED | Analytics + keyword map done |
-| Nova | COMPLETED | Ads SOP delivered |
-| Jax | COMPLETED | P1 pack delivered; execution awaits credentials |
-| Rumi | COMPLETED | Next bi-weekly scan (2026-04-10) |
-| Pax | COMPLETED | Week 3 platform apps done |
-| Luna | IDLE | No queued tasks |
-| Orion | IDLE | Outbound pack ready; awaiting infrastructure |
-| Iris | IDLE | Weekly audit on 2026-04-06 |
+| Vale | IDLE | Monthly competitor scan COMPLETED; next: 2026-05-01 |
+| Astra | IDLE | All sprint tasks COMPLETED |
+| Kiro | IDLE | Money pages COMPLETED; awaiting Rishi review |
+| Ember | BLOCKED | Reddit credentials needed |
+| Forge | IDLE | Technical SEO audit COMPLETED; WP awaiting Rishi |
+| Mira | COMPLETED | Analytics pulled via workaround |
+| Nova | COMPLETED | Cross-product ads SOP delivered |
+| Jax | COMPLETED | P1 submission pack ready; credentials needed |
+| Rumi | COMPLETED | Bi-weekly scan done |
+| Pax | COMPLETED/IDLE | Week 3 done; portal credentials needed |
+| Luna | IDLE | Lifecycle emails COMPLETED |
+| Orion | IDLE | Outbound pack ready; sending infra needed |
+| Iris | IDLE | First run: 2026-04-06 |
 
-### Active Blockers (6 open)
-1. WordPress plugin resubmission — Rishi-owned, waiting on founder
-2. Directory submissions — awaiting hello@formbeep.com verification/access
-3. Reddit posting (Ember) — awaiting Reddit account credentials
-4. Platform marketplace portals — awaiting developer account credentials
-5. Analytics blocker — Umami Cloud API 403 from this environment
-6. Reddit founder-profile scan — need dev token or logged-in session
+### Dispatch Queue: 19/19 COMPLETED
+No IN_PROGRESS or QUEUED tasks. Full sprint delivered.
 
-### Cron Registry Status
-- 29 active crons registered
-- All worker crons running on schedule
-- Next governance check: 2026-04-01T10:00:00+00:00 (hourly)
+### Open Blockers (issues_rishi.md): 7
+1. Reddit posting (credentials)
+2. WP plugin resubmission (Rishi-owned)
+3. Repo scope rule (informational)
+4. Reddit founder-profile scan (network policy)
+5. Directory submissions (credentials)
+6. Platform portal access (credentials)
+7. Umami API (401/403 errors)
 
-### Key Deliverables Completed
-- 19 sprint tasks completed (100%)
-- 17+ distinct output files written
-- All recurring crons operational
+### Active Crons: 29 jobs running
+Next scheduled:
+- 10:12 UTC: vale-worker
+- 10:13 UTC: moxie-orchestration-reconciler
+- 10:17 UTC: astra-worker
 
-### System Health
-- Orchestrator: Operational
-- Auto-push: Every 30min (last attempt logged 08:58UTC)
-- Reconciler: Hourly at:13
-- No critical drift detected
+### Action Required: None
+System is healthy. All deliverables complete. Awaiting founder input on blockers.
 
-### Notes
-- Vale competitor scan cron (vale-monthly-competitor-scan) scheduled for 10:00 UTC today
-- Mira daily KPI cron running at 10:00 UTC
-- All worker crons running on staggered schedules (no collision)
-- Autopush lock in use for HQ sync
+---
+[2026-04-01T10:12:00Z] HEARTBEAT: System IDLE. 7 blockers pending Rishi input.
