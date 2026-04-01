@@ -46,15 +46,15 @@
 ### Vale — Competitor Intelligence Lead
 - SOUL: /root/moxie/cmo/employees/vale-soul.md
 - Output dir: /root/moxie/products/formbeep/
-- Status: COMPLETED
-- Current task: Monthly competitor monitoring — **COMPLETED** (2026-04-01)
+- Status: IN_PROGRESS
+- Current task: (FormBeep) Reddit intel analysis → positioning + subreddit playbook — **IN_PROGRESS** (started 2026-04-01)
 - Last output: /root/moxie/products/formbeep/competitor-monitoring.md
-- Next task after completion: **IDLE** — all recurring tasks complete. Next monthly scan: 2026-05-01. Awaiting ad-hoc competitor intelligence tasks.
-- Blockers: Reddit founder profile analysis blocked (requires login/dev token — logged in issues_rishi.md)
+- Source intel artifact: /root/moxie_hq/scripts/reddit-intel/reddit_intel_brief_browser.md (generated 2026-04-01)
+- Target output: /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md
+- Follow-on output (Ember): /root/moxie/products/formbeep/outreach/reddit-post-comment-scripts.md
+- Blockers: None for analysis (uses local artifact). Note: Reddit execution still needs credentials (see issues_rishi.md)
+- Founder activity (from new intel): Beepmate u/adambengur (2 posts, 25 comments) and Web2Phone u/ConferenceOnly1415 (25 posts, 25 comments)
 - Key April findings: WPForms native WA (Mar 5), Getform WA live + SMS Q2 roadmap, WANotifier commerce integrations, 4 new direct competitors detected (FormToWA, SendForm.io, PingForms, NotifyStack)
-- Competitor founder intel:
-- Beepmate: u/adambengur — no Reddit activity detected Feb-Mar 2026
-- Web2Phone: u/ConferenceOnly1415 — no Reddit activity detected Feb-Mar 2026
 - Other competitors tracked: WPForms, Formspree, Getform, Basin, WANotifier, Zapier, Make, n8n, FormToWA, SendForm.io, PingForms, NotifyStack
 ### Astra — Growth Research Lead
 - SOUL: /root/moxie/cmo/employees/astra-soul.md
