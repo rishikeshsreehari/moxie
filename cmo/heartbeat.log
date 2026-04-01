@@ -27,3 +27,4 @@ BLOCKERS:
 SYSTEM HEALTH: All 22 cron jobs active, no failures detected
 
 ---[2026-04-01T19:20:40Z] reconciler: OK - dispatch queue cleaned, crons synced (31 active), issues resolved (Umami), no blockers
+[2026-04-01T19:36:03.020744+00:00] Rumi worker check: No IN_PROGRESS task in dispatch queue. Rumi status=COMPLETED (last: content-gap-scan 2026-03-31). No new Rumi tasks queued.
