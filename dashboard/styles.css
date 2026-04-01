@@ -12,22 +12,19 @@ html, body {
   padding: 0;
 }
 
-.win7 {
-  background: var(--paper) !important;
-}
+.win7 { background: var(--paper) !important; }
 
-.page {
-  padding: 14px;
-}
+.page { padding: 14px; }
 
 .mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .dim { color: var(--muted); }
+.right { justify-self: end; }
 
 .main {
-  width: min(1400px, calc(100vw - 28px));
+  width: min(1440px, calc(100vw - 28px));
   margin: 0 auto;
 }
 
@@ -48,8 +45,6 @@ html, body {
   background: var(--paper);
   margin-bottom: 12px;
 }
-
-.right { justify-self: end; }
 
 .live-badge {
   display: inline-flex;
@@ -76,6 +71,7 @@ html, body {
   letter-spacing: 0.7px;
 }
 
+/* SCADA single-screen layout: modern responsive grid inside one retro window */
 .hud {
   display: grid;
   gap: 12px;
@@ -91,6 +87,7 @@ html, body {
   border: 2px solid var(--line);
   background: var(--paper) !important;
   padding: 10px;
+  min-width: 0; /* critical for responsive grids */
 }
 
 .panel-title {
@@ -135,12 +132,12 @@ html, body {
 
 .scada {
   border: 2px solid var(--line);
-  background: var(--paper);
   overflow: hidden;
-  /* fallback grid even if SVG pattern feels too subtle */
+  background: var(--paper);
+  /* strong grid background */
   background-image:
-    repeating-linear-gradient(0deg, rgba(17,17,17,0.06), rgba(17,17,17,0.06) 1px, transparent 1px, transparent 22px),
-    repeating-linear-gradient(90deg, rgba(17,17,17,0.06), rgba(17,17,17,0.06) 1px, transparent 1px, transparent 22px);
+    repeating-linear-gradient(0deg, rgba(17,17,17,0.07), rgba(17,17,17,0.07) 1px, transparent 1px, transparent 22px),
+    repeating-linear-gradient(90deg, rgba(17,17,17,0.07), rgba(17,17,17,0.07) 1px, transparent 1px, transparent 22px);
 }
 
 #orgSvg {
@@ -157,13 +154,18 @@ html, body {
   min-height: 18px;
 }
 
+.micro {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
 .sub {
   font-size: 12px;
   font-weight: 900;
-  margin-bottom: 8px;
+  margin: 6px 0 8px;
 }
 
-.split {
+.two {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
@@ -180,6 +182,16 @@ html, body {
   border: 2px solid var(--line);
   margin-bottom: 8px;
   background: var(--paper);
+}
+
+.badge {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 2px solid var(--line);
+  margin-right: 8px;
+  font-weight: 900;
+  font-size: 11px;
+  letter-spacing: 0.5px;
 }
 
 .console {
@@ -207,7 +219,7 @@ html, body {
   overflow: auto;
 }
 
-/* Responsive */
+/* Mobile: modern responsiveness while keeping retro chrome */
 @media (max-width: 1200px) {
   .hud {
     grid-template-columns: 1fr 1fr;
@@ -219,6 +231,7 @@ html, body {
       "products products";
   }
   .console { height: 200px; }
+  .table.scroll { max-height: 320px; }
 }
 
 @media (max-width: 740px) {
@@ -226,6 +239,7 @@ html, body {
     grid-template-columns: 1fr;
   }
   .right { justify-self: start; }
+
   .hud {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -237,5 +251,7 @@ html, body {
       "team"
       "products";
   }
+
   .kpis { grid-template-columns: 1fr 1fr; }
+  .console { height: 180px; }
 }

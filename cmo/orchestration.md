@@ -154,13 +154,14 @@
    152|- Blockers: Portal credentials (Webflow/Framer/Glide/Softr), Reddit account for community posts, verified agency email contacts, hello@formbeep.com access for sending
    153|
 ### Luna — Lifecycle / CRM Lead
-- SOUL: /root/moxie/cmo/employees/luna-soul.md
-- Output dir: /root/moxie/products/formbeep/lifecycle/
-- Status: QUEUED
-- Current task: Win-back email sequence for churned users — QUEUED (2026-04-01T20:00Z)
-- Last output: /root/moxie/products/formbeep/lifecycle/onboarding-emails.md
-- Next task after completion: Continue lifecycle optimization (retention triggers, segmentation)
-- Blockers: None
+|- SOUL: /root/moxie/cmo/employees/luna-soul.md
+|- Output dir: /root/moxie/products/formbeep/lifecycle/
+|- Status: COMPLETED
+|- Current task: Win-back email sequence for churned users — **COMPLETED** (2026-04-02T08:52Z)
+|- Last output: /root/moxie/products/formbeep/lifecycle/win-back-emails.md
+|- Previous output: /root/moxie/products/formbeep/lifecycle/onboarding-emails.md
+|- Next task after completion: Continue lifecycle optimization (retention triggers, segmentation)
+|- Blockers: None
    162|
 ### Orion — Outbound Lead (Cold Email)
 |- SOUL: /root/moxie/cmo/employees/orion-soul.md
@@ -256,6 +257,7 @@ Last verified: 2026-04-01T20:13:00Z
    252||| 2026-03-31 | Pax | /root/moxie/products/formbeep/partnerships/targets-and-outreach.md | COMPLETED
    253||| 2026-03-31 | Pax | /root/moxie/products/formbeep/partnerships/platform-partner-outreach.md | COMPLETED
    254||| 2026-04-01 | Pax | /root/moxie/products/formbeep/partnerships/platform-applications-week3.md | COMPLETED
+||| 2026-04-02 | Luna | /root/moxie/products/formbeep/lifecycle/win-back-emails.md | COMPLETED — 3-email win-back sequence (Day 1/3/7) + pre-churn triggers + segmentation matrix + behavioral onboarding handoff
    255|
    256|---
    257|

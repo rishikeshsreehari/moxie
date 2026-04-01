@@ -14,8 +14,8 @@
     <section class="window main" role="region" aria-label="Moxie HQ">
       <div class="title-bar">
         <div class="title-bar-text">
-          MOXIE HQ — Live Agent Operations
-          <span class="title-sub">(Sapiens Technology LLC)</span>
+          MOXIE HQ — LIVE AGENT OPS
+          <span class="title-sub">Sapiens Technology LLC</span>
         </div>
         <div class="title-bar-controls">
           <button aria-label="Minimize" disabled></button>
@@ -26,17 +26,17 @@
 
       <div class="window-body">
         <div class="topline">
-          <div class="live-badge">
+          <div class="live-badge" title="Live">
             <span class="live-dot" aria-hidden="true"></span>
             <span class="live-text">LIVE</span>
           </div>
           <div class="mono" id="liveClock">—</div>
-          <div class="mono dim" id="generatedAt">Loading snapshot…</div>
+          <div class="mono dim" id="generatedAt">Loading…</div>
           <div class="mono dim right">Moxie (a Hermes agent built by Rishi)</div>
         </div>
 
         <div class="hud">
-          <!-- METRICS -->
+          <!-- LEFT: METRICS -->
           <div class="panel metrics" aria-label="Metrics">
             <div class="panel-title">METRICS</div>
             <div class="kpis">
@@ -56,19 +56,19 @@
                 <div class="s">starts / clicks</div>
               </div>
               <div class="kpi">
-                <div class="k">PAID (7D)</div>
-                <div class="v" id="kpiPaid">—</div>
-                <div class="s">new customers</div>
+                <div class="k">PAID (LIFETIME)</div>
+                <div class="v" id="kpiPaidLifetime">—</div>
+                <div class="s">customers</div>
               </div>
               <div class="kpi">
-                <div class="k">MRR</div>
-                <div class="v">$<span id="kpiMrr">—</span></div>
-                <div class="s">monthly recurring</div>
+                <div class="k">FREE (LIFETIME)</div>
+                <div class="v" id="kpiFreeLifetime">—</div>
+                <div class="s">accounts</div>
               </div>
               <div class="kpi">
-                <div class="k">REVENUE</div>
-                <div class="v">$<span id="kpiRevenueTotal">—</span></div>
-                <div class="s">lifetime</div>
+                <div class="k">REVENUE (LIFETIME)</div>
+                <div class="v">$<span id="kpiRevenueLifetime">—</span></div>
+                <div class="s">total</div>
               </div>
             </div>
 
@@ -81,22 +81,17 @@
             </div>
           </div>
 
-          <!-- MAP -->
+          <!-- CENTER: SCADA MAP -->
           <div class="panel map" aria-label="Network Map">
             <div class="panel-title">NETWORK MAP</div>
-            <div class="scada">
+            <div class="scada" aria-label="SCADA screen">
               <svg id="orgSvg" viewBox="0 0 1100 700" role="img" aria-label="Moxie network map">
                 <defs>
-                  <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
-                    <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#111" stroke-width="1" opacity="0.10" />
-                    <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#111" stroke-width="1" opacity="0.08" transform="translate(14 14)" />
-                  </pattern>
-
                   <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
                     <stop offset="0" stop-color="#fff" stop-opacity="0" />
-                    <stop offset="0.45" stop-color="#fff" stop-opacity="0.0" />
+                    <stop offset="0.45" stop-color="#fff" stop-opacity="0" />
                     <stop offset="0.50" stop-color="#111" stop-opacity="0.06" />
-                    <stop offset="0.55" stop-color="#fff" stop-opacity="0.0" />
+                    <stop offset="0.55" stop-color="#fff" stop-opacity="0" />
                     <stop offset="1" stop-color="#fff" stop-opacity="0" />
                   </linearGradient>
 
@@ -110,26 +105,22 @@
                   </filter>
                 </defs>
 
-                <rect x="0" y="0" width="1100" height="700" fill="url(#grid)" />
-
                 <g id="edges" fill="none"></g>
                 <g id="nodes" filter="url(#noise)"></g>
 
-                <!-- sweep overlay -->
                 <rect id="sweepRect" x="-550" y="0" width="550" height="700" fill="url(#sweep)" opacity="0.7" />
               </svg>
             </div>
 
-            <div class="ticker mono" id="ticker">
-              initializing…
-            </div>
+            <div class="ticker mono" id="ticker">initializing…</div>
+            <div class="micro mono dim">drag nodes • map auto-avoids collisions • live pulse scales with activity</div>
           </div>
 
           <!-- RIGHT: ACTIVITY -->
           <div class="panel activity" aria-label="Activity">
             <div class="panel-title">ACTIVITY</div>
 
-            <div class="split">
+            <div class="two">
               <div>
                 <div class="sub">NOW RUNNING</div>
                 <ul class="list mono" id="opsTasks"><li>Loading…</li></ul>

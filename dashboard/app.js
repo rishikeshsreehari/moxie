@@ -1,6 +1,10 @@
 /*
-  Moxie HQ (public) — single-screen SCADA style.
-  Reads ./public_snapshot.json and animates the network map.
+  Moxie HQ (public) — SCADA / terminal aesthetic.
+  Requirements:
+  - modern responsive layout inside one retro window (7.css)
+  - draggable nodes in the network map
+  - nodes should not overlap by default, and collision-avoid when dragged
+  - DO NOT show product nodes in the org chart
 */
 
 const SAMPLE = {
@@ -9,61 +13,30 @@ const SAMPLE = {
     pageviews_7d: 103,
     visitors_7d: 76,
     signups_7d: 4,
-    paid_7d: 0,
-    mrr_usd: 0,
-    revenue_total_usd: 0
+    paid_lifetime: 0,
+    free_lifetime: 0,
+    revenue_lifetime_usd: 0
   },
   products: [
     { name: "FormBeep", status: "ACTIVE", pageviews_7d: 103, signups_7d: 4 }
   ],
   systems: {
-    queue: { pending: 0, in_progress: 1 },
+    queue: { pending: 0, in_progress: 0 },
     cron: { active_jobs: 0 },
-    blockers: {
-      count: 6,
-      needs_rishi: [
-        "Directory inbox access / existing accounts",
-        "Reddit credentials for posting",
-        "Marketplace portal access",
-        "Approve SEO fixes",
-        "Review + publish blog drafts",
-        "WP plugin resubmission"
-      ]
-    }
+    blockers: { count: 0, needs_rishi: [] }
   },
   running: {
-    count: 3,
-    tasks: [
-      { role: "Growth Research", status: "IN_PROGRESS", text: "US SERP demand probe" },
-      { role: "Competitor Intel", status: "DONE", text: "Assessing competitor data: 3 insights extracted" },
-      { role: "Directories", status: "WAITING", text: "Waiting on founder: execute 2 directory submissions" }
-    ],
-    highlights: [
-      "Reddit competitor analysis: done",
-      "US SERP analysis: in progress",
-      "Directories: waiting on founder"
-    ]
+    count: 0,
+    tasks: [],
+    highlights: []
   },
   team: [
-    { role: "Moxie", status: "ACTIVE", working_on: "Orchestration + decisions" },
-    { role: "Astra", status: "IN_PROGRESS", working_on: "SERP demand probe" },
-    { role: "Vale", status: "DONE", working_on: "Competitor scan" },
-    { role: "Ember", status: "BLOCKED", working_on: "Reddit execution" },
-    { role: "Jax", status: "BLOCKED", working_on: "Directories" },
-    { role: "Pax", status: "BLOCKED", working_on: "Portals" },
-    { role: "Forge", status: "WAITING", working_on: "SEO fixes approval" },
-    { role: "Kiro", status: "WAITING", working_on: "Blog publish" }
+    { name: "Moxie", title: "Autonomous CMO", status: "ACTIVE", working_on: "Orchestration + decisions" }
   ],
-  github: {
-    recent: [
-      { hash: "cbe3108", when: "2026-04-01", subject: "Dashboard improvements" }
-    ]
-  },
+  github: { recent: [] },
   console: [
     "[BOOT] Moxie HQ online",
-    "[SYNC] reading orchestration state",
-    "[RUN ] workers scheduled",
-    "[WAIT] some execution requires founder actions"
+    "[SYNC] snapshot loaded"
   ]
 };
 
@@ -73,11 +46,7 @@ function setText(id, value) {
 }
 
 function fmtDate(iso) {
-  try {
-    return new Date(iso).toLocaleString();
-  } catch {
-    return iso;
-  }
+  try { return new Date(iso).toLocaleString(); } catch { return iso; }
 }
 
 function clampStr(s, n = 110) {
@@ -87,7 +56,7 @@ function clampStr(s, n = 110) {
 
 function statusNorm(s) {
   const x = String(s || "").toUpperCase();
-  if (["ACTIVE","IN_PROGRESS","BLOCKED","IDLE","DONE","WAITING"].includes(x)) return x;
+  if (["ACTIVE","IN_PROGRESS","BLOCKED","IDLE","DONE","WAITING","COMPLETED","QUEUED"].includes(x)) return x;
   return x || "—";
 }
 
@@ -120,9 +89,16 @@ function renderOpsTasks(tasks) {
     ul.appendChild(li);
     return;
   }
+
   arr.slice(0, 8).forEach(t => {
     const li = document.createElement("li");
-    li.textContent = `[${statusNorm(t.status)}] ${t.role ? t.role + ": " : ""}${t.text || ""}`;
+    const badge = document.createElement("span");
+    badge.className = "badge";
+    badge.textContent = statusNorm(t.status);
+    const text = document.createElement("span");
+    text.textContent = `${t.role ? t.role + ": " : ""}${t.text || ""}`;
+    li.appendChild(badge);
+    li.appendChild(text);
     ul.appendChild(li);
   });
 }
@@ -138,7 +114,7 @@ function renderTeam(team) {
     const tdStatus = document.createElement("td");
     const tdWork = document.createElement("td");
 
-    const name = row.name || row.role || "";
+    const name = row.name || "";
     const title = row.title ? ` — ${row.title}` : "";
     tdEmp.textContent = `${name}${title}`;
 
@@ -200,50 +176,79 @@ function renderGitHub(recent) {
 function renderConsole(lines) {
   const el = document.getElementById("consoleText");
   if (!el) return;
-
   const base = (lines || []).slice(0, 18);
   const pulse = `[PULSE] ${new Date().toLocaleTimeString()} heartbeat`;
   el.textContent = [...base, pulse].join("\n");
 }
 
-function nodeStyle(status) {
-  const s = statusNorm(status);
-  if (s === "BLOCKED") return { dash: "10 7", pulse: 0.2 };
-  if (s === "IN_PROGRESS") return { dash: "3 3", pulse: 1.0 };
-  if (s === "ACTIVE") return { dash: "0", pulse: 0.6 };
-  if (s === "DONE") return { dash: "0", pulse: 0.35 };
-  if (s === "WAITING") return { dash: "2 8", pulse: 0.25 };
-  return { dash: "0", pulse: 0.15 };
+// ---- SVG / SCADA MAP (draggable nodes + non-overlap) ----
+
+function clientToSvg(svg, clientX, clientY) {
+  const pt = svg.createSVGPoint();
+  pt.x = clientX;
+  pt.y = clientY;
+  const ctm = svg.getScreenCTM();
+  if (!ctm) return { x: 0, y: 0 };
+  const inv = ctm.inverse();
+  const p = pt.matrixTransform(inv);
+  return { x: p.x, y: p.y };
 }
 
-function drawEdge(parent, x1, y1, x2, y2, status) {
-  const p = document.createElementNS("http://www.w3.org/2000/svg", "path");
-  const midx = (x1 + x2) / 2;
-  const midy = (y1 + y2) / 2;
-  const dx = (x2 - x1) * 0.14;
-  const dy = (y2 - y1) * 0.14;
-  p.setAttribute("d", `M ${x1} ${y1} Q ${midx + dy} ${midy - dx} ${x2} ${y2}`);
-  p.setAttribute("stroke", "#111");
-  p.setAttribute("stroke-width", "2");
-  p.setAttribute("fill", "none");
-
+function nodePulse(status) {
   const s = statusNorm(status);
-  if (s === "BLOCKED") p.setAttribute("stroke-dasharray", "12 9");
-  else if (s === "IN_PROGRESS") p.setAttribute("stroke-dasharray", "4 4");
-  else p.setAttribute("stroke-dasharray", "2 10");
-
-  parent.appendChild(p);
-  return p;
+  if (s === "IN_PROGRESS") return 1.0;
+  if (s === "ACTIVE") return 0.6;
+  if (s === "BLOCKED") return 0.15;
+  if (s === "WAITING" || s === "QUEUED") return 0.22;
+  return 0.25;
 }
 
-function drawNode(parent, x, y, w, h, label, status, subline = "") {
-  const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+function nodeDash(status) {
+  const s = statusNorm(status);
+  if (s === "BLOCKED") return "10 7";
+  if (s === "IN_PROGRESS") return "3 3";
+  if (s === "WAITING" || s === "QUEUED") return "2 8";
+  return "0";
+}
+
+function edgeDash(status) {
+  const s = statusNorm(status);
+  if (s === "BLOCKED") return "12 9";
+  if (s === "IN_PROGRESS") return "4 4";
+  return "2 10";
+}
+
+let SCADA = {
+  started: false,
+  t: 0,
+  svg: null,
+  edgesEl: null,
+  nodesEl: null,
+  edges: [], // {path, a, b, dash}
+  nodes: [], // {outer, inner, x, y, w, h, pulse, dragHandle}
+  dragging: null
+};
+
+function drawEdge(aIdx, bIdx, status) {
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("stroke", "#111");
+  path.setAttribute("stroke-width", "2");
+  path.setAttribute("fill", "none");
+  const dash = edgeDash(status);
+  path.setAttribute("stroke-dasharray", dash);
+  SCADA.edgesEl.appendChild(path);
+  return { path, a: aIdx, b: bIdx, dash };
+}
+
+function drawNode(x, y, w, h, label, status, subline) {
+  const outer = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  outer.setAttribute("transform", `translate(${x} ${y})`);
+
+  const inner = document.createElementNS("http://www.w3.org/2000/svg", "g");
+
   const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-  const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-  const sub = document.createElementNS("http://www.w3.org/2000/svg", "text");
-
-  rect.setAttribute("x", x - w / 2);
-  rect.setAttribute("y", y - h / 2);
+  rect.setAttribute("x", -w / 2);
+  rect.setAttribute("y", -h / 2);
   rect.setAttribute("rx", "10");
   rect.setAttribute("ry", "10");
   rect.setAttribute("width", w);
@@ -252,113 +257,188 @@ function drawNode(parent, x, y, w, h, label, status, subline = "") {
   rect.setAttribute("stroke-width", "2");
   rect.setAttribute("fill", "#fff");
 
-  const st = nodeStyle(status);
-  if (st.dash && st.dash !== "0") rect.setAttribute("stroke-dasharray", st.dash);
+  const dash = nodeDash(status);
+  if (dash !== "0") rect.setAttribute("stroke-dasharray", dash);
 
-  text.setAttribute("x", x);
-  text.setAttribute("y", y - 2);
+  const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+  text.setAttribute("x", 0);
+  text.setAttribute("y", -3);
   text.setAttribute("text-anchor", "middle");
-  text.setAttribute("font-size", "13");
+  text.setAttribute("font-size", "14");
   text.setAttribute("fill", "#111");
   text.setAttribute("font-family", "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace");
-  text.textContent = clampStr(label, 22);
+  text.textContent = clampStr(label, 18);
 
-  sub.setAttribute("x", x);
-  sub.setAttribute("y", y + 16);
+  const sub = document.createElementNS("http://www.w3.org/2000/svg", "text");
+  sub.setAttribute("x", 0);
+  sub.setAttribute("y", 18);
   sub.setAttribute("text-anchor", "middle");
   sub.setAttribute("font-size", "11");
   sub.setAttribute("fill", "#111");
-  sub.setAttribute("opacity", "0.7");
+  sub.setAttribute("opacity", "0.72");
   sub.setAttribute("font-family", "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace");
-  sub.textContent = clampStr(subline, 30);
+  sub.textContent = clampStr(subline || "", 26);
 
-  g.appendChild(rect);
-  g.appendChild(text);
-  if (subline) g.appendChild(sub);
-  parent.appendChild(g);
+  inner.appendChild(rect);
+  inner.appendChild(text);
+  if (subline) inner.appendChild(sub);
+  outer.appendChild(inner);
+  SCADA.nodesEl.appendChild(outer);
 
-  return { group: g, pulse: st.pulse };
+  return {
+    outer,
+    inner,
+    x,
+    y,
+    w,
+    h,
+    pulse: nodePulse(status),
+    dragHandle: rect
+  };
 }
 
-let _anim = { started: false, edges: [], nodes: [], t: 0 };
-
-function renderDiagram(snapshot) {
-  const edgesEl = document.getElementById("edges");
-  const nodesEl = document.getElementById("nodes");
-  if (!edgesEl || !nodesEl) return;
-
-  edgesEl.innerHTML = "";
-  nodesEl.innerHTML = "";
-
-  const team = snapshot.team || [];
-  const products = snapshot.products || [];
-
-  const cx = 550, cy = 300;
-
-  _anim.edges = [];
-  _anim.nodes = [];
-
-  _anim.nodes.push(drawNode(nodesEl, cx, cy, 220, 64, "MOXIE", "ACTIVE", "autonomous CMO"));
-
-  const roles = team
-    .filter(r => String((r.name || r.role || "")).toLowerCase() !== "moxie")
-    .slice(0, 12);
-
-  const radius = 230;
-  const start = -Math.PI / 2;
-  const step = roles.length ? (2 * Math.PI) / roles.length : 0;
-
-  roles.forEach((r, i) => {
-    const a = start + i * step;
-    const x = cx + Math.cos(a) * radius;
-    const y = cy + Math.sin(a) * radius;
-    _anim.edges.push(drawEdge(edgesEl, cx, cy, x, y, r.status));
-    const label = String(r.name || r.role || "ROLE");
-    const subtitle = r.title ? String(r.title) : (r.working_on || "");
-    _anim.nodes.push(drawNode(nodesEl, x, y, 230, 60, label, r.status, subtitle));
-  });
-
-  // products at bottom
-  const py = 570;
-  const startX = 360;
-  const gap = 190;
-  products.slice(0, 4).forEach((p, i) => {
-    const x = startX + i * gap;
-    _anim.edges.push(drawEdge(edgesEl, cx, cy + 12, x, py, "ACTIVE"));
-    _anim.nodes.push(drawNode(nodesEl, x, py, 170, 50, String(p.name || "PRODUCT"), p.status || "ACTIVE", "product"));
-  });
-
-  startAnimation();
+function updateEdges() {
+  for (const e of SCADA.edges) {
+    const A = SCADA.nodes[e.a];
+    const B = SCADA.nodes[e.b];
+    if (!A || !B) continue;
+    const x1 = A.x, y1 = A.y;
+    const x2 = B.x, y2 = B.y;
+    const midx = (x1 + x2) / 2;
+    const midy = (y1 + y2) / 2;
+    const dx = (x2 - x1) * 0.14;
+    const dy = (y2 - y1) * 0.14;
+    e.path.setAttribute("d", `M ${x1} ${y1} Q ${midx + dy} ${midy - dx} ${x2} ${y2}`);
+  }
 }
+
+function setNodePos(idx, x, y) {
+  const n = SCADA.nodes[idx];
+  if (!n) return;
+  n.x = x;
+  n.y = y;
+  n.outer.setAttribute("transform", `translate(${x} ${y})`);
+}
+
+function resolveCollisions(movedIdx = null) {
+  // Simple repulsion so nodes don't sit on top of each other.
+  const pad = 18;
+  const iter = 8;
+
+  for (let k = 0; k < iter; k++) {
+    for (let i = 0; i < SCADA.nodes.length; i++) {
+      if (movedIdx !== null && i !== movedIdx) continue;
+      const A = SCADA.nodes[i];
+      if (!A) continue;
+
+      for (let j = 0; j < SCADA.nodes.length; j++) {
+        if (i === j) continue;
+        const B = SCADA.nodes[j];
+        if (!B) continue;
+
+        const ax = A.x, ay = A.y;
+        const bx = B.x, by = B.y;
+
+        const dx = ax - bx;
+        const dy = ay - by;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 0.0001;
+
+        // approximate node radius
+        const ra = Math.max(A.w, A.h) * 0.55;
+        const rb = Math.max(B.w, B.h) * 0.55;
+        const minDist = ra + rb + pad;
+
+        if (dist < minDist) {
+          const push = (minDist - dist) * 0.55;
+          const ux = dx / dist;
+          const uy = dy / dist;
+
+          // move A away
+          setNodePos(i, ax + ux * push, ay + uy * push);
+        }
+      }
+    }
+  }
+}
+
+function clampToViewbox(idx) {
+  const n = SCADA.nodes[idx];
+  if (!n) return;
+  const vbW = 1100, vbH = 700;
+  const marginX = n.w / 2 + 20;
+  const marginY = n.h / 2 + 20;
+  const x = Math.min(vbW - marginX, Math.max(marginX, n.x));
+  const y = Math.min(vbH - marginY, Math.max(marginY, n.y));
+  setNodePos(idx, x, y);
+}
+
+function attachDrag(idx) {
+  const n = SCADA.nodes[idx];
+  if (!n || !SCADA.svg) return;
+  const svg = SCADA.svg;
+
+  n.dragHandle.style.cursor = "grab";
+
+  n.dragHandle.addEventListener("pointerdown", (ev) => {
+    ev.preventDefault();
+    n.dragHandle.setPointerCapture(ev.pointerId);
+    const p = clientToSvg(svg, ev.clientX, ev.clientY);
+    SCADA.dragging = {
+      idx,
+      offsetX: n.x - p.x,
+      offsetY: n.y - p.y
+    };
+    n.dragHandle.style.cursor = "grabbing";
+  });
+
+  n.dragHandle.addEventListener("pointermove", (ev) => {
+    if (!SCADA.dragging || SCADA.dragging.idx !== idx) return;
+    const p = clientToSvg(svg, ev.clientX, ev.clientY);
+    setNodePos(idx, p.x + SCADA.dragging.offsetX, p.y + SCADA.dragging.offsetY);
+    clampToViewbox(idx);
+    resolveCollisions(idx);
+    updateEdges();
+  });
+
+  const end = () => {
+    if (!SCADA.dragging || SCADA.dragging.idx !== idx) return;
+    SCADA.dragging = null;
+    n.dragHandle.style.cursor = "grab";
+    resolveCollisions(null);
+    updateEdges();
+  };
+
+  n.dragHandle.addEventListener("pointerup", end);
+  n.dragHandle.addEventListener("pointercancel", end);
+};
 
 function startAnimation() {
-  if (_anim.started) return;
-  _anim.started = true;
+  if (SCADA.started) return;
+  SCADA.started = true;
 
   const sweep = document.getElementById("sweepRect");
 
   function frame() {
-    _anim.t += 1;
+    SCADA.t += 1;
 
     // sweep left->right
     if (sweep) {
-      const x = (-550 + (_anim.t * 2.2) % 1650);
+      const x = (-550 + (SCADA.t * 2.4) % 1650);
       sweep.setAttribute("x", String(x));
     }
 
-    // edges: animate dash offset
-    _anim.edges.forEach((p, idx) => {
-      const dash = p.getAttribute("stroke-dasharray") || "";
-      const fast = dash === "4 4" ? 2.2 : (dash === "12 9" ? 0.4 : 1.0);
-      p.style.strokeDashoffset = String((_anim.t * fast + idx * 7) % 400);
+    // animate edges
+    SCADA.edges.forEach((e, idx) => {
+      const dash = e.dash;
+      const fast = dash === "4 4" ? 2.2 : (dash === "12 9" ? 0.5 : 1.1);
+      e.path.style.strokeDashoffset = String((SCADA.t * fast + idx * 7) % 400);
     });
 
-    // node pulse (scale)
-    _anim.nodes.forEach((n, idx) => {
-      const g = n.group;
-      const pulse = n.pulse || 0.2;
-      const s = 1 + Math.sin((_anim.t / 18) + idx) * 0.015 * pulse;
-      g.setAttribute("transform", `translate(0 0) scale(${s})`);
+    // node inner pulse (doesn't affect position)
+    SCADA.nodes.forEach((n, idx) => {
+      const p = n.pulse;
+      const s = 1 + Math.sin((SCADA.t / 18) + idx) * 0.02 * p;
+      n.inner.setAttribute("transform", `scale(${s})`);
     });
 
     requestAnimationFrame(frame);
@@ -367,15 +447,70 @@ function startAnimation() {
   requestAnimationFrame(frame);
 }
 
+function renderDiagram(snapshot) {
+  SCADA.svg = document.getElementById("orgSvg");
+  SCADA.edgesEl = document.getElementById("edges");
+  SCADA.nodesEl = document.getElementById("nodes");
+  if (!SCADA.svg || !SCADA.edgesEl || !SCADA.nodesEl) return;
+
+  SCADA.edgesEl.innerHTML = "";
+  SCADA.nodesEl.innerHTML = "";
+  SCADA.edges = [];
+  SCADA.nodes = [];
+
+  const team = snapshot.team || [];
+
+  const cx = 550, cy = 330;
+
+  // center
+  const mox = drawNode(cx, cy, 240, 70, "MOXIE", "ACTIVE", "autonomous CMO");
+  SCADA.nodes.push(mox);
+
+  // ring (stable spacing, no touching)
+  const roles = team
+    .filter(r => String((r.name || "")).toLowerCase() !== "moxie")
+    .slice(0, 12);
+
+  const radius = 245;
+  const start = -Math.PI / 2;
+  const step = roles.length ? (2 * Math.PI) / roles.length : 0;
+
+  roles.forEach((r, i) => {
+    const a = start + i * step;
+    const x = cx + Math.cos(a) * radius;
+    const y = cy + Math.sin(a) * radius;
+
+    const label = String(r.name || "ROLE");
+    const subtitle = String(r.title || "");
+
+    const node = drawNode(x, y, 240, 64, label, r.status, subtitle);
+    const idx = SCADA.nodes.push(node) - 1;
+
+    // edge to center
+    SCADA.edges.push(drawEdge(0, idx, r.status));
+  });
+
+  // avoid any collisions on initial render
+  resolveCollisions(null);
+  for (let i = 0; i < SCADA.nodes.length; i++) clampToViewbox(i);
+
+  // attach drag
+  for (let i = 0; i < SCADA.nodes.length; i++) attachDrag(i);
+
+  updateEdges();
+  startAnimation();
+}
+
 function applySnapshot(snap) {
   setText("generatedAt", `Snapshot: ${fmtDate(snap.generated_at || "")}`);
 
   setText("kpiPv", snap.kpis?.pageviews_7d ?? "—");
   setText("kpiVisitors", snap.kpis?.visitors_7d ?? "—");
   setText("kpiSignups", snap.kpis?.signups_7d ?? "—");
-  setText("kpiPaid", snap.kpis?.paid_7d ?? "—");
-  setText("kpiMrr", snap.kpis?.mrr_usd ?? 0);
-  setText("kpiRevenueTotal", snap.kpis?.revenue_total_usd ?? 0);
+
+  setText("kpiPaidLifetime", snap.kpis?.paid_lifetime ?? 0);
+  setText("kpiFreeLifetime", snap.kpis?.free_lifetime ?? 0);
+  setText("kpiRevenueLifetime", snap.kpis?.revenue_lifetime_usd ?? 0);
 
   const active = (snap.products || []).find(p => statusNorm(p.status) === "ACTIVE") || (snap.products || [])[0];
   setText("activeProduct", active ? active.name : "—");
