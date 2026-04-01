@@ -3,7 +3,7 @@
 # This file is monitored. If new items appear, Moxie will notify on Telegram.
 
 ##Open
-- [ ] (2026-03-31) Reddit founder-profile scan + subreddit intel: automated access from this environment to reddit.com is HTTP 403 Blocked. To scan founder profiles / subreddit content we need to run the script from a network that can reach Reddit, using either (a) a Reddit dev app token (OAuth) or (b) a logged-in session/cookies. — Owner: Rishi + Vale
+- [ ] (2026-03-31) Reddit founder-profile scan + subreddit intel: (1) this environment is **HTTP 403 Blocked** to reddit.com, and (2) Reddit’s current Data API policy states **approval is required** before accessing Reddit data via API; commercial use requires explicit permission/contract. So we should NOT automate scans unless/until approved + reachable network. Next action: decide whether to apply for approved Data API access or do manual intel only. — Owner: Rishi + Vale
 
 - [ ] (2026-03-31) WordPress plugin resubmission (WP team feedback) — Founder-owned blocker. Moxie/Forge will not touch WP plugin changes; Rishi will handle and we'll plan post-approval launch later. — Owner: Rishi
 

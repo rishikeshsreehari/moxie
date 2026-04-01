@@ -3,8 +3,9 @@
 ## TL;DR
 - From *this* Hermes environment, requests to reddit.com return **HTTP 403: Blocked** (verified).
 - That means: even read-only scraping via `.json` endpoints will not work here.
+- Reddit’s current Data API policy states **approval is required** before accessing Reddit data via API; commercial use requires explicit permission/contract.
 - You (Rishi) can still post manually using the content packs already on disk.
-- If you want automated scanning (founder profiles, subreddit intel), run it from a network/machine that can reach Reddit and use OAuth.
+- We should treat automated scanning as **blocked** unless/until (a) we have approved access and (b) we run from a network that can reach Reddit.
 
 ## Content you can post manually (already prepared)
 - /root/moxie_hq/products/formbeep/outreach/reddit-week1-execution-pack.md
