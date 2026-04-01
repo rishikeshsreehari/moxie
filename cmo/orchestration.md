@@ -77,11 +77,11 @@
 ### Ember — Outreach & Distribution Lead
 - SOUL: /root/moxie/cmo/employees/ember-soul.md
 - Output dir: /root/moxie/products/formbeep/outreach/
-- Status: BLOCKED (awaiting Reddit account credentials)
-- Current task: Week 1 Reddit posting execution — packs ready (2 full posts + 15 comment seeds + tracking sheet) — output: /root/moxie/products/formbeep/outreach/reddit-week1-execution-pack.md
-- Last output: /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md
-- Next task after completion: Publish Week 1 Reddit posts (Post A r/smallbusiness, Post B r/WordPress) + 15 comment seeds across 3 days once account access is provided
-- Blockers: Needs Reddit account credentials (u/adambengur or dedicated FormBeep Reddit account) to publish posts and comments — see issues_rishi.md
+- Status: IDLE (all tasks COMPLETED; execution BLOCKED on credentials)
+- Last output: /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md (2026-03-31)
+- Completed deliverables: reddit-strategy.md (6 post drafts + 20 comment plan), reddit-campaign-plan.md (calendar + SOP + posting times)
+- Next task after completion: Publish Week 1 Reddit posts + 15 comment seeds — **BLOCKED** on Reddit account credentials
+- Blockers: Needs Reddit account credentials (u/adambengur or dedicated FormBeep Reddit account) — logged in issues_rishi.md since 2026-03-31. No new queue items dispatched.
 
 ### Forge — Product/Codebase Inspector
 - SOUL: /root/moxie/cmo/employees/forge-soul.md

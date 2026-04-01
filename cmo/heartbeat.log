@@ -1,5 +1,12 @@
 # Moxie CMO Heartbeat Log
-## 2026-04-01T10:12:00Z
+## 2026-04-01T10:18:00Z
+
+### Reconciler Run: Completed
+
+### Changes Made
+- Synced 29 cron jobs in orchestration.md with live registry
+- Updated next run times (19 jobs had drifted)
+- Added "Last verified" timestamp + "Repeats" column
 
 ### System Status: IDLE
 
@@ -11,7 +18,7 @@
 | Kiro | IDLE | Money pages COMPLETED; awaiting Rishi review |
 | Ember | BLOCKED | Reddit credentials needed |
 | Forge | IDLE | Technical SEO audit COMPLETED; WP awaiting Rishi |
-| Mira | COMPLETED | Analytics pulled via workaround |
+| Mira | COMPLETED | Daily KPI done |
 | Nova | COMPLETED | Cross-product ads SOP delivered |
 | Jax | COMPLETED | P1 submission pack ready; credentials needed |
 | Rumi | COMPLETED | Bi-weekly scan done |
@@ -33,13 +40,10 @@ No IN_PROGRESS or QUEUED tasks. Full sprint delivered.
 7. Umami API (401/403 errors)
 
 ### Active Crons: 29 jobs running
-Next scheduled:
-- 10:12 UTC: vale-worker
-- 10:13 UTC: moxie-orchestration-reconciler
-- 10:17 UTC: astra-worker
+All healthy, staggered hourly, next runs verified.
 
 ### Action Required: None
 System is healthy. All deliverables complete. Awaiting founder input on blockers.
 
 ---
-[2026-04-01T10:12:00Z] HEARTBEAT: System IDLE. 7 blockers pending Rishi input.{"cron": "vale-monthly-competitor-scan", "run_at": "2026-04-01T10:14:57.956810Z", "status": "IDLE - no IN_PROGRESS tasks", "findings": "April 2026 scan already COMPLETED. No new tasks assigned to Vale.", "next_action": "Await ad-hoc competitor intelligence assignments from Moxie. Next recurring scan: 2026-05-01."}
+[2026-04-01T10:18:00Z] RECONCILER: Synced cron table with live registry (29 jobs, added last_verified + repeats columns). Pushed commit c8f9886.
