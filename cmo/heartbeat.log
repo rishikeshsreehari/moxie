@@ -1,4 +1,21 @@
-# Moxie Heartbeat Log
-# Format: timestamp | status | details
+     1|# Moxie Heartbeat Log
+     2|# Format: timestamp | status | details
+     3|
+     4|2026-04-01T21:06:00Z | IDLE | All employees in COMPLETED state. Dispatch queue shows all tasks COMPLETED or BLOCKED. Pax: COMPLETED, no pending tasks. Issues file has 5 open blockers (all founder-owned: Reddit API, WP plugin, directory submissions, portal access). No IN_PROGRESS tasks. No new deliverables.
+============================================================
+MOXIE HEARTBEAT - 2026-04-01 22:07:52 UTC
+============================================================
 
-2026-04-01T21:06:00Z | IDLE | All employees in COMPLETED state. Dispatch queue shows all tasks COMPLETED or BLOCKED. Pax: COMPLETED, no pending tasks. Issues file has 5 open blockers (all founder-owned: Reddit API, WP plugin, directory submissions, portal access). No IN_PROGRESS tasks. No new deliverables.
+Orchestration Status:
+- IN_PROGRESS tasks: 2
+  - 80|- Status: IN_PROGRESS
+  - 81|- Current task: REWORK 2 blog posts per founder feedback (length + factual fixes + Zapier/WhatsApp research + comparison table + thumbnail prompts) — **IN_PROGRESS** (promoted 2026-04-01T22:05Z)
+
+Dispatch Queue:
+- QUEUED tasks: 0
+
+Issues Requiring Rishi:
+- Open blockers: 0
+  (none)
+
+Status: ACTIVE

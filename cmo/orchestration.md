@@ -197,7 +197,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
    184|
    185|**Editing rule:** do not edit jobs via this table. Update jobs using `hermes cron edit <cron_id> ...` and then reconcile this table to match.
    186|
-Last verified: 2026-04-01T21:13:00Z
+Last verified: 2026-04-01T22:13:00Z
 
 |||| Cron ID | Name | Schedule | Deliver | Next run (UTC) | Repeats | State ||
 ||||---|---|---|---|---|---|---||
@@ -210,25 +210,25 @@ Last verified: 2026-04-01T21:13:00Z
 |||| b0492991 | moxie-memory-skill-audit | every 720m | local | 2026-04-02T07:30:09+00:00 | ∞ | active ||
 |||| ca6591a8 | codex-weekly-resume-premium | once at 2026-04-06 17:30 | local | 2026-04-06T17:30:00+04:00 | 0/1 | active ||
 |||| 0526cbc1 | weekly-free-models-reminder | 0 17 * * 2 | local | 2026-04-07T17:00:00+00:00 | ∞ | active ||
-|| 647387ae | mira-daily-kpi | 0 10 * * * | local | 2026-04-02T10:00:00+00:00 | 9/100 | active |
-|| a468835d | vale-monthly-competitor-scan | 0 10 1 * * | local | 2026-05-01T10:00:00+00:00 | 1/100 | active |
-|| 2553a683 | moxie-daily-governance | 0 * * * * | local | 2026-04-01T22:00:00+00:00 | 46/100 | active |
-|| 8bcfe505 | vale-worker | 12 * * * * | local | 2026-04-01T22:12:00+00:00 | 48/100 | active |
-|| 7067633e | astra-worker | 17 * * * * | local | 2026-04-01T21:17:00+00:00 | 47/100 | active |
-|| 3171d2c2 | kiro-worker | 42 * * * * | local | 2026-04-01T21:42:00+00:00 | 46/100 | active |
-|| eb803b7d | ember-worker | 32 * * * * | local | 2026-04-01T21:32:00+00:00 | 46/100 | active |
-|| 401e59cc | forge-worker | 37 * * * * | local | 2026-04-01T21:37:00+00:00 | 47/100 | active |
-|| 4bdcef11 | jax-worker | 22 * * * * | local | 2026-04-01T21:22:00+00:00 | 46/100 | active |
-|| affd389a | rumi-worker | 27 * * * * | local | 2026-04-01T21:27:00+00:00 | 46/100 | active |
-|| af7f3c07 | moxie-daily-self-improvement | 0 20 * * * | local | 2026-04-02T20:00:00+00:00 | 2/100 | active |
-|| 91520aa6 | nova-worker | 47 * * * * | local | 2026-04-01T21:47:00+00:00 | 45/100 | active |
-|| 5b9c6eb7 | issues-rishi-watch | every 240m | local | 2026-04-02T00:26:57+00:00 | 12/200 | active |
-|| 3e93c4f5 | luna-worker | 52 * * * * | local | 2026-04-01T21:52:00+00:00 | 47/100 | active |
-|| cf1a8f9e | pax-worker | 57 * * * * | local | 2026-04-01T21:57:00+00:00 | 45/100 | active |
-|| b0e9c513 | iris-weekly-formbeep-repo-copy-audit | 30 9 * * 1 | local | 2026-04-06T09:30:00+00:00 | 0/200 | active |
-|| 0ed491f6 | orion-worker | 2 * * * * | local | 2026-04-01T22:02:00+00:00 | 47/200 | active |
-|| 868bd30f | moxie-hq-autocommit-push | every 30m | local | 2026-04-01T21:27:13+00:00 | ∞ | active |
-|| 1c008e06 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-04-01T22:13:00+00:00 | 37/100 | active |
+||| 647387ae | mira-daily-kpi | 0 10 * * * | local | 2026-04-02T10:00:00+00:00 | 47/100 | active |
+||| a468835d | vale-monthly-competitor-scan | 0 10 1 * * | local | 2026-05-01T10:00:00+00:00 | 1/100 | active |
+||| 2553a683 | moxie-daily-governance | 0 * * * * | local | 2026-04-01T23:00:00+00:00 | 47/100 | active |
+||| 8bcfe505 | vale-worker | 12 * * * * | local | 2026-04-01T23:12:00+00:00 | 49/100 | active |
+||| 7067633e | astra-worker | 17 * * * * | local | 2026-04-01T22:17:00+00:00 | 48/100 | active |
+||| 3171d2c2 | kiro-worker | 42 * * * * | local | 2026-04-01T22:42:00+00:00 | 47/100 | active |
+||| eb803b7d | ember-worker | 32 * * * * | local | 2026-04-01T22:32:00+00:00 | 47/100 | active |
+||| 401e59cc | forge-worker | 37 * * * * | local | 2026-04-01T22:37:00+00:00 | 48/100 | active |
+||| 4bdcef11 | jax-worker | 22 * * * * | local | 2026-04-01T22:22:00+00:00 | 47/100 | active |
+||| affd389a | rumi-worker | 27 * * * * | local | 2026-04-01T22:27:00+00:00 | 47/100 | active |
+||| af7f3c07 | moxie-daily-self-improvement | 0 20 * * * | local | 2026-04-02T20:00:00+00:00 | 2/100 | active |
+||| 91520aa6 | nova-worker | 47 * * * * | local | 2026-04-01T22:47:00+00:00 | 46/100 | active |
+||| 5b9c6eb7 | issues-rishi-watch | every 240m | local | 2026-04-02T00:26:57+00:00 | 12/200 | active |
+||| 3e93c4f5 | luna-worker | 52 * * * * | local | 2026-04-01T22:52:00+00:00 | 48/100 | active |
+||| cf1a8f9e | pax-worker | 57 * * * * | local | 2026-04-01T22:57:00+00:00 | 46/100 | active |
+||| b0e9c513 | iris-weekly-formbeep-repo-copy-audit | 30 9 * * 1 | local | 2026-04-06T09:30:00+00:00 | 0/200 | active |
+||| 0ed491f6 | orion-worker | 2 * * * * | local | 2026-04-01T23:02:00+00:00 | 48/200 | active |
+||| 868bd30f | moxie-hq-autocommit-push | every 30m | local | 2026-04-01T22:29:42+00:00 | ∞ | active |
+||| 1c008e06 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-04-01T23:13:00+00:00 | 38/100 | active |
 |||| c342e174 | opencode-go-weekly-limit-reset-reminder | 26 13 * * 1 | local | 2026-04-06T13:26:00+00:00 | ∞ | active ||
 |||| 7af300e6 | cmo-delegation-queue-runner | */15 * * * * | local | 2026-04-01T21:15:00+00:00 | ∞ | active ||
    221|
