@@ -134,13 +134,18 @@ function renderTeam(team) {
 
   (team || []).forEach(row => {
     const tr = document.createElement("tr");
-    const tdRole = document.createElement("td");
+    const tdEmp = document.createElement("td");
     const tdStatus = document.createElement("td");
     const tdWork = document.createElement("td");
-    tdRole.textContent = row.role;
+
+    const name = row.name || row.role || "";
+    const title = row.title ? ` — ${row.title}` : "";
+    tdEmp.textContent = `${name}${title}`;
+
     tdStatus.textContent = statusNorm(row.status);
     tdWork.textContent = clampStr(row.working_on || "", 90);
-    tr.appendChild(tdRole);
+
+    tr.appendChild(tdEmp);
     tr.appendChild(tdStatus);
     tr.appendChild(tdWork);
     tbody.appendChild(tr);
@@ -296,7 +301,7 @@ function renderDiagram(snapshot) {
   _anim.nodes.push(drawNode(nodesEl, cx, cy, 220, 64, "MOXIE", "ACTIVE", "autonomous CMO"));
 
   const roles = team
-    .filter(r => String(r.role || "").toLowerCase() !== "moxie")
+    .filter(r => String((r.name || r.role || "")).toLowerCase() !== "moxie")
     .slice(0, 12);
 
   const radius = 230;
@@ -308,7 +313,9 @@ function renderDiagram(snapshot) {
     const x = cx + Math.cos(a) * radius;
     const y = cy + Math.sin(a) * radius;
     _anim.edges.push(drawEdge(edgesEl, cx, cy, x, y, r.status));
-    _anim.nodes.push(drawNode(nodesEl, x, y, 230, 60, String(r.role || "ROLE"), r.status, r.working_on || ""));
+    const label = String(r.name || r.role || "ROLE");
+    const subtitle = r.title ? String(r.title) : (r.working_on || "");
+    _anim.nodes.push(drawNode(nodesEl, x, y, 230, 60, label, r.status, subtitle));
   });
 
   // products at bottom

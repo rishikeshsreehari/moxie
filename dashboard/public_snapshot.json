@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01T20:21:25Z",
+  "generated_at": "2026-04-01T20:42:48Z",
   "kpis": {
     "pageviews_7d": 103,
     "visitors_7d": 76,
@@ -58,78 +58,107 @@
   },
   "team": [
     {
-      "role": "Moxie",
+      "name": "Moxie",
+      "title": "Autonomous CMO",
       "status": "ACTIVE",
       "working_on": "Orchestration + growth decisions"
     },
     {
-      "role": "Vale",
+      "name": "Vale",
+      "title": "Competitor Intelligence Lead",
       "status": "COMPLETED",
       "working_on": "(FormBeep) Reddit intel analysis \u2192 positioning + subreddit playbook \u2014 **COMPLETED** (2026-04-01T16:30Z)"
     },
     {
-      "role": "Astra",
+      "name": "Astra",
+      "title": "Growth Research Lead",
       "status": "COMPLETED",
       "working_on": "SERP demand probe + keyword roadmap (US + overall FormBeep) \u2014 **COMPLETED** (2026-04-02T07:00Z)"
     },
     {
-      "role": "Kiro",
+      "name": "Kiro",
+      "title": "Conversion Copy Lead",
       "status": "COMPLETED",
       "working_on": "Revise 2 blog posts to match FormBeep blog style \u2014 **COMPLETED** (2026-04-01)"
     },
     {
-      "role": "Ember",
+      "name": "Ember",
+      "title": "Outreach & Distribution Lead",
       "status": "COMPLETED (execution blocked on creds)",
       "working_on": "Manual Reddit posting plan (Non-US/GST focus) + subreddit rules checklist + posting windows + verification steps \u2014 **COMPLETED** (2026-04-01T17:32Z)"
     },
     {
-      "role": "Forge",
+      "name": "Forge",
+      "title": "Product/Codebase Inspector",
       "status": "COMPLETED",
       "working_on": "Resolve GSC indexing issues \u2192 produce gsc-indexing-report.md \u2014 **COMPLETED** (2026-04-01T18:45Z)"
     },
     {
-      "role": "Mira",
+      "name": "Mira",
+      "title": "Analytics & Reporting Lead",
       "status": "COMPLETED",
       "working_on": "Traffic vs keyword opportunity map (use Umami + Astra keyword briefing) \u2014 **COMPLETED** (2026-03-31)"
     },
     {
-      "role": "Nova",
+      "name": "Nova",
+      "title": "Paid Acquisition Lead",
       "status": "COMPLETED",
       "working_on": "Cross-product ads SOP (naming, UTMs, conversion taxonomy, reporting cadence) \u2014 **COMPLETED**"
     },
     {
-      "role": "Jax",
+      "name": "Jax",
+      "title": "SaaS Growth Operations Lead",
       "status": "COMPLETED",
       "working_on": "Daily directory 2-pick + maintenance \u2014 **COMPLETED** (2026-04-03)"
     },
     {
-      "role": "Rumi",
+      "name": "Rumi",
+      "title": "Blog & Content Analyst",
       "status": "COMPLETED",
       "working_on": "Bi-weekly content gap scan + trending topic check \u2014 **COMPLETED** (2026-03-31)"
     },
     {
-      "role": "Pax",
+      "name": "Pax",
+      "title": "Partnerships / BD Lead",
       "status": "COMPLETED",
       "working_on": "Week 3 submissions (Carrd + Typedream integration packages + agency outreach to top 15 targets) \u2014 **COMPLETED**"
     },
     {
-      "role": "Luna",
+      "name": "Luna",
+      "title": "Lifecycle / CRM Lead",
       "status": "QUEUED",
       "working_on": "Win-back email sequence for churned users \u2014 QUEUED (2026-04-01T20:00Z)"
     },
     {
-      "role": "Orion",
+      "name": "Orion",
+      "title": "Outbound Lead (Cold Email)",
       "status": "COMPLETED",
       "working_on": "Prospect list refresh from competitor intel \u2014 **COMPLETED** (2026-04-02T08:15Z)"
     },
     {
-      "role": "Iris",
+      "name": "Iris",
+      "title": "Repo Copy Auditor",
       "status": "IDLE",
       "working_on": "Weekly FormBeep repo copy audit \u2014 runs every Monday 09:30 UTC"
     }
   ],
   "github": {
     "recent": [
+      {
+        "hash": "63fbf43",
+        "when": "2026-04-01",
+        "subject": "Autopush: 2026-04-01T20:30:39Z"
+      },
+      {
+        "hash": "72f314f",
+        "when": "2026-04-01",
+        "subject": "Autopush: 2026-04-01T20:23:40Z"
+      },
+      {
+        "hash": "9c3b53f",
+        "when": "2026-04-01",
+        "subject": "Dashboard: single-screen SCADA layout + animated network map + real tasks/team/blockers/github"
+      },
       {
         "hash": "cbe3108",
         "when": "2026-04-01",
@@ -154,27 +183,12 @@
         "hash": "d07a3b9",
         "when": "2026-04-01",
         "subject": "Autopush: 2026-04-01T19:48:35Z"
-      },
-      {
-        "hash": "574703c",
-        "when": "2026-04-01",
-        "subject": "Autopush: 2026-04-01T19:45Z - Added replication framework, rules, and deliverables checklist for autonomous product launches"
-      },
-      {
-        "hash": "42b2d53",
-        "when": "2026-04-01",
-        "subject": "Autopush: 2026-04-01T19:37:26Z"
-      },
-      {
-        "hash": "369dc26",
-        "when": "2026-04-01",
-        "subject": "Autopush: 2026-04-02T19:00Z \u2014 Jax directory picks Apr 3 (BetaList + AlternativeTo)"
       }
     ]
   },
   "console": [
     "[BOOT] Moxie HQ online",
-    "[SYNC] snapshot generated 2026-04-01T20:21:25Z",
+    "[SYNC] snapshot generated 2026-04-01T20:42:48Z",
     "[WORK] in_progress=4 queued=1",
     "[NEED] blockers=6"
   ]

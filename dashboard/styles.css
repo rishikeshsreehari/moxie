@@ -6,10 +6,14 @@
 }
 
 html, body {
-  background: var(--paper);
+  background: var(--paper) !important;
   color: var(--ink);
   margin: 0;
   padding: 0;
+}
+
+.win7 {
+  background: var(--paper) !important;
 }
 
 .page {
@@ -85,7 +89,7 @@ html, body {
 
 .panel {
   border: 2px solid var(--line);
-  background: var(--paper);
+  background: var(--paper) !important;
   padding: 10px;
 }
 
@@ -133,6 +137,10 @@ html, body {
   border: 2px solid var(--line);
   background: var(--paper);
   overflow: hidden;
+  /* fallback grid even if SVG pattern feels too subtle */
+  background-image:
+    repeating-linear-gradient(0deg, rgba(17,17,17,0.06), rgba(17,17,17,0.06) 1px, transparent 1px, transparent 22px),
+    repeating-linear-gradient(90deg, rgba(17,17,17,0.06), rgba(17,17,17,0.06) 1px, transparent 1px, transparent 22px);
 }
 
 #orgSvg {

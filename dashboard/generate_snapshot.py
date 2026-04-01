@@ -144,8 +144,14 @@ def parse_orchestration_employees(max_items: int = 14) -> list[dict[str, str]]:
     def flush():
         nonlocal current_name, current_status, current_task
         if current_name:
+            # current_name looks like: 'Vale — Competitor Intelligence Lead'
+            if "—" in current_name:
+                name, title = [x.strip() for x in current_name.split("—", 1)]
+            else:
+                name, title = current_name.strip(), ""
             team.append({
-                "role": scrub(current_name.split("—")[0].strip()),
+                "name": scrub(name),
+                "title": scrub(title),
                 "status": scrub(current_status or "IDLE"),
                 "working_on": scrub(current_task or ""),
             })
@@ -181,10 +187,10 @@ def parse_orchestration_employees(max_items: int = 14) -> list[dict[str, str]]:
     flush()
 
     # ensure Moxie always on top
-    out: list[dict[str, str]] = [{"role": "Moxie", "status": "ACTIVE", "working_on": "Orchestration + growth decisions"}]
+    out: list[dict[str, str]] = [{"name": "Moxie", "title": "Autonomous CMO", "status": "ACTIVE", "working_on": "Orchestration + growth decisions"}]
 
     for row in team:
-        if row["role"].lower() == "moxie":
+        if str(row.get("name", "")).lower() == "moxie":
             continue
         out.append(row)
 
