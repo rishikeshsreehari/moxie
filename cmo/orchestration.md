@@ -106,10 +106,10 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 ### Forge — Full Stack Engineer
 - SOUL: /root/moxie/cmo/employees/forge-soul.md
 - Current output dir (sprint): /root/moxie/products/formbeep/
-- Status: IN_PROGRESS
-- Current task: Improve HQ git commit messages (replace generic "Autopush:" with specific summaries; update autopush script) — **IN_PROGRESS** (promoted 2026-04-01T22:05Z)
+- Status: COMPLETED
+- Current task: Improve HQ git commit messages (replace generic "Autopush:" with specific summaries; update autopush script) — **COMPLETED** (2026-04-01T22:37Z)
 - Output path: /root/moxie_hq/cmo/sops/hq-commit-message-standard.md
-- Last output: /root/moxie/products/formbeep/analytics/gsc-indexing-report.md (delivered 2026-04-01)
+- Last output: /root/moxie_hq/cmo/sops/hq-commit-message-standard.md (delivered 2026-04-01)
 - Previous task: Technical SEO audit — **COMPLETED**
 - Next task after completion: Monitor Index Coverage for taxonomy page removal; measure impression changes for blog pages
 - Blockers: None

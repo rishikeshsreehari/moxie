@@ -4,11 +4,13 @@
 Purpose
 - Avoid concurrent git commits/pushes for /root/moxie_hq
 - Work in environments where `flock ... bash -lc '...'` is blocked
+- Generate meaningful commit messages instead of generic timestamps
 
 Policy
 - Never create empty commits
-- Commit message format: `Autopush: <UTC timestamp>`
+- Commit message format: "HQ sync: <area1> + <area2>" with optional body
 - Push only to HQ repo (this repo) origin/main
+- Classification rules map file paths to semantic areas
 
 """
 
@@ -18,14 +20,96 @@ import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from collections import Counter
 
 
 REPO = Path("/root/moxie_hq")
 LOCK_PATH = REPO / ".git" / "moxie_autopush.lock"
 
+# Classification rules: path pattern -> area tag
+AREA_RULES = [
+    ("cmo/dispatch-queue.md", "dispatch"),
+    ("cmo/orchestration.md", "orchestration"),
+    ("cmo/delegation-queue.md", "delegation"),
+    ("cmo/delegation-queue.md", "delegation"),
+    ("cmo/issues_rishi.md", "governance"),
+    ("cmo/sops/", "SOPs"),
+    ("cmo/employees/", "team"),
+    ("products/formbeep/analytics/", "analytics"),
+    ("products/formbeep/copy/", "content"),
+    ("products/formbeep/outreach/", "outreach"),
+    ("products/formbeep/seo/", "SEO"),
+    ("products/formbeep/distribution/", "distribution"),
+    ("products/formbeep/lifecycle/", "lifecycle"),
+    ("products/formbeep/partnerships/", "partnerships"),
+    ("products/formbeep/outbound/", "outbound"),
+    ("dashboard/", "dashboard"),
+    ("cmo/scores/", "scores"),
+    ("cmo/codex-usage", "tracking"),
+    ("cmo/state/", "state"),
+]
+
 
 def run(cmd: list[str], *, check: bool = True) -> subprocess.CompletedProcess:
     return subprocess.run(cmd, cwd=str(REPO), text=True, capture_output=True, check=check)
+
+
+def classify_file(relpath: str) -> str | None:
+    """Map a file path to its semantic area tag."""
+    for prefix, area in AREA_RULES:
+        if prefix in relpath:
+            return area
+    return None
+
+
+def generate_commit_message(staged_files: list[str]) -> tuple[str, str | None]:
+    """Generate commit subject and optional body from staged files.
+    
+    Returns: (subject_line, body_or_none)
+    """
+    if not staged_files:
+        return "HQ sync: no changes", None
+    
+    # Classify all files
+    areas = []
+    file_details = []
+    
+    for f in staged_files:
+        area = classify_file(f)
+        if area:
+            areas.append(area)
+        # Create brief description
+        filename = Path(f).name
+        file_details.append(f"- {f}: updated")
+    
+    if not areas:
+        # No recognized areas, use generic
+        if len(staged_files) == 1:
+            return f"HQ sync: {staged_files[0]}", None
+        return "HQ sync: multi-area update", "\n".join(file_details[:5]) if len(staged_files) > 1 else None
+    
+    # Count area frequencies
+    area_counts = Counter(areas)
+    top_areas = [area for area, _ in area_counts.most_common(3)]
+    
+    # Build subject line
+    if len(top_areas) == 1:
+        subject = f"HQ sync: {top_areas[0]}"
+    elif len(top_areas) == 2:
+        subject = f"HQ sync: {top_areas[0]} + {top_areas[1]}"
+    else:
+        subject = f"HQ sync: {top_areas[0]} + {top_areas[1]} + {top_areas[2]}"
+    
+    # Build body if we have many files or multiple areas
+    body = None
+    if len(staged_files) >= 3 or len(top_areas) >= 2:
+        # Limit to top 7 files to keep commit message reasonable
+        body_lines = file_details[:7]
+        if len(staged_files) > 7:
+            body_lines.append(f"- ... and {len(staged_files) - 7} more files")
+        body = "\n".join(body_lines)
+    
+    return subject, body
 
 
 def append_issue_open(line: str) -> None:
@@ -91,8 +175,24 @@ def main() -> int:
             print("NO_STAGED_CHANGES")
             return 0
 
-        ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-        msg = f"Autopush: {ts}"
+        # Get list of staged files for message generation
+        files_result = subprocess.run(
+            ["git", "diff", "--cached", "--name-only"],
+            cwd=str(REPO),
+            text=True,
+            capture_output=True,
+            check=True,
+        )
+        staged_files = [f.strip() for f in files_result.stdout.strip().split("\n") if f.strip()]
+        
+        # Generate meaningful commit message
+        subject, body = generate_commit_message(staged_files)
+        
+        # Build commit command
+        if body:
+            msg = f"{subject}\n\n{body}"
+        else:
+            msg = subject
 
         c = run(["git", "commit", "-m", msg], check=True)
         if c.stdout:

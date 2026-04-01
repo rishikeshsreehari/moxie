@@ -19,19 +19,31 @@ CTA events:
 ## What this implies
 More people click Docs than click Signup-Hero. Typical reason: users need more clarity/proof before they commit.
 
-## Pick ONE change (A/B/C/D)
-A) Add proof near the hero (recommended default)
-- Add 1 screenshot/GIF of the WhatsApp alert + 3-bullet “How it works” directly under the hero CTA.
-- Goal: reduce “Docs Click” as a prerequisite to signup.
+## Current landing (as implemented today)
+Eyebrow: “NEVER MISS A LEAD AGAIN”
+H1: “Instant Alerts from your Forms”
+Subhead: “Get a WhatsApp notification the moment someone submits — before they move on to a competitor.”
+CTA: “Get FREE Alerts”
+Breadcrumbs: “Free Forever, No Credit Card, 2min Setup”
+Right-side mock: WhatsApp alert + “View Details” shows the submission
+Trust microline: “99.9% uptime powered by Cloudflare”
+Sections below:
+- “Works with any existing form” + “No credit card needed”
+- Testimonial: “Tiny tool, real impact…”
+- How it works (3 steps) with install snippet + “Installation guide →”
 
-B) Rewrite the hero for clarity
-- Make the promise more specific + who it’s for.
-- Example direction: “Instant WhatsApp/SMS alerts for every website form submission (Webflow/WordPress/Framer). No Zapier.”
+## Pick ONE change to ship this week (A/B/C/D)
+A) Move proof above the fold (recommended)
+- Pull the testimonial + the “99.9% uptime…” trust line up into the hero area (visible without scrolling).
+- Add a small “Works with: Webflow / WordPress / Framer / Wix / Carrd” badge row under the breadcrumbs.
 
-C) Reduce docs leakage by moving key doc info onto the landing page
-- Pull the 3 most-asked setup questions from docs into a mini-FAQ right on the landing page.
+B) Fix the ‘Free Forever’ trust risk (recommended if you want higher honesty/less backlash)
+- Change breadcrumbs from “Free Forever” → “Start free (15 submissions/mo)” (match canonical facts) while keeping “No credit card” + “2 min setup”.
 
-D) Other (describe exactly what you want changed)
+C) Tighten the subhead to reduce ‘competitor’ vagueness
+- Replace “before they move on to a competitor” with a concrete outcome (speed-to-lead / response time).
+
+D) Other (tell me exactly what to change)
 
 ## What to reply with
 Reply with just: A, B, C, or D + 1 sentence.
