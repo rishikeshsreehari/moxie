@@ -37,5 +37,14 @@ Rule: A deliverable is only surfaced to Rishi when it passes BOTH:
 - Comparisons:
   - “X vs Y” posts must include a table
 
+## Founder-ready checklist (Copy / content plans / outward-facing messaging)
+- Ground truth evidence attached (must be true *before* writing copy):
+  - Live-site snapshot (current) OR repo pointers (exact template/section) OR founder-provided current copy pasted in chat
+  - If analytics are referenced: link to the source file/API output used
+- Claims audit:
+  - No assumptions about tiers (“free forever”), platforms (“marketplace submission”), or ICP — must be evidenced
+- Decision gating:
+  - If evidence is missing, mark deliverable BLOCKED and first queue an evidence-collection task (scrape/snapshot/audit).
+
 ## Escalation
 If a repeated mistake happens twice (e.g., wrong product facts), patch the employee SOUL to include a hard requirement + reference canonical facts.
