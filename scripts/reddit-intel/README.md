@@ -1,6 +1,6 @@
 # Reddit intel scanner (browser automation, no API)
 
-Current version: **v2026-04-01-v2**
+Current version: **v2026-04-01-v3**
 
 This script gathers comprehensive Reddit intel for FormBeep and the SapiensTech portfolio.
 
@@ -31,9 +31,19 @@ playwright install chromium
 
 ## Run
 
+Interactive (recommended first run to login and save session state):
+
 ```bash
 python3 reddit_intel_scanner_browser.py
 ```
+
+Background/headless (after you already have `reddit_storage_state.json` saved):
+
+```bash
+python3 reddit_intel_scanner_browser.py --headless > run.log 2>&1 &
+```
+
+Note: even headless runs still spawn a Chromium process; you just don’t need to keep a visible window open.
 
 ## Configuration
 

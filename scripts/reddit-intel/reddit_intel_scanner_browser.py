@@ -2,7 +2,7 @@
 """
 SapiensTech Reddit Intel Scanner — Browser Automation (no API)
 
-Version: 2026-04-01-v2
+Version: 2026-04-01-v3
   - Adds: founder comments + thread details (selftext + top replies) with sentiment
   - Adds: your profile (rishikeshshari)
   - Adds: expanded keyword set (formbeep, competitors, key phrases)
@@ -298,21 +298,7 @@ def scrape_thread_details(page, thread_url: str, comment_limit: int) -> Tuple[st
     return selftext, comments
 
 
-def scrape_old_search(page, query: str, limit: int) -> List[ListingItem]:
-    # Global search; sort by comments to find attention.
-    url = f"https://old.reddit.com/search?q={query}&sort=comments&t=all"
-    print(f"Search (global): {query}")
-    _goto(page, url)
-    _scroll_some(page)
-
-
-def scrape_old_search_in_subreddit(page, subreddit: str, query: str, limit: int) -> List[ListingItem]:
-    # Restricted search inside a specific community.
-    url = f"https://old.reddit.com/r/{subreddit}/search?q={query}&restrict_sr=on&sort=comments&t=all"
-    print(f"Search (r/{subreddit}): {query}")
-    _goto(page, url)
-    _scroll_some(page)
-
+def _parse_search_results(page, limit: int) -> List[ListingItem]:
     items: List[ListingItem] = []
     things = page.query_selector_all("div.thing")
     for t in things:
@@ -344,6 +330,30 @@ def scrape_old_search_in_subreddit(page, subreddit: str, query: str, limit: int)
             continue
 
     return items
+
+
+def scrape_old_search(page, query: str, limit: int) -> List[ListingItem]:
+    # Global search; sort by comments to find attention.
+    from urllib.parse import quote_plus
+
+    q = quote_plus(query)
+    url = f"https://old.reddit.com/search?q={q}&sort=comments&t=all"
+    print(f"Search (global): {query}")
+    _goto(page, url)
+    _scroll_some(page)
+    return _parse_search_results(page, limit)
+
+
+def scrape_old_search_in_subreddit(page, subreddit: str, query: str, limit: int) -> List[ListingItem]:
+    # Restricted search inside a specific community.
+    from urllib.parse import quote_plus
+
+    q = quote_plus(query)
+    url = f"https://old.reddit.com/r/{subreddit}/search?q={q}&restrict_sr=on&sort=comments&t=all"
+    print(f"Search (r/{subreddit}): {query}")
+    _goto(page, url)
+    _scroll_some(page)
+    return _parse_search_results(page, limit)
 
 
 # -------------------- ANALYSIS --------------------
@@ -397,7 +407,7 @@ def generate_markdown(
 ) -> str:
     out: List[str] = []
     out.append("# Reddit Intel Brief (Browser Automation)")
-    out.append(f"Generated: {_now_utc()} — scanner v2026-04-01-v2")
+    out.append(f"Generated: {_now_utc()} — scanner v2026-04-01-v3")
     out.append("")
 
     # Collection summary
@@ -543,7 +553,7 @@ def ensure_logged_in(page) -> None:
 
 def main() -> None:
     print("=" * 60)
-    print("Reddit Intel Scanner v2026-04-01-v2")
+    print("Reddit Intel Scanner v2026-04-01-v3")
     print("Features: founder activity + thread sentiment; keywords expanded; selftext + reply samples")
     print("=" * 60)
     print("\nStarting scan...")
@@ -611,22 +621,41 @@ def main() -> None:
         keyword_thread_sentiment: Dict[str, Dict[str, float]] = {k: {} for k in KEYWORDS}
 
         for kw in KEYWORDS:
-            results = scrape_old_search(page, kw, MAX_KEYWORD_RESULTS_PER_QUERY)
-            keyword_results[kw] = results
-            print(f"  keyword '{kw}': threads={len(results)}")
+            # 1) Global query
+            global_results = scrape_old_search(page, kw, MAX_KEYWORD_RESULTS_PER_QUERY)
 
-            # Fetch details for top few threads
-            top_results = sorted(results, key=lambda e: (e.comments_count or 0), reverse=True)[:TOP_THREADS_DETAILS_PER_SOURCE]
+            # 2) Restricted queries inside our target subs (keyword-based, not browsing)
+            restricted_results: List[ListingItem] = []
+            for sub in TARGET_SUBREDDITS:
+                try:
+                    restricted_results.extend(scrape_old_search_in_subreddit(page, sub, kw, limit=min(10, MAX_KEYWORD_RESULTS_PER_QUERY)))
+                    _sleep_jitter(0.9, extra_max=0.8)
+                except Exception as e:
+                    print(f"    restricted search failed r/{sub}: {e}")
+
+            # 3) Combine + de-dupe by URL
+            combined_by_url: Dict[str, ListingItem] = {}
+            for it in (global_results + restricted_results):
+                if it.url not in combined_by_url:
+                    combined_by_url[it.url] = it
+            combined = list(combined_by_url.values())
+
+            keyword_results[kw] = combined
+            print(f"  query '{kw}': global={len(global_results)} restricted={len(restricted_results)} unique={len(combined)}")
+
+            # Fetch details for top few threads (by comments) across combined set
+            top_results = sorted(combined, key=lambda e: (e.comments_count or 0), reverse=True)[:TOP_THREADS_DETAILS_PER_SOURCE]
             for item in top_results:
                 try:
+                    _sleep_jitter(1.1, extra_max=1.0)
                     selftext, top_comments = scrape_thread_details(page, item.url, MAX_THREAD_COMMENTS_TO_SAMPLE)
                     keyword_thread_details[kw][item.url] = (selftext, top_comments)
                     s = sentiment_score(analyzer, top_comments)
                     if s is not None:
                         keyword_thread_sentiment[kw][item.url] = s
-                    print(f"    kw thread details: r/{item.subreddit} ({item.comments_count or 0} comments) -> {s if s is not None else 'n/a'}")
+                    print(f"    thread details: r/{item.subreddit} ({item.comments_count or 0} comments) -> {s if s is not None else 'n/a'}")
                 except Exception as e:
-                    print(f"    kw thread details failed: {item.url} ({e})")
+                    print(f"    thread details failed: {item.url} ({e})")
 
         browser.close()
 
@@ -645,4 +674,13 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Reddit intel scanner (browser automation; no API)")
+    parser.add_argument("--headless", action="store_true", help="Run Chromium headless (good for background runs after login)")
+    args = parser.parse_args()
+
+    if args.headless:
+        HEADLESS = True
+
     main()
