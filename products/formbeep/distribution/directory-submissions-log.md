@@ -22,8 +22,8 @@ Source assets:
 | 2026-04-01 | StartupBase (startupbase.io/submit) | PENDING_SUBMISSION | — | N/A | Not required (web form) | Day-pick #2 (from previous pick) |
 | 2026-04-02 | SaaSHub (saashub.com) | PENDING_SUBMISSION | — | N/A | Not required (web form) | Jax Pick #1 — DR60+, B2B focus |
 | 2026-04-02 | Uneed (uneed.best) | PENDING_SUBMISSION | — | N/A | Not required (web form) | Jax Pick #2 — Makers/Indie focus |
-| 2026-04-03 | BetaList (betalist.com/submit) | NEXT_PICK | — | hello@formbeep.com | Email confirmation required | Jax Pick #1 — DR 66, startup/early audience, free listing |
-| 2026-04-03 | AlternativeTo (alternativeto.net) | NEXT_PICK | — | hello@formbeep.com | Account creation | Jax Pick #2 — DR 91 (very high), mark as Zapier/WANotifier/Formspree alternative |
+| 2026-04-03 | BetaList (betalist.com/submit) | FAILED | — | hello@formbeep.com | — | Submission appears paid-only now (no free path). Replace pick. |
+| 2026-04-03 | AlternativeTo (alternativeto.net) | FAILED (WAIT 7D) | — | hello@formbeep.com | Account created | Add-product flow requires account to be 7 days old. Retry on 2026-04-10. |
 
 ## Remaining directories (not yet picked)
 
