@@ -32,6 +32,18 @@ PUSH_CODE=${PIPESTATUS[0]}
 set -e
 
 if [ "$PUSH_CODE" -ne 0 ]; then
+  # If remote is ahead (non-fast-forward / fetch-first), try one safe reconciliation.
+  if grep -Eqi "\(fetch first\)|non-fast-forward|rejected" "$tmp_log"; then
+    git pull --rebase origin main >>"$tmp_log" 2>&1 || true
+
+    set +e
+    git push origin main 2>&1 | tee -a "$tmp_log"
+    PUSH_CODE=${PIPESTATUS[0]}
+    set -e
+  fi
+fi
+
+if [ "$PUSH_CODE" -ne 0 ]; then
   # Compact error summary
   tail -n 25 "$tmp_log" >"${tmp_log}.tail" || true
   ERR_SUMMARY=$(tr '\n' ' ' <"${tmp_log}.tail" | sed 's/[[:space:]]\+/ /g' | cut -c1-280)

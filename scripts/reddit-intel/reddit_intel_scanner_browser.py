@@ -71,20 +71,40 @@ FOUNDERS = ["adambengur", "ConferenceOnly1415", "rishikeshshari"]
 # Communities we also sample for context (not necessarily where founders posted)
 TARGET_SUBREDDITS = ["SaaS", "Entrepreneur", "SmallBusiness", "NoCode", "Wordpress", "startups"]
 
-# Keywords to search for attention + sentiment
-KEYWORDS = [
+# Query-driven search (NOT single-word browsing).
+# We focus on: forms → whatsapp/sms notifications, and competitor/alternative phrasing.
+# These queries are used for global search AND per-subreddit restricted search.
+SEARCH_QUERIES = [
+    # Brand + direct competitors
+    "formbeep",
+    "formbeep.com",
     "beepmate",
     "beepmate.io",
     "web2phone",
-    "formbeep",
-    "formbeep.com",
-    "zapier",
-    "typeform",
-    "tally",
-    "twilio",
-    "sms notifications",
+
+    # Core pain / use-cases (forms → WhatsApp/SMS)
+    "contact form whatsapp",
+    "wordpress form whatsapp",
+    "tally whatsapp",
+    "typeform whatsapp",
+    "google forms whatsapp",
+    "form submission whatsapp notification",
+    "form submission sms notification",
+    "sms notifications for website",
+
+    # Zapier alternative framing
+    "zapier whatsapp",
+    "zapier alternative whatsapp",
     "whatsapp without zapier",
+
+    # Messaging infra in-context (avoid single-term like 'twilio')
+    "twilio sms notifications",
+    "twilio alternative sms",
+    "whatsapp webhook",
 ]
+
+# Back-compat alias (used in output headings)
+KEYWORDS = SEARCH_QUERIES
 
 MAX_FOUNDER_POSTS = 40
 MAX_FOUNDER_COMMENTS = 60
