@@ -8,11 +8,9 @@
 ## Queue (ordered by priority)
 Format: [STATUS] Employee | (Product) Task | Depends on | Output file
 
-0. [QUEUED] Vale | (FormBeep) Review latest Reddit intel artifact and produce concise positioning + subreddit playbook. Include: target subs, angle hypotheses, do/don't list, and 10 post/comment hooks. [DELEGATION:dq-20260401-1600-reddit-playbook] | None | /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md
-1. [QUEUED] Jax | (FormBeep) Execute P1 directory submissions using the prepared pack. Capture confirmation URLs/screenshots in the output doc. [DELEGATION:dq-20260401-1610-directory-exec] | Depends: founder provides credentials (see issues_rishi.md) | /root/moxie/products/formbeep/directory-submissions-execution-log.md
-2. [QUEUED] Nova | (SapiensTech) Create a generic paid-ads campaign naming + UTM template (copy/paste) suitable for any new product onboarding. [DELEGATION:dq-20260401-1620-ads-template] | None | /root/moxie/cmo/templates/paid-ads-utm-template.md
 0. [COMPLETED] Vale | (FormBeep) Analyze newly-pushed Reddit intel artifact → produce actionable FormBeep positioning + subreddit playbook | Source: /root/moxie_hq/scripts/reddit-intel/reddit_intel_brief_browser.md | /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md ✅
 0b. [IN_PROGRESS] Ember | (FormBeep) Draft subreddit-specific post/comment scripts + reply macros based on Vale playbook | Depends: Vale playbook COMPLETED (execution still needs Reddit creds) | /root/moxie/products/formbeep/outreach/reddit-post-comment-scripts.md
+0c. [QUEUED] Kiro | (FormBeep) Revise 2 blog posts to match existing FormBeep blog style + repo format: maintain active list of existing posts, add internal/external hyperlinks, add image placeholders, reduce salesiness, align tone with https://formbeep.com/blog/why-formbeep/; set dates April 1 & April 2 for publishing | Depends: None | /root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md + /root/moxie/products/formbeep/copy/blog-post-formbeep-vs-zapier.md
     13|
     14|1. [COMPLETED] Vale | (FormBeep) Beepmate + Web2Phone deep-dive + founder Reddit analysis | None | /root/moxie/products/formbeep/beepmate-web2phone-deepdive.md
     15|2. [COMPLETED] Astra | (FormBeep) SEO: WP plugin market analysis + 30 keywords mapped to pages (7d) | None | /root/moxie/products/formbeep/wordpress-market-analysis.md
@@ -74,8 +72,13 @@ Format: [STATUS] Employee | (Product) Task | Depends on | Output file
 ## Vale Status (Current Session)
 - Status: **COMPLETED** — Reddit intel analysis → positioning + subreddit playbook ✅
 - Output delivered: /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md
-- Follow-on (Ember): IN_PROGRESS — drafting post/comment scripts based on Vale playbook
+- Follow-on (Ember): **IN_PROGRESS** — drafting post/comment scripts based on Vale playbook (execution still blocked on Reddit creds)
 - Next recurring: Monthly scan 2026-05-01 (cron: vale-monthly-competitor-scan)
+
+## Kiro Status (Current Session)
+- Status: **QUEUED** — Blog revisions (add links, image placeholders, match repo format + tone)
+- Target outputs: /root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md + /root/moxie/products/formbeep/copy/blog-post-formbeep-vs-zapier.md
+- Publishing intent: set dates 2026-04-01 and 2026-04-02 and prepare for publish
     77|
     78|## Astra Status (Current Session)
     79|- All 3 sprint tasks COMPLETED as of 2026-03-31 (WP market analysis, Tally teardown, SMS keyword analysis)
