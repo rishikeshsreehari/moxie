@@ -15,7 +15,7 @@
 
 - [ ] (2026-03-31) Directory submissions: preferred inbox confirmed as hello@formbeep.com; still need any existing directory accounts/verification access — Owner: Rishi + Jax
 
-- [ ] (2026-04-01) Platform marketplaces (Webflow Apps / Framer / Glide / Typedream): NOT just form-filling — requires a real integration/app that meets marketplace guidelines + review. Current plan was mis-scoped as “just submission + credentials”. Next action: decide whether to (A) build a Webflow/Framer/Glide integration (engineering scope) or (B) drop/defer this channel. Owner: Rishi + Forge (scope) + Pax (distribution)
+- [ ] (2026-04-01) Platform marketplaces (Webflow Apps / Framer / Glide / Typedream): REQUIRES development + platform-specific guidelines (not just submission). Founder has prior: Framer rejected a component; required a plugin. Root cause: Pax work was mis-scoped and not last-mile verified. Next action: Forge to produce a requirements matrix + MVP build scope (S/M/L) per platform, then decide build vs defer. Owner: Rishi + Forge
 
 ## Resolved
 
