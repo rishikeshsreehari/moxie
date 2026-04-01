@@ -1,5 +1,5 @@
      1|# Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-     2|# Last updated: 2026-04-01T20:00:00Z
+     2|# Last updated: 2026-04-01T22:05:00Z
      3|# 
      4|# HOW THIS WORKS:
      5|# Every cron job reads this file for context. When done, it updates relevant sections.
@@ -77,8 +77,8 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 ### Kiro — Conversion Copy Lead
 - SOUL: /root/moxie/cmo/employees/kiro-soul.md
 - Current output dir (sprint): /root/moxie/products/formbeep/copy/
-- Status: QUEUED
-- Current task: REWORK 2 blog posts per founder feedback (length + factual fixes + Zapier/WhatsApp research + comparison table + thumbnail prompts) — **QUEUED** (2026-04-01T21:35Z)
+- Status: IN_PROGRESS
+- Current task: REWORK 2 blog posts per founder feedback (length + factual fixes + Zapier/WhatsApp research + comparison table + thumbnail prompts) — **IN_PROGRESS** (promoted 2026-04-01T22:05Z)
 - Last output (rejected drafts; do not publish as-is):
   - /root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md
   - /root/moxie/products/formbeep/copy/blog-post-formbeep-vs-zapier.md
@@ -106,8 +106,9 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 ### Forge — Full Stack Engineer
 - SOUL: /root/moxie/cmo/employees/forge-soul.md
 - Current output dir (sprint): /root/moxie/products/formbeep/
-- Status: QUEUED
-- Current task: 1) GSC indexing report delivered. 2) Rishi approved and applied patches. 3) Next: Validate GSC indexing post-SEO-fixes (3 days after sitemap resubmit) — **QUEUED** (2026-04-04T12:00Z)
+- Status: IN_PROGRESS
+- Current task: Improve HQ git commit messages (replace generic "Autopush:" with specific summaries; update autopush script) — **IN_PROGRESS** (promoted 2026-04-01T22:05Z)
+- Output path: /root/moxie_hq/cmo/sops/hq-commit-message-standard.md
 - Last output: /root/moxie/products/formbeep/analytics/gsc-indexing-report.md (delivered 2026-04-01)
 - Previous task: Technical SEO audit — **COMPLETED**
 - Next task after completion: Monitor Index Coverage for taxonomy page removal; measure impression changes for blog pages
