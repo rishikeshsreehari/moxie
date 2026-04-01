@@ -1,5 +1,3 @@
-/* Monochrome, white background. 7.css provides the retro UI chrome. */
-
 :root {
   --ink: #111;
   --paper: #fff;
@@ -14,9 +12,13 @@ html, body {
   padding: 0;
 }
 
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 .topbar {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
   padding: 14px 16px;
@@ -26,14 +28,23 @@ html, body {
 
 .brand-title {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-weight: 800;
-  letter-spacing: 0.2px;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+  font-size: 16px;
 }
 
 .brand-sub {
-  margin-top: 4px;
+  margin-top: 6px;
   font-size: 12px;
   color: var(--muted);
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .pill {
@@ -46,6 +57,10 @@ html, body {
   background: var(--paper);
 }
 
+.pill .sep {
+  color: var(--muted);
+}
+
 .dot {
   width: 10px;
   height: 10px;
@@ -54,26 +69,42 @@ html, body {
   display: inline-block;
 }
 
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.25; }
+}
+
+.live .dot {
+  animation: blink 1.1s infinite;
+}
+
+.live-text {
+  font-weight: 900;
+  letter-spacing: 0.6px;
+}
+
 .grid {
   display: grid;
   gap: 16px;
   padding: 16px;
-  grid-template-columns: 1.1fr 1.7fr 1.2fr;
+  grid-template-columns: 1.15fr 1.7fr 1.15fr;
   grid-template-areas:
-    "kpi diagram console"
-    "team diagram products";
+    "metrics diagram ops"
+    "team diagram blockers"
+    "products diagram github";
 }
 
 .window {
-  /* Keep 7.css look but enforce monochrome */
   border-color: var(--line) !important;
 }
 
-.kpi { grid-area: kpi; }
+.metrics { grid-area: metrics; }
 .diagram { grid-area: diagram; }
-.console { grid-area: console; }
+.ops { grid-area: ops; }
 .team { grid-area: team; }
+.blockers { grid-area: blockers; }
 .products { grid-area: products; }
+.github { grid-area: github; }
 
 .window-body {
   background: var(--paper) !important;
@@ -83,6 +114,10 @@ html, body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+}
+
+.kpi-grid-2 {
+  grid-template-columns: 1fr 1fr;
 }
 
 .kpi-box {
@@ -117,20 +152,19 @@ html, body {
   margin: 12px 0;
 }
 
-.small {
+.facts {
+  display: grid;
+  gap: 6px;
   font-size: 12px;
-  color: var(--ink);
 }
 
-.hint {
+.micro {
+  font-size: 12px;
   color: var(--muted);
   margin-top: 10px;
 }
 
-.center-note {
-  margin-top: 10px;
-  text-align: center;
-}
+.micro.center { text-align: center; }
 
 .diagram-wrap {
   width: 100%;
@@ -139,16 +173,42 @@ html, body {
   overflow: hidden;
 }
 
+.scanlines {
+  position: relative;
+}
+
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(17,17,17,0.00), rgba(17,17,17,0.00) 60%, rgba(17,17,17,0.02) 61%, rgba(17,17,17,0.00) 62%);
+  background-size: 100% 8px;
+  opacity: 0.65;
+  animation: drift 8s linear infinite;
+}
+
+@keyframes drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(8px); }
+}
+
 #orgSvg {
   display: block;
   width: 100%;
   height: auto;
 }
 
+.svg-legend {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+  fill: #111;
+}
+
 .console-box {
   border: 2px solid var(--line);
   background: var(--paper);
-  height: 330px;
+  height: 180px;
   overflow: auto;
 }
 
@@ -162,8 +222,51 @@ html, body {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+@keyframes caret {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.caret {
+  display: inline-block;
+  width: 10px;
+  animation: caret 1s infinite;
+}
+
+.subhead {
+  font-size: 12px;
+  font-weight: 900;
+  margin: 12px 0 8px;
+}
+
+.mini-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.mono-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+}
+
+.mono-list li {
+  padding: 6px 8px;
+  border: 2px solid var(--line);
+  margin-bottom: 8px;
+  background: var(--paper);
+}
+
 .table-wrap {
   border: 2px solid var(--line);
+}
+
+.table-wrap.scroll {
+  max-height: 280px;
+  overflow: auto;
 }
 
 table.listview {
@@ -171,17 +274,21 @@ table.listview {
 }
 
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   padding: 14px 16px;
   border-top: 2px solid var(--line);
 }
 
-.footer-link {
+.footer-left {
+  font-size: 12px;
   color: var(--ink);
-  text-decoration: underline;
 }
 
-.sep-dot {
-  margin: 0 8px;
+.footer-right {
+  font-size: 12px;
   color: var(--muted);
 }
 
@@ -190,26 +297,31 @@ table.listview {
   .grid {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "kpi console"
+      "metrics ops"
       "diagram diagram"
-      "team products";
+      "blockers github"
+      "team team"
+      "products products";
   }
-  .console-box { height: 260px; }
+  .console-box { height: 160px; }
+  .table-wrap.scroll { max-height: 320px; }
 }
 
 @media (max-width: 720px) {
-  .grid {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "kpi"
-      "diagram"
-      "console"
-      "team"
-      "products";
-  }
-  .console-box { height: 220px; }
   .topbar {
     flex-direction: column;
     align-items: flex-start;
   }
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "metrics"
+      "diagram"
+      "ops"
+      "blockers"
+      "github"
+      "team"
+      "products";
+  }
+  .console-box { height: 150px; }
 }

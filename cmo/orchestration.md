@@ -1,5 +1,5 @@
      1|# Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-     2|# Last updated: 2026-04-01T19:00:00Z
+     2|# Last updated: 2026-04-01T20:00:00Z
      3|# 
      4|# HOW THIS WORKS:
      5|# Every cron job reads this file for context. When done, it updates relevant sections.
@@ -153,23 +153,23 @@
    151|- Next task after completion: Send agency outreach emails once verified contact info obtained; publish formbeep.com/integrations reciprocal directory; follow up on Week 1-2 platform application reviews
    152|- Blockers: Portal credentials (Webflow/Framer/Glide/Softr), Reddit account for community posts, verified agency email contacts, hello@formbeep.com access for sending
    153|
-   154|### Luna — Lifecycle / CRM Lead
-   155|- SOUL: /root/moxie/cmo/employees/luna-soul.md
-   156|- Output dir: /root/moxie/products/formbeep/lifecycle/
-   157|- Status: COMPLETED
-   158|- Current task: Lifecycle onboarding + activation emails (Day 0/1/3/7/14) — **COMPLETED** (2026-03-31)
-   159|- Last output: /root/moxie/products/formbeep/lifecycle/onboarding-emails.md
-   160|- Next task after completion: **IDLE** — no queued tasks; awaiting new lifecycle assignments
-   161|- Blockers: None
+### Luna — Lifecycle / CRM Lead
+- SOUL: /root/moxie/cmo/employees/luna-soul.md
+- Output dir: /root/moxie/products/formbeep/lifecycle/
+- Status: QUEUED
+- Current task: Win-back email sequence for churned users — QUEUED (2026-04-01T20:00Z)
+- Last output: /root/moxie/products/formbeep/lifecycle/onboarding-emails.md
+- Next task after completion: Continue lifecycle optimization (retention triggers, segmentation)
+- Blockers: None
    162|
-   163|### Orion — Outbound Lead (Cold Email)
-   164|- SOUL: /root/moxie/cmo/employees/orion-soul.md
-   165|- Output dir: /root/moxie/products/formbeep/outbound/
-   166|- Status: COMPLETED
-   167|- Current task: Outbound pack (150 prospects + 3-step cold email sequence + 5 subjects) — **COMPLETED** (2026-03-31)
-   168|- Last output: /root/moxie/products/formbeep/outbound/outbound-pack.md
-   169|- Next task after completion: **IDLE** — outbound pack ready; awaiting sending infrastructure/credentials for execution
-   170|- Blockers: Sending infrastructure (email warmup/domain setup) required for actual outreach execution
+### Orion — Outbound Lead (Cold Email)
+- SOUL: /root/moxie/cmo/employees/orion-soul.md
+- Output dir: /root/moxie/products/formbeep/outbound/
+- Status: QUEUED
+- Current task: Prospect list refresh from competitor intel — QUEUED (2026-04-01T20:00Z)
+- Last output: /root/moxie/products/formbeep/outbound/outbound-pack.md
+- Next task after completion: Continue outbound optimization (subject tests, sequence refinement)
+- Blockers: Sending infrastructure (email warmup/domain setup) required for actual outreach execution
    171|
    172|### Iris — Repo Copy Auditor
    173|- SOUL: /root/moxie/cmo/employees/iris-soul.md

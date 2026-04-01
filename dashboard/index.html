@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SapiensTech HQ Dashboard</title>
+  <title>Moxie HQ • SapiensTech</title>
 
   <!-- 7.css (scoped) -->
   <link rel="stylesheet" href="https://unpkg.com/7.css/dist/7.scoped.css" />
@@ -13,22 +13,28 @@
   <div class="win7">
     <header class="topbar">
       <div class="brand">
-        <div class="brand-title">SapiensTech HQ Dashboard</div>
-        <div class="brand-sub">Public-safe status • monochrome • no PII</div>
+        <div class="brand-title">Moxie HQ</div>
+        <div class="brand-sub">Sapiens Technology LLC • Live portfolio operations</div>
       </div>
+
       <div class="topbar-right">
-        <div class="pill">
+        <div class="pill live">
           <span class="dot" aria-hidden="true"></span>
-          <span id="generatedAt">Loading snapshot…</span>
+          <span class="live-text">LIVE</span>
+          <span class="sep">|</span>
+          <span id="liveClock">—</span>
+        </div>
+        <div class="pill" title="Snapshot time">
+          <span class="mono" id="generatedAt">Loading…</span>
         </div>
       </div>
     </header>
 
     <main class="grid">
-      <!-- KPIs -->
-      <section class="window kpi" role="region" aria-label="KPIs">
+      <!-- METRICS -->
+      <section class="window metrics" role="region" aria-label="Metrics">
         <div class="title-bar">
-          <div class="title-bar-text">Signals (7D)</div>
+          <div class="title-bar-text">Dashboard</div>
           <div class="title-bar-controls">
             <button aria-label="Minimize" disabled></button>
             <button aria-label="Maximize" disabled></button>
@@ -38,41 +44,57 @@
         <div class="window-body">
           <div class="kpi-grid">
             <div class="kpi-box">
-              <div class="kpi-label">Traffic</div>
+              <div class="kpi-label">Traffic (7D)</div>
               <div class="kpi-value" id="kpiPv">—</div>
               <div class="kpi-foot">pageviews</div>
             </div>
             <div class="kpi-box">
-              <div class="kpi-label">Visitors</div>
+              <div class="kpi-label">Visitors (7D)</div>
               <div class="kpi-value" id="kpiVisitors">—</div>
               <div class="kpi-foot">unique</div>
             </div>
             <div class="kpi-box">
-              <div class="kpi-label">Signups</div>
+              <div class="kpi-label">Signups (7D)</div>
               <div class="kpi-value" id="kpiSignups">—</div>
-              <div class="kpi-foot">this week</div>
+              <div class="kpi-foot">clicks / starts</div>
             </div>
             <div class="kpi-box">
-              <div class="kpi-label">Paid</div>
+              <div class="kpi-label">Paid (7D)</div>
               <div class="kpi-value" id="kpiPaid">—</div>
-              <div class="kpi-foot">this week</div>
+              <div class="kpi-foot">new customers</div>
             </div>
           </div>
 
           <hr class="sep" />
 
-          <div class="small">
+          <div class="kpi-grid kpi-grid-2">
+            <div class="kpi-box">
+              <div class="kpi-label">MRR</div>
+              <div class="kpi-value">$<span id="kpiMrr">—</span></div>
+              <div class="kpi-foot">monthly recurring</div>
+            </div>
+            <div class="kpi-box">
+              <div class="kpi-label">Revenue Total</div>
+              <div class="kpi-value">$<span id="kpiRevenueTotal">—</span></div>
+              <div class="kpi-foot">lifetime</div>
+            </div>
+          </div>
+
+          <hr class="sep" />
+
+          <div class="facts">
             <div><strong>Active product:</strong> <span id="activeProduct">—</span></div>
             <div><strong>Queue:</strong> <span id="queueState">—</span></div>
+            <div><strong>Running tasks:</strong> <span id="runningCount">—</span></div>
             <div><strong>Blockers:</strong> <span id="blockerCount">—</span></div>
           </div>
 
-          <div class="hint small">This dashboard intentionally shows only aggregated signals.</div>
+          <div class="micro">Tip: the network map animates faster when work is IN_PROGRESS.</div>
         </div>
       </section>
 
-      <!-- Diagram -->
-      <section class="window diagram" role="region" aria-label="Org Diagram">
+      <!-- DIAGRAM -->
+      <section class="window diagram" role="region" aria-label="Moxie Network Map">
         <div class="title-bar">
           <div class="title-bar-text">Moxie Network Map</div>
           <div class="title-bar-controls">
@@ -82,44 +104,37 @@
           </div>
         </div>
         <div class="window-body">
-          <div class="diagram-wrap">
-            <svg id="orgSvg" viewBox="0 0 800 520" role="img" aria-label="Moxie org map">
+          <div class="diagram-wrap scanlines">
+            <svg id="orgSvg" viewBox="0 0 900 620" role="img" aria-label="Moxie network map">
               <defs>
                 <filter id="paper" x="-20%" y="-20%" width="140%" height="140%">
-                  <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch" result="noise" />
+                  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="noise" />
                   <feColorMatrix type="saturate" values="0" />
                   <feComponentTransfer>
-                    <feFuncA type="table" tableValues="0 0.05" />
+                    <feFuncA type="table" tableValues="0 0.06" />
                   </feComponentTransfer>
                   <feBlend in="SourceGraphic" in2="noise" mode="multiply" />
                 </filter>
               </defs>
 
-              <!-- Edges -->
-              <g id="edges" stroke="#111" stroke-width="2" fill="none" opacity="0.9"></g>
-
-              <!-- Nodes -->
+              <g id="edges" fill="none"></g>
               <g id="nodes" filter="url(#paper)"></g>
 
-              <!-- Legend -->
-              <g transform="translate(18, 475)">
-                <rect x="0" y="0" width="764" height="30" fill="#fff" stroke="#111" stroke-width="2" />
-                <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="12" fill="#111">
-                  Legend: [ACTIVE]=solid • [IN_PROGRESS]=striped • [BLOCKED]=dashed • [IDLE]=light
-                </text>
+              <g transform="translate(20, 575)">
+                <rect x="0" y="0" width="860" height="30" fill="#fff" stroke="#111" stroke-width="2" />
+                <text x="12" y="20" class="svg-legend">ACTIVE • IN_PROGRESS • BLOCKED • IDLE</text>
               </g>
             </svg>
           </div>
-          <div class="small center-note">
-            The center node is Moxie (autonomous CMO). Branches are roles; labels are public-safe.
-          </div>
+
+          <div class="micro center">Center is Moxie. Branches are roles. Lower nodes are active products.</div>
         </div>
       </section>
 
-      <!-- Console -->
-      <section class="window console" role="region" aria-label="System Console">
+      <!-- OPS -->
+      <section class="window ops" role="region" aria-label="Ops">
         <div class="title-bar">
-          <div class="title-bar-text">Console (sanitized)</div>
+          <div class="title-bar-text">Now Running</div>
           <div class="title-bar-controls">
             <button aria-label="Minimize" disabled></button>
             <button aria-label="Maximize" disabled></button>
@@ -127,17 +142,31 @@
           </div>
         </div>
         <div class="window-body">
-          <div class="console-box" aria-live="polite">
+          <div class="console-box">
             <pre id="consoleText">Booting…</pre>
           </div>
-          <div class="small hint">No tokens, no emails, no IDs. Status only.</div>
+
+          <div class="mini-split">
+            <div>
+              <div class="subhead">Tasks</div>
+              <ul class="mono-list" id="opsTasks">
+                <li>Loading…</li>
+              </ul>
+            </div>
+            <div>
+              <div class="subhead">Highlights</div>
+              <ul class="mono-list" id="highlights">
+                <li>Loading…</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- Team table -->
+      <!-- TEAM -->
       <section class="window team" role="region" aria-label="Team">
         <div class="title-bar">
-          <div class="title-bar-text">Employees (roles)</div>
+          <div class="title-bar-text">Employees</div>
           <div class="title-bar-controls">
             <button aria-label="Minimize" disabled></button>
             <button aria-label="Maximize" disabled></button>
@@ -145,13 +174,13 @@
           </div>
         </div>
         <div class="window-body">
-          <div class="table-wrap">
-            <table class="listview" aria-label="Employee roles and status">
+          <div class="table-wrap scroll">
+            <table class="listview" aria-label="Employees and tasks">
               <thead>
                 <tr>
                   <th>Role</th>
                   <th>Status</th>
-                  <th>Focus</th>
+                  <th>Working on</th>
                 </tr>
               </thead>
               <tbody id="teamRows">
@@ -159,11 +188,28 @@
               </tbody>
             </table>
           </div>
-          <div class="small hint">Public-safe: roles + high-level focus only.</div>
         </div>
       </section>
 
-      <!-- Products -->
+      <!-- BLOCKERS -->
+      <section class="window blockers" role="region" aria-label="Blockers">
+        <div class="title-bar">
+          <div class="title-bar-text">Needs Rishi</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize" disabled></button>
+            <button aria-label="Maximize" disabled></button>
+            <button aria-label="Close" disabled></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <div class="subhead">Action items</div>
+          <ul class="mono-list" id="blockersList">
+            <li>Loading…</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PRODUCTS -->
       <section class="window products" role="region" aria-label="Products">
         <div class="title-bar">
           <div class="title-bar-text">Products</div>
@@ -189,18 +235,32 @@
               </tbody>
             </table>
           </div>
-          <div class="small hint">No links, no customer data, no referrers.</div>
+        </div>
+      </section>
+
+      <!-- GITHUB -->
+      <section class="window github" role="region" aria-label="GitHub Activity">
+        <div class="title-bar">
+          <div class="title-bar-text">GitHub Activity</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize" disabled></button>
+            <button aria-label="Maximize" disabled></button>
+            <button aria-label="Close" disabled></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <div class="subhead">Recent commits</div>
+          <ul class="mono-list" id="githubList">
+            <li>Loading…</li>
+          </ul>
         </div>
       </section>
 
     </main>
 
     <footer class="footer">
-      <div class="small">
-        <strong>Public dashboard</strong> • generated from a sanitized snapshot file.
-        <span class="sep-dot">•</span>
-        <a href="./README.html" class="footer-link" aria-label="Readme">Readme</a>
-      </div>
+      <div class="footer-left">Moxie (a Hermes agent built by Rishi)</div>
+      <div class="footer-right mono" id="footerPulse">—</div>
     </footer>
   </div>
 

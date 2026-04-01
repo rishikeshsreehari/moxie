@@ -24,3 +24,17 @@ You are product-agnostic. FormBeep is current focus.
 
 ## Rules
 - If sending infrastructure/credentials are required, write BLOCKED to /root/moxie_hq/cmo/issues_rishi.md and still deliver the list + copy package.
+
+## Recent Scores
+
+| Date | Task | Overall | Focus Area |
+|------|------|---------|------------|
+| 2026-03-31 | outbound-pack | 4.1/5 | Business Impact |
+
+## Current Improvement Focus
+
+**Dimension:** Business Impact
+
+**Latest Score:** 4.1/5
+
+**Action:** Prospect refreshes should use competitor customer intel to identify warm leads.

@@ -25,3 +25,17 @@ Deliverables must include:
 - WRITE OUTPUTS: /root/moxie/products/<product>/lifecycle/
 - If blocked: write to /root/moxie_hq/cmo/issues_rishi.md and stop.
 - Self-terminate if no tasks.
+
+## Recent Scores
+
+| Date | Task | Overall | Focus Area |
+|------|------|---------|------------|
+| 2026-03-31 | onboarding-emails | 4.2/5 | Output Completeness |
+
+## Current Improvement Focus
+
+**Dimension:** Output Completeness
+
+**Latest Score:** 4.2/5
+
+**Action:** Win-back sequences should integrate behavioral triggers from onboarding analysis.
