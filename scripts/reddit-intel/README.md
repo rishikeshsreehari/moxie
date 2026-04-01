@@ -1,48 +1,45 @@
-# Reddit Intel Scanner — Browser Automation (no API)
+# Reddit intel scanner (browser automation, no API)
 
-Uses Playwright to automate a real browser session and scrape Reddit HTML directly. No Reddit app credentials needed. Works without API approval.
+This script answers the exact questions you asked:
+- What did each founder actually post, in which subreddits?
+- Where did they get the most attention (comments)?
+- How did people respond (sample comments) and what's the *rough* sentiment?
+- Where do "beepmate" / "web2phone" get attention (which communities) and what's the general sentiment?
 
-## Prerequisites
+It uses Playwright to drive a real Chromium browser and scrapes **old.reddit.com** (HTML). No Reddit API app / approvals required.
 
-- Python 3.8+
-- pip
-
-## Setup
+## Install
 
 ```bash
-cd /root/moxie_hq/products/formbeep/outreach
-pip install playwright
+python3 -m pip install -r requirements.txt
 playwright install chromium
 ```
 
 ## Run
 
 ```bash
-python reddit_intel_scanner_browser.py
+python3 reddit_intel_scanner_browser.py
 ```
 
-The script will:
-1. Open a Chromium browser window (visible or headless).
-2. Visit Reddit’s homepage; if a login wall appears, it pauses so you can log in manually. After logging in, press Enter in the terminal to continue.
-3. Scrape:
-   - For each founder username: collects up to 50 recent posts with titles, subreddit, and URLs.
-   - For each target subreddit: collects up to 50 hot posts with titles and scores.
-4. Outputs `reddit_intel_brief_browser.md` with:
-   - Founder top subreddits (by post count)
-   - High-engagement post titles (copy hooks)
-   - Target subreddit signals
-   - Raw appendix of top posts
+First run:
+- A Chromium window opens.
+- If Reddit asks you to log in, log in manually.
+- The script saves `reddit_storage_state.json` so next runs usually don't require login.
+
+## Output
+
+- `reddit_intel_brief_browser.md` — the brief
+- `reddit_storage_state.json` — saved browser session (delete to force re-login)
+
+## Tuning
+
+Open `reddit_intel_scanner_browser.py` and adjust:
+- `FOUNDERS`
+- `KEYWORDS`
+- `MAX_*` limits (keep conservative)
+- `HEADLESS`
 
 ## Notes
 
-- This respects Reddit’s website pacing; it includes waits to avoid hammering the site.
-- If you are rate-limited or see CAPTCHAs, run the script fewer times and from your normal IP (not a server data center).
-- The script does not automate posting — it is for intel only. Use the existing content packs to post manually.
-- To make headless (no browser window): change `headless=False` to `headless=True` in the script after verifying it works interactively.
-
-## Files
-
-- `reddit_intel_scanner_browser.py` — main script
-- `reddit_intel_brief_browser.md` — generated output
-
-Keep the output private to SapiensTech.
+- Sentiment is a heuristic (VADER compound score). Use it as a directional signal; always click into top threads for a human read.
+- Script is intentionally conservative to reduce rate-limit / captcha risk.
