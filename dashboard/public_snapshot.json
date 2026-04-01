@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01T00:00:00Z",
+  "generated_at": "2026-04-01T20:10:00Z",
   "kpis": {
     "pageviews_7d": 103,
     "visitors_7d": 76,
@@ -18,48 +18,31 @@
   ],
   "systems": {
     "queue": {
-      "pending": 0,
-      "in_progress": 0
+      "pending": 1,
+      "in_progress": 4
     },
     "cron": {
-      "active_jobs": 19
+      "active_jobs": 0
     },
     "blockers": {
       "count": 6,
       "needs_rishi": [
-        "WP plugin resubmission",
-        "Directory inbox access / existing directory accounts",
-        "Marketplace portal access (Webflow / Framer / Glide)",
-        "Reddit account credentials",
-        "Review + publish blog drafts",
-        "Approve SEO fixes implementation"
+        "(2026-03-31) Reddit founder-profile scan + subreddit intel: (1) this environment is **HTTP 403 Blocked** to reddit.com, and (2) Reddit's current Data API policy states **approval is required** before accessing Reddit data via API; commercial use requires explicit permission/contract. So we should NOT automate scans unless/until approved + reachable network. Next action: decide whether to apply for approved Data API access or do manual intel only.",
+        "(2026-03-31) WordPress plugin resubmission (WP team feedback) \u2014 Founder-owned blocker. Moxie/Forge will not touch WP plugin changes; Rishi will handle and we'll plan post-approval launch later.",
+        "(2026-03-31) Scope rule: do not push to product dev repos (e.g., formbeep.git). Moxie pushes only to HQ repo; product repos are read-only for suggestions",
+        "(2026-03-31) Reddit founder-profile scan for Beepmate/Web2Phone is blocked by Reddit network policy from this environment. To analyze their post history/subreddits/angles we need either: (a) a Reddit dev app token + user-agent, or (b) a logged-in session/cookies.",
+        "(2026-03-31) Directory submissions: preferred inbox confirmed as [email]; still need any existing directory accounts/verification access",
+        "(2026-04-01) Platform marketplace portal access: Pax Week 1 application packages (Webflow Apps, Framer Marketplace, Glide Plugins) are 100% ready with all copy, metadata, and submission steps \u2014 need [email] login credentials or existing developer account access to actually submit the applications"
       ]
     }
   },
   "running": {
-    "count": 3,
-    "tasks": [
-      {
-        "role": "Competitor Intel",
-        "status": "DONE",
-        "text": "Assessing competitor data: 3 insights extracted"
-      },
-      {
-        "role": "Growth Research",
-        "status": "IN_PROGRESS",
-        "text": "US SERP demand probe + keyword roadmap"
-      },
-      {
-        "role": "Directories",
-        "status": "WAITING",
-        "text": "Waiting on founder: execute 2 directory submissions (today pick)"
-      }
-    ],
+    "count": 0,
+    "tasks": [],
     "highlights": [
-      "Reddit competitor analysis: done",
+      "Assessing competitor data: insights extracted",
       "US SERP analysis: in progress",
-      "Directory submissions: waiting on founder",
-      "Marketplace applications: ready (pending portal access)"
+      "Directories: execution packs ready"
     ]
   },
   "team": [
@@ -67,61 +50,56 @@
       "role": "Moxie",
       "status": "ACTIVE",
       "working_on": "Orchestration + growth decisions"
-    },
-    {
-      "role": "Astra (Growth Research)",
-      "status": "IN_PROGRESS",
-      "working_on": "SERP demand probe + keyword roadmap"
-    },
-    {
-      "role": "Vale (Competitor Intel)",
-      "status": "DONE",
-      "working_on": "Monthly scan complete (3 insights)"
-    },
-    {
-      "role": "Ember (Outreach)",
-      "status": "BLOCKED",
-      "working_on": "Reddit execution (needs credentials)"
-    },
-    {
-      "role": "Jax (Distribution Ops)",
-      "status": "BLOCKED",
-      "working_on": "Directory submissions (needs inbox/accounts)"
-    },
-    {
-      "role": "Pax (Partnerships)",
-      "status": "BLOCKED",
-      "working_on": "Marketplace submissions (needs portal access)"
-    },
-    {
-      "role": "Forge (SEO)",
-      "status": "WAITING",
-      "working_on": "SEO fixes ready; awaiting approval to implement"
-    },
-    {
-      "role": "Kiro (Copy)",
-      "status": "WAITING",
-      "working_on": "Blog drafts ready; awaiting review/publish"
     }
   ],
   "github": {
     "recent": [
       {
+        "hash": "01f3886",
+        "when": "2026-04-01",
+        "subject": "Autopush: 2026-04-01T20:09:48Z"
+      },
+      {
+        "hash": "52fcb3b",
+        "when": "2026-04-01",
+        "subject": "CMO: daily self-improvement - 2026-04-01"
+      },
+      {
         "hash": "acb9687",
         "when": "2026-04-01",
-        "subject": "Add public retro HQ dashboard (7.css)"
+        "subject": "Add public retro HQ dashboard (7.css, monochrome, sanitized snapshot)"
+      },
+      {
+        "hash": "d07a3b9",
+        "when": "2026-04-01",
+        "subject": "Autopush: 2026-04-01T19:48:35Z"
       },
       {
         "hash": "574703c",
         "when": "2026-04-01",
-        "subject": "Framework: replication rules + checklists"
+        "subject": "Autopush: 2026-04-01T19:45Z - Added replication framework, rules, and deliverables checklist for autonomous product launches"
+      },
+      {
+        "hash": "42b2d53",
+        "when": "2026-04-01",
+        "subject": "Autopush: 2026-04-01T19:37:26Z"
+      },
+      {
+        "hash": "369dc26",
+        "when": "2026-04-01",
+        "subject": "Autopush: 2026-04-02T19:00Z \u2014 Jax directory picks Apr 3 (BetaList + AlternativeTo)"
+      },
+      {
+        "hash": "abc2dc8",
+        "when": "2026-04-01",
+        "subject": "Autopush: 2026-04-01T19:31:44Z"
       }
     ]
   },
   "console": [
     "[BOOT] Moxie HQ online",
-    "[SYNC] reading orchestration state",
-    "[RUN ] workers scheduled",
-    "[NOTE] some execution requires founder actions"
+    "[SYNC] snapshot generated 2026-04-01T20:10:00Z",
+    "[QUEUE] in_progress=4 queued=1",
+    "[BLOCK] needs_rishi=6"
   ]
 }
