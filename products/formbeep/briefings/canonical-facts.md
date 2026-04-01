@@ -1,23 +1,30 @@
-# FormBeep — Canonical Facts (Single Source of Truth)
+# FormBeep — Canonical Facts (source of truth)
 
-Use this file to avoid copy mistakes. Any outbound copy, blog content, landing copy, FAQs, and comparisons must match these facts.
+Product: FormBeep
+Website: https://formbeep.com
+ICP: Website owners/agencies who need speed-to-lead; focus on WhatsApp‑heavy geos (India first, others later)
+Positioning: Instant WhatsApp alerts for form submissions; 2‑minute setup; no credit card required
 
-## Contact
-- Support / founder inbox: hello@formbeep.com
+Pricing:
+- Free tier: 15 submissions/month
+- Paid: starting at $X per month (MRR target)
 
-## Free tier
-- Free tier limit: 15 submissions per month
-- Free tier pricing: $0 (no credit card required)  
-  (If this changes, update this file first, then update copy.)
+Launch/traction (as of 2026‑04‑01):
+- 10 paid customers
+- $100 MRR (approx)
+- Inbox: hello@formbeep.com
 
-## Core value prop
-- FormBeep sends instant notifications for website form submissions via WhatsApp, SMS, and email.
-- Setup should be described as lightweight: add script/integration, configure destination, test.
+Tech stack:
+- Marketing site: Hugo
+- Checkout/authentication: TBD
+- Alerts: WhatsApp Business API (via provider)
 
-## Slugs / canonical URLs (blog)
-- WhatsApp without Zapier: /blog/whatsapp-without-zapier/
-- FormBeep vs Zapier: /blog/formbeep-vs-zapier/
+Calls‑to‑action (current):
+- Landing: “Get FREE Alerts” (buttons)
+- Header: “Get FormBeep” (links to pricing/signup)
+- Docs links: “Installation guide →”
 
-## Claims policy
-- Avoid absolute claims like “works with any website” unless we clearly specify the integration method and known limitations.
-- If mentioning Zapier→WhatsApp, be explicit about the WhatsApp Business API requirement and provider constraints; do not imply it’s “one click” unless verified.
+Notes:
+- Free tier claim MUST be 15 submissions/month, not “Free forever”.
+- Primary geo to emphasize initially: India (WhatsApp penetration).
+- GSC and Umami Cloud (website_id 750e37be-3e04-4672-abe8-a2983afb9a4d) are configured.
