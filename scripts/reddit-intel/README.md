@@ -37,10 +37,19 @@ Interactive (recommended first run to login and save session state):
 python3 reddit_intel_scanner_browser.py
 ```
 
+Simple single command (handles login automatically):
+
+```bash
+python3 reddit_intel_scanner_browser.py --auto
+```
+
+- First run: opens Chromium, you log in, session saved to `reddit_storage_state.json`
+- Subsequent runs: detects saved session, runs headless automatically
+
 Background/headless (after you already have `reddit_storage_state.json` saved):
 
 ```bash
-python3 reddit_intel_scanner_browser.py --headless > run.log 2>&1 &
+python3 reddit_intel_scanner_browser.py --auto > run.log 2>&1 &
 ```
 
 Note: even headless runs still spawn a Chromium process; you just don’t need to keep a visible window open.

@@ -677,10 +677,15 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Reddit intel scanner (browser automation; no API)")
-    parser.add_argument("--headless", action="store_true", help="Run Chromium headless (good for background runs after login)")
+    parser.add_argument("--headless", action="store_true", help="Run Chromium headless")
+    parser.add_argument("--auto", action="store_true", help="Auto-select headless if session exists; else interactive (recommended)")
     args = parser.parse_args()
 
-    if args.headless:
+    # --auto overrides --headless and decides based on session file
+    if args.auto:
+        HEADLESS = STORAGE_STATE_PATH.exists()
+        print(f"[auto] Session file {'found' if HEADLESS else 'not found'}; running {'headless' if HEADLESS else 'interactive (login required)'}")
+    elif args.headless:
         HEADLESS = True
 
     main()

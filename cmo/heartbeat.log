@@ -1,44 +1,45 @@
-# Moxie Orchestration Reconciler — Heartbeat Log
-# Last check: 2026-04-01 13:15:00 UTC
-# Status: RECONCILED — all state synchronized
-
-## Current State
-- Live cron registry: 29 jobs active
-- Orchestration.md: updated to match live state
-- Dispatch queue: 0 QUEUED, 0 IN_PROGRESS
-- All workers: IDLE or BLOCKED (waiting on human input)
-
-## Task Promotions
-- None — dispatch queue empty, no pending promotions
-
-## Workers Summary
-| Employee | Status | Blocker |
-|----------|--------|---------|
-| Vale | IDLE | Next scan May 1 |
-| Astra | IDLE | All tasks done |
-| Kiro | IDLE | Awaiting blog review |
-| Ember | BLOCKED | Reddit creds needed |
-| Forge | IDLE | SEO audit done |
-| Mira | IDLE | Daily KPI scheduled |
-| Nova | IDLE | SOP done |
-| Jax | BLOCKED | Directory creds needed |
-| Rumi | IDLE | Next scan Apr 10 |
-| Pax | IDLE | Portal creds needed |
-| Luna | IDLE | Onboarding done |
-| Orion | IDLE | Sending infra needed |
-| Iris | IDLE | First run Apr 6 |
-
-## Persistent Blockers (from issues_rishi.md)
-1. Reddit API/network — need credentials or manual approach
-2. WP plugin resubmission — founder-owned
-3. Directory submissions — need hello@formbeep.com access
-4. Platform portal access — need login credentials
-5. Umami API key — may need rotation/refresh
-
-## Drift Fixed
-- Updated 15 repeat counters in Active Crons table
-- Updated all next-run timestamps to live values
-- Verified: no new/retired jobs
-
-## Next Run: 2026-04-01T14:13:00+00:00
-[2026-04-01T13:21:12Z] Astra check: IDLE — no IN_PROGRESS tasks
+     1|# Moxie Orchestration Reconciler — Heartbeat Log
+     2|# Last check: 2026-04-01 13:15:00 UTC
+     3|# Status: RECONCILED — all state synchronized
+     4|
+     5|## Current State
+     6|- Live cron registry: 29 jobs active
+     7|- Orchestration.md: updated to match live state
+     8|- Dispatch queue: 0 QUEUED, 0 IN_PROGRESS
+     9|- All workers: IDLE or BLOCKED (waiting on human input)
+    10|
+    11|## Task Promotions
+    12|- None — dispatch queue empty, no pending promotions
+    13|
+    14|## Workers Summary
+    15|| Employee | Status | Blocker |
+    16||----------|--------|---------|
+    17|| Vale | IDLE | Next scan May 1 |
+    18|| Astra | IDLE | All tasks done |
+    19|| Kiro | IDLE | Awaiting blog review |
+    20|| Ember | BLOCKED | Reddit creds needed |
+    21|| Forge | IDLE | SEO audit done |
+    22|| Mira | IDLE | Daily KPI scheduled |
+    23|| Nova | IDLE | SOP done |
+    24|| Jax | BLOCKED | Directory creds needed |
+    25|| Rumi | IDLE | Next scan Apr 10 |
+    26|| Pax | IDLE | Portal creds needed |
+    27|| Luna | IDLE | Onboarding done |
+    28|| Orion | IDLE | Sending infra needed |
+    29|| Iris | IDLE | First run Apr 6 |
+    30|
+    31|## Persistent Blockers (from issues_rishi.md)
+    32|1. Reddit API/network — need credentials or manual approach
+    33|2. WP plugin resubmission — founder-owned
+    34|3. Directory submissions — need hello@formbeep.com access
+    35|4. Platform portal access — need login credentials
+    36|5. Umami API key — may need rotation/refresh
+    37|
+    38|## Drift Fixed
+    39|- Updated 15 repeat counters in Active Crons table
+    40|- Updated all next-run timestamps to live values
+    41|- Verified: no new/retired jobs
+    42|
+    43|## Next Run: 2026-04-01T14:13:00+00:00
+    44|[2026-04-01T13:21:12Z] Astra check: IDLE — no IN_PROGRESS tasks
+    45|[2026-04-01 14:07:04] Heartbeat: 2 IN_PROGRESS, 50 COMPLETED, 1 BLOCKED in dispatch queue. Workers: []
