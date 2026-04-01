@@ -1,43 +1,45 @@
 # Moxie CMO Heartbeat Log
-## 2026-04-01T11:06:00Z
+# Last updated: 2026-04-01T12:07:00Z
 
-### Heartbeat: Silent Cron — System Idle
+## System Status: IDLE
 
-### System Status: IDLE
-All sprint tasks COMPLETED. No active dispatches.
-
-### Dispatch Queue: 19/19 COMPLETED
-No IN_PROGRESS or QUEUED tasks. All deliverables delivered.
-
-### Employee Summary
+### Employee State Summary
 | Employee | Status | Notes |
 |----------|--------|-------|
-| Vale | IDLE | Monthly competitor scan COMPLETED 2026-04-01; next: 2026-05-01 |
-| Astra | IDLE | All sprint tasks COMPLETED |
-| Kiro | IDLE | Money pages COMPLETED; awaiting Rishi review |
-| Ember | BLOCKED | Reddit credentials needed (issues_rishi.md) |
-| Forge | IDLE | Technical SEO audit COMPLETED; WP awaiting Rishi |
-| Mira | COMPLETED | Daily KPI done |
-| Nova | IDLE | Cross-product ads SOP delivered; ready for campaign setup |
-| Jax | COMPLETED | P1 submission pack ready; credentials needed |
-| Rumi | COMPLETED | Bi-weekly scan done |
-| Pax | COMPLETED | Week 3 done; portal credentials needed |
-| Luna | IDLE | Lifecycle emails COMPLETED |
-| Orion | IDLE | Outbound pack ready; sending infra needed |
-| Iris | IDLE | First run scheduled: 2026-04-06 09:30 UTC |
+| Vale | COMPLETED | Monthly scan done; next: 2026-05-01 |
+| Astra | COMPLETED | All sprint tasks done; IDLE |
+| Kiro | COMPLETED | Money pages v1 delivered; awaiting review |
+| Ember | COMPLETED (BLOCKED) | Reddit plan ready; needs credentials |
+| Forge | COMPLETED | SEO audit delivered; awaiting approval |
+| Mira | COMPLETED | Traffic/keyword map done |
+| Nova | COMPLETED | Paid ads SOP delivered |
+| Jax | COMPLETED (BLOCKED) | Directory pack ready; needs credentials |
+| Rumi | COMPLETED | Bi-weekly scan done; next: 2026-04-10 |
+| Pax | COMPLETED | Week 3 partnerships done |
+| Luna | COMPLETED | Lifecycle emails done |
+| Orion | COMPLETED | Outbound pack done; needs sending infra |
+| Iris | IDLE | First run scheduled 2026-04-06 |
 
-### Active Crons: 29 jobs running
-All healthy, staggered across the hour.
+### Dispatch Queue Status
+- Total items: 19 (all COMPLETED)
+- QUEUED/READY: 0
+- IN_PROGRESS: 0
+- BLOCKED: 4 (Ember, Jax, Orion, Pax - all credential-dependent)
 
-### Open Blockers (require human input)
-1. Reddit posting — needs credentials (u/adambengur or dedicated FormBeep account)
-2. WP plugin resubmission — Rishi-owned, waiting on founder
-3. Directory submissions — needs hello@formbeep.com email verification or existing directory accounts
-4. Platform portal access — Webflow/Framer/Glide/Softr credentials needed
-5. Outbound execution — sending infrastructure (email warmup/domain setup) needed
+### Open Blockers (from issues_rishi.md)
+1. Reddit posting - needs credentials
+2. WP plugin resubmission - founder-owned
+3. Directory submissions - needs email verification/accounts
+4. Platform portals - needs hello@formbeep.com access
+5. Umami API - key rotation/permissions issue
 
-### Action Required: None
-System healthy. All sprint deliverables complete. Awaiting founder input on blockers to unblock execution channels.
+### Active Crons: 31 jobs running
+- All worker crons active and healthy
+- Next governance run: :13 UTC (moxie-orchestration-reconciler)
+- Next heartbeat: 1 hour from now
+
+### Report
+All 19 dispatch queue items COMPLETED. System in stable idle state awaiting founder credentials or new task dispatch. No drift detected. No changes to push.
 
 ---
-[Previous entry: 2026-04-01T10:18:00Z] RECONCILER: Synced cron table with live registry.
+End heartbeat.

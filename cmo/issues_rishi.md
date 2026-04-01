@@ -3,7 +3,7 @@
 # This file is monitored. If new items appear, Moxie will notify on Telegram.
 
 ##Open
-- [ ] (2026-03-31) Reddit posting execution: Ember's 6 post drafts + 4-week campaign plan are complete and ready to publish, but need Reddit account credentials (u/adambengur or dedicated FormBeep Reddit account) to publish posts and seed comments — Owner: Rishi + Ember
+- [ ] (2026-03-31) Reddit founder-profile scan + subreddit intel: automated access from this environment to reddit.com is HTTP 403 Blocked. To scan founder profiles / subreddit content we need to run the script from a network that can reach Reddit, using either (a) a Reddit dev app token (OAuth) or (b) a logged-in session/cookies. — Owner: Rishi + Vale
 
 - [ ] (2026-03-31) WordPress plugin resubmission (WP team feedback) — Founder-owned blocker. Moxie/Forge will not touch WP plugin changes; Rishi will handle and we'll plan post-approval launch later. — Owner: Rishi
 

@@ -173,7 +173,7 @@
 
 **Editing rule:** do not edit jobs via this table. Update jobs using `hermes cron edit <cron_id> ...` and then reconcile this table to match.
 
-Last verified: 2026-04-01T11:13:00Z
+Last verified: 2026-04-01T12:13:00Z
 
 | Cron ID | Name | Schedule | Deliver | Next run (UTC) | Repeats | State |
 |---|---|---|---|---|---|---|
