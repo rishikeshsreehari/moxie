@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""\
+"""
 SapiensTech Reddit Intel Scanner — Browser Automation (no API)
 
 What it does (high level):
 - Scrapes founder + your own activity (posts + comments) from the web UI (old.reddit.com).
-- For each founder post, optionally opens the thread and samples top-level comments,
-  then estimates sentiment (VADER) + engagement (comment counts).
-- Searches Reddit web UI for keyword mentions (beepmate/web2phone/formbeep) and summarizes
-  which communities respond most + overall sentiment.
-- Also tracks competitor mentions (zapier, typeform, tally, twilio) and phrases like
-  "sms notifications" and "whatsapp without zapier" to see where conversations align
-  with FormBeep's positioning.
+- For each founder post, opens the thread and samples top-level comments,
+  returning both sentiment (VADER) and actual comment excerpts.
+- Lists founder comments by subreddit and score.
+- Searches Reddit web UI for keyword mentions (beepmate/web2phone/formbeep + competitors)
+  and summarizes which communities respond most + overall sentiment.
+- Includes post selftext snippets and sampled comments for high-attention threads.
+- Generates a rich markdown brief with actionable intel.
 
 Why old.reddit.com:
 - More stable HTML + lighter JS than the new Reddit UI.
@@ -61,10 +61,10 @@ except ImportError:
 
 FOUNDERS = ["adambengur", "ConferenceOnly1415", "rishikeshshari"]
 
-# Communities we *also* sample for context (not necessarily where founders posted)
+# Communities we also sample for context (not necessarily where founders posted)
 TARGET_SUBREDDITS = ["SaaS", "Entrepreneur", "SmallBusiness", "NoCode", "Wordpress", "startups"]
 
-# What to compare attention for
+# Keywords to search for attention + sentiment
 KEYWORDS = [
     "beepmate",
     "beepmate.io",
@@ -83,6 +83,8 @@ MAX_FOUNDER_POSTS = 40
 MAX_FOUNDER_COMMENTS = 60
 MAX_THREAD_COMMENTS_TO_SAMPLE = 25
 MAX_KEYWORD_RESULTS_PER_QUERY = 20
+# Top threads (by comments) for which we fetch full details (selftext + comment excerpts)
+TOP_THREADS_DETAILS_PER_SOURCE = 6
 
 WAIT_AFTER_NAV = 2.5
 SCROLL_PULSES = 2
@@ -111,7 +113,6 @@ def _parse_int_loose(s: str) -> Optional[int]:
     s = (s or "").strip().lower()
     if not s:
         return None
-    # examples: "123 points", "1.2k points", "•", "comment"
     m = re.search(r"([0-9]+(?:\.[0-9]+)?)(k|m)?", s)
     if not m:
         return None
@@ -137,7 +138,7 @@ class ListingItem:
     score: Optional[int] = None
     comments_count: Optional[int] = None
     author: Optional[str] = None
-    snippet: str = ""  # comment snippet or selftext excerpt
+    snippet: str = ""  # comment snippet or selftext excerpt (when populated)
 
 
 # -------------------- SCRAPERS (old.reddit.com) --------------------
@@ -154,7 +155,6 @@ def _scroll_some(page) -> None:
 
 
 def scrape_old_user_submitted(page, username: str, limit: int) -> List[ListingItem]:
-    # Use /submitted/ which is stable
     url = f"https://old.reddit.com/user/{username}/submitted/"
     print(f"Scraping submissions: {url}")
     _goto(page, url)
@@ -186,6 +186,7 @@ def scrape_old_user_submitted(page, username: str, limit: int) -> List[ListingIt
                     score=score,
                     comments_count=comments_count,
                     author=username,
+                    snippet="",  # selftext fetched later
                 )
             )
         except Exception:
@@ -215,7 +216,6 @@ def scrape_old_user_comments(page, username: str, limit: int) -> List[ListingIte
             body_el = t.query_selector("div.md")
             snippet = _safe_text(body_el)
             title_el = t.query_selector("a.title")
-            # comment pages include the post title
             title = _safe_text(title_el) or "(comment)"
 
             items.append(
@@ -234,30 +234,36 @@ def scrape_old_user_comments(page, username: str, limit: int) -> List[ListingIte
     return items
 
 
-def scrape_thread_top_comments(page, thread_url: str, limit: int) -> List[str]:
-    # Collect a sample of top-level comments
+def scrape_thread_details(page, thread_url: str, comment_limit: int) -> Tuple[str, List[str]]:
+    """
+    Opens a thread page and returns:
+      (selftext_snippet, [top_comment_texts...])
+    """
     _goto(page, thread_url)
-    _sleep(1.0)
+    # Get post selftext (old.reddit.com: div.usertext-body .md)
+    selftext = ""
+    try:
+        selftext_el = page.query_selector("div.usertext-body .md")
+        if selftext_el:
+            selftext = _safe_text(selftext_el)[:500]
+    except Exception:
+        selftext = ""
 
+    # Get top-level comments (div.comment div.entry div.md)
     comments: List[str] = []
-    # old reddit comment bodies are in div.comment div.md
     bodies = page.query_selector_all("div.comment div.entry div.md")
     for b in bodies:
-        if len(comments) >= limit:
+        if len(comments) >= comment_limit:
             break
         txt = _safe_text(b)
         txt = re.sub(r"\s+", " ", txt).strip()
-        if not txt:
-            continue
-        # Skip deleted/removed
-        if txt.lower() in ("[deleted]", "[removed]"):
+        if not txt or txt.lower() in ("[deleted]", "[removed]"):
             continue
         comments.append(txt[:800])
-    return comments
+    return selftext, comments
 
 
 def scrape_old_search(page, query: str, limit: int) -> List[ListingItem]:
-    # Sort by comments to find where attention is highest
     url = f"https://old.reddit.com/search?q={query}&sort=comments&t=all"
     print(f"Search: {url}")
     _goto(page, url)
@@ -339,16 +345,29 @@ def to_table(rows: List[List[str]]) -> str:
 def generate_markdown(
     founder_posts: Dict[str, List[ListingItem]],
     founder_comments: Dict[str, List[ListingItem]],
+    founder_thread_details: Dict[str, Dict[str, Tuple[str, List[str]]]],  # username -> {url: (selftext, [comments])}
     founder_thread_sentiment: Dict[str, Dict[str, float]],
-    keyword_results: Dict[str, List[Tuple[ListingItem, Optional[float]]]],
+    keyword_results: Dict[str, List[ListingItem]],
+    keyword_thread_details: Dict[str, Dict[str, Tuple[str, List[str]]]],  # keyword -> {url: (selftext, [comments])}
+    keyword_thread_sentiment: Dict[str, Dict[str, float]],
 ) -> str:
     out: List[str] = []
     out.append("# Reddit Intel Brief (Browser Automation)")
     out.append(f"Generated: {_now_utc()}")
     out.append("")
 
-    # Founder summary
-    out.append("## Founder activity summary")
+    # Collection summary
+    out.append("## Collection Summary")
+    total_posts = sum(len(v) for v in founder_posts.values())
+    total_comments = sum(len(v) for v in founder_comments.values())
+    total_kw_threads = sum(len(v) for v in keyword_results.values())
+    out.append(f"- Total founder posts collected: {total_posts}")
+    out.append(f"- Total founder comments collected: {total_comments}")
+    out.append(f"- Total keyword threads (all terms): {total_kw_threads}")
+    out.append("")
+
+    # Founder activity summary
+    out.append("## Founder + Your Activity")
     for u in FOUNDERS:
         posts = founder_posts.get(u, [])
         comments = founder_comments.get(u, [])
@@ -357,40 +376,72 @@ def generate_markdown(
         out.append(f"### u/{u}")
         out.append(f"Collected: {len(posts)} posts, {len(comments)} comments")
 
-        # Top subs by post count + engagement
-        agg = agg_by_subreddit(posts)
-        rows = [["subreddit", "posts", "avg comments", "avg score"]]
-        for sub, a in sorted(agg.items(), key=lambda kv: kv[1]["count"], reverse=True)[:12]:
-            avg_comments = (a["total_comments"] / a["with_comments"]) if a["with_comments"] else 0
-            avg_score = (a["total_score"] / a["count"]) if a["count"] else 0
-            rows.append([sub, str(a["count"]), f"{avg_comments:.1f}", f"{avg_score:.1f}"])
-        out.append("")
-        out.append(to_table(rows))
+        # Top subreddits for posts
+        if posts:
+            agg = agg_by_subreddit(posts)
+            rows = [["subreddit", "posts", "avg comments", "avg score"]]
+            for sub, a in sorted(agg.items(), key=lambda kv: kv[1]["count"], reverse=True)[:12]:
+                avg_comments = (a["total_comments"] / a["with_comments"]) if a["with_comments"] else 0
+                avg_score = (a["total_score"] / a["count"]) if a["count"] else 0
+                rows.append([sub, str(a["count"]), f"{avg_comments:.1f}", f"{avg_score:.1f}"])
+            out.append("\nTop subreddits by post count:")
+            out.append(to_table(rows))
 
-        # Most-commented posts
-        top_posts = sorted(posts, key=lambda p: (p.comments_count or 0), reverse=True)[:8]
-        out.append("")
-        out.append("Most commented posts (proxy for attention):")
-        for p in top_posts:
-            sent = founder_thread_sentiment.get(u, {}).get(p.url)
-            sent_s = f"sent {sent:+.2f}" if sent is not None else "sent ?"
-            out.append(f"- [{p.comments_count or 0} comments | {sent_s}] r/{p.subreddit} — {p.title}")
-            out.append(f"  {p.url}")
+        # Top subreddits for comments
+        if comments:
+            agg_c = agg_by_subreddit(comments)
+            rows_c = [["subreddit", "comments", "avg score"]]
+            for sub, a in sorted(agg_c.items(), key=lambda kv: kv[1]["count"], reverse=True)[:12]:
+                avg_score = (a["total_score"] / a["count"]) if a["count"] else 0
+                rows_c.append([sub, str(a["count"]), f"{avg_score:.1f}"])
+            out.append("\nTop subreddits by comment count:")
+            out.append(to_table(rows_c))
 
-    # Keyword attention summary
-    out.append("")
-    out.append("## Beepmate/Web2Phone attention + sentiment")
-    out.append("(Based on keyword search results; sorted by comment count.)")
+        # Recent top comments by score
+        if comments:
+            top_comments = sorted(comments, key=lambda c: (c.score or 0), reverse=True)[:10]
+            out.append("\nTop comments by score (sample):")
+            for c in top_comments:
+                out.append(f"- r/{c.subreddit} — score {c.score or 0}")
+                out.append(f"  {c.url}")
+                if c.snippet:
+                    out.append(f"  > {c.snippet[:180]}...")
+                out.append("")
+
+        # Most-commented posts with details
+        if posts:
+            top_posts = sorted(posts, key=lambda p: (p.comments_count or 0), reverse=True)[:6]
+            out.append("\nMost commented posts (with thread sentiment & top replies):")
+            for p in top_posts:
+                sent = founder_thread_sentiment.get(u, {}).get(p.url)
+                sent_s = f"{sent:+.2f}" if sent is not None else "n/a"
+                out.append(f"- [{p.comments_count or 0} comments | sent {sent_s}] r/{p.subreddit} — {p.title}")
+                out.append(f"  {p.url}")
+                details = founder_thread_details.get(u, {}).get(p.url)
+                if details:
+                    selftext, top_comms = details
+                    if selftext:
+                        out.append(f"  OP excerpt: {selftext[:200]}...")
+                    if top_comms:
+                        out.append("  Top replies (sample):")
+                        for tcm in top_comms[:5]:
+                            out.append(f"    - {tcm[:200]}...")
+                out.append("")
+
+    # Keyword attention + sentiment
+    out.append("## Keyword Attention & Sentiment")
+    out.append("(Threads sorted by comment count; samples show actual reply sentiment.)")
 
     # Aggregate by subreddit across keywords
     by_sub = defaultdict(lambda: {"threads": 0, "total_comments": 0, "sent_vals": []})
     for kw, entries in keyword_results.items():
-        for item, sent in entries:
+        for item in entries:
             sub = item.subreddit or ""
             if not sub:
                 continue
             by_sub[sub]["threads"] += 1
             by_sub[sub]["total_comments"] += int(item.comments_count or 0)
+            sent = keyword_thread_sentiment.get(kw, {}).get(item.url)
             if sent is not None:
                 by_sub[sub]["sent_vals"].append(sent)
 
@@ -398,24 +449,39 @@ def generate_markdown(
     for sub, a in sorted(by_sub.items(), key=lambda kv: kv[1]["total_comments"], reverse=True)[:20]:
         avg_sent = sum(a["sent_vals"]) / len(a["sent_vals"]) if a["sent_vals"] else 0.0
         rows.append([sub, str(a["threads"]), str(a["total_comments"]), f"{avg_sent:+.2f}"])
-    out.append("")
+    out.append("\nSubreddit aggregates (all keywords):")
     out.append(to_table(rows))
 
-    out.append("")
-    out.append("Top threads by keyword:")
-    for kw, entries in keyword_results.items():
-        out.append("")
-        out.append(f"### Query: {kw}")
-        for item, sent in sorted(entries, key=lambda t: (t[0].comments_count or 0), reverse=True)[:10]:
-            sent_s = f"{sent:+.2f}" if sent is not None else "?"
+    # Per-keyword thread details
+    for kw in KEYWORDS:
+        entries = keyword_results.get(kw, [])
+        if not entries:
+            continue
+        out.append(f"\n### Keyword: \"{kw}\"")
+        # sort by comments
+        sorted_entries = sorted(entries, key=lambda e: (e.comments_count or 0), reverse=True)[:10]
+        for item in sorted_entries:
+            sent = keyword_thread_sentiment.get(kw, {}).get(item.url)
+            sent_s = f"{sent:+.2f}" if sent is not None else "n/a"
             out.append(f"- [{item.comments_count or 0} comments | sent {sent_s}] r/{item.subreddit} — {item.title}")
             out.append(f"  {item.url}")
+            details = keyword_thread_details.get(kw, {}).get(item.url)
+            if details:
+                selftext, top_comms = details
+                if selftext:
+                    out.append(f"  OP excerpt: {selftext[:200]}...")
+                if top_comms:
+                    out.append("  Top replies (sample):")
+                    for tcm in top_comms[:3]:
+                        out.append(f"    - {tcm[:200]}...")
+            out.append("")
 
     out.append("")
-    out.append("## Notes / how to use")
-    out.append("- Use the founder 'most commented posts' list to copy the *style* (not the content).")
-    out.append("- Use the keyword attention table to pick communities that discuss similar tools and react strongly (high comments).")
-    out.append("- Sentiment is a rough heuristic (VADER compound score). Always sanity-check the top threads manually.")
+    out.append("## How to use this intel")
+    out.append("- Study founder posts and their thread replies to see what resonates and how to seed comments.")
+    out.append("- Use the keyword samples to see where competitors are discussed and what sentiment exists; position FormBeep accordingly.")
+    out.append("- Identify subreddits with high engagement on relevant keywords and plan manual posting using the content packs.")
+    out.append("- Always sanity-check the top threads yourself; sentiment is a heuristic.")
 
     return "\n".join(out) + "\n"
 
@@ -423,12 +489,11 @@ def generate_markdown(
 # -------------------- MAIN --------------------
 
 def ensure_logged_in(page) -> None:
-    # If redirected to login, user must login once; we then persist state.
     _goto(page, "https://old.reddit.com")
     if "login" in (page.url or "").lower():
         print("\n=== Reddit is asking to log in ===")
         print("Log in in the Chromium window that just opened.")
-        print("Then come back here and press Enter to continue...")
+        print("Then return here and press Enter to continue...")
         input()
 
 
@@ -450,17 +515,18 @@ def main() -> None:
 
         ensure_logged_in(page)
 
-        # Persist session so next run doesn't require login
         try:
             context.storage_state(path=str(STORAGE_STATE_PATH))
         except Exception:
             pass
 
+        # Data collection
         founder_posts: Dict[str, List[ListingItem]] = {}
         founder_comments: Dict[str, List[ListingItem]] = {}
+        founder_thread_details: Dict[str, Dict[str, Tuple[str, List[str]]]] = defaultdict(dict)
         founder_thread_sentiment: Dict[str, Dict[str, float]] = defaultdict(dict)
 
-        # Founder scans
+        # Scan founders
         for u in FOUNDERS:
             try:
                 posts = scrape_old_user_submitted(page, u, MAX_FOUNDER_POSTS)
@@ -478,40 +544,53 @@ def main() -> None:
                 print(f"  ERROR scanning comments for u/{u}: {e}")
                 founder_comments[u] = []
 
-            # Per-thread sentiment sample for most-commented posts (limit to 6 to avoid overfetch)
-            top_for_sent = sorted(founder_posts[u], key=lambda x: (x.comments_count or 0), reverse=True)[:6]
-            for post in top_for_sent:
+            # For top posts by comment count, fetch thread details (selftext + top comments)
+            top_posts = sorted(founder_posts[u], key=lambda p: (p.comments_count or 0), reverse=True)[:TOP_THREADS_DETAILS_PER_SOURCE]
+            for post in top_posts:
                 try:
-                    comm_texts = scrape_thread_top_comments(page, post.url, MAX_THREAD_COMMENTS_TO_SAMPLE)
-                    s = sentiment_score(analyzer, comm_texts)
+                    selftext, top_comments = scrape_thread_details(page, post.url, MAX_THREAD_COMMENTS_TO_SAMPLE)
+                    founder_thread_details[u][post.url] = (selftext, top_comments)
+                    s = sentiment_score(analyzer, top_comments)
                     if s is not None:
                         founder_thread_sentiment[u][post.url] = s
-                    print(f"    thread sentiment sampled: r/{post.subreddit} ({post.comments_count or 0} comments) -> {s if s is not None else 'n/a'}")
+                    print(f"    thread details: r/{post.subreddit} ({post.comments_count or 0} comments) -> {s if s is not None else 'n/a'}")
                 except Exception as e:
-                    print(f"    thread sentiment failed: {post.url} ({e})")
+                    print(f"    thread details failed: {post.url} ({e})")
 
-        # Keyword attention scans
-        keyword_results: Dict[str, List[Tuple[ListingItem, Optional[float]]]] = {k: [] for k in KEYWORDS}
+        # Keyword scans
+        keyword_results: Dict[str, List[ListingItem]] = {k: [] for k in KEYWORDS}
+        keyword_thread_details: Dict[str, Dict[str, Tuple[str, List[str]]]] = {k: {} for k in KEYWORDS}
+        keyword_thread_sentiment: Dict[str, Dict[str, float]] = {k: {} for k in KEYWORDS}
+
         for kw in KEYWORDS:
-            q = kw
-            results = scrape_old_search(page, q, MAX_KEYWORD_RESULTS_PER_QUERY)
-            enriched: List[Tuple[ListingItem, Optional[float]]] = []
-            # Only sample sentiment for the top few threads to avoid load
-            for idx, item in enumerate(results):
-                s: Optional[float] = None
-                if idx < 6:
-                    try:
-                        comm_texts = scrape_thread_top_comments(page, item.url, MAX_THREAD_COMMENTS_TO_SAMPLE)
-                        s = sentiment_score(analyzer, comm_texts)
-                    except Exception:
-                        s = None
-                enriched.append((item, s))
-            keyword_results[kw] = enriched
-            print(f"  keyword '{kw}': threads={len(enriched)}")
+            results = scrape_old_search(page, kw, MAX_KEYWORD_RESULTS_PER_QUERY)
+            keyword_results[kw] = results
+            print(f"  keyword '{kw}': threads={len(results)}")
+
+            # Fetch details for top few threads
+            top_results = sorted(results, key=lambda e: (e.comments_count or 0), reverse=True)[:TOP_THREADS_DETAILS_PER_SOURCE]
+            for item in top_results:
+                try:
+                    selftext, top_comments = scrape_thread_details(page, item.url, MAX_THREAD_COMMENTS_TO_SAMPLE)
+                    keyword_thread_details[kw][item.url] = (selftext, top_comments)
+                    s = sentiment_score(analyzer, top_comments)
+                    if s is not None:
+                        keyword_thread_sentiment[kw][item.url] = s
+                    print(f"    kw thread details: r/{item.subreddit} ({item.comments_count or 0} comments) -> {s if s is not None else 'n/a'}")
+                except Exception as e:
+                    print(f"    kw thread details failed: {item.url} ({e})")
 
         browser.close()
 
-    md = generate_markdown(founder_posts, founder_comments, founder_thread_sentiment, keyword_results)
+    md = generate_markdown(
+        founder_posts,
+        founder_comments,
+        founder_thread_details,
+        founder_thread_sentiment,
+        keyword_results,
+        keyword_thread_details,
+        keyword_thread_sentiment,
+    )
     OUTPUT_FILE.write_text(md, encoding="utf-8")
     print(f"\nWrote brief: {OUTPUT_FILE.resolve()}")
     print(f"Saved session state: {STORAGE_STATE_PATH.resolve()} (delete this file to force re-login)")
