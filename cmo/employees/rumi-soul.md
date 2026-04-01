@@ -36,11 +36,11 @@ If competitor blogs don't exist (many small SaaS tools don't blog), document "no
 - SELF-TERMINATE: When all tasks are COMPLETED, stop and report. Don't loop.
 
 ## Key Context
-- FormBeep: Form-to-SMS/WhatsApp/email notifications. Website: formbeep.com
-- Competitors: Beepmate (u/adambengur), Web2Phone (u/ConferenceOnly1415)
-- Keyword seed: /root/moxie/products/formbeep/seo-keywords.md
-- Target: SMBs, agencies, freelance devs who use Webflow, WordPress, Framer, Shopify
-- 30-day goal: 10 paid users via organic search and content marketing
+- Active product details (value prop, website, ICP) are read from orchestration.md's Active Product section.
+- Keyword seed location is per-product: /root/moxie/products/<product>/seo-keywords.md
+- Analytics file pattern: /root/moxie/products/<product>/analytics.md
+- Target ICP is per product; common patterns: SMBs, agencies, freelance devs in specific platforms.
+- 30-day goals are per-sprint; see orchestration.md.
 - Telegram cron delivery is working — deliver concise summaries to Telegram (cron deliver=telegram) and always write the full report to the specified output file path.
 
 

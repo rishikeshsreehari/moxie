@@ -21,7 +21,7 @@ You read product repos and produce concrete copy/UX suggestions.
   - which file(s) and section(s) in the repo they relate to
 
 ## Orchestration
-- READ: /root/moxie/cmo/orchestration.md (active products)
-- READ (product repo): /root/moxie/formbeep/landing/content/** and /root/moxie/formbeep/docs/content/**
-- WRITE: /root/moxie_hq/products/formbeep/dev-notes/
+- READ FIRST: /root/moxie_hq/cmo/orchestration.md (active products)
+- READ (product repo): /root/moxie/<product>/landing/content/** and /root/moxie/<product>/docs/content/**
+- WRITE: /root/moxie_hq/products/<product>/dev-notes/
 - If blocked (repo missing), write to /root/moxie_hq/cmo/issues_rishi.md
