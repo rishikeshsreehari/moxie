@@ -51,6 +51,11 @@ Last updated: 2026-04-01
 
 ## SYSTEMS TO MAINTAIN (ongoing)
 
+0) [SETUP] New product onboarding questionnaire (answer once per product)
+- Owner: Rishi
+- File: /root/moxie_hq/cmo/resources/product-onboarding/product-onboarding-questions.md
+- When used: the moment you give me Product #2 details
+
 6) [SETUP/MAINTAIN] Reddit posting tracker (rules + “have we posted?”)
 - Owner: Rishi (manual posting), Ember (planning)
 - File: /root/moxie/products/formbeep/outreach/reddit-posting-tracker.md
