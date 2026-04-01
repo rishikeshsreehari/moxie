@@ -305,6 +305,14 @@ def scrape_old_search(page, query: str, limit: int) -> List[ListingItem]:
     _goto(page, url)
     _scroll_some(page)
 
+
+def scrape_old_search_in_subreddit(page, subreddit: str, query: str, limit: int) -> List[ListingItem]:
+    # Restricted search inside a specific community.
+    url = f"https://old.reddit.com/r/{subreddit}/search?q={query}&restrict_sr=on&sort=comments&t=all"
+    print(f"Search (r/{subreddit}): {query}")
+    _goto(page, url)
+    _scroll_some(page)
+
     items: List[ListingItem] = []
     things = page.query_selector_all("div.thing")
     for t in things:

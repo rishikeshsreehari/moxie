@@ -3,7 +3,6 @@
 # This file is monitored. If new items appear, Moxie will notify on Telegram.
 
 ##Open
-- [ ] (2026-04-01) HQ autopush failed (git push origin main): To https://github.com/rishikeshsreehari/moxie.git ! [rejected] main -> main (fetch first) error: failed to push some refs to 'https://github.com/rishikeshsreehari/moxie.git' hint: Updates were rejected because the remote contains work that you do not hint: have locally. This is u
 - [ ] (2026-03-31) Reddit founder-profile scan + subreddit intel: (1) this environment is **HTTP 403 Blocked** to reddit.com, and (2) Reddit’s current Data API policy states **approval is required** before accessing Reddit data via API; commercial use requires explicit permission/contract. So we should NOT automate scans unless/until approved + reachable network. Next action: decide whether to apply for approved Data API access or do manual intel only. — Owner: Rishi + Vale
 
 - [ ] (2026-03-31) WordPress plugin resubmission (WP team feedback) — Founder-owned blocker. Moxie/Forge will not touch WP plugin changes; Rishi will handle and we'll plan post-approval launch later. — Owner: Rishi
@@ -19,6 +18,8 @@
 - [ ] (2026-04-01) Analytics blocker: Umami Cloud API calls from this environment fail. Without a browser-like User-Agent we get HTTP 403 w/ Cloudflare error 1010; with a standard User-Agent we get HTTP 401 Unauthorized (suggesting the UMAMI_API_KEY is invalid/revoked or lacks access). Need: rotate/confirm the Umami Cloud API key + permissions (or alternate export path / allowlisting). — Owner: Rishi + Moxie
 
 ##Resolved
+
+- [x] (2026-04-01) HQ autopush initially failed due to non-fast-forward (remote ahead). Autopush now auto-rebases (`git pull --rebase origin main`) and retries push under lock; state reconciled and pushed.
 
 - [x] (2026-03-31) OpenCode Go weekly-reset reminder cron: scheduled (UTC) — Owner: Rishi + Moxie
 - [x] (2026-03-31) Google Search Console cron — Rishi confirmed it was configured earlier. Verifying access + re-enabling scheduled scans. — Owner: Moxie
