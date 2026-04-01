@@ -4,33 +4,40 @@ set -euo pipefail
 cd /root/moxie_hq
 LOCKFILE="/root/moxie_hq/.git/moxie_autopush.lock"
 
-# Acquire lock (wait up to 60s) without using bash -c/-lc
+# Run everything under a lock (<=60s wait)
+# Note: avoid bash -c/-lc to satisfy tool safety checks.
 exec 9>"$LOCKFILE"
 if ! flock -w 60 9; then
   echo "LOCK_TIMEOUT"
-  exit 3
+  exit 75
 fi
 
+# Stage changes
 git add -A
 
-if [[ -z "$(git status --porcelain)" ]]; then
+if git diff --cached --quiet; then
   echo "NO_CHANGES"
   exit 0
 fi
 
-TS=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+TS=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 
-# Commit (will fail if somehow empty; we already checked)
-git commit -m "Autopush: $TS" >/tmp/moxie_autopush_commit.log
+git commit -m "Autopush: ${TS}" >/dev/null
 COMMIT=$(git rev-parse --short HEAD)
 
-# Push to origin main
-if git push origin main >/tmp/moxie_autopush_push.log 2>/tmp/moxie_autopush_push.err; then
-  echo "PUSHED $COMMIT"
-  exit 0
-else
-  echo "PUSH_FAILED $COMMIT"
-  echo "--- push stderr ---"
-  cat /tmp/moxie_autopush_push.err
-  exit 2
+tmp_log=$(mktemp)
+set +e
+GIT_PUSH_OUTPUT=$(git push origin main 2>&1 | tee "$tmp_log")
+PUSH_CODE=${PIPESTATUS[0]}
+set -e
+
+if [ "$PUSH_CODE" -ne 0 ]; then
+  # Compact error summary
+  tail -n 25 "$tmp_log" >"${tmp_log}.tail" || true
+  ERR_SUMMARY=$(tr '\n' ' ' <"${tmp_log}.tail" | sed 's/[[:space:]]\+/ /g' | cut -c1-280)
+  /usr/bin/env python3 /root/moxie_hq/cmo/scripts/append_issue_open.py "HQ autopush failed (git push origin main): ${ERR_SUMMARY}"
+  echo "PUSH_FAILED ${COMMIT}"
+  exit 1
 fi
+
+echo "PUSHED ${COMMIT}"
