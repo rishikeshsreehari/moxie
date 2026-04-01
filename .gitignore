@@ -3,3 +3,7 @@
 secrets/
 *.local
 repos/
+
+# Python
+__pycache__/
+*.pyc
