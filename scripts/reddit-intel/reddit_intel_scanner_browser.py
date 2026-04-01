@@ -3,11 +3,14 @@
 SapiensTech Reddit Intel Scanner — Browser Automation (no API)
 
 What it does (high level):
-- Scrapes founder activity (posts + comments) from the web UI (old.reddit.com).
+- Scrapes founder + your own activity (posts + comments) from the web UI (old.reddit.com).
 - For each founder post, optionally opens the thread and samples top-level comments,
   then estimates sentiment (VADER) + engagement (comment counts).
-- Searches Reddit web UI for keyword mentions (beepmate/web2phone) and summarizes
+- Searches Reddit web UI for keyword mentions (beepmate/web2phone/formbeep) and summarizes
   which communities respond most + overall sentiment.
+- Also tracks competitor mentions (zapier, typeform, tally, twilio) and phrases like
+  "sms notifications" and "whatsapp without zapier" to see where conversations align
+  with FormBeep's positioning.
 
 Why old.reddit.com:
 - More stable HTML + lighter JS than the new Reddit UI.
@@ -56,7 +59,7 @@ except ImportError:
 
 # -------------------- CONFIG --------------------
 
-FOUNDERS = ["adambengur", "ConferenceOnly1415"]
+FOUNDERS = ["adambengur", "ConferenceOnly1415", "rishikeshshari"]
 
 # Communities we *also* sample for context (not necessarily where founders posted)
 TARGET_SUBREDDITS = ["SaaS", "Entrepreneur", "SmallBusiness", "NoCode", "Wordpress", "startups"]
@@ -66,6 +69,14 @@ KEYWORDS = [
     "beepmate",
     "beepmate.io",
     "web2phone",
+    "formbeep",
+    "formbeep.com",
+    "zapier",
+    "typeform",
+    "tally",
+    "twilio",
+    "sms notifications",
+    "whatsapp without zapier",
 ]
 
 MAX_FOUNDER_POSTS = 40

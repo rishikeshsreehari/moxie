@@ -1,10 +1,12 @@
 # Reddit intel scanner (browser automation, no API)
 
 This script answers the exact questions you asked:
-- What did each founder actually post, in which subreddits?
-- Where did they get the most attention (comments)?
+- What did each founder (adambengur, ConferenceOnly1415) and you (rishikeshshari) actually post, in which subreddits?
+- Where did they/you get the most attention (comments)?
 - How did people respond (sample comments) and what's the *rough* sentiment?
-- Where do "beepmate" / "web2phone" get attention (which communities) and what's the general sentiment?
+- Where do "beepmate", "web2phone", and "formbeep" get attention (which communities) and what's the general sentiment?
+- Competitive intel: where are zapier, typeform, tally, twilio discussed and what's the tone? Also phrases like "sms notifications" and "whatsapp without zapier" to see positioning opportunities.
+
 
 It uses Playwright to drive a real Chromium browser and scrapes **old.reddit.com** (HTML). No Reddit API app / approvals required.
 

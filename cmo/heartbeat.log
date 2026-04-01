@@ -1,45 +1,38 @@
 # Moxie CMO Heartbeat Log
-# Last updated: 2026-04-01T12:07:00Z
+# Updated: 2026-04-01T13:06:00Z
 
 ## System Status: IDLE
+- All workers IDLE or COMPLETED
+- No QUEUED tasks in dispatch queue
+- No promotions needed
 
-### Employee State Summary
+## Worker Summary
 | Employee | Status | Notes |
 |----------|--------|-------|
-| Vale | COMPLETED | Monthly scan done; next: 2026-05-01 |
-| Astra | COMPLETED | All sprint tasks done; IDLE |
-| Kiro | COMPLETED | Money pages v1 delivered; awaiting review |
-| Ember | COMPLETED (BLOCKED) | Reddit plan ready; needs credentials |
-| Forge | COMPLETED | SEO audit delivered; awaiting approval |
-| Mira | COMPLETED | Traffic/keyword map done |
-| Nova | COMPLETED | Paid ads SOP delivered |
-| Jax | COMPLETED (BLOCKED) | Directory pack ready; needs credentials |
-| Rumi | COMPLETED | Bi-weekly scan done; next: 2026-04-10 |
-| Pax | COMPLETED | Week 3 partnerships done |
-| Luna | COMPLETED | Lifecycle emails done |
-| Orion | COMPLETED | Outbound pack done; needs sending infra |
-| Iris | IDLE | First run scheduled 2026-04-06 |
+| Vale | IDLE | Next scan: 2026-05-01 |
+| Astra | IDLE | All sprint tasks done |
+| Kiro | IDLE | Blog drafts await Rishi review |
+| Ember | BLOCKED | Needs Reddit credentials |
+| Forge | IDLE | SEO audit done; await Rishi approval for Hugo fixes |
+| Mira | IDLE | Analytics complete |
+| Nova | IDLE | SOP complete |
+| Jax | IDLE | P1 pack ready; needs directory credentials |
+| Rumi | IDLE | Content gap scan done |
+| Pax | IDLE | Week 3 complete |
+| Luna | IDLE | Onboarding emails done |
+| Orion | IDLE | Outbound pack ready; needs sending infrastructure |
+| Iris | IDLE | First run: 2026-04-06 |
 
-### Dispatch Queue Status
-- Total items: 19 (all COMPLETED)
-- QUEUED/READY: 0
-- IN_PROGRESS: 0
-- BLOCKED: 4 (Ember, Jax, Orion, Pax - all credential-dependent)
+## Active Blockers (Unchanged)
+1. WordPress plugin — Rishi-owned, awaiting implementation
+2. Directory credentials — need hello@formbeep.com access
+3. Reddit credentials — blocking Ember campaign execution
+4. Sending infrastructure — blocking Orion outbound execution
 
-### Open Blockers (from issues_rishi.md)
-1. Reddit posting - needs credentials
-2. WP plugin resubmission - founder-owned
-3. Directory submissions - needs email verification/accounts
-4. Platform portals - needs hello@formbeep.com access
-5. Umami API - key rotation/permissions issue
+## Next Cron Runs (UTC)
+- moxie-daily-governance: next :00 (hourly)
+- issues-rishi-watch: 2026-04-01T12:25:50Z (passed)
+- moxie-hq-autocommit-push: 2026-04-01T10:43:34Z (passed)
 
-### Active Crons: 31 jobs running
-- All worker crons active and healthy
-- Next governance run: :13 UTC (moxie-orchestration-reconciler)
-- Next heartbeat: 1 hour from now
-
-### Report
-All 19 dispatch queue items COMPLETED. System in stable idle state awaiting founder credentials or new task dispatch. No drift detected. No changes to push.
-
----
-End heartbeat.
+## Action
+No actions needed. System idle. Waiting for human unblockers or scheduled recurring tasks.
