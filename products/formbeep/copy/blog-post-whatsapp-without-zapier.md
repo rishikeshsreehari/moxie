@@ -1,17 +1,13 @@
 ---
 title: "How to Get Website Form Submissions on WhatsApp (Without Zapier)"
-description: "Most people set up Zapier for form notifications. Here's why you probably don't need it."
-date: 2026-03-31
-slug: "website-form-submissions-to-whatsapp-without-zapier"
-keywords:
-  - whatsapp form notifications
-  - contact form to whatsapp
-  - form to whatsapp
-  - whatsapp without zapier
-  - form submission whatsapp
+description: "Most tutorials point you straight to Zapier for WhatsApp form notifications. Here's a simpler way that doesn't require another monthly subscription."
+summary: "Most tutorials point you straight to Zapier for WhatsApp form notifications. That works, until you're paying $20/month for a single Zap. Here's a simpler way: one script tag, no automation platforms, works with any website."
+date: 2026-04-01
+author: "Rishikesh Sreehari"
+image:
+  src: "whatsapp-form-notification.png"
+  alt: "WhatsApp notification showing a new website form submission"
 ---
-
-# How to Get Website Form Submissions on WhatsApp (Without Zapier)
 
 Most tutorials point you straight to Zapier for WhatsApp form notifications.
 
@@ -55,7 +51,7 @@ This works too. But now you're managing:
 
 **Option 3: Something built for exactly this**
 
-This is what I built FormBeep for.
+This is what I built [FormBeep](https://formbeep.com) for.
 
 One script tag. Choose your notification channel. Done.
 
@@ -70,7 +66,9 @@ Most of my clients go this route:
 3. Choose WhatsApp (and SMS or email if you want a backup)
 4. Send a test submission
 
-Takes about 5 minutes. Works with Webflow, Framer, WordPress, and any custom HTML form.
+Takes about 5 minutes. Works with [Webflow](https://formbeep.com/blog/webflow-whatsapp-notifications/), [Framer](https://formbeep.com/blog/framer-whatsapp-notifications/), WordPress, and any custom HTML form.
+
+{{< img src="formbeep-setup.png" alt="FormBeep dashboard showing the webhook setup screen" width="85%" caption="The FormBeep dashboard walks you through connecting your form" >}}
 
 ## Who this is for
 
@@ -86,10 +84,21 @@ FormBeep doesn't store your submissions forever. They're held just long enough f
 
 I've worked with enough client data to know that the best way to protect it is to not keep it.
 
-## Try it
+## When you still need Zapier
 
-Free for 50 submissions per month. No credit card.
+I'm not saying Zapier is bad. If you need complex multi-step workflows—like adding leads to a CRM, creating Trello cards, updating spreadsheets—Zapier is the right tool.
 
-- [Get started](https://app.formbeep.com/sign-up)
-- [Pricing](https://formbeep.com/#pricing)
-- [Docs](https://docs.formbeep.com)
+I wrote about [when to use FormBeep vs when to use Zapier](https://formbeep.com/blog/formbeep-vs-zapier/) in another post. The short version: FormBeep is for instant notifications, Zapier is for complex automation. They can work together.
+
+{{< info >}}Free for 50 submissions per month. No credit card required. [Get started here](https://app.formbeep.com/sign-up).{{< /info >}}
+
+---
+
+If you've been missing leads because email notifications got buried, [give FormBeep a try](https://app.formbeep.com/sign-up). Takes about 5 minutes to set up.
+
+Need help? Email [support@formbeep.com](mailto:support@formbeep.com) or message me on Discord at `rishikeshs`.
+
+With love,  
+[Rishi](https://rishikeshs.com)
+
+{{< related-posts "formbeep-vs-zapier,whatsapp-form-notifications,why-you-are-missing-leads" >}}

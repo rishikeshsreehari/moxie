@@ -74,9 +74,12 @@
 - SOUL: /root/moxie/cmo/employees/kiro-soul.md
 - Output dir: /root/moxie/products/formbeep/copy/
 - Status: COMPLETED
-- Current task: Draft platform "money pages" (WordPress form→WhatsApp, Webflow form→WhatsApp, Framer form notifications) + comparison page (FormBeep vs Web2Phone) — **COMPLETED** (2026-03-31)
-- Last output: /root/moxie/products/formbeep/copy/money-pages-v1.md
-- Next task after completion: Await Rishi review + deploy to site; begin next copy assignment from content calendar
+- Current task: Revise 2 blog posts to match FormBeep blog style — **COMPLETED** (2026-04-01)
+- Last output: 
+  - /root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md (April 1 publish date)
+  - /root/moxie/products/formbeep/copy/blog-post-formbeep-vs-zapier.md (April 2 publish date)
+- Changes made: Added Hugo frontmatter format, narrative tone aligned with why-formbeep, internal hyperlinks to existing posts, image placeholders with {{< img >}} shortcodes, related posts sections, personal sign-offs
+- Next task after completion: Await Rishi review + deploy to site
 - Blockers: None
 
 ### Ember — Outreach & Distribution Lead
@@ -252,10 +255,13 @@ Last verified: 2026-04-01T17:30:00Z
 ---
 
 ## Rishi Action Items (Requires Human)
-1. WordPress plugin resubmission (founder-owned) — implement fixes + resubmit when you’re ready (see /root/moxie/products/formbeep/wp-plugin-fixes.md)
-2. After approval: execute post-approval WP launch plan (I’ll keep it ready on disk)
+1. WordPress plugin resubmission (founder-owned) — implement fixes + resubmit when you're ready (see /root/moxie/products/formbeep/wp-plugin-fixes.md)
+2. After approval: execute post-approval WP launch plan (I'll keep it ready on disk)
 3. Directory submissions — inbox confirmed as hello@formbeep.com; share any existing directory accounts (for Jax)
-4. Review/approve Kiro’s 2 blog drafts for publishing: /root/moxie/products/formbeep/copy/blog-posts-v1.md
+4. ✅ **READY FOR REVIEW** Kiro's 2 blog posts revised and ready to publish:
+   - /root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md (April 1 date)
+   - /root/moxie/products/formbeep/copy/blog-post-formbeep-vs-zapier.md (April 2 date)
+   - Both match FormBeep blog style with Hugo frontmatter, internal links, image placeholders
 5. (Ops) If HQ pushes are needed: confirm MOXIE_GITHUB_WRITE_PAT in /opt/data/.env has write access to rishikeshsreehari/moxie
 
 ---

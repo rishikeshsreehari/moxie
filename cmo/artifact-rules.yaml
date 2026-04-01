@@ -1,28 +1,30 @@
-# Artifact Watch Rules (generic)
-# Used by: /root/moxie_hq/cmo/scripts/process_artifacts.py
-#
-# This is intentionally product-agnostic.
-# Add a new rule by copying the example and adjusting:
-#   - globs (repo-relative)
-#   - task fields (seat/product/priority/output_file)
-#   - target (dispatch_queue or delegation_queue)
-
-version: 1
+# Artifact watcher rules
+# Follow-on tasks triggered when artifact files change.
+# First run seeds state; subsequent runs dispatch on changes.
 
 rules:
-  - name: reddit-intel-brief-updated
+  - name: analytics_report
     enabled: true
-    # Repo-relative glob(s). Use ** for recursive.
     globs:
-      - scripts/reddit-intel/reddit_intel_brief_browser.md
-
-    # When matched artifact changes since last run, create a follow-on work item.
-    target: dispatch_queue   # or delegation_queue
-
+      - "**/analytics-report.md"
+    target: dispatch_queue
     task:
-      seat: Vale
-      priority: P0
-      product: FormBeep
-      task: "Analyze updated Reddit intel artifact and produce positioning + subreddit playbook. Source: {artifact_path}"
-      depends_on: "None"
-      output_file: /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md
+      seat: Forge
+      priority: P2
+      product: "*"
+      task: "Review analytics report and update growth metrics"
+      depends_on: ""
+      output_file: "cmo/analytics/review-{artifact_relpath}.md"
+
+  - name: blog_drafts
+    enabled: true
+    globs:
+      - "**/blog/*.md"
+    target: dispatch_queue
+    task:
+      seat: Kiro
+      priority: P1
+      product: "*"
+      task: "Review and approve blog draft for publication"
+      depends_on: ""
+      output_file: "cmo/blog/approval-{artifact_relpath}.md"
