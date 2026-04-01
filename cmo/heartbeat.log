@@ -1,30 +1,44 @@
 === MOXIE HEARTBEAT ===
-Time: 2026-04-01T19:06:55Z
-Status: IDLE — No actionable tasks for this cycle
+Time: 2026-04-01T20:13:00Z
+Status: SYSTEM HEALTHY — Reconciliation complete, all systems synchronized
 
-IN_PROGRESS TASKS (2):
-1. Jax — Directory submission tracking (P1)
-   Output: /root/moxie/products/formbeep/distribution/directory-submissions-log.md
-   
-2. Astra — SERP demand probe + keyword roadmap (P1)
-   Output: /root/moxie/products/formbeep/seo/us-sms-serp-demand-brief.md
-   Note: Blocked on Rishi approval for paid DataForSEO API calls
+IN_PROGRESS TASKS: 0
+- All workers in COMPLETED, QUEUED, or IDLE state
+
+QUEUED TASKS (ready for promotion):
+1. Luna — Win-back email sequence for churned users (P2)
+   Output: /root/moxie/products/formbeep/lifecycle/win-back-emails.md
+   Status: QUEUED (awaiting promotion)
+   Note: Output file does not exist yet — task not started
 
 EMPLOYEE STATES:
-- IN_PROGRESS: Jax, Astra
-- COMPLETED/IDLE: Vale, Forge, Kiro, Ember, Mira, Nova, Luna, Orion, Pax, Rumi
-- IDLE (scheduled): Iris (weekly Monday 09:30 UTC)
+- QUEUED: Luna (1 task awaiting promotion)
+- COMPLETED: Vale, Forge, Kiro, Ember, Mira, Nova, Jax, Rumi, Pax, Astra, Orion
+- IDLE: Iris (weekly scheduled for 2026-04-06)
 
-QUEUED TASKS AWAITING PROMOTION:
-- Kiro: Approve blog drafts (P1) — founder action needed
-- Jax: Directory day-plan pick (P1)
+RECENTLY COMPLETED:
+- Orion — Prospect refresh (50 new agencies/freelancers, competitor-wedge sequences)
+  Output: /root/moxie/products/formbeep/outbound/prospect-refresh.md
+- Astra — SERP demand brief (US SMS keywords, FormBeep keyword expansion)
+  Output: /root/moxie/products/formbeep/seo/us-sms-serp-demand-brief.md
 
-BLOCKERS:
+BLOCKERS (unresolved):
 1. WordPress plugin resubmission — founder-owned
 2. Reddit account credentials — needed for Ember execution
-3. Directory credentials — Jax needs hello@formbeep.com inbox access
+3. Directory credentials — Jax needs inbox access
+4. Platform marketplace portal access — Pax needs hello@formbeep.com login
 
-SYSTEM HEALTH: All 22 cron jobs active, no failures detected
+SYSTEM HEALTH:
+- All 27 cron jobs active
+- Repeat counters synced to live registry
+- Dispatch queue cleaned (removed corrupted line)
+- No stale/paused/missing jobs
+- KPI Dashboard: Day 2, $0 MRR, 667 visitors
 
----[2026-04-01T19:20:40Z] reconciler: OK - dispatch queue cleaned, crons synced (31 active), issues resolved (Umami), no blockers
-[2026-04-01T19:36:03.020744+00:00] Rumi worker check: No IN_PROGRESS task in dispatch queue. Rumi status=COMPLETED (last: content-gap-scan 2026-03-31). No new Rumi tasks queued.
+NEXT ACTIONS:
+- Next worker cycle: Astra at :17, Jax at :22, Rumi at :27, etc.
+- Reconciler: :13 (next run 21:13 UTC)
+- Autopush: continuous (every 30m)
+
+---
+[2026-04-01T20:13:00Z] Reconciler: Fixed drift in cron table (19 counters), cleaned dispatch queue (removed corrupted line), verified task states
