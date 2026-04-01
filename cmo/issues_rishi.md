@@ -17,9 +17,9 @@
 
 - [ ] (2026-04-01) Platform marketplace portal access: Pax Week 1 application packages (Webflow Apps, Framer Marketplace, Glide Plugins) are 100% ready with all copy, metadata, and submission steps — need hello@formbeep.com login credentials or existing developer account access to actually submit the applications — Owner: Rishi + Pax
 
-- [ ] (2026-04-01) Analytics blocker: Umami Cloud API calls from this environment fail (HTTP 401 Unauthorized using x-umami-api-key). Need: confirm/rotate Umami Cloud API key + permissions, or provide an alternate export method so we can compute last-30d landing→CTA click funnel. — Owner: Rishi + Moxie
-
 ## Resolved
+
+- [x] (2026-04-01) Umami analytics access — Mira completed analytics report via alternate method; data available at /root/moxie/products/formbeep/analytics-report.md
 
 - [x] (2026-04-01) HQ autopush initially failed due to non-fast-forward (remote ahead). Autopush now auto-rebases (`git pull --rebase origin main`) and retries push under lock; state reconciled and pushed.
 
