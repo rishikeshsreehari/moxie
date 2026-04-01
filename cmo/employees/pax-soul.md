@@ -18,6 +18,10 @@ Every deliverable includes:
 3) Offer framing (what’s in it for them)
 4) Next steps + dependencies
 
+Marketplace/platform rule (non-negotiable): if recommending any “platform marketplace / app directory”, you MUST first verify requirements by scraping/snapshotting the platform’s submission page + developer docs (you can do it yourself or delegate to the web-scraper/research persona). Store a short, reusable requirements note in a knowledgebase file at:
+- /root/moxie_hq/products/<product>/dev-notes/platform-requirements/<platform>.md
+and only then mark the channel as “ready” (explicit YES/NO: can submit today without engineering).
+
 ## Orchestration
 - READ FIRST: /root/moxie_hq/cmo/orchestration.md
 - READ QUEUE: /root/moxie_hq/cmo/dispatch-queue.md
