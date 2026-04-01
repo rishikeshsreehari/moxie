@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-04-01T20:42:48Z",
+  "generated_at": "2026-04-01T20:57:51Z",
   "kpis": {
     "pageviews_7d": 103,
     "visitors_7d": 76,
     "signups_7d": 4,
-    "paid_7d": 0,
-    "mrr_usd": 0,
-    "revenue_total_usd": 0
+    "paid_lifetime": 0,
+    "free_lifetime": 0,
+    "revenue_lifetime_usd": 0
   },
   "products": [
     {
@@ -37,17 +37,12 @@
     }
   },
   "running": {
-    "count": 2,
+    "count": 1,
     "tasks": [
       {
         "role": "Kiro",
         "status": "BLOCKED",
         "text": "Approve blog drafts for April 1/2 (requires Rishi review \u2014 see Rishi Action Items)"
-      },
-      {
-        "role": "Luna",
-        "status": "QUEUED",
-        "text": "Create win-back email sequence for churned users: define triggers, compose 3-email win-back series (Day 1/3/7), include re-engagement offer recommendations"
       }
     ],
     "highlights": [
@@ -126,8 +121,8 @@
     {
       "name": "Luna",
       "title": "Lifecycle / CRM Lead",
-      "status": "QUEUED",
-      "working_on": "Win-back email sequence for churned users \u2014 QUEUED (2026-04-01T20:00Z)"
+      "status": "COMPLETED",
+      "working_on": "Win-back email sequence for churned users \u2014 **COMPLETED** (2026-04-02T08:52Z)"
     },
     {
       "name": "Orion",
@@ -144,6 +139,26 @@
   ],
   "github": {
     "recent": [
+      {
+        "hash": "2b8deda",
+        "when": "2026-04-01",
+        "subject": "Autopush: 2026-04-01T20:57:05Z"
+      },
+      {
+        "hash": "08a7b31",
+        "when": "2026-04-01",
+        "subject": "Autopush: 2026-04-01T21:44:00Z"
+      },
+      {
+        "hash": "976de9d",
+        "when": "2026-04-01",
+        "subject": "Autopush: 2026-04-01T20:45:23Z"
+      },
+      {
+        "hash": "34b5e6a",
+        "when": "2026-04-01",
+        "subject": "Dashboard: stronger SCADA background + node titles + fix snapshot schema (name/title)"
+      },
       {
         "hash": "63fbf43",
         "when": "2026-04-01",
@@ -163,32 +178,12 @@
         "hash": "cbe3108",
         "when": "2026-04-01",
         "subject": "Dashboard: richer live layout (network animation, blockers/tasks/github/revenue)"
-      },
-      {
-        "hash": "01f3886",
-        "when": "2026-04-01",
-        "subject": "Autopush: 2026-04-01T20:09:48Z"
-      },
-      {
-        "hash": "52fcb3b",
-        "when": "2026-04-01",
-        "subject": "CMO: daily self-improvement - 2026-04-01"
-      },
-      {
-        "hash": "acb9687",
-        "when": "2026-04-01",
-        "subject": "Add public retro HQ dashboard (7.css, monochrome, sanitized snapshot)"
-      },
-      {
-        "hash": "d07a3b9",
-        "when": "2026-04-01",
-        "subject": "Autopush: 2026-04-01T19:48:35Z"
       }
     ]
   },
   "console": [
     "[BOOT] Moxie HQ online",
-    "[SYNC] snapshot generated 2026-04-01T20:42:48Z",
+    "[SYNC] snapshot generated 2026-04-01T20:57:51Z",
     "[WORK] in_progress=4 queued=1",
     "[NEED] blockers=6"
   ]
