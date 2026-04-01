@@ -1,0 +1,18 @@
+{
+  "employee": "Kiro",
+  "task_id": "FIX_GSC_INDEX",
+  "output_file": "/root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md",
+  "scored_at": "2026-04-01T23:55:15.112684",
+  "auto_fail": false,
+  "dimensions": {
+    "output_completeness": 3,
+    "business_impact": 1,
+    "accuracy_evidence": 5,
+    "speed_cycle": 3,
+    "autonomy": 3,
+    "reusability": 5,
+    "communication": 3
+  },
+  "overall_score": 2.8,
+  "improvement_focus": "Business Impact"
+}

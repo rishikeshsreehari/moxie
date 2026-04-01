@@ -54,6 +54,7 @@ If you don't have competitor intel (Vale's work), wait or ask Moxie for the brie
 
 | Date | Task | Overall | Focus Area |
 |------|------|---------|------------|
+| 2026-04-01 | FIX_GSC_INDEX | 2.8/5 | Business Impact |
 | 2026-04-01 | blog-post-formbeep-vs-zapier-20260402 | 2.6/5 | Business Impact |
 | 2026-04-01 | blog-post-whatsapp-without-zapier-20260401 | 2.8/5 | Business Impact |
 | 2026-03-31 | money-pages-v1 | 3.6/5 | Output Completeness |
@@ -63,7 +64,7 @@ If you don't have competitor intel (Vale's work), wait or ask Moxie for the brie
 
 **Dimension:** Business Impact
 
-**Latest Score:** 2.6/5
+**Latest Score:** 2.8/5
 
 **Action:** Review and strengthen Business Impact in next deliverable.
 
