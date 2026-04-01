@@ -72,17 +72,23 @@
 - Previous output: /root/moxie/products/formbeep/sms-keyword-analysis.md
 - Blockers: DataForSEO validation (50-query plan, $0.10) pending Rishi approval
     72|
-    73|### Kiro — Conversion Copy Lead
-    74|- SOUL: /root/moxie/cmo/employees/kiro-soul.md
-    75|- Output dir: /root/moxie/products/formbeep/copy/
-    76|- Status: COMPLETED
-    77|- Current task: Revise 2 blog posts to match FormBeep blog style — **COMPLETED** (2026-04-01)
-    78|- Last output: 
-    79|  - /root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md (April 1 publish date)
-    80|  - /root/moxie/products/formbeep/copy/blog-post-formbeep-vs-zapier.md (April 2 publish date)
-    81|- Changes made: Added Hugo frontmatter format, narrative tone aligned with why-formbeep, internal hyperlinks to existing posts, image placeholders with {{< img >}} shortcodes, related posts sections, personal sign-offs
-    82|- Next task after completion: Await Rishi review + deploy to site
-    83|- Blockers: None
+### Kiro — Conversion Copy Lead
+- SOUL: /root/moxie/cmo/employees/kiro-soul.md
+- Output dir: /root/moxie/products/formbeep/copy/
+- Status: QUEUED
+- Current task: REWORK 2 blog posts per founder feedback (length + factual fixes + Zapier/WhatsApp research + comparison table + thumbnail prompts) — **QUEUED** (2026-04-01T21:35Z)
+- Last output (rejected drafts; do not publish as-is):
+  - /root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md
+  - /root/moxie/products/formbeep/copy/blog-post-formbeep-vs-zapier.md
+- Rework requirements (must address all):
+  - Expand each post to ~1200–1800 words with additional subheads + examples
+  - Fix: support email = hello@formbeep.com
+  - Fix: free tier = 15 submissions/month
+  - Add frontmatter: slug = whatsapp-without-zapier / formbeep-vs-zapier
+  - Research: Zapier→WhatsApp “out-of-the-box” reality (WhatsApp Business API; Twilio vs 360dialog vs Meta Cloud API) and reflect accurately
+  - Add a comparison table in the vs post
+  - Add frontmatter: thumb_prompt (text prompt for thumbnail generation)
+- Blockers: None
     84|
     85|### Ember — Outreach & Distribution Lead
     86|- SOUL: /root/moxie/cmo/employees/ember-soul.md
