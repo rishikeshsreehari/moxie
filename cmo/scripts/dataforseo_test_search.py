@@ -21,7 +21,12 @@ import re
 from datetime import datetime
 from urllib.request import Request, urlopen
 
-DEFAULT_SECRET_FILE = "/root/moxie_secrets/dataforseo_basic_auth.txt"
+# Secret file is not committed to git; see:
+#   /root/moxie_hq/cmo/resources/credentials/dataforseo.md
+DEFAULT_SECRET_FILE = os.getenv(
+    "DATAFORSEO_BASIC_AUTH_FILE",
+    "/root/moxie_secrets/dataforseo_basic_auth.txt",
+)
 
 
 def load_basic_auth(secret_file: str = DEFAULT_SECRET_FILE) -> str:
@@ -44,11 +49,24 @@ def main():
     ap.add_argument("--keyword", required=True)
     ap.add_argument("--location_code", type=int, default=2840, help="US default")
     ap.add_argument("--language_code", default="en")
-    ap.add_argument("--run", action="store_true", help="Actually call the API (requires approval)")
+
+    # SAFE MODE is default. The API call only occurs with --run AND --approved.
+    ap.add_argument("--run", action="store_true", help="Actually call the API (spends credits)")
+    ap.add_argument(
+        "--approved",
+        action="store_true",
+        help="Set ONLY after explicit Rishi approval (required with --run)",
+    )
+
+    ap.add_argument(
+        "--secret_file",
+        default=DEFAULT_SECRET_FILE,
+        help="Path to Basic Auth secret file (default: $DATAFORSEO_BASIC_AUTH_FILE or /root/moxie_secrets/dataforseo_basic_auth.txt)",
+    )
     ap.add_argument("--out", default="/root/moxie/products/formbeep/seo/dataforseo-test-response.json")
     args = ap.parse_args()
 
-    b64 = load_basic_auth()
+    b64 = load_basic_auth(args.secret_file)
 
     # NOTE: Endpoint/path must be confirmed from DataForSEO docs before --run.
     # Placeholder endpoint to be filled by the assignee after reading docs.
@@ -68,10 +86,14 @@ def main():
     print("Payload:", json.dumps(payload, indent=2))
 
     if not args.run:
-        print("Not running. Pass --run ONLY after Rishi approval.")
+        print("Not running. SAFE MODE active.")
+        print("To run (spends credits): pass --run --approved ONLY after explicit Rishi approval.")
         return
 
-    # If running, do the API call
+    if not args.approved:
+        raise SystemExit("Refusing to run without --approved (requires explicit Rishi approval).")
+
+    # Running: do the API call
     req = Request(
         endpoint,
         data=json.dumps(payload).encode("utf-8"),
