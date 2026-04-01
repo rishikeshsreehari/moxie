@@ -27,6 +27,8 @@ Last updated: 2026-04-01
 
 ## WAITING ON OUTPUT (check when ready)
 
+NOTE: “Platform marketplace submissions” is deferred until an engineering scope exists. It is not a pure submission/credentials task.
+
 3) [REVIEW] Google Search Console quick audit (indexing + queries)
 - Owner: Rishi (review), Forge (creating)
 - Output: /root/moxie/products/formbeep/seo/gsc-quick-audit.md
