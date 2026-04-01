@@ -1,5 +1,7 @@
 # Reddit intel scanner (browser automation, no API)
 
+Current version: **v2026-04-01-v2**
+
 This script gathers comprehensive Reddit intel for FormBeep and the SapiensTech portfolio.
 
 **What it collects:**
