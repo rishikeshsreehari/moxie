@@ -49,6 +49,8 @@
     49|---
     50|
     51|## Employee State
+
+NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic). The current sprint focus is FormBeep, so most tasks route there, but no one is “hired for a product”.
     52|
     53|### Vale — Competitor Intelligence Lead
     54|- SOUL: /root/moxie/cmo/employees/vale-soul.md
