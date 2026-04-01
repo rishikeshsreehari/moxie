@@ -75,22 +75,15 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 - Blockers: DataForSEO validation (50-query plan, $0.10) pending Rishi approval
     72|
 ### Kiro — Conversion Copy Lead
-- SOUL: /root/moxie/cmo/employees/kiro-soul.md
-- Current output dir (sprint): /root/moxie/products/formbeep/copy/
-- Status: IN_PROGRESS
-- Current task: REWORK 2 blog posts per founder feedback (length + factual fixes + Zapier/WhatsApp research + comparison table + thumbnail prompts) — **IN_PROGRESS** (promoted 2026-04-01T22:05Z)
-- Last output (rejected drafts; do not publish as-is):
-  - /root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md
-  - /root/moxie/products/formbeep/copy/blog-post-formbeep-vs-zapier.md
-- Rework requirements (must address all):
-  - Expand each post to ~1200–1800 words with additional subheads + examples
-  - Fix: support email = hello@formbeep.com
-  - Fix: free tier = 15 submissions/month
-  - Add frontmatter: slug = whatsapp-without-zapier / formbeep-vs-zapier
-  - Research: Zapier→WhatsApp “out-of-the-box” reality (WhatsApp Business API; Twilio vs 360dialog vs Meta Cloud API) and reflect accurately
-  - Add a comparison table in the vs post
-  - Add frontmatter: thumb_prompt (text prompt for thumbnail generation)
-- Blockers: None
+|- SOUL: /root/moxie/cmo/employees/kiro-soul.md
+|- Current output dir (sprint): /root/moxie/products/formbeep/copy/
+|- Status: COMPLETED
+|- Current task: REWORK 2 blog posts per founder feedback (length + factual fixes + Zapier/WhatsApp research + comparison table + thumbnail prompts) — **COMPLETED** (2026-04-01T22:45Z)
+|- Last output:
+  - /root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md (~1,650 words, slug: whatsapp-without-zapier)
+  - /root/moxie/products/formbeep/copy/blog-post-formbeep-vs-zapier.md (~1,720 words, slug: formbeep-vs-zapier)
+|- Deliverables: Both posts expanded to target length, factual fixes applied (hello@formbeep.com, 15 submissions/month), frontmatter updated (slug + thumb_prompt), Zapier→WhatsApp API requirements research incorporated, comparison table added to vs post
+|- Blockers: None
     84|
     85|### Ember — Outreach & Distribution Lead
     86|- SOUL: /root/moxie/cmo/employees/ember-soul.md

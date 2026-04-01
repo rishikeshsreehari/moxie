@@ -67,11 +67,13 @@ Last updated: 2026-04-01
   - /root/moxie/products/formbeep/distribution/directory-submissions-log.md
 - Next action: keep logging every submission/approval to avoid duplicates
 
-8) [DECISION] Approve 1 DataForSEO test query (SERP) for US SMS demand
-- Owner: Rishi
-- Budget note: ~$0.50 left; spend should be minimal.
-- Policy: Astra must ask approval before running any paid query.
+8) [APPROVED] DataForSEO US SMS demand probe (50 queries)
+- Owner: Astra (execute), Rishi (approved)
+- Approved: up to 50 API calls (LIVE mode)
+- Cost math: $0.002 per SERP → 50 * $0.002 = $0.10 (plus rounding)
 - Reference: /root/moxie_hq/cmo/resources/credentials/dataforseo.md
+- Output: /root/moxie/products/formbeep/seo/us-sms-serp-demand-brief.md
+- Status: queued for execution
 
 - Owner: Rishi (execute), Jax (ops)
 - Files:
