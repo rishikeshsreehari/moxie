@@ -54,7 +54,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
     52|
     53|### Vale — Competitor Intelligence Lead
     54|- SOUL: /root/moxie/cmo/employees/vale-soul.md
-    55|- Output dir: /root/moxie/products/formbeep/
+    55|- Current output dir (sprint): /root/moxie/products/formbeep/
 - Status: COMPLETED
 - Current task: (FormBeep) Reddit intel analysis → positioning + subreddit playbook — **COMPLETED** (2026-04-01T16:30Z)
 - Last output: /root/moxie/products/formbeep/pricing-war-room-april-2026.md
@@ -66,7 +66,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 - Idle-cycle deliverable: /root/moxie/products/formbeep/pricing-war-room-april-2026.md — Pricing decision analysis ($4 vs $4.99), feature gap matrix, recommend hold price + lean into SMS moat
 ### Astra — Growth Research Lead
 - SOUL: /root/moxie/cmo/employees/astra-soul.md
-- Output dir: /root/moxie/products/formbeep/
+- Current output dir (sprint): /root/moxie/products/formbeep/
 - Status: COMPLETED
 - Current task: SERP demand probe + keyword roadmap (US + overall FormBeep) — **COMPLETED** (2026-04-02T07:00Z)
 - Task details: (1) US SMS demand keywords, (2) overall FormBeep keyword expansion, (3) DataForSEO credits/$ estimate. MUST ask Rishi approval before any paid API calls beyond the 1 already-run test. Creds policy: /root/moxie_hq/cmo/resources/credentials/dataforseo.md
@@ -76,7 +76,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
     72|
 ### Kiro — Conversion Copy Lead
 - SOUL: /root/moxie/cmo/employees/kiro-soul.md
-- Output dir: /root/moxie/products/formbeep/copy/
+- Current output dir (sprint): /root/moxie/products/formbeep/copy/
 - Status: QUEUED
 - Current task: REWORK 2 blog posts per founder feedback (length + factual fixes + Zapier/WhatsApp research + comparison table + thumbnail prompts) — **QUEUED** (2026-04-01T21:35Z)
 - Last output (rejected drafts; do not publish as-is):
@@ -94,7 +94,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
     84|
     85|### Ember — Outreach & Distribution Lead
     86|- SOUL: /root/moxie/cmo/employees/ember-soul.md
-    87|- Output dir: /root/moxie/products/formbeep/outreach/
+    87|- Current output dir (sprint): /root/moxie/products/formbeep/outreach/
     88|- Status: COMPLETED (execution blocked on creds)
     89|- Current task: Manual Reddit posting plan (Non-US/GST focus) + subreddit rules checklist + posting windows + verification steps — **COMPLETED** (2026-04-01T17:32Z)
 - Last output: /root/moxie/products/formbeep/outreach/reddit-posting-tracker.md (2026-04-02 — full rules table + activity log + quick-ref)
@@ -103,9 +103,9 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
     93|- Next task after completion: Execute Week 1 posting — **BLOCKED** on Reddit account credentials (see issues_rishi.md)
     94|- Blockers: Reddit account credentials required for all posting execution (see issues_rishi.md)
     95|
-### Forge — Product/Codebase Inspector
+### Forge — Full Stack Engineer
 - SOUL: /root/moxie/cmo/employees/forge-soul.md
-- Output dir: /root/moxie/products/formbeep/
+- Current output dir (sprint): /root/moxie/products/formbeep/
 - Status: QUEUED
 - Current task: 1) GSC indexing report delivered. 2) Rishi approved and applied patches. 3) Next: Validate GSC indexing post-SEO-fixes (3 days after sitemap resubmit) — **QUEUED** (2026-04-04T12:00Z)
 - Last output: /root/moxie/products/formbeep/analytics/gsc-indexing-report.md (delivered 2026-04-01)
@@ -115,7 +115,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
    105|
    106|### Mira — Analytics & Reporting Lead
    107|- SOUL: /root/moxie/cmo/employees/mira-soul.md
-   108|- Output dir: /root/moxie/products/formbeep/
+   108|- Current output dir (sprint): /root/moxie/products/formbeep/
    109|- Status: COMPLETED
    110|- Current task: Traffic vs keyword opportunity map (use Umami + Astra keyword briefing) — **COMPLETED** (2026-03-31)
    111|- Last output: /root/moxie/products/formbeep/traffic-vs-keywords.md
@@ -126,7 +126,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
    116|
    117|### Nova — Paid Acquisition Lead
    118|- SOUL: /root/moxie/cmo/employees/nova-soul.md
-   119|- Output dir: /root/moxie/cmo/sops/
+   119|- Current output dir (sprint): /root/moxie/cmo/sops/
    120|- Status: COMPLETED
    121|- Current task: Cross-product ads SOP (naming, UTMs, conversion taxonomy, reporting cadence) — **COMPLETED**
    122|- Last output: /root/moxie/cmo/sops/paid-ads-sop.md
@@ -135,7 +135,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
    125|
 ### Jax — SaaS Growth Operations Lead
 - SOUL: /root/moxie/cmo/employees/jax-soul.md
-- Output dir: /root/moxie/products/formbeep/
+- Current output dir (sprint): /root/moxie/products/formbeep/
 - Status: COMPLETED
 - Current task: Daily directory 2-pick + maintenance — **COMPLETED** (2026-04-03)
 - Last output: /root/moxie/products/formbeep/distribution/directory-submissions-log.md & /root/moxie/products/formbeep/distribution/directory-submissions-today-pick.md
@@ -144,7 +144,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
    134|
    135|### Rumi — Blog & Content Analyst
    136|- SOUL: /root/moxie/cmo/employees/rumi-soul.md
-   137|- Output dir: /root/moxie/products/formbeep/
+   137|- Current output dir (sprint): /root/moxie/products/formbeep/
    138|- Status: COMPLETED
    139|- Current task: Bi-weekly content gap scan + trending topic check — **COMPLETED** (2026-03-31)
    140|- Last output: /root/moxie/products/formbeep/content-gap-scan.md
@@ -154,7 +154,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
    144|
    145|### Pax — Partnerships / BD Lead
    146|- SOUL: /root/moxie/cmo/employees/pax-soul.md
-   147|- Output dir: /root/moxie/products/formbeep/partnerships/
+   147|- Current output dir (sprint): /root/moxie/products/formbeep/partnerships/
    148|- Status: COMPLETED
    149|- Current task: Week 3 submissions (Carrd + Typedream integration packages + agency outreach to top 15 targets) — **COMPLETED**
    150|- Last output: /root/moxie/products/formbeep/partnerships/platform-applications-week3.md
@@ -163,7 +163,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
    153|
 ### Luna — Lifecycle / CRM Lead
 |- SOUL: /root/moxie/cmo/employees/luna-soul.md
-|- Output dir: /root/moxie/products/formbeep/lifecycle/
+|- Current output dir (sprint): /root/moxie/products/formbeep/lifecycle/
 |- Status: COMPLETED
 |- Current task: Win-back email sequence for churned users — **COMPLETED** (2026-04-02T08:52Z)
 |- Last output: /root/moxie/products/formbeep/lifecycle/win-back-emails.md
@@ -173,7 +173,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
    162|
 ### Orion — Outbound Lead (Cold Email)
 |- SOUL: /root/moxie/cmo/employees/orion-soul.md
-|- Output dir: /root/moxie/products/formbeep/outbound/
+|- Current output dir (sprint): /root/moxie/products/formbeep/outbound/
 |- Status: COMPLETED
 |- Current task: Prospect list refresh from competitor intel — **COMPLETED** (2026-04-02T08:15Z)
 |- Last output: /root/moxie/products/formbeep/outbound/prospect-refresh.md
@@ -183,7 +183,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
    171|
    172|### Iris — Repo Copy Auditor
    173|- SOUL: /root/moxie/cmo/employees/iris-soul.md
-   174|- Output dir: /root/moxie_hq/products/formbeep/dev-notes/
+   174|- Current output dir (sprint): /root/moxie_hq/products/formbeep/dev-notes/
    175|- Status: IDLE
    176|- Current task: Weekly FormBeep repo copy audit — runs every Monday 09:30 UTC
    177|- Last output: N/A (first run scheduled 2026-04-06)
