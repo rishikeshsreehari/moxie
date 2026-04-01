@@ -15,7 +15,7 @@
 
 - [ ] (2026-04-01) Platform marketplace portal access: Pax Week 1 application packages (Webflow Apps, Framer Marketplace, Glide Plugins) are100% ready with all copy, metadata, and submission steps — need hello@formbeep.com login credentials or existing developer account access to actually submit the applications — Owner: Rishi + Pax
 
-- [ ] (2026-04-01) Analytics blocker: Umami Cloud API calls from this environment fail. Without a browser-like User-Agent we get HTTP 403 w/ Cloudflare error 1010; with a standard User-Agent we get HTTP 401 Unauthorized (suggesting the UMAMI_API_KEY is invalid/revoked or lacks access). Need: rotate/confirm the Umami Cloud API key + permissions (or alternate export path / allowlisting). — Owner: Rishi + Moxie
+- [ ] (2026-04-01) Analytics blocker: Umami Cloud API calls from this environment fail (HTTP 401 Unauthorized using x-umami-api-key). Need: confirm/rotate Umami Cloud API key + permissions, or provide an alternate export method so we can compute last-30d landing→CTA click funnel. — Owner: Rishi + Moxie
 
 ##Resolved
 
