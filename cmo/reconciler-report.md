@@ -1,5 +1,5 @@
 # Orchestration Reconciler Report
-## 2026-04-01T07:13:00Z
+## 2026-04-01T08:13:00Z
 
 ### Changes Made
 None.
@@ -11,10 +11,10 @@ None.
 | Live cron count | 29 active jobs |
 | Cron jobs match docs | ✓ All 29 documented jobs present in registry |
 | Delivery targets | ✓ All set to `local` (specialist crons) |
-| Queue state | ✓ 19 COMPLETED, 0 IN_PROGRESS, 0 QUEUED |
+| Queue state | ✓ All tasks COMPLETED (0 IN_PROGRESS, 0 QUEUED) |
 | Employee states | ✓ COMPLETED (8), IDLE (4), BLOCKED (1 - Ember) |
-| Output files | ✓ All 17 deliverables verified on disk |
-| Repeat counters | Normal usage patterns (8-34/100 range) |
+| Output files | ✓ All 17+ deliverables verified on disk |
+| Repeat counters | Normal usage patterns (32-34/100 range) |
 
 ### Cron Health Summary
 
@@ -23,14 +23,15 @@ None.
 | Worker crons | 11 | Active (staggered hourly) |
 | Product crons | 5 | Active |
 | Governance crons | 6 | Active |
-| Utility crons | 6 | Active |
+| Utility crons | 7 | Active |
 
 ### Next Scheduled Runs (UTC Today)
 
 | Time | Job | Purpose |
 |------|-----|---------|
-| 08:00 | moxie-daily-governance | Hourly orchestrator check |
-| 08:06 | formbeep-hourly-heartbeat | System health |
+| 08:26 | moxie-hq-autocommit-push | Push staged changes |
+| 09:00 | moxie-daily-governance | Hourly orchestrator |
+| 09:12 | vale-worker | Worker check |
 | 10:00 | mira-daily-kpi | Daily traffic snapshot |
 | 10:00 | vale-monthly-competitor-scan | Monthly competitor review |
 
@@ -48,13 +49,13 @@ None.
 - COMPLETED: 19/19 tasks (100%)
 - IN_PROGRESS: 0
 - QUEUED: 0
-- BLOCKED: 0 (credential blockers are in issues_rishi.md, not queue)
+- BLOCKED: 0 (credential blockers logged in issues_rishi.md)
 
 ### Employee Status Summary
 
 | Employee | Status | Next Action |
 |----------|--------|-------------|
-| Vale | COMPLETED | Monthly scan at 10:00 UTC |
+| Vale | COMPLETED | Monthly scan at 10:00 UTC today |
 | Astra | IDLE | Awaiting new assignments |
 | Kiro | COMPLETED | Awaiting Rishi review |
 | Ember | BLOCKED | Needs Reddit credentials |
