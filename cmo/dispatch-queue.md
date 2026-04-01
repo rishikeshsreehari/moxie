@@ -28,7 +28,7 @@
     28|15. [COMPLETED] Kiro | (FormBeep) 2 blog posts from Astra keyword research (finalize after outlines) | Astra + Rumi COMPLETED | /root/moxie/products/formbeep/copy/blog-posts-v1.md
     29|16. [COMPLETED] Forge | (FormBeep) Technical SEO audit (page speed, structured data, meta tags) | None | /root/moxie/products/formbeep/technical-seo-audit.md
     30|12. [COMPLETED] Jax | (FormBeep) Begin P1 directory submissions (ProductHunt, AlternativeTo, BetaList) — full submission pack ready; actual submissions await credentials | Jax directory list COMPLETED + Rishi credentials/approval (see issues_rishi.md) | /root/moxie/products/formbeep/directory-submissions-p1.md
-    31|13. [COMPLETED] Vale | (FormBeep) Monthly competitor monitoring + founder Reddit signal scan (Beepmate u/adambengur, Web2Phone u/ConferenceOnly1415): which subs + what angles worked | Initial intel COMPLETED | /root/moxie/products/formbeep/competitor-monitoring.md
+    31|13. [COMPLETED] Vale | (FormBeep) Monthly competitor monitoring + founder Reddit signal scan (Beepmate u/adambengur, Web2Phone u/ConferenceOnly1415): which subs + what angles worked | Initial intel COMPLETED | /root/moxie/products/formbeep/competitor-monitoring.md — **APRIL 2026 SCAN COMPLETED**
     32|14. [COMPLETED] Rumi | (FormBeep) Bi-weekly content gap scan + trending topic check | Previous content COMPLETED | /root/moxie/products/formbeep/content-gap-scan.md
     33|15. [COMPLETED] Kiro | (FormBeep) Draft platform "money pages" (WordPress form→WhatsApp, Webflow form→WhatsApp, Framer form notifications) + 1 comparison page (FormBeep vs Web2Phone) | Astra keyword set COMPLETED + Kiro landing copy COMPLETED | /root/moxie/products/formbeep/copy/money-pages-v1.md
     34|16. [COMPLETED] Pax | (FormBeep) P0 platform partner program outreach (Webflow, Framer, Glide, Softr, Bubble) + application copy + Bubble plugin spec | Pax targets COMPLETED | /root/moxie/products/formbeep/partnerships/platform-partner-outreach.md
@@ -66,9 +66,10 @@ When marking a task COMPLETED, the employee MUST:
 | Rumi | Bi-weekly Friday | Content gap scan + trending topic check |
 
 ## Vale Status (Current Session)
-- All assigned tasks COMPLETED as of 2026-03-31
-- Next recurring: Monthly scan scheduled 2026-04-01T10:00 UTC (cron: vale-monthly-competitor-scan)
-- Awaiting new ad-hoc competitor intelligence tasks
+- Monthly scan COMPLETED 2026-04-01 (deliverable: competitor-monitoring.md)
+- Next recurring: Monthly scan 2026-05-01 (cron: vale-monthly-competitor-scan)
+- Status: **IDLE** — awaiting new ad-hoc competitor intelligence assignments from Moxie
+- Key findings: WPForms native WA threat, Getform SMS roadmap, 4 new entrants detected
 
 ## Astra Status (Current Session)
 - All 3 sprint tasks COMPLETED as of 2026-03-31 (WP market analysis, Tally teardown, SMS keyword analysis)

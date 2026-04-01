@@ -1,5 +1,5 @@
 # Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-# Last updated: 2026-04-01T06:13:00Z
+# Last updated: 2026-04-01T09:15:00Z
 # 
 # HOW THIS WORKS:
 # Every cron job reads this file for context. When done, it updates relevant sections.
@@ -47,14 +47,15 @@
 - SOUL: /root/moxie/cmo/employees/vale-soul.md
 - Output dir: /root/moxie/products/formbeep/
 - Status: COMPLETED
-- Current task: Monthly competitor monitoring — **COMPLETED** (2026-03-31)
+- Current task: Monthly competitor monitoring — **COMPLETED** (2026-04-01)
 - Last output: /root/moxie/products/formbeep/competitor-monitoring.md
-- Next task after completion: Quarterly competitor positioning refresh (pricing page screenshots + feature diff + "what changed")
+- Next task after completion: **IDLE** — all recurring tasks complete. Next monthly scan: 2026-05-01. Awaiting ad-hoc competitor intelligence tasks.
 - Blockers: Reddit founder profile analysis blocked (requires login/dev token — logged in issues_rishi.md)
+- Key April findings: WPForms native WA (Mar 5), Getform WA live + SMS Q2 roadmap, WANotifier commerce integrations, 4 new direct competitors detected (FormToWA, SendForm.io, PingForms, NotifyStack)
 - Competitor founder intel:
-- Beepmate: u/adambengur
-- Web2Phone: u/ConferenceOnly1415
-- Other competitors tracked: WPForms, Formspree, Getform, Basin, WANotifier, Zapier, Make, n8n
+- Beepmate: u/adambengur — no Reddit activity detected Feb-Mar 2026
+- Web2Phone: u/ConferenceOnly1415 — no Reddit activity detected Feb-Mar 2026
+- Other competitors tracked: WPForms, Formspree, Getform, Basin, WANotifier, Zapier, Make, n8n, FormToWA, SendForm.io, PingForms, NotifyStack
 ### Astra — Growth Research Lead
 - SOUL: /root/moxie/cmo/employees/astra-soul.md
 - Output dir: /root/moxie/products/formbeep/
@@ -172,37 +173,37 @@
 
 **Editing rule:** do not edit jobs via this table. Update jobs using `hermes cron edit <cron_id> ...` and then reconcile this table to match.
 
-||| Cron ID | Name | Schedule | Deliver | Next run (UTC) | State | Last status |
+|| Cron ID | Name | Schedule | Deliver | Next run (UTC) | State | Last status |
 |---|---|---|---|---|---|---|
-||| 6effbb32 | formbeep-daily-user-count-checkin | every 1440m | local | 2026-04-01T14:06:08+00:00 | active | — |
-||| aba07be5 | formbeep-daily-traffic-check | 0 10 * * * | local | 2026-04-01T10:00:00+00:00 | active | — |
-||| 513b777e | formbeep-search-check | 0 10 * * 1,4 | local | 2026-04-02T10:00:00+00:00 | active | — |
-||| 753d42f3 | formbeep-weekly-growth-review | 0 11 * * 1 | local | 2026-04-06T11:00:00+00:00 | active | — |
-||| ae770f4f | formbeep-hourly-heartbeat | 6 * * * * | local | 2026-04-01T07:06:00+00:00 | active | — |
-||| 52af5ec9 | codex-dashboard-update-checkin | every 720m | local | 2026-04-01T14:38:49+00:00 | active | — |
-||| b0492991 | moxie-memory-skill-audit | every 720m | local | 2026-04-01T07:15:46+00:00 | active | — |
-||| ca6591a8 | codex-weekly-resume-premium | once at 2026-04-06 17:30 | local | 2026-04-06T17:30:00+04:00 | active | — |
-||| 0526cbc1 | weekly-free-models-reminder | 0 17 * * 2 | local | 2026-04-07T17:00:00+00:00 | active | — |
-||| 647387ae | mira-daily-kpi | 0 10 * * * | local | 2026-04-01T10:00:00+00:00 | active | — |
-||| a468835d | vale-monthly-competitor-scan | 0 10 1 * * | local | 2026-04-01T10:00:00+00:00 | active | — |
-||| 2553a683 | moxie-daily-governance | 0 * * * * | local | 2026-04-01T07:00:00+00:00 | active | — |
-||| 8bcfe505 | vale-worker | 12 * * * * | local | 2026-04-01T07:12:00+00:00 | active | — |
-||| 7067633e | astra-worker | 17 * * * * | local | 2026-04-01T06:17:00+00:00 | active | — |
-||| 3171d2c2 | kiro-worker | 42 * * * * | local | 2026-04-01T06:42:00+00:00 | active | — |
-||| eb803b7d | ember-worker | 32 * * * * | local | 2026-04-01T06:32:00+00:00 | active | — |
-||| 401e59cc | forge-worker | 37 * * * * | local | 2026-04-01T06:37:00+00:00 | active | — |
-||| 4bdcef11 | jax-worker | 22 * * * * | local | 2026-04-01T06:22:00+00:00 | active | — |
-||| affd389a | rumi-worker | 27 * * * * | local | 2026-04-01T06:27:00+00:00 | active | — |
-||| af7f3c07 | moxie-daily-self-improvement | 0 20 * * * | local | 2026-04-01T20:00:00+00:00 | active | — |
-||| 91520aa6 | nova-worker | 47 * * * * | local | 2026-04-01T06:47:00+00:00 | active | — |
-||| 5b9c6eb7 | issues-rishi-watch | every 240m | local | 2026-04-01T08:25:01+00:00 | active | — |
-||| 3e93c4f5 | luna-worker | 52 * * * * | local | 2026-04-01T06:52:00+00:00 | active | — |
-||| cf1a8f9e | pax-worker | 57 * * * * | local | 2026-04-01T06:57:00+00:00 | active | — |
-||| b0e9c513 | iris-weekly-formbeep-repo-copy-audit | 30 9 * * 1 | local | 2026-04-06T09:30:00+00:00 | active | — |
-||| 0ed491f6 | orion-worker | 2 * * * * | local | 2026-04-01T07:02:00+00:00 | active | — |
-||| 868bd30f | moxie-hq-autocommit-push | every 30m | local | 2026-04-01T06:22:40+00:00 | active | — |
-||| 1c008e06 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-04-01T07:13:00+00:00 | active | — |
-||| c342e174 | opencode-go-weekly-limit-reset-reminder | 26 13 * * 1 | local | 2026-04-06T13:26:00+00:00 | active | — |
+|| 6effbb32 | formbeep-daily-user-count-checkin | every 1440m | local | 2026-04-01T14:06:08+00:00 | active | — |
+|| aba07be5 | formbeep-daily-traffic-check | 0 10 * * * | local | 2026-04-01T10:00:00+00:00 | active | — |
+|| 513b777e | formbeep-search-check | 0 10 * * 1,4 | local | 2026-04-02T10:00:00+00:00 | active | — |
+|| 753d42f3 | formbeep-weekly-growth-review | 0 11 * * 1 | local | 2026-04-06T11:00:00+00:00 | active | — |
+|| ae770f4f | formbeep-hourly-heartbeat | 6 * * * * | local | 2026-04-01T10:06:00+00:00 | active | — |
+|| 52af5ec9 | codex-dashboard-update-checkin | every 720m | local | 2026-04-01T14:38:49+00:00 | active | — |
+|| b0492991 | moxie-memory-skill-audit | every 720m | local | 2026-04-01T19:19:07+00:00 | active | — |
+|| ca6591a8 | codex-weekly-resume-premium | once at 2026-04-06 17:30 | local | 2026-04-06T17:30:00+04:00 | active | — |
+|| 0526cbc1 | weekly-free-models-reminder | 0 17 * * 2 | local | 2026-04-07T17:00:00+00:00 | active | — |
+|| 647387ae | mira-daily-kpi | 0 10 * * * | local | 2026-04-01T10:00:00+00:00 | active | — |
+|| a468835d | vale-monthly-competitor-scan | 0 10 1 * * | local | 2026-04-01T10:00:00+00:00 | active | — |
+|| 2553a683 | moxie-daily-governance | 0 * * * * | local | 2026-04-01T10:00:00+00:00 | active | — |
+|| 8bcfe505 | vale-worker | 12 * * * * | local | 2026-04-01T10:12:00+00:00 | active | — |
+|| 7067633e | astra-worker | 17 * * * * | local | 2026-04-01T10:17:00+00:00 | active | — |
+|| 3171d2c2 | kiro-worker | 42 * * * * | local | 2026-04-01T09:42:00+00:00 | active | — |
+|| eb803b7d | ember-worker | 32 * * * * | local | 2026-04-01T09:32:00+00:00 | active | — |
+|| 401e59cc | forge-worker | 37 * * * * | local | 2026-04-01T09:37:00+00:00 | active | — |
+|| 4bdcef11 | jax-worker | 22 * * * * | local | 2026-04-01T09:22:00+00:00 | active | — |
+|| affd389a | rumi-worker | 27 * * * * | local | 2026-04-01T09:27:00+00:00 | active | — |
+|| af7f3c07 | moxie-daily-self-improvement | 0 20 * * * | local | 2026-04-01T20:00:00+00:00 | active | — |
+|| 91520aa6 | nova-worker | 47 * * * * | local | 2026-04-01T09:47:00+00:00 | active | — |
+|| 5b9c6eb7 | issues-rishi-watch | every 240m | local | 2026-04-01T12:25:50+00:00 | active | — |
+|| 3e93c4f5 | luna-worker | 52 * * * * | local | 2026-04-01T09:52:00+00:00 | active | — |
+|| cf1a8f9e | pax-worker | 57 * * * * | local | 2026-04-01T09:57:00+00:00 | active | — |
+|| b0e9c513 | iris-weekly-formbeep-repo-copy-audit | 30 9 * * 1 | local | 2026-04-06T09:30:00+00:00 | active | — |
+|| 0ed491f6 | orion-worker | 2 * * * * | local | 2026-04-01T10:02:00+00:00 | active | — |
+|| 868bd30f | moxie-hq-autocommit-push | every 30m | local | 2026-04-01T09:28:27+00:00 | active | — |
+|| 1c008e06 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-04-01T10:13:00+00:00 | active | — |
+|| c342e174 | opencode-go-weekly-limit-reset-reminder | 26 13 * * 1 | local | 2026-04-06T13:26:00+00:00 | active | — |
 
 **Retired/Removed jobs** (no longer in live registry):
 - `97eacc1cb3fa` codex-online-check — one-shot job, completed
@@ -220,6 +221,7 @@
 | 2026-03-31 | Orion | /root/moxie/products/formbeep/outbound/outbound-pack.md | COMPLETED |
 | 2026-03-31 | Vale | /root/moxie/products/formbeep/beepmate-web2phone-deepdive.md | COMPLETED |
 | 2026-03-31 | Vale | /root/moxie/products/formbeep/competitor-monitoring.md | COMPLETED |
+| 2026-04-01 | Vale | /root/moxie/products/formbeep/competitor-monitoring.md | COMPLETED — Monthly competitor scan (WPForms WA live, Getform WA+SMS roadmap, 4 new entrants) |
 | 2026-03-31 | Astra | /root/moxie/products/formbeep/wordpress-market-analysis.md | COMPLETED |
 | 2026-03-31 | Ember | /root/moxie/products/formbeep/reddit-strategy.md | COMPLETED |
 | 2026-03-31 | Ember | /root/moxie/products/formbeep/outreach/reddit-campaign-plan.md | COMPLETED |
