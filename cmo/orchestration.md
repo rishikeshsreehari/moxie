@@ -267,15 +267,23 @@ Last verified: 2026-04-01T21:13:00Z
    255|
    256|---
    257|
-   258|## Rishi Action Items (Requires Human)
-   259|1. WordPress plugin resubmission (founder-owned) — implement fixes + resubmit when you're ready (see /root/moxie/products/formbeep/wp-plugin-fixes.md)
-   260|2. After approval: execute post-approval WP launch plan (I'll keep it ready on disk)
-   261|3. Directory submissions — inbox confirmed as hello@formbeep.com; share any existing directory accounts (for Jax)
-   262|4. ✅ **READY FOR REVIEW** Kiro's 2 blog posts revised and ready to publish:
-   263|   - /root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md (April 1 date)
-   264|   - /root/moxie/products/formbeep/copy/blog-post-formbeep-vs-zapier.md (April 2 date)
-   265|   - Both match FormBeep blog style with Hugo frontmatter, internal links, image placeholders
-   266|5. (Ops) If HQ pushes are needed: confirm MOXIE_GITHUB_WRITE_PAT in /opt/data/.env has write access to rishikeshsreehari/moxie
+## Rishi Action Items (Requires Human)
+1. WordPress plugin resubmission (founder-owned) — implement fixes + resubmit when you're ready (see /root/moxie/products/formbeep/wp-plugin-fixes.md)
+2. After approval: execute post-approval WP launch plan (I'll keep it ready on disk)
+3. Directory submissions — inbox confirmed as hello@formbeep.com; share any existing directory accounts (for Jax)
+4. **REWORK REQUESTED** Kiro blog posts (do not publish yet):
+   - Drafts:
+     - /root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md
+     - /root/moxie/products/formbeep/copy/blog-post-formbeep-vs-zapier.md
+   - Required fixes:
+     - Make them longer / more rankable (~1200–1800 words)
+     - Correct: contact email = hello@formbeep.com
+     - Correct: free tier = 15 submissions/month
+     - Set slugs: whatsapp-without-zapier/ and formbeep-vs-zapier/
+     - Research Zapier→WhatsApp reality (out-of-the-box vs needs WhatsApp Business API provider like Twilio/360dialog/Meta Cloud API)
+     - Add a comparison table in the “vs Zapier” post
+     - Add `thumb_prompt:` frontmatter to each post (thumbnail generation prompt text)
+5. (Ops) If HQ pushes are needed: confirm MOXIE_GITHUB_WRITE_PAT in /opt/data/.env has write access to rishikeshsreehari/moxie
    267|
    268|---
    269|
