@@ -23,7 +23,7 @@ fi
 TS=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 
 git commit -m "Autopush: ${TS}" >/dev/null
-COMMIT=$(git rev-parse --short HEAD)
+COMMIT_BEFORE_PUSH=$(git rev-parse --short HEAD)
 
 tmp_log=$(mktemp)
 set +e
@@ -48,8 +48,10 @@ if [ "$PUSH_CODE" -ne 0 ]; then
   tail -n 25 "$tmp_log" >"${tmp_log}.tail" || true
   ERR_SUMMARY=$(tr '\n' ' ' <"${tmp_log}.tail" | sed 's/[[:space:]]\+/ /g' | cut -c1-280)
   /usr/bin/env python3 /root/moxie_hq/cmo/scripts/append_issue_open.py "HQ autopush failed (git push origin main): ${ERR_SUMMARY}"
-  echo "PUSH_FAILED ${COMMIT}"
+  FINAL_COMMIT=$(git rev-parse --short HEAD 2>/dev/null || true)
+  echo "PUSH_FAILED ${FINAL_COMMIT:-$COMMIT_BEFORE_PUSH}"
   exit 1
 fi
 
-echo "PUSHED ${COMMIT}"
+FINAL_COMMIT=$(git rev-parse --short HEAD)
+echo "PUSHED ${FINAL_COMMIT}"

@@ -49,6 +49,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+import random
 
 try:
     from playwright.sync_api import sync_playwright
@@ -129,6 +130,13 @@ def _sleep(s: float) -> None:
     time.sleep(s)
 
 
+def _sleep_jitter(base: float, extra_max: float = 0.8) -> None:
+    """Randomized delay to reduce bot-like timing patterns."""
+    mult = random.uniform(0.75, 1.55)
+    extra = random.uniform(0.0, extra_max)
+    time.sleep(base * mult + extra)
+
+
 def _safe_text(el) -> str:
     try:
         return (el.inner_text() or "").strip()
@@ -172,13 +180,13 @@ class ListingItem:
 
 def _goto(page, url: str) -> None:
     page.goto(url, timeout=60_000)
-    _sleep(WAIT_AFTER_NAV)
+    _sleep_jitter(WAIT_AFTER_NAV)
 
 
 def _scroll_some(page) -> None:
     for _ in range(SCROLL_PULSES):
         page.mouse.wheel(0, SCROLL_PIXELS)
-        _sleep(1.0)
+        _sleep_jitter(1.0, extra_max=0.6)
 
 
 def scrape_old_user_submitted(page, username: str, limit: int) -> List[ListingItem]:
@@ -291,8 +299,9 @@ def scrape_thread_details(page, thread_url: str, comment_limit: int) -> Tuple[st
 
 
 def scrape_old_search(page, query: str, limit: int) -> List[ListingItem]:
+    # Global search; sort by comments to find attention.
     url = f"https://old.reddit.com/search?q={query}&sort=comments&t=all"
-    print(f"Search: {url}")
+    print(f"Search (global): {query}")
     _goto(page, url)
     _scroll_some(page)
 
