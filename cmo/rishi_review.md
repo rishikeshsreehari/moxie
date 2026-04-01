@@ -12,9 +12,9 @@ Last updated: 2026-04-01
 1) [ACTION] Directory submissions — Today’s 2 picks (manual)
 - Owner: Rishi (execute), Jax (prep)
 - File: /root/moxie/products/formbeep/directory-submissions-today-pick.md
-- Picks:
-  - SaaSHub — https://www.saashub.com/suggest
-  - Uneed — https://uneed.best/submit
+- Picks (per latest Jax plan):
+  - BetaList
+  - AlternativeTo
 - Done when: submitted + listing URL logged in /root/moxie/products/formbeep/distribution/directory-submissions-log.md
 
 2) [REVIEW] Landing/traffic snapshot (Umami) — brief review
