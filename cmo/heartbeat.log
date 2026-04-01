@@ -1,7 +1,13 @@
 # Moxie Heartbeat Log
-# Updated: 2026-04-01T23:08:49Z
+# Updated: 2026-04-01T23:19:28Z
 
 ## System Status: OPERATIONAL
+
+## Reconciliation Summary
+- Reconciled Active Crons table vs `hermes cron list`
+- 14 counter drifts corrected
+- 3 next-run timestamps updated
+- 1 anomaly flagged (mira-daily-kpi counter 47→9)
 
 ## Active Work
 - **Jax (IN_PROGRESS)**: Replace failed directory picks with 2 actionable directories
@@ -38,19 +44,12 @@
 3. Directory credentials (hello@formbeep.com verified; accounts needed)
 4. Platform marketplaces (needs engineering scope decision)
 
-## Recent Completions (Last 24h)
-- Ember: Reddit posting tracker (28 subs, rules table)
-- Astra: US SMS SERP demand brief
-- Luna: Win-back email sequence
-- Orion: Prospect list refresh
-- Jax: Directory day-pick (P1 submissions ready)
-
 ## Codex Usage
 - Status: Within limits
 - Premium window: Available
 
 ## Action Required
-- None (system idle, waiting for Jax task completion and/or hour-slot for queued P0s)
+- None (system reconciled, waiting for Jax task completion)
 
 ---
-Log written by: Moxie CMO cron
+Log written by: Moxie CMO reconciler cron
