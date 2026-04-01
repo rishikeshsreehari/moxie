@@ -85,8 +85,45 @@ Targeting matrix template:
 - Any credential/approval requirement becomes one bullet in /root/moxie/cmo/issues_rishi.md.
 - Everything else proceeds autonomously.
 
-## F) How this blueprint evolves (learning loop)
-When a new product teaches us a new angle (e.g., “WhatsApp-first but payments are enterprise,” or “SEO doesn’t work, partnerships do”), we do two things:
+## F) What rules we enforce (so decisions aren’t on a whim)
+Canonical rule list:
+- /root/moxie/cmo/frameworks/framework-rules.md
+
+Key rules (summary)
+- No geo/channel/keyword calls without data (analytics/GSC/keyword data) or explicitly labeled assumptions.
+- Paid only after Phase 1 truth.
+- Execution packs > plans when creds are blocked.
+- Ship to disk with stable paths; verify before claiming.
+
+## G) File paths checklist (so replication is mechanical)
+Canonical checklist:
+- /root/moxie/cmo/frameworks/deliverable-paths-checklist.md
+
+## H) Reusable team structure (worker roles + SOULs)
+We don’t redesign teams per product. We reuse these stable role identities, each with its own SOUL that defines output expectations.
+
+FormBeep team (replicable for next product):
+- Astra — Growth Research Lead (SEO, keywords, demand probes)
+- Ember — Outreach & Distribution Lead (Reddit, directories)
+- Jax — SaaS Growth Operations Lead (distribution ops, daily picks)
+- Kiro — Conversion Copy Lead (landing, blog, emails)
+- Mira — Analytics & Reporting Lead
+- Vale — Competitor Intelligence Lead
+- Pax — Partnerships / BD Lead (marketplaces, integrations)
+- Rumi — Blog & Content Analyst (content gap, topics)
+- Luna — Lifecycle / CRM Lead (onboarding emails)
+- Orion — Outbound Lead (cold email packs)
+- Forge — Product/Codebase Inspector (technical SEO, GSC fixes)
+
+Each role:
+- Has a SOUL at `/root/moxie/cmo/employees/<role>-soul.md`
+- Knows its output directory (product-agnostic; set per product)
+- Follows quality gates: must read KPIs, produce complete deliverables, use atomic writes
+
+If a new product needs a new specialty (e.g., “paid media”), add a new role and its SOUL, then add it to the framework’s “standard roles” list so it becomes reusable.
+
+## I) How this blueprint evolves (learning loop)
+When a new product teaches us a new angle, we do two things:
 1) Write a lessons entry:
    /root/moxie/cmo/frameworks/learned/<YYYY-MM-DD>-<product>-lessons.md
-2) Patch the framework skill templates (intake/questions/decision memo/targeting matrix) so the next product automatically benefits.
+2) Patch the framework skill/templates so the next product automatically benefits.
