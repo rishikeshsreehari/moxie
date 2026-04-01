@@ -1,5 +1,5 @@
      1|# Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-     2|# Last updated: 2026-04-01T22:05:00Z
+     2|# Last updated: 2026-04-01T23:00:00Z
      3|# 
      4|# HOW THIS WORKS:
      5|# Every cron job reads this file for context. When done, it updates relevant sections.
@@ -130,11 +130,11 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 ### Jax — SaaS Growth Operations Lead
 - SOUL: /root/moxie/cmo/employees/jax-soul.md
 - Current output dir (sprint): /root/moxie/products/formbeep/
-- Status: COMPLETED
-- Current task: Daily directory 2-pick + maintenance — **COMPLETED** (2026-04-03)
-- Last output: /root/moxie/products/formbeep/distribution/directory-submissions-log.md & /root/moxie/products/formbeep/distribution/directory-submissions-today-pick.md
-- Next task after completion: Pick #1: BetaList (DR 66), Pick #2: AlternativeTo (DR 91). Awaiting Rishi execution. 4 directories remain (PH deferred, Capterra/G2/GetApp/AppSumo).
-- Blockers: Execution still requires Rishi to submit via the "today-pick" bundles. No new credentials needed for these two picks (form-based).
+- Status: IN_PROGRESS
+- Current task: (FormBeep) Replace failed directory picks with 2 actionable directories (verified requirements + submission bundles) — **IN_PROGRESS** (promoted 2026-04-01T23:00Z)
+- Task ID: jax-20260401_223121-f3bb3a
+- Output path: /root/moxie/products/formbeep/distribution/directory-submissions-today-pick.md
+- Blockers: None
    134|
    135|### Rumi — Blog & Content Analyst
    136|- SOUL: /root/moxie/cmo/employees/rumi-soul.md
