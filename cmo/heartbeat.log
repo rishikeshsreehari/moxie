@@ -1,49 +1,43 @@
 # Moxie CMO Heartbeat Log
-## 2026-04-01T10:18:00Z
+## 2026-04-01T11:06:00Z
 
-### Reconciler Run: Completed
-
-### Changes Made
-- Synced 29 cron jobs in orchestration.md with live registry
-- Updated next run times (19 jobs had drifted)
-- Added "Last verified" timestamp + "Repeats" column
+### Heartbeat: Silent Cron — System Idle
 
 ### System Status: IDLE
+All sprint tasks COMPLETED. No active dispatches.
+
+### Dispatch Queue: 19/19 COMPLETED
+No IN_PROGRESS or QUEUED tasks. All deliverables delivered.
 
 ### Employee Summary
 | Employee | Status | Notes |
 |----------|--------|-------|
-| Vale | IDLE | Monthly competitor scan COMPLETED; next: 2026-05-01 |
+| Vale | IDLE | Monthly competitor scan COMPLETED 2026-04-01; next: 2026-05-01 |
 | Astra | IDLE | All sprint tasks COMPLETED |
 | Kiro | IDLE | Money pages COMPLETED; awaiting Rishi review |
-| Ember | BLOCKED | Reddit credentials needed |
+| Ember | BLOCKED | Reddit credentials needed (issues_rishi.md) |
 | Forge | IDLE | Technical SEO audit COMPLETED; WP awaiting Rishi |
 | Mira | COMPLETED | Daily KPI done |
-| Nova | COMPLETED | Cross-product ads SOP delivered |
+| Nova | IDLE | Cross-product ads SOP delivered; ready for campaign setup |
 | Jax | COMPLETED | P1 submission pack ready; credentials needed |
 | Rumi | COMPLETED | Bi-weekly scan done |
-| Pax | COMPLETED/IDLE | Week 3 done; portal credentials needed |
+| Pax | COMPLETED | Week 3 done; portal credentials needed |
 | Luna | IDLE | Lifecycle emails COMPLETED |
 | Orion | IDLE | Outbound pack ready; sending infra needed |
-| Iris | IDLE | First run: 2026-04-06 |
-
-### Dispatch Queue: 19/19 COMPLETED
-No IN_PROGRESS or QUEUED tasks. Full sprint delivered.
-
-### Open Blockers (issues_rishi.md): 7
-1. Reddit posting (credentials)
-2. WP plugin resubmission (Rishi-owned)
-3. Repo scope rule (informational)
-4. Reddit founder-profile scan (network policy)
-5. Directory submissions (credentials)
-6. Platform portal access (credentials)
-7. Umami API (401/403 errors)
+| Iris | IDLE | First run scheduled: 2026-04-06 09:30 UTC |
 
 ### Active Crons: 29 jobs running
-All healthy, staggered hourly, next runs verified.
+All healthy, staggered across the hour.
+
+### Open Blockers (require human input)
+1. Reddit posting — needs credentials (u/adambengur or dedicated FormBeep account)
+2. WP plugin resubmission — Rishi-owned, waiting on founder
+3. Directory submissions — needs hello@formbeep.com email verification or existing directory accounts
+4. Platform portal access — Webflow/Framer/Glide/Softr credentials needed
+5. Outbound execution — sending infrastructure (email warmup/domain setup) needed
 
 ### Action Required: None
-System is healthy. All deliverables complete. Awaiting founder input on blockers.
+System healthy. All sprint deliverables complete. Awaiting founder input on blockers to unblock execution channels.
 
 ---
-[2026-04-01T10:18:00Z] RECONCILER: Synced cron table with live registry (29 jobs, added last_verified + repeats columns). Pushed commit c8f9886.
+[Previous entry: 2026-04-01T10:18:00Z] RECONCILER: Synced cron table with live registry.
