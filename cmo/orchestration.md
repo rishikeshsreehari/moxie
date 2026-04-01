@@ -1,5 +1,5 @@
 # Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-# Last updated: 2026-03-31T13:00:00Z
+# Last updated: 2026-04-01T06:13:00Z
 # 
 # HOW THIS WORKS:
 # Every cron job reads this file for context. When done, it updates relevant sections.
@@ -134,10 +134,37 @@
 - SOUL: /root/moxie/cmo/employees/pax-soul.md
 - Output dir: /root/moxie/products/formbeep/partnerships/
 - Status: COMPLETED
-- Current task: Week 2 submissions (Softr + follow-ups + Bubble spec) — **COMPLETED**
-- Last output: /root/moxie/products/formbeep/partnerships/platform-applications-week2.md
-- Next task after completion: Week 3 — Carrd/Typedream integrations (P1) + execute agency outreach to top 15 targets + publish formbeep.com/integrations reciprocal directory
-- Blockers: Portal credentials (Webflow/Framer/Glide/Softr) — need hello@formbeep.com access
+- Current task: Week 3 submissions (Carrd + Typedream integration packages + agency outreach to top 15 targets) — **COMPLETED**
+- Last output: /root/moxie/products/formbeep/partnerships/platform-applications-week3.md
+- Next task after completion: Send agency outreach emails once verified contact info obtained; publish formbeep.com/integrations reciprocal directory; follow up on Week 1-2 platform application reviews
+- Blockers: Portal credentials (Webflow/Framer/Glide/Softr), Reddit account for community posts, verified agency email contacts, hello@formbeep.com access for sending
+
+### Luna — Lifecycle / CRM Lead
+- SOUL: /root/moxie/cmo/employees/luna-soul.md
+- Output dir: /root/moxie/products/formbeep/lifecycle/
+- Status: COMPLETED
+- Current task: Lifecycle onboarding + activation emails (Day 0/1/3/7/14) — **COMPLETED** (2026-03-31)
+- Last output: /root/moxie/products/formbeep/lifecycle/onboarding-emails.md
+- Next task after completion: **IDLE** — no queued tasks; awaiting new lifecycle assignments
+- Blockers: None
+
+### Orion — Outbound Lead (Cold Email)
+- SOUL: /root/moxie/cmo/employees/orion-soul.md
+- Output dir: /root/moxie/products/formbeep/outbound/
+- Status: COMPLETED
+- Current task: Outbound pack (150 prospects + 3-step cold email sequence + 5 subjects) — **COMPLETED** (2026-03-31)
+- Last output: /root/moxie/products/formbeep/outbound/outbound-pack.md
+- Next task after completion: **IDLE** — outbound pack ready; awaiting sending infrastructure/credentials for execution
+- Blockers: Sending infrastructure (email warmup/domain setup) required for actual outreach execution
+
+### Iris — Repo Copy Auditor
+- SOUL: /root/moxie/cmo/employees/iris-soul.md
+- Output dir: /root/moxie_hq/products/formbeep/dev-notes/
+- Status: IDLE
+- Current task: Weekly FormBeep repo copy audit — runs every Monday 09:30 UTC
+- Last output: N/A (first run scheduled 2026-04-06)
+- Next task after completion: Weekly copy/UX audit of landing + docs content
+- Blockers: None
 
 ---
 
@@ -145,41 +172,43 @@
 
 **Editing rule:** do not edit jobs via this table. Update jobs using `hermes cron edit <cron_id> ...` and then reconcile this table to match.
 
-| Cron ID | Name | Schedule | Deliver | Next run (UTC) | State | Last status |
+||| Cron ID | Name | Schedule | Deliver | Next run (UTC) | State | Last status |
 |---|---|---|---|---|---|---|
-| 6effbb323126 | formbeep-daily-user-count-checkin | every 1440m | telegram:6699776435 | 2026-03-31T14:05:28.074031+00:00 | scheduled | — |
-| aba07be535ec | formbeep-daily-traffic-check | 0 10 * * * | local | 2026-03-31T10:00:00+00:00 | scheduled | — |
-| 513b777e84ea | formbeep-search-check | 0 10 * * 1,4 | local | 2026-04-02T10:00:00+00:00 | scheduled | — |
-| 753d42f32fbb | formbeep-weekly-growth-review | 0 11 * * 1 | local | 2026-04-06T11:00:00+00:00 | scheduled | — |
-| ae770f4f9ff8 | formbeep-hourly-heartbeat | 6 * * * * | telegram:6699776435 | 2026-03-31T10:06:00+00:00 | scheduled | — |
-| 52af5ec91c81 | codex-dashboard-update-checkin | every 720m | telegram:6699776435 | 2026-03-31T14:37:27.851179+00:00 | scheduled | — |
-| b0492991a3cd | moxie-memory-skill-audit | every 720m | local | 2026-03-31T19:14:06.559706+00:00 | scheduled | — |
-| ca6591a837b7 | codex-weekly-resume-premium | once at 2026-04-06 17:30 | local | 2026-04-06T17:30:00+04:00 | scheduled | — |
-| 0526cbc1e1b5 | weekly-free-models-reminder | 0 17 * * 2 | telegram:6699776435 | 2026-03-31T17:00:00+00:00 | scheduled | — |
-| 97eacc1cb3fa | codex-online-check | once in 30m | telegram | None | completed | — |
-| 6b5fe0d2220c | cmo-dispatch-orchestrator | every 240m | telegram | 2026-03-31T02:36:54.038656+00:00 | paused | — |
-| 647387aeef66 | mira-daily-kpi | 0 10 * * * | local | 2026-03-31T10:00:00+00:00 | scheduled | — |
-| a468835d1396 | vale-monthly-competitor-scan | 0 10 1 * * | local | 2026-04-01T10:00:00+00:00 | scheduled | — |
-| 2553a6832a11 | moxie-daily-governance | 0 * * * * | telegram:6699776435 | 2026-03-31T10:00:00+00:00 | scheduled | — |
-| 8bcfe505aba3 | vale-worker | 12 * * * * | local | 2026-03-31T10:12:00+00:00 | scheduled | — |
-| 7067633e99b9 | astra-worker | 17 * * * * | local | 2026-03-31T09:17:00+00:00 | scheduled | — |
-| 3171d2c2d4b2 | kiro-worker | 42 * * * * | local | 2026-03-31T09:42:00+00:00 | scheduled | — |
-| eb803b7d69a3 | ember-worker | 32 * * * * | local | 2026-03-31T09:32:00+00:00 | scheduled | — |
-| 401e59cc06f5 | forge-worker | 37 * * * * | local | 2026-03-31T09:37:00+00:00 | scheduled | — |
-| 4bdcef11fcc7 | jax-worker | 22 * * * * | local | 2026-03-31T09:22:00+00:00 | scheduled | — |
-| affd389a7783 | rumi-worker | 27 * * * * | local | 2026-03-31T09:27:00+00:00 | scheduled | — |
-| 415e88f0 | wp-plugin-rishi-reminder | every 240m | telegram:6699776435 | 2026-03-31T10:49:47.952239+00:00 | paused | — |
-| af7f3c07b24b | moxie-daily-self-improvement | 0 20 * * * | telegram:6699776435 | 2026-03-31T20:00:00+00:00 | scheduled | — |
-| 904c65910bfe | moxie-forward-reports-to-telegram | every 30m | origin | 2026-03-30T23:45:50.831983+00:00 | paused | — |
-| 91520aa6ca57 | nova-worker | 47 * * * * | local | 2026-03-31T09:47:00+00:00 | scheduled | — |
-| 5b9c6eb70662 | issues-rishi-watch | every 240m | telegram:6699776435 | 2026-03-31T12:11:23.082384+00:00 | scheduled | — |
-| 3e93c4f54be5 | luna-worker | 52 * * * * | local | 2026-03-31T09:52:00+00:00 | scheduled | — |
-| cf1a8f9eec33 | pax-worker | 57 * * * * | local | 2026-03-31T09:57:00+00:00 | scheduled | — |
-| b0e9c5135620 | iris-weekly-formbeep-repo-copy-audit | 30 9 * * 1 | local | 2026-04-06T09:30:00+00:00 | scheduled | — |
-| 0ed491f66432 | orion-worker | 2 * * * * | local | 2026-03-31T10:02:00+00:00 | scheduled | — |
-| 868bd30fe7c1 | moxie-hq-autocommit-push | every 30m | local | 2026-03-31T09:20:07.509631+00:00 | scheduled | — |
-| 1c008e06fe40 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-03-31T10:13:00+00:00 | scheduled | — |
-| c342e1741731 | opencode-go-weekly-limit-reset-reminder | 26 13 * * 1 | telegram:6699776435 | 2026-04-06T13:26:00+00:00 | scheduled | — |
+||| 6effbb32 | formbeep-daily-user-count-checkin | every 1440m | local | 2026-04-01T14:06:08+00:00 | active | — |
+||| aba07be5 | formbeep-daily-traffic-check | 0 10 * * * | local | 2026-04-01T10:00:00+00:00 | active | — |
+||| 513b777e | formbeep-search-check | 0 10 * * 1,4 | local | 2026-04-02T10:00:00+00:00 | active | — |
+||| 753d42f3 | formbeep-weekly-growth-review | 0 11 * * 1 | local | 2026-04-06T11:00:00+00:00 | active | — |
+||| ae770f4f | formbeep-hourly-heartbeat | 6 * * * * | local | 2026-04-01T07:06:00+00:00 | active | — |
+||| 52af5ec9 | codex-dashboard-update-checkin | every 720m | local | 2026-04-01T14:38:49+00:00 | active | — |
+||| b0492991 | moxie-memory-skill-audit | every 720m | local | 2026-04-01T07:15:46+00:00 | active | — |
+||| ca6591a8 | codex-weekly-resume-premium | once at 2026-04-06 17:30 | local | 2026-04-06T17:30:00+04:00 | active | — |
+||| 0526cbc1 | weekly-free-models-reminder | 0 17 * * 2 | local | 2026-04-07T17:00:00+00:00 | active | — |
+||| 647387ae | mira-daily-kpi | 0 10 * * * | local | 2026-04-01T10:00:00+00:00 | active | — |
+||| a468835d | vale-monthly-competitor-scan | 0 10 1 * * | local | 2026-04-01T10:00:00+00:00 | active | — |
+||| 2553a683 | moxie-daily-governance | 0 * * * * | local | 2026-04-01T07:00:00+00:00 | active | — |
+||| 8bcfe505 | vale-worker | 12 * * * * | local | 2026-04-01T07:12:00+00:00 | active | — |
+||| 7067633e | astra-worker | 17 * * * * | local | 2026-04-01T06:17:00+00:00 | active | — |
+||| 3171d2c2 | kiro-worker | 42 * * * * | local | 2026-04-01T06:42:00+00:00 | active | — |
+||| eb803b7d | ember-worker | 32 * * * * | local | 2026-04-01T06:32:00+00:00 | active | — |
+||| 401e59cc | forge-worker | 37 * * * * | local | 2026-04-01T06:37:00+00:00 | active | — |
+||| 4bdcef11 | jax-worker | 22 * * * * | local | 2026-04-01T06:22:00+00:00 | active | — |
+||| affd389a | rumi-worker | 27 * * * * | local | 2026-04-01T06:27:00+00:00 | active | — |
+||| af7f3c07 | moxie-daily-self-improvement | 0 20 * * * | local | 2026-04-01T20:00:00+00:00 | active | — |
+||| 91520aa6 | nova-worker | 47 * * * * | local | 2026-04-01T06:47:00+00:00 | active | — |
+||| 5b9c6eb7 | issues-rishi-watch | every 240m | local | 2026-04-01T08:25:01+00:00 | active | — |
+||| 3e93c4f5 | luna-worker | 52 * * * * | local | 2026-04-01T06:52:00+00:00 | active | — |
+||| cf1a8f9e | pax-worker | 57 * * * * | local | 2026-04-01T06:57:00+00:00 | active | — |
+||| b0e9c513 | iris-weekly-formbeep-repo-copy-audit | 30 9 * * 1 | local | 2026-04-06T09:30:00+00:00 | active | — |
+||| 0ed491f6 | orion-worker | 2 * * * * | local | 2026-04-01T07:02:00+00:00 | active | — |
+||| 868bd30f | moxie-hq-autocommit-push | every 30m | local | 2026-04-01T06:22:40+00:00 | active | — |
+||| 1c008e06 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-04-01T07:13:00+00:00 | active | — |
+||| c342e174 | opencode-go-weekly-limit-reset-reminder | 26 13 * * 1 | local | 2026-04-06T13:26:00+00:00 | active | — |
+
+**Retired/Removed jobs** (no longer in live registry):
+- `97eacc1cb3fa` codex-online-check — one-shot job, completed
+- `6b5fe0d2220c` cmo-dispatch-orchestrator — removed from registry
+- `415e88f0` wp-plugin-rishi-reminder — removed from registry  
+- `904c65910bfe` moxie-forward-reports-to-telegram — removed from registry
 
 ---
 
@@ -201,9 +230,10 @@
 | 2026-03-31 | Kiro | /root/moxie/products/formbeep/copy/blog-post-whatsapp-without-zapier.md | COMPLETED |
 | 2026-03-31 | Kiro | /root/moxie/products/formbeep/copy/blog-post-formbeep-vs-zapier.md | COMPLETED |
 | 2026-03-31 | Kiro | /root/moxie/products/formbeep/copy/blog-posts-v1.md | COMPLETED |
-| 2026-03-31 | Luna | /root/moxie/products/formbeep/lifecycle/onboarding-emails.md | COMPLETED |
-| 2026-03-31 | Pax | /root/moxie/products/formbeep/partnerships/targets-and-outreach.md | COMPLETED
-| 2026-03-31 | Pax | /root/moxie/products/formbeep/partnerships/platform-partner-outreach.md | COMPLETED
+|| 2026-03-31 | Luna | /root/moxie/products/formbeep/lifecycle/onboarding-emails.md | COMPLETED |
+|| 2026-03-31 | Pax | /root/moxie/products/formbeep/partnerships/targets-and-outreach.md | COMPLETED
+|| 2026-03-31 | Pax | /root/moxie/products/formbeep/partnerships/platform-partner-outreach.md | COMPLETED
+|| 2026-04-01 | Pax | /root/moxie/products/formbeep/partnerships/platform-applications-week3.md | COMPLETED
 
 ---
 

@@ -34,9 +34,9 @@
     34|16. [COMPLETED] Pax | (FormBeep) P0 platform partner program outreach (Webflow, Framer, Glide, Softr, Bubble) + application copy + Bubble plugin spec | Pax targets COMPLETED | /root/moxie/products/formbeep/partnerships/platform-partner-outreach.md
 17. [COMPLETED] Pax | (FormBeep) Week 1 platform applications execution — prepared application packages for Webflow Apps, Framer Marketplace, Glide Integrations (copy, metadata, submission steps) | Pax P0 outreach COMPLETED | /root/moxie/products/formbeep/partnerships/platform-applications-week1.md
 18. [COMPLETED] Pax | (FormBeep) Week 2 submissions: Softr integration + follow up on Week 1 application reviews + assign Bubble plugin build task to Forge | Week 1 execution COMPLETED | /root/moxie/products/formbeep/partnerships/platform-applications-week2.md
-    35|
-    36|---
-    37|
+19. [COMPLETED] Pax | (FormBeep) Week 3 submissions (Carrd + Typedream integration packages + agency outreach to top 15 targets) | Week 2 submissions COMPLETED | /root/moxie/products/formbeep/partnerships/platform-applications-week3.md
+---
+
 ## Dispatch Rules
 - Priority 1-6: Currently dispatched. Wait for completion.
 - After any IN_PROGRESS task completes → check dependency chain → promote first QUEUED task with satisfied dependencies to IN_PROGRESS
@@ -55,16 +55,16 @@ When marking a task COMPLETED, the employee MUST:
 6. Suggest next task based on score improvement focus
 
 **Scoring is automatic.** All deliverables graded on 7 dimensions (1-5). Scores appear in SOUL.md under ## Recent Scores.
-    45|
-    46|## Recurring Task Schedule
-    47|| Employee | Frequency | Task |
-    48||----------|-----------|------|
-    49|| Mira | Daily 10:00 UTC | Traffic check + usage snapshot |
-    50|| Mira | Weekly Monday 11:00 UTC | Growth review compilation |
-    51|| Vale | Monthly 1st | Competitor pricing/feature scan |
-    52|| Astra | Bi-weekly Wednesday | Keyword ranking check + new keyword ideas |
-    53|| Rumi | Bi-weekly Friday | Content gap scan + trending topic check |
-    54|
+
+## Recurring Task Schedule
+| Employee | Frequency | Task |
+|----------|-----------|------|
+| Mira | Daily 10:00 UTC | Traffic check + usage snapshot |
+| Mira | Weekly Monday 11:00 UTC | Growth review compilation |
+| Vale | Monthly 1st | Competitor pricing/feature scan |
+| Astra | Bi-weekly Wednesday | Keyword ranking check + new keyword ideas |
+| Rumi | Bi-weekly Friday | Content gap scan + trending topic check |
+
 ## Vale Status (Current Session)
 - All assigned tasks COMPLETED as of 2026-03-31
 - Next recurring: Monthly scan scheduled 2026-04-01T10:00 UTC (cron: vale-monthly-competitor-scan)
