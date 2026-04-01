@@ -2,7 +2,15 @@
 
 Purpose
 - A reusable, product-agnostic framework to take a new indie product from “we have a landing page” to “repeatable acquisition experiments + first revenue” with minimal founder time.
-- This is derived from what we actually executed for FormBeep (SEO + Reddit + directories + partnerships + lifecycle + outbound + analytics + competitor intel + orchestration).
+- Derived from what we actually executed for FormBeep.
+- Includes a replication layer: (1) what the founder should send, (2) what we tweak, (3) what analyses we run, (4) how we target.
+
+Replication layer (use these templates)
+- Product Intake: /opt/data/skills/productivity/product-sprint-framework/templates/product-intake.md
+- Tweak Log: /opt/data/skills/productivity/product-sprint-framework/templates/tweak-log.md
+- Decision Memo: /opt/data/skills/productivity/product-sprint-framework/templates/decision-memo.md
+- Targeting Matrix: /opt/data/skills/productivity/product-sprint-framework/templates/targeting-matrix.md
+- FormBeep case blueprint: /root/moxie/cmo/frameworks/formbeep-replication-blueprint.md
 
 Core operating rules (non-negotiable)
 1) Data-first decisions: do not pick geos/channels/keywords on instinct. Use analytics (Umami/GA/GSC) + keyword data.
