@@ -1,0 +1,215 @@
+/* Monochrome, white background. 7.css provides the retro UI chrome. */
+
+:root {
+  --ink: #111;
+  --paper: #fff;
+  --muted: #666;
+  --line: #111;
+}
+
+html, body {
+  background: var(--paper);
+  color: var(--ink);
+  margin: 0;
+  padding: 0;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  border-bottom: 2px solid var(--line);
+  background: var(--paper);
+}
+
+.brand-title {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.brand-sub {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid var(--line);
+  padding: 8px 10px;
+  font-size: 12px;
+  background: var(--paper);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--line);
+  background: var(--paper);
+  display: inline-block;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  grid-template-columns: 1.1fr 1.7fr 1.2fr;
+  grid-template-areas:
+    "kpi diagram console"
+    "team diagram products";
+}
+
+.window {
+  /* Keep 7.css look but enforce monochrome */
+  border-color: var(--line) !important;
+}
+
+.kpi { grid-area: kpi; }
+.diagram { grid-area: diagram; }
+.console { grid-area: console; }
+.team { grid-area: team; }
+.products { grid-area: products; }
+
+.window-body {
+  background: var(--paper) !important;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.kpi-box {
+  border: 2px solid var(--line);
+  padding: 10px;
+  background: var(--paper);
+}
+
+.kpi-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.kpi-value {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.kpi-foot {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.sep {
+  border: 0;
+  height: 2px;
+  background: var(--line);
+  margin: 12px 0;
+}
+
+.small {
+  font-size: 12px;
+  color: var(--ink);
+}
+
+.hint {
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.center-note {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.diagram-wrap {
+  width: 100%;
+  border: 2px solid var(--line);
+  background: var(--paper);
+  overflow: hidden;
+}
+
+#orgSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.console-box {
+  border: 2px solid var(--line);
+  background: var(--paper);
+  height: 330px;
+  overflow: auto;
+}
+
+.console-box pre {
+  margin: 0;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.35;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.table-wrap {
+  border: 2px solid var(--line);
+}
+
+table.listview {
+  width: 100%;
+}
+
+.footer {
+  padding: 14px 16px;
+  border-top: 2px solid var(--line);
+}
+
+.footer-link {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.sep-dot {
+  margin: 0 8px;
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "kpi console"
+      "diagram diagram"
+      "team products";
+  }
+  .console-box { height: 260px; }
+}
+
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "kpi"
+      "diagram"
+      "console"
+      "team"
+      "products";
+  }
+  .console-box { height: 220px; }
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

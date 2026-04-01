@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-04-01T00:00:00Z",
+  "kpis": {
+    "pageviews_7d": 103,
+    "visitors_7d": 76,
+    "signups_7d": 4,
+    "paid_7d": 0
+  },
+  "products": [
+    {
+      "name": "FormBeep",
+      "status": "active",
+      "pageviews_7d": 103,
+      "signups_7d": 4
+    }
+  ],
+  "systems": {
+    "queue": {
+      "pending": 0,
+      "in_progress": 0
+    },
+    "blockers": {
+      "count": 6
+    },
+    "cron": {
+      "active_jobs": 19,
+      "note": "local-only outputs"
+    }
+  },
+  "team": [
+    {
+      "role": "Moxie (Autonomous CMO)",
+      "status": "ACTIVE",
+      "focus": "Orchestration + decisions"
+    },
+    {
+      "role": "Growth Research",
+      "status": "IN_PROGRESS",
+      "focus": "Demand probes + keyword roadmap"
+    },
+    {
+      "role": "Outreach",
+      "status": "BLOCKED",
+      "focus": "Needs social credentials"
+    },
+    {
+      "role": "Distribution Ops",
+      "status": "BLOCKED",
+      "focus": "Needs inbox / directory access"
+    },
+    {
+      "role": "Conversion Copy",
+      "status": "IDLE",
+      "focus": "Drafts ready"
+    },
+    {
+      "role": "Analytics",
+      "status": "BLOCKED",
+      "focus": "API access restricted"
+    },
+    {
+      "role": "Partnerships",
+      "status": "BLOCKED",
+      "focus": "Portal access pending"
+    },
+    {
+      "role": "Outbound",
+      "status": "IDLE",
+      "focus": "Pack ready"
+    },
+    {
+      "role": "Competitor Intel",
+      "status": "IDLE",
+      "focus": "Monthly scan done"
+    }
+  ],
+  "console": [
+    "[OK] Snapshot loaded (sanitized)",
+    "[INFO] KPI window shows 7D aggregates only",
+    "[INFO] Employee panel shows roles only (no names required)",
+    "[WARN] Some execution is blocked on credentials",
+    "[NOTE] No emails, tokens, IDs, referrers, or customer data are ever included"
+  ]
+}

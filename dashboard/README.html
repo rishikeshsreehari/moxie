@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard Readme</title>
+  <link rel="stylesheet" href="https://unpkg.com/7.css/dist/7.scoped.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="win7">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-title">Dashboard Readme</div>
+        <div class="brand-sub">Public-safe deployment notes</div>
+      </div>
+      <div class="topbar-right">
+        <a class="pill" href="./index.html">← Back</a>
+      </div>
+    </header>
+
+    <main class="grid" style="grid-template-columns: 1fr; grid-template-areas: 'kpi';">
+      <section class="window" style="grid-area:kpi;">
+        <div class="title-bar">
+          <div class="title-bar-text">Rules</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize" disabled></button>
+            <button aria-label="Maximize" disabled></button>
+            <button aria-label="Close" disabled></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <p><strong>This dashboard is intended to be public.</strong> Only publish sanitized, aggregated data.</p>
+          <ul>
+            <li>Data source: <code>public_snapshot.json</code></li>
+            <li>Render: <code>app.js</code> reads snapshot and paints UI</li>
+            <li>UI: 7.css (scoped) + custom monochrome CSS</li>
+          </ul>
+
+          <hr class="sep" />
+
+          <p><strong>Never publish:</strong></p>
+          <ul>
+            <li>Emails / phone numbers</li>
+            <li>API keys / tokens</li>
+            <li>Chat IDs</li>
+            <li>Full URLs with query strings</li>
+            <li>Raw logs</li>
+          </ul>
+
+          <p><strong>OK to publish:</strong></p>
+          <ul>
+            <li>Weekly totals (PV, visitors, signups)</li>
+            <li>Counts of blockers</li>
+            <li>Role-only statuses (IDLE / IN_PROGRESS / BLOCKED)</li>
+            <li>Counts of active jobs</li>
+          </ul>
+
+          <hr class="sep" />
+
+          <p class="small hint">If you want, I can add a generator script later that writes a sanitized snapshot from internal state (private), while keeping this site static and safe.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="small"><a class="footer-link" href="./index.html">Back to dashboard</a></div>
+    </footer>
+  </div>
+</body>
+</html>
