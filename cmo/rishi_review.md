@@ -17,12 +17,11 @@ Last updated: 2026-04-01
   - AlternativeTo
 - Done when: submitted + listing URL logged in /root/moxie/products/formbeep/distribution/directory-submissions-log.md
 
-2) [REVIEW] Landing/traffic snapshot (Umami) — brief review
-- Owner: Rishi (review), Moxie (prepared)
-- Files:
-  - /root/moxie/products/formbeep/analytics/landing-hero-funnel-30d.md
-  - /root/moxie/products/formbeep/briefings/dinner-briefing-2026-04-01.md
-- Decision needed: pick 1 landing-page change to ship this week (copy/visual/proof/CTA)
+2) [REVIEW] Landing page — pick 1 change to ship this week
+- Owner: Rishi (decision), Moxie (ship)
+- File (single decision doc): /root/moxie/products/formbeep/analytics/landing-change-decision.md
+- Source data (optional): /root/moxie/products/formbeep/analytics/landing-hero-funnel-30d.md
+- Decision needed: reply with A/B/C/D from the decision doc
 
 ---
 
