@@ -2,6 +2,13 @@
 """
 SapiensTech Reddit Intel Scanner — Browser Automation (no API)
 
+Version: 2026-04-01-v2
+  - Adds: founder comments + thread details (selftext + top replies) with sentiment
+  - Adds: your profile (rishikeshshari)
+  - Adds: expanded keyword set (formbeep, competitors, key phrases)
+  - Adds: collection summary + richer markdown brief
+  - Details: old.reddit.com scraping, VADER sentiment, Playwright storage state
+
 What it does (high level):
 - Scrapes founder + your own activity (posts + comments) from the web UI (old.reddit.com).
 - For each founder post, opens the thread and samples top-level comments,
@@ -353,7 +360,7 @@ def generate_markdown(
 ) -> str:
     out: List[str] = []
     out.append("# Reddit Intel Brief (Browser Automation)")
-    out.append(f"Generated: {_now_utc()}")
+    out.append(f"Generated: {_now_utc()} — scanner v2026-04-01-v2")
     out.append("")
 
     # Collection summary
@@ -498,7 +505,11 @@ def ensure_logged_in(page) -> None:
 
 
 def main() -> None:
-    print("Starting Reddit intel scan (browser automation, no API)...")
+    print("=" * 60)
+    print("Reddit Intel Scanner v2026-04-01-v2")
+    print("Features: founder activity + thread sentiment; keywords expanded; selftext + reply samples")
+    print("=" * 60)
+    print("\nStarting scan...")
 
     analyzer = SentimentIntensityAnalyzer()
 
