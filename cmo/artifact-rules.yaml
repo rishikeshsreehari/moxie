@@ -1,0 +1,28 @@
+# Artifact Watch Rules (generic)
+# Used by: /root/moxie_hq/cmo/scripts/process_artifacts.py
+#
+# This is intentionally product-agnostic.
+# Add a new rule by copying the example and adjusting:
+#   - globs (repo-relative)
+#   - task fields (seat/product/priority/output_file)
+#   - target (dispatch_queue or delegation_queue)
+
+version: 1
+
+rules:
+  - name: reddit-intel-brief-updated
+    enabled: true
+    # Repo-relative glob(s). Use ** for recursive.
+    globs:
+      - scripts/reddit-intel/reddit_intel_brief_browser.md
+
+    # When matched artifact changes since last run, create a follow-on work item.
+    target: dispatch_queue   # or delegation_queue
+
+    task:
+      seat: Vale
+      priority: P0
+      product: FormBeep
+      task: "Analyze updated Reddit intel artifact and produce positioning + subreddit playbook. Source: {artifact_path}"
+      depends_on: "None"
+      output_file: /root/moxie/products/formbeep/outreach/reddit-intel-positioning-subreddit-playbook.md

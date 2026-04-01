@@ -13,6 +13,13 @@
 # - KPI tracking: every task completion updates KPI progress metrics
 # - Cron collision mitigation: workers staggered across the hour (no longer all at :05)
 # - Model stability: worker crons pinned to Codex-compatible models (avoid max_retries_exhausted from provider/model mismatch)
+#
+# DELEGATION SYSTEM (HQ, product-agnostic):
+# - "Do not run tooling during live chat; queue work orders instead." Append to: /root/moxie_hq/cmo/delegation-queue.md
+# - During ops cycle (or by the orchestration reconciler when appropriate), run:
+#     python3 /root/moxie_hq/cmo/scripts/process_delegation_queue.py
+#     python3 /root/moxie_hq/cmo/scripts/process_artifacts.py
+# - These processors ONLY edit HQ files under /root/moxie_hq/cmo and do not require new cron scheduling.
 
 ---
 
