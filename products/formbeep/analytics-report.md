@@ -1,50 +1,49 @@
 # FormBeep Analytics Report
-Generated: 2026-03-31 00:47 UTC
+Generated: 2026-04-01 10:04 UTC
 
 ## Executive summary
-- Pageviews: 103 vs 216 (-52.3%)
-- Visitors: 76 vs 154 (-50.6%)
-- Visits: 77 vs 170 (-54.7%)
-- Bounce rate proxy: 68/77 visits
+- Pageviews: 90 vs 223 (-59.6%)
+- Visitors: 74 vs 162 (-54.3%)
+- Visits: 74 vs 180 (-58.9%)
+- Bounce rate proxy: 66/74 visits
 
 ## Top pages
-- /: 45
-- /whatsapp-api-pricing/: 15
-- /blog/: 6
-- /integrations/framer/: 4
-- /blog/why-formbeep/: 3
-- /tools/: 2
-- /blog/framer-whatsapp-without-zapier/: 2
-- /blog/webflow-whatsapp-notifications/: 2
-- /privacy/: 2
+- /: 36
+- /whatsapp-api-pricing/: 16
+- /tools/whatsapp-message-formatter/: 4
+- /blog/: 4
+- /integrations/framer/: 3
 - /#pricing: 2
+- /whatsapp-business-api-pricing-2026: 2
+- /blog/framer-whatsapp-without-zapier/: 2
+- /blog/why-formbeep/: 2
+- /blog/webflow-whatsapp-notifications/: 2
 
 ## Top referrers
-- vibecuterie.com: 7
-- reddit.com: 7
-- chatgpt.com: 5
+- chatgpt.com: 6
+- vibecuterie.com: 5
+- reddit.com: 5
 - com.reddit.frontpage: 4
 - google.com: 2
-- t.co: 1
 - rishikeshs.com: 1
 - duckduckgo.com: 1
 
 ## Countries
-- US: 21
-- IN: 9
-- GB: 4
-- FR: 3
-- AR: 3
-- DE: 3
+- US: 22
+- IN: 12
 - CN: 3
 - CO: 3
+- GB: 3
+- DE: 2
+- BR: 2
+- TR: 2
+- AR: 2
 - VN: 2
-- ZA: 2
 
 ## Events
-- Login Click: 3
-- Docs Click: 3
+- Login Click: 2
 - Signup - Hero: 2
+- Docs Click: 2
 - Signup - Pricing: 1
 - Signup - Header: 1
 
