@@ -1,37 +1,68 @@
- Heartbeat log - Moxie CMO System
- Generated: 2026-04-02 10:10:00 UTC
- Cron: silent-heartbeat (no Telegram output)
+# Heartbeat log - Moxie CMO System
+# Generated: 2026-04-02 11:12:00 UTC
+# Cron: silent-heartbeat (no Telegram output)
 
 === SYSTEM STATUS ===
- Working directory: /root/moxie_hq
- Git status: clean (no uncommitted changes)
- Orchestration file: updated 2026-04-02T09:04:57Z
- Dispatch queue: 90+ entries, all dispatched/processed
- Active tasks file: present (legacy format from March 31)
+Working directory: /root/moxie_hq
+Git status: clean (latest commit 0ddc3c6 at 11:10:28Z)
+Orchestration file: updated 2026-04-02T10:22:47Z
+Dispatch queue: 90+ entries, all dispatched/processed
+Heartbeat check: 2026-04-02 11:12:00 UTC
 
-=== EMPLOYEE STATE SUMMARY ===
- Vale (Competitor Intel): COMPLETED - Reddit scan plan delivered
- Astra (Growth Research): COMPLETED - SERP briefs for both products
- Kiro (Copy Lead): COMPLETED - 2 blog posts reworked
- Ember (Outreach): COMPLETED - Reddit posting tracker (blocked on creds)
- Forge (Engineer): Active - multiple P0 tasks in progress
- Mira (Analytics): IN_PROGRESS - Umami daily scaffold (FormBeep) + GSC vs Umami study (blocked on GSC credentials)
- Luna (CRM): COMPLETED - Win-back sequence
- Orion (Outbound): COMPLETED - Prospect list refresh
- Rumi (Content): COMPLETED - X tone kit + channel matrix
- Moxie (CMO): IN_PROGRESS - Founder voice strategy + self-score
+=== RECENT ACTIVITY (since last heartbeat ~10:12 UTC) ===
+- Reconciliation run completed at 10:22Z: synced cron table timestamps, fixed Iris duplicate line
+- Autopush cycle: commit 5329377 (10:34Z) + commit 0ddc3c6 (11:10:28Z)
+- Task completions:
+  * Rumi: 2 tasks (X tone kit, channel matrix, FormBeep SEO outlines)
+  * +9 other completions across employees
+- Worker crons: All 31 jobs healthy, repeat counts advancing normally
+
+=== EMPLOYEE STATE SUMMARY (current) ===
+Vale (Competitor Intel): COMPLETED - Reddit scan plan delivered
+Astra (Growth Research): COMPLETED - SERP briefs both products
+Kiro (Copy Lead): COMPLETED - 2 blog posts reworked
+Ember (Outreach): COMPLETED - Reddit posting tracker (blocked on creds)
+Forge (Engineer): COMPLETED - tracking audits for both products
+Mira (Analytics): IN_PROGRESS - StackStats Umami pull
+Luna (CRM): COMPLETED - Win-back sequence
+Orion (Outbound): COMPLETED - Prospect list refresh
+Rumi (Content): COMPLETED - X tone kit + channel matrix + SEO outlines
+Iris (Copy Auditor): IN_PROGRESS - FormBeep repo copy audit
+Pax (Partnerships): COMPLETED - Week 3 platform applications
+Nova (Paid): COMPLETED - Cross-product ads SOP
+Jax (Growth Ops): COMPLETED - Directory picks (blocked on creds)
+Moxie (CMO): IN_PROGRESS - Founder voice strategy
+
+=== ACTIVE IN_PROGRESS TASKS (dispatch queue) ===
+1. [IN_PROGRESS][P0] FormBeep|Iris - Repo copy audit (iris-20260401_224900-eab63b)
+2. [IN_PROGRESS][P0] StackStats|Mira - Umami Cloud analytics pull (mira-20260401_233129-5c8b35)
+3. [IN_PROGRESS][P0] HQ|Moxie - Founder voice X/IndieHackers strategy (moxie-20260402_001211-c55131)
+
+=== PENDING QUEUED TASKS (ready to promote) ===
+- Forge: Validate GSC indexing post-SEO (awaiting 3-day window)
+- Iris: Live-vs-repo FormBeep landing diff (next step after repo audit)
+- Iris: StackStats live site snapshot
+- Mira: FormBeep daily monitoring scaffold
+- Moxie: CMO self-score + failure analysis
 
 === BLOCKERS / OPEN ISSUES ===
- - FormBeep GSC credentials missing: /root/moxie/secrets/formbeep-search-console.json not found (already logged in issues_rishi.md)
- - Reddit execution: blocked on account credentials (see issues_rishi.md)
- - Directory submissions: Jax task completed but new picks needed after BetaList/AlternativeTo failures
- - Dashboard mobile verification: pending Rishi visual check on device
- - X founder tone audit: pending Rishi X export
- - Platform marketplace dev: Forge to produce requirements matrix
+- GSC credentials missing (already logged in issues_rishi.md)
+- Reddit account credentials needed for Ember execution
+- Directory submission execution blocked after BetaList/AlternativeTo failures
+- X export for evidence-grade tone analysis (Rumi's kit uses fallback corpus)
+- Umami Cloud integration for FormBeep: previously reported FAILED (zero data), needs re-verify
+
+=== METRICS ===
+Completed tasks today (Apr 2): 11+
+Dispatch queue size: ~40 active entries
+Worker cron health: 31/31 active
+Autopush commits today: 2 (latest 11:10:28Z)
+GitHub push loop: healthy (94+ total automated commits)
 
 === NOTES ===
- - Umami Cloud integration for FormBeep previously reported as FAILED (zero data, 500 errors). Status should be re-verified.
- - All workers appear to be functioning; delegation queue being processed.
- - No repository changes to autopush.
+- All workers functioning; delegation queue processing normally
+- No repository changes pending autopush (working tree clean)
+- Reconciliation system stabilizing; Iris duplicate line issue corrected
+- Rumi's outputs (SEO outlines, channel matrix, X tone kit) form foundation for 30-day execution plan
 
 === HEARTBEAT COMPLETE ===

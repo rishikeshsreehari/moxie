@@ -12,8 +12,8 @@ const SAMPLE = {
     pageviews_7d: 103,
     visitors_7d: 76,
     signups_7d: 4,
+    users_lifetime: "—",
     paid_lifetime: 0,
-    free_lifetime: 0,
     revenue_lifetime_usd: 0,
     mrr_usd: 0
   },
@@ -103,6 +103,15 @@ function renderOpsTasks(tasks) {
   });
 }
 
+function dotClass(status) {
+  const s = statusNorm(status);
+  if (s === "ACTIVE") return "active";
+  if (s === "IN_PROGRESS") return "in_progress";
+  if (s === "BLOCKED") return "blocked";
+  if (s === "IDLE" || s === "COMPLETED" || s === "DONE" || s === "WAITING" || s === "QUEUED") return "idle";
+  return "idle";
+}
+
 function renderTeam(team) {
   const tbody = document.getElementById("teamRows");
   if (tbody) tbody.innerHTML = "";
@@ -123,7 +132,7 @@ function renderTeam(team) {
       const tdWork = document.createElement("td");
 
       tdEmp.textContent = `${name}${title}`;
-      tdStatus.textContent = status;
+      tdStatus.innerHTML = `<span class="status-dot ${dotClass(status)}"></span><span class="badge">${status}</span>`;
       tdWork.textContent = clampStr(row.working_on || "", 90);
 
       tr.appendChild(tdEmp);
@@ -145,7 +154,7 @@ function renderTeam(team) {
 
       const right = document.createElement("div");
       right.className = "mono";
-      right.innerHTML = `<span class="badge">${status}</span>`;
+      right.innerHTML = `<span class="status-dot ${dotClass(status)}"></span><span class="badge">${status}</span>`;
 
       top.appendChild(left);
       top.appendChild(right);
@@ -161,6 +170,13 @@ function renderTeam(team) {
   });
 }
 
+function money(v) {
+  if (v === null || v === undefined || v === "") return "—";
+  const n = Number(v);
+  if (Number.isNaN(n)) return String(v);
+  return n.toFixed(n % 1 === 0 ? 0 : 2);
+}
+
 function renderProducts(products) {
   const tbody = document.getElementById("productRows");
   if (tbody) tbody.innerHTML = "";
@@ -170,25 +186,42 @@ function renderProducts(products) {
 
   (products || []).forEach(p => {
     const status = statusNorm(p.status);
-    const pv = String(p.pageviews_7d ?? "—");
-    const su = String(p.signups_7d ?? "—");
+    const users = String(p.users_lifetime ?? "—");
+    const life = money(p.revenue_lifetime_usd);
+    const mrr = money(p.mrr_usd);
+
+    const nameEl = (function () {
+      const a = document.createElement("a");
+      a.textContent = p.name;
+      if (p.url) {
+        a.href = p.url;
+        a.target = "_blank";
+        a.rel = "noopener";
+      } else {
+        a.href = "#";
+      }
+      return a;
+    })();
 
     if (tbody) {
       const tr = document.createElement("tr");
       const tdName = document.createElement("td");
       const tdStatus = document.createElement("td");
-      const tdPv = document.createElement("td");
-      const tdSignups = document.createElement("td");
+      const tdUsers = document.createElement("td");
+      const tdLife = document.createElement("td");
+      const tdMrr = document.createElement("td");
 
-      tdName.textContent = p.name;
-      tdStatus.textContent = status;
-      tdPv.textContent = pv;
-      tdSignups.textContent = su;
+      tdName.appendChild(nameEl);
+      tdStatus.innerHTML = `<span class="status-dot ${dotClass(status)}"></span><span class="badge">${status}</span>`;
+      tdUsers.textContent = users;
+      tdLife.textContent = life;
+      tdMrr.textContent = mrr;
 
       tr.appendChild(tdName);
       tr.appendChild(tdStatus);
-      tr.appendChild(tdPv);
-      tr.appendChild(tdSignups);
+      tr.appendChild(tdUsers);
+      tr.appendChild(tdLife);
+      tr.appendChild(tdMrr);
       tbody.appendChild(tr);
     }
 
@@ -201,18 +234,18 @@ function renderProducts(products) {
 
       const left = document.createElement("div");
       left.className = "rowname";
-      left.textContent = p.name;
+      left.appendChild(nameEl.cloneNode(true));
 
       const right = document.createElement("div");
       right.className = "mono";
-      right.innerHTML = `<span class="badge">${status}</span>`;
+      right.innerHTML = `<span class="status-dot ${dotClass(status)}"></span><span class="badge">${status}</span>`;
 
       top.appendChild(left);
       top.appendChild(right);
 
       const meta = document.createElement("div");
       meta.className = "rowmeta";
-      meta.textContent = `7D PV: ${pv} • 7D Signups: ${su}`;
+      meta.textContent = `Users: ${users} • Lifetime: $${life} • MRR: $${mrr}`;
 
       wrap.appendChild(top);
       wrap.appendChild(meta);
@@ -221,7 +254,7 @@ function renderProducts(products) {
   });
 }
 
-function renderGitHub(recent) {
+function renderShipLog(recent) {
   const ul = document.getElementById("githubList");
   if (!ul) return;
   ul.innerHTML = "";
@@ -234,9 +267,21 @@ function renderGitHub(recent) {
     return;
   }
 
-  arr.slice(0, 8).forEach(c => {
+  arr.slice(0, 10).forEach(c => {
     const li = document.createElement("li");
-    li.textContent = `${c.when || ""}  ${c.hash || ""}  ${c.subject || ""}`.trim();
+    const prefix = `${c.when || ""}  ${c.repo ? "[" + c.repo + "]" : ""}  ${c.hash || ""}`.trim();
+
+    if (c.url) {
+      const a = document.createElement("a");
+      a.href = c.url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = `${prefix}  ${c.subject || ""}`.trim();
+      li.appendChild(a);
+    } else {
+      li.textContent = `${prefix}  ${c.subject || ""}`.trim();
+    }
+
     ul.appendChild(li);
   });
 }
@@ -254,6 +299,40 @@ function renderTerminal(lines) {
   if (!el) return;
   const arr = (lines || []).slice(0, 60);
   el.textContent = arr.length ? arr.join("\n") : "$ echo 'no data'\nno data";
+}
+
+function renderModelBars(models) {
+  const el = document.getElementById("modelBars");
+  if (!el) return;
+
+  const items = (models && models.items) ? models.items : [];
+  if (!items.length) {
+    el.textContent = "(no model data)";
+    return;
+  }
+
+  const max = Math.max(...items.map(x => Number(x.value || 0)));
+  el.innerHTML = "";
+
+  items.slice(0, 6).forEach(x => {
+    const row = document.createElement("div");
+    row.className = "modelbar";
+
+    const label = document.createElement("div");
+    label.textContent = `${x.label} (${x.value})`;
+
+    const bar = document.createElement("div");
+    bar.className = "bar";
+
+    const fill = document.createElement("span");
+    const pct = max ? Math.round((Number(x.value || 0) / max) * 100) : 0;
+    fill.style.width = `${pct}%`;
+
+    bar.appendChild(fill);
+    row.appendChild(label);
+    row.appendChild(bar);
+    el.appendChild(row);
+  });
 }
 
 // ---- SVG / SCADA MAP (draggable nodes + non-overlap) ----
@@ -566,12 +645,14 @@ function renderDiagram(snapshot) {
 function pickTicker(snapshot) {
   const lines = [];
   const k = snapshot.kpis || {};
-  const active = (snapshot.products || []).find(p => String(p.status || "").toUpperCase() === "ACTIVE");
-  if (active) lines.push(`Focus: ${active.name}`);
+  const prods = (snapshot.products || []).map(p => p.name).filter(Boolean);
+  if (prods.length) lines.push(`Products: ${prods.join(" + ")}`);
   lines.push(`Traffic 7D: ${k.pageviews_7d ?? 0} pv / ${k.visitors_7d ?? 0} visitors`);
-  lines.push(`Signups 7D: ${k.signups_7d ?? 0} • Paid lifetime: ${k.paid_lifetime ?? 0}`);
+  lines.push(`Signups 7D: ${k.signups_7d ?? 0} • Users lifetime: ${k.users_lifetime ?? "—"}`);
   lines.push(`Revenue lifetime: $${k.revenue_lifetime_usd ?? 0} • MRR: $${k.mrr_usd ?? 0}`);
   lines.push(`Queue: ${(snapshot.systems?.queue?.in_progress ?? 0)} in progress, ${(snapshot.systems?.queue?.pending ?? 0)} pending`);
+  const insight = (snapshot.insights || [])[Math.floor(Math.random() * Math.max(1, (snapshot.insights || []).length))];
+  if (insight) lines.push(`Insight: ${insight}`);
   return lines[Math.floor(Math.random() * lines.length)];
 }
 
@@ -593,14 +674,21 @@ function renderAll(snapshot) {
   setText("kpiPv", String(k.pageviews_7d ?? "—"));
   setText("kpiVisitors", String(k.visitors_7d ?? "—"));
   setText("kpiSignups", String(k.signups_7d ?? "—"));
+  setText("kpiUsersLifetime", String(k.users_lifetime ?? "—"));
   setText("kpiPaidLifetime", String(k.paid_lifetime ?? "—"));
-  setText("kpiFreeLifetime", String(k.free_lifetime ?? "—"));
   setText("kpiRevenueLifetime", String(k.revenue_lifetime_usd ?? "—"));
   setText("kpiMrr", String(k.mrr_usd ?? "—"));
 
-  // Active product
-  const active = (snapshot.products || []).find(p => String(p.status || "").toUpperCase() === "ACTIVE");
-  setText("activeProduct", active ? active.name : "—");
+  // Product links (optional override from snapshot)
+  const prodLinks = document.getElementById("productLinks");
+  if (prodLinks && Array.isArray(snapshot.products) && snapshot.products.length) {
+    const links = snapshot.products
+      .filter(p => p && p.url)
+      .slice(0, 4)
+      .map(p => `<a href="${p.url}" target="_blank" rel="noopener">${p.link_label || p.url.replace(/^https?:\/\//, "")}</a>`)
+      .join(" • ");
+    if (links) prodLinks.innerHTML = `Products: ${links}`;
+  }
 
   // Systems
   setText("runningCount", String(snapshot.running?.count ?? 0));
@@ -613,7 +701,8 @@ function renderAll(snapshot) {
   renderList("blockersList", snapshot.systems?.blockers?.needs_rishi || [], "—", 8);
   renderTeam(snapshot.team || []);
   renderProducts(snapshot.products || []);
-  renderGitHub(snapshot.github?.recent || []);
+  renderShipLog((snapshot.shipping?.recent || snapshot.github?.recent || []));
+  renderModelBars(snapshot.models || {});
   renderConsole(snapshot.console || []);
   renderTerminal(snapshot.terminal_lines || []);
 

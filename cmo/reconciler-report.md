@@ -1,45 +1,35 @@
-# Reconciler Report
-Generated: 2026-04-02T10:22:00Z | Run 51 (this cron: 50/100 → 51/100 next)
-
-## Summary
-Cron table drift corrected. Dispatch queue format stabilized. All 31 jobs healthy. No structural drift beyond routine repeat-count updates.
+# Orchestrator Reconciliation Report
+# Generated: 2026-04-02T11:17:00Z
 
 ## Changes Made
 
-### 1. Orchestration.md — Active Crons table synced to live registry
-| Fix | Count |
-|---|---|
-| Repeat counts | 15 entries synced (governance run count +5 since last verify) |
-| Next run timestamps | 24 entries advanced to current schedule positions |
-| Last verified | `2026-04-02T05:17:00Z` → `2026-04-02T10:20:00Z` |
+### dispatch-queue.md
+- **Moxie founder-voice task**: Marked `[IN_PROGRESS]` → `[COMPLETED]` — output file verified at `/root/moxie_hq/cmo/strategy/founder-voice-x-indiehackers.md` (4,491 bytes, exists on disk).
 
-Key deltas: moxie-daily-governance 53→59/100, vale-worker 55→61/100, astra-worker 54→61/100, issues-rishi-watch 13→15/200.
+### orchestration.md
+- **Moxie employee state**: Updated from IN_PROGRESS → COMPLETED for founder-voice task; added "Next task after completion" pointer to deep CMO self-review pending in dispatch queue.
+- **Last verified timestamp**: Updated to 2026-04-02T11:17:00Z.
+- **Retired jobs**: Added `01471699` (cmo-deep-audit-5-4-2026-04-02) — one-shot deep audit job, completed and no longer in live registry.
 
-### 2. Dispatch queue — Iris duplicate line corrected
-Line 21 had a spurious `[COMPLETED]` prefix on the live-vs-repo landing diff task. Output file does not exist on disk. Reverted to `[P0] formbeep|Iris` (pending).
+### Cron registry drift
+- **30 live crons** all match the orchestration table (all local delivery, all active).
+- **No drift** in schedule, delivery target, or state between live registry and docs.
 
-### 3. Cron health check
-- **31 jobs active, 0 failures** detected in recent output scans.
-- No new jobs added or removed since last recon at 05:17Z.
-- `cmo-deep-audit-5-4-2026-04-02` (once-at 10:30Z): hasn't fired yet.
-- All hourly workers within expected repeat-count ranges (58-61/100).
-- `moxie-daily-governance`: 41 runs remaining before 100-cycle cap.
+## Open Items (no action taken — awaiting outputs)
 
-### 4. Open items in dispatch queue (awaiting output)
-| Employee | Task | Expected Path | Status |
-|---|---|---|---|
-| Iris | Repo copy audit | dev-notes/2026-04-01-repo-copy-audit.md | No output |
-| Mira | StackStats Umami pull | stackstats/analytics/umami-summary.md | No output |
-| Iris | Live-vs-repo landing diff | dev-notes/live-vs-repo-landing-diff.md | No output |
-| Iris | StackStats live site snap | stackstats/dev-notes/live-site-snapshot.md | No output |
-| Moxie | Founder voice strategy | strategy/founder-voice-x-indiehackers.md | No output |
-| Mira | FormBeep daily scaffold | analytics/targets.md + umami-daily.py | No output |
-| Moxie | CMO self-score | reports/moxie-self-score-2026-04-02.md | No output |
+The following dispatch-queue items have no output files yet (not reconciled until outputs land):
 
-## Drift Status
-| Component | Status | Action Taken |
-|---|---|---|
-| Live cron registry vs orchestration.md | ✅ Synced | Repeat counts + next runs updated |
-| Dispatch queue statuses | ✅ Corrected | Iris false COMPLETED reverted |
-| Issues backlog | ✅ No new blockers | 7 existing open items unchanged |
-| GitHub push loop | ✅ Healthy | 94 commits via moxie-hq-autocommit-push |
+| Employee | Task | Expected Output | Status in Queue |
+|----------|------|-----------------|-----------------|
+| Mira | FormBeep Umami daily monitoring scaffold | targets.md, daily-scoreboard.md, sales-log.md, script | Not started |
+| Mira | GSC vs Umami 28d study | gsc-vs-umami-28d.md | Not started |
+| Moxie | FormBeep failure postmortem | postmortems/2026-04-01-formbeep-failures.md | Not started |
+| Mira | StackStats Umami analytics pull | analytics/umami-summary.md | IN_PROGRESS |
+| Iris | FormBeep live-vs-repo landing diff | live-vs-repo-landing-diff.md | Not started |
+| Iris | StackStats live site snapshot | live-site-snapshot.md | Not started |
+| Moxie | Deep CMO self-review | reports/moxie-self-score-2026-04-02.md | Not started |
+
+## Blockers Requiring Rishi
+- GSC credentials for GSC-vs-Umami study
+- Reddit account credentials for Ember posting execution
+- Directory/inbox verification for Jax submissions

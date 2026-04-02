@@ -33,7 +33,7 @@
           </div>
           <div class="mono" id="liveClock">—</div>
           <div class="mono dim" id="generatedAt">Loading…</div>
-          <div class="mono dim right">SapiensTech ops • live snapshot</div>
+          <div class="mono dim right" id="productLinks">Products: <a href="https://formbeep.com" target="_blank" rel="noopener">formbeep.com</a> • <a href="https://stackstats.app" target="_blank" rel="noopener">stackstats.app</a></div>
         </div>
 
         <div class="hud">
@@ -58,14 +58,14 @@
                 <div class="s">starts / clicks</div>
               </div>
               <div class="kpi">
+                <div class="k">USERS (LIFETIME)</div>
+                <div class="v" id="kpiUsersLifetime">—</div>
+                <div class="s">free + paid</div>
+              </div>
+              <div class="kpi">
                 <div class="k">PAID (LIFETIME)</div>
                 <div class="v" id="kpiPaidLifetime">—</div>
                 <div class="s">customers</div>
-              </div>
-              <div class="kpi">
-                <div class="k">FREE (LIFETIME)</div>
-                <div class="v" id="kpiFreeLifetime">—</div>
-                <div class="s">accounts</div>
               </div>
               <div class="kpi">
                 <div class="k">REVENUE (LIFETIME)</div>
@@ -77,11 +77,7 @@
                 <div class="v">$<span id="kpiMrr">—</span></div>
                 <div class="s">run-rate</div>
               </div>
-              <div class="kpi">
-                <div class="k">FOCUS</div>
-                <div class="v" id="activeProduct">—</div>
-                <div class="s">active product</div>
-              </div>
+
             </div>
 
             <div class="mini mono" aria-label="System summary">
@@ -183,12 +179,13 @@
                   <tr>
                     <th>Product</th>
                     <th>Status</th>
-                    <th>7D PV</th>
-                    <th>7D Signups</th>
+                    <th>Users</th>
+                    <th>Lifetime $</th>
+                    <th>MRR $</th>
                   </tr>
                 </thead>
                 <tbody id="productRows">
-                  <tr><td colspan="4">Loading…</td></tr>
+                  <tr><td colspan="5">Loading…</td></tr>
                 </tbody>
               </table>
             </div>
@@ -198,8 +195,11 @@
 
           <!-- BOTTOM: SHIPPING + TERMINAL -->
           <section class="panel github" aria-label="Shipping">
-            <div class="panel-title">SHIPPING</div>
+            <div class="panel-title">SHIP LOG</div>
             <ul class="list mono" id="githubList"><li>Loading…</li></ul>
+
+            <div class="sub">MODELS</div>
+            <div class="modelbars mono" id="modelBars">Loading…</div>
 
             <div class="sub">TERMINAL</div>
             <section class="window terminal-window" role="region" aria-label="Terminal">
@@ -220,7 +220,7 @@
         </div>
 
         <div class="footer mono dim">
-          Building in public: product metrics + shipping + execution.
+          Building in public: product metrics + shipping + execution. Built by <a href="https://rishikeshs.com" target="_blank" rel="noopener">Rishi</a>.
         </div>
       </div>
     </section>

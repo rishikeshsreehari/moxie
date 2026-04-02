@@ -24,6 +24,8 @@ from __future__ import annotations
 import json
 import re
 import subprocess
+import urllib.request
+import urllib.error
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -32,12 +34,34 @@ ROOT = Path(__file__).resolve().parents[1]
 
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 URL_RE = re.compile(r"https?://[^\s)\]]+")
+UUID_RE = re.compile(r"\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b", re.I)
+
+SAFE_URL_PREFIXES = (
+    "https://formbeep.com",
+    "https://stackstats.app",
+    "https://rishikeshs.com",
+    "https://github.com/rishikeshsreehari/",
+)
 
 
-def scrub(text: str) -> str:
+
+def scrub(text: str, *, allow_safe_urls: bool = False) -> str:
     t = str(text or "")
     t = EMAIL_RE.sub("[email]", t)
-    t = URL_RE.sub("[url]", t)
+    t = UUID_RE.sub("[id]", t)
+
+    if allow_safe_urls:
+        def repl(m: re.Match) -> str:
+            u = m.group(0)
+            for p in SAFE_URL_PREFIXES:
+                if u.startswith(p):
+                    return u
+            return "[url]"
+
+        t = URL_RE.sub(repl, t)
+    else:
+        t = URL_RE.sub("[url]", t)
+
     t = t.replace("/root/", "/")
     return t.strip()
 
