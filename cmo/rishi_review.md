@@ -66,17 +66,21 @@ Last updated: 2026-04-02
 
 ## P0 — WAITING ON OUTPUT (currently missing deliverables)
 
-10) [P0][WAITING] FormBeep repo copy audit (reassigned → Forge)
+10) [P0][COMPLETED] ✅ FormBeep repo copy audit (reassigned → Forge)
 - Output: `/root/moxie_hq/products/formbeep/dev-notes/2026-04-01-repo-copy-audit.md`
+- Completed: 2026-04-02T17:45Z
 
-11) [P0][WAITING] StackStats Umami analytics summary (reassigned → Jax)
+11) [P0][COMPLETED] ✅ StackStats Umami analytics summary (reassigned → Jax)
 - Output: `/root/moxie/products/stackstats/analytics/umami-summary.md`
+- Completed: 2026-04-02T17:30Z
 
-12) [P0][WAITING] FormBeep live vs repo landing diff (queued → Jax)
+12) [P0][COMPLETED] ✅ FormBeep live vs repo landing diff (queued → Jax)
 - Output: `/root/moxie_hq/products/formbeep/dev-notes/live-vs-repo-landing-diff.md`
+- Completed: 2026-04-02T18:33:42Z
 
-13) [P0][WAITING] StackStats live-site snapshot (queued → Jax)
+13) [P0][COMPLETED] ✅ StackStats live-site snapshot (queued → Jax)
 - Output: `/root/moxie/products/stackstats/dev-notes/live-site-snapshot.md`
+- Completed: 2026-04-02T19:20:00Z
 
 ---
 
