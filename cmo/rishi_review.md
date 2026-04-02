@@ -69,14 +69,22 @@ NOTE: “Platform marketplace submissions” is deferred until an engineering sc
   - /root/moxie/products/formbeep/distribution/directory-submissions-log.md
 - Next action: keep logging every submission/approval to avoid duplicates
 
-8) [APPROVED] DataForSEO US SMS demand probe (50 queries)
-- Owner: Astra (execute), Rishi (approved)
-- Approved: up to 50 API calls (LIVE mode)
-- Cost math: $0.002 per SERP → 50 * $0.002 = $0.10 (plus rounding)
-- Reference: /root/moxie_hq/cmo/resources/credentials/dataforseo.md
+8) [REVIEW TOMORROW] US SMS SERP demand research (FormBeep) — DONE
+- Owner: Rishi (review), Astra (completed)
 - Output: /root/moxie/products/formbeep/seo/us-sms-serp-demand-brief.md
-- Status: queued for execution
+- What you’ll decide: GO/NO-GO on emphasizing US SMS vs India WhatsApp first, and which 3 pages to ship first.
 
+9) [REVIEW TOMORROW] Content strategy (all projects): Founder Voice + Build-in-Public for X + IndieHackers
+- Owner: Rishi (review), Moxie (creating)
+- Output (will be created): /root/moxie_hq/cmo/strategy/founder-voice-x-indiehackers.md
+- Includes Golden Rule: where/why/how/when (UTC+country)/why-that-time for every planned post.
+
+10) [REVIEW TOMORROW] FormBeep: GSC vs Umami (last 28d) — what ranks vs what converts
+- Owner: Rishi (review), Mira (creating)
+- Output (will be created): /root/moxie/products/formbeep/analytics/gsc-vs-umami-28d.md
+- Goal: pick the 3 highest-leverage pages to fix this week.
+
+(Directory tracking remains ongoing)
 - Owner: Rishi (execute), Jax (ops)
 - Files:
   - /root/moxie/products/formbeep/directory-submissions-tracker.md
