@@ -209,7 +209,7 @@
 
 **Editing rule:** do not edit jobs via this table. Update jobs using `hermes cron edit <cron_id> ...` and then reconcile this table to match.
 
-Last verified: 2026-04-02T04:15:00Z
+Last verified: 2026-04-02T05:17:00Z
 
 ||| Cron ID | Name | Schedule | Deliver | Next run (UTC) | Repeats | State |||---|---|---|---|---|---|---|
 || 6effbb32 | formbeep-daily-user-count-checkin | every 1440m | local | 2026-04-02T14:06:30+00:00 | ∞ | active |
