@@ -5,10 +5,10 @@
     "formbeep": {
       "paid_lifetime": 10,
       "free_lifetime": null,
-      "mrr_usd": 100,
-      "arr_usd": 1200,
+      "mrr_usd": 4.99,
+      "arr_usd": 59.88,
       "lifetime_revenue_usd": null,
-      "notes": "Founder-reported: ~10 paid customers, ~US$100 MRR. Free/lifetime revenue not yet wired into this snapshot."
+      "notes": "Founder-reported: 10 paid customers, ~US$4.99 MRR. Free/lifetime revenue not yet wired into this snapshot."
     },
     "stackstats": {
       "paid_lifetime": 5,

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T12:00:29Z",
+  "generated_at": "2026-04-02T12:08:50Z",
   "kpis": {
     "pageviews_7d": 103,
     "visitors_7d": 76,
@@ -20,7 +20,7 @@
       "paid_lifetime": 10,
       "free_lifetime": null,
       "revenue_lifetime_usd": null,
-      "mrr_usd": 100,
+      "mrr_usd": 4.99,
       "pageviews_7d": 103,
       "signups_7d": 4
     },
@@ -63,7 +63,7 @@
     }
   },
   "running": {
-    "count": 2,
+    "count": 4,
     "tasks": [
       {
         "role": "Iris",
@@ -74,6 +74,16 @@
         "role": "Mira",
         "status": "IN_PROGRESS",
         "text": "Pull Umami Cloud analytics for StackStats (analytics_id [redacted]]): last 7d + last 30d. Include top sources, top pages, geo split, and any events (purchases) if tracked. Summarize in a founder-readable brief."
+      },
+      {
+        "role": "Moxie",
+        "status": "IN_PROGRESS",
+        "text": "Write a detailed failure analysis for 2026-04-01: why Reddit execution didn't happen, why directory submissions failed, why marketplace submissions were mis-scoped, why founder saw \"no free signups,\" and what system changes prevent recurrence. Must include: timeline, root causes, owner/action mapping, rubric scores for key deliverables, and \"evidence-first\" gating improvements."
+      },
+      {
+        "role": "Forge",
+        "status": "IN_PROGRESS",
+        "text": "Review analytics report and update growth metrics"
       }
     ],
     "highlights": [
@@ -172,6 +182,20 @@
     "recent": [
       {
         "repo": "hq",
+        "hash": "bcd7b89",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02T12:06:08Z",
+        "url": ""
+      },
+      {
+        "repo": "hq",
+        "hash": "56d750c",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02 12:01 UTC",
+        "url": ""
+      },
+      {
+        "repo": "hq",
         "hash": "907e6f5",
         "when": "2026-04-02",
         "subject": "Autopush: 2026-04-02 12:00:08 UTC",
@@ -196,20 +220,6 @@
         "hash": "ba7833f",
         "when": "2026-04-02",
         "subject": "Autopush: 2026-04-02 11:28 UTC",
-        "url": ""
-      },
-      {
-        "repo": "hq",
-        "hash": "0ddc3c6",
-        "when": "2026-04-02",
-        "subject": "Autopush: 2026-04-02T11:10:28Z",
-        "url": ""
-      },
-      {
-        "repo": "hq",
-        "hash": "3a254e8",
-        "when": "2026-04-02",
-        "subject": "Autopush: 2026-04-02T11:07:20Z",
         "url": ""
       }
     ]
@@ -218,6 +228,20 @@
     "recent": [
       {
         "repo": "hq",
+        "hash": "bcd7b89",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02T12:06:08Z",
+        "url": ""
+      },
+      {
+        "repo": "hq",
+        "hash": "56d750c",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02 12:01 UTC",
+        "url": ""
+      },
+      {
+        "repo": "hq",
         "hash": "907e6f5",
         "when": "2026-04-02",
         "subject": "Autopush: 2026-04-02 12:00:08 UTC",
@@ -242,20 +266,6 @@
         "hash": "ba7833f",
         "when": "2026-04-02",
         "subject": "Autopush: 2026-04-02 11:28 UTC",
-        "url": ""
-      },
-      {
-        "repo": "hq",
-        "hash": "0ddc3c6",
-        "when": "2026-04-02",
-        "subject": "Autopush: 2026-04-02T11:10:28Z",
-        "url": ""
-      },
-      {
-        "repo": "hq",
-        "hash": "3a254e8",
-        "when": "2026-04-02",
-        "subject": "Autopush: 2026-04-02T11:07:20Z",
         "url": ""
       }
     ]
@@ -279,7 +289,7 @@
         "label": "stepfun/step-3.5-flash:free",
         "value": 12369,
         "tokens": 12368613,
-        "tool_calls": 1675
+        "tool_calls": 1716
       },
       {
         "label": "gpt-5.2",
@@ -291,7 +301,7 @@
         "label": "qwen/qwen3.6-plus-preview:free",
         "value": 596,
         "tokens": 596034,
-        "tool_calls": 1695
+        "tool_calls": 1712
       },
       {
         "label": "glm-5",
@@ -333,7 +343,7 @@
   },
   "console": [
     "[BOOT] SapiensTech Open Ops online",
-    "[SYNC] snapshot generated 2026-04-02T12:00:29Z",
+    "[SYNC] snapshot generated 2026-04-02T12:08:50Z",
     "[WORK] in_progress=4 queued=1 blocked=3",
     "[THREADS] open=10"
   ],
@@ -348,8 +358,8 @@
     "mrr_usd=100.0 lifetime_usd=237.17",
     "",
     "$ git log -3 --oneline",
-    "hq 907e6f5 Autopush: 2026-04-02 12:00:08 UTC",
-    "hq 2fe3e69 Autopush: 2026-04-02 11:47:38",
-    "hq 5ed502f Autopush: 2026-04-02 11:32:08 UTC"
+    "hq bcd7b89 Autopush: 2026-04-02T12:06:08Z",
+    "hq 56d750c Autopush: 2026-04-02 12:01 UTC",
+    "hq 907e6f5 Autopush: 2026-04-02 12:00:08 UTC"
   ]
 }
