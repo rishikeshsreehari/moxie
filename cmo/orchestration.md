@@ -1,5 +1,5 @@
      1|# Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-     2|# Last updated: 2026-04-02T12:40:00Z
+     2|# Last updated: 2026-04-02T18:03:00Z
      3|     3|     3|# 
      4|     4|     4|# HOW THIS WORKS:
      5|     5|     5|# Every cron job reads this file for context. When done, it updates relevant sections.
@@ -130,12 +130,13 @@
 ### Jax — SaaS Growth Operations Lead
 - SOUL: /root/moxie/cmo/employees/jax-soul.md
 - Current output dir (sprint): /root/moxie/products/formbeep/
-- Status: COMPLETED (queued tasks ready)
-- Current task: (StackStats) Pull Umami Cloud analytics — COMPLETED (2026-04-02T17:30Z)
-- Task ID: jax-20260402_stackstats_umami
-- Output path: /root/moxie/products/stackstats/analytics/umami-summary.md
+- Status: IN_PROGRESS
+- Current task: (FormBeep) Live vs repo landing page diff — **IN_PROGRESS** (promoted 2026-04-02T18:03Z)
+- Task ID: jax-20260402_live_vs_repo_diff
+- Output path: /root/moxie_hq/products/formbeep/dev-notes/live-vs-repo-landing-diff.md
+- Last completed task: (StackStats) Pull Umami Cloud analytics — COMPLETED (2026-04-02T17:30Z)
 - Blockers: None
-- Next queued tasks: (FormBeep) live landing scrape; (StackStats) site snapshot
+- Next queued tasks: (StackStats) site snapshot (queued; waiting for current task completion per Rule 3)
    141|   143|   134|
    142|### Rumi — Blog & Content Analyst
    143|- SOUL: /root/moxie/cmo/employees/rumi-soul.md
