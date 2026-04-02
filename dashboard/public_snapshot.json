@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-02T12:08:50Z",
+  "generated_at": "2026-04-02T12:39:35Z",
   "kpis": {
-    "pageviews_7d": 103,
-    "visitors_7d": 76,
-    "signups_7d": 4,
+    "pageviews_7d": 118,
+    "visitors_7d": 81,
+    "signups_7d": 5,
     "users_lifetime": null,
     "paid_lifetime": 15,
     "free_lifetime": null,
@@ -21,8 +21,8 @@
       "free_lifetime": null,
       "revenue_lifetime_usd": null,
       "mrr_usd": 4.99,
-      "pageviews_7d": 103,
-      "signups_7d": 4
+      "pageviews_7d": 118,
+      "signups_7d": 5
     },
     {
       "name": "StackStats",
