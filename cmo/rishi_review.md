@@ -9,9 +9,10 @@ Last updated: 2026-04-02
 
 ## P0 — BLOCKERS (unblocks execution)
 
-1) [P0][CREDENTIALS] FormBeep Google Search Console access
-- What’s needed: provide `/root/moxie/secrets/formbeep-search-console.json` (service account or whatever format we standardized)
-- Why: blocks weekly SEO reporting + the “GSC vs Umami (28d)” study
+1) [P0][CREDENTIALS] FormBeep Google Search Console access ✅ VERIFIED
+- Provided: `/root/moxie/secrets/google-service-account.json` (symlinked also as `formbeep-search-console.json`).
+- Verified: Service account has `siteFullUser` access to both `sc-domain:formbeep.com` and `sc-domain:stackstats.app`. GSC API call succeeded.
+- Status: **RESOLVED** — unblocks weekly SEO reporting and Mira's GSC vs Umami 28d study.
 
 2) [P0][CREDENTIALS] Reddit posting execution
 - What’s needed: whichever Reddit account we’ll post from (credentials/session) for manual posting.

@@ -6,7 +6,7 @@
 ## Blocker
 
 Google Search Console credential file not found at expected location:
-- `/root/moxie/secrets/formbeep-search-console.json`
+- `/root/moxie/secrets/google-service-account.json` (also symlinked at `/root/moxie/secrets/formbeep-search-console.json` for compatibility)
 
 Without these credentials, the Search Console API cannot be accessed to retrieve performance data for `sc-domain:formbeep.com`.
 

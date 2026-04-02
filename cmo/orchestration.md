@@ -96,17 +96,17 @@
     96|    98|    93|- Next task after completion: Execute Week 1 posting — **BLOCKED** on Reddit account credentials (see issues_rishi.md)
     97|    99|    94|- Blockers: Reddit account credentials required for all posting execution (see issues_rishi.md)
     98|   100|    95|
-    99|### Forge — Full Stack Engineer
-   100|- SOUL: /root/moxie/cmo/employees/forge-soul.md
-   101|- Current output dir (sprint): /root/moxie/products/formbeep/
-   102|- Status: COMPLETED
-   103|- Current task: (FormBeep) Repo audit for Umami event tracking — **COMPLETED** (2026-04-02T03:37Z)
-   104|- Task ID: forge-20260402_001211-30bb2a
-   105|- Output path: /root/moxie_hq/products/formbeep/dev-notes/tracking-implementation-notes.md
-   106|- Last completed task: (FormBeep) Repo audit, identified all CTAs, proposed Umami event tracking + UTM hygiene — **COMPLETED** (2026-04-02T03:37Z)
-   107|- Last output: /root/moxie_hq/products/formbeep/dev-notes/tracking-implementation-notes.md
-   108|- Key findings: 6 existing tracked CTAs identified, 3 recommended additions, UTM hygiene standards documented
-   109|- Blockers: None
+### Forge — Full Stack Engineer
+- SOUL: /root/moxie/cmo/employees/forge-soul.md
+- Current output dir (sprint): /root/moxie/products/formbeep/
+- Status: COMPLETED
+- Current task: (FormBeep) Repo copy/UX audit — **COMPLETED** (2026-04-02T17:45Z)
+- Task ID: forge-20260402_repo_copy_audit
+- Output path: /root/moxie_hq/products/formbeep/dev-notes/2026-04-01-repo-copy-audit.md
+- Last completed task: (FormBeep) Repo copy/UX audit — **COMPLETED** (2026-04-02T17:45Z)
+- Last output: /root/moxie_hq/products/formbeep/dev-notes/2026-04-01-repo-copy-audit.md
+- Key findings: 10 exact copy/UX improvements with paste-ready replacements; “Free Forever” corrected to 15 alerts/mo
+- Blockers: None
    110|   112|   105|
 ### Mira — Analytics & Reporting Lead
 - SOUL: /root/moxie/cmo/employees/mira-soul.md
