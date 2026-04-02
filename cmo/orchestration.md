@@ -1,5 +1,5 @@
      1|# Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-     2|# Last updated: 2026-04-02T09:30:00Z
+     2|# Last updated: 2026-04-02T00:06:00Z
      3|# 
      4|# HOW THIS WORKS:
      5|# Every cron job reads this file for context. When done, it updates relevant sections.
@@ -107,16 +107,18 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 - Next task after completion: Monitor Index Coverage for taxonomy page removal; measure impression changes for blog pages
 - Blockers: None
    105|
-   106|### Mira — Analytics & Reporting Lead
-   107|- SOUL: /root/moxie/cmo/employees/mira-soul.md
-   108|- Current output dir (sprint): /root/moxie/products/formbeep/
-   109|- Status: COMPLETED
-   110|- Current task: Traffic vs keyword opportunity map (use Umami + Astra keyword briefing) — **COMPLETED** (2026-03-31)
-   111|- Last output: /root/moxie/products/formbeep/traffic-vs-keywords.md
-   112|- Umami: cloud.umami.is, website ID: 750e37be-3e04-4672-abe8-a2983afb9a4d
-   113|- Next task after completion: Improve KPI reporting outputs (no new cron jobs without approval)
-   114|- Blockers: None
-   115|- Codex tracking: /root/moxie/cmo/codex-usage.md + /root/moxie/cmo/codex-usage-tracker.csv
+### Mira — Analytics & Reporting Lead
+- SOUL: /root/moxie/cmo/employees/mira-soul.md
+- Current output dir (sprint): /root/moxie/products/stackstats/
+- Status: IN_PROGRESS
+- Current task: (StackStats) Pull Umami Cloud analytics for StackStats (website_id 52a19925-9bf4-4efe-9a42-ecc2a7f08d81): last 7d + last 30d. Include top sources, top pages, geo split, and any events — **IN_PROGRESS** (promoted 2026-04-02T00:06Z)
+- Task ID: mira-20260401_233129-5c8b35
+- Output path: /root/moxie/products/stackstats/analytics/umami-summary.md
+- Umami: cloud.umami.is, website ID: 52a19925-9bf4-4efe-9a42-ecc2a7f08d81
+- Last output: /root/moxie/products/formbeep/traffic-vs-keywords.md
+- Next task after completion: Continue analytics support for StackStats growth plan
+- Blockers: None
+- Codex tracking: /root/moxie/cmo/codex-usage.md + /root/moxie/cmo/codex-usage-tracker.csv
    116|
    117|### Nova — Paid Acquisition Lead
    118|- SOUL: /root/moxie/cmo/employees/nova-soul.md
@@ -175,14 +177,16 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 |- Next task after completion: Continue outbound optimization (subject tests, sequence refinement)
 |- Blockers: Sending infrastructure (email warmup/domain setup) required for actual outreach execution
    171|
-   172|### Iris — Repo Copy Auditor
-   173|- SOUL: /root/moxie/cmo/employees/iris-soul.md
-   174|- Current output dir (sprint): /root/moxie_hq/products/formbeep/dev-notes/
-   175|- Status: IDLE
-   176|- Current task: Weekly FormBeep repo copy audit — runs every Monday 09:30 UTC
-   177|- Last output: N/A (first run scheduled 2026-04-06)
-   178|- Next task after completion: Weekly copy/UX audit of landing + docs content
-   179|- Blockers: None
+### Iris — Repo Copy Auditor
+- SOUL: /root/moxie/cmo/employees/iris-soul.md
+- Current output dir (sprint): /root/moxie_hq/products/formbeep/dev-notes/
+- Status: IN_PROGRESS
+- Current task: (FormBeep) Inspect the ACTUAL current landing page content in the repo (headlines, breadcrumbs, free-tier claims) and deliver 10 exact copy/UX improvements with file+section pointers — **IN_PROGRESS** (promoted 2026-04-02T00:06Z)
+- Task ID: iris-20260401_224900-eab63b
+- Output path: /root/moxie_hq/products/formbeep/dev-notes/2026-04-01-repo-copy-audit.md
+- Last output: N/A (first run)
+- Next task after completion: Weekly copy/UX audit of landing + docs content
+- Blockers: None
    180|
    181|---
    182|
