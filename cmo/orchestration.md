@@ -194,15 +194,15 @@
    194|   193|- Blockers: None
    195|   194|   180|
    196|   195|   181|
-   197|   196|### Moxie — CMO / Orchestrator
-   198|   197|- SOUL: /root/moxie_hq/SOUL.md
-   199|   198|- Current output dir (sprint): /root/moxie_hq/cmo/
-200|   200|   200|   199|- Status: IN_PROGRESS
-201|   201|   201|   200|- Current task: (FormBeep) Postmortem: detailed failure analysis — **IN_PROGRESS** (promoted 2026-04-02T12:01Z)
-202|   202|   202|   201|- Previous: (HQ) Create all-products Founder Voice / Build-in-Public strategy — **COMPLETED** (2026-04-02T11:00Z)
-203|   203|   203|   202|- Output: /root/moxie_hq/cmo/postmortems/2026-04-01-formbeep-failures.md
-204|   204|   204|   203|- Next task: Deep CMO self-review (queued in dispatch-queue.md)
-205|   205|   205|   204|- Blockers: None
+### Moxie — CMO / Orchestrator
+- SOUL: /root/moxie_hq/SOUL.md
+- Current output dir (sprint): /root/moxie_hq/cmo/
+- Status: COMPLETED (all P0 tasks done; awaiting next assignments)
+- Current task: (FormBeep) Postmortem: detailed failure analysis — **COMPLETED** (2026-04-02T15:33Z)
+- Previous: (HQ) Create all-products Founder Voice / Build-in-Public strategy — **COMPLETED** (2026-04-02T11:00Z)
+- Last output: /root/moxie_hq/cmo/postmortems/2026-04-01-formbeep-failures.md
+- Next task: Deep CMO self-review (queued in dispatch-queue.md) — **READY TO START**
+- Blockers: None
 206|     206|---
 207|     207|   182|
 208|     208|   183|### Forge — Full Stack Engineer (additional task)
