@@ -1,22 +1,27 @@
 #!/usr/bin/env python3
+"""DEPRECATED shim.
+
+This file previously attempted to use `flock` but accidentally released the lock
+before running git commands (lock scope bug).
+
+Use the canonical autopush entrypoint instead:
+  python3 /root/moxie_hq/cmo/scripts/hq_autopush_locked.py
+
+This shim remains for backwards compatibility and simply forwards to the
+canonical script.
+"""
+
 import os
 import subprocess
 import sys
-import datetime
 
-os.chdir('/root/moxie_hq')
+REPO = "/root/moxie_hq"
 
-# Ensure lock directory exists
-lock_path = '.git/moxie_autopush.lock'
-open(lock_path, 'a').close()
 
-# Acquire lock via flock
-acquire = subprocess.run(['flock', '-w', '60', lock_path, 'true'])
-if acquire.returncode != 0:
-    print('Failed to acquire lock')
-    sys.exit(1)
+def main() -> int:
+    os.chdir(REPO)
+    return subprocess.run([sys.executable, "cmo/scripts/hq_autopush_locked.py"]).returncode
 
-# Run gated push inside the lock shell
-cmd = '''git config user.name "Moxie" && git config user.email "moxie@rishikeshs.com" && git add -A && if git diff --cached --quiet; then echo "No staged changes."; else timestamp=$(date -u +"%Y-%m-%d %H:%M:%S UTC"); git commit -m "Autopush: $timestamp" && git push origin main; fi'''
-result = subprocess.run(['bash', '-c', cmd], capture_output=False, text=True)
-sys.exit(result.returncode)
+
+if __name__ == "__main__":
+    raise SystemExit(main())
