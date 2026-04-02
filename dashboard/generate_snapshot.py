@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import json
 import re
+import sqlite3
 import subprocess
 import urllib.request
 import urllib.error
@@ -291,6 +292,130 @@ def git_recent(max_items: int = 8) -> list[dict[str, str]]:
         h, d, s = (ln.split("|", 2) + ["", "", ""])[:3]
         rows.append({"hash": h, "when": d, "subject": scrub(s)})
     return rows
+
+
+def _git_remote_http_base(repo_dir: Path) -> str | None:
+    """Return https://github.com/<owner>/<repo> if the repo has a GitHub remote."""
+    try:
+        url = subprocess.check_output(
+            ["git", "config", "--get", "remote.origin.url"],
+            cwd=str(repo_dir),
+            text=True,
+        ).strip()
+    except Exception:
+        return None
+
+    if not url:
+        return None
+
+    m = re.match(r"git@github\\.com:([^/]+)/([^/]+?)(?:\\.git)?$", url)
+    if m:
+        return f"https://github.com/{m.group(1)}/{m.group(2)}"
+
+    m = re.match(r"https?://github\\.com/([^/]+)/([^/]+?)(?:\\.git)?$", url)
+    if m:
+        return f"https://github.com/{m.group(1)}/{m.group(2)}"
+
+    return None
+
+
+def git_recent_portfolio(max_items: int = 10) -> list[dict[str, str]]:
+    """Combined recent commits across HQ + product repos (when present locally)."""
+
+    repos: list[tuple[str, Path]] = [
+        ("hq", ROOT),
+        ("formbeep", Path("/root/moxie/products/formbeep")),
+        ("stackstats", Path("/root/moxie/products/stackstats")),
+    ]
+
+    commits: list[dict[str, Any]] = []
+    for name, path in repos:
+        if not (path / ".git").exists():
+            continue
+        try:
+            out = subprocess.check_output(
+                ["git", "log", "-n6", "--pretty=format:%h|%ct|%s"],
+                cwd=str(path),
+                text=True,
+            )
+        except Exception:
+            continue
+
+        base = _git_remote_http_base(path)
+
+        for ln in out.splitlines():
+            h, ts, subj = (ln.split("|", 2) + ["", "", ""])[:3]
+            try:
+                t = int(ts)
+            except Exception:
+                t = 0
+            commits.append(
+                {
+                    "repo": name,
+                    "hash": h,
+                    "ts": t,
+                    "when": datetime.fromtimestamp(t, tz=timezone.utc).strftime("%Y-%m-%d"),
+                    "subject": scrub(subj),
+                    "url": (f"{base}/commit/{h}" if (base and h) else ""),
+                }
+            )
+
+    commits.sort(key=lambda x: int(x.get("ts") or 0), reverse=True)
+
+    out_rows: list[dict[str, str]] = []
+    for c in commits[:max_items]:
+        out_rows.append(
+            {
+                "repo": scrub(c.get("repo") or ""),
+                "hash": scrub(c.get("hash") or ""),
+                "when": scrub(c.get("when") or ""),
+                "subject": scrub(c.get("subject") or ""),
+                "url": scrub(c.get("url") or "", allow_safe_urls=True),
+            }
+        )
+
+    return out_rows
+
+
+def model_usage_7d(db_path: Path = Path("/opt/data/state.db"), days: int = 7) -> dict[str, Any]:
+    """Aggregate Hermes session usage by model (public-safe aggregates)."""
+
+    if not db_path.exists():
+        return {"window": f"{days}d", "items": []}
+
+    cutoff = datetime.now(timezone.utc).timestamp() - (days * 86400)
+
+    try:
+        con = sqlite3.connect(str(db_path))
+        cur = con.cursor()
+        cur.execute(
+            """
+            SELECT model,
+                   COALESCE(SUM(input_tokens),0) AS in_tok,
+                   COALESCE(SUM(output_tokens),0) AS out_tok,
+                   COALESCE(SUM(tool_call_count),0) AS tool_calls
+            FROM sessions
+            WHERE started_at >= ?
+              AND model IS NOT NULL
+              AND TRIM(model) != ''
+            GROUP BY model
+            ORDER BY (COALESCE(SUM(input_tokens),0) + COALESCE(SUM(output_tokens),0)) DESC
+            LIMIT 12
+            """,
+            (cutoff,),
+        )
+        rows = cur.fetchall()
+        con.close()
+    except Exception:
+        return {"window": f"{days}d", "items": []}
+
+    items: list[dict[str, Any]] = []
+    for model, in_tok, out_tok, tool_calls in rows:
+        total = int(in_tok or 0) + int(out_tok or 0)
+        value = int(round(total / 1000.0))  # K tokens
+        items.append({"label": scrub(model), "value": value, "tokens": total, "tool_calls": int(tool_calls or 0)})
+
+    return {"window": f"{days}d", "items": items}
 
 
 def main() -> None:

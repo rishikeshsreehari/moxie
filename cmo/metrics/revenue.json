@@ -3,21 +3,29 @@
   "currency": "USD",
   "products": {
     "formbeep": {
-      "mrr_usd": 4.99,
-      "arr_usd": 59.88,
-      "notes": "Founder update: 1 Pro subscription at $4.99/mo (recurring)."
+      "paid_lifetime": 10,
+      "free_lifetime": null,
+      "mrr_usd": 100,
+      "arr_usd": 1200,
+      "lifetime_revenue_usd": null,
+      "notes": "Founder-reported: ~10 paid customers, ~US$100 MRR. Free/lifetime revenue not yet wired into this snapshot."
     },
     "stackstats": {
+      "paid_lifetime": 5,
+      "free_lifetime": null,
       "mrr_usd": 0,
       "lifetime_revenue_usd": 237.17,
       "notes": "Founder-reported Gumroad revenue to date (5 sales total)."
     }
   },
   "portfolio": {
-    "mrr_usd": 4.99,
-    "arr_usd": 59.88,
+    "paid_lifetime": 15,
+    "free_lifetime": null,
+    "users_lifetime": 15,
+    "mrr_usd": 100,
+    "arr_usd": 1200,
     "lifetime_revenue_usd": 237.17,
-    "revenue_total_usd": 242.16,
-    "notes": "revenue_total_usd = lifetime_revenue_usd + (mrr_usd for current month placeholder)."
+    "revenue_total_usd": 237.17,
+    "notes": "Public dashboard snapshot aggregates founder-reported metrics. revenue_total_usd currently equals lifetime_revenue_usd (FormBeep lifetime revenue not yet captured here)."
   }
 }
