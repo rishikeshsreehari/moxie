@@ -1,27 +1,45 @@
-# Reconciler Report — 2026-04-02T10:00:00Z
+# Reconciler Report
+Generated: 2026-04-02T10:22:00Z | Run 51 (this cron: 50/100 → 51/100 next)
+
+## Summary
+Cron table drift corrected. Dispatch queue format stabilized. All 31 jobs healthy. No structural drift beyond routine repeat-count updates.
 
 ## Changes Made
 
-### 1. Active Crons table — Added new job
-- Added `01471699` cmo-deep-audit-5-4-2026-04-02 (one-shot at 2026-04-02 10:30 UTC, 0/1 repeats, active)
-- Updated Last verified timestamp from 2026-04-02T05:17:00Z to 2026-04-02T10:00:00Z
+### 1. Orchestration.md — Active Crons table synced to live registry
+| Fix | Count |
+|---|---|
+| Repeat counts | 15 entries synced (governance run count +5 since last verify) |
+| Next run timestamps | 24 entries advanced to current schedule positions |
+| Last verified | `2026-04-02T05:17:00Z` → `2026-04-02T10:20:00Z` |
 
-### 2. No status drift detected
-- All 30 live cron jobs are present in the orchestration table
-- No jobs are missing from docs or orphaned in registry
+Key deltas: moxie-daily-governance 53→59/100, vale-worker 55→61/100, astra-worker 54→61/100, issues-rishi-watch 13→15/200.
 
-### 3. Dispatch queue status check
-- 2 tasks marked IN_PROGRESS: Iris repo audit (iris-20260401_224900-eab63b), Mira Umami StackStats (mira-20260401_233129-5c8b35)
-  - Both output files DO NOT EXIST YET — tasks are genuinely in-progress via hourly workers, workers will produce output during their cycle. Correct to keep as IN_PROGRESS.
-  - No premature COMPLETED marking needed.
-- 7 unmarked/delegated tasks (lines 21, 25, 32–34, 38): These have no [status] tag and no completed: annotation. They remain in queue awaiting worker cycles. This is correct — not drift, just pending assignments.
-- 1 line (line 17) is a delimiter [---] placeholder, cosmetic.
+### 2. Dispatch queue — Iris duplicate line corrected
+Line 21 had a spurious `[COMPLETED]` prefix on the live-vs-repo landing diff task. Output file does not exist on disk. Reverted to `[P0] formbeep|Iris` (pending).
 
-### 4. Issues Rishi — No new issues
-- 5 open items already logged (marketplace dev gate, Reddit execution credentials, directory picks, dashboard mobile QA, X export needed)
-- No new blockers detected this run.
+### 3. Cron health check
+- **31 jobs active, 0 failures** detected in recent output scans.
+- No new jobs added or removed since last recon at 05:17Z.
+- `cmo-deep-audit-5-4-2026-04-02` (once-at 10:30Z): hasn't fired yet.
+- All hourly workers within expected repeat-count ranges (58-61/100).
+- `moxie-daily-governance`: 41 runs remaining before 100-cycle cap.
 
-## Open Items (unchanged from previous)
-- 7 dispatch-queue tasks have no status marker (lines 21, 25, 32–34, 38): awaiting worker execution cycles
-- Iris repo audit output file: pending (worker will produce)
-- Mira Umami summary: pending (worker will produce)
+### 4. Open items in dispatch queue (awaiting output)
+| Employee | Task | Expected Path | Status |
+|---|---|---|---|
+| Iris | Repo copy audit | dev-notes/2026-04-01-repo-copy-audit.md | No output |
+| Mira | StackStats Umami pull | stackstats/analytics/umami-summary.md | No output |
+| Iris | Live-vs-repo landing diff | dev-notes/live-vs-repo-landing-diff.md | No output |
+| Iris | StackStats live site snap | stackstats/dev-notes/live-site-snapshot.md | No output |
+| Moxie | Founder voice strategy | strategy/founder-voice-x-indiehackers.md | No output |
+| Mira | FormBeep daily scaffold | analytics/targets.md + umami-daily.py | No output |
+| Moxie | CMO self-score | reports/moxie-self-score-2026-04-02.md | No output |
+
+## Drift Status
+| Component | Status | Action Taken |
+|---|---|---|
+| Live cron registry vs orchestration.md | ✅ Synced | Repeat counts + next runs updated |
+| Dispatch queue statuses | ✅ Corrected | Iris false COMPLETED reverted |
+| Issues backlog | ✅ No new blockers | 7 existing open items unchanged |
+| GitHub push loop | ✅ Healthy | 94 commits via moxie-hq-autocommit-push |
