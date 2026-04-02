@@ -197,11 +197,18 @@
    197|   196|### Moxie — CMO / Orchestrator
    198|   197|- SOUL: /root/moxie_hq/SOUL.md
    199|   198|- Current output dir (sprint): /root/moxie_hq/cmo/
-   200|   200|   199|- Status: COMPLETED
-   201|   201|   200|- Current task: (HQ) Create all-products Founder Voice / Build-in-Public strategy — **COMPLETED** (2026-04-02T11:00Z)
-   202|   202|   201|- Output: /root/moxie_hq/cmo/strategy/founder-voice-x-indiehackers.md
-   203|   203|   202|- Next task: Deep CMO self-review (pending in dispatch-queue.md)
-   204|   204|   203|- Blockers: None
+200|   200|   200|   199|- Status: IN_PROGRESS
+201|   201|   201|   200|- Current task: (FormBeep) Postmortem: detailed failure analysis — **IN_PROGRESS** (promoted 2026-04-02T12:01Z)
+202|   202|   202|   201|- Previous: (HQ) Create all-products Founder Voice / Build-in-Public strategy — **COMPLETED** (2026-04-02T11:00Z)
+203|   203|   203|   202|- Output: /root/moxie_hq/cmo/postmortems/2026-04-01-formbeep-failures.md
+204|   204|   204|   203|- Next task: Deep CMO self-review (queued in dispatch-queue.md)
+205|   205|   205|   204|- Blockers: None
+206|     206|---
+207|     207|   182|
+208|     208|   183|### Forge — Full Stack Engineer (additional task)
+209|     209|     |- Current task: (*) Review analytics report and update growth metrics — **IN_PROGRESS** (promoted 2026-04-02T12:01Z)
+210|     210|     |- Output path: /root/moxie_hq/cmo/analytics/review-{artifact_relpath}.md
+211|     211|     |- Blockers: None pending
    206|   205|---
    207|   206|   182|
    208|   207|   183|## Active Crons (Source of truth: `hermes cron list`)
