@@ -1,65 +1,53 @@
 === MOXIE HEARTBEAT ===
-Timestamp: 2026-04-02 05:06:16 UTC
+Timestamp: 2026-04-02 09:09:36 UTC
 
 --- ORCHESTRATION STATUS ---
 # Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-# Last updated: 2026-04-02T03:00:00Z
-     3|     3|# 
-     4|     4|# HOW THIS WORKS:
-     5|     5|# Every cron job reads this file for context. When done, it updates relevant sections.
-     6|     6|# Moxie (CMO) reviews this file and decides next actions.
-     7|     7|# No manual prompt updates needed — agents read state from here.
-     8|     8|# 
-     9|     9|# SYSTEM IMPROVEMENTS (v2):
-    10|    10|# - Atomic state updates: workers write to tmp files first, then rename
-    11|    11|# - Retry logic: failed tasks get marked RETRY(1/3) before escalation
-    12|    12|# - Task prioritization: P0 (blockers), P1 (revenue), P2 (growth), P3 (ops)
-    13|    13|# - KPI tracking: every task completion updates KPI progress metrics
-    14|    14|# - Cron collision mitigation: workers staggered across the hour (no longer all at :05)
-    15|    15|# - Model stability: worker crons pinned to Codex-compatible models (avoid max_retries_exhausted from provider/model mismatch)
-    16|    16|#
-    17|    17|# DELEGATION SYSTEM (HQ, product-agnostic):
-    18|    18|# - "Do not run tooling during live chat; queue work orders instead." Append to: /root/moxie_hq/cmo/delegation-queue.md
-    19|    19|# - During ops cycle (or by the orchestration reconciler when appropriate), run:
-    20|    20|#     python3 /root/moxie_hq/cmo/scripts/process_delegation_queue.py
-    21|    21|#     python3 /root/moxie_hq/cmo/scripts/process_artifacts.py
-    22|    22|# - These processors ONLY edit HQ files under /root/moxie_hq/cmo and do not require new cron scheduling.
-    23|    23|
-    24|    24|---
-    25|    25|
-    26|    26|## Mission
-    27|    27|- Company: Sapiens Technology LLC (SapiensTech)
-    28|    28|- Goal: grow a portfolio of indie products to consistent revenue via repeatable acquisition + conversion systems
-    29|    29|
-    30|    30|## Active Product (current sprint)
-    31|    31|- Product: FormBeep — form-to
+# Last updated: 2026-04-02T09:04:57Z
+...
+(truncated for brevity)
 
---- DISPATCH QUEUE (first 50 lines) ---
-# HQ Dispatch Queue
-Worker intake. Each line is a single task in a compact parseable format.
+--- ACTIVE WORKER STATUS ---
+- Vale: COMPLETED (StackStats Reddit scan plan done)
+- Astra: IDLE (SERP briefs shipped for both products)
+- Kiro: COMPLETED (2 blog posts reworked)
+- Ember: COMPLETED (Reddit tracker done), EXECUTION BLOCKED: Reddit credentials
+- Forge: COMPLETED (tracking implementation notes for both products)
+- Mira: IN_PROGRESS (StackStats Umami analytics)
+- Jax: COMPLETED (directory replacement), BLOCKED: directory credentials
+- Rumi: COMPLETED (X tone kit + channel matrix)
+- Pax: COMPLETED (Week 3 platform applications)
+- Luna: COMPLETED (win-back emails)
+- Orion: COMPLETED (prospect refresh)
+- Iris: IN_PROGRESS (FormBeep repo copy audit)
+- Moxie: IN_PROGRESS (Founder Voice strategy)
 
-## Queue
+--- IN-PROGRESS TASKS (High Priority) ---
+1. [IN_PROGRESS][P0] formbeep|Iris|Repo copy audit - Inspect landing page content, deliver 10 improvements
+   Path: /root/moxie_hq/products/formbeep/dev-notes/2026-04-01-repo-copy-audit.md
+   
+2. [IN_PROGRESS][P0] stackstats|Mira|Umami Cloud analytics pull - last 7d + 30d summary
+   Path: /root/moxie/products/stackstats/analytics/umami-summary.md
+   
+3. [IN_PROGRESS][P0] hq|Moxie|Founder Voice / Build-in-Public strategy (X + IndieHackers)
+   Path: /root/moxie_hq/cmo/strategy/founder-voice-x-indiehackers.md
 
-[COMPLETED][P0] FormBeep|Forge|Resolve GSC indexing issues|/root/moxie/products/formbeep/analytics/gsc-indexing-report.md|gsc-index-fix-20260401|FIX_GSC_INDEX|#high|caption:3 P0 fixes identified with ready-to-apply patches;completed:2026-04-01T18:45Z
-[COMPLETED][P1] FormBeep|Ember|Maintain Reddit tracker for u/rishikeshshari: subreddit rules table + activity log; ensure we can answer "have we posted here before?" before any post|/root/moxie/products/formbeep/outreach/reddit-posting-tracker.md|||completed:2026-04-02T07:00Z
-[COMPLETED][P1] FormBeep|Jax|Maintain directory submission tracking: keep directory submission log updated and avoid duplicates; integrate with daily 2-pick plan|/root/moxie/products/formbeep/distribution/directory-submissions-log.md|||completed:2026-04-01T09:30Z
-[COMPLETED][P1] FormBeep|Kiro|REWORK 2 blog posts per founder feedback: expand length (aim 1200–1800 wor
+--- ISSUES FOR RISHI (from issues_rishi.md) ---
+4 open items requiring founder attention:
+1. Platform marketplaces mis-scoping (Forge + Rishi)
+2. Reddit execution: post-ready drafts missing (Ember + Moxie)
+3. Directory distribution: failed picks need replacement (Jax)
+4. Dashboard mobile verification needed (Rishi)
+5. X founder tone audit needs X export data (Rishi)
 
---- ISSUES FOR RISHI ---
-1|# issues_rishi.md
-     2|
-     3|## Open
-     4|
-     6|     1|# Needs Rishi / Open Issues
-     7|     2|
-     8|     3|- [ ] (2026-04-01) Platform marketplaces (Webflow Apps / Framer / Glide / Typedream): REQUIRES development + platform-specific guidelines (not just submission). Founder has prior: Framer rejected a component; required a plugin. Root cause: Pax work was mis-scoped and not last-mile verified. Next action: Forge to produce a requirements matrix + MVP build scope (S/M/L) per platform, then decide build vs defer. Owner: Rishi + Forge
-     9|     4|
-    10|     5|- [ ] (2026-04-01) Reddit execution: Founder expects “post-ready” drafts tied to specific subreddits and posting windows. Current work produced tracker/rules but not verified post-ready drafts for time-of-day execution. Owner: Ember + Moxie (system fix)
-    11|     6|
-    12|     7|- [ ] (2026-04-01) Directory distribution: initial picks failed (BetaList paid-only, AlternativeTo age gate). Need replacement directories with verified last-mile requirements and minimal rework. Owner: Jax
-    13|     8|
-    14|     9|- [ ] (2026-04-02) Dashboard mobile verification: I shipped a full modern, mobile-first redesign of the public HQ dashboard (dark glass + SCADA map) and added mobile card views for Team/Products. This container lacks curl/headless Chrome/Playwright so I can’t visually verify responsive breakpoints end-to-end. After redeploy, open the dashboard on phone and confirm: (1) cards stack cleanly, (2) Team/Products show as cards (not squished table), (3) map is visible and draggable without hijacking scroll, (4) no horizontal page scroll. If any issue: send screenshot + device + browser. Owner: Rishi
-    15|    10|
-    16|
+--- NOTIFY_ISSUES.PY CHECK ---
+Status: [SILENT] - no new urgent issues detected
+
+--- CRON HEALTH ---
+All scheduled crons active. Next key runs:
+- formbeep-daily-traffic-check: 2026-04-02 10:00:00Z
+- mira-daily-kpi: 2026-04-02 10:00:00Z
+- moxie-orchestration-reconciler: 2026-04-02 05:13:00Z (due)
+- issues-rishi-watch: every 240m (next: 2026-04-02 08:41:20Z) - PASSED
 
 === END HEARTBEAT ===

@@ -241,7 +241,8 @@ Last verified: 2026-04-02T05:17:00Z
 || 868bd30f | moxie-hq-autocommit-push | every 30m | local | 2026-04-02T04:23:55+00:00 | ∞ | active |
 || 1c008e06 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-04-02T05:13:00+00:00 | 44/100 | active |
 || c342e174 | opencode-go-weekly-limit-reset-reminder | 26 13 * * 1 | local | 2026-04-06T13:26:00+00:00 | ∞ | active |
-|| 7af300e6 | cmo-delegation-queue-runner | */15 * * * * | local | 2026-04-02T04:15:00+00:00 | ∞ | active |
+||| 7af300e6 | cmo-delegation-queue-runner | */15 * * * * | local | 2026-04-02T04:15:00+00:00 | ∞ | active |
+||| 01471699 | cmo-deep-audit-5-4-2026-04-02 | once at 2026-04-02 10:30 | local | 2026-04-02T10:30:00+00:00 | 0/1 | active |
 
 **Retired/Removed jobs** (no longer in live registry):
 - `97eacc1cb3fa` codex-online-check — one-shot job, completed
