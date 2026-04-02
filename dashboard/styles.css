@@ -230,6 +230,27 @@ html, body {
 .cardrow .rowname { font-weight: 900; }
 .cardrow .rowmeta { color: var(--muted); font-size: 12px; margin-top: 6px; }
 
+.terminal-window {
+  margin-top: 8px;
+}
+
+.terminal-body {
+  background: #000;
+  color: #0f0;
+  border-top: 2px solid var(--line);
+  max-height: 210px;
+  overflow: auto;
+}
+
+.terminal-body pre {
+  margin: 0;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.35;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 .footer {
   margin-top: 12px;
   padding: 10px;

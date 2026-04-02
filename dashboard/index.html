@@ -33,13 +33,13 @@
           </div>
           <div class="mono" id="liveClock">—</div>
           <div class="mono dim" id="generatedAt">Loading…</div>
-          <div class="mono dim right">Public-safe view • no user-level data</div>
+          <div class="mono dim right">SapiensTech ops • live snapshot</div>
         </div>
 
         <div class="hud">
           <!-- LEFT: CEO METRICS -->
           <section class="panel metrics" aria-label="Key Metrics">
-            <div class="panel-title">CEO METRICS</div>
+            <div class="panel-title">METRICS</div>
 
             <div class="kpis">
               <div class="kpi">
@@ -94,7 +94,7 @@
 
           <!-- CENTER: MAP -->
           <section class="panel map" aria-label="Execution Map">
-            <div class="panel-title">EXECUTION MAP</div>
+            <div class="panel-title">ORG STRUCTURE</div>
             <div class="scada" aria-label="Map">
               <svg id="orgSvg" viewBox="0 0 1100 700" role="img" aria-label="Execution map">
                 <defs>
@@ -126,22 +126,22 @@
             <div class="micro mono dim">drag nodes • collision-avoid • pulse scales with activity</div>
           </section>
 
-          <!-- RIGHT: EXECUTION -->
-          <section class="panel activity" aria-label="Execution">
-            <div class="panel-title">EXECUTION</div>
+          <!-- RIGHT: ACTIVITY -->
+          <section class="panel activity" aria-label="Activity">
+            <div class="panel-title">ACTIVITY</div>
 
             <div class="two">
               <div>
-                <div class="sub">NOW RUNNING</div>
+                <div class="sub">IN MOTION</div>
                 <ul class="list mono" id="opsTasks"><li>Loading…</li></ul>
               </div>
               <div>
-                <div class="sub">HIGHLIGHTS</div>
+                <div class="sub">WINS</div>
                 <ul class="list mono" id="highlights"><li>Loading…</li></ul>
               </div>
             </div>
 
-            <div class="sub">CONSOLE</div>
+            <div class="sub">OPS FEED</div>
             <div class="console"><pre id="consoleText">Booting…</pre></div>
           </section>
 
@@ -167,9 +167,9 @@
             <div class="mobile-only cards" id="teamCards" aria-label="Team cards"></div>
           </section>
 
-          <!-- BOTTOM: NEEDS CEO -->
-          <section class="panel blockers" aria-label="Needs CEO">
-            <div class="panel-title">NEEDS CEO</div>
+          <!-- BOTTOM: OPEN THREADS -->
+          <section class="panel blockers" aria-label="Open Threads">
+            <div class="panel-title">OPEN THREADS</div>
             <ul class="list mono" id="blockersList"><li>Loading…</li></ul>
           </section>
 
@@ -196,16 +196,31 @@
             <div class="mobile-only cards" id="productCards" aria-label="Product cards"></div>
           </section>
 
-          <!-- BOTTOM: SHIPPING -->
+          <!-- BOTTOM: SHIPPING + TERMINAL -->
           <section class="panel github" aria-label="Shipping">
             <div class="panel-title">SHIPPING</div>
             <ul class="list mono" id="githubList"><li>Loading…</li></ul>
+
+            <div class="sub">TERMINAL</div>
+            <section class="window terminal-window" role="region" aria-label="Terminal">
+              <div class="title-bar">
+                <div class="title-bar-text">ops-terminal</div>
+                <div class="title-bar-controls" aria-hidden="true">
+                  <button aria-label="Minimize" disabled></button>
+                  <button aria-label="Maximize" disabled></button>
+                  <button aria-label="Close" disabled></button>
+                </div>
+              </div>
+              <div class="window-body terminal-body">
+                <pre class="mono" id="terminalText">Loading…</pre>
+              </div>
+            </section>
           </section>
 
         </div>
 
         <div class="footer mono dim">
-          The public view is sanitized by design: no emails, no user-level analytics, no secrets.
+          Building in public: product metrics + shipping + execution.
         </div>
       </div>
     </section>
