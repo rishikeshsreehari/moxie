@@ -5,6 +5,7 @@ Safe intake for work orders during live chat. Do not run tooling during chat —
 
 | id | status | created_utc | seat | priority | product | task | depends_on | output_file | dispatched_utc | notes |
 |---|---|---|---|---|---|---|---|---|---|---|
+| --- | DISPATCHED | --- | --- | --- | --- | --- | --- | --- | 2026-04-02 03:33:05 | --- |
 | --- | DISPATCHED | --- | --- | --- | --- | --- | --- | --- | 2026-04-02 03:22:50 | --- |
 | --- | DISPATCHED | --- | --- | --- | --- | --- | --- | --- | 2026-04-02 03:11:31 | --- |
 | --- | DISPATCHED | --- | --- | --- | --- | --- | --- | --- | 2026-04-02 02:48:32 | --- |
