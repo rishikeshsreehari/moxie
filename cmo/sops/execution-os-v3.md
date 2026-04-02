@@ -27,6 +27,15 @@ Every planned post must include:
 1) Research Queue: messy allowed; cannot be shown as execution-ready.
 2) Execution Queue: must satisfy the Last-Mile Contract; only this queue feeds the 13:00 GST window.
 
+## Distribution History Gate (Reddit/X)
+
+Before finalizing any Reddit subreddit/thread/community suggestion or X thread-target suggestion, the following hard gate must be satisfied:
+
+- **Reddit**: Run the history checker script `/root/moxie_hq/cmo/scripts/reddit_history_check.py` for `u/rishikeshshari` with the suggested subreddit name(s). The script output must be attached to the deliverable as evidence. If recent activity (post/comment within 90 days) is found, exclude that subreddit unless the founder explicitly approves with a documented reason.
+- **X**: Until an automated history check is available, manually verify that the founder has not recently posted in the target thread/community to avoid duplicate engagement. Document verification in the deliverable.
+
+This check prevents wasted planning on communities where the founder already has visibility, and avoids the perception of spam or repetitive outreach.
+
 ## QA gates
 - Founder-Ready Gate applies BEFORE anything reaches Rishi.
 - Any deliverable that fails gets a REWORK task immediately (same day).

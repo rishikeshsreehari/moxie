@@ -47,5 +47,17 @@ Rule: A deliverable is only surfaced to Rishi when it passes BOTH:
 - Decision gating:
   - If evidence is missing, mark deliverable BLOCKED and first queue an evidence-collection task (scrape/snapshot/audit).
 
+## Founder-ready checklist (Reddit/X distribution packets)
+
+- History check compliance:
+  - Reddit: attached `reddit_history_check.py` output for all suggested subreddits, with no recent activity (or founder-approved exception documented).
+  - X: documented verification that the founder has not posted in target threads recently (manual check).
+- Distribution content requirements:
+  - Paste-ready post/comment text with exact formatting preserved.
+  - Posting windows in both UTC and target country timezone (e.g., GST UTC+4).
+  - Rules compliance: subreddit rules cited, allowed placement confirmed, comment #1 included where applicable.
+  - Engagement plan: for X, include 3 reply targets with context.
+- Execution OS v3 compliance: WHERE, WHY, HOW, WHEN, WHY-NOW all explicitly stated.
+
 ## Escalation
 If a repeated mistake happens twice (e.g., wrong product facts), patch the employee SOUL to include a hard requirement + reference canonical facts.
