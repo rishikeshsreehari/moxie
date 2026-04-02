@@ -30,3 +30,29 @@
   },
   "system_state": "active"
 }
+--- HEARTBEAT 2026-04-02T19:11:01.986715Z ---
+{
+  "timestamp": "2026-04-02T19:11:01.986715Z",
+  "cron_job": "heartbeat",
+  "delegation_queue": {
+    "exists": true,
+    "size_lines": 121
+  },
+  "dispatch_queue": {
+    "exists": true,
+    "in_progress_tasks": 1
+  },
+  "issues_file": {
+    "exists": true,
+    "size_lines": 17
+  },
+  "orchestration": {
+    "exists": true,
+    "size_lines": 365
+  },
+  "git_status": {
+    "clean": true,
+    "output": ""
+  },
+  "system_state": "active"
+}

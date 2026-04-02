@@ -7,93 +7,79 @@ Last updated: 2026-04-02
 
 ---
 
-## P0 — BLOCKERS (unblocks execution)
+## P0 — DO NOW (founder-executable)
 
-1) [P0][CREDENTIALS] FormBeep Google Search Console access ✅ VERIFIED
-- Provided: `/root/moxie/secrets/google-service-account.json` (symlinked also as `formbeep-search-console.json`).
-- Verified: Service account has `siteFullUser` access to both `sc-domain:formbeep.com` and `sc-domain:stackstats.app`. GSC API call succeeded.
-- Status: **RESOLVED** — unblocks weekly SEO reporting and Mira's GSC vs Umami 28d study.
+1) [P0][ACTION] Reddit posting execution (manual)
+- Account: u/rishikeshshari
+- You will post manually; Moxie/Ember provide the execution packet.
+- Primary reference (rules/history): `/root/moxie/products/formbeep/outreach/reddit-posting-tracker.md`
+- Execution packet (today): `/root/moxie/products/formbeep/outreach/reddit-execution-packet-today.md` (queued to Ember)
+- If packet not ready, use interim plan (today Thu): r/SideProject + r/microsaas, 18:30–20:30 GST, WhatsApp-only truthful copy.
 
-2) [P0][CREDENTIALS] Reddit posting execution
-- What’s needed: whichever Reddit account we’ll post from (credentials/session) for manual posting.
-- Why: Ember’s tracker/plan exists but posting cannot happen without an account.
-
-3) [P0][CREDENTIALS] Directory submissions execution
-- What’s needed: any existing directory accounts tied to `hello@formbeep.com` + inbox verification access as needed.
-- Why: execution is founder-owned; Jax can prep but cannot submit without accounts.
+2) [P0][ACTION] Dashboard mobile QA (2 min) ✅ CLOSED
+- Done: 2026-04-02 (Rishi marked closed)
 
 ---
 
-## P0 — ACTION (15–25 min each, immediate progress)
+## P0 — BLOCKED / WAITING (do not execute until unblocked)
 
-4) [P0][ACTION] Submit FormBeep to 2 directories (copy/paste ready)
-- File: `/root/moxie/products/formbeep/distribution/directory-submissions-today-pick.md`
-- Picks: Fazier + Twelve Tools (both verified with exact URLs + UTMs)
-- Done when: submitted + logged in `/root/moxie/products/formbeep/distribution/directory-submissions-log.md`
-
-5) [P0][ACTION] Dashboard mobile QA (2 min)
-- What to do: open the public HQ dashboard on your phone and confirm:
-  (a) cards stack cleanly
-  (b) Team/Products render as cards (not a squished table)
-  (c) map is draggable without hijacking scroll
-  (d) no horizontal page scroll
-- If broken: send screenshot + device + browser.
-
----
-
-## P0 — REVIEW (high-leverage decisions)
-
-6) [P0][REVIEW] FormBeep failure analysis (what we fixed + what remains)
-- File: `/root/moxie_hq/cmo/postmortems/2026-04-01-formbeep-failures.md`
-- Outcome needed: confirm the prevention rules (Execution OS v3) are acceptable.
-
-7) [P0][REVIEW] US SMS positioning — GO/NO-GO decision
-- File: `/root/moxie/products/formbeep/seo/us-sms-serp-demand-brief.md`
-- Outcome needed: decide whether we emphasize US SMS now vs WhatsApp-first geos, and which 3 pages to ship first.
-
-8) [P0][REVIEW] Marketplace strategy decision (build vs defer)
+3) [P0][BLOCKED] Directory submissions execution (Fazier + Twelve Tools)
 - Files:
-  - `/root/moxie_hq/products/formbeep/dev-notes/marketplace-integration-scope.md`
-  - `/root/moxie_hq/products/formbeep/dev-notes/marketplace-requirements-matrix.md`
-- Outcome needed: confirm the “defer Webflow/Framer, build Glide/Typedream” recommendation.
+  - Submission packet: `/root/moxie/products/formbeep/distribution/directory-submissions-today-pick.md`
+  - Log: `/root/moxie/products/formbeep/distribution/directory-submissions-log.md`
+- BLOCKER: packet copy contained non-shipped claims (SMS/email). Must be rewritten to WhatsApp-only and validated against capabilities KB before any submission.
+- Status: awaiting corrected packet + capabilities truth layer.
+
+---
+
+## P0 — REVIEW (decisions)
+
+4) [P0][REVIEW] FormBeep failure analysis ✅ APPROVED
+- File: `/root/moxie_hq/cmo/postmortems/2026-04-01-formbeep-failures.md`
+- Note: patch needed in doc to remove any claim that directory submissions are “DONE” until copy is truthful.
+
+5) [P0][REVIEW] US SMS positioning ✅ DECIDED
+- File: `/root/moxie/products/formbeep/seo/us-sms-serp-demand-brief.md`
+- Decision: focus WhatsApp + “without Zapier” now; revisit SMS pages after SMS feature ships (~2 weeks).
+
+6) [P0][REVIEW] Marketplace strategy ✅ APPROVED
+- File: `/root/moxie_hq/products/formbeep/dev-notes/marketplace-integration-scope.md`
+- Decision: defer Webflow/Framer apps (2–3w builds); build Glide/Typedream docs now.
 
 ---
 
 ## P1 — REVIEW (content system)
 
-9) [P1][REVIEW] Founder Voice / Build-in-Public strategy (X + IndieHackers)
+7) [P1][REVIEW] Founder Voice / Build-in-Public strategy (X + IndieHackers)
 - File: `/root/moxie_hq/cmo/strategy/founder-voice-x-indiehackers.md`
 - Outcome needed: approve cadence + pillars; pick the first 7 days to execute.
 
-10) [P1][REVIEW] X tone + “reply guy” OS (framework ready; needs your export to run fully)
+8) [P1][REVIEW] X tone + “reply guy” OS (framework ready; needs your export to run fully)
 - File: `/root/moxie_hq/cmo/strategy/x-tone-and-reply-guy-kit.md`
-- Input needed to activate: your X export (tweets.js / tweets.csv) OR confirm handle + provide last 90 days posts.
+- Input needed to activate: your X export (tweets.js / tweets.csv)
 
-11) [P1][REVIEW] Channel matrix (how often/when to post per product/channel)
+9) [P1][REVIEW] Channel matrix (how often/when to post per product/channel)
 - File: `/root/moxie_hq/cmo/strategy/channel-matrix-all-products.md`
 
 ---
 
 ## P0 — WAITING ON OUTPUT (currently missing deliverables)
 
-These were marked IN_PROGRESS for ~20h+ because the originally assigned owners (Iris/Mira) do not have hourly worker crons. I reassigned them to active hourly workers so they will complete.
-
-12) [P0][WAITING] FormBeep repo copy audit (reassigned → Forge)
+10) [P0][WAITING] FormBeep repo copy audit (reassigned → Forge)
 - Output: `/root/moxie_hq/products/formbeep/dev-notes/2026-04-01-repo-copy-audit.md`
 
-13) [P0][WAITING] StackStats Umami analytics summary (reassigned → Jax)
+11) [P0][WAITING] StackStats Umami analytics summary (reassigned → Jax)
 - Output: `/root/moxie/products/stackstats/analytics/umami-summary.md`
 
-14) [P0][WAITING] FormBeep live vs repo landing diff (queued → Jax)
+12) [P0][WAITING] FormBeep live vs repo landing diff (queued → Jax)
 - Output: `/root/moxie_hq/products/formbeep/dev-notes/live-vs-repo-landing-diff.md`
 
-15) [P0][WAITING] StackStats live-site snapshot (queued → Jax)
+13) [P0][WAITING] StackStats live-site snapshot (queued → Jax)
 - Output: `/root/moxie/products/stackstats/dev-notes/live-site-snapshot.md`
 
 ---
 
-## P2 — SYSTEM CLEANUP (I will keep this maintained)
+## P2 — SYSTEM CLEANUP (maintained by Moxie)
 
-16) [P2][FIX] Review-queue hygiene
-- Note: The old references to `landing-change-decision.md` and `landing-hero-funnel-30d.md` are removed because those files do not exist on disk.
-- Going forward: anything you say that creates work will be logged here as P0/P1/P2 with an owner + file path + “done when”.
+14) [P2][FIX] Review-queue hygiene
+- Keep this file executable: if an item becomes non-executable, it moves to BLOCKED/WAITING with an explicit blocker.
