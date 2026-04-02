@@ -4,3 +4,29 @@
 2026-04-02T15:10:44Z — Moxie autopush: completed postmortem 2026-04-01-formbeep-failures.md, updated dispatch-queue.md + orchestration.md, pushed commit d3fc5b7
 2026-04-02T15:28:18Z Rumi run: no IN_PROGRESS tasks assigned; no queue/orchestration changes made
 2026-04-02T16:07:05Z — 2 IN_PROGRESS tasks active
+
+--- HEARTBEAT 2026-04-02T18:09:41.363256 ---
+{
+  "timestamp": "2026-04-02T18:09:41.363256",
+  "cron_job": "heartbeat",
+  "delegation_queue": {
+    "exists": true,
+    "size_lines": 117
+  },
+  "artifacts_watcher": {
+    "exists": false
+  },
+  "issues_file": {
+    "exists": true,
+    "size_lines": 17
+  },
+  "orchestration": {
+    "exists": true,
+    "size_lines": 365
+  },
+  "git_status": {
+    "clean": false,
+    "output": "fatal: not a git repository (or any of the parent directories): .git"
+  },
+  "system_state": "active"
+}
