@@ -2,6 +2,8 @@
 
 ## Open
 
+- [ ] (2026-04-02) CRITICAL: Hermes cron registry appears wiped (hermes cron list => “No scheduled jobs”; /opt/data/cron/jobs.json recreated empty at 2026-04-02T19:46Z). This disables all workers + autopush + governance automations. Need approval to restore/recreate the prior cron set from recent session dumps / known job list. Owner: Rishi + Moxie
+
 - [ ] (2026-04-01) Platform marketplaces (Webflow Apps / Framer / Glide / Typedream): REQUIRES development + platform-specific guidelines (not just submission). Founder has prior: Framer rejected a component; required a plugin. Root cause: Pax work was mis-scoped and not last-mile verified. Next action: Forge to produce a requirements matrix + MVP build scope (S/M/L) per platform, then decide build vs defer. Owner: Rishi + Forge
 
 - [ ] (2026-04-01) Reddit execution: Founder expects “post-ready” drafts tied to specific subreddits and posting windows. Current work produced tracker/rules but not verified post-ready drafts for time-of-day execution. Owner: Ember + Moxie (system fix)
