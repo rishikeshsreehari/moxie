@@ -141,16 +141,17 @@
    141|   141|- Output path: /root/moxie/products/formbeep/distribution/directory-submissions-today-pick.md
    142|   142|- Blockers: None
    143|   134|
-   144|   135|### Rumi — Blog & Content Analyst
-   145||- SOUL: /root/moxie/cmo/employees/rumi-soul.md
-   146||- Current output dir (sprint): /root/moxie/products/stackstats/
-   147||- Status: COMPLETED
-   148||- Current task: 6 StackStats SEO page outlines (Hugo-ready) — **COMPLETED** (2026-04-02T10:30Z)
-   149||- Task ID: rumi-20260401_234658-f506a1
-   150||- Output path: /root/moxie/products/stackstats/seo/page-outlines.md
-   151||- Last output: /root/moxie/products/stackstats/seo/page-outlines.md
-   152||- Next task after completion: Platform×Product posting matrix (hq) — dispatch-queue line 35
-   153||- Blockers: None
+### Rumi — Blog & Content Analyst
+|- SOUL: /root/moxie/cmo/employees/rumi-soul.md
+|- Current output dir (sprint): /root/moxie/products/formbeep/
+|- Status: COMPLETED
+|- Last completed task: (FormBeep) 6 SEO landing page outlines (Hugo-ready) — **COMPLETED** (2026-04-02T13:00Z)
+|- Task ID: rumi-20260402_001211-bd2e2b
+|- Output path: /root/moxie_hq/products/formbeep/seo/page-outlines.md
+|- Previous completed task: (StackStats) 6 SEO landing page outlines (Hugo-ready) — **COMPLETED** (2026-04-02T10:30Z)
+|- Last output: /root/moxie_hq/products/formbeep/seo/page-outlines.md (FormBeep), /root/moxie/products/stackstats/seo/page-outlines.md (StackStats)
+|- Next task after completion: Platform×Product posting matrix (hq) — dispatch-queue line 35
+|- Blockers: None
    154|   144|
    155|   145|### Pax — Partnerships / BD Lead
    156|   146|- SOUL: /root/moxie/cmo/employees/pax-soul.md
