@@ -1,12 +1,13 @@
 {
-  "generated_at": "2026-04-01T20:57:51Z",
+  "generated_at": "2026-04-02T00:21:49Z",
   "kpis": {
     "pageviews_7d": 103,
     "visitors_7d": 76,
     "signups_7d": 4,
     "paid_lifetime": 0,
     "free_lifetime": 0,
-    "revenue_lifetime_usd": 0
+    "revenue_lifetime_usd": 237.17,
+    "mrr_usd": 4.99
   },
   "products": [
     {
@@ -22,27 +23,30 @@
       "in_progress": 4
     },
     "cron": {
-      "active_jobs": 0
+      "active_jobs": 11
     },
     "blockers": {
-      "count": 6,
-      "needs_rishi": [
-        "(2026-03-31) Reddit founder-profile scan + subreddit intel: (1) this environment is **HTTP 403 Blocked** to reddit.com, and (2) Reddit's current Data API policy states **approval is required** before accessing Reddit data via API; commercial use requires explicit permission/contract. So we should NOT automate scans unless/until approved + reachable network. Next action: decide whether to apply for approved Data API access or do manual intel only.",
-        "(2026-03-31) WordPress plugin resubmission (WP team feedback) \u2014 Founder-owned blocker. Moxie/Forge will not touch WP plugin changes; Rishi will handle and we'll plan post-approval launch later.",
-        "(2026-03-31) Scope rule: do not push to product dev repos (e.g., formbeep.git). Moxie pushes only to HQ repo; product repos are read-only for suggestions",
-        "(2026-03-31) Reddit founder-profile scan for Beepmate/Web2Phone is blocked by Reddit network policy from this environment. To analyze their post history/subreddits/angles we need either: (a) a Reddit dev app token + user-agent, or (b) a logged-in session/cookies.",
-        "(2026-03-31) Directory submissions: preferred inbox confirmed as [email]; still need any existing directory accounts/verification access",
-        "(2026-04-01) Platform marketplace portal access: Pax Week 1 application packages (Webflow Apps, Framer Marketplace, Glide Plugins) are 100% ready with all copy, metadata, and submission steps \u2014 need [email] login credentials or existing developer account access to actually submit the applications"
-      ]
+      "count": 0,
+      "needs_rishi": []
     }
   },
   "running": {
-    "count": 1,
+    "count": 3,
     "tasks": [
       {
-        "role": "Kiro",
-        "status": "BLOCKED",
-        "text": "Approve blog drafts for April 1/2 (requires Rishi review \u2014 see Rishi Action Items)"
+        "role": "Jax",
+        "status": "IN_PROGRESS",
+        "text": "Replace failed directory picks: find 2 directories we can submit TODAY. Must personally verify last-mile requirements (free vs paid, account age gates, email verification) and include a copy/paste submission bundle + exact submission URL + \"Verified on\" timestamp. Also update launch-places-master.md to mark BetaList paid-only + AlternativeTo 7-day gate."
+      },
+      {
+        "role": "Iris",
+        "status": "IN_PROGRESS",
+        "text": "Inspect the ACTUAL current landing page content in the repo (headlines, breadcrumbs, free-tier claims) and deliver 10 exact copy/UX improvements with file+section pointers. Must confirm whether \"Free Forever\" is accurate vs canonical facts (15 submissions/mo free). Output should include exact replacement copy blocks."
+      },
+      {
+        "role": "Mira",
+        "status": "IN_PROGRESS",
+        "text": "Pull Umami Cloud analytics for StackStats (website_id 52a19925-9bf4-4efe-9a42-ecc2a7f08d81): last 7d + last 30d. Include top sources, top pages, geo split, and any events (purchases) if tracked. Summarize in a founder-readable brief."
       }
     ],
     "highlights": [
@@ -62,19 +66,19 @@
       "name": "Vale",
       "title": "Competitor Intelligence Lead",
       "status": "COMPLETED",
-      "working_on": "(FormBeep) Reddit intel analysis \u2192 positioning + subreddit playbook \u2014 **COMPLETED** (2026-04-01T16:30Z)"
+      "working_on": "(StackStats) Reddit scanning plan \u2014 **COMPLETED** (2026-04-02T10:00Z)"
     },
     {
       "name": "Astra",
       "title": "Growth Research Lead",
       "status": "COMPLETED",
-      "working_on": "SERP demand probe + keyword roadmap (US + overall FormBeep) \u2014 **COMPLETED** (2026-04-02T07:00Z)"
+      "working_on": "DataForSEO 50-query LIVE SERP demand probe + full competitive breakdown \u2014 **COMPLETED** (2026-04-02T09:30Z)"
     },
     {
       "name": "Kiro",
       "title": "Conversion Copy Lead",
       "status": "COMPLETED",
-      "working_on": "Revise 2 blog posts to match FormBeep blog style \u2014 **COMPLETED** (2026-04-01)"
+      "working_on": "REWORK 2 blog posts per founder feedback (length + factual fixes + Zapier/WhatsApp research + comparison table + thumbnail prompts) \u2014 **COMPLETED** (2026-04-01T22:45Z)"
     },
     {
       "name": "Ember",
@@ -84,15 +88,15 @@
     },
     {
       "name": "Forge",
-      "title": "Product/Codebase Inspector",
+      "title": "Full Stack Engineer",
       "status": "COMPLETED",
-      "working_on": "Resolve GSC indexing issues \u2192 produce gsc-indexing-report.md \u2014 **COMPLETED** (2026-04-01T18:45Z)"
+      "working_on": "Improve HQ git commit messages (replace generic \"Autopush:\" with specific summaries; update autopush script) \u2014 **COMPLETED** (2026-04-01T22:37Z)"
     },
     {
       "name": "Mira",
       "title": "Analytics & Reporting Lead",
-      "status": "COMPLETED",
-      "working_on": "Traffic vs keyword opportunity map (use Umami + Astra keyword briefing) \u2014 **COMPLETED** (2026-03-31)"
+      "status": "IN_PROGRESS",
+      "working_on": "(StackStats) Pull Umami Cloud analytics for StackStats (website_id 52a19925-9bf4-4efe-9a42-ecc2a7f08d81): last 7d + last 30d. Include top sources, top pages, geo split, and any events \u2014 **IN_PROGRESS** (promoted 2026-04-02T00:06Z)"
     },
     {
       "name": "Nova",
@@ -103,8 +107,8 @@
     {
       "name": "Jax",
       "title": "SaaS Growth Operations Lead",
-      "status": "COMPLETED",
-      "working_on": "Daily directory 2-pick + maintenance \u2014 **COMPLETED** (2026-04-03)"
+      "status": "IN_PROGRESS",
+      "working_on": "(FormBeep) Replace failed directory picks with 2 actionable directories (verified requirements + submission bundles) \u2014 **IN_PROGRESS** (promoted 2026-04-01T23:00Z)"
     },
     {
       "name": "Rumi",
@@ -133,58 +137,58 @@
     {
       "name": "Iris",
       "title": "Repo Copy Auditor",
-      "status": "IDLE",
-      "working_on": "Weekly FormBeep repo copy audit \u2014 runs every Monday 09:30 UTC"
+      "status": "IN_PROGRESS",
+      "working_on": "(FormBeep) Inspect the ACTUAL current landing page content in the repo (headlines, breadcrumbs, free-tier claims) and deliver 10 exact copy/UX improvements with file+section pointers \u2014 **IN_PROGRESS** (promoted 2026-04-02T00:06Z)"
     }
   ],
   "github": {
     "recent": [
       {
-        "hash": "2b8deda",
-        "when": "2026-04-01",
-        "subject": "Autopush: 2026-04-01T20:57:05Z"
+        "hash": "0d36c33",
+        "when": "2026-04-02",
+        "subject": "HQ: run repo cleanup now + add self-score task + enforce DONE handshake in OSv3"
       },
       {
-        "hash": "08a7b31",
-        "when": "2026-04-01",
-        "subject": "Autopush: 2026-04-01T21:44:00Z"
+        "hash": "92a7ae9",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02T00:15:54Z"
       },
       {
-        "hash": "976de9d",
-        "when": "2026-04-01",
-        "subject": "Autopush: 2026-04-01T20:45:23Z"
+        "hash": "5f5f203",
+        "when": "2026-04-02",
+        "subject": "HQ: add repo health audit SOP + cleanup script + execution OS v3 template integration"
       },
       {
-        "hash": "34b5e6a",
-        "when": "2026-04-01",
-        "subject": "Dashboard: stronger SCADA background + node titles + fix snapshot schema (name/title)"
+        "hash": "514892d",
+        "when": "2026-04-02",
+        "subject": "Deploy Execution OS v3: 13:00 GST founder window + execution packets + channel matrix task"
       },
       {
-        "hash": "63fbf43",
-        "when": "2026-04-01",
-        "subject": "Autopush: 2026-04-01T20:30:39Z"
+        "hash": "6511611",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02 00:12:37 UTC"
       },
       {
-        "hash": "72f314f",
-        "when": "2026-04-01",
-        "subject": "Autopush: 2026-04-01T20:23:40Z"
+        "hash": "feb85b8",
+        "when": "2026-04-02",
+        "subject": "HQ sync: Promoted Iris (FormBeep repo audit) and Mira (StackStats Umami) to IN_PROGRESS - dispatch-queue + orchestration state update"
       },
       {
-        "hash": "9c3b53f",
-        "when": "2026-04-01",
-        "subject": "Dashboard: single-screen SCADA layout + animated network map + real tasks/team/blockers/github"
+        "hash": "32abc1e",
+        "when": "2026-04-02",
+        "subject": "Queue: universal X+IndieHackers founder-voice strategy + FormBeep GSC vs Umami study; add US SMS brief to review"
       },
       {
-        "hash": "cbe3108",
+        "hash": "3243a64",
         "when": "2026-04-01",
-        "subject": "Dashboard: richer live layout (network animation, blockers/tasks/github/revenue)"
+        "subject": "FormBeep: extract last-2-day traffic from local Umami dump + update issues"
       }
     ]
   },
   "console": [
     "[BOOT] Moxie HQ online",
-    "[SYNC] snapshot generated 2026-04-01T20:57:51Z",
+    "[SYNC] snapshot generated 2026-04-02T00:21:49Z",
     "[WORK] in_progress=4 queued=1",
-    "[NEED] blockers=6"
+    "[NEED] blockers=0"
   ]
 }

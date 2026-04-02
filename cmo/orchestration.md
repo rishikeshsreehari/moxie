@@ -194,7 +194,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
    184|
    185|**Editing rule:** do not edit jobs via this table. Update jobs using `hermes cron edit <cron_id> ...` and then reconcile this table to match.
    186|
-Last verified: 2026-04-01T23:18:00Z
+Last verified: 2026-04-02T00:22:00Z
 
 |||| Cron ID | Name | Schedule | Deliver | Next run (UTC) | Repeats | State ||
 ||||---|---|---|---|---|---|---||
@@ -209,7 +209,7 @@ Last verified: 2026-04-01T23:18:00Z
 |||| 0526cbc1 | weekly-free-models-reminder | 0 17 * * 2 | local | 2026-04-07T17:00:00+00:00 | ∞ | active ||
 ||| 647387ae | mira-daily-kpi | 0 10 * * * | local | 2026-04-02T10:00:00+00:00 | 9/100 | active |
 ||| a468835d | vale-monthly-competitor-scan | 0 10 1 * * | local | 2026-05-01T10:00:00+00:00 | 1/100 | active |
-||| 2553a683 | moxie-daily-governance | 0 * * * * | local | 2026-04-02T00:00:00+00:00 | 48/100 | active |
+||| 2553a683 | moxie-daily-governance | 0 * * * * | local | 2026-04-02T01:00:00+00:00 | 49/100 | active |
 ||| 8bcfe505 | vale-worker | 12 * * * * | local | 2026-04-02T00:12:00+00:00 | 50/100 | active |
 ||| 7067633e | astra-worker | 17 * * * * | local | 2026-04-01T23:17:00+00:00 | 49/100 | active |
 ||| 3171d2c2 | kiro-worker | 42 * * * * | local | 2026-04-01T23:42:00+00:00 | 48/100 | active |

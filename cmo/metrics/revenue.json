@@ -1,0 +1,23 @@
+{
+  "as_of_utc": "2026-04-02T00:00:00Z",
+  "currency": "USD",
+  "products": {
+    "formbeep": {
+      "mrr_usd": 4.99,
+      "arr_usd": 59.88,
+      "notes": "Founder update: 1 Pro subscription at $4.99/mo (recurring)."
+    },
+    "stackstats": {
+      "mrr_usd": 0,
+      "lifetime_revenue_usd": 237.17,
+      "notes": "Founder-reported Gumroad revenue to date (5 sales total)."
+    }
+  },
+  "portfolio": {
+    "mrr_usd": 4.99,
+    "arr_usd": 59.88,
+    "lifetime_revenue_usd": 237.17,
+    "revenue_total_usd": 242.16,
+    "notes": "revenue_total_usd = lifetime_revenue_usd + (mrr_usd for current month placeholder)."
+  }
+}

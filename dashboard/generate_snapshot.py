@@ -280,6 +280,9 @@ def main() -> None:
             "signups_7d": signups,
         })
 
+    revenue = read_json(ROOT / "cmo" / "metrics" / "revenue.json")
+    portfolio = revenue.get("portfolio") if isinstance(revenue, dict) else {}
+
     snapshot: dict[str, Any] = {
         "generated_at": now,
         "kpis": {
@@ -288,7 +291,8 @@ def main() -> None:
             "signups_7d": signups,
             "paid_lifetime": 0,
             "free_lifetime": 0,
-            "revenue_lifetime_usd": 0,
+            "revenue_lifetime_usd": float(portfolio.get("lifetime_revenue_usd", 0) or 0),
+            "mrr_usd": float(portfolio.get("mrr_usd", 0) or 0),
         },
         "products": products,
         "systems": {

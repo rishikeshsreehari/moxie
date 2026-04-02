@@ -15,7 +15,8 @@ const SAMPLE = {
     signups_7d: 4,
     paid_lifetime: 0,
     free_lifetime: 0,
-    revenue_lifetime_usd: 0
+    revenue_lifetime_usd: 0,
+    mrr_usd: 0
   },
   products: [
     { name: "FormBeep", status: "ACTIVE", pageviews_7d: 103, signups_7d: 4 }
@@ -511,6 +512,7 @@ function applySnapshot(snap) {
   setText("kpiPaidLifetime", snap.kpis?.paid_lifetime ?? 0);
   setText("kpiFreeLifetime", snap.kpis?.free_lifetime ?? 0);
   setText("kpiRevenueLifetime", snap.kpis?.revenue_lifetime_usd ?? 0);
+  setText("kpiMrr", snap.kpis?.mrr_usd ?? 0);
 
   const active = (snap.products || []).find(p => statusNorm(p.status) === "ACTIVE") || (snap.products || [])[0];
   setText("activeProduct", active ? active.name : "—");
