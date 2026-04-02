@@ -67,15 +67,13 @@
 ### Astra — Growth Research Lead
 - SOUL: /root/moxie/cmo/employees/astra-soul.md
 - Current output dir (sprint): /root/moxie/products/formbeep/
-- Status: COMPLETED
-- Last completed task: (StackStats) Run DataForSEO SERP sampling for keyword discovery — **COMPLETED** (2026-04-02T12:00Z)
-- Output: /root/moxie/products/stackstats/seo/serp-opportunity-brief.md
+- Status: IDLE / COMPLETED
 - Last completed task: (FormBeep) Run DataForSEO SERP sampling for keyword discovery — **COMPLETED** (2026-04-02T12:15Z)
 - Output: /root/moxie/products/formbeep/seo/serp-opportunity-brief.md
-- Last output: /root/moxie/products/formbeep/seo/serp-opportunity-brief.md
-- Next task after completion: Await next assigned task (Rumi can now draft 6 SEO pages for both products)
+- Previous: (StackStats) SERP brief — COMPLETED (2026-04-02T12:00Z)
+- Previous: (FormBeep) SERP demand probe + keyword roadmap — COMPLETED (2026-04-02T07:00Z)
+- Next task after completion: Ready for next assignment — SERP briefs shipped for both products; Rumi's 6-page outlines for both products are done
 - Blockers: None
-    72|
     79|### Kiro — Conversion Copy Lead
     80||- SOUL: /root/moxie/cmo/employees/kiro-soul.md
     81||- Current output dir (sprint): /root/moxie/products/formbeep/copy/
@@ -135,7 +133,7 @@
 ### Jax — SaaS Growth Operations Lead
    135|   136|- SOUL: /root/moxie/cmo/employees/jax-soul.md
    137|   137|- Current output dir (sprint): /root/moxie/products/formbeep/
-   138|   138|- Status: READY
+   138|   138|- Status: IDLE (BLOCKED: awaiting founder credentials for directory submission execution — hello@formbeep.com inbox verification + existing directory accounts)
    139|   139|- Current task: (FormBeep) Replace failed directory picks with 2 actionable directories (verified requirements + submission bundles) — COMPLETED (2026-04-02T02:00Z)
    140|   140|- Task ID: jax-20260401_223121-f3bb3a
    141|   141|- Output path: /root/moxie/products/formbeep/distribution/directory-submissions-today-pick.md
