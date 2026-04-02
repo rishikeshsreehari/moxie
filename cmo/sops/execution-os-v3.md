@@ -31,6 +31,11 @@ Every planned post must include:
 - Founder-Ready Gate applies BEFORE anything reaches Rishi.
 - Any deliverable that fails gets a REWORK task immediately (same day).
 
+## Completion handshake (hard requirement)
+A task is not complete unless:
+1) Moxie reports it to Rishi (with file/link)
+2) Rishi explicitly marks it DONE
+This prevents silent “done” states and missed deliverables.
 ## Operating cadence
 - By 12:45 GST: Moxie delivers 1–3 paste-ready packets to /root/moxie_hq/cmo/rishi_review.md under “TODAY 13:00 GST”.
 - At 13:00 GST: Rishi executes 1 packet (or 2 if trivial) and reports result (URL, screenshot, approval/denial).
