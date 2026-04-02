@@ -1,9 +1,8 @@
 /*
-  Moxie HQ (public) — SCADA / terminal aesthetic.
-  Requirements:
-  - modern responsive layout inside one retro window (7.css)
+  SapiensTech Open Ops (public) — 7.css monochrome.
+  - modern responsive layout inside one retro window
   - draggable nodes in the network map
-  - nodes should not overlap by default, and collision-avoid when dragged
+  - collision-avoid when dragged
   - DO NOT show product nodes in the org chart
 */
 
@@ -36,7 +35,7 @@ const SAMPLE = {
   ],
   github: { recent: [] },
   console: [
-    "[BOOT] Moxie HQ online",
+    "[BOOT] Open Ops online",
     "[SYNC] snapshot loaded"
   ]
 };
@@ -115,9 +114,8 @@ function renderTeam(team) {
     const name = row.name || "";
     const title = row.title ? ` — ${row.title}` : "";
     const status = statusNorm(row.status);
-    const working = clampStr(row.working_on || "", 140);
+    const working = clampStr(row.working_on || "", 160);
 
-    // Desktop table
     if (tbody) {
       const tr = document.createElement("tr");
       const tdEmp = document.createElement("td");
@@ -134,7 +132,6 @@ function renderTeam(team) {
       tbody.appendChild(tr);
     }
 
-    // Mobile cards
     if (cards) {
       const wrap = document.createElement("div");
       wrap.className = "cardrow";
@@ -176,7 +173,6 @@ function renderProducts(products) {
     const pv = String(p.pageviews_7d ?? "—");
     const su = String(p.signups_7d ?? "—");
 
-    // Desktop table
     if (tbody) {
       const tr = document.createElement("tr");
       const tdName = document.createElement("td");
@@ -196,7 +192,6 @@ function renderProducts(products) {
       tbody.appendChild(tr);
     }
 
-    // Mobile cards
     if (cards) {
       const wrap = document.createElement("div");
       wrap.className = "cardrow";
@@ -297,14 +292,14 @@ let SCADA = {
   svg: null,
   edgesEl: null,
   nodesEl: null,
-  edges: [], // {path, a, b, dash}
-  nodes: [], // {outer, inner, x, y, w, h, pulse, dragHandle}
+  edges: [],
+  nodes: [],
   dragging: null
 };
 
 function drawEdge(aIdx, bIdx, status) {
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-  path.setAttribute("stroke", "rgba(255,255,255,0.70)");
+  path.setAttribute("stroke", "#111");
   path.setAttribute("stroke-width", "2");
   path.setAttribute("fill", "none");
   const dash = edgeDash(status);
@@ -326,28 +321,28 @@ function drawNode(x, y, w, h, label, status, subline) {
   rect.setAttribute("ry", "10");
   rect.setAttribute("width", w);
   rect.setAttribute("height", h);
-  rect.setAttribute("stroke", "rgba(255,255,255,0.70)");
+  rect.setAttribute("stroke", "#111");
   rect.setAttribute("stroke-width", "2");
-  rect.setAttribute("fill", "rgba(0,0,0,0.25)");
+  rect.setAttribute("fill", "#fff");
 
   const dash = nodeDash(status);
   if (dash !== "0") rect.setAttribute("stroke-dasharray", dash);
 
   const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-  text.setAttribute("x", 0);
+  text.setAttribute("x", "0");
   text.setAttribute("y", -3);
   text.setAttribute("text-anchor", "middle");
   text.setAttribute("font-size", "14");
-  text.setAttribute("fill", "rgba(255,255,255,0.92)");
+  text.setAttribute("fill", "#111");
   text.setAttribute("font-family", "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace");
   text.textContent = clampStr(label, 18);
 
   const sub = document.createElementNS("http://www.w3.org/2000/svg", "text");
-  sub.setAttribute("x", 0);
+  sub.setAttribute("x", "0");
   sub.setAttribute("y", 18);
   sub.setAttribute("text-anchor", "middle");
   sub.setAttribute("font-size", "11");
-  sub.setAttribute("fill", "rgba(255,255,255,0.65)");
+  sub.setAttribute("fill", "#111");
   sub.setAttribute("opacity", "0.72");
   sub.setAttribute("font-family", "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace");
   sub.textContent = clampStr(subline || "", 26);
@@ -355,34 +350,11 @@ function drawNode(x, y, w, h, label, status, subline) {
   inner.appendChild(rect);
   inner.appendChild(text);
   if (subline) inner.appendChild(sub);
+
   outer.appendChild(inner);
   SCADA.nodesEl.appendChild(outer);
 
-  return {
-    outer,
-    inner,
-    x,
-    y,
-    w,
-    h,
-    pulse: nodePulse(status),
-    dragHandle: rect
-  };
-}
-
-function updateEdges() {
-  for (const e of SCADA.edges) {
-    const A = SCADA.nodes[e.a];
-    const B = SCADA.nodes[e.b];
-    if (!A || !B) continue;
-    const x1 = A.x, y1 = A.y;
-    const x2 = B.x, y2 = B.y;
-    const midx = (x1 + x2) / 2;
-    const midy = (y1 + y2) / 2;
-    const dx = (x2 - x1) * 0.14;
-    const dy = (y2 - y1) * 0.14;
-    e.path.setAttribute("d", `M ${x1} ${y1} Q ${midx + dy} ${midy - dx} ${x2} ${y2}`);
-  }
+  return { outer, inner, dragHandle: rect, x, y, w, h, pulse: nodePulse(status) };
 }
 
 function setNodePos(idx, x, y) {
@@ -393,14 +365,28 @@ function setNodePos(idx, x, y) {
   n.outer.setAttribute("transform", `translate(${x} ${y})`);
 }
 
-function resolveCollisions(movedIdx = null) {
-  // Simple repulsion so nodes don't sit on top of each other.
-  const pad = 18;
-  const iter = 8;
+function updateEdges() {
+  SCADA.edges.forEach(e => {
+    const A = SCADA.nodes[e.a];
+    const B = SCADA.nodes[e.b];
+    if (!A || !B) return;
 
-  for (let k = 0; k < iter; k++) {
+    const ax = A.x, ay = A.y;
+    const bx = B.x, by = B.y;
+
+    const mx = (ax + bx) / 2;
+    const my = (ay + by) / 2;
+
+    const d = `M ${ax} ${ay} Q ${mx} ${my} ${bx} ${by}`;
+    e.path.setAttribute("d", d);
+  });
+}
+
+function resolveCollisions(activeIdx = null) {
+  const pad = 12;
+  for (let iter = 0; iter < 2; iter++) {
     for (let i = 0; i < SCADA.nodes.length; i++) {
-      if (movedIdx !== null && i !== movedIdx) continue;
+      if (activeIdx !== null && i !== activeIdx) continue;
       const A = SCADA.nodes[i];
       if (!A) continue;
 
@@ -409,14 +395,10 @@ function resolveCollisions(movedIdx = null) {
         const B = SCADA.nodes[j];
         if (!B) continue;
 
-        const ax = A.x, ay = A.y;
-        const bx = B.x, by = B.y;
-
-        const dx = ax - bx;
-        const dy = ay - by;
+        const dx = A.x - B.x;
+        const dy = A.y - B.y;
         const dist = Math.sqrt(dx * dx + dy * dy) || 0.0001;
 
-        // approximate node radius
         const ra = Math.max(A.w, A.h) * 0.55;
         const rb = Math.max(B.w, B.h) * 0.55;
         const minDist = ra + rb + pad;
@@ -425,9 +407,7 @@ function resolveCollisions(movedIdx = null) {
           const push = (minDist - dist) * 0.55;
           const ux = dx / dist;
           const uy = dy / dist;
-
-          // move A away
-          setNodePos(i, ax + ux * push, ay + uy * push);
+          setNodePos(i, A.x + ux * push, A.y + uy * push);
         }
       }
     }
@@ -483,7 +463,7 @@ function attachDrag(idx) {
 
   n.dragHandle.addEventListener("pointerup", end);
   n.dragHandle.addEventListener("pointercancel", end);
-};
+}
 
 function startAnimation() {
   if (SCADA.started) return;
@@ -494,20 +474,17 @@ function startAnimation() {
   function frame() {
     SCADA.t += 1;
 
-    // sweep left->right
     if (sweep) {
       const x = (-550 + (SCADA.t * 2.4) % 1650);
       sweep.setAttribute("x", String(x));
     }
 
-    // animate edges
     SCADA.edges.forEach((e, idx) => {
       const dash = e.dash;
       const fast = dash === "4 4" ? 2.2 : (dash === "12 9" ? 0.5 : 1.1);
       e.path.style.strokeDashoffset = String((SCADA.t * fast + idx * 7) % 400);
     });
 
-    // node inner pulse (doesn't affect position)
     SCADA.nodes.forEach((n, idx) => {
       const p = n.pulse;
       const s = 1 + Math.sin((SCADA.t / 18) + idx) * 0.02 * p;
@@ -530,115 +507,130 @@ function renderDiagram(snapshot) {
   SCADA.nodesEl.innerHTML = "";
   SCADA.edges = [];
   SCADA.nodes = [];
+  SCADA.dragging = null;
 
-  const team = snapshot.team || [];
+  // Center node: MOXIE
+  const nodes = [];
+  nodes.push({ label: "MOXIE", status: "ACTIVE", sub: "Autonomous ops" });
 
-  const cx = 550, cy = 330;
-
-  // center
-  const mox = drawNode(cx, cy, 240, 70, "MOXIE", "ACTIVE", "autonomous CMO");
-  SCADA.nodes.push(mox);
-
-  // ring (stable spacing, no touching)
-  const roles = team
-    .filter(r => String((r.name || "")).toLowerCase() !== "moxie")
-    .slice(0, 12);
-
-  const radius = 245;
-  const start = -Math.PI / 2;
-  const step = roles.length ? (2 * Math.PI) / roles.length : 0;
-
-  roles.forEach((r, i) => {
-    const a = start + i * step;
-    const x = cx + Math.cos(a) * radius;
-    const y = cy + Math.sin(a) * radius;
-
-    const label = String(r.name || "ROLE");
-    const subtitle = String(r.title || "");
-
-    const node = drawNode(x, y, 240, 64, label, r.status, subtitle);
-    const idx = SCADA.nodes.push(node) - 1;
-
-    // edge to center
-    SCADA.edges.push(drawEdge(0, idx, r.status));
+  // Team nodes only (no product nodes)
+  (snapshot.team || []).forEach(t => {
+    nodes.push({
+      label: t.name || "",
+      status: t.status || "IDLE",
+      sub: t.title || ""
+    });
   });
 
-  // avoid any collisions on initial render
+  // Layout
+  const cx = 550, cy = 330;
+  const ring = 240;
+
+  // MOXIE
+  SCADA.nodes.push(drawNode(cx, cy, 200, 76, nodes[0].label, nodes[0].status, nodes[0].sub));
+
+  // Team around
+  const teamCount = Math.max(0, nodes.length - 1);
+  for (let i = 0; i < teamCount; i++) {
+    const angle = (Math.PI * 2) * (i / Math.max(1, teamCount));
+    const x = cx + Math.cos(angle) * ring;
+    const y = cy + Math.sin(angle) * (ring * 0.78);
+    const n = nodes[i + 1];
+    SCADA.nodes.push(drawNode(x, y, 220, 72, n.label || "", n.status, n.sub));
+  }
+
+  // Edges from MOXIE to each team node
+  for (let i = 1; i < SCADA.nodes.length; i++) {
+    const st = nodes[i]?.status || "ACTIVE";
+    SCADA.edges.push(drawEdge(0, i, st));
+  }
+
+  // Non-overlap settle
   resolveCollisions(null);
   for (let i = 0; i < SCADA.nodes.length; i++) clampToViewbox(i);
+  updateEdges();
 
-  // attach drag
+  // Drag
   for (let i = 0; i < SCADA.nodes.length; i++) attachDrag(i);
 
-  updateEdges();
   startAnimation();
 }
 
-function applySnapshot(snap) {
-  setText("generatedAt", `Snapshot: ${fmtDate(snap.generated_at || "")}`);
-
-  setText("kpiPv", snap.kpis?.pageviews_7d ?? "—");
-  setText("kpiVisitors", snap.kpis?.visitors_7d ?? "—");
-  setText("kpiSignups", snap.kpis?.signups_7d ?? "—");
-
-  setText("kpiPaidLifetime", snap.kpis?.paid_lifetime ?? 0);
-  setText("kpiFreeLifetime", snap.kpis?.free_lifetime ?? 0);
-  setText("kpiRevenueLifetime", snap.kpis?.revenue_lifetime_usd ?? 0);
-  setText("kpiMrr", snap.kpis?.mrr_usd ?? 0);
-
-  const active = (snap.products || []).find(p => statusNorm(p.status) === "ACTIVE") || (snap.products || [])[0];
-  setText("activeProduct", active ? active.name : "—");
-
-  const q = snap.systems?.queue;
-  setText("queueState", q ? `${q.in_progress} in progress • ${q.pending} pending` : "—");
-
-  const runningCount = snap.running?.count ?? (snap.running?.tasks || []).length;
-  setText("runningCount", runningCount ?? "—");
-
-  setText("blockerCount", snap.systems?.blockers?.count ?? "—");
-  setText("cronCount", snap.systems?.cron?.active_jobs ?? "—");
-
-  renderOpsTasks(snap.running?.tasks || []);
-  renderList("highlights", snap.running?.highlights || [], "—");
-  renderList("blockersList", snap.systems?.blockers?.needs_rishi || [], "—");
-
-  renderTeam(snap.team || []);
-  renderProducts(snap.products || []);
-  renderGitHub(snap.github?.recent || []);
-  renderConsole(snap.console || []);
-
-  const ticker = document.getElementById("ticker");
-  if (ticker) {
-    const parts = [];
-    parts.push(`running=${runningCount}`);
-    parts.push(`blockers=${snap.systems?.blockers?.count ?? 0}`);
-    parts.push(`queue_in_progress=${q?.in_progress ?? 0}`);
-    parts.push(`pv_7d=${snap.kpis?.pageviews_7d ?? 0}`);
-    ticker.textContent = parts.join("  •  ");
-  }
-
-  renderDiagram(snap);
+function pickTicker(snapshot) {
+  const lines = [];
+  const k = snapshot.kpis || {};
+  const active = (snapshot.products || []).find(p => String(p.status || "").toUpperCase() === "ACTIVE");
+  if (active) lines.push(`Focus: ${active.name}`);
+  lines.push(`Traffic 7D: ${k.pageviews_7d ?? 0} pv / ${k.visitors_7d ?? 0} visitors`);
+  lines.push(`Signups 7D: ${k.signups_7d ?? 0} • Paid lifetime: ${k.paid_lifetime ?? 0}`);
+  lines.push(`Revenue lifetime: $${k.revenue_lifetime_usd ?? 0} • MRR: $${k.mrr_usd ?? 0}`);
+  lines.push(`Queue: ${(snapshot.systems?.queue?.in_progress ?? 0)} in progress, ${(snapshot.systems?.queue?.pending ?? 0)} pending`);
+  return lines[Math.floor(Math.random() * lines.length)];
 }
 
-function tickClock() {
-  setText("liveClock", new Date().toLocaleString());
-}
-
-async function load() {
-  tickClock();
-  setInterval(tickClock, 1000);
-
+async function loadSnapshot() {
   try {
     const res = await fetch("./public_snapshot.json", { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const snap = await res.json();
-    applySnapshot(snap);
+    return await res.json();
   } catch (e) {
-    applySnapshot({
-      ...SAMPLE,
-      console: [...SAMPLE.console, `[FALLBACK] snapshot unavailable (${e.message})`]
-    });
+    return SAMPLE;
   }
 }
 
-load();
+function renderAll(snapshot) {
+  const k = snapshot.kpis || {};
+
+  setText("generatedAt", `snapshot: ${fmtDate(snapshot.generated_at || "")}`);
+
+  setText("kpiPv", String(k.pageviews_7d ?? "—"));
+  setText("kpiVisitors", String(k.visitors_7d ?? "—"));
+  setText("kpiSignups", String(k.signups_7d ?? "—"));
+  setText("kpiPaidLifetime", String(k.paid_lifetime ?? "—"));
+  setText("kpiFreeLifetime", String(k.free_lifetime ?? "—"));
+  setText("kpiRevenueLifetime", String(k.revenue_lifetime_usd ?? "—"));
+  setText("kpiMrr", String(k.mrr_usd ?? "—"));
+
+  // Active product
+  const active = (snapshot.products || []).find(p => String(p.status || "").toUpperCase() === "ACTIVE");
+  setText("activeProduct", active ? active.name : "—");
+
+  // Systems
+  setText("runningCount", String(snapshot.running?.count ?? 0));
+  setText("queueState", `${snapshot.systems?.queue?.in_progress ?? 0} in_progress • ${snapshot.systems?.queue?.pending ?? 0} pending`);
+  setText("blockerCount", String(snapshot.systems?.blockers?.count ?? 0));
+  setText("cronCount", String(snapshot.systems?.cron?.active_jobs ?? 0));
+
+  renderOpsTasks(snapshot.running?.tasks || []);
+  renderList("highlights", snapshot.running?.highlights || [], "—", 8);
+  renderList("blockersList", snapshot.systems?.blockers?.needs_rishi || [], "—", 8);
+  renderTeam(snapshot.team || []);
+  renderProducts(snapshot.products || []);
+  renderGitHub(snapshot.github?.recent || []);
+  renderConsole(snapshot.console || []);
+
+  renderDiagram(snapshot);
+
+  const tick = () => {
+    const el = document.getElementById("ticker");
+    if (el) el.textContent = pickTicker(snapshot);
+  };
+  tick();
+  setInterval(tick, 3200);
+}
+
+function startClock() {
+  const el = document.getElementById("liveClock");
+  if (!el) return;
+  const step = () => {
+    el.textContent = new Date().toLocaleString();
+  };
+  step();
+  setInterval(step, 1000);
+}
+
+(async function init() {
+  startClock();
+  const snapshot = await loadSnapshot();
+  renderAll(snapshot);
+})();

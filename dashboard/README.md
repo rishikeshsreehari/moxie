@@ -1,40 +1,28 @@
-# SapiensTech HQ Dashboard (public-safe)
+# SapiensTech Open Ops (Public)
 
-This is a static dashboard intended to be deployed publicly.
+This is a public-safe operations dashboard built with **7.css**.
 
-Design goals
-- Retro UI using 7.css
-- Monochrome / white background
-- Mobile responsive
-- Shows only sanitized, aggregated signals (no PII)
+## What it shows
+- CEO metrics (traffic/signups/revenue)
+- Execution map (draggable, collision-avoiding)
+- Running tasks + highlights
+- Team status
+- Needs CEO (blockers)
+- Products table
+- Shipping (recent commits)
 
-How it works
-- `index.html` loads `public_snapshot.json` via `fetch()`.
-- If the snapshot is missing, it falls back to a hardcoded sample.
+## Safety
+The snapshot (`public_snapshot.json`) is intended to be sanitized:
+- no emails / phone numbers
+- no secrets
+- no user-level analytics
 
-What to update
-- Update `public_snapshot.json` in your deploy pipeline (Cloudflare Pages / GitHub Actions) with sanitized data.
+## Local run
+```bash
+cd /root/moxie_hq
+python3 -m http.server 8099 --directory dashboard
+```
+Then open `http://127.0.0.1:8099/index.html`.
 
-Sanitization rules (do not violate)
-Never publish:
-- Emails
-- Phone numbers
-- API keys / tokens
-- Chat IDs
-- Full URLs with query strings
-- Referrer domains if they can identify individuals
-- Raw logs
-
-OK to publish:
-- Weekly totals (pageviews, visitors, signups)
-- Counts of blockers
-- Role-only statuses (IDLE/IN_PROGRESS/BLOCKED)
-- Counts of active jobs
-
-Local preview
-- Open `index.html` directly, or serve the folder:
-  - `python3 -m http.server 8000 --directory dashboard`
-
-Notes
-- 7.css is loaded from unpkg: https://unpkg.com/7.css/dist/7.scoped.css
-- All UI chrome is 7.css; custom styling is in `styles.css`.
+## Snapshot generation
+If you use `generate_snapshot.py`, it can overwrite `public_snapshot.json` with a sanitized snapshot.
