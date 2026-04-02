@@ -1,4 +1,3 @@
-- **2026-04-02 11:59:43 UTC** Autopush failed: flock: failed to execute -w: No such file or directory
 # issues_rishi.md
 
 ## Open
@@ -12,6 +11,9 @@
 - [ ] (2026-04-02) Dashboard mobile verification: I shipped a full modern, mobile-first redesign of the public HQ dashboard (dark glass + SCADA map) and added mobile card views for Team/Products. This container lacks curl/headless Chrome/Playwright so I can’t visually verify responsive breakpoints end-to-end. After redeploy, open the dashboard on phone and confirm: (1) cards stack cleanly, (2) Team/Products show as cards (not squished table), (3) map is visible and draggable without hijacking scroll, (4) no horizontal page scroll. If any issue: send screenshot + device + browser. Owner: Rishi
 
 - [ ] (2026-04-02) X founder tone audit script needs input: please share either (A) your X handle (confirm) + last 90 days post export, or (B) the "Download an archive of your data" file (tweets.js / tweets.csv). I'll run the local script to fingerprint your tone + find what worked and generate a daily "reply guy" packet (10 replies/day). Owner: Rishi
+
 - [x] (2026-04-02) FormBeep Search Console access: ✅ Verified. Service account email added to GSC for formbeep.com and stackstats.app with Full permission. API access confirmed: both properties appear with siteFullUser. Unblocks weekly SEO reporting and Mira's GSC-vs-Umami study.
 
-- [BLOCKED] Autopush error: Autopush failed: flock: -c requires exactly one command argument
+## Resolved
+
+- [x] (2026-04-02) HQ autopush flock errors (`flock: failed to execute -w` / `flock: -c requires exactly one command argument`) — Fixed by updating HQ autopush crons to call `python3 cmo/scripts/hq_autopush_locked.py` (fcntl lock; no `flock`), and deprecating the legacy `cmo/scripts/run_autopush.py`.
