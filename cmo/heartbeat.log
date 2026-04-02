@@ -1,54 +1,37 @@
-=== MOXIE HEARTBEAT ===
-Timestamp: 2026-04-02 09:09:36 UTC
+ Heartbeat log - Moxie CMO System
+ Generated: 2026-04-02 10:10:00 UTC
+ Cron: silent-heartbeat (no Telegram output)
 
---- ORCHESTRATION STATUS ---
-# Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-# Last updated: 2026-04-02T09:04:57Z
-...
-(truncated for brevity)
+=== SYSTEM STATUS ===
+ Working directory: /root/moxie_hq
+ Git status: clean (no uncommitted changes)
+ Orchestration file: updated 2026-04-02T09:04:57Z
+ Dispatch queue: 90+ entries, all dispatched/processed
+ Active tasks file: present (legacy format from March 31)
 
---- ACTIVE WORKER STATUS ---
-- Vale: COMPLETED (StackStats Reddit scan plan done)
-- Astra: IDLE (SERP briefs shipped for both products)
-- Kiro: COMPLETED (2 blog posts reworked)
-- Ember: COMPLETED (Reddit tracker done), EXECUTION BLOCKED: Reddit credentials
-- Forge: COMPLETED (tracking implementation notes for both products)
-- Mira: IN_PROGRESS (StackStats Umami analytics)
-- Jax: COMPLETED (directory replacement), BLOCKED: directory credentials
-- Rumi: COMPLETED (X tone kit + channel matrix)
-- Pax: COMPLETED (Week 3 platform applications)
-- Luna: COMPLETED (win-back emails)
-- Orion: COMPLETED (prospect refresh)
-- Iris: IN_PROGRESS (FormBeep repo copy audit)
-- Moxie: IN_PROGRESS (Founder Voice strategy)
+=== EMPLOYEE STATE SUMMARY ===
+ Vale (Competitor Intel): COMPLETED - Reddit scan plan delivered
+ Astra (Growth Research): COMPLETED - SERP briefs for both products
+ Kiro (Copy Lead): COMPLETED - 2 blog posts reworked
+ Ember (Outreach): COMPLETED - Reddit posting tracker (blocked on creds)
+ Forge (Engineer): Active - multiple P0 tasks in progress
+ Mira (Analytics): IN_PROGRESS - Umami daily scaffold (FormBeep) + GSC vs Umami study (blocked on GSC credentials)
+ Luna (CRM): COMPLETED - Win-back sequence
+ Orion (Outbound): COMPLETED - Prospect list refresh
+ Rumi (Content): COMPLETED - X tone kit + channel matrix
+ Moxie (CMO): IN_PROGRESS - Founder voice strategy + self-score
 
---- IN-PROGRESS TASKS (High Priority) ---
-1. [IN_PROGRESS][P0] formbeep|Iris|Repo copy audit - Inspect landing page content, deliver 10 improvements
-   Path: /root/moxie_hq/products/formbeep/dev-notes/2026-04-01-repo-copy-audit.md
-   
-2. [IN_PROGRESS][P0] stackstats|Mira|Umami Cloud analytics pull - last 7d + 30d summary
-   Path: /root/moxie/products/stackstats/analytics/umami-summary.md
-   
-3. [IN_PROGRESS][P0] hq|Moxie|Founder Voice / Build-in-Public strategy (X + IndieHackers)
-   Path: /root/moxie_hq/cmo/strategy/founder-voice-x-indiehackers.md
+=== BLOCKERS / OPEN ISSUES ===
+ - FormBeep GSC credentials missing: /root/moxie/secrets/formbeep-search-console.json not found (already logged in issues_rishi.md)
+ - Reddit execution: blocked on account credentials (see issues_rishi.md)
+ - Directory submissions: Jax task completed but new picks needed after BetaList/AlternativeTo failures
+ - Dashboard mobile verification: pending Rishi visual check on device
+ - X founder tone audit: pending Rishi X export
+ - Platform marketplace dev: Forge to produce requirements matrix
 
---- ISSUES FOR RISHI (from issues_rishi.md) ---
-4 open items requiring founder attention:
-1. Platform marketplaces mis-scoping (Forge + Rishi)
-2. Reddit execution: post-ready drafts missing (Ember + Moxie)
-3. Directory distribution: failed picks need replacement (Jax)
-4. Dashboard mobile verification needed (Rishi)
-5. X founder tone audit needs X export data (Rishi)
+=== NOTES ===
+ - Umami Cloud integration for FormBeep previously reported as FAILED (zero data, 500 errors). Status should be re-verified.
+ - All workers appear to be functioning; delegation queue being processed.
+ - No repository changes to autopush.
 
---- NOTIFY_ISSUES.PY CHECK ---
-Status: [SILENT] - no new urgent issues detected
-
---- CRON HEALTH ---
-All scheduled crons active. Next key runs:
-- formbeep-daily-traffic-check: 2026-04-02 10:00:00Z
-- mira-daily-kpi: 2026-04-02 10:00:00Z
-- moxie-orchestration-reconciler: 2026-04-02 05:13:00Z (due)
-- issues-rishi-watch: every 240m (next: 2026-04-02 08:41:20Z) - PASSED
-
-=== END HEARTBEAT ===
-2026-04-02T09:28:45.771072Z | Rumi status check: no IN_PROGRESS task assigned; queue/orchestration already synchronized.
+=== HEARTBEAT COMPLETE ===
