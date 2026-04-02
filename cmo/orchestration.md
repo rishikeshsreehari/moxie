@@ -130,13 +130,13 @@
 ### Jax — SaaS Growth Operations Lead
 - SOUL: /root/moxie/cmo/employees/jax-soul.md
 - Current output dir (sprint): /root/moxie/products/formbeep/
-- Status: IDLE / COMPLETED
-- Current task: (FormBeep) Live vs repo landing page diff — **COMPLETED** (2026-04-02T18:33:42Z)
-- Task ID: jax-20260402_live_vs_repo_diff
-- Output path: /root/moxie_hq/products/formbeep/dev-notes/live-vs-repo-landing-diff.md
-- Last completed task: (FormBeep) Live vs repo landing page diff — COMPLETED (2026-04-02T18:33:42Z)
+- Status: COMPLETED (all P0 tasks done; awaiting next assignments)
+- Current task: (StackStats) Live site snapshot (main + demo) — **COMPLETED** (2026-04-02T19:20:00Z)
+- Task ID: jax-20260402_stackstats_snapshot
+- Output path: /root/moxie/products/stackstats/dev-notes/live-site-snapshot.md
+- Last completed task: (StackStats) Live site snapshot — COMPLETED (2026-04-02T19:20:00Z)
 - Blockers: None
-- Next queued tasks: (StackStats) site snapshot (queued; ready to run in next ops cycle)
+- Next queued tasks: None (awaiting new assignment)
    141|   143|   134|
    142|### Rumi — Blog & Content Analyst
    143|- SOUL: /root/moxie/cmo/employees/rumi-soul.md
@@ -212,7 +212,7 @@
    209|
    210|**Editing rule:** do not edit jobs via this table. Update jobs using `hermes cron edit <cron_id> ...` and then reconcile this table to match.
    211|
-   212|Last verified: 2026-04-02T17:19:00Z
+   212|Last verified: 2026-04-02T19:16:00Z
    213|
    214|||| Cron ID | Name | Schedule | Deliver | Next run (UTC) | Repeats | State |||---|---|---|---|---|---|---|
    215||| 6effbb32 | formbeep-daily-user-count-checkin | every 1440m | local | 2026-04-02T14:06:30+00:00 | ∞ | active |
@@ -244,7 +244,8 @@
    241||| 868bd30f | moxie-hq-autocommit-push | every 30m | local | 2026-04-02T10:42:51+00:00 | ∞ | active |
    242||| 1c008e06 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-04-02T13:13:00+00:00 | 52/100 | active |
    243||| c342e174 | opencode-go-weekly-limit-reset-reminder | 26 13 * * 1 | local | 2026-04-06T13:26:00+00:00 | ∞ | active |
-   244|||| 7af300e6 | cmo-delegation-queue-runner | */15 * * * * | local | 2026-04-02T04:15:00+00:00 | ∞ | active |
+   244|||| 7af300e6 | cmo-delegation-queue-runner | */15 * * * * | local | 2026-04-02T19:15:00+00:00 | ∞ | active |
+|| 8c6364f4 | FormBeep SMS SEO reminder (2 weeks) | once at 2026-04-16 12:00 | origin (Telegram) | 2026-04-16T12:00:00+00:00 | 0/1 | active | ⚠️ One-shot reminder; delivers to Telegram (budget-sensitive)
    246|
 **Retired/Removed jobs** (no longer in live registry):
 - `01471699` cmo-deep-audit-5-4-2026-04-02 — one-shot deep audit job, completed/retired

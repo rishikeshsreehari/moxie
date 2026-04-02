@@ -50,9 +50,9 @@ Last updated: 2026-04-02
 
 ## P1 — REVIEW (content system)
 
-7) [P1][REVIEW] Founder Voice / Build-in-Public strategy (X + IndieHackers)
+7) [P1][REVIEW] Founder Voice / Build-in-Public strategy (X + IndieHackers) ✅ APPROVED
 - File: `/root/moxie_hq/cmo/strategy/founder-voice-x-indiehackers.md`
-- Outcome needed: approve cadence + pillars; pick the first 7 days to execute.
+- Next: Kiro will produce 7-day X calendar + paste-ready posts under `/root/moxie_hq/cmo/content/` (queued).
 
 8) [P1][REVIEW] X tone + “reply guy” OS (framework ready; needs your export to run fully)
 - File: `/root/moxie_hq/cmo/strategy/x-tone-and-reply-guy-kit.md`
