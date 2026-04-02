@@ -1,89 +1,37 @@
-     1|1|# Moxie Heartbeat Log
-     2|     2|# Generated: 2026-04-02T00:13:00Z
-     3|     3|
-     4|     4|## System Status: ACTIVE
-     5|     5|
-     6|     6|### Active Workers (IN_PROGRESS)
-     7|     7|| Employee | Product | Task | Status |
-     8|     8||----------|---------|------|--------|
-     9|     9|| Jax | FormBeep | Replace failed directory picks (P0) | IN_PROGRESS (since 2026-04-01T23:00Z) |
-    10|    10|| Iris | FormBeep | Repo landing page copy audit (P0) | IN_PROGRESS (since 2026-04-02T00:06Z) |
-    11|    11|| Mira | StackStats | Umami analytics pull (P0) | IN_PROGRESS (since 2026-04-02T00:06Z) |
-    12|    12|
-    13|    13|### Queued Tasks Awaiting Promotion
-    14|    14|- Forge: GSC validation (queued 2026-04-04)
-    15|    15|- Forge: Marketplace integration scope (P0)- Forge: FormBeep tracking implementation (P0)
-    16|    16|- Astra: FormBeep SERP opportunity (P0)
-    17|    17|- Rumi: FormBeep SEO page outlines (P0)
-    18|    18|- Mira: FormBeep monitoring scaffold (P0)
-    19|    19|- Moxie: Failure analysis postmortem (P0)
-    20|    20|- Mira: GSC vs Umami study (P0)
-    21|    21|- Moxie: Founder voice strategy (P0)
-    22|    22|- Vale: StackStats Reddit scan plan (P0)
-    23|    23|- Iris: StackStats site scrape (P0)
-    24|    24|- Forge: StackStats tracking implementation (P0)
-    25|    25|- Astra: StackStats SERP opportunity (P0)
-    26|    26|- Rumi: StackStats SEO page outlines (P0)
-    27|    27|
-    28|    28|### Recently Completed (last 24h)
-    29|    29|- Luna: Win-back email sequence (2026-04-02T08:52Z)
-    30|    30|- Orion: Prospect list refresh (2026-04-02T08:15Z)
-    31|    31|- Astra: US SMS SERP demand brief (2026-04-02T09:30Z)
-    32|    32|- Ember: Reddit posting tracker (2026-04-02T07:00Z)
-    33|    33|
-    34|    34|### Open Issues (issues_rishi.md)
-    35|    35|- Platform marketplaces: Need dev + guidelines (Rishi + Forge)
-    36|    36|- Reddit execution: Need post-ready drafts (Ember + Moxie)
-    37|    37|- Directory distribution: Replacing failed picks (Jax)
-    38|    38|
-    39|    39|### Promotion Rules Status
-    40|    40|- Max 1 IN_PROGRESS per employee: PASS
-    41|    41|- Max 1 new task per product per hour: PASS
-    42|    42|- Dependencies satisfied: PASS
-    43|    43|
-    44|    44|### Next Scheduled Crons
-    45|    45|- iris-worker: ~15min (hourly at :30)
-    46|    46|- moxie-orchestration-reconciler: ~0min (hourly at :13)
-    47|    47|
-    48|    48|### Notes
-    49|    49|- System running normally
-    50|    50|- 3 active workers across FormBeep (2) and StackStats (1)
-    51|    51|- No new blockers detected
-    52|    52|- Premium Codex available (limit reset)
-    53|    53|
-    54|    54|---
-    55|    55|Heartbeat: OK
-    56|[2026-04-02T01:16:44.998406+00:00]
-    57|IN_PROGRESS: 12 | QUEUED: 0 | BLOCKED: 3
-    58|Product Distribution: FormBeep, StackStats, HQ
-    59|System Status: Operational
-    60|No critical blockers detected.
-    61|---2026-04-02T01:18:51.991421Z | moxie-orchestration-reconciler | Checked system state | Crons: 25 active | Dispatch queue: 6 IN_PROGRESS, 14 QUEUED | No critical drift
-[2026-04-02 02:07:58 UTC] Moxie Governance Heartbeat
+# Moxie Governance Heartbeat Log
+# Format: timestamp | status | summary
 
-IN_PROGRESS TASKS (5):
-- Forge (StackStats): Repo tracking audit — tracking-implementation-notes.md
-- Mira (StackStats): Umami analytics pull — umami-summary.md  
-- Iris (FormBeep): Repo copy/UX audit — 2026-04-01-repo-copy-audit.md
-- Rumi (HQ): Platform×product posting matrix — channel-matrix-all-products.md
-- Moxie (HQ): Founder Voice strategy — founder-voice-x-indiehackers.md
+## 2026-04-02T03:13:00Z | HEALTHY | System operational
 
-COMPLETED THIS SESSION:
-- Astra: SERP briefs for both products (FormBeep + StackStats)
-- Rumi: SEO page outlines for both products
-- Jax: Directory day-pick (replaced failed BetaList/AlternativeTo)
-- Forge: Marketplace integration scope memo
-- Luna: Win-back email sequence
-- Orion: Prospect list refresh
+### Active Workers (IN_PROGRESS)
+- Iris: FormBeep landing page repo copy audit (promoted 02:06Z)
+- Mira: StackStats Umami analytics pull (promoted 00:06Z)
+- Rumi: Channel matrix for all products (promoted 02:00Z)
+- Forge: FormBeep tracking implementation notes (promoted 03:00Z)
+- Moxie: Founder Voice / Build-in-Public strategy (promoted 01:11Z)
 
-BLOCKERS (2 active):
-1. WordPress plugin resubmission — founder-owned, awaiting Rishi
-2. Reddit posting execution — needs Reddit account credentials
+### Recent Completions (last 12h)
+- Astra: FormBeep SERP brief COMPLETED (12:15Z)
+- Astra: StackStats SERP brief COMPLETED (12:00Z)
+- Rumi: FormBeep SEO page outlines COMPLETED (13:00Z)
+- Vale: StackStats Reddit scan plan COMPLETED (10:00Z)
+- Luna: Win-back email sequence COMPLETED (08:52Z)
+- Orion: Prospect list refresh COMPLETED (08:15Z)
 
-QUEUED P0 TASKS: 8 tasks awaiting promotion
+### Queue Status
+- QUEUED tasks: 12 tasks waiting (P0-P2 priority)
+- IN_PROGRESS: 5 tasks
+- Ready to promote: GSC validation (requires 3 days after sitemap resubmit - due 2026-04-04)
 
-SYSTEM STATUS: DEGRADED (Codex available, OpenRouter fallback active)
-ACTIVE CRONS: 36 jobs registered
-NEXT GOVERNANCE RUN: 02:00 UTC hourly
+### Known Blockers
+- Reddit credentials: BLOCKED (see issues_rishi.md)
+- Directory submissions: BLOCKED pending founder credentials
+- WordPress plugin: BLOCKED (founder-owned task)
+
+### System Metrics
+- Worker crons: 12 active, staggered across hour
+- Governance cron: running (run 51/100)
+- No critical errors
+- Token optimization active
 
 ---
