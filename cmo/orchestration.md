@@ -1,5 +1,5 @@
      1|# Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-     2|# Last updated: 2026-04-02T00:06:00Z
+     2|# Last updated: 2026-04-02T01:10:42Z
      3|# 
      4|# HOW THIS WORKS:
      5|# Every cron job reads this file for context. When done, it updates relevant sections.
@@ -65,15 +65,16 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 - Other competitors tracked: WPForms, Formspree, Getform, Basin, WANotifier, Zapier, Make, n8n, FormToWA, SendForm.io, PingForms, NotifyStack
 - Idle-cycle deliverable: /root/moxie/products/formbeep/pricing-war-room-april-2026.md — Pricing decision analysis ($4 vs $4.99), feature gap matrix, recommend hold price + lean into SMS moat
 ### Astra — Growth Research Lead
-### New task completed
 - SOUL: /root/moxie/cmo/employees/astra-soul.md
-- Current output dir (sprint): /root/moxie/products/formbeep/
-- Status: COMPLETED
-- Current task: DataForSEO 50-query LIVE SERP demand probe + full competitive breakdown — **COMPLETED** (2026-04-02T09:30Z)
-- Task details: (1) US SMS demand keywords, (2) overall FormBeep keyword expansion, (3) DataForSEO credits/$ estimate. MUST ask Rishi approval before any paid API calls beyond the 1 already-run test. Creds policy: /root/moxie_hq/cmo/resources/credentials/dataforseo.md
+- Current output dir (sprint): /root/moxie/products/stackstats/
+- Status: IN_PROGRESS
+- Current task: (StackStats) Run DataForSEO SERP sampling for keyword discovery + 6 SEO page recommendations — **IN_PROGRESS** (promoted 2026-04-02T01:11Z)
+- Task ID: astra-20260402_011100-stackstats-serp
+- Output path: /root/moxie/products/stackstats/seo/serp-opportunity-brief.md
+- Task details: (1) keyword cluster list with intent labels, (2) SERP feature notes, (3) what ranks by category, (4) recommended 6 SEO pages + outlines. Use US + UK. Founder approved $0.10 spend.
 - Last output: /root/moxie/products/formbeep/seo/us-sms-serp-demand-brief.md
-- Previous output: /root/moxie/products/formbeep/sms-keyword-analysis.md
-- Blockers: None — 50-query probe complete (50/50 success, ~$0.10 cost)
+- Next task after completion: Continue SERP analysis for other products
+- Blockers: None
     72|
 ### Kiro — Conversion Copy Lead
 |- SOUL: /root/moxie/cmo/employees/kiro-soul.md
@@ -100,11 +101,12 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 ### Forge — Full Stack Engineer
 - SOUL: /root/moxie/cmo/employees/forge-soul.md
 - Current output dir (sprint): /root/moxie/products/formbeep/
-- Status: COMPLETED
-- Current task: Improve HQ git commit messages (replace generic "Autopush:" with specific summaries; update autopush script) — **COMPLETED** (2026-04-01T22:37Z)
-- Output path: /root/moxie_hq/cmo/sops/hq-commit-message-standard.md
+- Status: IN_PROGRESS
+- Current task: (FormBeep) Build marketplace requirements matrix + feasibility memo — **IN_PROGRESS** (promoted 2026-04-02T01:11Z)
+- Task ID: forge-20260402_011100-marketplace
+- Output path: /root/moxie_hq/products/formbeep/dev-notes/marketplace-integration-scope.md
+- Task details: (1) completed matrix covering Webflow/Framer/Glide/Typedream with citations/quotes of what qualifies + gates, (2) MVP integration options + effort (S/M/L) + build vs defer recommendation. Follow SOP at /root/moxie_hq/cmo/sops/marketplace-channel-verification.md
 - Last output: /root/moxie_hq/cmo/sops/hq-commit-message-standard.md (delivered 2026-04-01)
-- Previous task: Technical SEO audit — **COMPLETED**
 - Next task after completion: Monitor Index Coverage for taxonomy page removal; measure impression changes for blog pages
 - Blockers: None
    105|
@@ -190,7 +192,17 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 - Next task after completion: Weekly copy/UX audit of landing + docs content
 - Blockers: None
    180|
-   181|---
+   181|
+### Moxie — CMO / Orchestrator
+- SOUL: /root/moxie_hq/SOUL.md
+- Current output dir (sprint): /root/moxie_hq/cmo/
+- Status: IN_PROGRESS
+- Current task: (HQ) Create all-products Founder Voice / Build-in-Public strategy — **IN_PROGRESS** (promoted 2026-04-02T01:11Z)
+- Task ID: moxie-20260402_011100-founder-voice
+- Output path: /root/moxie_hq/cmo/strategy/founder-voice-x-indiehackers.md
+- Task details: X + IndieHackers strategy with WHERE/WHY/HOW patterns, WHEN (UTC + geo), 30-day cadence template, content pillars, proof/credibility loop, and multi-product narrative routing
+- Blockers: None
+---
    182|
    183|## Active Crons (Source of truth: `hermes cron list`)
    184|
