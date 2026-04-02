@@ -3,3 +3,4 @@
 [2026-04-02 14:11:30 UTC] Autopush cron executed: processing delegation queue and artifacts
 2026-04-02T15:10:44Z — Moxie autopush: completed postmortem 2026-04-01-formbeep-failures.md, updated dispatch-queue.md + orchestration.md, pushed commit d3fc5b7
 2026-04-02T15:28:18Z Rumi run: no IN_PROGRESS tasks assigned; no queue/orchestration changes made
+2026-04-02T16:07:05Z — 2 IN_PROGRESS tasks active
