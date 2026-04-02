@@ -1,112 +1,98 @@
 # Rishi Review Queue (Founder attention)
 
-Purpose: single place to track everything that needs Rishi’s attention (reviews, manual execution, decisions).  
-Rule: When Rishi asks “what needs my attention?”, Moxie reads this file and presents items **one by one**.
+Purpose: single place to track everything that needs Rishi’s attention (reviews, manual execution, decisions).
+Rule: When you ask “what needs my attention?”, I will read THIS file and present items one by one.
 
-Last updated: 2026-04-01
-
----
-
-## NOW (next 24h)
-
-### [REVIEW] HQ repo cleanup run (tidy-up)
-- Owner: Rishi (review), Moxie (executed)
-- Report: /root/moxie_hq/cmo/reports/repo-health-audit-2026-04-02.md
-- What happened: only removed 3x __pycache__ dirs (safe junk)
-- Code/SOP:
-  - /root/moxie_hq/cmo/sops/repo-health-audit.md
-  - /root/moxie_hq/cmo/scripts/repo_cleanup.py
-- Decision: approve this as the ongoing cleanup policy (yes/no + any exclusions)
-
-### [REVIEW] Execution OS v3 deployment (process change)
-- Owner: Rishi (review/approve), Moxie (deployed)
-- SOP: /root/moxie_hq/cmo/sops/execution-os-v3.md
-- Template: /root/moxie_hq/cmo/templates/execution-packet.md
-- What changed: daily 13:00 GST execution window + last-mile contract + “not done until reported + Rishi marks DONE”
-- Decision: approve OS v3 as the operating rule going forward (yes/no + edits)
-
-## TODAY 13:00 GST (09:00 UTC) — Founder Execution Window
-Rule: Moxie provides paste-ready execution packet(s) by 12:45 GST. Rishi executes 1 action and reports back with URL/outcome.
-
-
-1) [ACTION] Directory submissions — Today’s 2 picks (manual)
-- Owner: Rishi (execute), Jax (prep)
-- File: /root/moxie/products/formbeep/directory-submissions-today-pick.md
-- Picks (per latest Jax plan):
-  - BetaList
-  - AlternativeTo
-- Done when: submitted + listing URL logged in /root/moxie/products/formbeep/distribution/directory-submissions-log.md
-
-2) [REVIEW] Landing page — pick 1 change to ship this week
-- Owner: Rishi (decision), Moxie (ship)
-- File (single decision doc): /root/moxie/products/formbeep/analytics/landing-change-decision.md
-- Source data (optional): /root/moxie/products/formbeep/analytics/landing-hero-funnel-30d.md
-- Decision needed: reply with A/B/C/D from the decision doc
+Last updated: 2026-04-02
 
 ---
 
-## WAITING ON OUTPUT (check when ready)
+## P0 — BLOCKERS (unblocks execution)
 
-NOTE: “Platform marketplace submissions” is deferred until an engineering scope exists. It is not a pure submission/credentials task.
+1) [P0][CREDENTIALS] FormBeep Google Search Console access
+- What’s needed: provide `/root/moxie/secrets/formbeep-search-console.json` (service account or whatever format we standardized)
+- Why: blocks weekly SEO reporting + the “GSC vs Umami (28d)” study
 
-3) [REVIEW] Google Search Console quick audit (indexing + queries)
-- Owner: Rishi (review), Forge (creating)
-- Output: /root/moxie/products/formbeep/seo/gsc-quick-audit.md
-- Decision: which 1–2 indexing/SEO fixes to implement next
+2) [P0][CREDENTIALS] Reddit posting execution
+- What’s needed: whichever Reddit account we’ll post from (credentials/session) for manual posting.
+- Why: Ember’s tracker/plan exists but posting cannot happen without an account.
 
-4) [REVIEW] Rubric reality check (are scorecards real? who is underperforming?)
-- Owner: Rishi (review), Moxie (creating)
-- Output (to be created): /root/moxie_hq/cmo/reports/rubric-audit.md
-- Decision: whether to fix wiring or remove rubric from docs; any corrective actions per employee
-
----
-
-## WAITING (external)
-
-5) [WAITING] WordPress plugin approval
-- Owner: Rishi
-- Status: Submitted, waiting (~10 days)
-- Next action: when approved, trigger WP launch plan
+3) [P0][CREDENTIALS] Directory submissions execution
+- What’s needed: any existing directory accounts tied to `hello@formbeep.com` + inbox verification access as needed.
+- Why: execution is founder-owned; Jax can prep but cannot submit without accounts.
 
 ---
 
-## SYSTEMS TO MAINTAIN (ongoing)
+## P0 — ACTION (15–25 min each, immediate progress)
 
-0) [SETUP] New product onboarding questionnaire (answer once per product)
-- Owner: Rishi
-- File: /root/moxie_hq/cmo/resources/product-onboarding/product-onboarding-questions.md
-- When used: the moment you give me Product #2 details
+4) [P0][ACTION] Submit FormBeep to 2 directories (copy/paste ready)
+- File: `/root/moxie/products/formbeep/distribution/directory-submissions-today-pick.md`
+- Picks: Fazier + Twelve Tools (both verified with exact URLs + UTMs)
+- Done when: submitted + logged in `/root/moxie/products/formbeep/distribution/directory-submissions-log.md`
 
-6) [SETUP/MAINTAIN] Reddit posting tracker (rules + “have we posted?”)
-- Owner: Rishi (manual posting), Ember (planning)
-- File: /root/moxie/products/formbeep/outreach/reddit-posting-tracker.md
-- Next action: pick 5–10 subs for this week, fill rules + viral patterns; then post manually
+5) [P0][ACTION] Dashboard mobile QA (2 min)
+- What to do: open the public HQ dashboard on your phone and confirm:
+  (a) cards stack cleanly
+  (b) Team/Products render as cards (not a squished table)
+  (c) map is draggable without hijacking scroll
+  (d) no horizontal page scroll
+- If broken: send screenshot + device + browser.
 
-7) [SETUP/MAINTAIN] Directory tracking
-- Owner: Rishi (execute), Jax (ops)
+---
+
+## P0 — REVIEW (high-leverage decisions)
+
+6) [P0][REVIEW] FormBeep failure analysis (what we fixed + what remains)
+- File: `/root/moxie_hq/cmo/postmortems/2026-04-01-formbeep-failures.md`
+- Outcome needed: confirm the prevention rules (Execution OS v3) are acceptable.
+
+7) [P0][REVIEW] US SMS positioning — GO/NO-GO decision
+- File: `/root/moxie/products/formbeep/seo/us-sms-serp-demand-brief.md`
+- Outcome needed: decide whether we emphasize US SMS now vs WhatsApp-first geos, and which 3 pages to ship first.
+
+8) [P0][REVIEW] Marketplace strategy decision (build vs defer)
 - Files:
-  - /root/moxie/products/formbeep/directory-submissions-tracker.md
-  - /root/moxie/products/formbeep/distribution/directory-submissions-log.md
-- Next action: keep logging every submission/approval to avoid duplicates
+  - `/root/moxie_hq/products/formbeep/dev-notes/marketplace-integration-scope.md`
+  - `/root/moxie_hq/products/formbeep/dev-notes/marketplace-requirements-matrix.md`
+- Outcome needed: confirm the “defer Webflow/Framer, build Glide/Typedream” recommendation.
 
-8) [REVIEW TOMORROW] US SMS SERP demand research (FormBeep) — DONE
-- Owner: Rishi (review), Astra (completed)
-- Output: /root/moxie/products/formbeep/seo/us-sms-serp-demand-brief.md
-- What you’ll decide: GO/NO-GO on emphasizing US SMS vs India WhatsApp first, and which 3 pages to ship first.
+---
 
-9) [REVIEW TOMORROW] Content strategy (all projects): Founder Voice + Build-in-Public for X + IndieHackers
-- Owner: Rishi (review), Moxie (creating)
-- Output (will be created): /root/moxie_hq/cmo/strategy/founder-voice-x-indiehackers.md
-- Includes Golden Rule: where/why/how/when (UTC+country)/why-that-time for every planned post.
+## P1 — REVIEW (content system)
 
-10) [REVIEW TOMORROW] FormBeep: GSC vs Umami (last 28d) — what ranks vs what converts
-- Owner: Rishi (review), Mira (creating)
-- Output (will be created): /root/moxie/products/formbeep/analytics/gsc-vs-umami-28d.md
-- Goal: pick the 3 highest-leverage pages to fix this week.
+9) [P1][REVIEW] Founder Voice / Build-in-Public strategy (X + IndieHackers)
+- File: `/root/moxie_hq/cmo/strategy/founder-voice-x-indiehackers.md`
+- Outcome needed: approve cadence + pillars; pick the first 7 days to execute.
 
-(Directory tracking remains ongoing)
-- Owner: Rishi (execute), Jax (ops)
-- Files:
-  - /root/moxie/products/formbeep/directory-submissions-tracker.md
-  - /root/moxie/products/formbeep/distribution/directory-submissions-log.md
-- Next action: keep logging every submission/approval to avoid duplicates
+10) [P1][REVIEW] X tone + “reply guy” OS (framework ready; needs your export to run fully)
+- File: `/root/moxie_hq/cmo/strategy/x-tone-and-reply-guy-kit.md`
+- Input needed to activate: your X export (tweets.js / tweets.csv) OR confirm handle + provide last 90 days posts.
+
+11) [P1][REVIEW] Channel matrix (how often/when to post per product/channel)
+- File: `/root/moxie_hq/cmo/strategy/channel-matrix-all-products.md`
+
+---
+
+## P0 — WAITING ON OUTPUT (currently missing deliverables)
+
+These were marked IN_PROGRESS for ~20h+ because the originally assigned owners (Iris/Mira) do not have hourly worker crons. I reassigned them to active hourly workers so they will complete.
+
+12) [P0][WAITING] FormBeep repo copy audit (reassigned → Forge)
+- Output: `/root/moxie_hq/products/formbeep/dev-notes/2026-04-01-repo-copy-audit.md`
+
+13) [P0][WAITING] StackStats Umami analytics summary (reassigned → Jax)
+- Output: `/root/moxie/products/stackstats/analytics/umami-summary.md`
+
+14) [P0][WAITING] FormBeep live vs repo landing diff (queued → Jax)
+- Output: `/root/moxie_hq/products/formbeep/dev-notes/live-vs-repo-landing-diff.md`
+
+15) [P0][WAITING] StackStats live-site snapshot (queued → Jax)
+- Output: `/root/moxie/products/stackstats/dev-notes/live-site-snapshot.md`
+
+---
+
+## P2 — SYSTEM CLEANUP (I will keep this maintained)
+
+16) [P2][FIX] Review-queue hygiene
+- Note: The old references to `landing-change-decision.md` and `landing-hero-funnel-30d.md` are removed because those files do not exist on disk.
+- Going forward: anything you say that creates work will be logged here as P0/P1/P2 with an owner + file path + “done when”.

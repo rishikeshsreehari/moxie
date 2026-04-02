@@ -13,3 +13,5 @@
 
 - [ ] (2026-04-02) X founder tone audit script needs input: please share either (A) your X handle (confirm) + last 90 days post export, or (B) the "Download an archive of your data" file (tweets.js / tweets.csv). I'll run the local script to fingerprint your tone + find what worked and generate a daily "reply guy" packet (10 replies/day). Owner: Rishi
 - [ ] (2026-04-02) FormBeep Search Console access missing: Expected credential file at /root/moxie/secrets/formbeep-search-console.json not found. Weekly SEO performance report blocked until credentials provided. Owner: Rishi
+
+- [BLOCKED] Autopush error: Autopush failed: flock: -c requires exactly one command argument

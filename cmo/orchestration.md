@@ -108,18 +108,15 @@
    108|- Key findings: 6 existing tracked CTAs identified, 3 recommended additions, UTM hygiene standards documented
    109|- Blockers: None
    110|   112|   105|
-   111|   113|### Mira — Analytics & Reporting Lead
-   112|   114|- SOUL: /root/moxie/cmo/employees/mira-soul.md
-   113|   115|- Current output dir (sprint): /root/moxie/products/stackstats/
-   114|   116|- Status: IN_PROGRESS
-   115|   117|- Current task: (StackStats) Pull Umami Cloud analytics for StackStats (website_id 52a19925-9bf4-4efe-9a42-ecc2a7f08d81): last 7d + last 30d. Include top sources, top pages, geo split, and any events — **IN_PROGRESS** (promoted 2026-04-02T00:06Z)
-   116|   118|- Task ID: mira-20260401_233129-5c8b35
-   117|   119|- Output path: /root/moxie/products/stackstats/analytics/umami-summary.md
-   118|   120|- Umami: cloud.umami.is, website ID: 52a19925-9bf4-4efe-9a42-ecc2a7f08d81
-   119|   121|- Last output: /root/moxie/products/formbeep/traffic-vs-keywords.md
-   120|   122|- Next task after completion: Continue analytics support for StackStats growth plan
-   121|   123|- Blockers: None
-   122|   124|- Codex tracking: /root/moxie/cmo/codex-usage.md + /root/moxie/cmo/codex-usage-tracker.csv
+### Mira — Analytics & Reporting Lead
+- SOUL: /root/moxie/cmo/employees/mira-soul.md
+- Current output dir (sprint): /root/moxie/products/stackstats/
+- Status: IDLE (no mira-worker cron; analytics tasks are being routed to active hourly workers)
+- Previous task: (StackStats) Pull Umami Cloud analytics — REASSIGNED to Jax (see dispatch-queue.md) because deliverable was missing after promotion.
+- Output path (still the same): /root/moxie/products/stackstats/analytics/umami-summary.md
+- Next task: FormBeep monitoring scaffold + GSC vs Umami study (will remain blocked until GSC access is provided)
+- Blockers: FormBeep GSC credentials required for GSC-based reporting
+- Codex tracking: /root/moxie/cmo/codex-usage.md + /root/moxie/cmo/codex-usage-tracker.csv
    123|   125|   116|
    124|   126|   117|### Nova — Paid Acquisition Lead
    125|   127|   118|- SOUL: /root/moxie/cmo/employees/nova-soul.md
@@ -130,14 +127,15 @@
    130|   132|   123|- Next task after completion: Formalize campaign naming + UTM taxonomy in configs/templates + ship first tracked campaign for FormBeep (Google Search BOF)
    131|   133|   124|- Blockers: None
    132|   134|   125|
-   133|### Jax — SaaS Growth Operations Lead
-   134|   135|   136|- SOUL: /root/moxie/cmo/employees/jax-soul.md
-   135|   137|   137|- Current output dir (sprint): /root/moxie/products/formbeep/
-   136|   138|   138|- Status: IDLE (BLOCKED: awaiting founder credentials for directory submission execution — hello@formbeep.com inbox verification + existing directory accounts)
-   137|   139|   139|- Current task: (FormBeep) Replace failed directory picks with 2 actionable directories (verified requirements + submission bundles) — COMPLETED (2026-04-02T02:00Z)
-   138|   140|   140|- Task ID: jax-20260401_223121-f3bb3a
-   139|   141|   141|- Output path: /root/moxie/products/formbeep/distribution/directory-submissions-today-pick.md
-   140|   142|   142|- Blockers: None
+### Jax — SaaS Growth Operations Lead
+- SOUL: /root/moxie/cmo/employees/jax-soul.md
+- Current output dir (sprint): /root/moxie/products/formbeep/
+- Status: COMPLETED (queued tasks ready)
+- Current task: (StackStats) Pull Umami Cloud analytics — COMPLETED (2026-04-02T17:30Z)
+- Task ID: jax-20260402_stackstats_umami
+- Output path: /root/moxie/products/stackstats/analytics/umami-summary.md
+- Blockers: None
+- Next queued tasks: (FormBeep) live landing scrape; (StackStats) site snapshot
    141|   143|   134|
    142|### Rumi — Blog & Content Analyst
    143|- SOUL: /root/moxie/cmo/employees/rumi-soul.md
@@ -182,16 +180,14 @@
    182|   181||- Next task after completion: Continue outbound optimization (subject tests, sequence refinement)
    183|   182||- Blockers: Sending infrastructure (email warmup/domain setup) required for actual outreach execution
    184|   183|   171|
-   185|   184|### Iris — Repo Copy Auditor
-   186|   185|- SOUL: /root/moxie/cmo/employees/iris-soul.md
-   187|   186|- Current output dir (sprint): /root/moxie_hq/products/formbeep/dev-notes/
-   188|   187|- Status: IN_PROGRESS
-   189|   188|- Current task: (FormBeep) Inspect the ACTUAL current landing page content in the repo (headlines, breadcrumbs, free-tier claims) and deliver 10 exact copy/UX improvements with file+section pointers — **IN_PROGRESS** (promoted 2026-04-02T00:06Z)
-   190|   189|- Task ID: iris-20260401_224900-eab63b
-   191|   190|- Output path: /root/moxie_hq/products/formbeep/dev-notes/2026-04-01-repo-copy-audit.md
-   192|   191|- Last output: N/A (first run)
-   193|   192|- Next task after completion: Weekly copy/UX audit of landing + docs content
-   194|   193|- Blockers: None
+### Iris — Repo Copy Auditor
+- SOUL: /root/moxie/cmo/employees/iris-soul.md
+- Current output dir (sprint): /root/moxie_hq/products/formbeep/dev-notes/
+- Status: IDLE (no iris-worker cron; repo copy audit tasks are being routed to an active hourly worker)
+- Previous task: (FormBeep) Repo copy audit — REASSIGNED to Forge (see dispatch-queue.md) because deliverable was missing after promotion.
+- Output path (still the same): /root/moxie_hq/products/formbeep/dev-notes/2026-04-01-repo-copy-audit.md
+- Next task: Weekly copy/UX audits once an Iris worker is configured (or continue routing via Forge)
+- Blockers: None
    195|   194|   180|
    196|   195|   181|
 ### Moxie — CMO / Orchestrator
@@ -215,7 +211,7 @@
    209|
    210|**Editing rule:** do not edit jobs via this table. Update jobs using `hermes cron edit <cron_id> ...` and then reconcile this table to match.
    211|
-   212|Last verified: 2026-04-02T16:23:33Z
+   212|Last verified: 2026-04-02T17:19:00Z
    213|
    214|||| Cron ID | Name | Schedule | Deliver | Next run (UTC) | Repeats | State |||---|---|---|---|---|---|---|
    215||| 6effbb32 | formbeep-daily-user-count-checkin | every 1440m | local | 2026-04-02T14:06:30+00:00 | ∞ | active |
@@ -285,8 +281,9 @@
    279|   277|   252||| 2026-03-31 | Pax | /root/moxie/products/formbeep/partnerships/targets-and-outreach.md | COMPLETED
    280|   278|   253||| 2026-03-31 | Pax | /root/moxie/products/formbeep/partnerships/platform-partner-outreach.md | COMPLETED
    281|   279|   254||| 2026-04-01 | Pax | /root/moxie/products/formbeep/partnerships/platform-applications-week3.md | COMPLETED
-   282|   280|||| 2026-04-02 | Luna | /root/moxie/products/formbeep/lifecycle/win-back-emails.md | COMPLETED — 3-email win-back sequence (Day 1/3/7) + pre-churn triggers + segmentation matrix + behavioral onboarding handoff
-   283|   281|   255|
+|||| 2026-04-02 | Luna | /root/moxie/products/formbeep/lifecycle/win-back-emails.md | COMPLETED — 3-email win-back sequence (Day 1/3/7) + pre-churn triggers + segmentation matrix + behavioral onboarding handoff
+|| 2026-04-02 | Jax | /root/moxie/products/stackstats/analytics/umami-summary.md | COMPLETED — Tracking verified installed; API returns zero data (either no traffic or data access issue). Recommendations provided for founder verification.
+   285|   283|   281|   255|
    284|   282|   256|---
    285|   283|   257|
    286|   284|## Rishi Action Items (Requires Human)
