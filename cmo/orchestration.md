@@ -1,5 +1,5 @@
-     1|     1|# Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-     2|     2|# Last updated: 2026-04-02T01:45:00Z
+# Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
+# Last updated: 2026-04-02T02:00:00Z
      3|     3|# 
      4|     4|# HOW THIS WORKS:
      5|     5|# Every cron job reads this file for context. When done, it updates relevant sections.
@@ -98,18 +98,18 @@
     98|    93|- Next task after completion: Execute Week 1 posting — **BLOCKED** on Reddit account credentials (see issues_rishi.md)
     99|    94|- Blockers: Reddit account credentials required for all posting execution (see issues_rishi.md)
    100|    95|
-   101|### Forge — Full Stack Engineer
-   102|- SOUL: /root/moxie/cmo/employees/forge-soul.md
-   103|- Current output dir (sprint): /root/moxie/products/formbeep/
-   104|- Status: COMPLETED
-   105|- Current task: (FormBeep) Build marketplace requirements matrix + feasibility memo — **COMPLETED** (2026-04-02T01:45Z)
-   106|- Task ID: forge-20260402_011100-marketplace
-   107|- Output path: /root/moxie_hq/products/formbeep/dev-notes/marketplace-integration-scope.md
-   108|- Task details: (1) completed matrix covering Webflow/Framer/Glide/Typedream with citations/quotes of what qualifies + gates, (2) MVP integration options + effort (S/M/L) + build vs defer recommendation. Follow SOP at /root/moxie_hq/cmo/sops/marketplace-channel-verification.md
-   109|- Last output: /root/moxie_hq/products/formbeep/dev-notes/marketplace-integration-scope.md (delivered 2026-04-02T01:45Z)
-   110|- Key findings: Webflow/Framer require full app/plugin (DEFER); Glide/Typedream use existing integrations (BUILD NOW)
-   111|- Next task after completion: Monitor Index Coverage for taxonomy page removal; measure impression changes for blog pages
-   112|- Blockers: None
+### Forge — Full Stack Engineer
+- SOUL: /root/moxie/cmo/employees/forge-soul.md
+- Current output dir (sprint): /root/moxie/products/formbeep/
+- Status: IN_PROGRESS
+- Current task: (StackStats) Clone repo, identify Gumroad/CTA links, propose Umami event tracking + UTM hygiene — **IN_PROGRESS** (promoted 2026-04-02T02:00Z)
+- Task ID: forge-20260401_233521-647619
+- Output path: /root/moxie/products/stackstats/dev-notes/tracking-implementation-notes.md
+- Last completed task: (FormBeep) Build marketplace requirements matrix + feasibility memo — **COMPLETED** (2026-04-02T01:45Z)
+- Last output: /root/moxie_hq/products/formbeep/dev-notes/marketplace-integration-scope.md (delivered 2026-04-02T01:45Z)
+- Key findings: Webflow/Framer require full app/plugin (DEFER); Glide/Typedream use existing integrations (BUILD NOW)
+- Next task after completion: (FormBeep) Repo tracking audit (queued)
+- Blockers: None
    112|   105|
    113|### Mira — Analytics & Reporting Lead
    114|- SOUL: /root/moxie/cmo/employees/mira-soul.md
@@ -143,16 +143,17 @@
    142|   142|- Blockers: None
    143|   134|
 ### Rumi — Blog & Content Analyst
-|- SOUL: /root/moxie/cmo/employees/rumi-soul.md
-|- Current output dir (sprint): /root/moxie/products/formbeep/
-|- Status: COMPLETED
-|- Last completed task: (FormBeep) 6 SEO landing page outlines (Hugo-ready) — **COMPLETED** (2026-04-02T13:00Z)
-|- Task ID: rumi-20260402_001211-bd2e2b
-|- Output path: /root/moxie_hq/products/formbeep/seo/page-outlines.md
-|- Previous completed task: (StackStats) 6 SEO landing page outlines (Hugo-ready) — **COMPLETED** (2026-04-02T10:30Z)
-|- Last output: /root/moxie_hq/products/formbeep/seo/page-outlines.md (FormBeep), /root/moxie/products/stackstats/seo/page-outlines.md (StackStats)
-|- Next task after completion: Platform×Product posting matrix (hq) — dispatch-queue line 35
-|- Blockers: None
+- SOUL: /root/moxie/cmo/employees/rumi-soul.md
+- Current output dir (sprint): /root/moxie/products/formbeep/
+- Status: IN_PROGRESS
+- Current task: (HQ) Platform×product posting matrix (X, Reddit, IndieHackers, directories, forums/communities) — **IN_PROGRESS** (promoted 2026-04-02T02:00Z)
+- Task ID: rumi-20260402_002635-fda614
+- Output path: /root/moxie_hq/cmo/strategy/channel-matrix-all-products.md
+- Last completed task: (FormBeep) 6 SEO landing page outlines (Hugo-ready) — **COMPLETED** (2026-04-02T13:00Z)
+- Previous completed task: (StackStats) 6 SEO landing page outlines (Hugo-ready) — **COMPLETED** (2026-04-02T10:30Z)
+- Last output: /root/moxie_hq/products/formbeep/seo/page-outlines.md (FormBeep), /root/moxie/products/stackstats/seo/page-outlines.md (StackStats)
+- Next task after completion: Await next assigned task
+- Blockers: None
    154|   144|
    155|   145|### Pax — Partnerships / BD Lead
    156|   146|- SOUL: /root/moxie/cmo/employees/pax-soul.md
