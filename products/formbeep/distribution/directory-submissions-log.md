@@ -24,6 +24,8 @@ Source assets:
 | 2026-04-02 | Uneed (uneed.best) | PENDING_SUBMISSION | — | N/A | Not required (web form) | Jax Pick #2 — Makers/Indie focus |
 | 2026-04-03 | BetaList (betalist.com/submit) | FAILED | — | hello@formbeep.com | — | Submission appears paid-only now (no free path). Replace pick. |
 | 2026-04-03 | AlternativeTo (alternativeto.net) | FAILED (WAIT 7D) | — | hello@formbeep.com | Account created | Add-product flow requires account to be 7 days old. Retry on 2026-04-10. |
+| 2026-04-02 | Fazier (fazier.com) | PENDING_SUBMISSION | — | hello@formbeep.com | Account creation needed | Jax replacement pick #1 — DR~81, high-SEO, free tier (15-day review, requires backlink badge) |
+| 2026-04-02 | Twelve Tools (twelve.tools) | PENDING_SUBMISSION | — | N/A | Not required (web form) | Jax replacement pick #2 — DR~80, very high authority, free (25-day queue, no account needed) |
 
 ## Remaining directories (not yet picked)
 

@@ -64,18 +64,18 @@
     64|- Key April findings: WPForms native WA (Mar 5), Getform WA live + SMS Q2 roadmap, WANotifier commerce integrations, 4 new direct competitors detected (FormToWA, SendForm.io, PingForms, NotifyStack)
     65|- Other competitors tracked: WPForms, Formspree, Getform, Basin, WANotifier, Zapier, Make, n8n, FormToWA, SendForm.io, PingForms, NotifyStack
     66|- Idle-cycle deliverable: /root/moxie/products/formbeep/pricing-war-room-april-2026.md — Pricing decision analysis ($4 vs $4.99), feature gap matrix, recommend hold price + lean into SMS moat
-    67|### Astra — Growth Research Lead
-    68|- SOUL: /root/moxie/cmo/employees/astra-soul.md
-    69|- Current output dir (sprint): /root/moxie/products/stackstats/
-    70|- Status: IN_PROGRESS
-    71|- Current task: (StackStats) Run DataForSEO SERP sampling for keyword discovery + 6 SEO page recommendations — **IN_PROGRESS** (promoted 2026-04-02T01:11Z)
-    72|- Task ID: astra-20260402_011100-stackstats-serp
-    73|- Output path: /root/moxie/products/stackstats/seo/serp-opportunity-brief.md
-    74|- Task details: (1) keyword cluster list with intent labels, (2) SERP feature notes, (3) what ranks by category, (4) recommended 6 SEO pages + outlines. Use US + UK. Founder approved $0.10 spend.
-    75|- Last output: /root/moxie/products/formbeep/seo/us-sms-serp-demand-brief.md
-    76|- Next task after completion: Continue SERP analysis for other products
-    77|- Blockers: None
-    78|    72|
+### Astra — Growth Research Lead
+- SOUL: /root/moxie/cmo/employees/astra-soul.md
+- Current output dir (sprint): /root/moxie/products/formbeep/
+- Status: COMPLETED
+- Last completed task: (StackStats) Run DataForSEO SERP sampling for keyword discovery — **COMPLETED** (2026-04-02T12:00Z)
+- Output: /root/moxie/products/stackstats/seo/serp-opportunity-brief.md
+- Last completed task: (FormBeep) Run DataForSEO SERP sampling for keyword discovery — **COMPLETED** (2026-04-02T12:15Z)
+- Output: /root/moxie/products/formbeep/seo/serp-opportunity-brief.md
+- Last output: /root/moxie/products/formbeep/seo/serp-opportunity-brief.md
+- Next task after completion: Await next assigned task (Rumi can now draft 6 SEO pages for both products)
+- Blockers: None
+    72|
     79|### Kiro — Conversion Copy Lead
     80||- SOUL: /root/moxie/cmo/employees/kiro-soul.md
     81||- Current output dir (sprint): /root/moxie/products/formbeep/copy/
@@ -132,14 +132,14 @@
    132|   123|- Next task after completion: Formalize campaign naming + UTM taxonomy in configs/templates + ship first tracked campaign for FormBeep (Google Search BOF)
    133|   124|- Blockers: None
    134|   125|
-   135|### Jax — SaaS Growth Operations Lead
-   136|- SOUL: /root/moxie/cmo/employees/jax-soul.md
-   137|- Current output dir (sprint): /root/moxie/products/formbeep/
-   138|- Status: IN_PROGRESS
-   139|- Current task: (FormBeep) Replace failed directory picks with 2 actionable directories (verified requirements + submission bundles) — **IN_PROGRESS** (promoted 2026-04-01T23:00Z)
-   140|- Task ID: jax-20260401_223121-f3bb3a
-   141|- Output path: /root/moxie/products/formbeep/distribution/directory-submissions-today-pick.md
-   142|- Blockers: None
+### Jax — SaaS Growth Operations Lead
+   135|   136|- SOUL: /root/moxie/cmo/employees/jax-soul.md
+   137|   137|- Current output dir (sprint): /root/moxie/products/formbeep/
+   138|   138|- Status: READY
+   139|   139|- Current task: (FormBeep) Replace failed directory picks with 2 actionable directories (verified requirements + submission bundles) — COMPLETED (2026-04-02T02:00Z)
+   140|   140|- Task ID: jax-20260401_223121-f3bb3a
+   141|   141|- Output path: /root/moxie/products/formbeep/distribution/directory-submissions-today-pick.md
+   142|   142|- Blockers: None
    143|   134|
    144|   135|### Rumi — Blog & Content Analyst
    145||- SOUL: /root/moxie/cmo/employees/rumi-soul.md
