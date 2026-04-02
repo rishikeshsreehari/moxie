@@ -1,191 +1,280 @@
-# Platform × Product Posting Matrix
+# Channel Matrix (v2) — Ideal Days, Times, Cadence, and Execution Packets
 
-**Owner:** Rumi · **Last updated:** 2026-04-02T03:00Z · **Used by:** All employees executing posts
+Owner: Rumi (Content Ops) · Maintained by: Moxie · Last updated: 2026-04-02
 
-One operational reference for every channel we post on, per product. Every cell answers: frequency, best time (UTC + geo), days to avoid, blockers, scheduling allowed?, and the minimum execution packet.
+Purpose: a founder-executable operating matrix. For each channel: ideal days, best times, cadence/week, what to post, and the minimum packet required.
+
+Non-negotiables:
+- Founder posts manually everywhere (no credential requests in planning).
+- Truth layer: do not claim capabilities that are not shipped (FormBeep is WhatsApp-only today).
+- Reddit: before suggesting any subreddit/thread plan, attach a history crosscheck report for u/rishikeshshari.
 
 ---
 
-## 0) ICP Geo Reference
+## 0) Timezones + default windows
 
-| Geo | Offset | Peak Local | Peak UTC |
-|-----|--------|-----------|----------|
-| UAE/GST | +4 | 10–12 & 18–21 | 06–08 & 14–17 |
-| Saudi (AST) | +3 | 09–11 & 19–22 | 06–08 & 16–19 |
-| WEU (CET) | +1 | 09–11 & 13–15 | 08–10 & 12–14 |
-| UK (GMT/BST) | +0/+1 | 09–11 & 13–15 | 09–11 & 13–15 |
-| MY/SG | +8 | 09–11 & 17–20 | 01–03 & 09–12 |
-| Australia (AEST) | +10 | 08–10 & 17–20 | 22–00 & 07–10 |
-| NZ (NZST) | +12 | 09–11 & 17–20 | 21–23 & 05–08 |
-| US (ET) | -5 | 09–11 & 14–16 | 14–16 & 19–21 |
-| EU (CET) | +1 | 09–11 & 14–16 | 08–10 & 13–15 |
+Rishi local: GST (UTC+4)
 
-**Composite posting windows:**
-- **Primary (WEU + UAE + SG overlap):** 07:00–09:00 UTC
-- **Secondary (WEU + US overlap):** 14:00–16:00 UTC
-- **AU/NZ only:** 22:00–00:00 UTC (when AU/NZ push is active)
+Core overlap windows (recommended defaults):
+- Window A: 07:00–09:00 UTC (11:00–13:00 GST) — WEU + UAE overlap
+- Window B: 14:00–16:00 UTC (18:00–20:00 GST) — WEU + US overlap
+
+Use Window A for: FormBeep (WEU/UAE), general build-in-public.
+Use Window B for: StackStats (US/EU Substack writers), Product Hunt, IndieHackers.
 
 ---
 
 ## 1) X / Twitter
 
-| Dimension | FormBeep | StackStats | HQ (BiP / Brand) |
-|-----------|----------|------------|------------------|
-| Frequency | 1–2 posts/day | 3–4 posts/week | 3–5 posts/week |
-| Best windows (UTC) | 07–09 (WEU/UAE); 14–16 (US/WEU) | 14–16 (US/EU Substack writers); 08–10 (EU morning) | 12–14 & 14–16 (max geo overlap) |
-| Best days | Mon–Thu; Fri OK for light content | Tue–Thu; avoid Mon | Tue–Thu for signal; BiP any day |
-| Days to avoid | Sun; Sat (mixed) | Sat–Sun | Sun |
-| Scheduling | YES (native or free tools) | YES | YES |
-| Blockers | None — account active | X handle needed | Founder account @rishikeshshari |
-| Min execution packet | Copy (≤260) + UTM'd link + 2–3 hashtags + geo note | Copy + demo link + UTM'd CTA + audience note | Hook (1 line) + body (1–2 lines) + proof element + CTA/question + product tags |
+Primary goal: profile visits → site clicks → trials
 
-**Content pillars:** WhatsApp form alerts; "no Zapier" angle; lead-response-time tips / Substack analytics; cohort analysis; Build-in-public metrics; revenue transparency.
+Cadence:
+- HQ / Build-in-public: 3–5 posts/week
+- FormBeep: 4–7 posts/week (often combined with HQ post)
+- StackStats: 3–4 posts/week
+- Replies: 10 replies/day (20–30 minutes), 5 days/week
 
----
+Ideal days:
+- Tue–Thu (best)
+- Mon/Fri (OK for lighter posts)
+- Avoid: Sunday
 
-## 2) Reddit
+Best times:
+- Window A (11:00–13:00 GST) for HQ + FormBeep
+- Window B (18:00–20:00 GST) for StackStats
 
-| Dimension | FormBeep | StackStats |
-|-----------|----------|------------|
-| Frequency | 1 post/week/sub max; 3–5 comments/week | 1 post/month; 2–3 comments/month |
-| Best windows (UTC) | 14–17 (US morning); 08–10 (WEU morning); 01–03 (MY/SG morning) | 14–16 (US); 08–10 (EU) |
-| Best days | Mon–Thu; weekends OK for r/SideProject r/vibecoding r/buildinpublic | Tue–Thu only |
-| Days to avoid | Fri after 18:00 UTC; sub-specific promo-ban days; Sun | Sat–Sun; Mon |
-| Scheduling | **NO** — manual only for personal accounts | **NO** — same constraint |
-| Blockers | **CREDENTIALS BLOCKED** — u/rishikeshshari login needed; see issues_rishi.md. No API access (network blocked). | Same; also needs validated subreddit list for analytics niche |
-| Min execution packet | 1) Target subreddit 2) Rule check 3) 14d history check 4) Title 5) Body (value-first) 6) Link (if allowed) 7) Flair 8) Log to tracker | 1) Target subreddit 2) Rule check 3) Thread URL + context 4) Value-first response 5) No product push unless asked |
-
-**Target subreddits (FormBeep):** r/SaaS · r/webdev · r/smallbusiness · r/microsaas · r/SideProject · r/buildinpublic · r/vibecoding · r/indiehackers · r/GrowthHacking · r/WhatsappBusinessAPI · r/EntrepreneurRideAlong · r/roastmystartup (feedback only)
-
-**Target subreddits (StackStats):** r/analytics · r/Substack · r/newsletters · r/SaaS · r/Blogging (comments)
-
-**Full subreddit rules table + activity log:** `products/formbeep/outreach/reddit-posting-tracker.md`
-
-**Reddit guardrails:** 1-in-3 comment ratio; 7d cooldown same sub; no cross-post spam within 48h; title variance; log immediately.
+Execution packet (minimum):
+- Product: [HQ/FormBeep/StackStats]
+- Type: [value/system/failure→fix/build log/product moment]
+- Hook (≤1 line)
+- Body (1–3 lines)
+- Proof element: [screenshot / metric / artifact snippet]
+- CTA: [question OR soft CTA; link only in follow-up reply]
+- Post time: [UTC + GST]
+- Log: [posted URL → impressions/profile visits next day]
 
 ---
 
-## 3) IndieHackers (forum + subreddit)
+## 2) Product Hunt (Launch)
 
-| Dimension | FormBeep | StackStats |
-|-----------|----------|------------|
-| Frequency | 1 post/month + 2–3 comments/month | 1 post/quarter + 1–2 comments/month |
-| Best windows (UTC) | 14–16 (IH US-heavy, peaks ET 9–11am) | 14–16 (same) |
-| Best days | Tue–Thu | Tue–Wed |
-| Days to avoid | Weekends; Mon | Mon; Fri–Sun |
-| Scheduling | Forum: YES (schedule). Subreddit: NO (manual). | Same |
-| Blockers | IH forum account (founder-owned) | Same |
-| Min execution packet | Post: Title + narrative body + natural product link + tags + scheduled time. Comments: Thread URL + summary + genuine reply | Same structure, analytics angle |
+Primary goal: coordinated spike + social proof + backlinks
 
----
+Cadence:
+- Major launch: 1 per product per meaningful release (not weekly)
+- Prep: 7–10 days ahead (assets + maker comments + outreach)
 
-## 4) SaaS Directories
+Ideal days:
+- Tue / Wed / Thu (best)
+- Avoid: weekends; Mon (catch-up); Fri (attention drop)
 
-| Dimension | FormBeep | StackStats |
-|-----------|----------|------------|
-| Frequency | 1–2 submissions/week (active); then 1/month | 2–4 total (one-time launch) |
-| Best windows | 08–16 UTC Tue–Thu (US/WEU business hours) | Same |
-| Days to avoid | Fri PM through Sun (approval queues stall) | None critical (async) |
-| Scheduling | **NO** — requires form fill + account creation + email verify | Same |
-| Blockers | **ACTIVE BLOCKER** — directory account credentials needed. Many directories have 7–30 day age gates. Email verify: hello@formbeep.com. See issues_rishi.md. | None expected; simpler submissions |
-| Min execution packet | 1) Directory name + URL 2) Account status 3) Tagline + description + features 4) Category/tags 5) Submission URL 6) "Verified on" timestamp 7) Log to directory-submissions-log.md | Same (lighter copy) |
+Best times:
+- Launch reset is 00:00 PT. For founder sanity, we prep everything the day prior.
+- Day-of: be active during Window B (18:00–20:00 GST) for US overlap.
 
-**Priority directories (FormBeep):** SaaSHub · ProductHunt (launch) · BetaList · AlternativeTo · ToolFinder · StartupStash · 1000Tools · Microwire. **Defer:** G2/Capterra (need reviews first).
-
-**Priority directories (StackStats):** ProductHunt (launch) · AlternativeTo · SaaSHub · ToolFinder · G2.
+Execution packet (minimum):
+- Tagline (≤60 chars)
+- 5 image carousel + 1 short video
+- First comment (story + who it’s for + use-case)
+- 3–5 maker replies prewritten (FAQ)
+- Outreach list (20 people) to DM day-of
+- Tracking: UTM link + daily leaderboard screenshot
 
 ---
 
-## 5) Forums & Communities (Non-Reddit)
+## 3) Reddit (Founder manual only)
 
-| Platform | FormBeep | StackStats | Frequency | Best UTC | Schedule? | Blockers |
-|----------|----------|------------|-----------|----------|-----------|----------|
-| Hacker News | ❌ | ⚠️ Show HN only | Show HN once per major release | 11–13 UTC Tue–Thu | NO | — |
-| ProductHunt discussions | ✅ Comments on hunts | — | 5–10/week | 08:00 UTC (PH launch) | NO | PH account |
-| Webflow/Framer forums | ✅ Integration showcases | ❌ | 1/month | 14–16 | NO | Forum account |
-| Dev.to / Hashnode | ✅ Blog cross-posts | ✅ Blog cross-posts | 1 post/2 weeks | 08–10 | YES | Account needed |
-| LinkedIn | ⚠️ Personal profile only | ⚠️ Personal only | 1 post/week (founder) | 07–09 or 12–13 | YES (LI native) | Founder account |
-| WhatsApp/FB Groups | ✅ WA business groups | ❌ | 2–3 comments/week | Varies | NO | Group membership |
-| StackOverflow | ⚠️ Answer WA/Form API Qs | ❌ | As questions arise | — | NO | SO account |
+Primary goal: high-intent conversations + referral traffic (but high ban risk)
 
----
+Cadence:
+- Comments: 3–5/week
+- Posts: 1/week total across all subs (not per sub) until stable
+- Hard cooldown: do not post twice in the same subreddit within 14 days
 
-## 6) Channel Priority Matrix
+Ideal days:
+- Tue–Thu (best)
+- Sat can work for builder communities, but only with strong value posts
+- Avoid: Sunday for promo-like content
 
-| Channel | FormBeep | StackStats | Rationale |
-|---------|----------|------------|-----------|
-| X/Twitter | **P1** | **P1** | Fastest feedback loop; builds founder audience |
-| Reddit | **P1** | P3 | ICP communities; 30–40% referral traffic potential |
-| SaaS Directories | **P1** | P2 | Evergreen SEO + passive signups |
-| IndieHackers | P2 | P2 | Social proof; lower volume |
-| Dev.to/Hashnode | P2 | P2 | Free cross-post SEO |
-| Hacker News | P3 | P2 (launch only) | High spike / high risk |
-| ProductHunt | P1 (launch) | P1 (launch) | Plan carefully, one shot per product |
-| Forums/Community | P2 | P3 | High-intent answers |
-| LinkedIn | P3 | P3 | Requires founder time |
+Best times:
+- Window B (18:00–20:00 GST) tends to catch US morning + WEU evening overlap
 
----
+Hard gates (must attach to every plan):
+1) Subreddit rules check (links/flair/promo)
+2) HISTORY CROSSCHECK report for u/rishikeshshari (last posts/comments in that sub + URLs)
+3) 14-day cooldown check
 
-## 7) Universal Days/Times to Avoid
+Execution packet (minimum):
+- Subreddit
+- Rules summary + allowed link policy
+- History report snippet + verdict (OK / Not OK)
+- Post title
+- Post body (value-first)
+- Link plan (none OR link in comments OR allowed in body)
+- Flair
+- Exact time (UTC + GST)
+- Logging instruction (update tracker)
 
-| What to avoid | Why | Channels |
-|--------------|-----|----------|
-| Sunday all day | Lowest B2B engagement everywhere | X, Reddit, IH, LI |
-| Fri 18:00 UTC → Sat 12:00 UTC | Dead zone for WEU + UAE + US simultaneously | X, Reddit, IH |
-| Mon 06:00–09:00 UTC | Email catch-up time; low engagement | Reddit, IH, X |
-| 22:00–06:00 UTC | No major ICP geo active | All (unless AU/NZ push) |
-| Regional holidays (US, UAE, Hari Raya MY/SG) | Regional audiences absent | All |
+Canonical tracker:
+- /root/moxie/products/formbeep/outreach/reddit-posting-tracker.md
 
 ---
 
-## 8) Execution Packet Templates
+## 4) IndieHackers
 
-### X/Twitter:
-```
-Product: [FormBeep/StackStats/HQ] | Type: [promo/value/BiP/engagement]
-Hook: [1 line] | Body: [1–2 lines]
-CTA: [UTM'd URL] | Hashtags: [2–3] | Geo: [Primary/Secondary/US]
-Schedule: [YYYY-MM-DD HH:MM UTC] | Status: [draft/scheduled/posted]
-```
+Primary goal: credibility + founder narrative + long-tail discovery
 
-### Reddit:
-```
-Sub: [r/name] | Rules OK: [Y/N] | 14d Posted: [Y/N]
-Type: [post/comment] | Title/Thread: [...]
-Body: [value-first] | Link: [URL if allowed] | Log: [Y/N]
-```
+Cadence:
+- HQ: 1 post/month
+- Comments: 2–4/month
 
-### Directory:
-```
-Directory: [name+URL] | Account: [created/age/verified]
-Tagline: [≤100] | Description: [250–500] | Category: [...]
-Submitted: [YYYY-MM-DD] | Follow-up: [X days]
-```
+Ideal days:
+- Tue–Thu
+
+Best times:
+- Window B (18:00–20:00 GST)
+
+Execution packet (minimum):
+- Title
+- Narrative body (origin → lesson → numbers)
+- 1–2 screenshots/artifacts
+- Soft ask (“want template?”)
+- Follow-up comment plan (2 days later)
 
 ---
 
-## 9) Weekly Posting Cadence (Starter Template)
+## 5) SaaS Directories
 
-| Day | Channel | Product | Content Type |
-|-----|---------|---------|-------------|
-| Mon | X | FormBeep | WhatsApp vs email stat |
-| Mon | X | HQ | Weekly metrics (BiP) |
-| Tue | X | FormBeep | Integration spotlight |
-| Tue | Reddit | FormBeep | Value post r/SaaS or r/microsaas |
-| Wed | X | StackStats | Substack growth tip |
-| Wed | IndieHackers | HQ | BiP lesson |
-| Thu | X | FormBeep | "No Zapier" angle |
-| Thu | Reddit | StackStats | Analytics comment (if relevant) |
-| Fri | X | HQ | Weekly shipping recap |
-| Sat | X | FormBeep | Light: build-in-public fun |
-| Sun | — | — | **NO POSTING** |
+Primary goal: evergreen backlinks + passive signups
 
-Adjust after 2 weeks based on engagement data.
+Cadence:
+- FormBeep: 1–2 submissions/week (while active)
+- StackStats: 1/week until 6–8 total placements
+
+Ideal days:
+- Tue–Thu
+
+Best times:
+- 08:00–16:00 UTC (12:00–20:00 GST)
+
+Hard gate:
+- Capabilities-truth check (NO SMS/Email claims for FormBeep until shipped)
+
+Execution packet (minimum):
+- Directory URL + submission URL
+- Account status required? (Y/N)
+- Tagline + description (truthful)
+- Categories/tags
+- UTM link
+- “Verified on” timestamp
+- Log entry path
+
+---
+
+## 6) Substack Notes (for StackStats)
+
+Primary goal: reach Substack-native audience where they already are
+
+Cadence:
+- 3–5 notes/week (short, high-frequency)
+- 1 longer post/week (optional)
+
+Ideal days:
+- Tue–Thu
+- Sat morning can work (lighter, conversational)
+
+Best times:
+- US/EU heavy → Window B (18:00–20:00 GST)
+- Second slot: 15:00–17:00 GST (11:00–13:00 UTC) if testing EU midday
+
+Execution packet (minimum):
+- One-liner hook
+- 1 insight + 1 metric (or example)
+- Soft question
+- No link in first note unless it’s directly requested; link in reply
+
+---
+
+## 7) Dev.to / Hashnode (Cross-post)
+
+Primary goal: SEO + credibility + searchable how-tos
+
+Cadence:
+- 1 post every 2 weeks per product (start with HQ + one product)
+
+Ideal days:
+- Tue/Wed
+
+Best times:
+- Window A (11:00–13:00 GST)
+
+Execution packet:
+- Title
+- Outline
+- Canonical link (if cross-posting)
+- CTA to product page
+
+---
+
+## 8) LinkedIn (Founder)
+
+Primary goal: local network + B2B trust (slow burn)
+
+Cadence:
+- 1 post/week
+
+Ideal days:
+- Tue/Thu
+
+Best times:
+- Window A (11:00–13:00 GST)
+
+Execution packet:
+- Short operator story
+- 1 metric
+- 1 question
+- No links; link in comment if needed
+
+---
+
+## 9) 7-day sample calendar (starter)
+
+This is a default week you can run repeatedly; adjust after 2 weeks using outcomes.
+
+Legend:
+- Window A = 11:00–13:00 GST
+- Window B = 18:00–20:00 GST
+
+Mon
+- X (Window A): HQ build log (1 metric + what shipped)
+- Replies: 10 replies (lane rotation)
+
+Tue
+- X (Window A): FormBeep value post (“no Zapier” + WhatsApp-only)
+- Substack Notes (Window B): StackStats insight note
+- Replies: 10 replies
+
+Wed
+- X (Window B): StackStats operator post (metric + lesson)
+- IndieHackers (Window B): HQ comment on a relevant thread (no links)
+- Replies: 10 replies
+
+Thu
+- X (Window A): HQ failure→fix (guardrail + why)
+- Substack Notes (Window B): StackStats note (question + example)
+- Replies: 10 replies
+
+Fri
+- X (Window A): “What I learned this week building with an AI CMO” (1 screenshot)
+- Replies: 10 replies
+
+Sat
+- Substack Notes (Window B): lighter conversational note
+- (Optional) X (Window A): light product moment
+
+Sun
+- No posting (rest / offline)
 
 ---
 
 ## Changelog
-
-| Date | Change | Author |
-|------|--------|--------|
-| 2026-04-02 | v1 — full matrix: all channels, both products, geo windows, execution packets, priority, routing cadence, blockers, guardrails | Rumi |
+- 2026-04-02: v2 rewrite to include ideal days/times/cadence per channel, plus hard gates (Reddit history crosscheck; capabilities truth check).

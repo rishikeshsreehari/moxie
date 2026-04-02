@@ -60,6 +60,7 @@ Last updated: 2026-04-02
 
 9) [P1][REVIEW] Channel matrix (how often/when to post per product/channel)
 - File: `/root/moxie_hq/cmo/strategy/channel-matrix-all-products.md`
+- Note: flagged as poor; v2 rewrite shipped 2026-04-02 — please re-review and approve.
 
 ---
 
