@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-04-02T11:59:40Z",
+  "generated_at": "2026-04-02T12:00:29Z",
   "kpis": {
     "pageviews_7d": 103,
     "visitors_7d": 76,
     "signups_7d": 4,
-    "users_lifetime": 15,
+    "users_lifetime": null,
     "paid_lifetime": 15,
     "free_lifetime": null,
     "revenue_lifetime_usd": 237.17,
@@ -16,7 +16,7 @@
       "status": "ACTIVE",
       "url": "https://formbeep.com",
       "link_label": "formbeep.com",
-      "users_lifetime": 10,
+      "users_lifetime": null,
       "paid_lifetime": 10,
       "free_lifetime": null,
       "revenue_lifetime_usd": null,
@@ -29,7 +29,7 @@
       "status": "IDLE",
       "url": "https://stackstats.app",
       "link_label": "stackstats.app",
-      "users_lifetime": 5,
+      "users_lifetime": null,
       "paid_lifetime": 5,
       "free_lifetime": null,
       "revenue_lifetime_usd": 237.17,
@@ -73,7 +73,7 @@
       {
         "role": "Mira",
         "status": "IN_PROGRESS",
-        "text": "Pull Umami Cloud analytics for StackStats (website_id [redacted]]): last 7d + last 30d. Include top sources, top pages, geo split, and any events (purchases) if tracked. Summarize in a founder-readable brief."
+        "text": "Pull Umami Cloud analytics for StackStats (analytics_id [redacted]]): last 7d + last 30d. Include top sources, top pages, geo split, and any events (purchases) if tracked. Summarize in a founder-readable brief."
       }
     ],
     "highlights": [
@@ -123,7 +123,7 @@
       "name": "Mira",
       "title": "Analytics & Reporting Lead",
       "status": "IN_PROGRESS",
-      "working_on": "(StackStats) Pull Umami Cloud analytics for StackStats (website_id [redacted]]): last 7d + last 30d. Include top sources, top pages, geo split, and any events \u2014 **IN_PROGRESS** (promoted 2026-04-02T00:06Z)"
+      "working_on": "(StackStats) Pull Umami Cloud analytics for StackStats (analytics_id [redacted]]): last 7d + last 30d. Include top sources, top pages, geo split, and any events \u2014 **IN_PROGRESS** (promoted 2026-04-02T00:06Z)"
     },
     {
       "name": "Nova",
@@ -172,6 +172,13 @@
     "recent": [
       {
         "repo": "hq",
+        "hash": "907e6f5",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02 12:00:08 UTC",
+        "url": ""
+      },
+      {
+        "repo": "hq",
         "hash": "2fe3e69",
         "when": "2026-04-02",
         "subject": "Autopush: 2026-04-02 11:47:38",
@@ -203,13 +210,6 @@
         "hash": "3a254e8",
         "when": "2026-04-02",
         "subject": "Autopush: 2026-04-02T11:07:20Z",
-        "url": ""
-      },
-      {
-        "repo": "hq",
-        "hash": "227d418",
-        "when": "2026-04-02",
-        "subject": "Autopush: 2026-04-02 10:46:40 UTC",
         "url": ""
       }
     ]
@@ -218,6 +218,13 @@
     "recent": [
       {
         "repo": "hq",
+        "hash": "907e6f5",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02 12:00:08 UTC",
+        "url": ""
+      },
+      {
+        "repo": "hq",
         "hash": "2fe3e69",
         "when": "2026-04-02",
         "subject": "Autopush: 2026-04-02 11:47:38",
@@ -249,13 +256,6 @@
         "hash": "3a254e8",
         "when": "2026-04-02",
         "subject": "Autopush: 2026-04-02T11:07:20Z",
-        "url": ""
-      },
-      {
-        "repo": "hq",
-        "hash": "227d418",
-        "when": "2026-04-02",
-        "subject": "Autopush: 2026-04-02 10:46:40 UTC",
         "url": ""
       }
     ]
@@ -279,7 +279,7 @@
         "label": "stepfun/step-3.5-flash:free",
         "value": 12369,
         "tokens": 12368613,
-        "tool_calls": 1671
+        "tool_calls": 1675
       },
       {
         "label": "gpt-5.2",
@@ -333,7 +333,7 @@
   },
   "console": [
     "[BOOT] SapiensTech Open Ops online",
-    "[SYNC] snapshot generated 2026-04-02T11:59:40Z",
+    "[SYNC] snapshot generated 2026-04-02T12:00:29Z",
     "[WORK] in_progress=4 queued=1 blocked=3",
     "[THREADS] open=10"
   ],
@@ -348,8 +348,8 @@
     "mrr_usd=100.0 lifetime_usd=237.17",
     "",
     "$ git log -3 --oneline",
+    "hq 907e6f5 Autopush: 2026-04-02 12:00:08 UTC",
     "hq 2fe3e69 Autopush: 2026-04-02 11:47:38",
-    "hq 5ed502f Autopush: 2026-04-02 11:32:08 UTC",
-    "hq ba7833f Autopush: 2026-04-02 11:28 UTC"
+    "hq 5ed502f Autopush: 2026-04-02 11:32:08 UTC"
   ]
 }

@@ -52,7 +52,8 @@ def scrub(text: str, *, allow_safe_urls: bool = False) -> str:
     t = UUID_RE.sub("[id]", t)
 
     # Defense-in-depth: redact common analytics identifiers even if not UUID-shaped
-    t = re.sub(r"(?i)(website[_-]?id|umami[_-]?id)\s*[:=]?\s*[^\s,;\)\]]+", r"\1 [redacted]", t)
+    # Replace the whole key+value to avoid leaking even the identifier name publicly
+    t = re.sub(r"(?i)(website[_-]?id|umami[_-]?id)\s*[:=]?\s*[^\s,;\)\]]+", r"analytics_id [redacted]", t)
 
     if allow_safe_urls:
         def repl(m: re.Match) -> str:
@@ -465,11 +466,13 @@ def main() -> None:
             paid = meta.get("paid_lifetime")
             free = meta.get("free_lifetime")
 
+            # Users are "free + paid". If we don't know free_lifetime, do NOT fake users.
             users = None
-            try:
-                users = (int(paid) if paid is not None else 0) + (int(free) if free is not None else 0)
-            except Exception:
-                users = paid if paid is not None else (free if free is not None else None)
+            if paid is not None and free is not None:
+                try:
+                    users = int(paid) + int(free)
+                except Exception:
+                    users = None
 
             products.append(
                 {
