@@ -130,13 +130,13 @@
 ### Jax — SaaS Growth Operations Lead
 - SOUL: /root/moxie/cmo/employees/jax-soul.md
 - Current output dir (sprint): /root/moxie/products/formbeep/
-- Status: IN_PROGRESS
-- Current task: (FormBeep) Live vs repo landing page diff — **IN_PROGRESS** (promoted 2026-04-02T18:03Z)
+- Status: IDLE / COMPLETED
+- Current task: (FormBeep) Live vs repo landing page diff — **COMPLETED** (2026-04-02T18:33:42Z)
 - Task ID: jax-20260402_live_vs_repo_diff
 - Output path: /root/moxie_hq/products/formbeep/dev-notes/live-vs-repo-landing-diff.md
-- Last completed task: (StackStats) Pull Umami Cloud analytics — COMPLETED (2026-04-02T17:30Z)
+- Last completed task: (FormBeep) Live vs repo landing page diff — COMPLETED (2026-04-02T18:33:42Z)
 - Blockers: None
-- Next queued tasks: (StackStats) site snapshot (queued; waiting for current task completion per Rule 3)
+- Next queued tasks: (StackStats) site snapshot (queued; ready to run in next ops cycle)
    141|   143|   134|
    142|### Rumi — Blog & Content Analyst
    143|- SOUL: /root/moxie/cmo/employees/rumi-soul.md
