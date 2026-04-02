@@ -101,13 +101,13 @@
 ### Forge — Full Stack Engineer
 - SOUL: /root/moxie/cmo/employees/forge-soul.md
 - Current output dir (sprint): /root/moxie/products/formbeep/
-- Status: IN_PROGRESS
-- Current task: (FormBeep) Repo audit for Umami event tracking — **IN_PROGRESS** (promoted 2026-04-02T03:00Z)
+- Status: COMPLETED
+- Current task: (FormBeep) Repo audit for Umami event tracking — **COMPLETED** (2026-04-02T03:37Z)
 - Task ID: forge-20260402_001211-30bb2a
 - Output path: /root/moxie_hq/products/formbeep/dev-notes/tracking-implementation-notes.md
-- Last completed task: (StackStats) Clone repo, identify Gumroad/CTA links, propose Umami event tracking + UTM hygiene — **COMPLETED** (2026-04-02T02:37Z)
-- Last output: /root/moxie/products/stackstats/dev-notes/tracking-implementation-notes.md
-- Key findings: Webflow/Framer require full app/plugin (DEFER); Glide/Typedream use existing integrations (BUILD NOW)
+- Last completed task: (FormBeep) Repo audit, identified all CTAs, proposed Umami event tracking + UTM hygiene — **COMPLETED** (2026-04-02T03:37Z)
+- Last output: /root/moxie_hq/products/formbeep/dev-notes/tracking-implementation-notes.md
+- Key findings: 6 existing tracked CTAs identified, 3 recommended additions, UTM hygiene standards documented
 - Blockers: None
    112|   105|
    113|### Mira — Analytics & Reporting Lead
