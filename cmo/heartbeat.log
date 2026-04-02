@@ -1,55 +1,55 @@
 # Moxie Heartbeat Log
-# Updated: 2026-04-01T23:19:28Z
+# Generated: 2026-04-02T00:13:00Z
 
-## System Status: OPERATIONAL
+## System Status: ACTIVE
 
-## Reconciliation Summary
-- Reconciled Active Crons table vs `hermes cron list`
-- 14 counter drifts corrected
-- 3 next-run timestamps updated
-- 1 anomaly flagged (mira-daily-kpi counter 47→9)
+### Active Workers (IN_PROGRESS)
+| Employee | Product | Task | Status |
+|----------|---------|------|--------|
+| Jax | FormBeep | Replace failed directory picks (P0) | IN_PROGRESS (since 2026-04-01T23:00Z) |
+| Iris | FormBeep | Repo landing page copy audit (P0) | IN_PROGRESS (since 2026-04-02T00:06Z) |
+| Mira | StackStats | Umami analytics pull (P0) | IN_PROGRESS (since 2026-04-02T00:06Z) |
 
-## Active Work
-- **Jax (IN_PROGRESS)**: Replace failed directory picks with 2 actionable directories
-  - Task ID: jax-20260401_223121-f3bb3a
-  - Promoted: 2026-04-01T23:00Z
-  - Output: /root/moxie/products/formbeep/distribution/directory-submissions-today-pick.md
+### Queued Tasks Awaiting Promotion
+- Forge: GSC validation (queued 2026-04-04)
+- Forge: Marketplace integration scope (P0)- Forge: FormBeep tracking implementation (P0)
+- Astra: FormBeep SERP opportunity (P0)
+- Rumi: FormBeep SEO page outlines (P0)
+- Mira: FormBeep monitoring scaffold (P0)
+- Moxie: Failure analysis postmortem (P0)
+- Mira: GSC vs Umami study (P0)
+- Moxie: Founder voice strategy (P0)
+- Vale: StackStats Reddit scan plan (P0)
+- Iris: StackStats site scrape (P0)
+- Forge: StackStats tracking implementation (P0)
+- Astra: StackStats SERP opportunity (P0)
+- Rumi: StackStats SEO page outlines (P0)
 
-## Pending P0 Tasks (Queued)
-- Forge: GSC validation (TIME-LOCKED until 2026-04-04T12:00Z)
-- Iris: Repo landing audit (awaiting FormBeep hour slot)
-- Astra: DataForSEO US SMS probe (awaiting FormBeep hour slot)
-- Iris: Live site scrape (blocked on Iris repo audit completion)
+### Recently Completed (last 24h)
+- Luna: Win-back email sequence (2026-04-02T08:52Z)
+- Orion: Prospect list refresh (2026-04-02T08:15Z)
+- Astra: US SMS SERP demand brief (2026-04-02T09:30Z)
+- Ember: Reddit posting tracker (2026-04-02T07:00Z)
 
-## Employee States
-| Employee | Status | Notes |
-|----------|--------|-------|
-| Vale | COMPLETED | Reddit intel delivered |
-| Astra | COMPLETED | SERP demand brief delivered |
-| Kiro | COMPLETED | Blog rework delivered |
-| Ember | COMPLETED | Reddit posting tracker delivered; execution blocked on creds |
-| Forge | COMPLETED | HQ commit message SOP delivered |
-| Mira | COMPLETED | Traffic/keyword map delivered |
-| Nova | COMPLETED | Paid ads SOP delivered |
-| Jax | IN_PROGRESS | Directory replacement active |
-| Rumi | COMPLETED | Content gap scan delivered |
-| Pax | COMPLETED | Platform applications delivered |
-| Luna | COMPLETED | Win-back emails delivered |
-| Orion | COMPLETED | Prospect refresh delivered |
-| Iris | IDLE | Weekly audit scheduled Mon 09:30Z |
+### Open Issues (issues_rishi.md)
+- Platform marketplaces: Need dev + guidelines (Rishi + Forge)
+- Reddit execution: Need post-ready drafts (Ember + Moxie)
+- Directory distribution: Replacing failed picks (Jax)
 
-## Open Blockers (from issues_rishi.md)
-1. Reddit API access/network policy
-2. WordPress plugin resubmission (founder-owned)
-3. Directory credentials (hello@formbeep.com verified; accounts needed)
-4. Platform marketplaces (needs engineering scope decision)
+### Promotion Rules Status
+- Max 1 IN_PROGRESS per employee: PASS
+- Max 1 new task per product per hour: PASS
+- Dependencies satisfied: PASS
 
-## Codex Usage
-- Status: Within limits
-- Premium window: Available
+### Next Scheduled Crons
+- iris-worker: ~15min (hourly at :30)
+- moxie-orchestration-reconciler: ~0min (hourly at :13)
 
-## Action Required
-- None (system reconciled, waiting for Jax task completion)
+### Notes
+- System running normally
+- 3 active workers across FormBeep (2) and StackStats (1)
+- No new blockers detected
+- Premium Codex available (limit reset)
 
 ---
-Log written by: Moxie CMO reconciler cron
+Heartbeat: OK
