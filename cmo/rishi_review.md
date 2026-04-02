@@ -9,6 +9,22 @@ Last updated: 2026-04-01
 
 ## NOW (next 24h)
 
+### [REVIEW] HQ repo cleanup run (tidy-up)
+- Owner: Rishi (review), Moxie (executed)
+- Report: /root/moxie_hq/cmo/reports/repo-health-audit-2026-04-02.md
+- What happened: only removed 3x __pycache__ dirs (safe junk)
+- Code/SOP:
+  - /root/moxie_hq/cmo/sops/repo-health-audit.md
+  - /root/moxie_hq/cmo/scripts/repo_cleanup.py
+- Decision: approve this as the ongoing cleanup policy (yes/no + any exclusions)
+
+### [REVIEW] Execution OS v3 deployment (process change)
+- Owner: Rishi (review/approve), Moxie (deployed)
+- SOP: /root/moxie_hq/cmo/sops/execution-os-v3.md
+- Template: /root/moxie_hq/cmo/templates/execution-packet.md
+- What changed: daily 13:00 GST execution window + last-mile contract + “not done until reported + Rishi marks DONE”
+- Decision: approve OS v3 as the operating rule going forward (yes/no + edits)
+
 ## TODAY 13:00 GST (09:00 UTC) — Founder Execution Window
 Rule: Moxie provides paste-ready execution packet(s) by 12:45 GST. Rishi executes 1 action and reports back with URL/outcome.
 

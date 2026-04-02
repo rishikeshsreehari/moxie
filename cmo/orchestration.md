@@ -65,6 +65,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 - Other competitors tracked: WPForms, Formspree, Getform, Basin, WANotifier, Zapier, Make, n8n, FormToWA, SendForm.io, PingForms, NotifyStack
 - Idle-cycle deliverable: /root/moxie/products/formbeep/pricing-war-room-april-2026.md — Pricing decision analysis ($4 vs $4.99), feature gap matrix, recommend hold price + lean into SMS moat
 ### Astra — Growth Research Lead
+### New task completed
 - SOUL: /root/moxie/cmo/employees/astra-soul.md
 - Current output dir (sprint): /root/moxie/products/formbeep/
 - Status: COMPLETED
@@ -202,7 +203,7 @@ Last verified: 2026-04-02T00:22:00Z
 |||| aba07be5 | formbeep-daily-traffic-check | 0 10 * * * | local | 2026-04-02T10:00:00+00:00 | ∞ | active ||
 |||| 513b777e | formbeep-search-check | 0 10 * * 1,4 | local | 2026-04-02T10:00:00+00:00 | ∞ | active ||
 |||| 753d42f3 | formbeep-weekly-growth-review | 0 11 * * 1 | local | 2026-04-06T11:00:00+00:00 | ∞ | active ||
-|||| ae770f4f | formbeep-hourly-heartbeat | 6 * * * * | local | 2026-04-02T00:06:00+00:00 | ∞ | active ||
+|||| ae770f4f | formbeep-hourly-heartbeat | 6 * * * * | local | 2026-04-02T01:06:00+00:00 | ∞ | active ||
 |||| 52af5ec9 | codex-dashboard-update-checkin | every 720m | local | 2026-04-02T02:38:58+00:00 | ∞ | active ||
 |||| b0492991 | moxie-memory-skill-audit | every 720m | local | 2026-04-02T07:30:09+00:00 | ∞ | active ||
 |||| ca6591a8 | codex-weekly-resume-premium | once at 2026-04-06 17:30 | local | 2026-04-06T17:30:00+04:00 | 0/1 | active ||
@@ -210,24 +211,24 @@ Last verified: 2026-04-02T00:22:00Z
 ||| 647387ae | mira-daily-kpi | 0 10 * * * | local | 2026-04-02T10:00:00+00:00 | 9/100 | active |
 ||| a468835d | vale-monthly-competitor-scan | 0 10 1 * * | local | 2026-05-01T10:00:00+00:00 | 1/100 | active |
 ||| 2553a683 | moxie-daily-governance | 0 * * * * | local | 2026-04-02T01:00:00+00:00 | 49/100 | active |
-||| 8bcfe505 | vale-worker | 12 * * * * | local | 2026-04-02T00:12:00+00:00 | 50/100 | active |
-||| 7067633e | astra-worker | 17 * * * * | local | 2026-04-01T23:17:00+00:00 | 49/100 | active |
-||| 3171d2c2 | kiro-worker | 42 * * * * | local | 2026-04-01T23:42:00+00:00 | 48/100 | active |
-||| eb803b7d | ember-worker | 32 * * * * | local | 2026-04-01T23:32:00+00:00 | 48/100 | active |
-||| 401e59cc | forge-worker | 37 * * * * | local | 2026-04-01T23:37:00+00:00 | 49/100 | active |
-||| 4bdcef11 | jax-worker | 22 * * * * | local | 2026-04-01T23:22:00+00:00 | 48/100 | active |
-||| affd389a | rumi-worker | 27 * * * * | local | 2026-04-01T23:27:00+00:00 | 48/100 | active |
+||| 8bcfe505 | vale-worker | 12 * * * * | local | 2026-04-02T01:12:00+00:00 | 51/100 | active |
+||| 7067633e | astra-worker | 17 * * * * | local | 2026-04-02T00:17:00+00:00 | 50/100 | active |
+||| 3171d2c2 | kiro-worker | 42 * * * * | local | 2026-04-02T00:42:00+00:00 | 49/100 | active |
+||| eb803b7d | ember-worker | 32 * * * * | local | 2026-04-02T00:32:00+00:00 | 49/100 | active |
+||| 401e59cc | forge-worker | 37 * * * * | local | 2026-04-02T00:37:00+00:00 | 50/100 | active |
+||| 4bdcef11 | jax-worker | 22 * * * * | local | 2026-04-02T00:22:00+00:00 | 49/100 | active |
+||| affd389a | rumi-worker | 27 * * * * | local | 2026-04-02T00:27:00+00:00 | 49/100 | active |
 ||| af7f3c07 | moxie-daily-self-improvement | 0 20 * * * | local | 2026-04-02T20:00:00+00:00 | 2/100 | active |
-||| 91520aa6 | nova-worker | 47 * * * * | local | 2026-04-01T23:47:00+00:00 | 47/100 | active |
+||| 91520aa6 | nova-worker | 47 * * * * | local | 2026-04-02T00:47:00+00:00 | 48/100 | active |
 ||| 5b9c6eb7 | issues-rishi-watch | every 240m | local | 2026-04-02T00:26:57+00:00 | 12/200 | active |
-||| 3e93c4f5 | luna-worker | 52 * * * * | local | 2026-04-01T23:52:00+00:00 | 49/100 | active |
-||| cf1a8f9e | pax-worker | 57 * * * * | local | 2026-04-01T23:57:00+00:00 | 47/100 | active |
+||| 3e93c4f5 | luna-worker | 52 * * * * | local | 2026-04-02T00:52:00+00:00 | 50/100 | active |
+||| cf1a8f9e | pax-worker | 57 * * * * | local | 2026-04-02T00:57:00+00:00 | 48/100 | active |
 ||| b0e9c513 | iris-weekly-formbeep-repo-copy-audit | 30 9 * * 1 | local | 2026-04-06T09:30:00+00:00 | 0/200 | active |
-||| 0ed491f6 | orion-worker | 2 * * * * | local | 2026-04-02T00:02:00+00:00 | 49/200 | active |
-||| 868bd30f | moxie-hq-autocommit-push | every 30m | local | 2026-04-01T23:40:09+00:00 | ∞ | active |
-||| 1c008e06 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-04-02T00:13:00+00:00 | 39/100 | active |
+||| 0ed491f6 | orion-worker | 2 * * * * | local | 2026-04-02T01:02:00+00:00 | 50/200 | active |
+||| 868bd30f | moxie-hq-autocommit-push | every 30m | local | 2026-04-02T00:47:07+00:00 | ∞ | active |
+||| 1c008e06 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-04-02T01:13:00+00:00 | 40/100 | active |
 |||| c342e174 | opencode-go-weekly-limit-reset-reminder | 26 13 * * 1 | local | 2026-04-06T13:26:00+00:00 | ∞ | active ||
-|||| 7af300e6 | cmo-delegation-queue-runner | */15 * * * * | local | 2026-04-01T23:15:00+00:00 | ∞ | active ||
+|||| 7af300e6 | cmo-delegation-queue-runner | */15 * * * * | local | 2026-04-02T00:15:00+00:00 | ∞ | active ||
    221|
    222|**Retired/Removed jobs** (no longer in live registry):
    223|- `97eacc1cb3fa` codex-online-check — one-shot job, completed

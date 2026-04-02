@@ -1,5 +1,5 @@
 # Moxie Orchestration Reconciler Report
-Generated: 2026-04-01T23:19:28Z
+Generated: 2026-04-02T00:22:30Z
 
 ## Summary
 Reconciliation completed. Found and fixed drift in Active Crons table.
@@ -8,48 +8,64 @@ Reconciliation completed. Found and fixed drift in Active Crons table.
 
 ### 1. Counter Drift (14 workers)
 All worker cron counters were stale (1 run behind live registry). Updated to match `hermes cron list`:
-- mira-daily-kpi: 47/100 → 9/100 (**ANOMALY**: counter decreased - job may have been reset)
-- moxie-daily-governance: 47/100 → 48/100 ✓
-- vale-worker: 49/100 → 50/100 ✓
-- astra-worker: 48/100 → 49/100 ✓
-- kiro-worker: 47/100 → 48/100 ✓
-- ember-worker: 47/100 → 48/100 ✓
-- forge-worker: 48/100 → 49/100 ✓
-- jax-worker: 47/100 → 48/100 ✓
-- rumi-worker: 47/100 → 48/100 ✓
-- nova-worker: 46/100 → 47/100 ✓
-- luna-worker: 48/100 → 49/100 ✓
-- pax-worker: 46/100 → 47/100 ✓
-- orion-worker: 48/200 → 49/200 ✓
-- moxie-orchestration-reconciler: 38/100 → 39/100 ✓
+- moxie-daily-governance: 48/100 → 49/100 ✓
+- vale-worker: 50/100 → 51/100 ✓
+- astra-worker: 49/100 → 50/100 ✓
+- kiro-worker: 48/100 → 49/100 ✓
+- ember-worker: 48/100 → 49/100 ✓
+- forge-worker: 49/100 → 50/100 ✓
+- jax-worker: 48/100 → 49/100 ✓
+- rumi-worker: 48/100 → 49/100 ✓
+- nova-worker: 47/100 → 48/100 ✓
+- luna-worker: 49/100 → 50/100 ✓
+- pax-worker: 47/100 → 48/100 ✓
+- orion-worker: 49/200 → 50/200 ✓
+- moxie-orchestration-reconciler: 39/100 → 40/100 ✓
+- issues-rishi-watch: 12/200 (unchanged) ✓
 
 ### 2. Next-Run Timestamps Updated
 Updated 3 jobs with stale next-run times:
-- formbeep-hourly-heartbeat: moved to next hour slot
+- formbeep-hourly-heartbeat: moved to next hour slot (01:06 UTC)
 - moxie-hq-autocommit-push: updated to current+30min schedule
 - cmo-delegation-queue-runner: updated to current schedule
 
-### 3. mira-daily-kpi Counter Anomaly
-**Priority**: LOW (informational)
-- Doc showed 47/100, live shows 9/100
-- Counter went **backwards** by 38 runs
-- Possible cause: job reset, recreation, or data corruption
-- No immediate action needed (job is active, next run 2026-04-02T10:00)
-- Recommend monitoring over next 24h to see if counter stabilizes
+### 3. mira-daily-kpi Counter
+**Status**: No change needed
+- Counter remains at 9/100 (unchanged from last verification)
+- Previously noted anomaly (counter went backwards by 38) appears stable
+- Job is active, next run 2026-04-02T10:00 UTC
+
+## Task Status Verification
+
+### IN_PROGRESS Tasks
+| Employee | Task | Output Path | File Exists | Status |
+|----------|------|-------------|-------------|--------|
+| Jax | Directory replacement picks | /root/moxie/products/formbeep/distribution/directory-submissions-today-pick.md | YES | In progress (file contains note about generating replacement picks) |
+| Iris | Repo copy audit | /root/moxie_hq/products/formbeep/dev-notes/2026-04-01-repo-copy-audit.md | NO | In progress |
+| Mira | StackStats Umami analytics | /root/moxie/products/stackstats/analytics/umami-summary.md | NO | In progress |
+
+### recently Completed Tasks (verified)
+- Vale: StackStats Reddit scan plan - COMPLETED ✓
+- Astra: DataForSEO SERP probe - COMPLETED ✓
+- Luna: Win-back email sequence - COMPLETED ✓
+- Orion: Prospect list refresh - COMPLETED ✓
+- Forge: HQ commit message standard - COMPLETED ✓
+- Kiro: Blog post rework - COMPLETED ✓
+- Ember: Reddit posting tracker - COMPLETED ✓
 
 ## Dispatch Queue Status
-- 11 tasks COMPLETED
-- 1 task IN_PROGRESS (Jax directory replacement, promoted 2026-04-01T23:00Z)
-- 1 task TIME-LOCKED (Forge GSC validation, scheduled 2026-04-04T12:00Z)
-- 3 tasks P0 QUEUED (Iris repo audit, Astra DataForSEO, Iris live scrape)
+- 12 tasks COMPLETED
+- 3 tasks IN_PROGRESS (Jax, Iris, Mira)
+- 0 tasks BLOCKED (all blockers in issues_rishi.md)
+- Remaining QUEUED tasks waiting for dependencies
 
-## Verification
-- All 29 active crons in live registry match documentation
-- Last verified timestamp updated to 2026-04-01T23:19:28Z
-
-## Open Items
-- mira-daily-kpi counter anomaly: monitor over next 24h
-- All blockers unchanged (see issues_rishi.md)
+## Open Blockers (unchanged)
+1. Platform marketplaces: Need dev scope from Forge (QUEUED task exists)
+2. Reddit execution: Needs Reddit credentials from Rishi
+3. Directory distribution: Jax working on replacement picks
 
 ## Files Modified
-- /root/moxie/cmo/orchestration.md (15 counter fixes +3 next-run updates + 1 timestamp)
+- /root/moxie/cmo/orchestration.md (14 counter fixes + 3 next-run updates + 1 timestamp)
+
+## Next Reconciliation
+- Scheduled: 2026-04-02T01:13:00 UTC (moxie-orchestration-reconciler cron)
