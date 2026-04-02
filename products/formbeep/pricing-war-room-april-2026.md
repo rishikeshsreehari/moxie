@@ -1,146 +1,128 @@
 # FormBeep Pricing War Room — April 2026
-**Owner: Vale (Competitor Intelligence) | Date: 2026-04-01**
-**Trigger: BeepMate dropped to $4/mo; FormBeep at $4.99/mo — under price pressure**
+
+**Owner: Vale (Competitor Intelligence) — 2026-04-02**
 
 ---
 
-## 1) Direct Competitor Pricing Teardown
+## Decision Brief: Should FormBeep change its $4.99/mo price?
 
-### BeepMate (beepmate.io) — THE NEW BASELINE
-| Tier | Price | Daily Limit | Key Features |
-|------|-------|-------------|-------------|
-| Free | $0 | 20/day | Basic WA notifications |
-| **VIP** | **$4/mo** | 200/day | WA + groups, AI summarize, AI filter |
-| PRO | $9/mo | 800/day | All VIP + regex filters (coming) |
-| Enterprise | Custom | Unlimited | Self-hosted, company domain/number |
+### TL;DR
 
-**Weaknesses:**
-- **No SMS channel** — WhatsApp only. All eggs in Meta's basket. If Meta bans/limits WA BAPI, BeepMate has nothing.
-- **Enterprise tier is just "Contact Us"** — no price anchoring, no self-serve path for large accounts.
-- **AI features are basic** — email summarization/filtering are commodity AI (GPT-4 class). Not defensible.
-- **$4 pricing is likely a land grab** — they've restructured pricing 2-3x, suggesting uncertainty about optimal price. May rise again.
-- **Self-hosted mentioned only at Enterprise** — power users who want control can't self-host at any consumer tier.
-
-**Strengths:**
-- Cheapest paid entry point ($4/mo vs FormBeep $4.99)
-- AI features create perceived value even at lowest tier
-- SEO content pages (WP→WA, Framer→WA) are working for discoverability
-
-### Web2Phone (web2phone.co.uk)
-| Tier | Price | Monthly Limit |
-|------|-------|---------------|
-| Free | £0 | 10 WA notifications/month |
-| Starter | £9/mo (~$11) | Basic |
-| Pro | £19/mo (~$24) | More |
-| Business | £39/mo (~$48) | Max |
-
-**Weaknesses:**
-- **Priced 2-3x higher than FormBeep** — not competing on price. Premium positioning but no premium justification.
-- **UK-only pricing (£)** — alienates international SMB market.
-- **WP-plugin only** — limited platform reach compared to FormBeep's API + integrations approach.
-- **Cloudflare-heavy site** — feels corporate, not indie-friendly.
-
-### WPForms (wpforms.com)
-- WhatsApp notifications went live March 5, 2026
-- **Pricing: $49.50/yr Basic, $199.50/yr Plus, $399.50/yr Pro — all include WA**
-- **Not a direct competitor** — WPForms is a full form builder ($200-400/yr), WA is just a feature
-- **Threat**: If someone already pays for WPForms, they won't buy FormBeep separately for notifications
-- **Opportunity**: WPForms users who want SMS (not just WA) still need FormBeep; WPForms doesn't do SMS
-
-### Formspree (formspree.io)
-| Tier | Price | Submissions | WA | SMS |
-|------|-------|-------------|----|-----|
-| Free | $0 | 50/mo | ❌ | ✅ (paid addon) |
-| Gold | $10/mo | 1,000 | ❌ | ✅ |
-| Platinum | $50/mo | 10,000 | ❌ | ✅ |
-| Enterprise | Custom | Unlimited | ❌ | ✅ |
-
-**Weaknesses:**
-- **No WhatsApp at all** — their biggest blind spot vs FormBeep
-- **$10/mo entry** — 2.5x BeepMate's price
-- **APIv2 deprecation (Q3 2026)** — creates migration anxiety but they're too expensive to be the natural alternative
+**Recommendation: HOLD $4.99/mo.** Do not match BeepMate's $4/mo. Instead, lean into the SMS moat and dual-channel positioning to justify the $0.99/mo premium. Introduce an *agency tier* (see below) to fill the gap competitors abandoned.
 
 ---
 
-## 2) Indirect/Partial Competitors
+## 1) The Competitive Price Landscape
 
-| Tool | Price | Channel | Relevance to FormBeep |
-|------|-------|---------|----------------------|
-| Getform | $10-25/mo | SMS (Q2 target) | Becomes direct competitor IF they ship dual-channel |
-| Basin | $5-20/mo | Email/webhooks only | No WA, no SMS — not a notification competitor |
-| WANotifier | $25+/mo | WhatsApp only | Commerce-focused, not form-focused. Different user. |
-| Zapier | $20+/mo | Multi-channel via zaps | Expensive, complex. Good for existing Zapier users. |
-| Make/n8n | $8-16/mo | Multi-channel via workflows | Self-host n8n ($0) is the real threat for devs. |
+| Competitor | Free Tier | Lowest Paid | Top Paid | Channels |
+|------------|-----------|-------------|----------|----------|
+| **FormBeep** | 15 subs/mo | **$4.99/mo** | TBD | SMS + WA + Email |
+| **BeepMate** | 20/day (~600/mo) | $4/mo | $9/mo | WA only (+ AI) |
+| **Web2Phone** | 10 WA/mo + 50 email/mo | £9/mo (~$11) | £39/mo (~$48) | WA + Email |
+| **Formspree** | 50 subs/mo | $10/mo | $50/mo | Email only |
+| **Getform** | 50 subs/mo | $9.99/mo | $49/mo | Email (SMS Q2 TBD) |
+| **WPForms** | Freemium | $49.50/yr | $399.50/yr | Email + WA (addon) |
 
----
-
-## 3) Feature Gap Analysis: What Each Has That FormBeep Doesn't
-
-| Feature | BeepMate | Web2Phone | n8n (free) | FormBeep |
-|---------|----------|-----------|------------|----------|
-| WhatsApp notifications | ✅ | ✅ | ✅ (build it) | ✅ |
-| SMS notifications | ❌ | ❌ | ✅ (build it) | ✅ (differentiator) |
-| AI email filtering | ✅ | ❌ | ❌ (build it) | ❌ |
-| AI email summarization | ✅ | ❌ | ❌ (build it) | ❌ |
-| Regex routing | coming | ❌ | ✅ (build it) | ❌ |
-| Group messaging | ✅ ($4) | limited | ✅ (build it) | ❓ |
-| Self-hosted option | Enterprise only | ❌ | ✅ (free) | ❓ |
-| Multi-platform (WP/Webflow/Framer) | Guides only (WA) | WP only | API-based | ✅ (native integrations) |
-| Platform-agnostic API | ❌ | ❌ | ❌ | ✅ |
-
-**FormBeep's unique advantages (no one else has both):**
-1. **SMS as first-class channel** — BeepMate, Web2Phone, WPForms none do SMS natively
-2. **Platform-agnostic API** — not tied to WordPress like Web2Phone
-3. **Integrations (Webflow/Framer/WP)** — native, not just guide pages
+**BeepMate dropped from $5 → $4/mo** and added AI summarize/filter features in the same tier. They also removed their $19/mo Business tier, replacing it with "Contact Us" Enterprise.
 
 ---
 
-## 4) Pricing Decision Matrix
+## 2) Feature Gap Matrix
 
-### Option A: Drop to $4/mo (match BeepMate)
-- **Pros**: Price parity removes #1 objection, simplifies comparison
-- **Cons**: Lose $11.99/year per customer; sets ceiling at $4; race to bottom
-- **Math**: 10 users × $4/mo = $40/mo (vs $49.90 at current). Need 12.5 users to hit same $50/mo.
-
-### Option B: Hold $4.99 (current)
-- **Pros**: Higher revenue per user; can justify with SMS dual-channel
-- **Cons**: $0.99/month price delta gives prospects a reason to choose BeepMate
-- **Counter**: Lead messaging on "the only tool with SMS + WhatsApp in one place" — not a price play
-
-### Option C: Create $3.99 Starter tier + $9.99 Pro tier
-- **Pros**: Undercut BeepMate at entry; capture agency at $9.99 (no one targets this)
-- **Cons**: Two tiers to manage; $3.99 still loses money per customer
-- **Math**: Need to predict split % between tiers
-
-### Option D: $4.99/mo — add an AI feature ASAP
-- **Pros**: Neutralizes BeepMate's AI advantage; keeps price premium justified
-- **Cons**: Requires engineering effort (even basic AI auto-acknowledge templates)
-- **Counter**: "AI-powered form responses" can be simple templates (no LLM cost per notification)
+| Feature | FormBeep | BeepMate | Web2Phone | Formspree | Gap? |
+|---------|----------|----------|-----------|-----------|------|
+| WhatsApp alerts | ✅ | ✅ | ✅ | ❌ | — |
+| **SMS alerts** | ✅ | ❌ | ❌ | ✅ (higher tier) | **MOAT** |
+| Email delivery | ✅ | Email→WA only | ✅ | ✅ | — |
+| Dual-channel (SMS+WA) | ✅ | ❌ | ❌ | ❌ | **MOAT** |
+| AI summarize/filter | ❌ | ✅ | ✅ | Partial (spam) | **GAP** |
+| Domain allow-listing | TBD | ✅ | ✅ | ❌ | GAP |
+| Group WA delivery | ❌ | ✅ | ❌ | N/A | minor |
+| Regex routing | ❌ | Coming soon | ❌ | ❌ | watch |
+| Number of forms | TBD | unlimited | 1–10 | 1–unlimited | TBD |
+| WP plugin | ✅ | ❌ | ✅ (separate) | ❌ | **MOAT** |
+| Agency/multi-site tier | ❌ | ❌ (removed) | ✅ (£39) | ✅ | **OPEN GAP** |
 
 ---
 
-## 5) Recommendation
+## 3) The $0.99 Premium: How to Defend It
 
-**Hold $4.99/mo. Do NOT drop price.** Here's why:
+BeepMate at $4/mo offers WA-only + AI features. FormBeep at $4.99/mo must offer clear additional value:
 
-1. **$0.99/month is not a rational switching cost** — if someone has evaluated both tools and the form→notification works, nobody chooses based on $12/year. The buyer who cares that much about $0.99 has a $0 LTV.
-2. **SMS is the moat.** BeepMate is WA-only. FormBeep is dual-channel. Lead with that in all copy. "WhatsApp AND SMS. Because one channel is never enough."
-3. **BeepMate's pricing instability is a weakness** — "We've restructured 3x" is not what you tell enterprise buyers. FormBeep's stable pricing is a feature.
-4. **The agency gap is real money** — BeepMate removed their $19/mo tier. FormBeep should plan a $14.99/mo "Agency" tier (20 sites, shared inbox, branded notifications). This is the highest-margin segment.
+**Value props that justify the premium:**
+1. **SMS as primary channel** — BeepMate doesn't do SMS. US/EU SMBs need SMS (open rate 98%, response time < 3 min). This alone is worth $0.99/mo
+2. **Dual-channel fallback** — SMS primary + WA backup + email archive = never miss a lead. BeepMate is single-channel (WA-only)
+3. **WordPress plugin** — one-click install, no snippet pasting. Trust signal from WP.org directory
+4. **Multi-channel escalation** — future: route by keyword/business hours/team on-call. BeepMate has no routing rules
 
-**One immediate action:** Add AI-powered auto-acknowledgment emails as a feature (no LLM cost — template-based with smart variable substitution). This neutralizes BeepMate's "AI" marketing without engineering risk. Ship this to homepage and pricing page within 2 weeks.
-
----
-
-## 6) Watch Items for Next Scan
-
-- [ ] BeepMate pricing restructuring #3 (likely to happen — they're still finding their price)
-- [ ] Getform SMS routing launch (Q2 2026) — becomes dual-channel competitor
-- [ ] n8n WhatsApp + SMS templates — open-source alternative for developers
-- [ ] Formspree API v2 sunset fallout (Q3 2026) — potential user migration target
-- [ ] Any BeepMate AI feature expansion beyond email summarization
-- [ ] Web2Phone release post-v3.2.1 (last confirmed Mar 12, 2026)
+**If FormBeep drops to $4/mo:**
+- Loses $0.99 × 10 customers × 12 months = $107/year
+- Signals price war participation (dangerous vs. well-funded competitors)
+- Erodes perceived value; buyers infer "they lowered price because features aren't enough"
 
 ---
 
-*Saved: 2026-04-01T19:12Z | Vale, Competitor Intelligence Lead*
+## 4) Recommended Pricing Architecture
+
+### Hold $4.99/mo (current)
+Keep the base price. Communicate value, not price.
+
+### Add: Pro tier — $9.99/mo
+- 500 SMS alerts/mo + 500 WA alerts/mo
+- Team routing (route forms to different people/channels)
+- Business hours rules
+- Domain allow-listing
+- Priority support
+
+This fills the **$9–$15 agency whitespace** that BeepMate abandoned when they killed their $19/mo tier.
+
+### Add: Lifetime option — $149 one-time
+- Targets Indie Hacker buyer psychology (StackStats precedent: 5 sales = $237 in 2 weeks)
+- Caps at 100–200 units to create scarcity
+- Immediate cash injection for marketing runway
+
+---
+
+## 5) Messaging Recommendations
+
+### Landing page pricing section (suggested copy):
+```
+Free: 15 submissions/month — try it, no credit card.
+Pro: $4.99/month — SMS + WhatsApp + Email. Never miss a lead.
+Team: $9.99/mo — Routing rules, team alerts, business hours logic.
+Lifetime: $149 one-time — pay once, use forever. Limited availability.
+```
+
+### Competitive comparison angle (for blog/SEO pages):
+> "FormBeep is the only form notification tool that delivers to SMS, WhatsApp, and email from a single integration. Competitors make you choose one channel. We deliver to all three."
+
+---
+
+## 6) Risks of This Decision
+
+| Risk | Probability | Mitigation |
+|------|-------------|------------|
+| Customers churn to BeepMate for $0.99 savings | Low (SMS users won't switch) | Emphasize SMS channel superiority; add comparison page |
+| BeepMate adds SMS later | Medium (Q2-Q4 possibility) | Ship more advanced routing/features before they catch up |
+| AI features become expected at $5 | Medium | Ship basic AI (auto-acknowledge, smart templates) within 60 days |
+
+---
+
+## 7) Action Items
+
+| Action | Owner | Priority | Timeline |
+|--------|-------|----------|----------|
+| Hold price at $4.99/mo | Rishi | NOW | Decide this week |
+| Build competitor comparison page (FormBeep vs BeepMate / vs Web2Phone) | Rumi/Kiro | P1 | 7 days |
+| Ship AI auto-acknowledge + smart reply templates | Forge | P1 | 30 days |
+| Design + implement Pro ($9.99) tier | Rishi/Forge | P2 | 21 days |
+| Consider Lifetime $149 offer | Rishi | P2 | 14 days |
+| Publish SMS superiority landing page | Kiro | P1 | 7 days |
+
+---
+
+## Sources
+- beepmate.io/pricing (verified 2026-04-01)
+- web2phone.co.uk/pricing (Cloudflare-blocked; data from prior scans)
+- /root/moxie/products/formbeep/beepmate-web2phone-deepdive.md
+- /root/moxie/products/formbeep/competitor-monitoring.md (2026-05-01)
