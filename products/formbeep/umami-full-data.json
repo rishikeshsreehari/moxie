@@ -1,55 +1,51 @@
 {
   "stats_7d": {
-    "pageviews": 90,
-    "visitors": 74,
-    "visits": 74,
-    "bounces": 66,
-    "totaltime": 506,
+    "pageviews": 118,
+    "visitors": 81,
+    "visits": 83,
+    "bounces": 71,
+    "totaltime": 4008,
     "comparison": {
-      "pageviews": 88,
-      "visitors": 67,
-      "visits": 69,
-      "bounces": 64,
-      "totaltime": 246
+      "pageviews": 74,
+      "visitors": 61,
+      "visits": 63,
+      "bounces": 61,
+      "totaltime": 25
     }
   },
   "stats_30d": {
-    "pageviews": 867,
-    "visitors": 659,
-    "visits": 719,
-    "bounces": 645,
-    "totaltime": 12485,
+    "pageviews": 862,
+    "visitors": 641,
+    "visits": 699,
+    "bounces": 623,
+    "totaltime": 15581,
     "comparison": {
-      "pageviews": 656,
-      "visitors": 224,
-      "visits": 270,
-      "bounces": 213,
-      "totaltime": 34686
+      "pageviews": 697,
+      "visitors": 258,
+      "visits": 306,
+      "bounces": 246,
+      "totaltime": 35095
     }
   },
   "stats_prior_7d": {
-    "pageviews": 223,
-    "visitors": 162,
-    "visits": 180,
-    "bounces": 165,
-    "totaltime": 3248,
+    "pageviews": 213,
+    "visitors": 156,
+    "visits": 167,
+    "bounces": 150,
+    "totaltime": 2652,
     "comparison": {
-      "pageviews": 286,
-      "visitors": 218,
-      "visits": 241,
-      "bounces": 209,
-      "totaltime": 4452
+      "pageviews": 265,
+      "visitors": 196,
+      "visits": 220,
+      "bounces": 190,
+      "totaltime": 4798
     }
   },
   "pageviews_7d_daily": {
     "pageviews": [
       {
-        "x": "2026-03-25T00:00:00Z",
-        "y": 7
-      },
-      {
         "x": "2026-03-26T00:00:00Z",
-        "y": 14
+        "y": 13
       },
       {
         "x": "2026-03-27T00:00:00Z",
@@ -73,17 +69,17 @@
       },
       {
         "x": "2026-04-01T00:00:00Z",
-        "y": 5
+        "y": 21
+      },
+      {
+        "x": "2026-04-02T00:00:00Z",
+        "y": 20
       }
     ],
     "sessions": [
       {
-        "x": "2026-03-25T00:00:00Z",
-        "y": 6
-      },
-      {
         "x": "2026-03-26T00:00:00Z",
-        "y": 6
+        "y": 5
       },
       {
         "x": "2026-03-27T00:00:00Z",
@@ -107,32 +103,16 @@
       },
       {
         "x": "2026-04-01T00:00:00Z",
-        "y": 5
+        "y": 16
+      },
+      {
+        "x": "2026-04-02T00:00:00Z",
+        "y": 3
       }
     ]
   },
   "pageviews_7d_hourly": {
     "pageviews": [
-      {
-        "x": "2026-03-25T12:00:00Z",
-        "y": 3
-      },
-      {
-        "x": "2026-03-25T13:00:00Z",
-        "y": 1
-      },
-      {
-        "x": "2026-03-25T15:00:00Z",
-        "y": 1
-      },
-      {
-        "x": "2026-03-25T16:00:00Z",
-        "y": 2
-      },
-      {
-        "x": "2026-03-26T02:00:00Z",
-        "y": 1
-      },
       {
         "x": "2026-03-26T11:00:00Z",
         "y": 8
@@ -312,29 +292,45 @@
       {
         "x": "2026-04-01T08:00:00Z",
         "y": 1
+      },
+      {
+        "x": "2026-04-01T13:00:00Z",
+        "y": 1
+      },
+      {
+        "x": "2026-04-01T14:00:00Z",
+        "y": 2
+      },
+      {
+        "x": "2026-04-01T16:00:00Z",
+        "y": 6
+      },
+      {
+        "x": "2026-04-01T17:00:00Z",
+        "y": 1
+      },
+      {
+        "x": "2026-04-01T19:00:00Z",
+        "y": 3
+      },
+      {
+        "x": "2026-04-01T21:00:00Z",
+        "y": 3
+      },
+      {
+        "x": "2026-04-02T03:00:00Z",
+        "y": 1
+      },
+      {
+        "x": "2026-04-02T09:00:00Z",
+        "y": 12
+      },
+      {
+        "x": "2026-04-02T10:00:00Z",
+        "y": 7
       }
     ],
     "sessions": [
-      {
-        "x": "2026-03-25T12:00:00Z",
-        "y": 2
-      },
-      {
-        "x": "2026-03-25T13:00:00Z",
-        "y": 1
-      },
-      {
-        "x": "2026-03-25T15:00:00Z",
-        "y": 1
-      },
-      {
-        "x": "2026-03-25T16:00:00Z",
-        "y": 2
-      },
-      {
-        "x": "2026-03-26T02:00:00Z",
-        "y": 1
-      },
       {
         "x": "2026-03-26T11:00:00Z",
         "y": 1
@@ -514,24 +510,60 @@
       {
         "x": "2026-04-01T08:00:00Z",
         "y": 1
+      },
+      {
+        "x": "2026-04-01T13:00:00Z",
+        "y": 1
+      },
+      {
+        "x": "2026-04-01T14:00:00Z",
+        "y": 2
+      },
+      {
+        "x": "2026-04-01T16:00:00Z",
+        "y": 4
+      },
+      {
+        "x": "2026-04-01T17:00:00Z",
+        "y": 1
+      },
+      {
+        "x": "2026-04-01T19:00:00Z",
+        "y": 3
+      },
+      {
+        "x": "2026-04-01T21:00:00Z",
+        "y": 1
+      },
+      {
+        "x": "2026-04-02T03:00:00Z",
+        "y": 1
+      },
+      {
+        "x": "2026-04-02T09:00:00Z",
+        "y": 2
+      },
+      {
+        "x": "2026-04-02T10:00:00Z",
+        "y": 1
       }
     ]
   },
   "metrics_url": [
     {
       "x": "/",
-      "y": 36
+      "y": 34
     },
     {
       "x": "/whatsapp-api-pricing/",
-      "y": 16
+      "y": 24
     },
     {
       "x": "/tools/whatsapp-message-formatter/",
-      "y": 4
+      "y": 5
     },
     {
-      "x": "/blog/",
+      "x": "/#pricing",
       "y": 4
     },
     {
@@ -539,42 +571,42 @@
       "y": 3
     },
     {
-      "x": "/#pricing",
-      "y": 2
-    },
-    {
-      "x": "/whatsapp-business-api-pricing-2026",
-      "y": 2
-    },
-    {
-      "x": "/blog/framer-whatsapp-without-zapier/",
-      "y": 2
+      "x": "/blog/",
+      "y": 3
     },
     {
       "x": "/blog/why-formbeep/",
       "y": 2
     },
     {
-      "x": "/blog/webflow-whatsapp-notifications/",
+      "x": "/tools/",
+      "y": 2
+    },
+    {
+      "x": "/tools/whatsapp-business-bio-generator/",
+      "y": 2
+    },
+    {
+      "x": "/whatsapp-business-api-pricing-2026",
       "y": 2
     }
   ],
   "metrics_referrer": [
     {
       "x": "chatgpt.com",
-      "y": 6
-    },
-    {
-      "x": "vibecuterie.com",
-      "y": 5
+      "y": 7
     },
     {
       "x": "reddit.com",
-      "y": 5
+      "y": 6
     },
     {
       "x": "com.reddit.frontpage",
       "y": 4
+    },
+    {
+      "x": "vibecuterie.com",
+      "y": 3
     },
     {
       "x": "google.com",
@@ -583,27 +615,27 @@
     {
       "x": "rishikeshs.com",
       "y": 1
-    },
-    {
-      "x": "duckduckgo.com",
-      "y": 1
     }
   ],
   "metrics_country": [
     {
       "x": "US",
-      "y": 22
+      "y": 23
     },
     {
       "x": "IN",
-      "y": 12
+      "y": 13
+    },
+    {
+      "x": "CO",
+      "y": 5
     },
     {
       "x": "CN",
       "y": 3
     },
     {
-      "x": "CO",
+      "x": "CR",
       "y": 3
     },
     {
@@ -611,23 +643,19 @@
       "y": 3
     },
     {
+      "x": "PK",
+      "y": 3
+    },
+    {
       "x": "DE",
       "y": 2
     },
     {
-      "x": "BR",
-      "y": 2
-    },
-    {
-      "x": "TR",
+      "x": "VN",
       "y": 2
     },
     {
       "x": "AR",
-      "y": 2
-    },
-    {
-      "x": "VN",
       "y": 2
     }
   ],
@@ -639,7 +667,7 @@
     },
     {
       "x": "US-CA",
-      "y": 7,
+      "y": 6,
       "country": "US"
     },
     {
@@ -651,6 +679,11 @@
       "x": "GB-ENG",
       "y": 3,
       "country": "GB"
+    },
+    {
+      "x": "CO-DC",
+      "y": 3,
+      "country": "CO"
     },
     {
       "x": "IN-TG",
@@ -668,19 +701,14 @@
       "country": "US"
     },
     {
-      "x": "ID-JK",
+      "x": "CN-BJ",
       "y": 2,
-      "country": "ID"
+      "country": "CN"
     },
     {
-      "x": "IN-KL",
+      "x": "US-VA",
       "y": 2,
-      "country": "IN"
-    },
-    {
-      "x": "CO-DC",
-      "y": 2,
-      "country": "CO"
+      "country": "US"
     }
   ],
   "metrics_city": [
@@ -691,7 +719,7 @@
     },
     {
       "x": "Los Angeles",
-      "y": 5,
+      "y": 4,
       "country": "US"
     },
     {
@@ -705,18 +733,8 @@
       "country": "IN"
     },
     {
-      "x": "Surat",
-      "y": 2,
-      "country": "IN"
-    },
-    {
-      "x": "Beijing",
-      "y": 2,
-      "country": "CN"
-    },
-    {
       "x": "Bogot\u00e1",
-      "y": 2,
+      "y": 3,
       "country": "CO"
     },
     {
@@ -730,15 +748,25 @@
       "country": "ID"
     },
     {
-      "x": "Z\u00e1rate",
-      "y": 1,
-      "country": "AR"
+      "x": "Beijing",
+      "y": 2,
+      "country": "CN"
+    },
+    {
+      "x": "Ashburn",
+      "y": 2,
+      "country": "US"
+    },
+    {
+      "x": "Surat",
+      "y": 2,
+      "country": "IN"
     }
   ],
   "metrics_browser": [
     {
       "x": "chrome",
-      "y": 58
+      "y": 60
     },
     {
       "x": "ios",
@@ -749,12 +777,12 @@
       "y": 4
     },
     {
-      "x": "safari",
-      "y": 2
+      "x": "crios",
+      "y": 4
     },
     {
-      "x": "crios",
-      "y": 2
+      "x": "safari",
+      "y": 3
     }
   ],
   "metrics_os": [
@@ -764,33 +792,33 @@
     },
     {
       "x": "Mac OS",
-      "y": 17
-    },
-    {
-      "x": "Linux",
-      "y": 15
-    },
-    {
-      "x": "iOS",
-      "y": 10
+      "y": 18
     },
     {
       "x": "Android OS",
-      "y": 10
+      "y": 15
+    },
+    {
+      "x": "Linux",
+      "y": 14
+    },
+    {
+      "x": "iOS",
+      "y": 12
     }
   ],
   "metrics_device": [
     {
       "x": "laptop",
-      "y": 49
+      "y": 48
     },
     {
       "x": "mobile",
-      "y": 20
+      "y": 27
     },
     {
       "x": "desktop",
-      "y": 5
+      "y": 6
     }
   ],
   "metrics_screen": [
@@ -799,30 +827,30 @@
       "y": 13
     },
     {
-      "x": "1920x1080",
-      "y": 5
-    },
-    {
       "x": "393x852",
-      "y": 5
+      "y": 7
     },
     {
       "x": "800x600",
+      "y": 6
+    },
+    {
+      "x": "1920x1080",
       "y": 4
     },
     {
-      "x": "393x873",
-      "y": 3
+      "x": "1366x768",
+      "y": 4
     }
   ],
   "metrics_language": [
     {
       "x": "en",
-      "y": 56
+      "y": 62
     },
     {
       "x": "es",
-      "y": 4
+      "y": 6
     },
     {
       "x": "de",
@@ -830,10 +858,6 @@
     },
     {
       "x": "ru",
-      "y": 2
-    },
-    {
-      "x": "zh",
       "y": 2
     },
     {
@@ -845,15 +869,19 @@
       "y": 2
     },
     {
-      "x": "sv",
-      "y": 1
-    },
-    {
-      "x": "nb",
+      "x": "zh",
       "y": 1
     },
     {
       "x": "nl",
+      "y": 1
+    },
+    {
+      "x": "fr",
+      "y": 1
+    },
+    {
+      "x": "nb",
       "y": 1
     }
   ],
@@ -864,42 +892,50 @@
     },
     {
       "x": "WhatsApp Business API Pricing (2026) \u2014 Rates by Country | FormBeep",
-      "y": 16
-    },
-    {
-      "x": "Blog \u2014 FormBeep",
-      "y": 4
+      "y": 24
     },
     {
       "x": "WhatsApp Message Formatter \u2014 FormBeep",
-      "y": 4
+      "y": 5
+    },
+    {
+      "x": "Blog \u2014 FormBeep",
+      "y": 3
     },
     {
       "x": "Get WhatsApp Notifications from Framer Forms \u2014 FormBeep",
       "y": 3
     },
     {
+      "x": "Framer WhatsApp Form Notifications Without Zapier (2026) | FormBeep",
+      "y": 2
+    },
+    {
+      "x": "Free WhatsApp Tools for Business \u2014 FormBeep",
+      "y": 2
+    },
+    {
       "x": "Why I decided to build FormBeep \u2014 FormBeep",
       "y": 2
     },
     {
-      "x": "How to Get WhatsApp Notifications from Webflow Forms \u2014 FormBeep",
-      "y": 2
-    },
-    {
-      "x": "Framer WhatsApp Form Notifications Without Zapier (2026) | FormBeep",
+      "x": "WhatsApp Business Bio Generator \u2014 FormBeep",
       "y": 2
     },
     {
       "x": "Terms of Service \u2014 FormBeep",
       "y": 1
-    },
-    {
-      "x": "How to Get WhatsApp Notifications from Framer Forms \u2014 FormBeep",
-      "y": 1
     }
   ],
   "metrics_event": [
+    {
+      "x": "Docs Click",
+      "y": 3
+    },
+    {
+      "x": "Signup - Pricing",
+      "y": 2
+    },
     {
       "x": "Login Click",
       "y": 2
@@ -909,11 +945,7 @@
       "y": 2
     },
     {
-      "x": "Docs Click",
-      "y": 2
-    },
-    {
-      "x": "Signup - Pricing",
+      "x": "WAP Pricing CTA - Try Free",
       "y": 1
     },
     {
@@ -922,6 +954,6 @@
     }
   ],
   "active": {
-    "visitors": 0
+    "visitors": 1
   }
 }
