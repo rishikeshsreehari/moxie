@@ -140,14 +140,15 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 - Blockers: None
    134|
    135|### Rumi — Blog & Content Analyst
-   136|- SOUL: /root/moxie/cmo/employees/rumi-soul.md
-   137|- Current output dir (sprint): /root/moxie/products/formbeep/
-   138|- Status: COMPLETED
-   139|- Current task: Bi-weekly content gap scan + trending topic check — **COMPLETED** (2026-03-31)
-   140|- Last output: /root/moxie/products/formbeep/content-gap-scan.md
-   141|- Keyword seed: /root/moxie/products/formbeep/seo-keywords.md
-   142|- Next task after completion: Next bi-weekly scan (2026-04-10). Priority backlog: 4 P0/P1 topics flagged for Kiro drafts.
-   143|- Blockers: None
+|- SOUL: /root/moxie/cmo/employees/rumi-soul.md
+|- Current output dir (sprint): /root/moxie/products/stackstats/
+|- Status: COMPLETED
+|- Current task: 6 StackStats SEO page outlines (Hugo-ready) — **COMPLETED** (2026-04-02T10:30Z)
+|- Task ID: rumi-20260401_234658-f506a1
+|- Output path: /root/moxie/products/stackstats/seo/page-outlines.md
+|- Last output: /root/moxie/products/stackstats/seo/page-outlines.md
+|- Next task after completion: Platform×Product posting matrix (hq) — dispatch-queue line 35
+|- Blockers: None
    144|
    145|### Pax — Partnerships / BD Lead
    146|- SOUL: /root/moxie/cmo/employees/pax-soul.md
