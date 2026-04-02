@@ -1,53 +1,220 @@
 {
-  "generated_at": "2026-04-02T00:00:00Z",
+  "generated_at": "2026-04-02T00:49:10Z",
   "kpis": {
-    "pageviews_7d": 0,
-    "visitors_7d": 0,
-    "signups_7d": 0,
+    "pageviews_7d": 103,
+    "visitors_7d": 76,
+    "signups_7d": 4,
     "paid_lifetime": 0,
     "free_lifetime": 0,
-    "revenue_lifetime_usd": 0,
-    "mrr_usd": 0
+    "revenue_lifetime_usd": 237.17,
+    "mrr_usd": 4.99
   },
   "products": [
     {
       "name": "FormBeep",
       "status": "ACTIVE",
-      "pageviews_7d": 0,
-      "signups_7d": 0
+      "pageviews_7d": 103,
+      "signups_7d": 4
     }
   ],
   "systems": {
     "queue": {
-      "pending": 0,
-      "in_progress": 0
+      "pending": 1,
+      "in_progress": 4
     },
     "cron": {
-      "active_jobs": 0
+      "active_jobs": 11
     },
     "blockers": {
-      "count": 0,
-      "needs_rishi": []
+      "count": 10,
+      "needs_rishi": [
+        "(2026-03-31) Dispatch queue contains tasks for Luna/Pax/Orion but no corresponding worker SOUL/cron/config found under /moxie; cannot promote those tasks until workers are created or tasks are reassigned. Also Orion output path points to /moxie_hq/... which isn\u2019t present in this workspace",
+        "(2026-03-31) WordPress plugin resubmission (WP team feedback) \u2014 Status: IN_PROGRESS (Founder)",
+        "(2026-03-31) Scope rule: do not push to product dev repos (e.g., formbeep.git). Moxie pushes only to HQ repo; product repos are read-only for suggestions",
+        "(2026-03-31) WordPress plugin resubmission pending \u2014 review/approve Forge\u2019s changes when ready",
+        "(2026-03-31) Directory submissions may require accounts/verification emails \u2014 provide Jax with preferred email inbox + any existing directory accounts",
+        "(2026-03-31) Approve Rumi\u2019s content calendar so Kiro can finalize/write the 2 blog posts",
+        "(YYYY-MM-DD) <issue> \u2014 <what you need from Founder>",
+        "(2026-04-01) Platform marketplaces (Webflow Apps / Framer / Glide / Typedream): REQUIRES development + platform-specific guidelines (not just submission). Founder has prior: Framer rejected a component; required a plugin. Root cause: Pax work was mis-scoped and not last-mile verified. Next action: Forge to produce a requirements matrix + MVP build scope (S/M/L) per platform, then decide build vs defer. Owner: Founder + Forge",
+        "(2026-04-01) Reddit execution: Founder expects \u201cpost-ready\u201d drafts tied to specific subreddits and posting windows. Current work produced tracker/rules but not verified post-ready drafts for time-of-day execution. Owner: Ember + Moxie (system fix)",
+        "(2026-04-01) Directory distribution: initial picks failed (BetaList paid-only, AlternativeTo age gate). Need replacement directories with verified last-mile requirements and minimal rework. Owner: Jax"
+      ]
     }
   },
   "running": {
-    "count": 0,
-    "tasks": [],
-    "highlights": []
+    "count": 3,
+    "tasks": [
+      {
+        "role": "Jax",
+        "status": "IN_PROGRESS",
+        "text": "Replace failed directory picks: find 2 directories we can submit TODAY. Must personally verify last-mile requirements (free vs paid, account age gates, email verification) and include a copy/paste submission bundle + exact submission URL + \"Verified on\" timestamp. Also update launch-places-master.md to mark BetaList paid-only + AlternativeTo 7-day gate."
+      },
+      {
+        "role": "Iris",
+        "status": "IN_PROGRESS",
+        "text": "Inspect the ACTUAL current landing page content in the repo (headlines, breadcrumbs, free-tier claims) and deliver 10 exact copy/UX improvements with file+section pointers. Must confirm whether \"Free Forever\" is accurate vs canonical facts (15 submissions/mo free). Output should include exact replacement copy blocks."
+      },
+      {
+        "role": "Mira",
+        "status": "IN_PROGRESS",
+        "text": "Pull Umami Cloud analytics for StackStats (website_id 52a19925-9bf4-4efe-9a42-ecc2a7f08d81): last 7d + last 30d. Include top sources, top pages, geo split, and any events (purchases) if tracked. Summarize in a founder-readable brief."
+      }
+    ],
+    "highlights": [
+      "Competitor intel: insights extracted",
+      "US SERP analysis: in progress",
+      "Directories: execution packs ready (waiting on founder)"
+    ]
   },
   "team": [
     {
       "name": "Moxie",
       "title": "Autonomous CMO",
       "status": "ACTIVE",
-      "working_on": "Orchestration + decisions"
+      "working_on": "Orchestration + growth decisions"
+    },
+    {
+      "name": "Vale",
+      "title": "Competitor Intelligence Lead",
+      "status": "COMPLETED",
+      "working_on": "(StackStats) Reddit scanning plan \u2014 **COMPLETED** (2026-04-02T10:00Z)"
+    },
+    {
+      "name": "Astra",
+      "title": "Growth Research Lead",
+      "status": "IDLE",
+      "working_on": ""
+    },
+    {
+      "name": "New task completed",
+      "title": "",
+      "status": "COMPLETED",
+      "working_on": "DataForSEO 50-query LIVE SERP demand probe + full competitive breakdown \u2014 **COMPLETED** (2026-04-02T09:30Z)"
+    },
+    {
+      "name": "Kiro",
+      "title": "Conversion Copy Lead",
+      "status": "COMPLETED",
+      "working_on": "REWORK 2 blog posts per founder feedback (length + factual fixes + Zapier/WhatsApp research + comparison table + thumbnail prompts) \u2014 **COMPLETED** (2026-04-01T22:45Z)"
+    },
+    {
+      "name": "Ember",
+      "title": "Outreach & Distribution Lead",
+      "status": "COMPLETED (execution blocked on creds)",
+      "working_on": "Manual Reddit posting plan (Non-US/GST focus) + subreddit rules checklist + posting windows + verification steps \u2014 **COMPLETED** (2026-04-01T17:32Z)"
+    },
+    {
+      "name": "Forge",
+      "title": "Full Stack Engineer",
+      "status": "COMPLETED",
+      "working_on": "Improve HQ git commit messages (replace generic \"Autopush:\" with specific summaries; update autopush script) \u2014 **COMPLETED** (2026-04-01T22:37Z)"
+    },
+    {
+      "name": "Mira",
+      "title": "Analytics & Reporting Lead",
+      "status": "IN_PROGRESS",
+      "working_on": "(StackStats) Pull Umami Cloud analytics for StackStats (website_id 52a19925-9bf4-4efe-9a42-ecc2a7f08d81): last 7d + last 30d. Include top sources, top pages, geo split, and any events \u2014 **IN_PROGRESS** (promoted 2026-04-02T00:06Z)"
+    },
+    {
+      "name": "Nova",
+      "title": "Paid Acquisition Lead",
+      "status": "COMPLETED",
+      "working_on": "Cross-product ads SOP (naming, UTMs, conversion taxonomy, reporting cadence) \u2014 **COMPLETED**"
+    },
+    {
+      "name": "Jax",
+      "title": "SaaS Growth Operations Lead",
+      "status": "IN_PROGRESS",
+      "working_on": "(FormBeep) Replace failed directory picks with 2 actionable directories (verified requirements + submission bundles) \u2014 **IN_PROGRESS** (promoted 2026-04-01T23:00Z)"
+    },
+    {
+      "name": "Rumi",
+      "title": "Blog & Content Analyst",
+      "status": "COMPLETED",
+      "working_on": "6 StackStats SEO page outlines (Hugo-ready) \u2014 **COMPLETED** (2026-04-02T10:30Z)"
+    },
+    {
+      "name": "Pax",
+      "title": "Partnerships / BD Lead",
+      "status": "COMPLETED",
+      "working_on": "Week 3 submissions (Carrd + Typedream integration packages + agency outreach to top 15 targets) \u2014 **COMPLETED**"
+    },
+    {
+      "name": "Luna",
+      "title": "Lifecycle / CRM Lead",
+      "status": "COMPLETED",
+      "working_on": "Win-back email sequence for churned users \u2014 **COMPLETED** (2026-04-02T08:52Z)"
+    },
+    {
+      "name": "Orion",
+      "title": "Outbound Lead (Cold Email)",
+      "status": "COMPLETED",
+      "working_on": "Prospect list refresh from competitor intel \u2014 **COMPLETED** (2026-04-02T08:15Z)"
     }
   ],
   "github": {
-    "recent": []
+    "recent": [
+      {
+        "hash": "859a3a8",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02 00:47:57"
+      },
+      {
+        "hash": "f5c728f",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02 00:41:50"
+      },
+      {
+        "hash": "493ebca",
+        "when": "2026-04-02",
+        "subject": "Add public retro HQ dashboard (7.css, monochrome, sanitized snapshot)"
+      },
+      {
+        "hash": "4d7ff81",
+        "when": "2026-04-02",
+        "subject": "HQ: add resources index (tagged) + generator script"
+      },
+      {
+        "hash": "ad50100",
+        "when": "2026-04-02",
+        "subject": "Dashboard: modern mobile-first public ops redesign"
+      },
+      {
+        "hash": "30a232a",
+        "when": "2026-04-02",
+        "subject": "Dashboard: show portfolio revenue + MRR (FormBeep .99 MRR, StackStats 37.17 lifetime)"
+      },
+      {
+        "hash": "0d36c33",
+        "when": "2026-04-02",
+        "subject": "HQ: run repo cleanup now + add self-score task + enforce DONE handshake in OSv3"
+      },
+      {
+        "hash": "92a7ae9",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02T00:15:54Z"
+      }
+    ]
   },
   "console": [
-    "[BOOT] Open Ops online",
-    "[SYNC] snapshot loaded"
+    "[BOOT] SapiensTech Open Ops online",
+    "[SYNC] snapshot generated 2026-04-02T00:49:10Z",
+    "[WORK] in_progress=4 queued=1 blocked=3",
+    "[THREADS] open=10"
+  ],
+  "terminal_lines": [
+    "$ moxie status",
+    "in_progress=4 queued=1 blocked=3 completed=12",
+    "",
+    "$ traffic --7d",
+    "pageviews=103 visitors=76 signups=4",
+    "",
+    "$ revenue",
+    "mrr_usd=4.99 lifetime_usd=237.17",
+    "",
+    "$ git log -3 --oneline",
+    "859a3a8 Autopush: 2026-04-02 00:47:57",
+    "f5c728f Autopush: 2026-04-02 00:41:50",
+    "493ebca Add public retro HQ dashboard (7.css, monochrome, sanitized snapshot)"
   ]
 }

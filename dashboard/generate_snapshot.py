@@ -95,30 +95,54 @@ def parse_dispatch_tasks() -> list[dict[str, str]]:
     return tasks[:10]
 
 
-def parse_issues_needs_rishi(max_items: int = 10) -> list[str]:
-    p = ROOT / "cmo" / "issues_rishi.md"
-    if not p.exists():
-        return []
+def parse_open_threads(max_items: int = 10, last_snapshot: dict[str, Any] | None = None) -> list[str]:
+    """Public list of open threads.
 
-    lines = p.read_text(encoding="utf-8").splitlines()
-    open_idx = None
-    for i, ln in enumerate(lines):
-        if ln.strip().lower() == "## open":
-            open_idx = i
-            break
-    if open_idx is None:
-        return []
+    Prefer cmo/exec-updates/last_snapshot.json issues_open (already curated),
+    fallback to any checkbox items in cmo/issues_rishi.md.
+    """
 
     items: list[str] = []
-    for ln in lines[open_idx + 1 :]:
-        if ln.strip().startswith("## "):
-            break
-        if ln.strip().startswith("- [ ]"):
-            txt = ln.strip()[5:].strip()
-            txt = re.sub(r"\s+—\s+Owner:.*$", "", txt)
-            items.append(scrub(txt))
 
-    return items[:max_items]
+    if isinstance(last_snapshot, dict):
+        for raw in (last_snapshot.get("issues_open") or [])[: max_items * 2]:
+            t = scrub(raw)
+            # normalize "[ ] ... — Owner: ..."
+            t = re.sub(r"^\[\s*\]\s*", "", t).strip()
+            t = re.sub(r"\s+—\s+Owner:.*$", "", t).strip()
+            t = t.replace("Rishi", "Founder")
+            if t:
+                items.append(t)
+
+    if len(items) >= max_items:
+        return items[:max_items]
+
+    p = ROOT / "cmo" / "issues_rishi.md"
+    if p.exists():
+        lines = p.read_text(encoding="utf-8").splitlines()
+        for ln in lines:
+            s = ln.strip()
+            if s.startswith("- [ ]"):
+                t = s[5:].strip()
+                t = re.sub(r"\s+—\s+Owner:.*$", "", t).strip()
+                t = scrub(t).replace("Rishi", "Founder")
+                if t:
+                    items.append(t)
+            if len(items) >= max_items:
+                break
+
+    # de-dupe preserve order
+    out: list[str] = []
+    seen = set()
+    for x in items:
+        if x in seen:
+            continue
+        seen.add(x)
+        out.append(x)
+        if len(out) >= max_items:
+            break
+
+    return out
 
 
 def parse_orchestration_employees(max_items: int = 14) -> list[dict[str, str]]:
@@ -265,7 +289,7 @@ def main() -> None:
     counts = last.get("counts") or {}
 
     running_tasks = parse_dispatch_tasks()
-    needs_rishi = parse_issues_needs_rishi()
+    open_threads = parse_open_threads(last_snapshot=last)
     team = parse_orchestration_employees()
     active_products = parse_orchestration_active_products()
     cron_count = parse_orchestration_cron_count()
@@ -289,8 +313,8 @@ def main() -> None:
             "pageviews_7d": pv,
             "visitors_7d": visitors,
             "signups_7d": signups,
-            "paid_lifetime": 0,
-            "free_lifetime": 0,
+            "paid_lifetime": int(portfolio.get("paid_lifetime", 0) or 0),
+            "free_lifetime": int(portfolio.get("free_lifetime", 0) or 0),
             "revenue_lifetime_usd": float(portfolio.get("lifetime_revenue_usd", 0) or 0),
             "mrr_usd": float(portfolio.get("mrr_usd", 0) or 0),
         },
@@ -304,8 +328,8 @@ def main() -> None:
                 "active_jobs": cron_count,
             },
             "blockers": {
-                "count": len(needs_rishi),
-                "needs_rishi": needs_rishi,
+                "count": len(open_threads),
+                "needs_rishi": open_threads,
             },
         },
         "running": {
@@ -320,12 +344,34 @@ def main() -> None:
         "team": team,
         "github": {"recent": git_recent(8)},
         "console": [
-            "[BOOT] Moxie HQ online",
+            "[BOOT] SapiensTech Open Ops online",
             f"[SYNC] snapshot generated {now}",
-            f"[WORK] in_progress={counts.get('IN_PROGRESS', 0)} queued={counts.get('QUEUED', 0)}",
-            f"[NEED] blockers={len(needs_rishi)}",
+            f"[WORK] in_progress={counts.get('IN_PROGRESS', 0)} queued={counts.get('QUEUED', 0)} blocked={counts.get('BLOCKED', 0)}",
+            f"[THREADS] open={len(open_threads)}",
         ],
+        "terminal_lines": [],
     }
+
+    # Build a fun "terminal" transcript from snapshot (safe aggregates only)
+    recent = snapshot.get("github", {}).get("recent") or []
+    term: list[str] = []
+    term.append("$ moxie status")
+    term.append(f"in_progress={counts.get('IN_PROGRESS', 0)} queued={counts.get('QUEUED', 0)} blocked={counts.get('BLOCKED', 0)} completed={counts.get('COMPLETED', 0)}")
+    term.append("")
+    term.append("$ traffic --7d")
+    term.append(f"pageviews={pv} visitors={visitors} signups={signups}")
+    term.append("")
+    term.append("$ revenue")
+    term.append(f"mrr_usd={snapshot['kpis'].get('mrr_usd', 0)} lifetime_usd={snapshot['kpis'].get('revenue_lifetime_usd', 0)}")
+    term.append("")
+    term.append("$ git log -3 --oneline")
+    if recent:
+        for c in recent[:3]:
+            term.append(f"{c.get('hash','')} {c.get('subject','')}")
+    else:
+        term.append("(no commits found)")
+
+    snapshot["terminal_lines"] = [scrub(x) for x in term if x is not None]
 
     out_path = ROOT / "dashboard" / "public_snapshot.json"
     out_path.write_text(json.dumps(snapshot, indent=2), encoding="utf-8")

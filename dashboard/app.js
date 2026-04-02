@@ -249,6 +249,13 @@ function renderConsole(lines) {
   el.textContent = [...base, pulse].join("\n");
 }
 
+function renderTerminal(lines) {
+  const el = document.getElementById("terminalText");
+  if (!el) return;
+  const arr = (lines || []).slice(0, 60);
+  el.textContent = arr.length ? arr.join("\n") : "$ echo 'no data'\nno data";
+}
+
 // ---- SVG / SCADA MAP (draggable nodes + non-overlap) ----
 
 function clientToSvg(svg, clientX, clientY) {
@@ -608,6 +615,7 @@ function renderAll(snapshot) {
   renderProducts(snapshot.products || []);
   renderGitHub(snapshot.github?.recent || []);
   renderConsole(snapshot.console || []);
+  renderTerminal(snapshot.terminal_lines || []);
 
   renderDiagram(snapshot);
 
