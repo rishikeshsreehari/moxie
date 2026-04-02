@@ -215,7 +215,7 @@
    209|
    210|**Editing rule:** do not edit jobs via this table. Update jobs using `hermes cron edit <cron_id> ...` and then reconcile this table to match.
    211|
-   212|Last verified: 2026-04-02T11:17:00Z
+   212|Last verified: 2026-04-02T12:26:00Z
    213|
    214|||| Cron ID | Name | Schedule | Deliver | Next run (UTC) | Repeats | State |||---|---|---|---|---|---|---|
    215||| 6effbb32 | formbeep-daily-user-count-checkin | every 1440m | local | 2026-04-02T14:06:30+00:00 | ∞ | active |
@@ -229,23 +229,23 @@
    223||| 0526cbc1 | weekly-free-models-reminder | 0 17 * * 2 | local | 2026-04-07T17:00:00+00:00 | ∞ | active |
    224||| 647387ae | mira-daily-kpi | 0 10 * * * | local | 2026-04-02T10:00:00+00:00 | 10/100 | active |
    225||| a468835d | vale-monthly-competitor-scan | 0 10 1 * * | local | 2026-05-01T10:00:00+00:00 | 1/100 | active |
-   226||| 2553a683 | moxie-daily-governance | 0 * * * * | local | 2026-04-02T11:00:00+00:00 | 59/100 | active |
-   227||| 8bcfe505 | vale-worker | 12 * * * * | local | 2026-04-02T11:12:00+00:00 | 61/100 | active |
-   228||| 7067633e | astra-worker | 17 * * * * | local | 2026-04-02T10:17:00+00:00 | 61/100 | active |
-   229||| 3171d2c2 | kiro-worker | 42 * * * * | local | 2026-04-02T10:42:00+00:00 | 59/100 | active |
-   230||| eb803b7d | ember-worker | 32 * * * * | local | 2026-04-02T10:32:00+00:00 | 59/100 | active |
-   231||| 401e59cc | forge-worker | 37 * * * * | local | 2026-04-02T10:37:00+00:00 | 60/100 | active |
-   232||| 4bdcef11 | jax-worker | 22 * * * * | local | 2026-04-02T10:22:00+00:00 | 59/100 | active |
-   233||| affd389a | rumi-worker | 27 * * * * | local | 2026-04-02T10:27:00+00:00 | 60/100 | active |
+   226||| 2553a683 | moxie-daily-governance | 0 * * * * | local | 2026-04-02T11:00:00+00:00 | 61/100 | active |
+   227||| 8bcfe505 | vale-worker | 12 * * * * | local | 2026-04-02T13:12:00+00:00 | 63/100 | active |
+   228||| 7067633e | astra-worker | 17 * * * * | local | 2026-04-02T13:17:00+00:00 | 64/100 | active |
+   229||| 3171d2c2 | kiro-worker | 42 * * * * | local | 2026-04-02T12:42:00+00:00 | 61/100 | active |
+   230||| eb803b7d | ember-worker | 32 * * * * | local | 2026-04-02T13:32:00+00:00 | 61/100 | active |
+   231||| 401e59cc | forge-worker | 37 * * * * | local | 2026-04-02T12:37:00+00:00 | 62/100 | active |
+   232||| 4bdcef11 | jax-worker | 22 * * * * | local | 2026-04-02T13:22:00+00:00 | 61/100 | active |
+   233||| affd389a | rumi-worker | 27 * * * * | local | 2026-04-02T12:27:00+00:00 | 62/100 | active |
    234||| af7f3c07 | moxie-daily-self-improvement | 0 20 * * * | local | 2026-04-02T20:00:00+00:00 | 2/100 | active |
-   235||| 91520aa6 | nova-worker | 47 * * * * | local | 2026-04-02T10:47:00+00:00 | 58/100 | active |
+   235||| 91520aa6 | nova-worker | 47 * * * * | local | 2026-04-02T13:47:00+00:00 | 60/100 | active |
    236||| 5b9c6eb7 | issues-rishi-watch | every 240m | local | 2026-04-02T12:46:52+00:00 | 15/200 | active |
-   237||| 3e93c4f5 | luna-worker | 52 * * * * | local | 2026-04-02T10:52:00+00:00 | 60/100 | active |
-   238||| cf1a8f9e | pax-worker | 57 * * * * | local | 2026-04-02T10:57:00+00:00 | 58/100 | active |
+   237||| 3e93c4f5 | luna-worker | 52 * * * * | local | 2026-04-02T13:52:00+00:00 | 62/100 | active |
+   238||| cf1a8f9e | pax-worker | 57 * * * * | local | 2026-04-02T13:57:00+00:00 | 60/100 | active |
    239||| b0e9c513 | iris-weekly-formbeep-repo-copy-audit | 30 9 * * 1 | local | 2026-04-06T09:30:00+00:00 | 0/200 | active |
-   240||| 0ed491f6 | orion-worker | 2 * * * * | local | 2026-04-02T11:02:00+00:00 | 60/200 | active |
+   240||| 0ed491f6 | orion-worker | 2 * * * * | local | 2026-04-02T13:02:00+00:00 | 62/200 | active |
    241||| 868bd30f | moxie-hq-autocommit-push | every 30m | local | 2026-04-02T10:42:51+00:00 | ∞ | active |
-   242||| 1c008e06 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-04-02T11:13:00+00:00 | 50/100 | active |
+   242||| 1c008e06 | moxie-orchestration-reconciler | 13 * * * * | local | 2026-04-02T13:13:00+00:00 | 52/100 | active |
    243||| c342e174 | opencode-go-weekly-limit-reset-reminder | 26 13 * * 1 | local | 2026-04-06T13:26:00+00:00 | ∞ | active |
    244|||| 7af300e6 | cmo-delegation-queue-runner | */15 * * * * | local | 2026-04-02T04:15:00+00:00 | ∞ | active |
    246|
