@@ -22,7 +22,8 @@ if not str(DISPATCH_QUEUE).startswith(str(BASE_DIR / 'cmo')):
     sys.exit(1)
 
 def parse_table_lines(lines):
-    """Parse markdown table rows, return header and data rows."""
+    """Parse markdown table rows, return header and data rows.
+    Handles rows with or without trailing pipe."""
     header = None
     rows = []
     in_table = False
@@ -30,7 +31,13 @@ def parse_table_lines(lines):
         line = line.rstrip()
         if line.startswith('|'):
             in_table = True
-            cells = [c.strip() for c in line.split('|')[1:-1]]
+            # Remove leading and trailing pipe if present, then split
+            stripped = line.strip()
+            if stripped.startswith('|'):
+                stripped = stripped[1:]
+            if stripped.endswith('|'):
+                stripped = stripped[:-1]
+            cells = [c.strip() for c in stripped.split('|')]
             if header is None:
                 header = cells
             else:
