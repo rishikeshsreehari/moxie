@@ -1,18 +1,14 @@
-# Reconciler Report — 2026-04-02T15:23:00Z
+# Reconciler Report — 2026-04-02T16:07Z
 
-## Summary
-- Live cron registry: 30 active jobs. All match the Active Crons table in orchestration.md.
-- No jobs added, removed, or renamed since last check (2026-04-02T12:26:00Z).
-- Updated last-verified timestamp to 2026-04-02T15:23:00Z.
+## Changes made
+- Updated `Last verified` timestamp in orchestration.md Active Crons table (15:22Z → 16:07Z)
+- Committed and pushed heartbeat.log changes (commit includes 2026-04-02T16:07Z autopush timestamp)
 
-## Queue state
-- 2 IN_PROGRESS tasks (Iris #19, Mira #23) — both still in-flight, no output files yet.
-- Several P0 QUEUED items awaiting worker pickup (Iris live-vs-repo, Iris stackstats snapshot, Mira scaffolds, Mira GSC-vs-Umami, Moxie self-score). These are not yet promoted; workers will find them next cycle.
-- No dispatch-queue status conflicts detected.
+## State verification
+- **30 live cron jobs** = 30 entries in Active Crons table ✓ (IDs, schedules, delivery, repeats all match)
+- **2 IN_PROGRESS tasks** confirmed: Mira (StackStats Umami analytics), Iris (FormBeep repo copy audit) — both awaiting output files
+- **4 untagged tasks** in dispatch-queue (Iris live-vs-repo diff, StackStats site snapshot, Mira FormBeep analytics scaffold, Moxie self-score) — no output files exist yet, correctly remain untagged
 
-## Actions taken
-- Patched orchestration.md last-verified timestamp.
-- No dispatch-queue status changes (conservative: IN_PROGRESS items verified mid-flight).
-- No issues to escalate.
-
-## Status: [SILENT]
+## Open items
+- No new blockers
+- No changes to issues_rishi.md
