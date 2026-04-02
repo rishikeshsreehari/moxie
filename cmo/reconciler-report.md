@@ -1,27 +1,18 @@
-## Reconciliation Report — 2026-04-02T17:19Z
+# Reconciliation Report — 2026-04-02T18:22Z
 
-### Cron Registry vs orchestration.md
-- **Status: MATCH** — All 30 live crons match the orchestration.md active cron table exactly (same IDs, schedules, delivery, and states).
-- Updated Last verified timestamp to 2026-04-02T17:19:00Z.
-- No new crons added or removed since last run.
+## Cron Registry vs Orchestration Table
+✅ **No drift.** All 30 live cron jobs match the active crons table in orchestration.md (IDs, names, schedules, delivery targets all agree). Last verified updated to 2026-04-02T18:22Z.
 
-### Dispatch Queue Status
-- **IN_PROGRESS items verified as legitimately in-flight:**
-  - Forge: repo copy audit (2026-04-01-repo-copy-audit.md) — output MISSING (still being worked on)
-  - Jax: StackStats Umami analytics (umami-summary.md) — output MISSING (still being worked on)
+## Dispatch Queue vs Worker State
+- ✅ `jax-worker` IN_PROGRESS on `jax-20260402_live_vs_repo_diff` — consistent in both dispatch-queue.md (line 21) and orchestration.md (Jax section). Output not yet on disk (promoted 18:03Z; jax-worker runs :22 past each hour).
+- ✅ `moxie-20260402_002635-b85aa2` (self-review) IN_PROGRESS — marked IN_PROGRESS in dispatch-queue.md (line 38) and orchestration.md (Moxie section "READY TO START" updated by prior run at 18:03Z). Output pending.
+- ✅ Jax's queued StackStats snapshot task correctly WAITING per Rule 3 (one-at-a-time).
+- ✅ Two UNTAGGED Mira tasks (lines 32, 34) — not promoted yet; consistent not to touch.
 
-- **QUEUED items (waiting for their trigger date):**
-  - GSC validation post-SEO-fixes (queued: 2026-04-04) — correct status
-  - Live vs repo landing diff — correct
-  - StackStats site snapshot — correct
+## Issues
+- Autopush flock errors (issues_rishi.md lines 1, 17) — previously delegated to Forge; awaiting confirmation of fix. No new blockers detected.
+- GSC access ✅ RESOLVED (issues_rishi.md line 15).
 
-- **UNTAGGED/missing-status items needing attention:**
-  - Mira: FormBeep daily monitoring scaffold (line 32) — no status marker, output MISSING → worker is running hourly cycles; may complete autonomously
-  - Mira: GSC vs Umami study (line 34) — no status marker, output MISSING → depends on GSC credentials (blocked)
-  - Moxie: Self-score (line 38) — no status marker, output MISSING → this cron run should process it
-
-### Open Issues for Rishi
-- No new blockers detected; existing issues unchanged.
-
-### Summary
-System is healthy. Cron registry is fully synchronized with docs. Several dispatch queue items are legitimately in-flight or queued. No action needed.
+## Changes Made
+- No structural edits this run — system in full alignment.
+- Updated `Last verified` timestamp in orchestration.md Active Crons section.

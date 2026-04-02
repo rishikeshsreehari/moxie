@@ -18,6 +18,7 @@ import fcntl
 import os
 import subprocess
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from collections import Counter
@@ -149,9 +150,18 @@ def main() -> int:
 
     LOCK_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-    with open(LOCK_PATH, "w") as f:
-        # Block up to ~60s like the flock convention
-        fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+    with open(LOCK_PATH, "a+") as f:
+        # Acquire OS lock with <=60s wait (flock convention) but without calling `flock`.
+        start = time.time()
+        while True:
+            try:
+                fcntl.flock(f.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                break
+            except BlockingIOError:
+                if time.time() - start >= 60:
+                    print("LOCK_TIMEOUT")
+                    return 75
+                time.sleep(0.2)
 
         # Identity (local repo config)
         run(["git", "config", "user.email", "moxie@rishikeshs.com"], check=False)
@@ -188,13 +198,13 @@ def main() -> int:
         # Generate meaningful commit message
         subject, body = generate_commit_message(staged_files)
         
-        # Build commit command
+        # Build commit command. Use multiple -m flags for proper subject/body.
         if body:
-            msg = f"{subject}\n\n{body}"
+            commit_cmd = ["git", "commit", "-m", subject, "-m", body]
         else:
-            msg = subject
+            commit_cmd = ["git", "commit", "-m", subject]
 
-        c = run(["git", "commit", "-m", msg], check=True)
+        c = run(commit_cmd, check=True)
         if c.stdout:
             print(c.stdout)
         if c.stderr:
@@ -230,7 +240,8 @@ def main() -> int:
                 print("PUSH_FAILED", file=sys.stderr)
                 return 1
 
-        print("PUSH_OK")
+        head2 = run(["git", "rev-parse", "--short", "HEAD"], check=True)
+        print(f"PUSH_OK {head2.stdout.strip()}")
         return 0
 
 

@@ -65,7 +65,7 @@ The Python autopush script now:
 3. **Generates subject** from top 2-3 area tags
 4. **Adds body** when ≥3 files or significant structural changes
 5. **Preserves all safety checks:**
-   - flock-based locking (60s timeout)
+   - OS-level file lock on `.git/moxie_autopush.lock` (<=60s wait; implemented via Python `fcntl`, no external `flock` invocation)
    - No empty commits (exits 0 if no staged changes)
    - Rebase-on-reject for non-fast-forward
    - Error logging to `issues_rishi.md`
