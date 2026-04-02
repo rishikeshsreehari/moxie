@@ -51,6 +51,9 @@ def scrub(text: str, *, allow_safe_urls: bool = False) -> str:
     t = EMAIL_RE.sub("[email]", t)
     t = UUID_RE.sub("[id]", t)
 
+    # Defense-in-depth: redact common analytics identifiers even if not UUID-shaped
+    t = re.sub(r"(?i)(website[_-]?id|umami[_-]?id)\s*[:=]?\s*[^\s,;\)\]]+", r"\1 [redacted]", t)
+
     if allow_safe_urls:
         def repl(m: re.Match) -> str:
             u = m.group(0)
@@ -443,18 +446,72 @@ def main() -> None:
     active_products = parse_orchestration_active_products()
     cron_count = parse_orchestration_cron_count()
 
-    # products table (currently just active product)
-    products = []
-    for name in active_products[:4]:
-        products.append({
-            "name": name,
-            "status": "ACTIVE",
-            "pageviews_7d": pv,
-            "signups_7d": signups,
-        })
-
     revenue = read_json(ROOT / "cmo" / "metrics" / "revenue.json")
     portfolio = revenue.get("portfolio") if isinstance(revenue, dict) else {}
+
+    # products table (portfolio)
+    products: list[dict[str, Any]] = []
+    prod_cfg = revenue.get("products") if isinstance(revenue, dict) else {}
+
+    if isinstance(prod_cfg, dict) and prod_cfg:
+        for key, meta in prod_cfg.items():
+            if not isinstance(meta, dict):
+                meta = {}
+
+            k = str(key).lower().strip()
+            disp = "FormBeep" if k == "formbeep" else ("StackStats" if k == "stackstats" else str(key))
+            url = "https://formbeep.com" if k == "formbeep" else ("https://stackstats.app" if k == "stackstats" else "")
+
+            paid = meta.get("paid_lifetime")
+            free = meta.get("free_lifetime")
+
+            users = None
+            try:
+                users = (int(paid) if paid is not None else 0) + (int(free) if free is not None else 0)
+            except Exception:
+                users = paid if paid is not None else (free if free is not None else None)
+
+            products.append(
+                {
+                    "name": scrub(disp),
+                    "status": "ACTIVE" if scrub(disp) in active_products else "IDLE",
+                    "url": url,
+                    "link_label": url.replace("https://", "") if url else "",
+                    "users_lifetime": users,
+                    "paid_lifetime": paid,
+                    "free_lifetime": free,
+                    "revenue_lifetime_usd": meta.get("lifetime_revenue_usd"),
+                    "mrr_usd": meta.get("mrr_usd"),
+                    "pageviews_7d": pv if k == "formbeep" else None,
+                    "signups_7d": signups if k == "formbeep" else None,
+                }
+            )
+    else:
+        # fallback: at least show active sprint product
+        for name in active_products[:4]:
+            products.append({"name": name, "status": "ACTIVE", "pageviews_7d": pv, "signups_7d": signups})
+
+    # rollups
+    paid_life = portfolio.get("paid_lifetime")
+    free_life = portfolio.get("free_lifetime")
+    users_life = portfolio.get("users_lifetime")
+
+    if paid_life is None:
+        try:
+            paid_life = sum(int(p.get("paid_lifetime") or 0) for p in products)
+        except Exception:
+            paid_life = 0
+
+    if users_life is None:
+        # Only compute if at least one product has a known users_lifetime.
+        try:
+            known = [p.get("users_lifetime") for p in products if p.get("users_lifetime") is not None]
+            if known:
+                users_life = sum(int(x or 0) for x in known)
+            else:
+                users_life = None
+        except Exception:
+            users_life = None
 
     snapshot: dict[str, Any] = {
         "generated_at": now,
@@ -462,8 +519,9 @@ def main() -> None:
             "pageviews_7d": pv,
             "visitors_7d": visitors,
             "signups_7d": signups,
-            "paid_lifetime": int(portfolio.get("paid_lifetime", 0) or 0),
-            "free_lifetime": int(portfolio.get("free_lifetime", 0) or 0),
+            "users_lifetime": (None if users_life is None else int(users_life or 0)),
+            "paid_lifetime": int(paid_life or 0),
+            "free_lifetime": (None if free_life is None else int(free_life or 0)),
             "revenue_lifetime_usd": float(portfolio.get("lifetime_revenue_usd", 0) or 0),
             "mrr_usd": float(portfolio.get("mrr_usd", 0) or 0),
         },
@@ -491,7 +549,9 @@ def main() -> None:
             ],
         },
         "team": team,
-        "github": {"recent": git_recent(8)},
+        "shipping": {"recent": git_recent_portfolio(10)},
+        "github": {"recent": git_recent_portfolio(10)},
+        "models": model_usage_7d(),
         "console": [
             "[BOOT] SapiensTech Open Ops online",
             f"[SYNC] snapshot generated {now}",
@@ -516,7 +576,8 @@ def main() -> None:
     term.append("$ git log -3 --oneline")
     if recent:
         for c in recent[:3]:
-            term.append(f"{c.get('hash','')} {c.get('subject','')}")
+            repo = c.get("repo", "")
+            term.append(f"{repo} {c.get('hash','')} {c.get('subject','')}")
     else:
         term.append("(no commits found)")
 

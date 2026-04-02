@@ -58,14 +58,9 @@
                 <div class="s">starts / clicks</div>
               </div>
               <div class="kpi">
-                <div class="k">USERS (LIFETIME)</div>
+                <div class="k">CUSTOMERS (LIFETIME)</div>
                 <div class="v" id="kpiUsersLifetime">—</div>
-                <div class="s">free + paid</div>
-              </div>
-              <div class="kpi">
-                <div class="k">PAID (LIFETIME)</div>
-                <div class="v" id="kpiPaidLifetime">—</div>
-                <div class="s">customers</div>
+                <div class="s">paid customers</div>
               </div>
               <div class="kpi">
                 <div class="k">REVENUE (LIFETIME)</div>
@@ -112,6 +107,7 @@
                   </filter>
                 </defs>
 
+                <g id="pods"></g>
                 <g id="edges" fill="none"></g>
                 <g id="nodes" filter="url(#noise)"></g>
 
@@ -179,7 +175,7 @@
                   <tr>
                     <th>Product</th>
                     <th>Status</th>
-                    <th>Users</th>
+                    <th>Customers</th>
                     <th>Lifetime $</th>
                     <th>MRR $</th>
                   </tr>
@@ -195,10 +191,10 @@
 
           <!-- BOTTOM: SHIPPING + TERMINAL -->
           <section class="panel github" aria-label="Shipping">
-            <div class="panel-title">SHIP LOG</div>
+            <div class="panel-title">GIT LOGS</div>
             <ul class="list mono" id="githubList"><li>Loading…</li></ul>
 
-            <div class="sub">MODELS</div>
+            <div class="sub">MODEL USAGE (7D) — K TOKENS</div>
             <div class="modelbars mono" id="modelBars">Loading…</div>
 
             <div class="sub">TERMINAL</div>

@@ -21,7 +21,7 @@
   "portfolio": {
     "paid_lifetime": 15,
     "free_lifetime": null,
-    "users_lifetime": 15,
+    "users_lifetime": null,
     "mrr_usd": 100,
     "arr_usd": 1200,
     "lifetime_revenue_usd": 237.17,

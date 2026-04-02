@@ -55,9 +55,22 @@ function clampStr(s, n = 110) {
 }
 
 function statusNorm(s) {
-  const x = String(s || "").toUpperCase();
+  const raw = String(s || "").trim();
+  const x = raw.toUpperCase();
+  if (!x) return "—";
+
+  // canonicalize common variants
+  if (x.includes("BLOCK")) return "BLOCKED";
+  if (x.includes("IN_PROGRESS") || x.includes("IN PROGRESS") || x.includes("WIP")) return "IN_PROGRESS";
+  if (x.includes("WAIT")) return "WAITING";
+  if (x.includes("QUEUE")) return "QUEUED";
+  if (x.includes("ACTIVE")) return "ACTIVE";
+  if (x.includes("DONE") || x.includes("COMPLETE")) return "COMPLETED";
+  if (x.includes("IDLE")) return "IDLE";
+
+  // last resort
   if (["ACTIVE","IN_PROGRESS","BLOCKED","IDLE","DONE","WAITING","COMPLETED","QUEUED"].includes(x)) return x;
-  return x || "—";
+  return x;
 }
 
 function renderList(id, items, empty = "—", max = 8) {
@@ -186,7 +199,7 @@ function renderProducts(products) {
 
   (products || []).forEach(p => {
     const status = statusNorm(p.status);
-    const users = String(p.users_lifetime ?? "—");
+    const customers = String(p.paid_lifetime ?? p.users_lifetime ?? "—");
     const life = money(p.revenue_lifetime_usd);
     const mrr = money(p.mrr_usd);
 
@@ -213,7 +226,7 @@ function renderProducts(products) {
 
       tdName.appendChild(nameEl);
       tdStatus.innerHTML = `<span class="status-dot ${dotClass(status)}"></span><span class="badge">${status}</span>`;
-      tdUsers.textContent = users;
+      tdUsers.textContent = customers;
       tdLife.textContent = life;
       tdMrr.textContent = mrr;
 
@@ -245,7 +258,7 @@ function renderProducts(products) {
 
       const meta = document.createElement("div");
       meta.className = "rowmeta";
-      meta.textContent = `Users: ${users} • Lifetime: $${life} • MRR: $${mrr}`;
+      meta.textContent = `Customers: ${customers} • Lifetime: $${life} • MRR: $${mrr}`;
 
       wrap.appendChild(top);
       wrap.appendChild(meta);
@@ -587,49 +600,113 @@ function renderDiagram(snapshot) {
   SCADA.svg = document.getElementById("orgSvg");
   SCADA.edgesEl = document.getElementById("edges");
   SCADA.nodesEl = document.getElementById("nodes");
+  const podsEl = document.getElementById("pods");
   if (!SCADA.svg || !SCADA.edgesEl || !SCADA.nodesEl) return;
 
+  if (podsEl) podsEl.innerHTML = "";
   SCADA.edgesEl.innerHTML = "";
   SCADA.nodesEl.innerHTML = "";
   SCADA.edges = [];
   SCADA.nodes = [];
   SCADA.dragging = null;
 
-  // Center node: MOXIE
-  const nodes = [];
-  nodes.push({ label: "MOXIE", status: "ACTIVE", sub: "Autonomous ops" });
+  function podOf(t) {
+    const title = String(t.title || "").toLowerCase();
+    const name = String(t.name || "").toLowerCase();
+    const hay = `${name} ${title}`;
+    if (hay.includes("engineer") || hay.includes("full stack") || hay.includes("dev")) return "ENGINEERING";
+    if (hay.includes("analytics") || hay.includes("report") || hay.includes("data")) return "ANALYTICS";
+    if (hay.includes("outreach") || hay.includes("distribution") || hay.includes("directory")) return "DISTRIBUTION";
+    if (hay.includes("copy") || hay.includes("conversion")) return "CONVERSION";
+    if (hay.includes("competitor") || hay.includes("research") || hay.includes("growth")) return "GROWTH";
+    return "GROWTH";
+  }
 
-  // Team nodes only (no product nodes)
+  // Center node: MOXIE
+  const cx = 550, cy = 330;
+  SCADA.nodes.push(drawNode(cx, cy, 200, 76, "MOXIE", "ACTIVE", "Autonomous ops"));
+
+  // Pod layout (cluster centers)
+  const pods = [
+    { key: "GROWTH", x: 280, y: 205, w: 460, h: 250 },
+    { key: "ENGINEERING", x: 820, y: 205, w: 460, h: 250 },
+    { key: "DISTRIBUTION", x: 280, y: 520, w: 460, h: 250 },
+    { key: "ANALYTICS", x: 820, y: 520, w: 460, h: 250 },
+    { key: "CONVERSION", x: 550, y: 520, w: 460, h: 250 }
+  ];
+
+  const people = [];
   (snapshot.team || []).forEach(t => {
-    nodes.push({
-      label: t.name || "",
-      status: t.status || "IDLE",
-      sub: t.title || ""
+    const nm = (t.name || "").trim();
+    if (!nm || nm.toLowerCase() === "moxie") return;
+    people.push({
+      label: nm,
+      status: statusNorm(t.status || "IDLE"),
+      sub: clampStr(t.title || "", 56),
+      pod: podOf(t)
     });
   });
 
-  // Layout
-  const cx = 550, cy = 330;
-  const ring = 240;
+  const usedPods = new Set(people.map(p => p.pod));
 
-  // MOXIE
-  SCADA.nodes.push(drawNode(cx, cy, 200, 76, nodes[0].label, nodes[0].status, nodes[0].sub));
+  function drawPodBox(el, p) {
+    const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
 
-  // Team around
-  const teamCount = Math.max(0, nodes.length - 1);
-  for (let i = 0; i < teamCount; i++) {
-    const angle = (Math.PI * 2) * (i / Math.max(1, teamCount));
-    const x = cx + Math.cos(angle) * ring;
-    const y = cy + Math.sin(angle) * (ring * 0.78);
-    const n = nodes[i + 1];
-    SCADA.nodes.push(drawNode(x, y, 220, 72, n.label || "", n.status, n.sub));
+    const r = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    r.setAttribute("x", String(p.x - p.w / 2));
+    r.setAttribute("y", String(p.y - p.h / 2));
+    r.setAttribute("width", String(p.w));
+    r.setAttribute("height", String(p.h));
+    r.setAttribute("rx", "12");
+    r.setAttribute("ry", "12");
+    r.setAttribute("fill", "rgba(255,255,255,0.55)");
+    r.setAttribute("stroke", "#111");
+    r.setAttribute("stroke-width", "2");
+    r.setAttribute("filter", "url(#noise)");
+
+    const t = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    t.setAttribute("x", String(p.x - p.w / 2 + 14));
+    t.setAttribute("y", String(p.y - p.h / 2 + 22));
+    t.setAttribute("fill", "#111");
+    t.setAttribute("font-size", "14");
+    t.setAttribute("font-family", "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace");
+    t.textContent = p.key;
+
+    g.appendChild(r);
+    g.appendChild(t);
+    el.appendChild(g);
   }
 
-  // Edges from MOXIE to each team node
-  for (let i = 1; i < SCADA.nodes.length; i++) {
-    const st = nodes[i]?.status || "ACTIVE";
-    SCADA.edges.push(drawEdge(0, i, st));
+  if (podsEl) {
+    pods.forEach(p => {
+      if (usedPods.has(p.key)) drawPodBox(podsEl, p);
+    });
   }
+
+  const byPod = {};
+  people.forEach(p => {
+    byPod[p.pod] = byPod[p.pod] || [];
+    byPod[p.pod].push(p);
+  });
+
+  const podLookup = {};
+  pods.forEach(p => { podLookup[p.key] = p; });
+
+  let idx = 1;
+  Object.keys(byPod).forEach(pk => {
+    const box = podLookup[pk] || { x: cx, y: cy, w: 460, h: 250 };
+    const arr = byPod[pk] || [];
+    const r = Math.max(64, Math.min(140, 45 + arr.length * 10));
+
+    arr.slice(0, 10).forEach((n, i) => {
+      const ang = (Math.PI * 2) * (i / Math.max(1, arr.length));
+      const x = box.x + Math.cos(ang) * r;
+      const y = box.y + Math.sin(ang) * (r * 0.70);
+      SCADA.nodes.push(drawNode(x, y, 220, 72, n.label || "", n.status, n.sub));
+      SCADA.edges.push(drawEdge(0, idx, n.status));
+      idx += 1;
+    });
+  });
 
   // Non-overlap settle
   resolveCollisions(null);
@@ -648,7 +725,7 @@ function pickTicker(snapshot) {
   const prods = (snapshot.products || []).map(p => p.name).filter(Boolean);
   if (prods.length) lines.push(`Products: ${prods.join(" + ")}`);
   lines.push(`Traffic 7D: ${k.pageviews_7d ?? 0} pv / ${k.visitors_7d ?? 0} visitors`);
-  lines.push(`Signups 7D: ${k.signups_7d ?? 0} • Users lifetime: ${k.users_lifetime ?? "—"}`);
+  lines.push(`Signups 7D: ${k.signups_7d ?? 0} • Customers lifetime: ${k.paid_lifetime ?? "—"}`);
   lines.push(`Revenue lifetime: $${k.revenue_lifetime_usd ?? 0} • MRR: $${k.mrr_usd ?? 0}`);
   lines.push(`Queue: ${(snapshot.systems?.queue?.in_progress ?? 0)} in progress, ${(snapshot.systems?.queue?.pending ?? 0)} pending`);
   const insight = (snapshot.insights || [])[Math.floor(Math.random() * Math.max(1, (snapshot.insights || []).length))];
@@ -674,8 +751,8 @@ function renderAll(snapshot) {
   setText("kpiPv", String(k.pageviews_7d ?? "—"));
   setText("kpiVisitors", String(k.visitors_7d ?? "—"));
   setText("kpiSignups", String(k.signups_7d ?? "—"));
-  setText("kpiUsersLifetime", String(k.users_lifetime ?? "—"));
-  setText("kpiPaidLifetime", String(k.paid_lifetime ?? "—"));
+  // KPI tile: "CUSTOMERS (LIFETIME)" is paid customers
+  setText("kpiUsersLifetime", String(k.paid_lifetime ?? "—"));
   setText("kpiRevenueLifetime", String(k.revenue_lifetime_usd ?? "—"));
   setText("kpiMrr", String(k.mrr_usd ?? "—"));
 

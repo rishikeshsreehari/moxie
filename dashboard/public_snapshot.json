@@ -1,20 +1,41 @@
 {
-  "generated_at": "2026-04-02T00:49:10Z",
+  "generated_at": "2026-04-02T11:59:40Z",
   "kpis": {
     "pageviews_7d": 103,
     "visitors_7d": 76,
     "signups_7d": 4,
-    "paid_lifetime": 0,
-    "free_lifetime": 0,
+    "users_lifetime": 15,
+    "paid_lifetime": 15,
+    "free_lifetime": null,
     "revenue_lifetime_usd": 237.17,
-    "mrr_usd": 4.99
+    "mrr_usd": 100.0
   },
   "products": [
     {
       "name": "FormBeep",
       "status": "ACTIVE",
+      "url": "https://formbeep.com",
+      "link_label": "formbeep.com",
+      "users_lifetime": 10,
+      "paid_lifetime": 10,
+      "free_lifetime": null,
+      "revenue_lifetime_usd": null,
+      "mrr_usd": 100,
       "pageviews_7d": 103,
       "signups_7d": 4
+    },
+    {
+      "name": "StackStats",
+      "status": "IDLE",
+      "url": "https://stackstats.app",
+      "link_label": "stackstats.app",
+      "users_lifetime": 5,
+      "paid_lifetime": 5,
+      "free_lifetime": null,
+      "revenue_lifetime_usd": 237.17,
+      "mrr_usd": 0,
+      "pageviews_7d": null,
+      "signups_7d": null
     }
   ],
   "systems": {
@@ -23,7 +44,7 @@
       "in_progress": 4
     },
     "cron": {
-      "active_jobs": 11
+      "active_jobs": 0
     },
     "blockers": {
       "count": 10,
@@ -42,13 +63,8 @@
     }
   },
   "running": {
-    "count": 3,
+    "count": 2,
     "tasks": [
-      {
-        "role": "Jax",
-        "status": "IN_PROGRESS",
-        "text": "Replace failed directory picks: find 2 directories we can submit TODAY. Must personally verify last-mile requirements (free vs paid, account age gates, email verification) and include a copy/paste submission bundle + exact submission URL + \"Verified on\" timestamp. Also update launch-places-master.md to mark BetaList paid-only + AlternativeTo 7-day gate."
-      },
       {
         "role": "Iris",
         "status": "IN_PROGRESS",
@@ -57,7 +73,7 @@
       {
         "role": "Mira",
         "status": "IN_PROGRESS",
-        "text": "Pull Umami Cloud analytics for StackStats (website_id 52a19925-9bf4-4efe-9a42-ecc2a7f08d81): last 7d + last 30d. Include top sources, top pages, geo split, and any events (purchases) if tracked. Summarize in a founder-readable brief."
+        "text": "Pull Umami Cloud analytics for StackStats (website_id [redacted]]): last 7d + last 30d. Include top sources, top pages, geo split, and any events (purchases) if tracked. Summarize in a founder-readable brief."
       }
     ],
     "highlights": [
@@ -82,14 +98,8 @@
     {
       "name": "Astra",
       "title": "Growth Research Lead",
-      "status": "IDLE",
+      "status": "IDLE / COMPLETED",
       "working_on": ""
-    },
-    {
-      "name": "New task completed",
-      "title": "",
-      "status": "COMPLETED",
-      "working_on": "DataForSEO 50-query LIVE SERP demand probe + full competitive breakdown \u2014 **COMPLETED** (2026-04-02T09:30Z)"
     },
     {
       "name": "Kiro",
@@ -107,13 +117,13 @@
       "name": "Forge",
       "title": "Full Stack Engineer",
       "status": "COMPLETED",
-      "working_on": "Improve HQ git commit messages (replace generic \"Autopush:\" with specific summaries; update autopush script) \u2014 **COMPLETED** (2026-04-01T22:37Z)"
+      "working_on": "(FormBeep) Repo audit for Umami event tracking \u2014 **COMPLETED** (2026-04-02T03:37Z)"
     },
     {
       "name": "Mira",
       "title": "Analytics & Reporting Lead",
       "status": "IN_PROGRESS",
-      "working_on": "(StackStats) Pull Umami Cloud analytics for StackStats (website_id 52a19925-9bf4-4efe-9a42-ecc2a7f08d81): last 7d + last 30d. Include top sources, top pages, geo split, and any events \u2014 **IN_PROGRESS** (promoted 2026-04-02T00:06Z)"
+      "working_on": "(StackStats) Pull Umami Cloud analytics for StackStats (website_id [redacted]]): last 7d + last 30d. Include top sources, top pages, geo split, and any events \u2014 **IN_PROGRESS** (promoted 2026-04-02T00:06Z)"
     },
     {
       "name": "Nova",
@@ -124,14 +134,14 @@
     {
       "name": "Jax",
       "title": "SaaS Growth Operations Lead",
-      "status": "IN_PROGRESS",
-      "working_on": "(FormBeep) Replace failed directory picks with 2 actionable directories (verified requirements + submission bundles) \u2014 **IN_PROGRESS** (promoted 2026-04-01T23:00Z)"
+      "status": "IDLE (BLOCKED: awaiting founder credentials for directory submission execution \u2014 [email] inbox verification + existing directory accounts)",
+      "working_on": "(FormBeep) Replace failed directory picks with 2 actionable directories (verified requirements + submission bundles) \u2014 COMPLETED (2026-04-02T02:00Z)"
     },
     {
       "name": "Rumi",
       "title": "Blog & Content Analyst",
       "status": "COMPLETED",
-      "working_on": "6 StackStats SEO page outlines (Hugo-ready) \u2014 **COMPLETED** (2026-04-02T10:30Z)"
+      "working_on": "(HQ) X content OS (like Reddit tracker): build local script to infer founder tone from X export + analyze what worked; output a daily plan that includes 1 original post + \"reply guy\" mode (10 replies/day). \u2014 **COMPLETED** (2026-04-02T09:04Z)"
     },
     {
       "name": "Pax",
@@ -150,55 +160,180 @@
       "title": "Outbound Lead (Cold Email)",
       "status": "COMPLETED",
       "working_on": "Prospect list refresh from competitor intel \u2014 **COMPLETED** (2026-04-02T08:15Z)"
+    },
+    {
+      "name": "Iris",
+      "title": "Repo Copy Auditor",
+      "status": "IN_PROGRESS",
+      "working_on": "(FormBeep) Inspect the ACTUAL current landing page content in the repo (headlines, breadcrumbs, free-tier claims) and deliver 10 exact copy/UX improvements with file+section pointers \u2014 **IN_PROGRESS** (promoted 2026-04-02T00:06Z)"
     }
   ],
+  "shipping": {
+    "recent": [
+      {
+        "repo": "hq",
+        "hash": "2fe3e69",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02 11:47:38",
+        "url": ""
+      },
+      {
+        "repo": "hq",
+        "hash": "5ed502f",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02 11:32:08 UTC",
+        "url": ""
+      },
+      {
+        "repo": "hq",
+        "hash": "ba7833f",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02 11:28 UTC",
+        "url": ""
+      },
+      {
+        "repo": "hq",
+        "hash": "0ddc3c6",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02T11:10:28Z",
+        "url": ""
+      },
+      {
+        "repo": "hq",
+        "hash": "3a254e8",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02T11:07:20Z",
+        "url": ""
+      },
+      {
+        "repo": "hq",
+        "hash": "227d418",
+        "when": "2026-04-02",
+        "subject": "Autopush: 2026-04-02 10:46:40 UTC",
+        "url": ""
+      }
+    ]
+  },
   "github": {
     "recent": [
       {
-        "hash": "859a3a8",
+        "repo": "hq",
+        "hash": "2fe3e69",
         "when": "2026-04-02",
-        "subject": "Autopush: 2026-04-02 00:47:57"
+        "subject": "Autopush: 2026-04-02 11:47:38",
+        "url": ""
       },
       {
-        "hash": "f5c728f",
+        "repo": "hq",
+        "hash": "5ed502f",
         "when": "2026-04-02",
-        "subject": "Autopush: 2026-04-02 00:41:50"
+        "subject": "Autopush: 2026-04-02 11:32:08 UTC",
+        "url": ""
       },
       {
-        "hash": "493ebca",
+        "repo": "hq",
+        "hash": "ba7833f",
         "when": "2026-04-02",
-        "subject": "Add public retro HQ dashboard (7.css, monochrome, sanitized snapshot)"
+        "subject": "Autopush: 2026-04-02 11:28 UTC",
+        "url": ""
       },
       {
-        "hash": "4d7ff81",
+        "repo": "hq",
+        "hash": "0ddc3c6",
         "when": "2026-04-02",
-        "subject": "HQ: add resources index (tagged) + generator script"
+        "subject": "Autopush: 2026-04-02T11:10:28Z",
+        "url": ""
       },
       {
-        "hash": "ad50100",
+        "repo": "hq",
+        "hash": "3a254e8",
         "when": "2026-04-02",
-        "subject": "Dashboard: modern mobile-first public ops redesign"
+        "subject": "Autopush: 2026-04-02T11:07:20Z",
+        "url": ""
       },
       {
-        "hash": "30a232a",
+        "repo": "hq",
+        "hash": "227d418",
         "when": "2026-04-02",
-        "subject": "Dashboard: show portfolio revenue + MRR (FormBeep .99 MRR, StackStats 37.17 lifetime)"
+        "subject": "Autopush: 2026-04-02 10:46:40 UTC",
+        "url": ""
+      }
+    ]
+  },
+  "models": {
+    "window": "7d",
+    "items": [
+      {
+        "label": "gpt-5.4-mini",
+        "value": 40157,
+        "tokens": 40156868,
+        "tool_calls": 1383
       },
       {
-        "hash": "0d36c33",
-        "when": "2026-04-02",
-        "subject": "HQ: run repo cleanup now + add self-score task + enforce DONE handshake in OSv3"
+        "label": "gpt-5.4",
+        "value": 27298,
+        "tokens": 27298148,
+        "tool_calls": 565
       },
       {
-        "hash": "92a7ae9",
-        "when": "2026-04-02",
-        "subject": "Autopush: 2026-04-02T00:15:54Z"
+        "label": "stepfun/step-3.5-flash:free",
+        "value": 12369,
+        "tokens": 12368613,
+        "tool_calls": 1671
+      },
+      {
+        "label": "gpt-5.2",
+        "value": 3149,
+        "tokens": 3148693,
+        "tool_calls": 1135
+      },
+      {
+        "label": "qwen/qwen3.6-plus-preview:free",
+        "value": 596,
+        "tokens": 596034,
+        "tool_calls": 1695
+      },
+      {
+        "label": "glm-5",
+        "value": 385,
+        "tokens": 385280,
+        "tool_calls": 956
+      },
+      {
+        "label": "qwen/qwen3-coder-480b-a35b:free",
+        "value": 0,
+        "tokens": 0,
+        "tool_calls": 0
+      },
+      {
+        "label": "kimi-k2.5",
+        "value": 0,
+        "tokens": 0,
+        "tool_calls": 522
+      },
+      {
+        "label": "gpt-5.3-codex-spark",
+        "value": 0,
+        "tokens": 0,
+        "tool_calls": 0
+      },
+      {
+        "label": "gpt-5.2-codex",
+        "value": 0,
+        "tokens": 0,
+        "tool_calls": 6
+      },
+      {
+        "label": "arcee-ai/trinity-large-preview:free",
+        "value": 0,
+        "tokens": 0,
+        "tool_calls": 0
       }
     ]
   },
   "console": [
     "[BOOT] SapiensTech Open Ops online",
-    "[SYNC] snapshot generated 2026-04-02T00:49:10Z",
+    "[SYNC] snapshot generated 2026-04-02T11:59:40Z",
     "[WORK] in_progress=4 queued=1 blocked=3",
     "[THREADS] open=10"
   ],
@@ -210,11 +345,11 @@
     "pageviews=103 visitors=76 signups=4",
     "",
     "$ revenue",
-    "mrr_usd=4.99 lifetime_usd=237.17",
+    "mrr_usd=100.0 lifetime_usd=237.17",
     "",
     "$ git log -3 --oneline",
-    "859a3a8 Autopush: 2026-04-02 00:47:57",
-    "f5c728f Autopush: 2026-04-02 00:41:50",
-    "493ebca Add public retro HQ dashboard (7.css, monochrome, sanitized snapshot)"
+    "hq 2fe3e69 Autopush: 2026-04-02 11:47:38",
+    "hq 5ed502f Autopush: 2026-04-02 11:32:08 UTC",
+    "hq ba7833f Autopush: 2026-04-02 11:28 UTC"
   ]
 }
