@@ -101,8 +101,8 @@
 ### Forge — Full Stack Engineer
 - SOUL: /root/moxie/cmo/employees/forge-soul.md
 - Current output dir (sprint): /root/moxie/products/formbeep/
-- Status: IN_PROGRESS
-- Current task: (StackStats) Clone repo, identify Gumroad/CTA links, propose Umami event tracking + UTM hygiene — **IN_PROGRESS** (promoted 2026-04-02T02:00Z)
+- Status: COMPLETED
+- Current task: (StackStats) Clone repo, identify Gumroad/CTA links, propose Umami event tracking + UTM hygiene — **COMPLETED** (2026-04-02T02:37Z)
 - Task ID: forge-20260401_233521-647619
 - Output path: /root/moxie/products/stackstats/dev-notes/tracking-implementation-notes.md
 - Last completed task: (FormBeep) Build marketplace requirements matrix + feasibility memo — **COMPLETED** (2026-04-02T01:45Z)
