@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T00:21:49Z",
+  "generated_at": "2026-04-02T00:27:18Z",
   "kpis": {
     "pageviews_7d": 103,
     "visitors_7d": 76,
@@ -144,6 +144,11 @@
   "github": {
     "recent": [
       {
+        "hash": "30a232a",
+        "when": "2026-04-02",
+        "subject": "Dashboard: show portfolio revenue + MRR (FormBeep .99 MRR, StackStats 37.17 lifetime)"
+      },
+      {
         "hash": "0d36c33",
         "when": "2026-04-02",
         "subject": "HQ: run repo cleanup now + add self-score task + enforce DONE handshake in OSv3"
@@ -177,17 +182,12 @@
         "hash": "32abc1e",
         "when": "2026-04-02",
         "subject": "Queue: universal X+IndieHackers founder-voice strategy + FormBeep GSC vs Umami study; add US SMS brief to review"
-      },
-      {
-        "hash": "3243a64",
-        "when": "2026-04-01",
-        "subject": "FormBeep: extract last-2-day traffic from local Umami dump + update issues"
       }
     ]
   },
   "console": [
     "[BOOT] Moxie HQ online",
-    "[SYNC] snapshot generated 2026-04-02T00:21:49Z",
+    "[SYNC] snapshot generated 2026-04-02T00:27:18Z",
     "[WORK] in_progress=4 queued=1",
     "[NEED] blockers=0"
   ]

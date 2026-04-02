@@ -106,51 +106,123 @@ function renderOpsTasks(tasks) {
 
 function renderTeam(team) {
   const tbody = document.getElementById("teamRows");
-  if (!tbody) return;
-  tbody.innerHTML = "";
+  if (tbody) tbody.innerHTML = "";
+
+  const cards = document.getElementById("teamCards");
+  if (cards) cards.innerHTML = "";
 
   (team || []).forEach(row => {
-    const tr = document.createElement("tr");
-    const tdEmp = document.createElement("td");
-    const tdStatus = document.createElement("td");
-    const tdWork = document.createElement("td");
-
     const name = row.name || "";
     const title = row.title ? ` — ${row.title}` : "";
-    tdEmp.textContent = `${name}${title}`;
+    const status = statusNorm(row.status);
+    const working = clampStr(row.working_on || "", 140);
 
-    tdStatus.textContent = statusNorm(row.status);
-    tdWork.textContent = clampStr(row.working_on || "", 90);
+    // Desktop table
+    if (tbody) {
+      const tr = document.createElement("tr");
+      const tdEmp = document.createElement("td");
+      const tdStatus = document.createElement("td");
+      const tdWork = document.createElement("td");
 
-    tr.appendChild(tdEmp);
-    tr.appendChild(tdStatus);
-    tr.appendChild(tdWork);
-    tbody.appendChild(tr);
+      tdEmp.textContent = `${name}${title}`;
+      tdStatus.textContent = status;
+      tdWork.textContent = clampStr(row.working_on || "", 90);
+
+      tr.appendChild(tdEmp);
+      tr.appendChild(tdStatus);
+      tr.appendChild(tdWork);
+      tbody.appendChild(tr);
+    }
+
+    // Mobile cards
+    if (cards) {
+      const wrap = document.createElement("div");
+      wrap.className = "cardrow";
+
+      const top = document.createElement("div");
+      top.className = "rowtop";
+
+      const left = document.createElement("div");
+      left.className = "rowname";
+      left.textContent = `${name}${title}`;
+
+      const right = document.createElement("div");
+      right.className = "mono";
+      right.innerHTML = `<span class="badge">${status}</span>`;
+
+      top.appendChild(left);
+      top.appendChild(right);
+
+      const meta = document.createElement("div");
+      meta.className = "rowmeta";
+      meta.textContent = working || "—";
+
+      wrap.appendChild(top);
+      wrap.appendChild(meta);
+      cards.appendChild(wrap);
+    }
   });
 }
 
 function renderProducts(products) {
   const tbody = document.getElementById("productRows");
-  if (!tbody) return;
-  tbody.innerHTML = "";
+  if (tbody) tbody.innerHTML = "";
+
+  const cards = document.getElementById("productCards");
+  if (cards) cards.innerHTML = "";
 
   (products || []).forEach(p => {
-    const tr = document.createElement("tr");
-    const tdName = document.createElement("td");
-    const tdStatus = document.createElement("td");
-    const tdPv = document.createElement("td");
-    const tdSignups = document.createElement("td");
+    const status = statusNorm(p.status);
+    const pv = String(p.pageviews_7d ?? "—");
+    const su = String(p.signups_7d ?? "—");
 
-    tdName.textContent = p.name;
-    tdStatus.textContent = statusNorm(p.status);
-    tdPv.textContent = String(p.pageviews_7d ?? "—");
-    tdSignups.textContent = String(p.signups_7d ?? "—");
+    // Desktop table
+    if (tbody) {
+      const tr = document.createElement("tr");
+      const tdName = document.createElement("td");
+      const tdStatus = document.createElement("td");
+      const tdPv = document.createElement("td");
+      const tdSignups = document.createElement("td");
 
-    tr.appendChild(tdName);
-    tr.appendChild(tdStatus);
-    tr.appendChild(tdPv);
-    tr.appendChild(tdSignups);
-    tbody.appendChild(tr);
+      tdName.textContent = p.name;
+      tdStatus.textContent = status;
+      tdPv.textContent = pv;
+      tdSignups.textContent = su;
+
+      tr.appendChild(tdName);
+      tr.appendChild(tdStatus);
+      tr.appendChild(tdPv);
+      tr.appendChild(tdSignups);
+      tbody.appendChild(tr);
+    }
+
+    // Mobile cards
+    if (cards) {
+      const wrap = document.createElement("div");
+      wrap.className = "cardrow";
+
+      const top = document.createElement("div");
+      top.className = "rowtop";
+
+      const left = document.createElement("div");
+      left.className = "rowname";
+      left.textContent = p.name;
+
+      const right = document.createElement("div");
+      right.className = "mono";
+      right.innerHTML = `<span class="badge">${status}</span>`;
+
+      top.appendChild(left);
+      top.appendChild(right);
+
+      const meta = document.createElement("div");
+      meta.className = "rowmeta";
+      meta.textContent = `7D PV: ${pv} • 7D Signups: ${su}`;
+
+      wrap.appendChild(top);
+      wrap.appendChild(meta);
+      cards.appendChild(wrap);
+    }
   });
 }
 
@@ -232,7 +304,7 @@ let SCADA = {
 
 function drawEdge(aIdx, bIdx, status) {
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-  path.setAttribute("stroke", "#111");
+  path.setAttribute("stroke", "rgba(255,255,255,0.70)");
   path.setAttribute("stroke-width", "2");
   path.setAttribute("fill", "none");
   const dash = edgeDash(status);
@@ -254,9 +326,9 @@ function drawNode(x, y, w, h, label, status, subline) {
   rect.setAttribute("ry", "10");
   rect.setAttribute("width", w);
   rect.setAttribute("height", h);
-  rect.setAttribute("stroke", "#111");
+  rect.setAttribute("stroke", "rgba(255,255,255,0.70)");
   rect.setAttribute("stroke-width", "2");
-  rect.setAttribute("fill", "#fff");
+  rect.setAttribute("fill", "rgba(0,0,0,0.25)");
 
   const dash = nodeDash(status);
   if (dash !== "0") rect.setAttribute("stroke-dasharray", dash);
@@ -266,7 +338,7 @@ function drawNode(x, y, w, h, label, status, subline) {
   text.setAttribute("y", -3);
   text.setAttribute("text-anchor", "middle");
   text.setAttribute("font-size", "14");
-  text.setAttribute("fill", "#111");
+  text.setAttribute("fill", "rgba(255,255,255,0.92)");
   text.setAttribute("font-family", "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace");
   text.textContent = clampStr(label, 18);
 
@@ -275,7 +347,7 @@ function drawNode(x, y, w, h, label, status, subline) {
   sub.setAttribute("y", 18);
   sub.setAttribute("text-anchor", "middle");
   sub.setAttribute("font-size", "11");
-  sub.setAttribute("fill", "#111");
+  sub.setAttribute("fill", "rgba(255,255,255,0.65)");
   sub.setAttribute("opacity", "0.72");
   sub.setAttribute("font-family", "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace");
   sub.textContent = clampStr(subline || "", 26);
