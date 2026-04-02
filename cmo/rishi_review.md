@@ -9,6 +9,10 @@ Last updated: 2026-04-01
 
 ## NOW (next 24h)
 
+## TODAY 13:00 GST (09:00 UTC) — Founder Execution Window
+Rule: Moxie provides paste-ready execution packet(s) by 12:45 GST. Rishi executes 1 action and reports back with URL/outcome.
+
+
 1) [ACTION] Directory submissions — Today’s 2 picks (manual)
 - Owner: Rishi (execute), Jax (prep)
 - File: /root/moxie/products/formbeep/directory-submissions-today-pick.md

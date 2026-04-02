@@ -43,6 +43,7 @@ Rule: A deliverable is only surfaced to Rishi when it passes BOTH:
   - If analytics are referenced: link to the source file/API output used
 - Claims audit:
   - No assumptions about tiers (“free forever”), platforms (“marketplace submission”), or ICP — must be evidenced
+- **Execution OS v3 (hard requirement for calendars):** every planned post must include WHERE, WHY, HOW (paste-ready), WHEN (UTC + target country/timezone), WHY-NOW.
 - Decision gating:
   - If evidence is missing, mark deliverable BLOCKED and first queue an evidence-collection task (scrape/snapshot/audit).
 
