@@ -37,6 +37,20 @@ Interactive (recommended first run to login and save session state):
 python3 reddit_intel_scanner_browser.py
 ```
 
+### Campaign preflight (per-subreddit: your history, competitor history, top posts of week, rules)
+
+```bash
+python3 reddit_campaign_preflight.py \
+  --subreddits microsaas buildinpublic \
+  --me rishikeshshari \
+  --competitors adambengur ConferenceOnly1415 \
+  --out reddit_campaign_preflight.md \
+  --headed
+```
+
+- Output: `reddit_campaign_preflight.md`
+- This is the required input for Ember before writing the paste-ready execution packet.
+
 Simple single command (handles login automatically):
 
 ```bash

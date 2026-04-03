@@ -46,6 +46,9 @@ Notes:
 
 ## Delegation queue row guidelines
 
+IMPORTANT: chaining is mandatory. See:
+- `/root/moxie_hq/cmo/resources/chaining-protocol.md`
+
 Required columns:
 - id: unique (recommended format: dq-YYYYMMDD-HHMM-shortslug)
 - seat: worker seat name (Vale/Astra/Ember/etc)

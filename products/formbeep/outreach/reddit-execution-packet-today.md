@@ -11,6 +11,15 @@
 ## Mission
 Select 2 subreddits, craft paste-ready posts + first comment, provide exact timing windows (UTC+4/GST). Ensure compliance with Reddit guardrails (1-in-3 ratio, cooldown, insight-first, title variance).
 
+## REQUIRED preflight intel (run on laptop before finalizing this packet)
+Generate intel per subreddit (your history, competitor history, top posts of week, rules) and paste a short summary here.
+
+- Script (no API, browser automation): `/root/moxie_hq/scripts/reddit-intel/reddit_campaign_preflight.py`
+- Setup: `cd /root/moxie_hq/scripts/reddit-intel && python3 -m pip install -r requirements.txt && playwright install chromium`
+- Suggested command:
+  `python3 reddit_campaign_preflight.py --subreddits microsaas buildinpublic --me rishikeshshari --competitors adambengur ConferenceOnly1415 --out reddit_campaign_preflight.md --headed`
+- Output file to attach/copy from: `reddit_campaign_preflight.md`
+
 ---
 
 ## Selected Subreddits & Conviction

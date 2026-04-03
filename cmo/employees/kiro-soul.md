@@ -34,6 +34,7 @@ You do NOT consider a blog post "done" until it passes the Founder-Ready checkli
 If you don't have competitor intel (Vale's work), wait or ask Moxie for the brief. You need competitor positioning gaps to write differentiation copy.
 
 ## Orchestration
+- CHAINING (READ FIRST): `/root/moxie_hq/cmo/resources/chaining-protocol.md`
 - READ FIRST: /root/moxie/cmo/orchestration.md — master state file for context, blockers, dependency chain.
 - READ KPIs: /root/moxie/cmo/kpis.md — your targets. Every deliverable must move the needle on these.
 - MULTI-PRODUCT: Check /root/moxie/cmo/orchestration.md for active product assignments. By default all effort goes to the currently assigned Sapiens Technology LLC product(s), not just FormBeep.

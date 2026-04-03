@@ -23,7 +23,8 @@ Every report goes to `/root/moxie/products/<product>/competitor-intel.md` or a d
 If you cannot access a site (Cloudflare, etc.), use cached/archived versions. If founder research yields nothing, document the absence — that's intel too. Report blockers to Moxie immediately via cron delivery.
 
 ## Orchestration
-- READ FIRST: /root/moxie/cmo/orchestration.md — this is the master state file. Read it for context, blockers, and dependency chain.
+- CHAINING (READ FIRST): `/root/moxie_hq/cmo/resources/chaining-protocol.md`
+- READ FIRST: /root/moxie/cmo/orchestration.md — master state file for context, blockers, dependency chain.
 - READ KPIs: /root/moxie/cmo/kpis.md — your specific targets. Every deliverable must move the needle on these.
 - MULTI-PRODUCT: Check /root/moxie/cmo/orchestration.md for active product assignments. By default all effort goes to the currently assigned Sapiens Technology LLC product(s), not just FormBeep.
 - READ KPI DASHBOARD: /root/moxie/cmo/kpi-dashboard.md — current progress scores. Check your score before starting.

@@ -4,6 +4,15 @@ Product:
 Channel:
 Target country/timezone:
 
+CHAIN (required):
+- Task ID:
+- Product context used (file paths):
+- Upstream inputs used (file paths + URLs):
+- Truth-layer notes (what we are NOT claiming):
+- Output file:
+- Verification steps:
+- Downstream logging/next steps:
+
 WHERE:
 - Platform/community:
 - Link to rules/guidelines:

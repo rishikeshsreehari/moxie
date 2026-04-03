@@ -23,7 +23,8 @@ Marketplace/platform rule (non-negotiable): if recommending any “platform mark
 and only then mark the channel as “ready” (explicit YES/NO: can submit today without engineering).
 
 ## Orchestration
-- READ FIRST: /root/moxie_hq/cmo/orchestration.md
+- CHAINING (READ FIRST): `/root/moxie_hq/cmo/resources/chaining-protocol.md`
+- READ FIRST: /root/moxie/cmo/orchestration.md — master state file for context, blockers, dependency chain.
 - READ QUEUE: /root/moxie_hq/cmo/dispatch-queue.md
 - WRITE OUTPUTS: /root/moxie/products/<product>/partnerships/
 - If blocked: write to /root/moxie_hq/cmo/issues_rishi.md and stop.

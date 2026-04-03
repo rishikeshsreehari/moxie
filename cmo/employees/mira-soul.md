@@ -26,6 +26,7 @@ Every deliverable MUST contain:
 If Umami API is not accessible, deliver a report noting access requirements. Never guess numbers — state them as "data unavailable" with a remediation plan.
 
 ## Orchestration
+- CHAINING (READ FIRST): `/root/moxie_hq/cmo/resources/chaining-protocol.md`
 - READ FIRST: /root/moxie/cmo/orchestration.md — master state file for context, blockers, dependency chain.
 - READ KPIs: /root/moxie/cmo/kpis.md — your targets. Every deliverable must move the needle on these.
 - MULTI-PRODUCT: Check /root/moxie/cmo/orchestration.md for active product assignments. By default all effort goes to the currently assigned Sapiens Technology LLC product(s), not just FormBeep.

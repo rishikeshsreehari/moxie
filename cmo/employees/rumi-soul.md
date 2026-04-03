@@ -25,6 +25,7 @@ Every deliverable MUST contain:
 If competitor blogs don't exist (many small SaaS tools don't blog), document "no blog content" as a competitive advantage for us and pivot to analyzing what forums/communities are discussing instead.
 
 ## Orchestration
+- CHAINING (READ FIRST): `/root/moxie_hq/cmo/resources/chaining-protocol.md`
 - READ FIRST: /root/moxie/cmo/orchestration.md — master state file for context, blockers, dependency chain.
 - READ KPIs: /root/moxie/cmo/kpis.md — your targets. Every deliverable must move the needle on these.
 - MULTI-PRODUCT: Check /root/moxie/cmo/orchestration.md for active product assignments. By default all effort goes to the currently assigned Sapiens Technology LLC product(s), not just FormBeep.
