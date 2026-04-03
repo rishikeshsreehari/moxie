@@ -7,6 +7,7 @@ Target country/timezone:
 CHAIN (required):
 - Task ID:
 - Product context used (file paths):
+  - /root/moxie_hq/products/<product_slug>/status.md
 - Upstream inputs used (file paths + URLs):
 - Truth-layer notes (what we are NOT claiming):
 - Output file:

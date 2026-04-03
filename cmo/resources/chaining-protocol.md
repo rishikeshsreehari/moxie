@@ -16,6 +16,7 @@ Before doing any work:
 2) Identify the **active product slug** (examples: formbeep, stackstats).
 
 3) Load the product context pack (if present):
+- `/root/moxie_hq/products/<product_slug>/status.md` (latest stats + truth-layer)
 - `/root/moxie_hq/products/<product_slug>/overview.md`
 - `/root/moxie_hq/products/<product_slug>/briefings/canonical-facts.md`
 - `/root/moxie_hq/products/<product_slug>/positioning.md`
