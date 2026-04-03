@@ -149,36 +149,95 @@ def parse_listing_comments(page) -> List[CommentRow]:
     return rows
 
 
-def user_activity_in_sub(page, username: str, subreddit: str, limit_pages: int = 2) -> Dict[str, List]:
+def _next_button_href(page) -> Optional[str]:
+    """Return the old.reddit next-page URL if present."""
+    try:
+        href = page.locator("span.next-button a").first.get_attribute("href", timeout=1500)
+        if href:
+            return href
+    except Exception:
+        return None
+    return None
+
+
+def subreddit_author_posts(page, subreddit: str, username: str, limit_pages: int = 2) -> List[PostRow]:
+    """Fetch recent posts by author within a subreddit using subreddit search.
+
+    Aligns with the requirement: check activity *in that subreddit*, not just profiles.
+    Reddit search is imperfect but catches older posts when profile paging fails.
+    """
+    rows: List[PostRow] = []
+    q = f"author%3A{username}"
+    url = f"{OLD}/r/{subreddit}/search?q={q}&restrict_sr=on&sort=new&t=all"
+    for _ in range(limit_pages):
+        page.goto(url, wait_until="domcontentloaded")
+        time.sleep(1.3)
+        for r in parse_listing_posts(page):
+            # search results often omit data-subreddit; force it
+            rows.append(PostRow(title=r.title, subreddit=subreddit, score=r.score, comments=r.comments, url=r.url))
+        if len(rows) >= 12:
+            break
+        nxt = _next_button_href(page)
+        if not nxt:
+            break
+        url = nxt
+    return rows[:12]
+
+
+def user_activity_in_sub(page, username: str, subreddit: str, limit_pages: int = 4) -> Dict[str, List]:
+    """Activity for a user within a specific subreddit.
+
+    Posts: subreddit-scoped search (author:<user> within r/<sub>) + fallback profile scan.
+    Comments: profile scan filtered by subreddit.
+
+    Fix: old paging logic used a blank `after=` token and re-read page 1.
+    """
     sub_l = subreddit.lower()
 
-    posts: List[PostRow] = []
-    for p in range(limit_pages):
-        url = f"{OLD}/user/{username}/submitted/?sort=new"
-        if p:
-            url += f"&count={p*25}&after=t3_"
-        page.goto(url, wait_until="domcontentloaded")
-        time.sleep(1.2)
-        for row in parse_listing_posts(page):
-            if row.subreddit.lower() == sub_l:
-                posts.append(row)
-        if len(posts) >= 12:
-            break
+    # 1) Posts: subreddit-scoped search (matches requirement)
+    posts: List[PostRow] = subreddit_author_posts(page, subreddit, username, limit_pages=2)
 
+    # 1b) Fallback: profile scan for posts, filtered by subreddit
+    if len(posts) < 6:
+        url = f"{OLD}/user/{username}/submitted/?sort=new"
+        for _ in range(limit_pages):
+            page.goto(url, wait_until="domcontentloaded")
+            time.sleep(1.2)
+            for row in parse_listing_posts(page):
+                if row.subreddit and row.subreddit.lower() == sub_l:
+                    posts.append(row)
+            if len(posts) >= 12:
+                break
+            nxt = _next_button_href(page)
+            if not nxt:
+                break
+            url = nxt
+
+    # 2) Comments: profile scan (Reddit doesn't reliably provide comment search)
     comments: List[CommentRow] = []
-    for p in range(limit_pages):
-        url = f"{OLD}/user/{username}/comments/?sort=new"
-        if p:
-            url += f"&count={p*25}&after=t1_"
+    url = f"{OLD}/user/{username}/comments/?sort=new"
+    for _ in range(limit_pages):
         page.goto(url, wait_until="domcontentloaded")
         time.sleep(1.2)
         for row in parse_listing_comments(page):
-            if row.subreddit.lower() == sub_l:
+            if row.subreddit and row.subreddit.lower() == sub_l:
                 comments.append(row)
         if len(comments) >= 12:
             break
+        nxt = _next_button_href(page)
+        if not nxt:
+            break
+        url = nxt
 
-    return {"posts": posts[:12], "comments": comments[:12]}
+    # Dedup posts by URL (search + profile may overlap)
+    seen = set()
+    dedup_posts: List[PostRow] = []
+    for p in posts:
+        if p.url and p.url not in seen:
+            seen.add(p.url)
+            dedup_posts.append(p)
+
+    return {"posts": dedup_posts[:12], "comments": comments[:12]}
 
 
 def top_posts_week(page, subreddit: str) -> List[PostRow]:
