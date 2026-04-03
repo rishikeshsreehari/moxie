@@ -139,6 +139,10 @@ def main():
     state = load_state()
     dispatch_lines = get_dispatch_lines()
     delegation_lines = get_delegation_lines()
+
+    # Performance: avoid repeated O(n) scans with `any(tag in line for line in ...)`
+    dispatch_text = "\n".join(dispatch_lines)
+    delegation_text = "\n".join(delegation_lines)
     base_dir = BASE_DIR
 
     changed_any = False
@@ -190,7 +194,7 @@ def main():
                 tag = f"[ARTIFACT:{rule_name}:{current_hash[:8]}]"
                 if target == 'dispatch_queue':
                     # Dedupe: check if this tag already exists in dispatch queue
-                    if any(tag in line for line in dispatch_lines):
+                    if tag in dispatch_text:
                         print(f"Skipping duplicate dispatch for {key}")
                         continue
                     line = append_dispatch_item(seat, priority, product, task, output_file, depends_on, tag)
@@ -199,7 +203,7 @@ def main():
                     print(f"Dispatched to dispatch-queue: {key}")
                 elif target == 'delegation_queue':
                     # Dedupe: check delegation queue
-                    if any(tag in line for line in delegation_lines):
+                    if tag in delegation_text:
                         print(f"Skipping duplicate delegation for {key}")
                         continue
                     # Append a row to delegation-queue.md

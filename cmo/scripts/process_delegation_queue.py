@@ -12,6 +12,8 @@ from pathlib import Path
 BASE_DIR = Path('/root/moxie_hq').resolve()
 DELEGATION_QUEUE = BASE_DIR / 'cmo/delegation-queue.md'
 DISPATCH_QUEUE = BASE_DIR / 'cmo/dispatch-queue.md'
+STATE_DIR = BASE_DIR / 'cmo/state'
+DISPATCHED_STATE = STATE_DIR / 'delegation_dispatched_ids.json'
 
 # Safety: ensure we stay within /root/moxie_hq/cmo
 if not str(DELEGATION_QUEUE).startswith(str(BASE_DIR / 'cmo')):
@@ -48,9 +50,50 @@ def parse_table_lines(lines):
 
 def find_row_by_id(rows, row_id):
     for i, row in enumerate(rows):
-        if row and row[0] == row_id:
+        if row[0] == row_id:
             return i, row
     return None, None
+
+
+def load_dispatched_ids() -> set[str]:
+    """Load a set of delegation row IDs that have already been dispatched.
+
+    This is a performance + correctness improvement:
+    - Avoids O(n) scanning of dispatch-queue.md for every delegation row
+    - Allows future archival/compaction of dispatch-queue without re-dispatch risk
+    """
+    import json
+    STATE_DIR.mkdir(parents=True, exist_ok=True)
+    if DISPATCHED_STATE.exists():
+        try:
+            data = json.loads(DISPATCHED_STATE.read_text(encoding='utf-8'))
+            ids = set(data.get('ids', []))
+            if ids:
+                return ids
+        except Exception:
+            pass
+
+    # Build from current dispatch queue (one-time bootstrap)
+    ids: set[str] = set()
+    if DISPATCH_QUEUE.exists():
+        try:
+            txt = DISPATCH_QUEUE.read_text(encoding='utf-8', errors='replace')
+            for m in re.finditer(r"\[DELEGATION:([^\]]+)\]", txt):
+                ids.add(m.group(1).strip())
+        except Exception:
+            pass
+
+    save_dispatched_ids(ids)
+    return ids
+
+
+def save_dispatched_ids(ids: set[str]) -> None:
+    import json
+    STATE_DIR.mkdir(parents=True, exist_ok=True)
+    DISPATCHED_STATE.write_text(
+        json.dumps({"ids": sorted(ids)}, indent=2),
+        encoding='utf-8',
+    )
 
 def update_delegation_queue(header, rows, updates):
     """Write updated delegation queue with modified rows."""
@@ -121,6 +164,7 @@ def main():
             sys.exit(1)
 
     dispatch_lines = get_dispatch_queue_lines()
+    dispatched_ids = load_dispatched_ids()
 
     updated_rows = []
     any_updates = False
@@ -131,10 +175,14 @@ def main():
         status = row[status_idx].upper()
         if status in ('DISPATCHED', 'CANCELLED'):
             updated_rows.append(row)
+            # Keep state in sync (in case older rows existed pre-state)
+            if row_id:
+                dispatched_ids.add(row_id)
             continue
-        # Check if already dispatched by tag
+
+        # Check if already dispatched via state (fast, O(1))
         tag = f"[DELEGATION:{row_id}]"
-        already_dispatched = any(tag in line for line in dispatch_lines)
+        already_dispatched = row_id in dispatched_ids
         if already_dispatched:
             # Mark as dispatched
             row[status_idx] = 'DISPATCHED'
@@ -176,11 +224,18 @@ def main():
             dq.write(line + '\n')
         dispatch_lines.append(line)
 
+        # Record in dispatched-id state (prevents duplicates even if dispatch queue is compacted later)
+        if row_id:
+            dispatched_ids.add(row_id)
+
         # Mark row dispatched
         row[status_idx] = 'DISPATCHED'
         row[col_idx.get('dispatched_utc', 8)] = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
         any_updates = True
         updated_rows.append(row)
+
+    # Persist dispatched-id state (even if no new items were created this run)
+    save_dispatched_ids(dispatched_ids)
 
     # Write updated delegation queue if any changes
     if any_updates:
