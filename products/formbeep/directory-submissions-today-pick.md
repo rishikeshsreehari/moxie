@@ -43,7 +43,7 @@ Pick 2 directories that maximize near-term discovery + backlink value for the ti
   - **Name:** FormBeep
   - **Website:** https://formbeep.com/?utm_source=uneed&utm_medium=directory&utm_campaign=jax_daily
   - **Tagline:** Form-to-WhatsApp alerts in seconds without the Zapier bloat.
-  - **Description:** Never miss a lead from your website forms. FormBeep sends submissions directly to WhatsApp, SMS, or Email instantly. Works with Webflow, WordPress, Framer, and custom HTML. Setup in under 5 minutes. Perfect for agencies and SMBs who need reliable notifications without complex automation workflows.
+  - **Description:** Never miss a lead from your website forms. FormBeep sends submissions directly to WhatsApp instantly. Works with Webflow, WordPress, Framer, and custom HTML. Setup in under 5 minutes. Perfect for agencies and SMBs who need reliable notifications without complex automation workflows.
   - **Category:** Productivity / Marketing / Developer Tools.
   - **Pricing URL:** https://formbeep.com/pricing
   - **Docs URL:** https://formbeep.com/docs
