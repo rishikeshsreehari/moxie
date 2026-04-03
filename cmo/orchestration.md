@@ -1,5 +1,5 @@
 # Moxie Orchestration State — Sapiens Technology LLC (SapiensTech)
-# Last updated: 2026-04-03T00:14:42Z
+# Last updated: 2026-04-03T01:13:38Z
 # 
 # HOW THIS WORKS:
 # Every cron job reads this file for context. When done, it updates relevant sections.
@@ -111,7 +111,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 ### Mira — Analytics & Reporting Lead
 - SOUL: /root/moxie/cmo/employees/mira-soul.md
 - Current output dir (sprint): /root/moxie/products/stackstats/
-- Status: IDLE (no mira-worker cron; analytics tasks are being routed to active hourly workers)
+- Status: IDLE (cron active; queued tasks pending)
 - Previous task: (StackStats) Pull Umami Cloud analytics — REASSIGNED to Jax (see dispatch-queue.md) because deliverable was missing after promotion.
 - Output path (still the same): /root/moxie/products/stackstats/analytics/umami-summary.md
 - Next task: FormBeep monitoring scaffold + GSC vs Umami study (will remain blocked until GSC access is provided)
@@ -184,7 +184,7 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 ### Iris — Repo Copy Auditor
 - SOUL: /root/moxie/cmo/employees/iris-soul.md
 - Current output dir (sprint): /root/moxie_hq/products/formbeep/dev-notes/
-- Status: IDLE (no iris-worker cron; repo copy audit tasks are being routed to an active hourly worker)
+- Status: IDLE (cron active; queued tasks pending)
 - Previous task: (FormBeep) Repo copy audit — REASSIGNED to Forge (see dispatch-queue.md) because deliverable was missing after promotion.
 - Output path (still the same): /root/moxie_hq/products/formbeep/dev-notes/2026-04-01-repo-copy-audit.md
 - Next task: Weekly copy/UX audits once an Iris worker is configured (or continue routing via Forge)
