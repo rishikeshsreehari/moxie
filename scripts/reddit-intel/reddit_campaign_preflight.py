@@ -297,7 +297,10 @@ def render_md(subreddits: List[str], me: str, competitors: List[str], data: dict
     lines.append(f"# Reddit Campaign Preflight (generated {_now_utc()})")
     lines.append("")
     lines.append(f"Me: u/{me}")
-    lines.append("Competitors: " + ", ".join([f"u/{c}" for c in competitors]))
+    if competitors:
+        lines.append("Competitors: " + ", ".join([f"u/{c}" for c in competitors]))
+    else:
+        lines.append("Competitors: (none provided)")
     lines.append("")
 
     for s in subreddits:
@@ -375,7 +378,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--subreddits", nargs="+", required=True)
     ap.add_argument("--me", required=True)
-    ap.add_argument("--competitors", nargs="+", required=True)
+    ap.add_argument("--competitors", nargs="*", default=[], help="Optional list of competitor usernames to scan within each subreddit")
     ap.add_argument("--out", default="reddit_campaign_preflight.md")
     ap.add_argument("--headed", action="store_true", help="Run with visible browser")
     args = ap.parse_args()
