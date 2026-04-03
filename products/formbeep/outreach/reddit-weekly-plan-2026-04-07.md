@@ -14,6 +14,10 @@ Recommended posting time (GST / UTC+4):
 
 ---
 
+## Intel input (required)
+- Latest intel should be committed under:
+  - /root/moxie_hq/products/formbeep/outreach/intel/
+
 ## Tuesday — 2026-04-07 (18:00 GST) — r/buildinpublic (1 post)
 
 Rules: https://www.reddit.com/r/buildinpublic/about/rules
