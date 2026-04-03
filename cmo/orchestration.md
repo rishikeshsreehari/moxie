@@ -46,13 +46,3 @@
 # EMPLOYEE STATE
 - All employees are SapiensTech (HQ) employees (role-based, product-agnostic). The current sprint focus is FormBeep, so most tasks route there, but no one is “hoired for a product".
 # 
-# COMPLETED DELIVERABLES
-- 2026-03-31 | Mira | /root/moxie/products/formbeep/analytics-report.md | COMPLETED |
-- ... (truncated for brevity) 
-# 
-# PRODUCT ASSIGNMENTS
-| Product | Status | Priority | Assigned Employees |
-|---------|--------|----------|-------------------|
-| FormBeep | Active (Sprint 1) | P0 | All employees |
-| Product 2 | Not yet launched | N/A | TBD |
-| Product 3 | Not yet launched | N/A | TBD |
