@@ -110,11 +110,13 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 ### Mira — Analytics & Reporting Lead
 - SOUL: /root/moxie/cmo/employees/mira-soul.md
 - Current output dir (sprint): /root/moxie/products/stackstats/
-- Status: IDLE (cron active; queued tasks pending)
+- Status: IDLE (no mira worker cron scheduled; route analytics tasks to Jax until re-enabled)
 - Previous task: (StackStats) Pull Umami Cloud analytics — REASSIGNED to Jax (see dispatch-queue.md) because deliverable was missing after promotion.
 - Output path (still the same): /root/moxie/products/stackstats/analytics/umami-summary.md
 - Next task: FormBeep monitoring scaffold + GSC vs Umami study (will remain blocked until GSC access is provided)
-- Blockers: FormBeep GSC credentials required for GSC-based reporting
+- Blockers:
+  - FormBeep GSC credentials required for GSC-based reporting
+  - Mira worker cron not scheduled (do not promote tasks to Mira until wired)
 - Codex tracking: /root/moxie/cmo/codex-usage.md + /root/moxie/cmo/codex-usage-tracker.csv
 
 ### Nova — Paid Acquisition Lead
@@ -183,11 +185,12 @@ NOTE: All employees are SapiensTech (HQ) employees (role-based, product-agnostic
 ### Iris — Repo Copy Auditor
 - SOUL: /root/moxie/cmo/employees/iris-soul.md
 - Current output dir (sprint): /root/moxie_hq/products/formbeep/dev-notes/
-- Status: IDLE (cron active; queued tasks pending)
+- Status: IDLE (no iris worker cron scheduled; route audits to Forge until re-enabled)
 - Previous task: (FormBeep) Repo copy audit — REASSIGNED to Forge (see dispatch-queue.md) because deliverable was missing after promotion.
 - Output path (still the same): /root/moxie_hq/products/formbeep/dev-notes/2026-04-01-repo-copy-audit.md
 - Next task: Weekly copy/UX audits once an Iris worker is configured (or continue routing via Forge)
-- Blockers: None
+- Blockers:
+  - Iris worker cron not scheduled (do not promote tasks to Iris until wired)
 
 
 ### Moxie — CMO / Orchestrator
