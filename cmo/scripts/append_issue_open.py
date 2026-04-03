@@ -13,6 +13,21 @@ def main():
 
     msg = " ".join(sys.argv[1:]).strip()
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    
+    # Check operating assumptions before adding issue
+    try:
+        sys.path.insert(0, '/root/moxie_hq/cmo/scripts')
+        from read_operating_assumptions import get_operating_assumptions, should_suppress_issue
+        assumptions = get_operating_assumptions()
+        
+        # Check if this issue should be suppressed based on operating assumptions
+        if should_suppress_issue(msg, assumptions):
+            print(f"[SILENT] Issue suppressed per operating assumptions: {msg}")
+            return
+    except Exception:
+        # Fall back to original behavior if assumptions can't be loaded
+        pass
+
     bullet = f"- [ ] ({ts}) {msg}\n"
 
     if not ISSUES_PATH.exists():
