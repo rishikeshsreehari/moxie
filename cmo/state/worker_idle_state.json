@@ -1,38 +1,20 @@
 {
-  "last_updated": "2026-04-04T04:22:22.305268+00:00",
-  "workers": {
-    "forge": {
-      "paused": false,
-      "last_check": "2026-04-04T18:00:59.306982+00:00",
-      "last_action": "resume",
-      "pause_reason": "tasks_available",
-      "has_tasks": true
+  "timestamp": "2026-04-04T20:02:25.523509+00:00",
+  "actions": [
+    {
+      "worker": "forge",
+      "action": "resume",
+      "reason": "tasks_available"
     },
-    "jax": {
-      "paused": false,
-      "last_check": "2026-04-04T18:00:59.306982+00:00",
-      "last_action": "resume",
-      "pause_reason": "tasks_available",
-      "has_tasks": true
+    {
+      "worker": "jax",
+      "action": "resume",
+      "reason": "tasks_available"
     },
-    "astra": {
-      "paused": false,
-      "last_check": "2026-04-04T18:00:59.306982+00:00",
-      "last_action": "resume",
-      "pause_reason": "tasks_available",
-      "has_tasks": true
-    },
-    "ember": {
-      "paused": true,
-      "last_check": "2026-04-04T18:00:59.306982+00:00",
-      "has_tasks": false,
-      "last_action": "no_action"
-    },
-    "kiro": {
-      "paused": true,
-      "last_check": "2026-04-04T18:00:59.306982+00:00",
-      "has_tasks": false,
-      "last_action": "no_action"
+    {
+      "worker": "astra",
+      "action": "resume",
+      "reason": "tasks_available"
     }
-  }
+  ]
 }
