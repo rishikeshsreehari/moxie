@@ -1,41 +1,44 @@
-# Employee Skills System
+# Employee Skill Packs
 
-## Skill Packs
-- **Astra**: Reddit intel, FormBeep monitoring, StackStats analysis
-- **Ember**: Reddit autopick, FormBeep monitoring, StackStats analysis
-- **Jax**: GSC analysis, Umami integration
-- **Kiro**: Directory submissions, FormBeep WhatsApp
-- **Forge**: Full-stack engineering, deployment
-- **Mira**: Reddit planning, FormBeep monitoring, StackStats analysis
-- **Vale**: DataForSEO, Umami daily pulls
-- **Rumi**: GSC studies, Umami integration
+## Astra
+- X execution packet
+- Reddit intel loop
+- Reddit weekly plan
+- GSC export+study
+- Directory last-mile QA
 
-## Skills
-- reddit_intel
-- reddit_planning
-- formbeep_monitoring
-- stackstats_analysis
-- gsc_study
-- umami_daily_pull
-- directory_submission
-- whatsapp_claim
-- full_stack_deployment
-- data_for_seo
-- umami_integration
+## Ember
+- DataForSEO SERP brief
+- Umami daily pull
+- StackStats analytics
 
-## SOUL References
-- **Astra**: #reddit_intel, #formbeep_monitoring, #stackstats_analysis
-- **Ember**: #reddit_intel, #formbeep_monitoring, #stackstats_analysis
-- **Jax**: #gsc_study, #umami_integration
-- **Kiro**: #directory_submission, #whatsapp_claim
-- **Forge**: #full_stack_deployment
-- **Mira**: #reddit_intel, #formbeep_monoring, #stackstats_analysis
-- **Vale**: #data_for_seo, #umami_daily_pull
-- **Rumi**: #gsc_study, #umami_integration
+## Jax
+- X execution packet
+- Reddit intel loop
+- Outreach coordination
+- Community engagement
 
-## SOP References
-- SOP_INDEX.md
-- reddit-history-check.py
-- umami-daily-pull.py
-- gsc-export-study.py
-- directory-last-mile
+## Kiro
+- GSC technical analysis
+- AdCreative optimization
+- Sales script execution
+
+## Forge
+- StackStats reporting
+- FormBeep dashboard
+- CRM pipeline management
+
+## Mira
+- FormBeep monitoring
+- Umami daily pull
+- Sales reporting
+
+## Vale
+- SEO content strategy
+- Social media scheduling
+- Analytics review
+
+## Rumi
+- Advertising campaign design
+- Paid traffic acquisition
+- Conversion funnel analysis
