@@ -1,10 +1,2 @@
-# Founder Attention List
-
 ## Open
-
-## Resolved
-
-<!-- All clear -->
-
-## Last Updated
-2026-04-05 15:06 UTC
+- [P0] formbeep|Mira|Create FormBeep daily monitoring scaffold: targets.md, daily-scoreboard.md, sales-log.md, and a daily Umami pull script (similar to StackStats pattern). Wire the script to Umami website_id for FormBeep (shared key). Output files: /root/moxie/products/formbeep/analytics/targets.md, daily-scoreboard.md, sales-log.md, and script at /root/moxie_hq/cmo/scripts/formbeep_umami_daily.py.|/root/moxie/products/formbeep/analytics/umami-daily.json|mira-20260402_001211-dc8bc6|[DELEGATION:mira-formbeep-umami-daily-scaffold-2026-04-01]|#|caption:Founder requested same monitoring framework for FormBeep as StackStats. No assumptions in targets; use canonical facts.
