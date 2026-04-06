@@ -1,1 +1,1 @@
-- [BLOCKED] formbeep: Astra task requires Umami API key in /opt/data/.env
+- [BLOCKED] Umami API key missing in /opt/data/.env (required $0.25). Evidence: `/root/moxie_hq/cmo/dispatch-queue.md` line 1
