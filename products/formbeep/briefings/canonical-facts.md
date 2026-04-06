@@ -14,8 +14,8 @@ Pricing (live on site):
 
 Launch/traction:
 - Launched: 2026-04-01 (approx)
-- Paid customers: 10
-- MRR: ~$100
+- Paid customers: 1 (founder-confirmed)
+- Revenue/MRR: do not state publicly unless founder provides current figures
 - Inbox: hello@formbeep.com
 
 Tech stack:
