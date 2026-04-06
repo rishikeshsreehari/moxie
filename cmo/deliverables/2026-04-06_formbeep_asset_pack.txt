@@ -1,0 +1,45 @@
+FormBeep — Asset Pack (for tomorrow)
+
+A) Positioning sentence options
+1) “FormBeep turns form submissions into instant WhatsApp / SMS / email alerts — so you never miss a lead.”
+2) “Get notified the moment someone fills your form. No dashboards. Just pings.”
+3) “The fastest way to route form leads to WhatsApp (and close faster).”
+
+B) 10 SEO pages (titles + suggested slugs)
+1) Contact form to WhatsApp notifications (contact-form-whatsapp-notifications)
+2) Google Forms to WhatsApp alerts (google-forms-whatsapp-alerts)
+3) Typeform to WhatsApp notifications (typeform-whatsapp-notifications)
+4) Webflow forms to email + WhatsApp (webflow-form-notifications)
+5) WordPress form SMS notifications (wordpress-form-sms-notifications)
+6) “Instant lead alerts for small businesses” (instant-lead-alerts)
+7) “Form submission alerts for agencies” (agency-form-alerts)
+8) “Route form leads to multiple teammates” (route-form-leads)
+9) “Stop missing website leads” (stop-missing-website-leads)
+10) “Zapier alternative for form notifications” (zapier-alternative-form-notifications)
+
+C) Agency outbound email (paste-ready)
+Subject: quick win for your client forms
+
+Hey {{Name}} — I noticed you build sites/landing pages for clients.
+
+Quick question: when a lead submits the contact form, do you/your client get an instant WhatsApp/SMS ping?
+
+I’m building FormBeep — it turns form submissions into instant notifications (WhatsApp/SMS/email) so clients respond fast and stop losing leads.
+
+If you tell me what platform you use (Webflow/WordPress/Typeform/Google Forms), I’ll show you the simplest setup and a template you can reuse for all clients.
+
+Worth a 10‑minute call this week?
+— Rishi
+
+D) Reddit post draft (you post; keep it value-first)
+Title: What’s the simplest way to get WhatsApp alerts from form submissions?
+
+Body:
+I’m helping a few small businesses stop missing website leads.
+Right now they get form submissions but respond hours later.
+
+What’s your best setup for instant alerts (WhatsApp/SMS/email) when someone fills a form?
+
+If anyone wants it, I can share the checklist I’m using.
+
+(If asked: I’m building a small tool around this, but genuinely looking for best practices.)

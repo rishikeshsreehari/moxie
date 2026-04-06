@@ -1,0 +1,38 @@
+CMO Action Plan (Today) — 2026-04-06 (GST / UTC+4)
+
+Objective for today (single measurable outcome):
+- Generate 2–4 qualified conversations (replies / demo requests) for ONE product.
+
+Decision (autonomous): Prioritize StackStats today for fastest revenue.
+Reason: it already has demonstrated willingness-to-pay (5 sales) + clear ICP (Substack writers US/EU). We can create quick outreach and a clear offer without touching product code.
+
+What you (Rishi) should do when you’re back in ~1 hour (7:30 PM GST) — 20 minutes total
+
+A) Send 10 targeted DMs/emails using the paste-ready message in:
+   cmo/deliverables/2026-04-06_stackstats_outreach_packet.txt
+Success metric: ≥2 replies within 24h.
+
+B) Post 1 “free teardown” offer to a writing/community channel you already use
+   Use the paste-ready post in:
+   cmo/deliverables/2026-04-06_stackstats_public_post_packet.txt
+Success metric: ≥3 comments / DMs.
+
+C) Add one conversion element to StackStats landing (10 minutes)
+   Add the “What you get in 5 minutes” section + CTA wording from:
+   cmo/deliverables/2026-04-06_stackstats_landing_copy_patch.txt
+Success metric: improved clarity; (later we’ll measure via Umami events).
+
+If you only do ONE thing: do (A).
+
+What I (Moxie) will do in the next 2 hours (while you’re away)
+- Produce FormBeep asset pack (SEO + outbound) for tomorrow:
+  - 1 comparison page outline
+  - 1 agency outbound email
+  - 10 SEO page titles/slugs
+  Output file:
+  cmo/deliverables/2026-04-06_formbeep_asset_pack.txt
+
+Notes
+- No spend.
+- No credential needs.
+- This is designed to create immediate conversations tonight, and compounding assets tomorrow.

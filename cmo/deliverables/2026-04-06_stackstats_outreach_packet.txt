@@ -1,0 +1,46 @@
+StackStats — Outreach Packet (paste-ready)
+Date: 2026-04-06 (GST)
+Goal: 10 high-intent messages → 2+ replies
+
+ICP targeting (pick ONE segment for tonight)
+1) Substack writers w/ paid newsletter (best)
+2) Substack writers posting weekly (good)
+3) Newsletter operators selling sponsorships (good)
+
+Where to find 10 targets fast (no tools needed)
+- Substack directory / category pages
+- Recent Substack posts you already follow
+- Twitter/X: search "my substack" + filter for recent
+- Your existing bookmarks / inbox
+
+Message #1 (cold, short)
+Subject: quick question about your Substack metrics
+
+Hey {{Name}} — quick one: do you have a simple way to track your Substack growth (subs, paid conversion, revenue) week over week?
+
+I built a lightweight dashboard for Substack writers called StackStats. If you send me your Substack URL, I’ll do a free 5‑minute teardown and tell you:
+- what to track weekly
+- where churn/conversion is leaking
+- 1–2 next moves to grow paid
+
+Want me to do that for {{SubstackName}}?
+
+— Rishi
+
+Message #2 (if they reply “sure”)
+Awesome — just send the URL.
+Also: what’s the main goal right now?
+1) more paid subs
+2) reduce churn
+3) sponsorship revenue
+
+Message #3 (follow-up after 48h)
+Hey {{Name}} — bumping this. Happy to do a free teardown if you send the URL. If not useful, no worries.
+
+Close (if they ask price)
+StackStats is $39/yr or $79 lifetime. If the teardown is useful, I’ll send you a link.
+
+Rules for tonight
+- Send 10 messages.
+- Personalize only the first line.
+- Don’t over-explain features; sell the teardown + outcome.

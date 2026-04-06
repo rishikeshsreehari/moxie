@@ -1,0 +1,19 @@
+StackStats — Landing Copy Patch (drop-in section)
+
+Section header:
+See what’s happening in your Substack in 5 minutes a week
+
+Bullets:
+- Weekly growth snapshot: subs, paid conversion, and trends
+- Spot what changed (and when) so you don’t fly blind
+- Make decisions faster: what to double down on this week
+
+CTA buttons:
+Primary: Get your dashboard
+Secondary: See example teardown
+
+Pricing microcopy:
+$39/year or $79 lifetime. If it doesn’t pay for itself, don’t keep it.
+
+FAQ line:
+If you send me your Substack URL, I’ll do a free teardown and tell you what to track.
