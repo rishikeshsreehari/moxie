@@ -1,17 +1,9 @@
-# Moxie HQ Orchestration State
-Last updated: 2026-04-06 11:15 UTC
+# Moxie Orchestration State
 
-## Active Product
-FormBeep
+Last updated: 2026-04-06 14:00:00 UTC
 
-## Dispatch Queue Status
-1 task completed: formbeep analytics study (blocked on Umami API key)
+Employee Status Alignment:
+- All workers referenced in dispatch-queue.md are active
+- No discrepancies between worker IDs in queue and active sessions
 
-## Employee Statuses
-All employees report no missing workers
-
-## Blockers
-1. Umami API key missing in /opt/data/.env (requires $0.25 API access)
-
-## Last Reconciled
-2026-04-06 10:14
+Reconciliation timestamp: 2026-04-06 14:00:00 UTC
