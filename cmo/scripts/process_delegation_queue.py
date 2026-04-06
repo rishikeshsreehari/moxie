@@ -6,7 +6,7 @@ Idempotent: uses [DELEGATION:<id>] tags to avoid duplicates.
 
 import sys
 import re
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 BASE_DIR = Path('/root/moxie_hq').resolve()
@@ -43,6 +43,22 @@ def parse_table_lines(lines):
             if header is None:
                 header = cells
             else:
+                # Skip the markdown table divider row like: |---|---|---|
+                # (otherwise it gets treated as a real task row and causes endless '---' dispatch spam)
+                def _is_divider(cell: str) -> bool:
+                    c = cell.strip()
+                    if not c:
+                        return False
+                    # Allow :---: alignment markers
+                    if c.startswith(':'):
+                        c = c[1:]
+                    if c.endswith(':'):
+                        c = c[:-1]
+                    return all(ch == '-' for ch in c) and len(c) >= 3
+
+                if len(cells) == len(header) and all(_is_divider(c) for c in cells):
+                    continue
+
                 rows.append(cells)
         elif in_table:
             break  # table ended
@@ -131,7 +147,7 @@ def append_dispatch_item(seat, priority, product, task, output_file, depends_on,
     # Format: [PRIORITY] Product|Seat|Task|output_file|id|TAGS|#meta|caption:...
     # We'll generate an id from timestamp and a short hash
     import hashlib
-    ts = datetime.utcnow().strftime('%Y%m%d_%H%M%S')
+    ts = datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')
     task_hash = hashlib.sha1(task.encode()).hexdigest()[:6]
     item_id = f"{seat.lower()}-{ts}-{task_hash}"
     # Build line
@@ -186,7 +202,7 @@ def main():
         if already_dispatched:
             # Mark as dispatched
             row[status_idx] = 'DISPATCHED'
-            row[col_idx.get('dispatched_utc', 8)] = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
+            row[col_idx.get('dispatched_utc', 8)] = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
             any_updates = True
             updated_rows.append(row)
             continue
@@ -210,7 +226,7 @@ def main():
         # Standard format: [PRIORITY] Product|Seat|Task|output_file|id|TAGS|#meta|caption:...
         # Let's reconstruct exactly:
         import hashlib
-        ts = datetime.utcnow().strftime('%Y%m%d_%H%M%S')
+        ts = datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')
         task_hash = hashlib.sha1(task.encode()).hexdigest()[:6]
         item_id = f"{seat.lower()}-{ts}-{task_hash}"
         line = f"[{priority}] {product}|{seat}|{task}|{output_file}|{item_id}|{tag}|#{meta}"
@@ -230,7 +246,7 @@ def main():
 
         # Mark row dispatched
         row[status_idx] = 'DISPATCHED'
-        row[col_idx.get('dispatched_utc', 8)] = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
+        row[col_idx.get('dispatched_utc', 8)] = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
         any_updates = True
         updated_rows.append(row)
 

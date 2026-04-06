@@ -1,1 +1,11 @@
-- [BLOCKED] formbeep|Astra|"GSC vs Umami" study (last 28d): Umami API key missing in /opt/data/.env (required $0.25). Blocked task with evidence pointer. Output path: /root/moxie_hq/products/formbeep/analytics/gsc-vs-umami-study.md
+# issues_rishi.md (Founder blockers only)
+
+Rule: Only put items here if Rishi must act (credentials, spend approval, brand-risk decision).
+
+## Open
+
+(no open founder blockers)
+
+## Resolved
+
+- [x] (2026-04-06) Umami API key availability verified in /opt/data/.env (masked). Prior “missing key” entry was stale.
