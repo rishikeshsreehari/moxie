@@ -13,7 +13,7 @@ from pathlib import Path
 
 import requests
 
-ISSUES_PATH = Path("/root/moxie/cmo/issues_rishi.md")
+ISSUES_PATH = Path("/root/moxie_hq/cmo/issues_rishi.md")
 STATE_PATH = Path("/opt/data/cache/issues-notify.json")
 ENV_PATH = Path("/opt/data/.env")
 
@@ -127,12 +127,6 @@ def main(argv):
         print("[SILENT]")
         return 0
 
-    token = read_env_value("TELEGRAM_BOT_TOKEN")
-    chat_id = read_env_value("TELEGRAM_CHAT_ID") or "6699776435"
-    if not token:
-        print("BLOCKED: TELEGRAM_BOT_TOKEN missing")
-        return 2
-
     text = ISSUES_PATH.read_text(encoding="utf-8", errors="replace")
     mtime = int(ISSUES_PATH.stat().st_mtime)
 
@@ -145,11 +139,18 @@ def main(argv):
         print("[SILENT]")
         return 0
 
+    # Safety: do not require Telegram credentials (and do not send) if there are no open items.
     if not has_open_items(text):
         state["last_mtime"] = mtime
         save_state(state)
         print("[SILENT]")
         return 0
+
+    token = read_env_value("TELEGRAM_BOT_TOKEN")
+    chat_id = read_env_value("TELEGRAM_CHAT_ID") or "6699776435"
+    if not token:
+        print("BLOCKED: TELEGRAM_BOT_TOKEN missing")
+        return 2
 
     msg = "issues_rishi.md has open items:\n\n" + summarize_open(text)
     send_telegram(token, chat_id, msg)
