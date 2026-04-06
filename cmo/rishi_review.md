@@ -9,7 +9,17 @@ Last updated: 2026-04-06
 
 ## P0 — DO NOW
 
-(no founder actions required right now)
+
+1) Run FormBeep directory submissions (3 fastest) using this packet:
+   - /root/moxie_hq/cmo/deliverables/formbeep_directory_execution_today.md
+   Outcome: 3 submissions done + tracker updated with URLs/notes.
+
+2) Post StackStats on Reddit (Tue/Wed/Thu) using this paste-ready packet:
+   - /root/moxie_hq/cmo/deliverables/stackstats_reddit_packet_next.md
+   Outcome: 1 post/day + comment prompts (no overclaims).
+
+3) (If you have 2 minutes) Provide/locate FormBeep logo PNG + 2 screenshots locally for directory uploads.
+   If missing: proceed without images where optional (packet covers fallback).
 
 ---
 
