@@ -37,3 +37,11 @@
 ## Actionable Insights
 - [REQUIRED Caveat]: This study requires deeper analysis of 2 Umami pageview records. Full comparison requires processing both datasets against GSC's sandboxed data.
 - Immediate next step: Execute /root/moxie/cmo/scripts/validate_funnel_metrics.py to map GSC segments to Umami events
+
+## Receipts
+- Repo evidence present:
+  - `products/formbeep/analytics/inputs/gsc_pages_last28d.csv`
+  - `products/formbeep/analytics/inputs/gsc_queries_last28d.csv`
+  - `products/formbeep/analytics/inputs/gsc_export_meta.json`
+- Umami evidence note: no Umami export (CSV/JSON) is currently checked into `products/formbeep/analytics/inputs/`. Any Umami figures mentioned above should be treated as unverified until the Umami API pull/output is captured and referenced here.
+- This receipt section was added for governance/validation; no new external data was fetched as part of this patch.

@@ -116,9 +116,26 @@ def main(argv: list[str]) -> int:
             print(f"{r.classify()}: {r.excerpt(240).splitlines()[-1] if r.excerpt() else name}")
             return 2 if r.classify() == "BLOCKED" else 1
 
-    # All OK
+    # All OK so far. Run drift + receipt validation as guardrails.
+    drift = subprocess.run(["python3", str(SCRIPTS_DIR / "drift_detector.py")], cwd=str(BASE_DIR), capture_output=True, text=True)
+    drift_line = (drift.stdout or drift.stderr or "").strip().splitlines()[:1]
+    drift_line = drift_line[0] if drift_line else "OK: drift check skipped"
+    if drift.returncode == 2:
+        print(drift_line)
+        return 2
+    if drift.returncode != 0:
+        print(drift_line if drift_line else "ERROR: drift detector failed")
+        return 1
+
+    receipts = subprocess.run(["python3", str(SCRIPTS_DIR / "validate_receipts.py")], cwd=str(BASE_DIR), capture_output=True, text=True)
+    receipts_line = (receipts.stdout or receipts.stderr or "").strip().splitlines()[:1]
+    receipts_line = receipts_line[0] if receipts_line else "OK: receipt check skipped"
+    if receipts.returncode != 0:
+        print(receipts_line)
+        return 1
+
     # Provide a tiny OK summary line to keep logs readable.
-    print("OK: pipeline clean (delegation+artifacts)")
+    print("OK: pipeline clean (delegation+artifacts+drift+receipts)")
     return 0
 
 
