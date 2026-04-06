@@ -33,13 +33,13 @@ Support email:
 hello@formbeep.com
 
 One-liner (default):
-Instant form alerts on WhatsApp, email, and SMS — no Zapier required.
+Instant form alerts on WhatsApp — no Zapier required.
 
 Short description (<=150 chars):
-Get website form submissions delivered to WhatsApp, email, or SMS instantly. Works with Webflow, WordPress, Framer, and custom sites.
+Get website form submissions delivered to WhatsApp instantly. Works with Webflow, WordPress, Framer, and custom sites.
 
 Long description (<=500 chars):
-FormBeep connects your website forms to the notification channels your team actually reads. Instead of leads sitting in buried email inboxes, you get instant alerts on WhatsApp, SMS, or email. No complex Zapier workflows, no heavy automation stack, no maintenance. Paste a snippet, connect your site builder, and every form submission triggers a notification in seconds. Built for agencies, SMBs, and freelance developers who respond fast and don't want missed leads to cost revenue.
+FormBeep connects your website forms to WhatsApp notifications so you can respond before a lead goes cold. No Zapier workflows, no automation stack, no maintenance. Paste a snippet, connect your site builder, and every form submission triggers a WhatsApp alert in seconds. Built for agencies, SMBs, and freelance developers who respond fast and don’t want missed leads to cost revenue.
 
 Pricing URL:
 https://formbeep.com/pricing
@@ -51,10 +51,10 @@ Primary category:
 Lead Generation / Form Notifications
 
 Categories (if multi-select exists):
-Web Forms, CRM, Marketing Automation, WhatsApp Integration, SMS
+Web Forms, CRM, Marketing Automation, WhatsApp Integration
 
 Tags:
-WhatsApp, form notifications, lead alerts, Webflow, WordPress, Framer, SMS, email alerts, no-code, Zapier alternative
+WhatsApp, form notifications, lead alerts, Webflow, WordPress, Framer, no-code, Zapier alternative
 
 Company:
 Sapiens Technology LLC
@@ -63,7 +63,7 @@ Founded:
 2025
 
 WordPress plugin (if asked):
-https://wordpress.org/plugins/beepmate-wp-plugin/
+Pending WP.org review (do NOT include a plugin URL in directory submissions yet).
 
 ----------------------------
 2) UTM links (paste these instead of the plain website link when a directory allows)
@@ -104,7 +104,7 @@ What to do (2–3 minutes):
 3) Fill fields with:
    - Name: FormBeep
    - Website: (use UTM) https://formbeep.com/?utm_source=saashub&utm_medium=directory&utm_campaign=p1_submissions
-   - Tagline/One-liner: Instant form alerts on WhatsApp, email, and SMS — no Zapier required.
+   - Tagline/One-liner: Instant form alerts on WhatsApp — no Zapier required.
    - Description: (use Long description)
    - Categories (per pack):
      - Primary: CRM & Sales > Lead Management
@@ -112,8 +112,8 @@ What to do (2–3 minutes):
    - Features to check (per pack):
      - Real-time notifications
      - WhatsApp integration
-     - SMS
-     - Email integration
+     - (remove SMS / Email — do not claim as shipped)
+     - WhatsApp notifications
      - Multi-platform support (Webflow, WordPress, Framer)
      - Easy setup
 4) Submit.
@@ -134,7 +134,7 @@ What to do (2–3 minutes):
    - URL: (use UTM) https://formbeep.com/?utm_source=startupbase&utm_medium=directory&utm_campaign=p1_submissions
    - Category: B2B SaaS / Developer Tools / Marketing
    - Short description:
-     FormBeep delivers website form submissions to WhatsApp, email, or SMS in seconds. No Zapier needed. Built for agencies, SMBs, and freelance developers who can't afford missed leads.
+     FormBeep delivers website form submissions to WhatsApp in seconds. No Zapier needed. Built for agencies, SMBs, and freelance developers who can't afford missed leads.
 4) Submit.
 5) Update tracker with evidence/listing URL if shown.
 
@@ -151,7 +151,7 @@ What to do (3–4 minutes):
    - URL: (use UTM) https://formbeep.com/?utm_source=uneed&utm_medium=directory&utm_campaign=p1_submissions
    - Category: Productivity / Marketing
    - Description:
-     FormBeep connects your website forms to WhatsApp, email, or SMS notifications. Zero workflow setup. Works with Webflow, WordPress, Framer, and any HTML site. Get notified the moment a lead fills your form.
+     FormBeep connects your website forms to WhatsApp notifications. Zero workflow setup. Works with Webflow, WordPress, Framer, and any HTML site. Get notified the moment a lead fills your form.
 4) If it asks for images and they are required:
    - Use any existing FormBeep logo PNG you already have.
    - If you don’t have it instantly available, skip images if allowed and submit anyway.
@@ -172,7 +172,7 @@ What to do (2 minutes):
      https://peerpush.net/u/rishikeshshari
 4) Update/verify these fields (if editable):
    - Website: https://formbeep.com/?utm_source=peerpush&utm_medium=directory&utm_campaign=p1_submissions
-   - Tagline/one-liner: Instant form alerts on WhatsApp, email, and SMS — no Zapier required.
+   - Tagline/one-liner: Instant form alerts on WhatsApp — no Zapier required.
    - Description: use Long description (or Short if the field is small)
    - Email: hello@formbeep.com
 5) Paste the final live URL into tracker row for “PeerPush” (add a note if PeerPush isn’t in tracker yet).
@@ -187,7 +187,7 @@ What to do (2 minutes):
 3) Update/verify:
    - Website: https://formbeep.com/?utm_source=tinylaunch&utm_medium=directory&utm_campaign=p1_submissions
    - Tagline: choose one (fast):
-     - Instant form alerts on WhatsApp, email, and SMS — no Zapier required.
+     - Instant form alerts on WhatsApp — no Zapier required.
    - Description: use Short description (or Long if allowed)
 4) Save.
 5) Add evidence to tracker: “TinyLaunch updated” + the listing URL above.
@@ -204,7 +204,7 @@ What to do (3 minutes):
    - Complete claim/login.
 4) Once you can edit, verify/update:
    - Website: https://formbeep.com/?utm_source=stackshare&utm_medium=directory&utm_campaign=p1_submissions
-   - Tagline: Instant form alerts on WhatsApp, email, and SMS — no Zapier required.
+   - Tagline: Instant form alerts on WhatsApp — no Zapier required.
    - Description: use Long description
    - Categories/tags: use Categories + Tags
 5) Evidence to tracker: paste whichever StackShare URL you updated + note “claimed/updated”.

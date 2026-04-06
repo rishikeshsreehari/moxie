@@ -33,7 +33,7 @@ Required from Rishi:
 | Language | English |
 | Founded | 2025 |
 | Company | Sapiens Technology LLC |
-| WordPress plugin | https://wordpress.org/plugins/beepmate-wp-plugin/ |
+| WordPress plugin | Pending WP.org review (do not include plugin link in listings yet) |
 
 ### Image requirements
 | Directory | Image type | Size/format needed |

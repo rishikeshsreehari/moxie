@@ -10,16 +10,15 @@ Last updated: 2026-04-06
 ## P0 — DO NOW
 
 
-1) Run FormBeep directory submissions (3 fastest) using this packet:
+
+1) Execute FormBeep directories (<10 min):
    - /root/moxie_hq/cmo/deliverables/formbeep_directory_execution_today.md
-   Outcome: 3 submissions done + tracker updated with URLs/notes.
 
-2) Post StackStats on Reddit (Tue/Wed/Thu) using this paste-ready packet:
-   - /root/moxie_hq/cmo/deliverables/stackstats_reddit_packet_next.md
-   Outcome: 1 post/day + comment prompts (no overclaims).
+2) When ready, paste your answers to the unknowns that will be asked in the truth-snapshot doc:
+   - (will appear at) /root/moxie_hq/cmo/truth/landing-page-truth-snapshots.md
 
-3) (If you have 2 minutes) Provide/locate FormBeep logo PNG + 2 screenshots locally for directory uploads.
-   If missing: proceed without images where optional (packet covers fallback).
+3) Optional: If you can export X data (tweets.js/tweets.csv), it unlocks the tone audit + reply-guy OS:
+   - /root/moxie_hq/cmo/strategy/x-tone-and-reply-guy-kit.md
 
 ---
 
