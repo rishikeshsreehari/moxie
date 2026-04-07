@@ -1,6 +1,11 @@
 {
-  "timestamp": "2026-04-04T20:02:25.523509+00:00",
+  "timestamp": "2026-04-07T10:02:39.848421+00:00",
   "actions": [
+    {
+      "worker": "jax",
+      "action": "resume",
+      "reason": "tasks_available"
+    },
     {
       "worker": "forge",
       "action": "resume",
@@ -20,32 +25,32 @@
   "workers": {
     "forge": {
       "paused": true,
-      "last_check": "2026-04-07T09:01:00.387589+00:00",
+      "last_check": "2026-04-07T10:02:06.464179+00:00",
       "has_tasks": false,
       "last_action": "no_action"
     },
     "jax": {
       "paused": false,
-      "last_check": "2026-04-07T09:01:00.387589+00:00",
+      "last_check": "2026-04-07T10:02:39.848421+00:00",
       "last_action": "resume",
       "pause_reason": "tasks_available",
       "has_tasks": true
     },
     "ember": {
       "paused": true,
-      "last_check": "2026-04-07T09:01:00.387589+00:00",
+      "last_check": "2026-04-07T10:02:06.464179+00:00",
       "has_tasks": false,
       "last_action": "no_action"
     },
     "astra": {
       "paused": true,
-      "last_check": "2026-04-07T09:01:00.387589+00:00",
+      "last_check": "2026-04-07T10:02:06.464179+00:00",
       "has_tasks": false,
       "last_action": "no_action"
     },
     "kiro": {
       "paused": true,
-      "last_check": "2026-04-07T09:01:00.387589+00:00",
+      "last_check": "2026-04-07T10:02:06.464179+00:00",
       "has_tasks": false,
       "last_action": "no_action"
     }
