@@ -1,0 +1,1 @@
+- ⚠️ GSC credentials required to complete indexing validation task (blocked: 2026-04-04T12:00Z)
