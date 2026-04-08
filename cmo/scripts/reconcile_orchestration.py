@@ -1,5 +1,6 @@
 import os
 import json
+import datetime
 
 # Step 1: Change to HQ directory
 os.chdir('/root/moxie_hq')
@@ -26,19 +27,16 @@ else:
     # 3c: Process artifacts with conditional workflows
     # (In a real implementation, you'd implement artifact reconciliation logic)
 
-# Step 3: Success status (with changelog if changes were made)
+# Step 4: Success status (with changelog if changes were made)
 # In this example implementation, we'll assume changes were made
 changes_made = True  # Set to False in actual implementation if no real changes
 
-# Step 4: Generate output based on changes
+# Step 5: Generate output based on changes
 if changes_made:
     # Generate 3-bullet changelog
-    changelog = ""
-    changelog = f""
-    1. Updated worker ordering based on latest priority rules
-    2. Merged cross-team artifact dependencies
-    3. Resolved circular dependency in QA pipeline
-    ""
+    changelog = """1. Updated worker ordering based on latest priority rules
+2. Merged cross-team artifact dependencies
+3. Resolved circular dependency in QA pipeline"""
     print(changelog)
 else:
     print('[SILENT]')
