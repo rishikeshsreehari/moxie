@@ -41,4 +41,4 @@ if changes_made:
     ""
     print(changelog)
 else:
-    print('[SILENT]')"
+    print('[SILENT]')
