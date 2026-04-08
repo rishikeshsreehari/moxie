@@ -1,46 +1,85 @@
-# StackStats Directory Submission Packet
+# StackStats Directory Submission Execution Packet
 
-**Product:** StackStats (stackstats.app)
-**Target:** Substack writers in US/EU
-**Task:** Submit to directories for visibility and backlinks
+## Task Overview
+Submit StackStats to 5-7 relevant directories to increase visibility among Substack writers.
 
-## Directories to Submit
+## Target Directories
+Based on competitor research and ICP fit:
 
-| Directory | URL | Category | Priority |
-|-----------|-----|----------|----------|
-| Product Hunt | https://www.producthunt.com/submit | Product Launch | P0 |
-| Indie Hackers | https://www.indiehackers.com/post | SaaS/Startup | P0 |
-| SaaS-gen | https://saasgen.com/submit | SaaS Directory | P1 |
-| Future.crew | https://future.crew/submit | Startup Directory | P1 |
-| LaunchYard | https://launchyard.com/submit | Product Launch | P1 |
-| BetaList | https://betalist.com/submit | Startup Beta List | P1 |
-| Alternativeto | https://alternativeto.net/submit | Software Alternatives | P2 |
-| G2 | https://www.g2.com/products/stackstats/submit | B2B Software | P2 |
-| Capterra | https://www.capterra.com/submit-product | Software Reviews | P2 |
+1. **SaaS Directories** (general business tools)
+   - Product Hunt
+   - BetaList
+   - Futurepedia
+   - Tool Finder
+   - SaaSworthy
 
-## Submission Checklist
+2. **Content Creator Tools** (aligned ICP)
+   - Creator Tools
+   - Content Creator Tools
+   - Substack Community (if available)
 
-- [ ] Prepare 1-sentence pitch
-- [ ] Screenshot of StackStats dashboard
-- [ ] Logo files (SVG, PNG)
-- [ ] Founder contact email: hello@stackstats.app
-- [ ] Pricing: Lifetime $79 | 1-yr $39 | Renew $29/yr
+3. **AI/Automation Directories** (relevant features)
+   - AI Parabellum
+   - There's An AI For That
 
-## Quick Submit Links
+## Execution Steps
 
-**Product Hunt:**
-- Submit page: https://www.producthunt.com/submit
-- Need: 1-week advance for waitlist, or use made-up name
+### 1. Product Hunt
+- **URL**: https://www.producthunt.com/
+- **Category**: Tools → Writing/Publishing
+- **Tags**: #substack #contentcreator #newsletter #ai
+- **Description**: “StackStats provides detailed analytics for Substack newsletters, helping writers understand their audience, track growth, and optimize content strategy.”
+- **Launch timing**: Tuesday-Thursday (UTC+4) for maximum visibility
 
-**Indie Hackers:**
-- Submit page: https://www.indiehackers.com/post
-- Format: Text post with "Show StackStats" tag
+### 2. BetaList
+- **URL**: https://betalist.com/
+- **Category**: Productivity
+- **Description**: “Analytics platform built specifically for Substack writers to track readership, engagement, and growth metrics.”
 
-**BetaList:**
-- Submit: email betalist@betalist.com with pitch
+### 3. Futurepedia
+- **URL**: https://www.futurepedia.io/
+- **Category**: Writing Tools
+- **Tags**: #substack #analytics #newsletter #content
+
+### 4. Tool Finder
+- **URL**: https://www.toolfinder.co/
+- **Category**: Content Creation
+- **Description**: “StackStats helps Substack writers gain insights into their newsletter performance with detailed analytics and growth tracking.”
+
+### 5. SaaSworthy
+- **URL**: https://www.saasworthy.com/
+- **Category**: Marketing Tools
+- **Tags**: #substack #newsletter #analytics #saas
+
+### 6. Creator Tools
+- **URL**: https://creatortools.com/
+- **Category**: Writing/Publishing
+- **Description**: “Specialized analytics for Substack creators to understand audience engagement and optimize content strategy.”
+
+### 7. AI Parabellum
+- **URL**: https://aiparabellum.com/
+- **Category**: AI Writing Tools
+- **Tags**: #substack #ai #analytics #content
+
+## Required Assets
+- Product logo (PNG, 512x512)
+- Hero screenshot of dashboard
+- Product description (max 200 chars)
+- Feature bullet points (3-5 items)
+- Pricing information (Lifetime $79, 1-yr $39)
+
+## Timeline
+- **Day 1**: Submit to Product Hunt, BetaList, Futurepedia
+- **Day 2**: Submit to Tool Finder, SaaSworthy, Creator Tools
+- **Day 3**: Submit to AI Parabellum, There's An AI For That
 
 ## Notes
+- All submissions should emphasize the Substack-specific focus
+- Highlight the Lifetime pricing model ($79) as a key differentiator
+- Use consistent branding across all directories
+- Monitor for approval/rejection and follow up within 3-5 business days
 
-- Focus on US/EU directories first per ICP
-- Prioritize P0 for immediate action
-- Update after each submission in tracker
+## Success Metrics
+- Track referral traffic from directories in Umami
+- Monitor new trial signups from directory sources
+- Document approval rates and time-to-approval for each platform
