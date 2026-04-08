@@ -1,2 +1,2 @@
-## Open
-- Blocked: Attempted to access /root/moxie_hq/cmo/dispatch-queue.md via browser (internal URL restriction)
+[BLOCKER] Missing script: "process_delegation_queue.py" not found at /opt/hermes/cmo/scripts/
+Error: python3: can't open file '/opt/hermes/cmo/scripts/process_delegation_queue.py': [Errno 2] No such file or directory
