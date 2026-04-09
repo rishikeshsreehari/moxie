@@ -1,1 +1,60 @@
-{"timestamp": "2026-04-07T10:02:39.848421+00:00", "actions": [{"worker": "jax", "action": "resume", "reason": "tasks_available"}, {"worker": "forge", "action": "resume", "reason": "tasks_available"}, {"worker": "jax", "action": "resume", "reason": "tasks_available"}, {"worker": "astra", "action": "resume", "reason": "tasks_available"}], "workers": {"forge": {"paused": false, "last_check": "2026-04-09T02:02:04.978991+00:00", "last_action": "resume", "pause_reason": "tasks_available", "has_tasks": true}, "jax": {"paused": false, "last_check": "2026-04-09T02:02:04.978991+00:00", "last_action": "resume", "pause_reason": "tasks_available", "has_tasks": true}, "ember": {"paused": true, "last_check": "2026-04-09T02:02:04.978991+00:00", "has_tasks": false, "last_action": "no_action"}, "astra": {"paused": true, "last_check": "2026-04-09T02:02:04.978991+00:00", "has_tasks": false, "last_action": "no_action"}, "kiro": {"paused": true, "last_check": "2026-04-09T02:02:04.978991+00:00", "has_tasks": false, "last_action": "no_action"}}, "last_update": "2026-04-09 02:14:02.139835+00:00"}
+{
+  "timestamp": "2026-04-07T10:02:39.848421+00:00",
+  "actions": [
+    {
+      "worker": "jax",
+      "action": "resume",
+      "reason": "tasks_available"
+    },
+    {
+      "worker": "forge",
+      "action": "resume",
+      "reason": "tasks_available"
+    },
+    {
+      "worker": "jax",
+      "action": "resume",
+      "reason": "tasks_available"
+    },
+    {
+      "worker": "astra",
+      "action": "resume",
+      "reason": "tasks_available"
+    }
+  ],
+  "workers": {
+    "forge": {
+      "paused": false,
+      "last_check": "2026-04-09T04:01:56.606704+00:00",
+      "last_action": "resume",
+      "pause_reason": "tasks_available",
+      "has_tasks": true
+    },
+    "jax": {
+      "paused": false,
+      "last_check": "2026-04-09T04:01:56.606704+00:00",
+      "last_action": "resume",
+      "pause_reason": "tasks_available",
+      "has_tasks": true
+    },
+    "ember": {
+      "paused": true,
+      "last_check": "2026-04-09T04:01:56.606704+00:00",
+      "has_tasks": false,
+      "last_action": "no_action"
+    },
+    "astra": {
+      "paused": true,
+      "last_check": "2026-04-09T04:01:56.606704+00:00",
+      "has_tasks": false,
+      "last_action": "no_action"
+    },
+    "kiro": {
+      "paused": true,
+      "last_check": "2026-04-09T04:01:56.606704+00:00",
+      "has_tasks": false,
+      "last_action": "no_action"
+    }
+  },
+  "last_update": "2026-04-09 02:14:02.139835+00:00"
+}
