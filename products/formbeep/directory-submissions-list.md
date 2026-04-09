@@ -25,23 +25,21 @@ Status: BLOCKED — waiting for directory account credentials
 ## Ready-to-Use Copy (Short + Long Descriptions)
 
 ### Short Description (150 chars max)
-> Get instant WhatsApp/SMS alerts when someone submits your website contact form. One line of code. No Zapier.
+> Get WhatsApp alerts when someone submits your website form. One line of code. Works with any platform.
 
 ### Long Description (~400 words)
-> FormBeep sends instant notifications to your phone when anyone submits a contact form on your website. No dashboard, no Zapier workflow, no missed leads waiting in email.
+> FormBeep sends instant WhatsApp notifications when anyone submits a contact form on your website. No missed leads waiting in email.
 >
 > **The problem:** You built a great website. It has a contact form. But form submissions go to email — and most business owners don't check email the way they check their phone. Leads go cold in hours because the notification sat in an inbox nobody reads.
 >
-> **What FormBeep does:** Add one line of code (or use a platform integration) and get instant alerts on WhatsApp, SMS, or email when a form is submitted. Works with Webflow, WordPress, Framer, and any custom HTML form.
+> **What FormBeep does:** Add one line of code and get instant WhatsApp alerts when a form is submitted. Works with Webflow, WordPress, Framer, Wix, Carrd, and any custom HTML form.
 >
 > **Key features:**
-> - WhatsApp notifications (primary) — because that's where people actually read
-> - SMS fallback — for US-first businesses where WhatsApp isn't universal
-> - Email alerts — for backup/record-keeping
+> - WhatsApp notifications — delivered to your phone in seconds
 > - One-line setup — no backend, no serverless functions, no automation platform
-> - Works with any form — Webflow, WordPress (WPForms, CF7, Elementor), Framer, Hugo, Next.js, Astro, custom HTML
-> - Privacy-first — submissions are deleted after you view them (not archived, not sold, not stored)
-> - Dashboard — view submissions, manage recipients, no login required unless you want to
+> - Works with any form — Webflow, WordPress (WPForms, CF7, Elementor), Framer, Wix, Hugo, Next.js, Astro, custom HTML
+> - Free plan — 15 notifications/month, 1 domain, 1 WhatsApp recipient
+> - Privacy-first — form submissions are not stored permanently
 >
 > **Who it's for:**
 > - Small business owners tired of missed lead inquiries
@@ -49,9 +47,9 @@ Status: BLOCKED — waiting for directory account credentials
 > - Freelancers and solo devs who build sites with contact forms
 > - Anyone who's ever lost a paid project because a form submission landed in spam
 >
-> **Pricing:** Free for your first 50 submissions/month. Paid plans start at $6/month.
+> **Pricing:** Free for 15 notifications/month. Paid plans start at $4.99/month.
 >
-> **Privacy:** FormBeep stores submissions only long enough for you to view them. They're permanently deleted afterwards. No data selling, no analytics on your form data.
+> **Privacy:** FormBeep does not sell or share your form data.
 
 ## Directory Submission List
 
