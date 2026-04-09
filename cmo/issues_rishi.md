@@ -1,6 +1,9 @@
-# Open Issues
+# New Blocker Detected
 
-No blockers at this time. All required scripts verified present in `/root/moxie_hq/cmo/scripts/`.
+The script `process_delegation_queue.py` is missing from `/opt/hermes/cmo/scripts/`. Error:
+`python3: can't open file '/opt/hermes/cmo/scripts/process_delegation_queue.py': [Errno 2] No such file or directory`
 
----
-_Last updated: 2026-04-09_
+Action Required: Verify script existence or update file path in deployment config.
+
+The script `process_artifacts.py` is also missing from `/opt/hermes/cmo/scripts/`. Error:
+`python3: can't open file '/opt/hermes/cmo/scripts/process_artifacts.py': [Errno 2] No such file or directory`
