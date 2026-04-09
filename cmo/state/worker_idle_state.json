@@ -25,36 +25,36 @@
   "workers": {
     "forge": {
       "paused": false,
-      "last_check": "2026-04-09T04:01:56.606704+00:00",
+      "last_check": "2026-04-09T08:02:48.174619+00:00",
       "last_action": "resume",
       "pause_reason": "tasks_available",
       "has_tasks": true
     },
     "jax": {
       "paused": false,
-      "last_check": "2026-04-09T04:01:56.606704+00:00",
+      "last_check": "2026-04-09T08:02:48.174619+00:00",
       "last_action": "resume",
       "pause_reason": "tasks_available",
       "has_tasks": true
     },
     "ember": {
       "paused": true,
-      "last_check": "2026-04-09T04:01:56.606704+00:00",
+      "last_check": "2026-04-09T08:02:48.174619+00:00",
       "has_tasks": false,
       "last_action": "no_action"
     },
     "astra": {
       "paused": true,
-      "last_check": "2026-04-09T04:01:56.606704+00:00",
+      "last_check": "2026-04-09T08:02:48.174619+00:00",
       "has_tasks": false,
       "last_action": "no_action"
     },
     "kiro": {
       "paused": true,
-      "last_check": "2026-04-09T04:01:56.606704+00:00",
+      "last_check": "2026-04-09T08:02:48.174619+00:00",
       "has_tasks": false,
       "last_action": "no_action"
     }
   },
-  "last_update": "2026-04-09 02:14:02.139835+00:00"
+  "last_update": "2026-04-09 06:13:14.992301+00:00"
 }
