@@ -1,1 +1,0 @@
-- BLOCKED: FormBeep GSC validation requires Google Search Console credentials which are not configured
